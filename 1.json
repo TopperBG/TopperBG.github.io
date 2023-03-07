@@ -122,14 +122,64 @@
       "description": "Обширен каталог на филми и серияли и агрегатор за торенти без ограничения. Има поддръжка на ATV и TV Box.",
       "url": "https://www.dropbox.com/s/20muhj1z0zxkpiz/LazyMediaDeluxe-v3.257.apk?dl=1",
       "mirror": "lazymedia",
-      "category": "Видеоплеъри"
+      "category": "Кино"
     },
     {
       "title": "NUM",
       "description": "Онлайн кинотеатър, който търси в торент тракъри. За гледането ще ви трябва торент-енджин като TorrServe и плеър като Kodi",
       "url": "https://dradler.pp.ru/apps/NUM.apk",
       "mirror": "num",
-      "category": "Стрийминг"
-    }
+      "app_review": "https://www.youtube.com/watch?v=5LcmAIBmBPg",
+      "category": "Кино"
+    },
+    {
+      "title": "OTT-play FOSS",
+      "description": "IPTV минималистичен плеър. Интерфейс на практика няма. Трябва ваш плейлист!",
+      "url": "https://dradler.pp.ru/apps/ott-play.apk",
+      "mirror": "ott-play",
+      "category": "IPTV"
+    },
+     {
+      "title": "Puffin TV",
+      "description": "Браузър за ATV",
+      "url": "https://dradler.pp.ru/apps/Puffin_TV.apk",
+       "mirror": "puffin",
+      "app_review": "",
+      "category": "Браузъри"
+    },
+    {
+      "title": "Set Orientation",
+      "description": " Завъртане на екрана за \"телефонни\" приложения.",
+      "url": "https://dradler.pp.ru/apps/Set_Orientation.apk",
+      "mirror":"setorientation",
+      "category": "Инструменти"
+    },
+    {
+      "title": "Send Files To TV",
+      "description": "SFTTV - просто приложение за качване на файлове на Android TV, вашето мобилно устройство с Android и вашето РС. Позволява бързо и лесно да се качват файлове и клипове между вашите устройства. Работи чрез локалната мрежа, Интернет не е нужен",
+      "mirror": "SSFTV",
+      "url": "https://dradler.pp.ru/apps/SFTTV.apk",
+      "category": "Инструменти"
+    },
+     {
+      "title": "Televizo",
+      "description": "IPTV-плеър с интересен интерфейс и функции. Нужен ви е ваш плейлист. Модификация.",
+       "mirror": "Televizo",
+      "url": "https://dradler.pp.ru/apps/Televizo.apk",
+      "category": "IPTV"
+    },
+    {
+      "title": "Файл настроек для MX-Player",
+      "description": "Начните установку, чтобы скачать файл настроек. После того, как установка выдаст ошибку (так и должно быть!), файл настроек будет сохранён во внутренней памяти вашего устройства. После этого откройте MX-Player, нажмите \"три полоски\" - Настройки - Основные и в самом низу Импорт. После этого укажите скаченный файл по пути Download/ti/MX_Player_config.xml, далее везде нажимайте ОК. Плеер перезапустится с новыми настройками, наиболее подходящими для просмотра онлайн-фильмов и торрентов.",
+      "url": "https://dradler.pp.ru/apps/MX_Player_config.xml",
+      "category": "Видеоплеъри"
+    },
+    {
+      "title": "IPTV Pro",
+      "description": "Классическият \"син\" IPTV-плеър, прост и достъпен за употреба. Нужен ви е ваш плейлист. Модификация.",
+      "url": "https://dradler.pp.ru/apps/IPTV_Pro.apk",
+      "mirror":"iptvpro"
+      "category": "IPTV"
+    },
   ]
 }
