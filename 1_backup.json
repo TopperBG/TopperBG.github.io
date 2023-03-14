@@ -98,15 +98,15 @@
     },
     {
       "title": "tvQuickActions",
-      "description": "Button Mapper, разработен специално за ТВ боксове с Android TV и Google TV. Множество уникални функции за увеличаване използваемостта на устройството.",
-      "url": "https://dl.tgxlink.eu.org/149334/tvQuickActionsPROv3.0.8.apk?hash=AgAD4A",
+      "description": "tvQuickActions е програма за преконфигуриране на бутони, разработена специално за телевизионни устройства. Поддържа Android TV, Google TV и AOSP на повечето устройства.Една от основните уникални функции ви позволява да зададете до 5 действия на бутона на вашето дистанционно и да добавите много полезни функции към вашето устройство.",
+      "url": "https://www.dropbox.com/s/fn0u1mg7exui2df/tvQuickActionsPROv3.0.8.apk?dl=1",
       "mirror": "tvQuickActions",
       "category": "Инструменти"
     },
     {
-      "title": "TiviMate",
+      "title": "TiviMate_4.7.0",
       "description": "С Tivimate можете да гледате телевизионни канали на живо от вашия доставчик на IPTV на Android Set-Top бокс или ATV.\n\nОсновни функции:\n• Съвременният потребителски интерфейс, предназначен за големи екрани\n• Поддръжка за множество плейлисти\n• Актуализация на планираното телевизионно ръководство\n• Любими канали\n• догонване\n• Търсене\n• и много повече",
-      "url": "https://tvbox-bot.s3.eu-central-1.amazonaws.com/TiviMate_4.7.0.apk?AWSAccessKeyId=AKIAWQ7ZNL4YD3YZL77J&Signature=6Ox7mk95LLyK35QigXTJZUywovM%3D&Expires=1677859431",
+      "url": "https://www.dropbox.com/s/i646qo76mh4mk2i/TiviMate_4.7.0.apk?dl=1",
       "mirror": "tivimate",
       "category": "IPTV"
     },
@@ -120,14 +120,14 @@
     {
       "title": "LazyMediaDeluxe-v3.257",
       "description": "Обширен каталог на филми и серияли и агрегатор за торенти без ограничения. Има поддръжка на ATV и TV Box.",
-      "url": "https://www.dropbox.com/s/20muhj1z0zxkpiz/LazyMediaDeluxe-v3.257.apk?dl=1",
+      "url": "https://www.dropbox.com/s/bud15an9g1m7r3m/LazyMedia%20Deluxe%20Pro%20v3.254.apk?dl=1",
       "mirror": "lazymedia",
       "category": "Кино"
     },
     {
-      "title": "NUM",
+      "title": "NUM_1.0.112-release",
       "description": "Онлайн кинотеатър, който търси в торент тракъри. За гледането ще ви трябва торент-енджин като TorrServe и плеър като Kodi",
-      "url": "https://dradler.pp.ru/apps/NUM.apk",
+      "url": "https://www.dropbox.com/s/kvd11p8efqyz83m/NUM_1.0.112-release.apk?dl=1",
       "mirror": "num",
       "app_review": "https://www.youtube.com/watch?v=5LcmAIBmBPg",
       "category": "Кино"
@@ -180,13 +180,49 @@
       "description": "Классическият \"син\" IPTV-плеър, прост и достъпен за употреба. Нужен ви е ваш плейлист. Модификация.",
       "url": "https://dradler.pp.ru/apps/IPTV_Pro.apk",
       "mirror": "iptvpro",
+      "key": "iptvpro",
       "category": "IPTV"
     },
     {
+      "title": "Easy Fire Tools",
+      "description": "С това приложение става лесна задача за инсталиране (sideload) на приложения на Amazons FireTv или други Android устройства направо от вашия телефон/таблет.\n\nХарактеристика\n- Инсталирайте (sideload) приложения на FireTV и други Android устройства\n- Създавайте снимки на екрана или записи от екрана на самото устройство",
+      "url": "https://www.dropbox.com/s/djk8h0u600dhb4w/Easy%20Fire%20Tools%20%5B1.1.6%5D.apk?dl=1",
+      "mirror": "easyfiretools",
+      "category": "Инструменти"
+    },
+    {
+      "title": "LazyIPTV",
+      "description": "IPTV плеър с удобен интерфейс, уникални функции и ползващ ExoPlayer енджина. Трябва ви ваша плейлиста.",
+      "url": "https://www.dropbox.com/s/okg4wl6j7fed28p/LazyIptvDeluxe-2.43.apk?dl=1",
+      "mirror": "lazyiptv",
+      "category": "IPTV"
+    },
+    {
+      "title": "SmartTubeNext",
+      "description": "Заместител на YouTube с още повече алтернативни функции. Обвързва се с YT профила.",
+      "url": "https://www.dropbox.com/s/rd0msnywh26sqod/STubeNext_ststable_v17.26_r.apk?dl=1",
+      "mirror": "stn",
+      "category": "Видеоплеъри"
+    },
+    {
+      "title": "File_Manager-Premium-v3.1.8_(2103018)",
+      "description": "File Manager + е лесен и мощен File Explorer за Android устройства.",
+      "url": "https://www.dropbox.com/s/mnrukma17onnr53/File_Manager-Premium-v3.1.8_%282103018%29.apk?dl=1",
+      "mirror": "filemanager+",
+      "category": "Инструменти"
+    },
+    {
+      "title": "https://www.dropbox.com/s/ugl3ueo2vcshqmy/Total-Commander-3.41.apk?dl=1",
+      "description": "Total Commander е популярен и богат на функции файлов мениджър за операционната система Android.",
+      "url": "https://www.dropbox.com/s/ugl3ueo2vcshqmy/Total-Commander-3.41.apk?dl=1",
+      "mirror": "totalcommander",
+      "category": "Инструменти"
+    },
+    {
       "title": "test",
-      "description": "testing",
+      "description": "test",
       "url": "http://url.com",
-      "mirror": "sad",
+      "mirror": "test",
       "category": "Браузъри"
     }
   ]
