@@ -5,6 +5,12 @@
       "description": "Файл сервера torr",
       "url": "https://robyivanov.github.io/my_robbyinstaller/TorrServer-android-arm7.so",
       "category": "Обход"
+    },
+    {
+      "title": "Файл настроек для MX-Player",
+      "description": "Начните установку, чтобы скачать файл настроек. После того, как установка выдаст ошибку (так и должно быть!), файл настроек будет сохранён во внутренней памяти вашего устройства. После этого откройте MX-Player, нажмите \"три полоски\" - Настройки - Основные и в самом низу Импорт. После этого укажите скаченный файл по пути Download/ti/MX_Player_config.xml, далее везде нажимайте ОК. Плеер перезапустится с новыми настройками, наиболее подходящими для просмотра онлайн-фильмов и торрентов.",
+      "url": "https://dradler.pp.ru/apps/MX_Player_config.xml",
+      "category": "Видеоплеъри"
     }
   ],
   "apps": [
@@ -60,30 +66,30 @@
       "category": "Инструменти"
     },
     {
-      "title": "Lampa TV",
+      "title": "Lampa-7.7.9-108",
       "description": "Гледане на онлайн филми, торенти (през услугата TorrServe) на Smart TV и Android TV устройства.",
-      "url": "https://www.dropbox.com/s/4a0tuxxyllkda8e/Lampa-1.7.8%20%287.7.9-107%29.apk?dl=1",
+      "url": "https://www.dropbox.com/s/gqf8z3il574f403/Lampa-7.7.9-108.apk?dl=1",
       "mirror": "Lampa",
       "category": "Стрийминг"
     },
     {
-      "title": "TorrServe",
+      "title": "TorrServe-121",
       "description": "Приложение за гледане на телевизия, филми и сериали от торенти без теглене, посредством приложенията NUM, Lampa, LazyMediaDeluxe и други.",
-      "url": "https://dl.dropbox.com/s/aaadsfvy3tz5sdv/TorrServe-Matrix-0.120.apk?dl=1",
+      "url": "https://www.dropbox.com/s/emosicfb0qywh9i/TorrServe-121.apk?dl=1",
       "mirror": "TorrServe",
       "category": "Стрийминг"
     },
     {
       "title": "Film+",
       "description": "Приложение за гледане на онлайн филми и сериали.",
-      "url": "https://dl.dropbox.com/s/u5ms5pv4ix38spw/FilmPlus%20v1.6.4.apk?dl=1",
+      "url": "https://www.dropbox.com/s/oqpcr2j2to15vq0/FilmPlus%28com.guideplus.co%29-1.7.2%2881%29-mod.apk?dl=1",
       "mirror": "Film+",
       "category": "Стрийминг"
     },
     {
-      "title": "Vimu Media Player",
+      "title": "Vimu Media Player v10.00 (ARM-v7a)",
       "description": "Най-добрият плеър за Android TV. Модификация. НАТИСНЕТЕ И ЗАДРЪЖТЕ БУТОН ОК ЗА ПРЕГЛЕДА НА ПРОГРАМАТА",
-      "url": "https://dradler.pp.ru/apps/Vimu_Media_Player.apk",
+      "url": "https://www.dropbox.com/s/hfnsqe62m7eer8p/Vimu%20Media%20Player%20v10.00%20%28ARM-v7a%29.apk?dl=1",
       "app_review": "https://www.youtube.com/playlist?list=PLoIMtcckkf-NgL7-Cj49iZgk9U3lGzdAU",
       "mirror": "Vimu",
       "category": "Видеоплеъри"
@@ -91,7 +97,7 @@
     {
       "title": "X-plore File Manager",
       "description": "Един от най-добрите експлоръри. НАТИСНЕТЕ И ЗАДРЪЖТЕ БУТОН ОК ЗА ПРЕГЛЕДА НА ПРОГРАМАТА",
-      "url": "https://dradler.pp.ru/apps/X-plore.apk",
+      "url": "https://www.dropbox.com/s/bxip7nnqovuseuq/X-plore%20Donate%20v4.30.26.apk?dl=1",
       "mirror": "X-plore",
       "app_review": "https://youtu.be/s176z65mzEE",
       "category": "Инструменти"
@@ -111,16 +117,23 @@
       "category": "IPTV"
     },
     {
-      "title": "LazyMediaDeluxe-v3.257",
+      "title": "LazyMediaDeluxe-3.266",
       "description": "Обширен каталог на филми и сериaли, агрегатор за торенти без ограничения. Има поддръжка на ATV и TV Box.",
-      "url": "https://www.dropbox.com/s/bud15an9g1m7r3m/LazyMedia%20Deluxe%20Pro%20v3.254.apk?dl=1",
+      "url": "https://www.dropbox.com/s/f8xhat6plyhr7oe/LazyMediaDeluxe-3.266.apk?dl=1",
       "mirror": "lazymedia",
       "category": "Кино"
     },
     {
-      "title": "NUM_1.0.113-release",
+      "title": "PLEX player",
+      "description": "Plex е завършен услуга за стрийминг на мултимедия в реално време. Благодарение на него ще можем да разглеждаме съдържание от други устройства, без да се налага да ги съхраняваме на нашето. По този начин например филми и сериали с музика, снимки и всяко друго съдържание, хоствано на компютър, могат да се възпроизвеждат на смартфон.",
+      "url": "https://www.dropbox.com/s/aygbzby35xaz8qa/Plex%20Premium%20v9.20.1%20%28ARM-v7a%29.apk?dl=1",
+      "mirror": "plex",
+      "category": "Кино"
+    },
+    {
+      "title": "NUM-v1.0.113",
       "description": "Онлайн кинотеатър, който търси в торент тракъри. За гледането ще ви трябва торент-енджин като TorrServe и плеър като Kodi",
-      "url": "https://www.dropbox.com/s/815yz04tmecq4gu/NUM_1.0.113-release.apk?dl=1",
+      "url": "https://www.dropbox.com/s/dc3achzn0866m6x/NUM-v1.0.113.apk?dl=1",
       "mirror": "num",
       "app_review": "https://www.youtube.com/watch?v=5LcmAIBmBPg",
       "category": "Кино"
@@ -155,23 +168,16 @@
       "category": "Инструменти"
     },
     {
-      "title": "Televizo",
+      "title": "Televizo-1.9.6.2",
       "description": "IPTV-плеър с интересен интерфейс и функции. Нужен ви е ваш плейлист. Модификация.",
       "mirror": "Televizo",
-      "url": "https://www.dropbox.com/s/8ii8xrem6g72v1z/Televizo%20v1.9.5.51%28450%29%20mod.apk?dl=1",
+      "url": "https://www.dropbox.com/s/bz222q8rvwl27mw/Televizo-1.9.6.2.apk?dl=1",
       "category": "IPTV"
     },
     {
-      "title": "Файл настроек для MX-Player",
-      "description": "Начните установку, чтобы скачать файл настроек. После того, как установка выдаст ошибку (так и должно быть!), файл настроек будет сохранён во внутренней памяти вашего устройства. После этого откройте MX-Player, нажмите \"три полоски\" - Настройки - Основные и в самом низу Импорт. После этого укажите скаченный файл по пути Download/ti/MX_Player_config.xml, далее везде нажимайте ОК. Плеер перезапустится с новыми настройками, наиболее подходящими для просмотра онлайн-фильмов и торрентов.",
-      "url": "https://dradler.pp.ru/apps/MX_Player_config.xml",
-      "mirror": "mxplayersettings",
-      "category": "Видеоплеъри"
-    },
-    {
-      "title": "IPTV Pro",
+      "title": "IPTV Pro v7.0.4 (ARM-v7a)",
       "description": "Классическият \"син\" IPTV-плеър, прост и достъпен за употреба. Нужен ви е ваш плейлист. Модификация.",
-      "url": "https://dradler.pp.ru/apps/IPTV_Pro.apk",
+      "url": "https://www.dropbox.com/s/1lqdkjzh8bpnqxv/IPTV%20Pro%20v7.0.4%20%28ARM-v7a%29.apk?dl=1",
       "mirror": "iptvpro",
       "key": "iptvpro",
       "category": "IPTV"
@@ -184,16 +190,16 @@
       "category": "Инструменти"
     },
     {
-      "title": "LazyIPTV",
+      "title": "LazyIPTV Deluxe Premium v2.44 (ARM-v7a)",
       "description": "IPTV плеър с удобен интерфейс, уникални функции и ползващ ExoPlayer енджина. Трябва ви ваша плейлиста.",
-      "url": "https://www.dropbox.com/s/okg4wl6j7fed28p/LazyIptvDeluxe-2.43.apk?dl=1",
+      "url": "https://www.dropbox.com/s/ffned2c5hyjnv71/LazyIPTV%20Deluxe%20Premium%20v2.44%20%28ARM-v7a%29.apk?dl=1",
       "mirror": "lazyiptv",
       "category": "IPTV"
     },
     {
-      "title": "SmartTubeNext",
+      "title": "SmartTubeNext-17.80",
       "description": "Заместител на YouTube с още повече алтернативни функции. Обвързва се с YT профила.",
-      "url": "https://www.dropbox.com/s/rd0msnywh26sqod/STubeNext_ststable_v17.26_r.apk?dl=1",
+      "url": "https://www.dropbox.com/s/wpyzxftf6swz3bi/SmartTubeNext-17.80.apk?dl=1",
       "mirror": "stn",
       "category": "Видеоплеъри"
     },
@@ -256,7 +262,7 @@
     {
       "title": "KodinerdsOmega",
       "description": "💥Name: Kodinerds\n💥Version: 21 Omega\n💥Developer: Maven\n💥Required OS: Android 5.0+",
-      "url": "https://www.dropbox.com/s/fn33ypumd2jkuwz/net.kodinerds.maven.kodi21.armeabi-v7a-202303100405-eb0534dc-Omega.apk?dl=1",
+      "url": "https://www.dropbox.com/s/4v7k3lza6jda2wz/Kodinerds%20v20.1%20%28ARM-v7a-20230425%29.apk?dl=1",
       "mirror": "kodinerdsomega",
       "category": "Kodi"
     },
@@ -298,7 +304,7 @@
     {
       "title": "MX Player",
       "description": "​​⭐️ MX Player  версия: 1.60.3 Модификация.\n\n🛅 MX Player е видео плейър за Android с поддръжка на огромен брой формати \n🩸Актуализирани кодеци AV1,AC3,DTS\n🩸 Оптимизиран видео графичен дисплей .\n🩸VOD поддръжка за изтегляне\n🩸 Без реклами .",
-      "url": "https://www.dropbox.com/s/r4lxag13h8zball/MX%20Player%20v.1.60.3%20arm7.apk?dl=1",
+      "url": "https://www.dropbox.com/s/2ke47lpb6blox9d/MXPlayer-1.60.2-arm7.apk?dl=1",
       "mirror": "mxplayer",
       "category": "Видеоплеъри"
     },
@@ -394,11 +400,53 @@
       "category": "Kodi repo"
     },
     {
-      "title": "test",
-      "description": "test",
-      "url": "http://url.com",
-      "mirror": "test",
+      "title": "Televizo AmazonTV",
+      "description": "IPTV-плеър с интересен интерфейс и функции. Нужен ви е ваш плейлист. Модификация.",
+      "url": "https://www.dropbox.com/s/tzufah1yn4ok33s/Televizo-1.9.6.2-amazon.apk?dl=1",
+      "mirror": "televizoamazon",
+      "category": "IPTV"
+    },
+    {
+      "title": "MiXplorer",
+      "description": "Файл експлорър с поддръжка на облаци, FTP, LAN и приятен интерфейс",
+      "url": "https://www.dropbox.com/s/wfdunplo0uwtlam/MiXplorer%20v6.63.1-Silver.apk?dl=1",
+      "mirror": "mixplorer",
       "category": "Инструменти"
+    },
+    {
+      "title": "MiXplorer",
+      "description": "Файл експлорър с поддръжка на облаци, FTP, LAN и приятен интерфейс",
+      "url": "https://www.dropbox.com/s/wfdunplo0uwtlam/MiXplorer%20v6.63.1-Silver.apk?dl=1",
+      "mirror": "mixplorer",
+      "category": "Инструменти"
+    },
+    {
+      "title": "Fidy WEB 4.0",
+      "description": "🟢Changed icon and banner;\n🟢Better adapting for Android TV;\n🟢Increased install requirements;\n🟢Bug fixes.",
+      "url": "https://www.dropbox.com/s/8hkygtpslngcg43/fidy%20WEB%20v4.0.apk?dl=1",
+      "mirror": "fidyweb",
+      "category": "Инструменти"
+    },
+    {
+      "title": "Fidy WEB 4.0",
+      "description": "🟢Changed icon and banner;\n🟢Better adapting for Android TV;\n🟢Increased install requirements;\n🟢Bug fixes.",
+      "url": "https://www.dropbox.com/s/8hkygtpslngcg43/fidy%20WEB%20v4.0.apk?dl=1",
+      "mirror": "fidyweb",
+      "category": "Инструменти"
+    },
+    {
+      "title": "OPlayer",
+      "description": "OPlayer е професионален плеър за възпроизвеждане на мултимедия. Той поддържа почти всички медийни формати, Той е един от най-добрите HD видео плейъри за Android таблети и Android телефони",
+      "url": "https://www.dropbox.com/s/44env795oi22dn1/OPlayer-v5.00.37.apk?dl=1",
+      "mirror": "oplayer",
+      "category": "Видеоплеъри"
+    },
+    {
+      "title": "OPlayer",
+      "description": "OPlayer е професионален плеър за възпроизвеждане на мултимедия. Той поддържа почти всички медийни формати, Той е един от най-добрите HD видео плейъри за Android таблети и Android телефони",
+      "url": "https://www.dropbox.com/s/44env795oi22dn1/OPlayer-v5.00.37.apk?dl=1",
+      "mirror": "oplayer",
+      "category": "Видеоплеъри"
     }
   ]
 }
