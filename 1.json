@@ -198,6 +198,13 @@
       "category": "Инструменти"
     },
     {
+      "title": "Easy Fire Tools",
+      "description": "С това приложение става лесна задача за инсталиране (sideload) на приложения на Amazons FireTv или други Android устройства направо от вашия телефон/таблет.\n\nХарактеристика\n- Инсталирайте (sideload) приложения на FireTV и други Android устройства\n- Създавайте снимки на екрана или записи от екрана на самото устройство",
+      "url": "https://www.dropbox.com/s/djk8h0u600dhb4w/Easy%20Fire%20Tools%20%5B1.1.6%5D.apk?dl=1",
+      "mirror": "easyfiretools",
+      "category": "FireTV"
+    },
+    {
       "title": "LazyIPTV-Deluxe-v2.46-arm-v7a",
       "description": "IPTV плеър с удобен интерфейс, уникални функции и ползващ ExoPlayer енджина. Трябва ви ваша плейлиста.",
       "url": "https://www.dropbox.com/scl/fi/fhrr8ga3uux0ihsg310i3/LazyIPTV-Deluxe-v2.46-arm-v7a.apk?rlkey=eyxiggmi6bj1kyoqjloy3rxd1&dl=1",
@@ -275,12 +282,26 @@
       "mirror": "kodinerdsfiretvnexus",
       "category": "Kodi"
     },
+        {
+      "title": "Kodinerds v20.2 for FireTV (ARM-v7a-20230714)",
+      "description": "💥Name: Kodinerds\n💥Version: 20 Nexus\n💥Developer: Maven\n💥Required OS: Android 5.0+",
+      "url": "https://www.dropbox.com/scl/fi/8yalbgbyrlj4rod3kod8b/Kodinerds-v20.2-for-FireTV-ARM-v7a-20230714.apk?rlkey=puotchk3mz0r0i0s88z98q2ih&dl=1",
+      "mirror": "kodinerdsfiretvnexus",
+      "category": "FireTV"
+    },
     {
       "title": "Kodi Nerds FireTV 21.0",
       "description": "💥Name: Kodinerds\n💥Version: 21 Omega\n💥Developer: Maven\n💥Required OS: Android 5.0+",
       "url": "https://www.dropbox.com/scl/fi/ovevu1lqnfkzdofrz61uo/Kodinerds-v21.0-for-FireTV-ARM-v7a-20230714.apk?rlkey=evvipfwq4za4siygxkzh1tbpx&dl=1",
       "mirror": "kodinerdsfiretvomega",
       "category": "Kodi"
+    },
+        {
+      "title": "Kodi Nerds FireTV 21.0",
+      "description": "💥Name: Kodinerds\n💥Version: 21 Omega\n💥Developer: Maven\n💥Required OS: Android 5.0+",
+      "url": "https://www.dropbox.com/scl/fi/ovevu1lqnfkzdofrz61uo/Kodinerds-v21.0-for-FireTV-ARM-v7a-20230714.apk?rlkey=evvipfwq4za4siygxkzh1tbpx&dl=1",
+      "mirror": "kodinerdsfiretvomega",
+      "category": "FireTV"
     },
     {
       "title": "OttNavigator-1.7.0.1",
@@ -434,7 +455,7 @@
       "description": "Mouse Toggle FireTV",
       "url": "https://www.dropbox.com/s/x6zmjqxqt0b0ma4/Mouse_Toggle_for_Fire_TV-MOD-ApklOO.com.apk?dl=1",
       "mirror": "mousetoggle",
-      "category": "Инструменти"
+      "category": "FireTV"
     },
     {
       "title": "MovieLab-1.2.2-tv",
