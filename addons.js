@@ -349,6 +349,78 @@ Lampa.SettingsApi.addComponent({
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
+						name: 'Mult',
+						type: 'select',
+						values: {
+							1:	'Инсталирай',
+							2:	'Премахни',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Анимации',
+						description: 'Плъгина заменя позиция Аниме на Анимации'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('http://95.215.8.180/plugins/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://95.215.8.180/plugins/mult.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('http://95.215.8.180/plugins/mult.js')
+						setTimeout(function() {	
+							$('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Collections',
+						type: 'select',
+						values: {
+							1:	'Инсталирай',
+							2:	'Премахни',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Колекции',
+						description: 'Открийте вълнуващи колекции от филми и телевизионни сериали в главното меню на приложението. От нови издания до класики, всяка колекция е завладяващо потапяне в света на киното.'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://cub.red/plugin/collections', 'Коллекции', '@lampa', 'Collections');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://cub.red/plugin/collections";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://cub.red/plugin/collections')
+						setTimeout(function() {	
+							$('div[data-name="Collections"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	      /*  Lampa.SettingsApi.addParam({
+                                  component: 'add_interface_plugin',
+                                  param: {
                                          name: 'Reboot_interface_plugin',
                                          type: 'static',
                                   },
