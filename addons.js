@@ -418,7 +418,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
-	      /*  Lampa.SettingsApi.addParam({
+	      Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
                                          name: 'Reboot_interface_plugin',
@@ -440,7 +440,7 @@ Lampa.SettingsApi.addComponent({
 					if (e.name == 'main') {
 						Lampa.SettingsApi.addComponent({
 							component: 'add_management_plugin',
-							name: 'Management'
+							name: 'Управление'
 						});
 					}
 		});
