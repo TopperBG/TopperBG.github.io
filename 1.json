@@ -5,6 +5,23 @@
       "description": "Начните установку, чтобы скачать файл настроек. После того, как установка выдаст ошибку (так и должно быть!), файл настроек будет сохранён во внутренней памяти вашего устройства. После этого откройте MX-Player, нажмите \"три полоски\" - Настройки - Основные и в самом низу Импорт. После этого укажите скаченный файл по пути Download/ti/MX_Player_config.xml, далее везде нажимайте ОК. Плеер перезапустится с новыми настройками, наиболее подходящими для просмотра онлайн-фильмов и торрентов.",
       "url": "https://dradler.pp.ru/apps/MX_Player_config.xml",
       "category": "Видеоплеъри"
+    },
+    {
+      "title": "Aurora store",
+      "description": "Алтернативен маркет за приложения, който се свързва на заден фон с Google Play.",
+      "url": "https://www.dropbox.com/scl/fi/f3i3k9l13mqctt76eg4os/Aurora-Store-v4.3.5.apk?rlkey=o1bzlde66bw420fxcoryid960&dl=1",
+      "app_review": "https://youtube.com/watch?v=jdGk1RvPm7c",
+      "mirror": "aurora",
+      "category": "Инструменти",
+      "ver": "4.3.5"
+    },
+    {
+      "title": "Aptoide ATV",
+      "description": "Адаптиран за ATV алтернативен Маркет за приложения",
+      "url": "https://dradler.pp.ru/apps/Aptoide_TV.apk",
+      "mirror": "Aptoid",
+      "ver": "0",
+      "category": "Инструменти"
     }
   ],
   "apps": [
@@ -46,14 +63,6 @@
       "url": "https://www.dropbox.com/scl/fi/0tq9f4pezpzuz2pzqguog/Analiti-Pro-v2023.11.74607.apk?rlkey=gaiz6dq7e4v51zqp5gpwxuziy&dl=1",
       "mirror": "analiti",
       "ver": "2023.11.74607",
-      "category": "Инструменти"
-    },
-    {
-      "title": "Aptoide TV",
-      "description": "Адаптиран за ATV алтернативен Маркет за приложения",
-      "url": "https://dradler.pp.ru/apps/Aptoide_TV.apk",
-      "mirror": "Aptoid",
-      "ver": "0",
       "category": "Инструменти"
     },
     {
@@ -718,14 +727,6 @@
       "mirror": "unimote",
       "category": "Инструменти",
       "ver": "1.6.4"
-    },
-    {
-      "title": "Aurora store",
-      "description": "Алтернативен маркет за приложения, който се свързва на заден фон с Google Play.",
-      "url": "https://www.dropbox.com/scl/fi/f3i3k9l13mqctt76eg4os/Aurora-Store-v4.3.5.apk?rlkey=o1bzlde66bw420fxcoryid960&dl=1",
-      "mirror": "aurora",
-      "category": "Инструменти",
-      "ver": "4.3.5"
     }
   ]
 }
