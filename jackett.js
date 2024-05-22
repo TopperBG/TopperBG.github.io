@@ -99,9 +99,9 @@ Lampa.SettingsApi.addParam({
         no_parser:          'Не выбран',
         jac_lampa32_ru:     'Lampa32',
         jacred_xyz:         'Jacred.xyz',
-	jacred_ru:          'Jacred.ru',
+		jacred_ru:          'Jacred.ru',
         jack_letz_dev:      'Lampishe',
-	jacred_viewbox_dev: 'Viewbox',
+		jacred_viewbox_dev: 'Viewbox',
         spawn_jackett:      'Spawn Jackett',
         spawn_jacred:       'Spawn Jacred',
         unknown:            'Unknown',
@@ -144,12 +144,4 @@ Lampa.SettingsApi.addParam({
                }
                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
         })
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        ym(93942763, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true
-        });
-        var METRIKA = '<noscript><div><img src="https://mc.yandex.ru/watch/93942763" style="position:absolute; left:-9999px;" alt="" /></div></noscript>';
-        $('body').append(METRIKA);
  })();
