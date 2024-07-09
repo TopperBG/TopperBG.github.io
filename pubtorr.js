@@ -7,25 +7,29 @@
           ru: 'Каталог парсеров',
           en: 'Parsers catalog',
           uk: 'Каталог парсерів',
-          zh: '解析器目录' // Chinese translation
+          zh: '解析器目录',
+          bg: 'Каталог парсъри'// Chinese translation
         },
         lme_parser_description: {
           ru: 'Нажмите для выбора парсера из ',
           en: 'Click to select a parser from the ',
           uk: 'Натисніть для вибору парсера з ',
-          zh: '单击以从可用的 '
+          zh: '单击以从可用的 ',
+          bg: 'Натиснете за избор на парсър от '
         },
         lme_pubtorr: {
           ru: 'Каталог TorrServer',
           en: 'TorrServer catalog',
           uk: 'Каталог TorrServer',
-          zh: '解析器目录' // Chinese translation
+          zh: '解析器目录',
+          bg: 'Каталог TorrServer'
         },
         lme_pubtorr_description: {
           ru: 'Бесплатные серверы от проекта LME',
           en: 'Free servers from the LME project',
           uk: 'Безкоштовні сервери від проєкту LME',
-          zh: '来自 LME 项目的免费服务器 '
+          zh: '来自 LME 项目的免费服务器 ',
+            bg: 'Безплатни сървъри от проекта LME'
         }
       });
     }
