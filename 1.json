@@ -1,12 +1,12 @@
 {
-  "apps": [
+  "links": [
     {
       "title": "Aurora store Latest",
       "description": "Алтернативен маркет за приложения, който се свързва на заден фон с Google Play.",
       "url": "https://auroraoss.com/downloads/AuroraStore/Release/AuroraStore-4.6.1.apk",
       "app_review": "https://youtube.com/watch?v=jdGk1RvPm7c",
       "mirror": "aurora",
-      "category": "Маркети",
+      "category": "Инструменти",
       "ver": "latest"
     },
     {
@@ -15,7 +15,7 @@
       "url": "https://apkins.aptoide.com/AptoideTV-5.1.2.apk",
       "mirror": "Aptoid",
       "ver": "latest",
-      "category": "Маркети"
+      "category": "Инструменти"
     },
     {
       "title": "APKPure TV",
@@ -23,8 +23,10 @@
       "url": "https://www.dropbox.com/scl/fi/7eo9g2xwzby1f4ww2xjym/APKPure_TV_3.20.10.apk?rlkey=rh06ivwqj7dwuo5dilvksdds3&dl=1",
       "mirror": "APKPure",
       "ver": "3.20.10",
-      "category": "Маркети"
-    },
+      "category": "Инструменти"
+    }
+  ],
+  "apps": [
     {
       "title": "Viewbox",
       "description": "​✳️  ViewBox е популярно, леко онлайн кино за вашия Android TV. Безплатен достъп до добра база данни с качествено съдържание.\n✳️ ViewBox е мощно и лесно за използване приложение за гледане на онлайн медии за Android TV и декодери.\n✳️ Инсталирайки приложението на вашето устройство, ще получите достъп до огромен брой популярни филми, сериали, анимационни филми с отлично качество.\n✳️ Има възможност за изтегляне с избор на качество на видеото ( от 144 до 2160 ).\n✳️ Оригинал + Мод без реклами.\n⭐️ ВАЖНО\n⚠️ PS Ако при стартиране пише като: няма интернет (или нещо подобно), след това отидете на НАСТРОЙКИ ➡️ ИЗПОЛЗВАЙТЕ ПРИНУДИТЕЛНО ДРУГ DNS ➡️ отметка ☑️",
@@ -435,9 +437,9 @@
     {
       "title": "MiXplorer Silver",
       "description": "Файл експлорър с поддръжка на облаци, FTP, LAN и приятен интерфейс",
-      "url": "https://www.dropbox.com/scl/fi/m9fnh23h4bo8lpvtzwmwk/MiXplorer-v6.66.4-Silver.apk?rlkey=bfofd03dramyzrcb4y8qlxyt3&dl=1",
+      "url": "https://www.dropbox.com/scl/fi/oaph83qbrlyrcut27e8f4/MiXplorer-v6.67.3-Silver_build_24092410-arm64-v8a.apk?rlkey=nid9pv2ng88uutd72n75u6kbu&dl=1",
       "mirror": "mixplorer",
-      "ver": "6.66.4",
+      "ver": "6.67.3",
       "category": "Инструменти"
     },
     {
@@ -1080,7 +1082,7 @@
       "description": "💥Name: Modi\n💥Package: org.fidy.modi\n💥Source: Kodi 21.1 Omega\n💥Compiled: 17.08.2024\n💥Required OS: Android 5.0+\n💥CPU library: ARM-v7a\n💥Updated: 22.09.2024\n💥Description: Super clean Kodi modification. Can install along with the official releases.\n💥What's changes:\n🟢Bulgarian Language by default\n🟢Aquafluence Skin by default\n🟢New Font by default\n🟢Changes in default settings\n🟢Optimizations and improvements\n❌Removed Estuary Skin\n❌Removed Black Screensaver\n❌Removed Dim Screensaver\n❌Removed Kodi UI Sounds\n❌Removed Kodi WEB Interface\n❌Removed Kodi Version Check\n❌Removed Weather Icons\n❌Removed Game controllers\n❌Removed all other languages except Bulgarian and English\n\n✧Release by fidyBG✧",
       "url": "https://www.dropbox.com/scl/fi/5kue3wy9kkls4e7xoksrt/Modi-21.1-SUPER-LITE.apk?rlkey=amqm6d1auc6hehxoxx0nhfeek&dl=1",
       "mirror": "modi",
-      "category": "Kodi",
+      "category": "Kodi repo",
       "ver": "21.1"
     }
   ]
