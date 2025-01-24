@@ -812,12 +812,12 @@
       "ver": "6.3.20"
     },
     {
-      "title": "Kodi 21.0 BG Fidy Edition",
+      "title": "Kodi Latest BG Fidy Edition",
       "description": "💥Име: Kodi BG\n💥Пакет: org.xbmc.kodi\n💥Версия: 21.0 Omega\n💥Изисквания: Android 5.0+\n💥Включени добавки:\n🧩Aquafluence Skin\n🧩EON PVR\n🧩Hide OSD\n🧩Bulgarian Subs\n🧩Mar33 Repository\n🧩Majide Repository\n🧩Bg Add-ons Repository\n🧩Don't Panic Repository\n🧩SlyGuy Repository\n🧩CastagnaIT Repository\n🧩Michaz Repository\n⚙Леки корекции по настройките по подразбиране (облик, език, аудио, субтитри и др.)",
-      "url": "https://www.dropbox.com/scl/fi/ej9609z57ks0bweitkabh/Kodi-v21.1.BG-ARM-v7a-20240930.apk?rlkey=gjiggqx29m2i86eblxl4vu9wr&dl=1",
+      "url": "https://www.dropbox.com/scl/fi/cfc5v7ghk458lrqteujy6/Kodi-BG-ARM-v7a.apk?rlkey=4yf0pxt01qjemn8r8m4bklgru&dl=1",
       "mirror": "kodibg",
       "category": "Kodi",
-      "ver": "21.1"
+      "ver": "latest"
     },
     {
       "title": "ProgTV",
@@ -1070,12 +1070,28 @@
       "ver": "4.6.88"
     },
     {
-      "title": "Modi+",
-      "description": "💥Name: Modi Plus\n💥Package: org.fidy.modiplus\n💥Source: Kodi 21.1 Omega\n💥Required OS: Android 5.0+\n💥CPU library: ARM-v7a\n💥Included addons:\n🧩Hide OSD MOD\n🧩Files Cleaner MOD\n🧩SubLoader BG MOD\n🧩BG Subs MOD\n🧩Vavoo MOD\n🧩EON PVR MOD\n🧩Disney+ MOD\n🧩Max MOD\n🧩Zamunda MOD\n🧩Elementum\n🧩Elementum Burst\n🧩TorrServer Client\n🧩And more...\n\n✧Release by fidyBG✧",
+      "title": "Modi Light",
+      "description": "💥💥💥Modi Light💥💥💥\n💥Package: org.nick.flix\n💥Version: 21.0 Omega\n💥Required OS: Android 5.0+\n💥CPU library: ARM-v7a\n💥Updated: 01.07.2024\n💥Description: Kodi Fork. MODIfication. Can install along with the official releases.\n💥What's changes:\n🟢Bulgarian Language by default\n🟢Aquafluence Skin by default\n🟢NASA Font by default\n🟢Changes in default settings\n🟢Optimizations and improvements\n❌Removed Estuary Skin\n❌Removed Black Screensaver\n❌Removed Dim Screensaver\n❌Removed Kodi UI Sounds\n❌Removed Kodi WEB Interface\n❌Removed Kodi Version Check\n❌Removed Weather Icons\n❌Removed all other languages except Bulgarian and English",
       "url": "https://www.dropbox.com/scl/fi/cg490abu4vny4kio4jqdn/Modi-v21.2-LITE-ARM-v7a-20250123.apk?rlkey=upi0kvtvtdqleo9eqf9snyqgi&dl=1",
-      "mirror": "modi",
-      "category": "Kodi",
+      "mirror": "modilight",
+      "category": "Kodi Modi",
       "ver": "21.2"
+    },
+    {
+      "title": "Modi Latest",
+      "description": "💥Name: Modi Latest\n💥Package: org.fidy.modiplus\n💥Source: Kodi 21.1 Omega\n💥Required OS: Android 5.0+\n💥CPU library: ARM-v7a\n💥Included addons:\n🧩Hide OSD MOD\n🧩Files Cleaner MOD\n🧩SubLoader BG MOD\n🧩BG Subs MOD\n🧩Vavoo MOD\n🧩EON PVR MOD\n🧩Disney+ MOD\n🧩Max MOD\n🧩Zamunda MOD\n🧩Elementum\n🧩Elementum Burst\n🧩TorrServer Client\n🧩And more...\n\n✧Release by fidyBG✧",
+      "url": "https://www.dropbox.com/scl/fi/vd8pk11qd8mygup6e40xe/Modi21.apk?rlkey=6jwqn8ya015z027t096fnjddx&st=smajcw81&dl=1",
+      "mirror": "modi",
+      "category": "Kodi Modi",
+      "ver": "latest" 
+    },
+    {
+      "title": "Modi+",
+      "description": "💥💥💥 Modi Plus💥💥💥\n💥Package: org.fidy.modiplus\n💥Source: Kodi 21.1 Omega\n💥Required OS: Android 5.0+\n💥CPU library: ARM-v7a\n💥Release Date: ...soon\n💥Included addons:\n🧩Hide OSD MOD\n🧩Files Cleaner MOD\n🧩SubLoader BG MOD\n🧩BG Subs MOD\n🧩Vavoo MOD\n🧩EON PVR MOD\n🧩Disney+ MOD\n🧩Max MOD\n🧩Zamunda MOD\n🧩Elementum\n🧩Elementum Burst\n🧩TorrServer Client\n🧩And more...",
+      "url": https://www.dropbox.com/scl/fi/z9e474ctq03yefi6fah0o/Modi-v21.1-ARM-v7a-20250114.apk?rlkey=7axjo3aru063aiz1nou3pvfyh&st=vy1a5q0x&dl=1",
+      "mirror": "modi+",
+      "category": "Kodi Modi",
+      "ver": "latest" 
     },
     {
       "title": "BrowseHere",
