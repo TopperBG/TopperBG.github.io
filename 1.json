@@ -1368,7 +1368,23 @@
       "mirror": "adbtv",
       "app_review": "https://youtu.be/2BBoHQzKdwA",
       "category": "Инструменти",
-      "ver": "0"
+      "ver": "1.11"
+    },
+    {
+      "title": "Emby TV",
+      "description": "Мощният мениджър на приложения за вашия телевизор и TV Box-ве!\n\nADB TV: App Manager ви позволява лесно да управлявате вашите приложения на Android TV с помощта на функцията ADB (Android Debug Bridge). След като настроите ADB връзката, ще можете да деактивирате (замразите) и деинсталирате приложения. Опитайте го веднъж и ADB TV ще живее постоянно на вашия телевизор!",
+      "url": "https://github.com/MediaBrowser/Emby.Releases/raw/master/androidtv/app-google-release.apk",
+      "mirror": "embytv",
+      "category": "Кино",
+      "ver": "latest"
+    },
+    {
+      "title": "Emby FireTV",
+      "description": "Мощният мениджър на приложения за вашия телевизор и TV Box-ве!\n\nADB TV: App Manager ви позволява лесно да управлявате вашите приложения на Android TV с помощта на функцията ADB (Android Debug Bridge). След като настроите ADB връзката, ще можете да деактивирате (замразите) и деинсталирате приложения. Опитайте го веднъж и ADB TV ще живее постоянно на вашия телевизор!",
+      "url": "https://github.com/MediaBrowser/Emby.Releases/raw/master/androidtv/app-amazon-release.apk",
+      "mirror": "embyftv",
+      "category": "FireTV",
+      "ver": "latest"
     }
   ]
 }
