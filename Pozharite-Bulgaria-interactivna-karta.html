@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.59 · 16.08.2026 21:18</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.60 · 16.08.2026 21:28</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1114,6 +1114,16 @@ svg {
     outline: none;
   }
 
+
+  /* v0.60: only canonical, data-backed wind markers are interactive */
+  #bg-wildfires-map [class*="windmill"]:not(.bgwf-built-wind),
+  #bg-wildfires-map [class*="wind-marker"]:not(.bgwf-built-wind) {
+    display: none !important;
+  }
+  #bg-wildfires-map .bgwf-built-wind {
+    pointer-events: all !important;
+  }
+
 </style>
 </head>
 <body>
@@ -1125,10 +1135,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.59</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.60</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.59</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.60</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1195,7 +1205,7 @@ svg {
       <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
       </p>
       <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
-      <p><strong>Вятърни ВЕИ:</strong> картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
+      <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
@@ -3459,8 +3469,24 @@ svg {
     return `${d.name}${mwText}${turbineText} · ${d.statusLabel}`;
   }
 
+  function isValidWindProject(d) {
+    return !!(
+      d &&
+      typeof d.name === "string" && d.name.trim() &&
+      Number.isFinite(Number(d.lon)) &&
+      Number.isFinite(Number(d.lat)) &&
+      typeof d.source === "string" && /^https?:\/\//i.test(d.source)
+    );
+  }
+
   function updateWindPlants() {
-    const visible = layerVisibility.solar ? operatingWindProjects : [];
+    const visible = layerVisibility.solar
+      ? operatingWindProjects.filter(isValidWindProject)
+      : [];
+    if (layerVisibility.solar) {
+      const rejected = operatingWindProjects.length - visible.length;
+      if (rejected > 0) console.warn(`ВяЕЦ: ${rejected} невалидни/анонимни обекта не са изчертани`);
+    }
     const marks = windPlantLayer.selectAll("g.bgwf-built-wind")
       .data(visible, d => d.id);
 
@@ -3484,6 +3510,9 @@ svg {
         return p ? `translate(${p[0]},${p[1]}) scale(${1 / Math.max(1, currentZoomTransform.k)})` : "translate(-9999,-9999)";
       })
       .attr("aria-label", windPlantLabel)
+      .attr("data-wind-id", d => d.id)
+      .attr("data-wind-source", d => d.source)
+      .attr("title", d => windPlantLabel(d))
       .on("mouseenter", function(event, d) {
         showTooltip(event, windPlantLabel(d));
         activateDetail();
