@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.25 · 15.08.2026 17:52</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.29 · 15.08.2026 18:10</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -821,7 +821,7 @@ svg {
 </head>
 <body>
 <div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
-  <div class="bgwf-version-badge" aria-label="Версия на картата">v0.25</div>
+  <div class="bgwf-version-badge" aria-label="Версия на картата">v0.29</div>
   <div class="viz-row bgwf-summary" aria-label="Обобщение">
     <span><strong data-total-count></strong> периметъра</span>
     <span><strong data-total-area></strong> ha картографирана площ</span>
@@ -962,45 +962,9 @@ svg {
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="live"] .bgwf-swatch { background: #ff1717; box-shadow: 0 0 0 2px color-mix(in srgb, #ff1717 22%, transparent); }
   #bg-wildfires-map .bgwf-layer-toggle[aria-pressed="true"] { opacity: 1; box-shadow: inset 0 0 0 1px var(--foreground); }
   #bg-wildfires-map .bgwf-layer-toggle[aria-pressed="false"] { opacity: 0.55; }
-  #bg-wildfires-map .bgwf-layer-toggle.is-loading {
-    position: relative;
-    overflow: hidden;
-    opacity: 1 !important;
-    border-color: color-mix(in srgb, var(--bgwf-loading-color, var(--primary)) 55%, var(--border));
-  }
-
-  #bg-wildfires-map .bgwf-layer-toggle.is-loading::after {
-    content: "";
-    position: absolute;
-    left: -32%;
-    bottom: 0;
-    width: 32%;
-    height: 2px;
-    border-radius: 999px;
-    background: var(--bgwf-loading-color, var(--primary));
-    box-shadow: 0 0 4px color-mix(in srgb, var(--bgwf-loading-color, var(--primary)) 45%, transparent);
-    pointer-events: none;
-    animation: bgwf-layer-underline 1.15s ease-in-out infinite;
-  }
-
-  #bg-wildfires-map .bgwf-layer-toggle.is-loading[data-layer="solar"] {
-    --bgwf-loading-color: #f59e0b;
-  }
-
-  #bg-wildfires-map .bgwf-layer-toggle.is-loading[data-layer="projects"] {
-    --bgwf-loading-color: #7c3aed;
-  }
-
-  @keyframes bgwf-layer-underline {
-    0%   { left: -32%; opacity: 0.25; }
-    18%  { opacity: 1; }
+18%  { opacity: 1; }
     82%  { opacity: 1; }
     100% { left: 100%; opacity: 0.25; }
-  }
-
-  #bg-wildfires-map .bgwf-layer-toggle.is-warning {
-    border-color: #f59e0b !important;
-    box-shadow: 0 0 0 1px color-mix(in srgb, #f59e0b 55%, transparent);
   }
 }
 50% {
@@ -1014,35 +978,9 @@ svg {
   /* v0.21: статусът за асинхронно зареждане е върху самите бутони.
      Цветен сегмент обикаля рамката, докато АГКК връща кадастралните ПИ. */
   #bg-wildfires-map .bgwf-layer-toggle { position: relative; isolation: isolate; }
-  #bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]::after {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    inset: -2px;
-    border-radius: inherit;
-    padding: 2px;
-    pointer-events: none;
-    background: conic-gradient(from 0deg,
-      transparent 0deg 250deg,
-      color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 35%, transparent) 275deg,
-      var(--bgwf-filter-color, var(--primary)) 320deg,
-      transparent 360deg);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 72%, transparent));
-    animation: bgwf-layer-loading-orbit 1.05s linear infinite;
-  }
-  #bg-wildfires-map .bgwf-layer-toggle[data-load-state="error"] {
-    border-color: var(--destructive);
-    box-shadow: inset 0 0 0 1px var(--destructive), 0 0 0 2px color-mix(in srgb, var(--destructive) 14%, transparent);
-  }
-  @keyframes bgwf-layer-loading-orbit { to { transform: rotate(360deg); } }
+}
   @media (prefers-reduced-motion: reduce) {
-    #bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]::after {
-      animation-duration: 2.4s;
-    }
-  }
+}
   #bg-wildfires-map .bgwf-layer-status { margin-top: 0.1rem; text-align: center; }
   #bg-wildfires-map .bgwf-layer-status-inline {
     min-height: 1.1rem;
@@ -1132,8 +1070,7 @@ svg {
   }
   @media (prefers-reduced-motion: reduce) {
     #bg-wildfires-map .bgwf-live-fire .bgwf-live-halo,
-    #bg-wildfires-map .bgwf-layer-toggle.is-loading::after { animation: none; left: 34%; opacity: 0.8; }
-  }
+}
   #bg-wildfires-map .bgwf-built-solar {
     fill: #f59e0b;
     fill-opacity: 0.62;
@@ -1198,6 +1135,44 @@ svg {
   #bg-wildfires-map .bgwf-method-content p { margin: 0 0 0.35rem; }
   #bg-wildfires-map .bgwf-method-content p:last-child { margin-bottom: 0; }
   #bg-wildfires-map .bgwf-method-content a { font-size: inherit; font-weight: 500; }
+
+  #bg-wildfires-map .bgwf-floating-controls {
+    overflow: hidden;
+  }
+
+  #bg-wildfires-map .bgwf-floating-controls::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -35%;
+    width: 35%;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--primary) 82%, white 18%),
+      transparent
+    );
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #bg-wildfires-map .bgwf-floating-controls.is-loading::before {
+    opacity: 0.95;
+    animation: bgwf-filter-loading 1.35s ease-in-out infinite;
+  }
+
+  #bg-wildfires-map .bgwf-floating-controls.is-ready::before {
+    opacity: 0;
+    animation: none;
+  }
+
+  @keyframes bgwf-filter-loading {
+    0%   { left: -35%; }
+    100% { left: 100%; }
+  }
+
   #bg-wildfires-map .bgwf-floating-controls {
     position: sticky;
     z-index: 35;
@@ -2352,6 +2327,12 @@ svg {
   let currentZoomTransform = d3.zoomIdentity;
   const layerVisibility = { solar: true, projects: true, future: true, live: false };
   const layerStatus = root.querySelector('[data-layer-status]');
+  const filterPanel = root.querySelector('.bgwf-floating-controls');
+
+  function setFilterPanelLoading(isLoading) {
+    if (!filterPanel) return;
+    filterPanel.classList.toggle('is-ready', !isLoading);
+  }
   const mapLoadbar = root.querySelector('[data-map-loadbar]');
   const mapLoadbarFill = root.querySelector('[data-map-loadbar-fill]');
 
@@ -2360,7 +2341,6 @@ svg {
     const value = Math.max(0, Math.min(100, Number(percent) || 0));
     mapLoadbarFill.style.width = `${value}%`;
     mapLoadbar.classList.toggle('is-active', state === 'loading');
-    mapLoadbar.classList.toggle('is-warning', state === 'warning');
     if (state === 'ready') {
       mapLoadbar.classList.remove('is-active', 'is-warning');
     }
@@ -2749,6 +2729,7 @@ svg {
   async function loadProjectParcels() {
     if (cadastralLoadStarted) return;
     cadastralLoadStarted = true;
+    setFilterPanelLoading(true);
 
     const plannedRows = cadastralProjects.flatMap(project =>
       project.parcels.map(parcelRef => ({ layerType: 'projects', project, parcelRef }))
@@ -2801,6 +2782,7 @@ svg {
       setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона от кеш.`);
       layerStatus.textContent = `Кеш: готово · ${loaded.length} геометрии показани веднага`;
       setMapLoadProgress(100, 'ready');
+      setFilterPanelLoading(false);
       return;
     }
 
@@ -2876,12 +2858,14 @@ svg {
           `АГКК: готово с предупреждение · ${loaded.length} геометрии · ${remainingUnique} ПИ остават недостъпни`;
         setMapLoadProgress(100, 'warning');
         window.setTimeout(() => setMapLoadProgress(100, 'ready'), 2600);
+        setFilterPanelLoading(false);
       } else {
         setLayerLoadState('solar', 'ready', `Заредени ${window.__bgwfSolarParcels.length} ФЕЦ полигона.`);
         setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона.`);
         layerStatus.textContent =
           `АГКК: готово · ${loaded.length} геометрии · retry възстанови всички липсващи ПИ`;
         setMapLoadProgress(100, 'ready');
+        setFilterPanelLoading(false);
       }
     } else {
       cadastralLoadErrors = 0;
@@ -2889,9 +2873,11 @@ svg {
       setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона.`);
       layerStatus.textContent = `АГКК: готово · ${loaded.length} геометрии заредени`;
       setMapLoadProgress(100, 'ready');
+      setFilterPanelLoading(false);
     }
 
     writePersistentCadastralCache(persistentCache);
+    setFilterPanelLoading(false);
   }
 
   function updateProjectParcels() {
