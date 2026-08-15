@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.31 · 15.08.2026 18:22</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.34 · 15.08.2026 20:16</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -834,6 +834,52 @@ svg {
     #bg-wildfires-map .bgwf-layer-status-inline { font-size:10px; line-height:1.1; }
   }
 
+
+  #bg-wildfires-map .bgwf-mobile-footer { margin-top: 0.6rem; }
+  #bg-wildfires-map .bgwf-mobile-footer > summary { display: none; }
+  #bg-wildfires-map .bgwf-mobile-footer-body { display: block; }
+
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-mobile-footer {
+      margin-top: 0.45rem;
+      border-top: 1px solid var(--border);
+    }
+    #bg-wildfires-map .bgwf-mobile-footer > summary {
+      display: flex;
+      min-height: 34px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.4rem 0.2rem;
+      color: var(--muted-foreground);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+    #bg-wildfires-map .bgwf-mobile-footer > summary::-webkit-details-marker { display: none; }
+    #bg-wildfires-map .bgwf-mobile-footer > summary span { transition: transform 160ms ease; }
+    #bg-wildfires-map .bgwf-mobile-footer[open] > summary span { transform: rotate(180deg); }
+    #bg-wildfires-map .bgwf-mobile-footer:not([open]) .bgwf-mobile-footer-body { display: none; }
+    #bg-wildfires-map .bgwf-mobile-footer[open] .bgwf-mobile-footer-body {
+      display: block;
+      padding-top: 0.15rem;
+    }
+    #bg-wildfires-map .bgwf-mobile-footer .bgwf-note {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.25rem;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+    #bg-wildfires-map .bgwf-mobile-footer .bgwf-method-note {
+      margin-top: 0.45rem;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -848,10 +894,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.31</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.34</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.31</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.34</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -883,12 +929,16 @@ svg {
   <div class="card bgwf-detail" aria-live="polite">
     <span data-detail>Посочете пожар на картата за дата, община и площ.</span>
   </div>
-  <div class="viz-row text-small text-muted bgwf-note">
+  
+  <details class="bgwf-mobile-footer" data-mobile-footer open>
+    <summary>Информация и методика <span aria-hidden="true">⌄</span></summary>
+    <div class="bgwf-mobile-footer-body">
+<div class="viz-row text-small text-muted bgwf-note">
     <span>Кръг: исторически пожар · 🔥 яркочервено: текущо Sentinel-3 засичане · жълто/оранжево: проверени изградени ФЕЦ · лилаво/синьо: ПУП/ПИ · зелено: RED III</span>
     <span>Исторически пожари: EFFIS · live термални засичания: Sentinel-3 SLSTR / EUMETSAT · оперативна справка: ИСКРА</span>
     <span>Концепция, реализация и дизайн: TopperBG!</span>
   </div>
-  <details class="bgwf-method-note">
+<details class="bgwf-method-note" open>
     <summary>Методика и източници</summary>
     <div class="bgwf-method-content">
       <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
@@ -900,6 +950,8 @@ svg {
       <p><strong>Актуализация на ВЕИ регистъра:</strong> 15.08.2026 г. — включени са допълнително проверени изградени ФЕЦ и проекти в строителство/ПУП, намерени в КЕВР, МОСВ/РИОСВ и общински регистри.</p>
             <p><strong>Частично засягане на ПИ:</strong> когато официалният документ посочва, че ВЕИ използва само реална част от по-голям поземлен имот, целият ПИ не се оцветява. Показва се само геометрия, за която може да се докаже пълното проектно покритие; останалата част се оставя неоцветена до налична точна граница.</p>
 <p><strong>Проверени изградени ФЕЦ:</strong> отделен слой само за обекти, за които официален документ потвърждава изграден/въведен в експлоатация енергиен обект и конкретен ПИ. Слоят е разширяем регистър и не се представя като изчерпателен списък на всички ФЕЦ в България.</p>
+    </div>
+  </details>
     </div>
   </details>
 </div>
@@ -2331,6 +2383,10 @@ svg {
   const layerVisibility = { solar: true, projects: true, future: true, live: false };
   const layerStatus = root.querySelector('[data-layer-status]');
   const filterPanel = root.querySelector('.bgwf-floating-controls');
+  const mobileFooter = root.querySelector('[data-mobile-footer]');
+  if (mobileFooter && window.matchMedia('(max-width: 700px)').matches) {
+    mobileFooter.open = false;
+  }
   const mobileFilterToggle = root.querySelector('[data-mobile-filter-toggle]');
   mobileFilterToggle?.addEventListener('click', () => {
     const open = !filterPanel?.classList.contains('is-mobile-open');
@@ -2395,11 +2451,11 @@ svg {
       .attr('class', 'bgwf-province-focus')
       .attr('d', path);
     if (feature) {
-      provinceNameEl.textContent = `Област ${provinceCodeToName.get(code) || code}`;
+      if (provinceNameEl) provinceNameEl.textContent = `Област ${provinceCodeToName.get(code) || code}`;
       provinceChip.hidden = false;
     } else {
       provinceChip.hidden = true;
-      provinceNameEl.textContent = '';
+      if (provinceNameEl) provinceNameEl.textContent = '';
     }
   }
 
@@ -3162,7 +3218,7 @@ svg {
           .attr('transform', d => `translate(${d.x},${d.y}) scale(${1 / Math.max(1, currentZoomTransform.k)})`),
         exit => exit.remove()
       );
-    liveCountEl.textContent = !layerVisibility.live || liveFireLoadState === 'idle' ? '—' : (liveFireLoadState === 'ok' ? formatNumber.format(visible.length) : (liveFireLoadState === 'error' ? '!' : '…'));
+    if (liveCountEl) liveCountEl.textContent = !layerVisibility.live || liveFireLoadState === 'idle' ? '—' : (liveFireLoadState === 'ok' ? formatNumber.format(visible.length) : (liveFireLoadState === 'error' ? '!' : '…'));
   }
 
   async function loadLiveSentinelFires() {
@@ -3203,9 +3259,9 @@ svg {
   function updateSummary(points) {
     const totalArea = d3.sum(points, d => d.area_ha);
     const largest = d3.max(points, d => d.area_ha) || 0;
-    root.querySelector("[data-total-count]").textContent = formatNumber.format(points.length);
-    root.querySelector("[data-total-area]").textContent = formatNumber.format(totalArea);
-    root.querySelector("[data-largest]").textContent = formatNumber.format(largest);
+    root.querySelector("[data-total-count]")?.replaceChildren(document.createTextNode(String(formatNumber.format(points.length))));
+    root.querySelector("[data-total-area]")?.replaceChildren(document.createTextNode(String(formatNumber.format(totalArea))));
+    root.querySelector("[data-largest]")?.replaceChildren(document.createTextNode(String(formatNumber.format(largest))));
   }
 
   function updateDensity(points) {
@@ -3295,9 +3351,11 @@ svg {
       ?.classList.toggle('is-year-muted', activeYear != null && activeYear !== 2026);
 
     const title = root.querySelector("#bgwf-map-title");
-    title.textContent = activeYear == null
-      ? "Пожари над 1 хектар в България, 13.08.2021–13.08.2026"
-      : `Пожари над 1 хектар в България през ${activeYear} г.`;
+    if (title) {
+      title.textContent = activeYear == null
+        ? "Пожари над 1 хектар в България, 13.08.2021–13.08.2026"
+        : `Пожари над 1 хектар в България през ${activeYear} г.`;
+    }
     setDetailHint(
       activeYear == null
         ? (layerVisibility.live ? "Всички години + Sentinel-3 · тап върху област или обект за подробности" : "Всички години · тап върху област или обект за подробности")
