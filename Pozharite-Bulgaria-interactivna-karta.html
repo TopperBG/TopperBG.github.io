@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.61 · 16.08.2026 21:36</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.62 · 16.08.2026 21:44</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1135,6 +1135,27 @@ svg {
     stroke-width: 2;
   }
 
+
+  /* v0.62: very small wind marker, visually close to a + */
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-cross {
+    fill: none;
+    stroke: #0f766e;
+    stroke-width: 1.35;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    pointer-events: none;
+  }
+  #bg-wildfires-map .bgwf-built-wind:hover .bgwf-wind-cross,
+  #bg-wildfires-map .bgwf-built-wind.is-selected .bgwf-wind-cross {
+    stroke: var(--foreground);
+    stroke-width: 1.8;
+  }
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-mast,
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-hub,
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-blades {
+    display: none !important;
+  }
+
 </style>
 </head>
 <body>
@@ -1146,10 +1167,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.61</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.62</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.61</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.62</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3509,11 +3530,9 @@ svg {
       .attr("tabindex", 0)
       .attr("role", "button");
 
-    // Minimal wind-turbine pictogram: mast + rotor, fixed screen size.
-    enter.append("circle").attr("class", "bgwf-wind-hit").attr("r", 15);
-    enter.append("line").attr("class", "bgwf-wind-mast");
-    enter.append("circle").attr("class", "bgwf-wind-hub").attr("r", 2.1);
-    enter.append("path").attr("class", "bgwf-wind-blades");
+    // Tiny cross marker: discreet at overview scale, with a larger invisible hit target.
+    enter.append("circle").attr("class", "bgwf-wind-hit").attr("r", 9);
+    enter.append("path").attr("class", "bgwf-wind-cross").attr("d", "M-3,0H3 M0,-3V3");
 
     const merged = enter.merge(marks)
       .attr("transform", d => {
@@ -3562,12 +3581,6 @@ svg {
           detail.appendChild(a);
         }
       });
-
-    merged.select(".bgwf-wind-mast")
-      .attr("x1", 0).attr("y1", 2).attr("x2", 0).attr("y2", 13);
-    merged.select(".bgwf-wind-hub").attr("cx", 0).attr("cy", 0);
-    merged.select(".bgwf-wind-blades")
-      .attr("d", "M0,0 L0,-10 M0,0 L8,5 M0,0 L-8,5");
   }
 
   function updateVeiLayers() {
