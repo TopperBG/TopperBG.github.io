@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.56 · 16.08.2026 20:35</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.58 · 16.08.2026 21:05</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1079,6 +1079,31 @@ svg {
     }
   }
 
+
+  #bg-wildfires-map .bgwf-built-wind {
+    cursor: pointer;
+    color: #0f766e;
+    pointer-events: all;
+  }
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-mast,
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-blades {
+    stroke: #0f766e;
+    stroke-width: 2;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-hub {
+    fill: #f8fafc;
+    stroke: #0f766e;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  #bg-wildfires-map .bgwf-built-wind:hover .bgwf-wind-mast,
+  #bg-wildfires-map .bgwf-built-wind:hover .bgwf-wind-blades {
+    stroke: var(--foreground);
+    stroke-width: 2.6;
+  }
+
 </style>
 </head>
 <body>
@@ -1090,10 +1115,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.56</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.58</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.56</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.58</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1160,7 +1185,8 @@ svg {
       <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
       </p>
       <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
-      <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ФЕЦ, ПУП/ПИ проектите и RED III не се филтрират по година.</p>
+      <p><strong>Вятърни ВЕИ:</strong> картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
+      <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
@@ -2164,6 +2190,43 @@ svg {
   ];
 
 
+
+  // Проверени действащи вятърни електроцентрали.
+  // Точката обозначава ветропарка/централата, а не всеки отделен фундамент.
+  // Източници: операторите и публичният ВЕИ регистър (АУЕР/гаранции за произход).
+  const operatingWindProjects = [
+    { id:"WIND-SAINT-NIKOLA", name:"ВяЕЦ „Свети Никола“", lon:28.43, lat:43.43, mw:156, turbines:52,
+      statusLabel:"действащ · общ. Каварна", source:"https://www.aesbulgaria.com/bg/saint-nikola-wind-farm" },
+    { id:"WIND-VETROCOM", name:"ВяЕЦ „Ветроком“", lon:25.4325, lat:42.73897, mw:72.5, turbines:29,
+      statusLabel:"действащ · Казанлък", source:"https://www.thewindpower.net/windfarm_en_7061_vetrocom.php" },
+    { id:"WIND-SUVOROVO", name:"ВяЕЦ „Суворово“", lon:27.5897, lat:43.3750, mw:60, turbines:30,
+      statusLabel:"действащ · обл. Варна", source:"https://www.gem.wiki/Suvorovo_wind_farm" },
+    { id:"WIND-EVN-BULGAREVO", name:"ВяЕЦ EVN Българево", lon:28.3779, lat:43.4221, mw:80, turbines:null,
+      statusLabel:"действащ · две фази · Българево/Каварна", source:"https://www.gem.wiki/Evn_Bulgarevo_wind_farm" },
+    { id:"WIND-KALIAKRA", name:"ВяЕЦ „Калиакра“", lon:28.43337, lat:43.39282, mw:35, turbines:35,
+      statusLabel:"действащ · с. Българево", source:"https://www.kwp.bg/kwp-plant/technical-information/" },
+    { id:"WIND-SHABLA", name:"ВяЕЦ Шабла", lon:28.53523, lat:43.53794, mw:42.7, turbines:24,
+      statusLabel:"действащи генератори · общ. Шабла", source:"https://www.mig-kavarna-shabla.bg/" },
+    { id:"WIND-KAMEN-BRYAG", name:"ВяЕЦ „Камен бряг“", lon:28.33897, lat:43.43297, mw:21, turbines:null,
+      statusLabel:"действащ · общ. Каварна", source:"https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm" },
+    { id:"WIND-VRANINO", name:"ВяЕЦ „Вранино“", lon:28.30722, lat:43.52663, mw:18, turbines:9,
+      statusLabel:"действащ · обл. Добрич", source:"https://www.thewindpower.net/windfarm_en_20189_vranino.php" },
+    { id:"WIND-MOGILISHTE-W", name:"ВяЕЦ „Могилище-запад“", lon:28.345, lat:43.448, mw:16, turbines:null,
+      statusLabel:"действащ · с. Могилище", source:"https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6" },
+    { id:"WIND-HRABROVO", name:"Вятърни паркове „Храброво“", lon:28.12, lat:43.43, mw:14, turbines:null,
+      statusLabel:"действащи · общ. Балчик", source:"https://www.balchik.bg/bg/naseleni-mesta/shrabrovo/" },
+    { id:"WIND-KARNOBAT", name:"ВяЕЦ Карнобат", lon:26.98, lat:42.65, mw:13, turbines:null,
+      statusLabel:"действащ · общ. Карнобат", source:"https://www.thewindpower.net/country_windfarms_en_37_bulgarie.php" },
+    { id:"WIND-KARDAM", name:"ВяЕЦ „Кардам“", lon:28.1076, lat:43.7539, mw:12.6, turbines:null,
+      statusLabel:"действащ · общ. Генерал Тошево", source:"https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6" },
+    { id:"WIND-KARAPELIT", name:"ВяЕЦ „Карапелит“", lon:27.5673, lat:43.6483, mw:12, turbines:null,
+      statusLabel:"действащ · обл. Добрич", source:"https://www.gem.wiki/Kardam_wind_farm" },
+    { id:"WIND-KRUPEN", name:"ВяЕЦ „Крупен“", lon:28.2449, lat:43.5594, mw:12, turbines:4,
+      statusLabel:"действащ · обл. Добрич", source:"https://www.gem.wiki/Krupen_wind_farm" },
+    { id:"WIND-BALCHIK", name:"ВяЕЦ Балчик", lon:28.13, lat:43.42, mw:10, turbines:5,
+      statusLabel:"действащ · общ. Балчик", source:"https://www.thewindpower.net/country_windfarms_en_37_bulgarie.php" }
+  ];
+
   // Проверени изградени/въведени в експлоатация ФЕЦ 2021–2026.
   // Това е разширяем проверен набор, НЕ претенция за пълен национален регистър.
   // ПИ се включва само когато официален документ свързва изградената ФЕЦ с конкретния идентификатор.
@@ -2561,6 +2624,7 @@ svg {
   const futureRegionLayer = mapViewport.append("g").attr("class", "bgwf-region-layer bgwf-region-layer-future");
   const projectParcelLayer = mapViewport.append("g").attr("class", "bgwf-project-parcel-layer");
   const solarParcelLayer = mapViewport.append("g").attr("class", "bgwf-solar-parcel-layer");
+  const windPlantLayer = mapViewport.append("g").attr("class", "bgwf-wind-plant-layer");
 
   mapViewport.append("path")
     .datum({ type: "FeatureCollection", features: provinces.features })
@@ -2753,6 +2817,12 @@ svg {
     fireLayer.selectAll('circle').attr('r', d => screenRadius(d.area_ha));
     liveFireLayer.selectAll('g.bgwf-live-fire')
       .attr('transform', d => `translate(${d.x},${d.y}) scale(${1 / Math.max(1, currentZoomTransform.k)})`);
+  
+    windPlantLayer.selectAll("g.bgwf-built-wind")
+      .attr("transform", d => {
+        const p = projection([d.lon, d.lat]);
+        return p ? `translate(${p[0]},${p[1]}) scale(${1 / Math.max(1, currentZoomTransform.k)})` : "translate(-9999,-9999)";
+      });
   }
 
   const zoomBehavior = d3.zoom()
@@ -3133,7 +3203,7 @@ svg {
     const rows = [...plannedRows, ...solarRows];
     const totalRefs = new Set(rows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)).size;
 
-    setLayerLoadState('solar', 'loading', 'Зареждат се кадастралните ПИ за изградените ФЕЦ…');
+    setLayerLoadState('solar', 'loading', 'Зареждат се кадастралните ПИ за изградените ФЕЦ… ВяЕЦ се показват веднага.');
     setLayerLoadState('projects', 'loading', 'Зареждат се кадастралните ПИ за ПУП/ПИ проектите…');
 
     const persistentCache = readPersistentCadastralCache();
@@ -3171,7 +3241,7 @@ svg {
     // If the cache already contains everything, do not query AGKK again.
     if (!missingRows.length) {
       cadastralLoadErrors = 0;
-      setLayerLoadState('solar', 'ready', `Заредени ${window.__bgwfSolarParcels.length} ФЕЦ полигона от кеш.`);
+      setLayerLoadState('solar', 'ready', `Заредени ${window.__bgwfSolarParcels.length} ФЕЦ полигона + ${operatingWindProjects.length} ВяЕЦ (${operatingWindMappedMW.toLocaleString('bg-BG')} MW картографирани).`);
       setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона от кеш.`);
       layerStatus.textContent = `Кеш: готово · ${loaded.length} геометрии показани веднага`;
       setMapLoadProgress(100, 'ready');
@@ -3371,9 +3441,74 @@ svg {
       );
   }
 
+  const operatingWindMappedMW = operatingWindProjects.reduce((sum, d) => sum + (Number(d.mw) || 0), 0);
+
+  function windPlantLabel(d) {
+    const mwText = Number.isFinite(Number(d.mw)) ? ` · ${Number(d.mw).toLocaleString('bg-BG')} MW` : '';
+    const turbineText = Number.isFinite(Number(d.turbines)) ? ` · ${d.turbines} турбини` : '';
+    return `${d.name}${mwText}${turbineText} · ${d.statusLabel}`;
+  }
+
+  function updateWindPlants() {
+    const visible = layerVisibility.solar ? operatingWindProjects : [];
+    const marks = windPlantLayer.selectAll("g.bgwf-built-wind")
+      .data(visible, d => d.id);
+
+    marks.exit().remove();
+
+    const enter = marks.enter()
+      .append("g")
+      .attr("class", "bgwf-built-wind")
+      .attr("tabindex", 0)
+      .attr("role", "button");
+
+    // Minimal wind-turbine pictogram: mast + rotor, fixed screen size.
+    enter.append("line").attr("class", "bgwf-wind-mast");
+    enter.append("circle").attr("class", "bgwf-wind-hub").attr("r", 2.1);
+    enter.append("path").attr("class", "bgwf-wind-blades");
+
+    const merged = enter.merge(marks)
+      .attr("transform", d => {
+        const p = projection([d.lon, d.lat]);
+        return p ? `translate(${p[0]},${p[1]}) scale(${1 / Math.max(1, currentZoomTransform.k)})` : "translate(-9999,-9999)";
+      })
+      .attr("aria-label", windPlantLabel)
+      .on("mouseenter", (event, d) => showTooltip(event, windPlantLabel(d)))
+      .on("mousemove", moveTooltip)
+      .on("mouseleave", hideTooltip)
+      .on("click", function(event, d) {
+        event.stopPropagation();
+        tooltip.hidden = true;
+        activateDetail();
+        if (detail) {
+          detail.innerHTML = "";
+          const strong = document.createElement("strong");
+          strong.textContent = d.name;
+          detail.appendChild(strong);
+          detail.appendChild(document.createTextNode(
+            `${Number.isFinite(Number(d.mw)) ? ` · ${Number(d.mw).toLocaleString('bg-BG')} MW` : ''}` +
+            `${Number.isFinite(Number(d.turbines)) ? ` · ${d.turbines} турбини` : ''} · ${d.statusLabel} · `
+          ));
+          const a = document.createElement("a");
+          a.href = d.source;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = "източник ↗";
+          detail.appendChild(a);
+        }
+      });
+
+    merged.select(".bgwf-wind-mast")
+      .attr("x1", 0).attr("y1", 2).attr("x2", 0).attr("y2", 13);
+    merged.select(".bgwf-wind-hub").attr("cx", 0).attr("cy", 0);
+    merged.select(".bgwf-wind-blades")
+      .attr("d", "M0,0 L0,-10 M0,0 L8,5 M0,0 L-8,5");
+  }
+
   function updateVeiLayers() {
     updateProjectParcels();
     updateSolarParcels();
+    updateWindPlants();
     updatePriorityZones();
     updateLiveFires();
   }
@@ -3386,6 +3521,7 @@ svg {
     const scopeText = activeYear === false ? 'пожари скрити' : activeYear == null ? 'всички пожари' : `пожари ${activeYear} г.`;
 
     const projectCount = layerVisibility.projects ? (window.__bgwfProjectParcels ?? []).length : 0;
+    const windCount = layerVisibility.solar ? operatingWindProjects.length : 0;
     const solarVisibleRows = layerVisibility.solar ? (window.__bgwfSolarParcels ?? []) : [];
     const solarCount = solarVisibleRows.length;
     const solarProjectCount = new Set(solarVisibleRows.map(d => d.project.id)).size;
@@ -4034,7 +4170,7 @@ svg {
 
   const layerControls = d3.select(root.querySelector('.bgwf-layer-controls'));
   [
-    { key: 'solar', text: 'Изградени ФЕЦ' },
+    { key: 'solar', text: 'Изградени ВЕИ' },
     { key: 'projects', text: 'ПУП/ПИ проекти' },
     { key: 'future', text: 'RED III/REPowerEU' },
   ].forEach(({ key, text }) => {
