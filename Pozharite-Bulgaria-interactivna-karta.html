@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.55 · 16.08.2026 20:27</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.56 · 16.08.2026 20:35</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1090,10 +1090,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.55</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.56</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.55</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.56</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2484,7 +2484,7 @@ svg {
   const width = 736;
   const height = 500;
   // More breathing room at zoom x1: Bulgaria occupies ~86% of the previous fitted size.
-  const projection = d3.geoMercator().fitExtent([[72, 54], [664, 446]], provinces);
+  const projection = d3.geoMercator().fitExtent([[112, 78], [624, 422]], provinces);
   const path = d3.geoPath(projection);
   const mapViewport = svg.append("g").attr("class", "bgwf-map-viewport");
 
