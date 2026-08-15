@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ 2021–2026 · v0.22 · 15.08.2026 17:33</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.23 · 15.08.2026 17:44</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
 
+  /* Agent-facing contract; keep in sync with SKILL.md. */
   --background: var(
     --main-surface-primary,
     light-dark(rgb(255 255 255), rgb(24 24 24))
@@ -65,6 +66,7 @@
   --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
   --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
 
+  /* Legacy aliases; not part of the current agent contract. */
   --viz-bg: transparent;
   --viz-panel: var(--card);
   --viz-border: var(--border);
@@ -83,7 +85,9 @@
 :root[data-visualize-standalone] {
   background-color: var(--background) !important;
 }
-  
+
+/* Generic mobile code-block hosts provide light/dark mode but no series palette.
+   AppBlock hosts set all six variables themselves. */
 :root:not([data-app-block-surface]) {
   --viz-series-1: var(--primary);
   --viz-series-2: light-dark(#f3883b, #f59a56);
@@ -308,6 +312,8 @@ code:not(pre code) {
   user-select: none;
 }
 
+/* The bundled tooltip runtime owns [data-tooltip]. AppBlock's CSS-only
+   pseudo-tooltip can widen dense grids even while hidden. */
 main [data-tooltip]::after {
   content: none;
 }
@@ -999,6 +1005,8 @@ svg {
   }
 
 
+  /* v0.21: статусът за асинхронно зареждане е върху самите бутони.
+     Цветен сегмент обикаля рамката, докато АГКК връща кадастралните ПИ. */
   #bg-wildfires-map .bgwf-layer-toggle { position: relative; isolation: isolate; }
   #bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]::after {
     content: "";
@@ -2601,35 +2609,88 @@ svg {
     updateRegionLayers();
   }
 
-  async function loadProjectParcels() {
-    if (cadastralLoadStarted) return;
-    cadastralLoadStarted = true;
 
-    const plannedRows = cadastralProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'projects', project, parcelRef })));
-    const solarRows = operatingSolarProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'solar', project, parcelRef })));
-    const rows = [...plannedRows, ...solarRows];
-    const totalRefs = rows.length;
+  const CADASTRAL_STORAGE_KEY = 'bgwf-agkk-geometry-cache-v1';
 
-    setLayerLoadState('solar', 'loading', 'Зареждат се кадастралните ПИ за изградените ФЕЦ…');
-    setLayerLoadState('projects', 'loading', 'Зареждат се кадастралните ПИ за ПУП/ПИ проектите…');
-    layerStatus.textContent = `АГКК: 0 / ${totalRefs} ПИ · зареждане…`;
-    setMapLoadProgress(0, 'loading');
+  function readPersistentCadastralCache() {
+    try {
+      const raw = window.localStorage.getItem(CADASTRAL_STORAGE_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : {};
+    } catch (error) {
+      console.warn('АГКК: localStorage cache read failed', error);
+      return {};
+    }
+  }
 
-    const loaded = [];
-    let failedRefs = 0;
-    let processedRefs = 0;
+  function writePersistentCadastralCache(cache) {
+    try {
+      window.localStorage.setItem(CADASTRAL_STORAGE_KEY, JSON.stringify(cache));
+    } catch (error) {
+      console.warn('АГКК: localStorage cache write failed', error);
+    }
+  }
+
+  function cacheFeature(cache, ref, feature) {
+    if (!ref || !feature?.geometry?.coordinates?.length) return;
+    cache[ref] = {
+      savedAt: Date.now(),
+      feature
+    };
+  }
+
+  function featureFromCache(cache, ref) {
+    const item = cache?.[ref];
+    const feature = item?.feature;
+    return feature?.geometry?.coordinates?.length ? feature : null;
+  }
+
+  function rowsGroupedByRef(rows) {
+    const map = new Map();
+    rows.forEach(row => {
+      const ref = sanitizeParcelRef(row.parcelRef);
+      if (!ref) return;
+      const arr = map.get(ref) ?? [];
+      arr.push(row);
+      map.set(ref, arr);
+    });
+    return map;
+  }
+
+  function addFeatureForRows(loaded, matchingRows, ref, feature) {
+    if (!feature || !matchingRows?.length) return;
+    matchingRows.forEach(row => {
+      const key = `${row.layerType}|${row.project.id}|${ref}`;
+      if (loaded.some(item => `${item.layerType}|${item.project.id}|${sanitizeParcelRef(item.parcelRef)}` === key)) return;
+      loaded.push({
+        ...row,
+        parcelRef: ref,
+        feature
+      });
+    });
+  }
+
+  function sleep(ms) {
+    return new Promise(resolve => window.setTimeout(resolve, ms));
+  }
+
+  async function fetchRowsInBatches(rows, loaded, persistentCache, {
+    chunkSize = 22,
+    pauseMs = 0,
+    phaseLabel = 'АГКК',
+    onProgress = null
+  } = {}) {
+    const failedRows = [];
+    let failedUniqueRefs = 0;
     let batchErrors = 0;
-    const chunkSize = 22;
+    let processed = 0;
 
     for (let offset = 0; offset < rows.length; offset += chunkSize) {
       const chunk = rows.slice(offset, offset + chunkSize);
-      const rowsByRef = new Map();
-      chunk.forEach(row => {
-        const ref = sanitizeParcelRef(row.parcelRef);
-        const arr = rowsByRef.get(ref) ?? [];
-        arr.push(row);
-        rowsByRef.set(ref, arr);
-      });
+      const grouped = rowsGroupedByRef(chunk);
+
+      if (pauseMs && offset > 0) await sleep(pauseMs);
 
       try {
         const payload = await fetchCadastralBatch(chunk);
@@ -2639,51 +2700,193 @@ svg {
         (payload?.features ?? []).forEach(esriFeature => {
           const attrs = esriFeature?.attributes ?? {};
           const ref = sanitizeParcelRef(attrs.nationalcadastralref);
-          const matchingRows = rowsByRef.get(ref) ?? [];
           const rings = esriFeature?.geometry?.rings;
-          if (!matchingRows.length || !rings?.length) return;
+          const matchingRows = grouped.get(ref) ?? [];
+          if (!ref || !matchingRows.length || !rings?.length) return;
+
+          const feature = {
+            type: 'Feature',
+            properties: attrs,
+            geometry: { type: 'Polygon', coordinates: rings }
+          };
+
           returnedRefs.add(ref);
-          matchingRows.forEach(row => loaded.push({
-            ...row,
-            feature: { type: 'Feature', properties: attrs, geometry: { type: 'Polygon', coordinates: rings } },
-          }));
+          cacheFeature(persistentCache, ref, feature);
+          cadastralCache.set(ref, feature);
+          addFeatureForRows(loaded, matchingRows, ref, feature);
         });
-        failedRefs += [...rowsByRef.keys()].filter(ref => !returnedRefs.has(ref)).length;
+
+        grouped.forEach((matchingRows, ref) => {
+          if (!returnedRefs.has(ref)) {
+            failedUniqueRefs += 1;
+            failedRows.push(...matchingRows);
+          }
+        });
+
+        writePersistentCadastralCache(persistentCache);
       } catch (error) {
         batchErrors += 1;
-        failedRefs += rowsByRef.size;
-        console.warn(`АГКК: пропусната партида ${Math.floor(offset / chunkSize) + 1}`, error);
+        failedUniqueRefs += grouped.size;
+        failedRows.push(...chunk);
+        console.warn(`${phaseLabel}: пропусната партида ${Math.floor(offset / chunkSize) + 1}`, error);
       }
 
-      processedRefs += chunk.length;
-      cadastralLoadErrors = failedRefs;
+      processed += chunk.length;
       publishLoadedParcels(loaded);
-
-      const percent = totalRefs ? Math.round(processedRefs / totalRefs * 100) : 100;
-      setMapLoadProgress(percent, 'loading');
-      layerStatus.textContent = `АГКК: ${processedRefs} / ${totalRefs} ПИ (${percent}%) · ${loaded.length} геометрии заредени${failedRefs ? ` · ${failedRefs} недостъпни` : ''}`;
+      if (typeof onProgress === 'function') {
+        onProgress({ processed, total: rows.length, failedUniqueRefs, loadedCount: loaded.length });
+      }
     }
 
-    cadastralLoadErrors = failedRefs;
+    return { failedRows, failedUniqueRefs, batchErrors };
+  }
+
+  async function loadProjectParcels() {
+    if (cadastralLoadStarted) return;
+    cadastralLoadStarted = true;
+
+    const plannedRows = cadastralProjects.flatMap(project =>
+      project.parcels.map(parcelRef => ({ layerType: 'projects', project, parcelRef }))
+    );
+    const solarRows = operatingSolarProjects.flatMap(project =>
+      project.parcels.map(parcelRef => ({ layerType: 'solar', project, parcelRef }))
+    );
+    const rows = [...plannedRows, ...solarRows];
+    const totalRefs = new Set(rows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)).size;
+
+    setLayerLoadState('solar', 'loading', 'Зареждат се кадастралните ПИ за изградените ФЕЦ…');
+    setLayerLoadState('projects', 'loading', 'Зареждат се кадастралните ПИ за ПУП/ПИ проектите…');
+
+    const persistentCache = readPersistentCadastralCache();
+    const loaded = [];
+    const missingRows = [];
+    const groupedAll = rowsGroupedByRef(rows);
+
+    // 1) Immediate render from persistent cache.
+    groupedAll.forEach((matchingRows, ref) => {
+      const feature = featureFromCache(persistentCache, ref);
+      if (feature) {
+        cadastralCache.set(ref, feature);
+        addFeatureForRows(loaded, matchingRows, ref, feature);
+      } else {
+        missingRows.push(...matchingRows);
+      }
+    });
+
     publishLoadedParcels(loaded);
 
-    const solarLoaded = window.__bgwfSolarParcels.length;
-    const projectsLoaded = window.__bgwfProjectParcels.length;
-    const finalState = batchErrors ? 'error' : 'ready';
+    const cachedRefs = totalRefs - new Set(
+      missingRows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)
+    ).size;
 
-    setLayerLoadState('solar', finalState,
-      batchErrors ? `Заредени ${solarLoaded} ФЕЦ полигона; част от заявките към АГКК не отговориха.` : `Заредени ${solarLoaded} ФЕЦ полигона.`);
-    setLayerLoadState('projects', finalState,
-      batchErrors ? `Заредени ${projectsLoaded} ПУП/ПИ полигона; част от заявките към АГКК не отговориха.` : `Заредени ${projectsLoaded} ПУП/ПИ полигона.`);
-
-    layerStatus.textContent = batchErrors
-      ? `АГКК: приключено с предупреждение · ${loaded.length} геометрии · ${failedRefs} недостъпни ПИ`
-      : `АГКК: готово · ${loaded.length} геометрии заредени`;
-
-    setMapLoadProgress(100, batchErrors ? 'warning' : 'ready');
-    if (batchErrors) {
-      window.setTimeout(() => setMapLoadProgress(100, 'ready'), 2600);
+    if (cachedRefs > 0) {
+      const initialPercent = totalRefs ? Math.round(cachedRefs / totalRefs * 100) : 100;
+      layerStatus.textContent =
+        `Кеш: ${cachedRefs} / ${totalRefs} ПИ показани веднага · търся ${totalRefs - cachedRefs} липсващи…`;
+      setMapLoadProgress(initialPercent, 'loading');
+    } else {
+      layerStatus.textContent = `АГКК: 0 / ${totalRefs} ПИ · зареждане…`;
+      setMapLoadProgress(0, 'loading');
     }
+
+    // If the cache already contains everything, do not query AGKK again.
+    if (!missingRows.length) {
+      cadastralLoadErrors = 0;
+      setLayerLoadState('solar', 'ready', `Заредени ${window.__bgwfSolarParcels.length} ФЕЦ полигона от кеш.`);
+      setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона от кеш.`);
+      layerStatus.textContent = `Кеш: готово · ${loaded.length} геометрии показани веднага`;
+      setMapLoadProgress(100, 'ready');
+      return;
+    }
+
+    // 2) First network pass: only refs absent from cache.
+    const missingUniqueBefore = new Set(
+      missingRows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)
+    ).size;
+
+    const firstPass = await fetchRowsInBatches(missingRows, loaded, persistentCache, {
+      chunkSize: 22,
+      phaseLabel: 'АГКК',
+      onProgress: ({ processed, total, failedUniqueRefs, loadedCount }) => {
+        const doneMissingRefs = Math.min(
+          missingUniqueBefore,
+          Math.round((processed / Math.max(total, 1)) * missingUniqueBefore)
+        );
+        const doneOverall = Math.min(totalRefs, cachedRefs + doneMissingRefs);
+        const percent = totalRefs ? Math.round(doneOverall / totalRefs * 100) : 100;
+        cadastralLoadErrors = failedUniqueRefs;
+        setMapLoadProgress(percent, 'loading');
+        layerStatus.textContent =
+          `АГКК: ${doneOverall} / ${totalRefs} ПИ (${percent}%) · ${loadedCount} геометрии${failedUniqueRefs ? ` · ${failedUniqueRefs} за retry` : ''}`;
+      }
+    });
+
+    publishLoadedParcels(loaded);
+
+    // Deduplicate failed rows by layer/project/ref before retry.
+    const retryMap = new Map();
+    firstPass.failedRows.forEach(row => {
+      const ref = sanitizeParcelRef(row.parcelRef);
+      const key = `${row.layerType}|${row.project.id}|${ref}`;
+      retryMap.set(key, row);
+    });
+    const retryRows = [...retryMap.values()];
+    const retryUniqueRefs = new Set(
+      retryRows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)
+    ).size;
+
+    // The map is now fully usable. Only the missing refs continue in background.
+    if (retryRows.length) {
+      layerStatus.textContent =
+        `Картата е заредена · retry на ${retryUniqueRefs} недостъпни ПИ…`;
+      setMapLoadProgress(100, 'warning');
+
+      // Give the browser and AGKK a short rest, then retry in smaller batches.
+      await sleep(1400);
+
+      const retryPass = await fetchRowsInBatches(retryRows, loaded, persistentCache, {
+        chunkSize: 8,
+        pauseMs: 450,
+        phaseLabel: 'АГКК retry',
+        onProgress: ({ processed, total, failedUniqueRefs, loadedCount }) => {
+          const percent = total ? Math.round(processed / total * 100) : 100;
+          layerStatus.textContent =
+            `АГКК retry: ${processed} / ${total} (${percent}%) · ${loadedCount} геометрии${failedUniqueRefs ? ` · ${failedUniqueRefs} още липсват` : ''}`;
+        }
+      });
+
+      const remainingUnique = new Set(
+        retryPass.failedRows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)
+      ).size;
+
+      cadastralLoadErrors = remainingUnique;
+      publishLoadedParcels(loaded);
+
+      if (remainingUnique > 0) {
+        setLayerLoadState('solar', 'error',
+          `ФЕЦ слоят е зареден; ${remainingUnique} кадастрални ПИ остават недостъпни след retry.`);
+        setLayerLoadState('projects', 'error',
+          `ПУП/ПИ слоят е зареден; ${remainingUnique} кадастрални ПИ остават недостъпни след retry.`);
+        layerStatus.textContent =
+          `АГКК: готово с предупреждение · ${loaded.length} геометрии · ${remainingUnique} ПИ остават недостъпни`;
+        setMapLoadProgress(100, 'warning');
+        window.setTimeout(() => setMapLoadProgress(100, 'ready'), 2600);
+      } else {
+        setLayerLoadState('solar', 'ready', `Заредени ${window.__bgwfSolarParcels.length} ФЕЦ полигона.`);
+        setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона.`);
+        layerStatus.textContent =
+          `АГКК: готово · ${loaded.length} геометрии · retry възстанови всички липсващи ПИ`;
+        setMapLoadProgress(100, 'ready');
+      }
+    } else {
+      cadastralLoadErrors = 0;
+      setLayerLoadState('solar', 'ready', `Заредени ${window.__bgwfSolarParcels.length} ФЕЦ полигона.`);
+      setLayerLoadState('projects', 'ready', `Заредени ${window.__bgwfProjectParcels.length} ПУП/ПИ полигона.`);
+      layerStatus.textContent = `АГКК: готово · ${loaded.length} геометрии заредени`;
+      setMapLoadProgress(100, 'ready');
+    }
+
+    writePersistentCadastralCache(persistentCache);
   }
 
   function updateProjectParcels() {
