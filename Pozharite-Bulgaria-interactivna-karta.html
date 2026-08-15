@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.17 · 15.08.2026 16:14</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.18 · 15.08.2026 16:20</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -2501,7 +2501,29 @@ svg {
     return `${d.project.name}${mwText} · въведена/действаща от ${d.project.year} г. · ПИ ${d.parcelRef}${areaText}`;
   }
 
-  function fetchCadastralBatch(rows) {
+  const AGKK_CACHE_KEY = 'bgwf-agkk-parcels-v2';
+  const AGKK_CACHE_TTL_MS = 7 * 24 * 3600 * 1000;
+
+  function readAgkkCache() {
+    try {
+      const raw = localStorage.getItem(AGKK_CACHE_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === 'object' ? parsed : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function writeAgkkCache(cache) {
+    try {
+      localStorage.setItem(AGKK_CACHE_KEY, JSON.stringify(cache));
+    } catch (_) {
+      // Cache is an optimization only. Quota/privacy failures must not break the map.
+    }
+  }
+
+  function fetchCadastralBatch(rows, timeoutMs = 8000) {
     const refs = [...new Set(rows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean))];
     if (!refs.length) return Promise.resolve({ features: [] });
     const quoted = refs.map(ref => `'${ref}'`).join(',');
@@ -2513,18 +2535,19 @@ svg {
       f: 'json',
     });
 
-    // JSONP deliberately avoids CORS restrictions when the HTML is opened
-    // directly from disk. ArcGIS REST supports callback-based JSON responses.
     return new Promise((resolve, reject) => {
       const callbackName = `__bgwfAgkkBatch_${Date.now()}_${Math.random().toString(36).slice(2)}`;
       const script = document.createElement('script');
+      let settled = false;
       const cleanup = (error, value) => {
+        if (settled) return;
+        settled = true;
         window.clearTimeout(timer);
         script.remove();
         try { delete window[callbackName]; } catch (_) {}
         error ? reject(error) : resolve(value);
       };
-      const timer = window.setTimeout(() => cleanup(new Error('АГКК: timeout')), 18000);
+      const timer = window.setTimeout(() => cleanup(new Error('АГКК: timeout')), timeoutMs);
       window[callbackName] = value => cleanup(null, value);
       script.onerror = () => cleanup(new Error('АГКК: network error'));
       params.set('callback', callbackName);
@@ -2541,58 +2564,104 @@ svg {
     const plannedRows = cadastralProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'projects', project, parcelRef })));
     const solarRows = operatingSolarProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'solar', project, parcelRef })));
     const rows = [...plannedRows, ...solarRows];
-    cadastralExpected = rows.length;
+
+    const rowsByRef = new Map();
+    rows.forEach(row => {
+      const ref = sanitizeParcelRef(row.parcelRef);
+      if (!ref) return;
+      const arr = rowsByRef.get(ref) ?? [];
+      arr.push(row);
+      rowsByRef.set(ref, arr);
+    });
+    const uniqueRefs = [...rowsByRef.keys()];
+    cadastralExpected = uniqueRefs.length;
     cadastralProcessed = 0;
     setLayerButtonsLoading(['solar', 'projects'], true);
-    setLoadingIndicator(true, `1/2 · Зареждане на ФЕЦ и ПУП/ПИ от АГКК · 0/${rows.length}`);
 
     const loaded = [];
+    const loadedRefs = new Set();
     let failedRefs = 0;
-    const chunkSize = 22;
-    try {
-      for (let offset = 0; offset < rows.length; offset += chunkSize) {
-        const chunk = rows.slice(offset, offset + chunkSize);
-        const payload = await fetchCadastralBatch(chunk);
-        if (payload?.error) throw new Error(payload.error.message ?? 'АГКК query error');
-        const rowsByRef = new Map();
-        chunk.forEach(row => {
-          const ref = sanitizeParcelRef(row.parcelRef);
-          const arr = rowsByRef.get(ref) ?? [];
-          arr.push(row);
-          rowsByRef.set(ref, arr);
-        });
-        const returnedRefs = new Set();
-        (payload?.features ?? []).forEach(esriFeature => {
-          const attrs = esriFeature?.attributes ?? {};
-          const ref = sanitizeParcelRef(attrs.nationalcadastralref);
-          const matchingRows = rowsByRef.get(ref) ?? [];
-          const rings = esriFeature?.geometry?.rings;
-          if (!matchingRows.length || !rings?.length) return;
-          returnedRefs.add(ref);
-          matchingRows.forEach(row => loaded.push({
-            ...row,
-            feature: { type: 'Feature', properties: attrs, geometry: { type: 'Polygon', coordinates: rings } },
-          }));
-        });
-        failedRefs += [...rowsByRef.keys()].filter(ref => !returnedRefs.has(ref)).length;
-        cadastralProcessed = Math.min(rows.length, offset + chunk.length);
+    const cache = readAgkkCache();
+    const now = Date.now();
 
-        // Показвай парцелите прогресивно, вместо картата да чака последната партида.
+    // Hydrate from cache immediately, so repeat visits paint parcels without waiting for AGKK.
+    uniqueRefs.forEach(ref => {
+      const cached = cache[ref];
+      if (!cached?.rings?.length || !cached?.attributes || (now - Number(cached.savedAt || 0)) > AGKK_CACHE_TTL_MS) return;
+      loadedRefs.add(ref);
+      (rowsByRef.get(ref) ?? []).forEach(row => loaded.push({
+        ...row,
+        feature: {
+          type: 'Feature',
+          properties: cached.attributes,
+          geometry: { type: 'Polygon', coordinates: cached.rings },
+        },
+      }));
+    });
+
+    window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
+    window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
+    cadastralProcessed = loadedRefs.size;
+    setLoadingIndicator(true, `1/2 · АГКК · ${cadastralProcessed}/${uniqueRefs.length} ПИ${loadedRefs.size ? ' · cache' : ''}`);
+    updateRegionLayers();
+
+    const missingRefs = uniqueRefs.filter(ref => !loadedRefs.has(ref));
+    const batchSize = 48;
+    const batches = [];
+    for (let i = 0; i < missingRefs.length; i += batchSize) {
+      const refs = missingRefs.slice(i, i + batchSize);
+      batches.push(refs.flatMap(ref => rowsByRef.get(ref) ?? []));
+    }
+
+    let nextBatch = 0;
+    const workerCount = Math.min(6, batches.length);
+
+    async function worker() {
+      while (true) {
+        const batchIndex = nextBatch++;
+        if (batchIndex >= batches.length) return;
+        const chunk = batches[batchIndex];
+        const chunkRefs = [...new Set(chunk.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean))];
+        try {
+          const payload = await fetchCadastralBatch(chunk, 8000);
+          if (payload?.error) throw new Error(payload.error.message ?? 'АГКК query error');
+          const returnedRefs = new Set();
+          (payload?.features ?? []).forEach(esriFeature => {
+            const attrs = esriFeature?.attributes ?? {};
+            const ref = sanitizeParcelRef(attrs.nationalcadastralref);
+            const rings = esriFeature?.geometry?.rings;
+            if (!ref || !rings?.length || loadedRefs.has(ref)) return;
+            returnedRefs.add(ref);
+            loadedRefs.add(ref);
+            cache[ref] = { attributes: attrs, rings, savedAt: Date.now() };
+            (rowsByRef.get(ref) ?? []).forEach(row => loaded.push({
+              ...row,
+              feature: { type: 'Feature', properties: attrs, geometry: { type: 'Polygon', coordinates: rings } },
+            }));
+          });
+          failedRefs += chunkRefs.filter(ref => !returnedRefs.has(ref) && !loadedRefs.has(ref)).length;
+        } catch (error) {
+          failedRefs += chunkRefs.filter(ref => !loadedRefs.has(ref)).length;
+          console.warn(`АГКК партида ${batchIndex + 1}/${batches.length} не се зареди`, error);
+        }
+
+        cadastralProcessed = Math.min(uniqueRefs.length, loadedRefs.size + failedRefs);
         window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
         window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
         cadastralLoadErrors = failedRefs;
-        setLoadingIndicator(true, `1/2 · Зареждане на ФЕЦ и ПУП/ПИ от АГКК · ${cadastralProcessed}/${rows.length}`);
+        writeAgkkCache(cache);
+        setLoadingIndicator(true, `1/2 · АГКК · ${cadastralProcessed}/${uniqueRefs.length} ПИ · заредени ${loadedRefs.size}`);
         updateRegionLayers();
       }
+    }
+
+    try {
+      await Promise.all(Array.from({ length: workerCount }, () => worker()));
+      cadastralLoadState = loadedRefs.size ? 'ok' : 'error';
+    } finally {
       cadastralLoadErrors = failedRefs;
-      cadastralLoadState = 'ok';
-    } catch (error) {
-      cadastralLoadErrors = Math.max(failedRefs, rows.length - cadastralProcessed);
-      cadastralLoadState = 'error';
       window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
       window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
-      console.warn('АГКК INSPIRE слоят не отговори за всички партиди', error);
-    } finally {
       setLayerButtonsLoading(['solar', 'projects'], false);
       updateRegionLayers();
     }
@@ -2820,7 +2889,12 @@ svg {
         CQL_FILTER: `bbox(geom,22.3,41.2,28.7,44.3) AND time DURING ${fromIso}/${toIso}`,
       });
       try {
-        const response = await fetch(`${EUMETVIEW_WFS}?${params.toString()}`, { mode: 'cors', cache: 'no-store' });
+        const controller = new AbortController();
+        const timer = window.setTimeout(() => controller.abort(), 5500);
+        const response = await fetch(`${EUMETVIEW_WFS}?${params.toString()}`, {
+          mode: 'cors', cache: 'no-store', signal: controller.signal,
+        });
+        window.clearTimeout(timer);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const payload = await response.json();
         return (payload?.features || []).map(f => normalizeSentinelFeature(f, satellite)).filter(Boolean);
@@ -3107,12 +3181,18 @@ svg {
   });
 
   // Историческите пожари и RED III са налични веднага.
-  // Асинхронните слоеве се зареждат последователно: първо АГКК, Sentinel-3 винаги последен.
+  // АГКК се зарежда паралелно на партиди и използва browser cache; Sentinel-3 се стартира последен.
   async function initializeAsyncLayers() {
     setLoadingIndicator(true, '1/2 · Зареждане на ФЕЦ и ПУП/ПИ от АГКК…');
     try {
       await loadProjectParcels();
+    } catch (error) {
+      console.warn('АГКК слой: обща грешка', error);
+    }
+    try {
       await loadLiveSentinelFires();
+    } catch (error) {
+      console.warn('Sentinel-3 слой: обща грешка', error);
     } finally {
       setLoadingIndicator(false);
       setLayerButtonsLoading(['solar', 'projects', 'live'], false);
