@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.4</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.17 · 15.08.2026 16:14</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -841,9 +841,9 @@ svg {
     </div>
   </div>
   <div class="bgwf-map-wrap">
-    <div class="bgwf-loading-indicator" data-loading-indicator hidden role="status" aria-live="polite">
+    <div class="bgwf-loading-indicator" data-loading-indicator role="status" aria-live="polite" aria-busy="true">
       <span class="bgwf-spinner" aria-hidden="true"></span>
-      <span data-loading-text>Зареждане…</span>
+      <span data-loading-text>Зареждане на картата…</span>
     </div>
     <div class="bgwf-zoom-controls" aria-label="Мащабиране на картата">
       <button type="button" class="bgwf-map-button" data-zoom-in aria-label="Приближи картата" title="Приближи">+</button>
@@ -910,37 +910,41 @@ svg {
     z-index: 1;
   }
   #bg-wildfires-map .bgwf-loading-indicator {
-    position: absolute;
-    z-index: 45;
+    position: fixed;
+    z-index: 100000;
     top: 50%;
     left: 50%;
-    display: inline-flex;
-    max-width: min(88%, 28rem);
+    display: flex;
+    min-width: min(82vw, 260px);
+    max-width: min(90vw, 34rem);
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.55rem 0.75rem;
-    border: 1px solid color-mix(in srgb, var(--foreground) 16%, var(--border));
-    border-radius: var(--radius-full);
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--foreground) 20%, var(--border));
+    border-radius: var(--radius-2xl);
     color: var(--foreground);
-    background: color-mix(in srgb, var(--background) 94%, transparent);
-    box-shadow: 0 4px 18px rgb(0 0 0 / 16%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    font-size: var(--font-size-small);
-    line-height: 1.25;
+    background: color-mix(in srgb, var(--background) 97%, transparent);
+    box-shadow: 0 8px 32px rgb(0 0 0 / 24%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.3;
     text-align: center;
     pointer-events: none;
     transform: translate(-50%, -50%);
   }
-  #bg-wildfires-map .bgwf-loading-indicator[hidden] { display: none; }
+  #bg-wildfires-map .bgwf-loading-indicator[hidden] { display: none !important; }
   #bg-wildfires-map .bgwf-spinner {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
     flex: 0 0 auto;
-    border: 2.5px solid color-mix(in srgb, var(--foreground) 18%, transparent);
+    border: 3px solid color-mix(in srgb, var(--foreground) 18%, transparent);
     border-top-color: var(--primary);
+    border-right-color: color-mix(in srgb, var(--primary) 55%, transparent);
     border-radius: 50%;
-    animation: bgwf-spin 0.78s linear infinite;
+    animation: bgwf-spin 0.72s linear infinite;
   }
   #bg-wildfires-map .bgwf-layer-toggle.is-loading::after {
     width: 12px;
@@ -2283,6 +2287,7 @@ svg {
   function setLoadingIndicator(visible, text = 'Зареждане…') {
     if (!loadingIndicator) return;
     loadingIndicator.hidden = !visible;
+    loadingIndicator.setAttribute('aria-busy', String(visible));
     if (loadingText && text) loadingText.textContent = text;
   }
 
@@ -3104,6 +3109,7 @@ svg {
   // Историческите пожари и RED III са налични веднага.
   // Асинхронните слоеве се зареждат последователно: първо АГКК, Sentinel-3 винаги последен.
   async function initializeAsyncLayers() {
+    setLoadingIndicator(true, '1/2 · Зареждане на ФЕЦ и ПУП/ПИ от АГКК…');
     try {
       await loadProjectParcels();
       await loadLiveSentinelFires();
