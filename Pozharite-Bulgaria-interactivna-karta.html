@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.29 · 15.08.2026 18:10</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.30 · 15.08.2026 18:16</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -821,8 +821,7 @@ svg {
 </head>
 <body>
 <div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
-  <div class="bgwf-version-badge" aria-label="Версия на картата">v0.29</div>
-  <div class="viz-row bgwf-summary" aria-label="Обобщение">
+<div class="viz-row bgwf-summary" aria-label="Обобщение">
     <span><strong data-total-count></strong> периметъра</span>
     <span><strong data-total-area></strong> ha картографирана площ</span>
     <span><strong data-largest></strong> ha най-голям пожар</span>
@@ -833,7 +832,7 @@ svg {
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година</span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.30</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -885,24 +884,7 @@ svg {
 </div>
 
 <style>
-  #bg-wildfires-map .bgwf-version-badge {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    margin: 0 0 0.35rem auto;
-    padding: 0.16rem 0.46rem;
-    border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--border));
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--primary) 7%, var(--card));
-    color: var(--muted-foreground);
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.04em;
-    user-select: none;
-  }
-
-  #bg-wildfires-map { color: var(--foreground); }
+#bg-wildfires-map { color: var(--foreground); }
   #bg-wildfires-map .bgwf-summary { justify-content: space-between; margin-bottom: 0.5rem; }
   #bg-wildfires-map .bgwf-important-note {
     margin-bottom: 0.55rem;
