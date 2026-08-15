@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.18 · 15.08.2026 16:20</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.19 · 15.08.2026 16:41</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1261,6 +1261,27 @@ svg {
   }
 </style>
 
+<script>
+// Независим watchdog: дори при грешка във външен слой loader-ът не може да остане безкрайно.
+(() => {
+  const startedAt = Date.now();
+  window.__bgwfBootWatchdog = window.setTimeout(() => {
+    const indicator = document.querySelector('[data-loading-indicator]');
+    if (indicator) indicator.hidden = true;
+    console.warn('BGWF watchdog: loader hidden after 25 s', { elapsedMs: Date.now() - startedAt });
+  }, 25000);
+  const markBootError = (message) => {
+    const text = document.querySelector('[data-loading-text]');
+    if (text) text.textContent = `Грешка при зареждане: ${message}`;
+    window.setTimeout(() => {
+      const indicator = document.querySelector('[data-loading-indicator]');
+      if (indicator) indicator.hidden = true;
+    }, 3500);
+  };
+  window.addEventListener('error', event => markBootError(event.message || 'JavaScript'));
+  window.addEventListener('unhandledrejection', event => markBootError(event.reason?.message || 'Promise'));
+})();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
 (() => {
@@ -2523,7 +2544,7 @@ svg {
     }
   }
 
-  function fetchCadastralBatch(rows, timeoutMs = 8000) {
+  function fetchCadastralBatch(rows, totalTimeoutMs = 4500) {
     const refs = [...new Set(rows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean))];
     if (!refs.length) return Promise.resolve({ features: [] });
     const quoted = refs.map(ref => `'${ref}'`).join(',');
@@ -2534,32 +2555,56 @@ svg {
       outSR: '4326',
       f: 'json',
     });
+    const url = `https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?${params}`;
+    const started = performance.now();
 
-    return new Promise((resolve, reject) => {
-      const callbackName = `__bgwfAgkkBatch_${Date.now()}_${Math.random().toString(36).slice(2)}`;
-      const script = document.createElement('script');
-      let settled = false;
-      const cleanup = (error, value) => {
-        if (settled) return;
-        settled = true;
-        window.clearTimeout(timer);
-        script.remove();
-        try { delete window[callbackName]; } catch (_) {}
-        error ? reject(error) : resolve(value);
-      };
-      const timer = window.setTimeout(() => cleanup(new Error('АГКК: timeout')), timeoutMs);
-      window[callbackName] = value => cleanup(null, value);
-      script.onerror = () => cleanup(new Error('АГКК: network error'));
-      params.set('callback', callbackName);
-      script.src = `https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?${params}`;
-      document.head.appendChild(script);
-    });
+    // GitHub Pages: първо нормален fetch. Той е по-бърз и може да бъде abort-нат.
+    return (async () => {
+      const fetchBudget = Math.min(2600, Math.max(1200, totalTimeoutMs - 900));
+      const controller = new AbortController();
+      const abortTimer = window.setTimeout(() => controller.abort(), fetchBudget);
+      try {
+        const response = await fetch(url, { mode: 'cors', cache: 'no-store', signal: controller.signal });
+        if (!response.ok) throw new Error(`АГКК HTTP ${response.status}`);
+        return await response.json();
+      } catch (fetchError) {
+        // Fallback JSONP само за остатъка от времевия бюджет.
+        const elapsed = performance.now() - started;
+        const remaining = Math.max(500, totalTimeoutMs - elapsed);
+        return await new Promise((resolve, reject) => {
+          const callbackName = `__bgwfAgkkBatch_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+          const script = document.createElement('script');
+          let settled = false;
+          const cleanup = (error, value) => {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timer);
+            script.remove();
+            // Оставяме no-op за кратко, ако отговорът пристигне след timeout.
+            window[callbackName] = () => {};
+            window.setTimeout(() => { try { delete window[callbackName]; } catch (_) {} }, 15000);
+            error ? reject(error) : resolve(value);
+          };
+          const timer = window.setTimeout(() => cleanup(new Error('АГКК: timeout')), remaining);
+          window[callbackName] = value => cleanup(null, value);
+          script.onerror = () => cleanup(fetchError instanceof Error ? fetchError : new Error('АГКК: network error'));
+          const jsonpParams = new URLSearchParams(params);
+          jsonpParams.set('callback', callbackName);
+          script.src = `https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?${jsonpParams}`;
+          document.head.appendChild(script);
+        });
+      } finally {
+        window.clearTimeout(abortTimer);
+      }
+    })();
   }
 
   async function loadProjectParcels() {
     if (cadastralLoadStarted) return;
     cadastralLoadStarted = true;
     cadastralLoadState = 'loading';
+    const diag = window.__bgwfDiagnostics ??= { version: '0.19', startedAt: new Date().toISOString() };
+    diag.agkk = { state: 'loading', startedAt: Date.now(), loaded: 0, failed: 0 };
 
     const plannedRows = cadastralProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'projects', project, parcelRef })));
     const solarRows = operatingSolarProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'solar', project, parcelRef })));
@@ -2580,88 +2625,93 @@ svg {
 
     const loaded = [];
     const loadedRefs = new Set();
-    let failedRefs = 0;
+    const failedRefs = new Set();
     const cache = readAgkkCache();
     const now = Date.now();
 
-    // Hydrate from cache immediately, so repeat visits paint parcels without waiting for AGKK.
     uniqueRefs.forEach(ref => {
       const cached = cache[ref];
       if (!cached?.rings?.length || !cached?.attributes || (now - Number(cached.savedAt || 0)) > AGKK_CACHE_TTL_MS) return;
       loadedRefs.add(ref);
       (rowsByRef.get(ref) ?? []).forEach(row => loaded.push({
         ...row,
-        feature: {
-          type: 'Feature',
-          properties: cached.attributes,
-          geometry: { type: 'Polygon', coordinates: cached.rings },
-        },
+        feature: { type: 'Feature', properties: cached.attributes, geometry: { type: 'Polygon', coordinates: cached.rings } },
       }));
     });
 
-    window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
-    window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
-    cadastralProcessed = loadedRefs.size;
-    setLoadingIndicator(true, `1/2 · АГКК · ${cadastralProcessed}/${uniqueRefs.length} ПИ${loadedRefs.size ? ' · cache' : ''}`);
-    updateRegionLayers();
+    const publish = (message) => {
+      window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
+      window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
+      cadastralLoadErrors = failedRefs.size;
+      cadastralProcessed = Math.min(uniqueRefs.length, loadedRefs.size + failedRefs.size);
+      diag.agkk.loaded = loadedRefs.size;
+      diag.agkk.failed = failedRefs.size;
+      diag.agkk.processed = cadastralProcessed;
+      if (message) setLoadingIndicator(true, message);
+      updateRegionLayers();
+    };
+
+    publish(`1/2 · АГКК · ${loadedRefs.size}/${uniqueRefs.length} ПИ${loadedRefs.size ? ' · cache' : ''}`);
 
     const missingRefs = uniqueRefs.filter(ref => !loadedRefs.has(ref));
-    const batchSize = 48;
+    const batchSize = 30;
     const batches = [];
     for (let i = 0; i < missingRefs.length; i += batchSize) {
       const refs = missingRefs.slice(i, i + batchSize);
       batches.push(refs.flatMap(ref => rowsByRef.get(ref) ?? []));
     }
 
+    const deadline = performance.now() + 16000;
     let nextBatch = 0;
-    const workerCount = Math.min(6, batches.length);
+    const workerCount = Math.min(4, batches.length);
 
-    async function worker() {
+    async function worker(workerId) {
       while (true) {
+        if (performance.now() >= deadline) return;
         const batchIndex = nextBatch++;
         if (batchIndex >= batches.length) return;
         const chunk = batches[batchIndex];
         const chunkRefs = [...new Set(chunk.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean))];
+        const remainingBudget = Math.max(1200, Math.min(4500, deadline - performance.now()));
         try {
-          const payload = await fetchCadastralBatch(chunk, 8000);
+          const payload = await fetchCadastralBatch(chunk, remainingBudget);
           if (payload?.error) throw new Error(payload.error.message ?? 'АГКК query error');
           const returnedRefs = new Set();
           (payload?.features ?? []).forEach(esriFeature => {
             const attrs = esriFeature?.attributes ?? {};
             const ref = sanitizeParcelRef(attrs.nationalcadastralref);
             const rings = esriFeature?.geometry?.rings;
-            if (!ref || !rings?.length || loadedRefs.has(ref)) return;
+            if (!ref || !rings?.length) return;
             returnedRefs.add(ref);
-            loadedRefs.add(ref);
-            cache[ref] = { attributes: attrs, rings, savedAt: Date.now() };
-            (rowsByRef.get(ref) ?? []).forEach(row => loaded.push({
-              ...row,
-              feature: { type: 'Feature', properties: attrs, geometry: { type: 'Polygon', coordinates: rings } },
-            }));
+            if (!loadedRefs.has(ref)) {
+              loadedRefs.add(ref);
+              failedRefs.delete(ref);
+              cache[ref] = { attributes: attrs, rings, savedAt: Date.now() };
+              (rowsByRef.get(ref) ?? []).forEach(row => loaded.push({
+                ...row,
+                feature: { type: 'Feature', properties: attrs, geometry: { type: 'Polygon', coordinates: rings } },
+              }));
+            }
           });
-          failedRefs += chunkRefs.filter(ref => !returnedRefs.has(ref) && !loadedRefs.has(ref)).length;
+          chunkRefs.forEach(ref => { if (!returnedRefs.has(ref) && !loadedRefs.has(ref)) failedRefs.add(ref); });
         } catch (error) {
-          failedRefs += chunkRefs.filter(ref => !loadedRefs.has(ref)).length;
-          console.warn(`АГКК партида ${batchIndex + 1}/${batches.length} не се зареди`, error);
+          chunkRefs.forEach(ref => { if (!loadedRefs.has(ref)) failedRefs.add(ref); });
+          console.warn(`АГКК batch ${batchIndex + 1}/${batches.length}, worker ${workerId}`, error);
         }
-
-        cadastralProcessed = Math.min(uniqueRefs.length, loadedRefs.size + failedRefs);
-        window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
-        window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
-        cadastralLoadErrors = failedRefs;
         writeAgkkCache(cache);
-        setLoadingIndicator(true, `1/2 · АГКК · ${cadastralProcessed}/${uniqueRefs.length} ПИ · заредени ${loadedRefs.size}`);
-        updateRegionLayers();
+        publish(`1/2 · АГКК · ${Math.min(uniqueRefs.length, loadedRefs.size + failedRefs.size)}/${uniqueRefs.length} · заредени ${loadedRefs.size}`);
       }
     }
 
     try {
-      await Promise.all(Array.from({ length: workerCount }, () => worker()));
+      await Promise.all(Array.from({ length: workerCount }, (_, i) => worker(i + 1)));
+      // Всичко неполучено до крайния срок се отчита като неуспешно, без да блокира картата.
+      uniqueRefs.forEach(ref => { if (!loadedRefs.has(ref)) failedRefs.add(ref); });
       cadastralLoadState = loadedRefs.size ? 'ok' : 'error';
+      diag.agkk.state = cadastralLoadState;
+      diag.agkk.elapsedMs = Date.now() - diag.agkk.startedAt;
     } finally {
-      cadastralLoadErrors = failedRefs;
-      window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
-      window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
+      publish();
       setLayerButtonsLoading(['solar', 'projects'], false);
       updateRegionLayers();
     }
@@ -2874,35 +2924,29 @@ svg {
     const variants = [
       { typeNames: `copernicus:${typeName}`, outputFormat: 'application/json' },
       { typeNames: typeName, outputFormat: 'application/json' },
-      { typeNames: `copernicus:${typeName}`, outputFormat: 'application/json; subtype=geojson' },
     ];
     let lastError = null;
     for (const variant of variants) {
       const params = new URLSearchParams({
-        service: 'WFS',
-        version: '2.0.0',
-        request: 'GetFeature',
-        typeNames: variant.typeNames,
-        outputFormat: variant.outputFormat,
-        srsName: 'EPSG:4326',
-        count: '1000',
+        service: 'WFS', version: '2.0.0', request: 'GetFeature',
+        typeNames: variant.typeNames, outputFormat: variant.outputFormat,
+        srsName: 'EPSG:4326', count: '1000',
         CQL_FILTER: `bbox(geom,22.3,41.2,28.7,44.3) AND time DURING ${fromIso}/${toIso}`,
       });
+      const controller = new AbortController();
+      const timer = window.setTimeout(() => controller.abort(), 2500);
       try {
-        const controller = new AbortController();
-        const timer = window.setTimeout(() => controller.abort(), 5500);
-        const response = await fetch(`${EUMETVIEW_WFS}?${params.toString()}`, {
-          mode: 'cors', cache: 'no-store', signal: controller.signal,
-        });
-        window.clearTimeout(timer);
+        const response = await fetch(`${EUMETVIEW_WFS}?${params.toString()}`, { mode: 'cors', cache: 'no-store', signal: controller.signal });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const payload = await response.json();
         return (payload?.features || []).map(f => normalizeSentinelFeature(f, satellite)).filter(Boolean);
       } catch (error) {
         lastError = error;
+      } finally {
+        window.clearTimeout(timer);
       }
     }
-    throw new Error(`${satellite}: ${lastError?.message || 'WFS request failed'}`);
+    throw new Error(`${satellite}: ${lastError?.name === 'AbortError' ? 'timeout' : (lastError?.message || 'WFS request failed')}`);
   }
 
   function liveFireLabel(d) {
@@ -3183,20 +3227,33 @@ svg {
   // Историческите пожари и RED III са налични веднага.
   // АГКК се зарежда паралелно на партиди и използва browser cache; Sentinel-3 се стартира последен.
   async function initializeAsyncLayers() {
-    setLoadingIndicator(true, '1/2 · Зареждане на ФЕЦ и ПУП/ПИ от АГКК…');
+    const diag = window.__bgwfDiagnostics ??= { version: '0.19', startedAt: new Date().toISOString() };
+    const hardStop = window.setTimeout(() => {
+      diag.watchdog = '24s';
+      setLoadingIndicator(false);
+      setLayerButtonsLoading(['solar', 'projects', 'live'], false);
+      console.warn('BGWF async watchdog: background loading exceeded 24 s');
+    }, 24000);
     try {
-      await loadProjectParcels();
-    } catch (error) {
-      console.warn('АГКК слой: обща грешка', error);
-    }
-    try {
-      await loadLiveSentinelFires();
-    } catch (error) {
-      console.warn('Sentinel-3 слой: обща грешка', error);
+      setLoadingIndicator(true, '1/2 · Зареждане на ФЕЦ и ПУП/ПИ от АГКК…');
+      try {
+        await loadProjectParcels();
+      } catch (error) {
+        console.warn('АГКК слой: обща грешка', error);
+      }
+      // Sentinel-3 винаги е последен, но има собствен максимален timeout ~5 s.
+      try {
+        await loadLiveSentinelFires();
+      } catch (error) {
+        console.warn('Sentinel-3 слой: обща грешка', error);
+      }
     } finally {
+      window.clearTimeout(hardStop);
+      if (window.__bgwfBootWatchdog) window.clearTimeout(window.__bgwfBootWatchdog);
       setLoadingIndicator(false);
       setLayerButtonsLoading(['solar', 'projects', 'live'], false);
       updateRegionLayers();
+      diag.finishedAt = new Date().toISOString();
     }
   }
 
