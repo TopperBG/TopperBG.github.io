@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.52 · 16.08.2026 20:00</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.54 · 16.08.2026 20:18</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1003,6 +1003,67 @@ svg {
     transition: opacity 120ms ease;
   }
 
+
+  /* v0.54: robust zoom controls on desktop and mobile */
+  #bg-wildfires-map .bgwf-map-wrap {
+    position: relative;
+  }
+
+  #bg-wildfires-map .bgwf-zoom-controls {
+    position: absolute !important;
+    top: .5rem !important;
+    right: .5rem !important;
+    z-index: 100 !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: .28rem;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #bg-wildfires-map .bgwf-zoom-controls button {
+    display: inline-flex !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    font-size: 18px;
+    line-height: 1;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #bg-wildfires-map .bgwf-zoom-controls [data-zoom-reset] {
+    font-size: 14px;
+  }
+
+  @media (max-width: 700px) {
+    #bg-wildfires-map .bgwf-zoom-controls {
+      top: .42rem !important;
+      right: .42rem !important;
+      gap: .24rem;
+    }
+
+    #bg-wildfires-map .bgwf-zoom-controls button {
+      width: 38px !important;
+      height: 38px !important;
+      min-width: 38px !important;
+      min-height: 38px !important;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+
+    #bg-wildfires-map .bgwf-zoom-controls [data-zoom-reset] {
+      font-size: 15px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1014,10 +1075,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.52</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.54</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.52</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.54</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2407,7 +2468,8 @@ svg {
   const svg = d3.select(root.querySelector(".bgwf-map"));
   const width = 736;
   const height = 500;
-  const projection = d3.geoMercator().fitExtent([[24, 22], [712, 478]], provinces);
+  // More breathing room at zoom x1: Bulgaria occupies ~86% of the previous fitted size.
+  const projection = d3.geoMercator().fitExtent([[72, 54], [664, 446]], provinces);
   const path = d3.geoPath(projection);
   const mapViewport = svg.append("g").attr("class", "bgwf-map-viewport");
 
