@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.44 · 15.08.2026 21:44</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.47 · 16.08.2026 01:10</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1014,10 +1014,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.44</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.47</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.44</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.47</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2542,9 +2542,10 @@ svg {
     }
   }
   let activeYear = null;
+  let layerYearScope = 2026;
   let activeProvinceFeature = null;
   let currentZoomTransform = d3.zoomIdentity;
-  const layerVisibility = { solar: true, projects: true, future: true, live: false };
+  const layerVisibility = { solar: true, projects: true, future: false, live: false };
   const layerStatus = root.querySelector('[data-layer-status]');
   const filterPanel = root.querySelector('.bgwf-floating-controls');
   const mobileFooter = root.querySelector('[data-mobile-footer]');
@@ -3114,7 +3115,7 @@ svg {
   function updateProjectParcels() {
     const all = window.__bgwfProjectParcels ?? [];
     const visible = layerVisibility.projects
-      ? all.filter(d => activeYear == null || d.project.year <= activeYear)
+      ? all.filter(d => layerYearScope == null || d.project.year <= layerYearScope)
       : [];
 
     projectParcelLayer.selectAll('path')
@@ -3145,7 +3146,7 @@ svg {
   function updateSolarParcels() {
     const all = window.__bgwfSolarParcels ?? [];
     const visible = layerVisibility.solar
-      ? all.filter(d => activeYear == null || d.project.year <= activeYear)
+      ? all.filter(d => layerYearScope == null || d.project.year <= layerYearScope)
       : [];
 
     solarParcelLayer.selectAll('path')
@@ -3221,13 +3222,13 @@ svg {
 
     const loadedProjects = window.__bgwfProjectParcels?.length ?? 0;
     const loadedSolar = window.__bgwfSolarParcels?.length ?? 0;
-    const scopeText = activeYear == null ? 'всички години' : `${activeYear} г.`;
+    const scopeText = layerYearScope == null ? 'всички години' : `${layerYearScope} г.`;
 
     const projectCount = layerVisibility.projects
-      ? (window.__bgwfProjectParcels ?? []).filter(d => activeYear == null || d.project.year <= activeYear).length
+      ? (window.__bgwfProjectParcels ?? []).filter(d => layerYearScope == null || d.project.year <= layerYearScope).length
       : 0;
     const solarVisibleRows = layerVisibility.solar
-      ? (window.__bgwfSolarParcels ?? []).filter(d => activeYear == null || d.project.year <= activeYear)
+      ? (window.__bgwfSolarParcels ?? []).filter(d => layerYearScope == null || d.project.year <= layerYearScope)
       : [];
     const solarCount = solarVisibleRows.length;
     const solarProjectCount = new Set(solarVisibleRows.map(d => d.project.id)).size;
@@ -3351,7 +3352,7 @@ svg {
   }
 
   function updateLiveFires() {
-    const liveAllowedByYear = activeYear == null || activeYear === 2026;
+    const liveAllowedByYear = activeYear === false ? (layerYearScope == null || layerYearScope === 2026) : (activeYear == null || activeYear === 2026);
     const visible = layerVisibility.live && liveAllowedByYear ? liveFireDetections : [];
     liveFireLayer.selectAll('g.bgwf-live-fire')
       .data(visible, d => d.id)
@@ -3752,7 +3753,15 @@ svg {
   }
 
   function setYearFilter(year) {
-    activeYear = year;
+    // Re-clicking the active year hides all historical fires.
+    // null = all years; false = no historical fires.
+    const nextYear = (year !== null && activeYear === year) ? false : year;
+    activeYear = nextYear;
+    // Hiding historical fires must not hide/filter out FEC/PUP layers.
+    // Keep the last selected year as the independent VЕИ scope.
+    if (year !== null) layerYearScope = year;
+    else if (activeYear !== false) layerYearScope = null;
+
     tooltip.hidden = true;
     restoreTransformedFireCircle();
     if (selected) {
@@ -3761,9 +3770,11 @@ svg {
     }
     clearEffisPerimeter();
 
-    const filtered = activeYear == null
-      ? allPoints
-      : allPoints.filter(d => d.year === activeYear);
+    const filtered = activeYear === false
+      ? []
+      : activeYear == null
+        ? allPoints
+        : allPoints.filter(d => d.year === activeYear);
 
     updateSummary(filtered);
     updateDensity(filtered);
@@ -3771,24 +3782,34 @@ svg {
     updateRegionLayers();
 
     root.querySelectorAll(".bgwf-year-filter[data-year]").forEach(button => {
-      const buttonYear = button.dataset.year === "all" ? null : Number(button.dataset.year);
-      button.setAttribute("aria-pressed", String(buttonYear === activeYear));
+      const value = button.dataset.year === "all" ? null : Number(button.dataset.year);
+      const pressed = activeYear !== false && (
+        (activeYear == null && value == null) ||
+        (activeYear != null && activeYear === value)
+      );
+      button.setAttribute("aria-pressed", String(pressed));
     });
+
     root.querySelector('.bgwf-layer-toggle[data-layer="live"]')
-      ?.classList.toggle('is-year-muted', activeYear != null && activeYear !== 2026);
+      ?.classList.toggle('is-year-muted', activeYear != null && activeYear !== false && activeYear !== 2026);
 
     const title = root.querySelector("#bgwf-map-title");
     if (title) {
-      title.textContent = activeYear == null
-        ? "Пожари над 1 хектар в България, 13.08.2021–13.08.2026"
-        : `Пожари над 1 хектар в България през ${activeYear} г.`;
+      title.textContent = activeYear === false
+        ? "Историческите пожари са скрити"
+        : activeYear == null
+          ? "Пожари над 1 хектар в България, 13.08.2021–13.08.2026"
+          : `Пожари над 1 хектар в България през ${activeYear} г.`;
     }
+
     setDetailHint(
-      activeYear == null
-        ? (layerVisibility.live ? "Всички години + Sentinel-3 · тап върху област или обект за подробности" : "Всички години · тап върху област или обект за подробности")
-        : activeYear === 2026
-          ? (layerVisibility.live ? "2026 + Sentinel-3 · тап върху област или обект за подробности" : "2026 · тап върху област или обект за подробности")
-          : `${activeYear} · тап върху област или обект за подробности`
+      activeYear === false
+        ? `Пожарите са скрити · ВЕИ слоевете остават за ${layerYearScope == null ? "всички години" : layerYearScope + " г."}`
+        : activeYear == null
+          ? (layerVisibility.live
+              ? "Показани са всички исторически пожари и текущият Sentinel-3 слой."
+              : "Показани са всички исторически пожари.")
+          : `Показани са историческите пожари за ${activeYear} г.`
     );
   }
 
@@ -3866,7 +3887,7 @@ svg {
       .attr('data-layer', key)
       .style('--bgwf-filter-color', key === 'solar' ? '#f59e0b' : key === 'projects' ? '#7c3aed' : '#2f9e44')
       .attr('data-load-state', key === 'solar' || key === 'projects' ? 'loading' : 'ready')
-      .attr('aria-pressed', 'true')
+      .attr('aria-pressed', String(layerVisibility[key]))
       .on('click', function() {
         layerVisibility[key] = !layerVisibility[key];
         d3.select(this).attr('aria-pressed', String(layerVisibility[key]));
