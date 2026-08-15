@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.30 · 15.08.2026 18:16</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.31 · 15.08.2026 18:22</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -817,6 +817,23 @@ svg {
 .text-destructive {
   color: var(--destructive);
 }
+
+  #bg-wildfires-map .bgwf-mobile-filter-toggle { display:none; }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-floating-controls { padding:.34rem .55rem; border-radius:.8rem; }
+    #bg-wildfires-map .bgwf-mobile-filter-toggle {
+      display:flex; width:100%; min-height:30px; align-items:center; justify-content:space-between;
+      padding:0 .1rem; border:0; background:transparent; color:var(--foreground);
+      font:inherit; font-size:13px; font-weight:700; cursor:pointer;
+    }
+    #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
+    #bg-wildfires-map .bgwf-floating-controls.is-mobile-open .bgwf-mobile-filter-body { display:block; }
+    #bg-wildfires-map .bgwf-mobile-filter-toggle span:last-child { transition:transform .16s ease; }
+    #bg-wildfires-map .bgwf-floating-controls.is-mobile-open .bgwf-mobile-filter-toggle span:last-child { transform:rotate(180deg); }
+    #bg-wildfires-map .bgwf-map-wrap { min-height:68vh; }
+    #bg-wildfires-map .bgwf-layer-status-inline { font-size:10px; line-height:1.1; }
+  }
+
 </style>
 </head>
 <body>
@@ -831,8 +848,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.31</span><span aria-hidden="true">⌄</span></button>
+    <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.30</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.31</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -843,6 +862,8 @@ svg {
       <div class="bgwf-map-loadbar-fill" data-map-loadbar-fill></div>
     </div>
     <div class="text-small text-muted bgwf-layer-status bgwf-layer-status-inline" data-layer-status></div>
+  
+    </div>
   </div>
   <div class="bgwf-map-wrap">
     <div class="bgwf-zoom-controls" aria-label="Мащабиране на картата">
@@ -2310,6 +2331,12 @@ svg {
   const layerVisibility = { solar: true, projects: true, future: true, live: false };
   const layerStatus = root.querySelector('[data-layer-status]');
   const filterPanel = root.querySelector('.bgwf-floating-controls');
+  const mobileFilterToggle = root.querySelector('[data-mobile-filter-toggle]');
+  mobileFilterToggle?.addEventListener('click', () => {
+    const open = !filterPanel?.classList.contains('is-mobile-open');
+    filterPanel?.classList.toggle('is-mobile-open', open);
+    mobileFilterToggle.setAttribute('aria-expanded', String(open));
+  });
 
   function setFilterPanelLoading(isLoading) {
     if (!filterPanel) return;
