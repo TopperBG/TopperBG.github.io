@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.35 · 15.08.2026 20:25</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.40 · 15.08.2026 20:56</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -900,29 +900,109 @@ svg {
     }
   }
 
+
+  #bg-wildfires-map .bgwf-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .45rem;
+    min-width: 0;
+  }
+  #bg-wildfires-map .bgwf-status-row .bgwf-layer-status-inline {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  #bg-wildfires-map .bgwf-summary-inline {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: .4rem;
+    white-space: nowrap;
+    color: var(--muted-foreground);
+    font-size: 9px;
+    line-height: 1;
+    opacity: .78;
+  }
+  #bg-wildfires-map .bgwf-summary-inline strong {
+    color: var(--foreground);
+    font-size: inherit;
+  }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-status-row {
+      align-items: flex-start;
+      gap: .25rem;
+    }
+    #bg-wildfires-map .bgwf-summary-inline {
+      gap: .25rem;
+      font-size: 8px;
+    }
+  }
+
+
+  /* v0.39: compact filter typography */
+  #bg-wildfires-map .bgwf-filter-strip,
+  #bg-wildfires-map .bgwf-filter-strip button,
+  #bg-wildfires-map .bgwf-filter-strip .bgwf-control-label {
+    font-size: 9px;
+  }
+  #bg-wildfires-map .bgwf-filter-strip button {
+    line-height: 1.15;
+    padding-top: .28rem;
+    padding-bottom: .28rem;
+  }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-filter-strip,
+    #bg-wildfires-map .bgwf-filter-strip button,
+    #bg-wildfires-map .bgwf-filter-strip .bgwf-control-label {
+      font-size: 9px;
+    }
+  }
+
+
+  /* v0.40: smaller filter controls, same functionality */
+  #bg-wildfires-map .bgwf-filter-strip {
+    gap: .22rem;
+  }
+  #bg-wildfires-map .bgwf-filter-strip button {
+    min-height: 0;
+    padding: .18rem .38rem;
+    border-radius: .42rem;
+    font-size: 9px;
+    line-height: 1.05;
+  }
+  #bg-wildfires-map .bgwf-filter-strip .bgwf-control-label {
+    min-width: 46px;
+    line-height: 1.1;
+  }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-filter-strip {
+      gap: .18rem;
+    }
+    #bg-wildfires-map .bgwf-filter-strip button {
+      padding: .16rem .32rem;
+      border-radius: .38rem;
+      font-size: 9px;
+    }
+    #bg-wildfires-map .bgwf-filter-strip .bgwf-control-label {
+      min-width: 43px;
+    }
+  }
+
 </style>
 </head>
 <body>
 <div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
   <div class="bgwf-data-notice" role="note">
-    <strong>Важно:</strong> картата е справочна и не гарантира 100% пълнота на пожарите.
-    Основните исторически данни от EFFIS/Copernicus картографират предимно пожари около и над 30 ha,
-    поради което по-малки пожари може да липсват.
+    EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
-<div class="viz-row bgwf-summary" aria-label="Обобщение">
-    <span><strong data-total-count></strong> периметъра</span>
-    <span><strong data-total-area></strong> ha картографирана площ</span>
-    <span><strong data-largest></strong> ha най-голям пожар</span>
-    <span class="bgwf-live-summary"><strong data-live-count>—</strong> текущи Sentinel-3 засичания</span>
-  </div>
-  <div class="card bgwf-important-note" role="note">
+<div class="card bgwf-important-note" role="note">
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.35</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.40</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.35</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.40</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -932,7 +1012,15 @@ svg {
     <div class="bgwf-map-loadbar" data-map-loadbar aria-hidden="true">
       <div class="bgwf-map-loadbar-fill" data-map-loadbar-fill></div>
     </div>
-    <div class="text-small text-muted bgwf-layer-status bgwf-layer-status-inline" data-layer-status></div>
+    <div class="bgwf-status-row">
+      <div class="text-small text-muted bgwf-layer-status bgwf-layer-status-inline" data-layer-status></div>
+      <div class="bgwf-summary-inline" aria-label="Обобщение">
+        <span><strong data-total-count></strong> пер.</span>
+        <span><strong data-total-area></strong> ha</span>
+        <span>max <strong data-largest></strong> ha</span>
+        <span>S3 <strong data-live-count>—</strong></span>
+      </div>
+    </div>
   
     </div>
   </div>
@@ -960,13 +1048,27 @@ svg {
     <div class="bgwf-mobile-footer-body">
 <div class="viz-row text-small text-muted bgwf-note">
     <span>Кръг: исторически пожар · 🔥 яркочервено: текущо Sentinel-3 засичане · жълто/оранжево: проверени изградени ФЕЦ · лилаво/синьо: ПУП/ПИ · зелено: RED III</span>
-    <span>Исторически пожари: EFFIS · live термални засичания: Sentinel-3 SLSTR / EUMETSAT · оперативна справка: ИСКРА</span>
+    <span>Исторически пожари: EFFIS / Copernicus + официална проверка по ИАГ (2025) · live термални засичания: Sentinel-3 SLSTR / EUMETSAT · оперативна справка: ИСКРА</span>
     <span>Концепция, реализация и дизайн: TopperBG!</span>
   </div>
 <details class="bgwf-method-note" open>
     <summary>Методика и източници</summary>
     <div class="bgwf-method-content">
-      <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
+            <p><strong>ИАГ — официални данни за 2025 г.:</strong>
+      използвана е публикуваната от Изпълнителна агенция по горите инвентаризация
+      „Резултати от извършената инвентаризация на наличните пожарища и невъзобновени сечища,
+      както и на унищожени гори от други природни въздействия в горските територии към 31.12.2025 г.“.
+      Архивът съдържа четири официални XLS справки:
+      <code>Pozharishta_spravka_UOGS-2025.xls</code>,
+      <code>Pozharishta_spravka_4GT-2025.xls</code>,
+      <code>Pozharishta_spravka_DGT-2025.xls</code> и
+      <code>Pozharishta_spravka_OGT-2025.xls</code>.
+      Данните от ИАГ се използват като официален национален контролен източник за пожарища и площи;
+      когато липсва достатъчно географска информация за точно позициониране, записът не се представя
+      като самостоятелен геометричен периметър.
+      <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
+      </p>
+<p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
       <p><strong>RED III / REPowerEU:</strong> зелените полигони са геореферирани и векторизирани по официалната картографска визуализация към проекта на Плана от март 2026.</p>
       <p><strong>Sentinel-3:</strong> текущият слой използва Near Real Time Fire Radiative Power (FRP) засичания от Sentinel-3A/3B SLSTR чрез публичния WFS на <a href="https://view.eumetsat.int/productviewer/productDetails/copernicus%3Asentinel3a_slstr_level2_frp" target="_blank" rel="noopener">EUMETView / EUMETSAT</a>. Яркочервеният пламък означава скорошно термално засичане в зададения live прозорец, а не самостоятелно официално потвърждение, че пожарът все още гори.</p>
