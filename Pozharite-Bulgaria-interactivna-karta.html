@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.40 · 15.08.2026 20:56</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.41 · 15.08.2026 21:08</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -988,6 +988,12 @@ svg {
     }
   }
 
+
+  #bg-wildfires-map .bgwf-effis-selected-perimeter {
+    opacity: .72;
+    mix-blend-mode: multiply;
+  }
+
 </style>
 </head>
 <body>
@@ -999,10 +1005,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.40</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.41</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.40</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.41</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1068,6 +1074,7 @@ svg {
       като самостоятелен геометричен периметър.
       <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
       </p>
+      <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява само тогава официалния EFFIS/Copernicus Burnt Areas WMS и наслагва наличния сателитно картографиран периметър. Кръгът остава като сравнителен символ за площта.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
       <p><strong>RED III / REPowerEU:</strong> зелените полигони са геореферирани и векторизирани по официалната картографска визуализация към проекта на Плана от март 2026.</p>
@@ -2500,6 +2507,7 @@ svg {
     detail.textContent = text;
   }
   const tooltip = root.querySelector(".bgwf-tooltip");
+  const effisPerimeterLayer = mapViewport.append("g").attr("class", "bgwf-effis-perimeter-layer");
   const fireLayer = mapViewport.append("g").attr("class", "bgwf-fire-layer");
   const liveFireLayer = mapViewport.append("g").attr("class", "bgwf-live-fire-layer");
   const provinceFocusLayer = mapViewport.append("g").attr("class", "bgwf-province-focus-layer");
@@ -3419,6 +3427,82 @@ svg {
       );
   }
 
+  // Selected historical fire perimeter from the official EFFIS/Copernicus
+  // Burnt Areas WMS. The overlay is loaded only after a fire is selected,
+  // so it adds no cost to the initial map load.
+  const EFFIS_WMS = "https://maps.effis.emergency.copernicus.eu/effis";
+  const EFFIS_BBOX = { west: 22.25, south: 41.15, east: 28.75, north: 44.30 };
+
+  function webMercatorMeters(lon, lat) {
+    const R = 6378137;
+    const x = R * lon * Math.PI / 180;
+    const clamped = Math.max(-85.05112878, Math.min(85.05112878, lat));
+    const y = R * Math.log(Math.tan(Math.PI / 4 + clamped * Math.PI / 360));
+    return [x, y];
+  }
+
+  function effisOverlayRect() {
+    const tl = projection([EFFIS_BBOX.west, EFFIS_BBOX.north]);
+    const br = projection([EFFIS_BBOX.east, EFFIS_BBOX.south]);
+    return {
+      x: tl[0],
+      y: tl[1],
+      width: br[0] - tl[0],
+      height: br[1] - tl[1]
+    };
+  }
+
+  function clearEffisPerimeter() {
+    effisPerimeterLayer.selectAll("*").remove();
+  }
+
+  function showEffisPerimeter(d) {
+    clearEffisPerimeter();
+
+    const start = d.date;
+    const end = d.final_date || d.date;
+    if (!start) return;
+
+    const [minx, miny] = webMercatorMeters(EFFIS_BBOX.west, EFFIS_BBOX.south);
+    const [maxx, maxy] = webMercatorMeters(EFFIS_BBOX.east, EFFIS_BBOX.north);
+    const rect = effisOverlayRect();
+
+    const params = new URLSearchParams({
+      SERVICE: "WMS",
+      VERSION: "1.1.1",
+      REQUEST: "GetMap",
+      LAYERS: "modis.ba",
+      STYLES: "",
+      FORMAT: "image/png",
+      TRANSPARENT: "true",
+      SRS: "EPSG:3857",
+      BBOX: `${minx},${miny},${maxx},${maxy}`,
+      WIDTH: "1100",
+      HEIGHT: "720",
+      TIME: start === end ? start : `${start}/${end}`
+    });
+
+    const image = effisPerimeterLayer.append("image")
+      .attr("class", "bgwf-effis-selected-perimeter")
+      .attr("x", rect.x)
+      .attr("y", rect.y)
+      .attr("width", rect.width)
+      .attr("height", rect.height)
+      .attr("preserveAspectRatio", "none")
+      .attr("href", `${EFFIS_WMS}?${params.toString()}`)
+      .style("pointer-events", "none");
+
+    const node = image.node();
+    if (node) {
+      node.addEventListener("error", () => {
+        clearEffisPerimeter();
+        if (detail) {
+          detail.textContent = `${label(d)} · EFFIS периметърът не е достъпен за този запис`;
+        }
+      }, { once: true });
+    }
+  }
+
   function updateFires(points) {
     const sorted = points.slice().sort((a, b) => b.area_ha - a.area_ha);
     fireLayer.selectAll("circle")
@@ -3439,7 +3523,10 @@ svg {
             selected = this;
             selected.classList.add("is-selected");
             activateDetail();
-            detail.textContent = `${label(d)} · Natura 2000: ${d.natura2000_pct.toLocaleString("bg-BG", { maximumFractionDigits: 1 })}% от периметъра`;
+            if (detail) {
+              detail.textContent = `${label(d)} · Natura 2000: ${d.natura2000_pct.toLocaleString("bg-BG", { maximumFractionDigits: 1 })}% · EFFIS/Copernicus: зареждане на реалния опожарен периметър…`;
+            }
+            showEffisPerimeter(d);
           })
           .call(enter => enter.transition().duration(180).attr("r", d => screenRadius(d.area_ha))),
         update => update
@@ -3460,6 +3547,7 @@ svg {
       selected.classList.remove("is-selected");
       selected = null;
     }
+    clearEffisPerimeter();
 
     const filtered = activeYear == null
       ? allPoints
