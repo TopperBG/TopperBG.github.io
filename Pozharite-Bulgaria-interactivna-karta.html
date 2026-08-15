@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.50 · 16.08.2026 01:20</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.52 · 16.08.2026 20:00</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1014,10 +1014,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.50</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.52</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.50</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.52</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1162,26 +1162,9 @@ svg {
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="live"] .bgwf-swatch { background: #ff1717; box-shadow: 0 0 0 2px color-mix(in srgb, #ff1717 22%, transparent); }
   #bg-wildfires-map .bgwf-layer-toggle[aria-pressed="true"] { opacity: 1; box-shadow: inset 0 0 0 1px var(--foreground); }
   #bg-wildfires-map .bgwf-layer-toggle[aria-pressed="false"] { opacity: 0.55; }
-18%  { opacity: 1; }
-    82%  { opacity: 1; }
-    100% { left: 100%; opacity: 0.25; }
-  }
 }
-50% {
-      box-shadow:
-        0 0 0 2px color-mix(in srgb, var(--bgwf-loading-color, var(--primary)) 72%, transparent),
-        0 0 13px color-mix(in srgb, var(--bgwf-loading-color, var(--primary)) 42%, transparent);
-    }
-  }
-
-
-  /* v0.21: статусът за асинхронно зареждане е върху самите бутони.
-     Цветен сегмент обикаля рамката, докато АГКК връща кадастралните ПИ. */
-  #bg-wildfires-map .bgwf-layer-toggle { position: relative; isolation: isolate; }
 }
-  @media (prefers-reduced-motion: reduce) {
-}
-  #bg-wildfires-map .bgwf-layer-status { margin-top: 0.1rem; text-align: center; }
+#bg-wildfires-map .bgwf-layer-status { margin-top: 0.1rem; text-align: center; }
   #bg-wildfires-map .bgwf-layer-status-inline {
     min-height: 1.1rem;
     margin-top: 0.18rem;
@@ -3287,11 +3270,15 @@ svg {
       );
   }
 
-  function updateRegionLayers() {
+  function updateVeiLayers() {
     updateProjectParcels();
     updateSolarParcels();
     updatePriorityZones();
     updateLiveFires();
+  }
+
+  function updateRegionLayers() {
+    updateVeiLayers();
 
     const loadedProjects = window.__bgwfProjectParcels?.length ?? 0;
     const loadedSolar = window.__bgwfSolarParcels?.length ?? 0;
@@ -3314,13 +3301,13 @@ svg {
         : 'ПУП/ПИ слоят още се зарежда';
     const futureText = layerVisibility.future
       ? `RED III: ${priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length ?? 0} полигонни компонента`
-      : 'RED III слоят е изключен';
+      : ' ';
     const liveText = liveFireLoadState === 'loading'
       ? `Sentinel-3 live: зареждане (${LIVE_SENTINEL_HOURS} ч.)`
       : liveFireLoadState === 'error'
         ? `Sentinel-3 live: няма директен WFS отговор · провери ИСКРА`
         : !layerVisibility.live
-          ? 'Sentinel-3 live слоят е изключен'
+          ? ' '
           : (activeYear != null && activeYear !== 2026)
             ? 'Sentinel-3 live: показва се само при „Всички“ или 2026'
             : `Sentinel-3 live: ${liveFireDetections.length} засичания / последните ${LIVE_SENTINEL_HOURS} ч.`;
@@ -3821,6 +3808,9 @@ svg {
       );
   }
 
+  // FIRE-ONLY FILTER.
+  // This function must never call updateVeiLayers()/updateRegionLayers().
+  // FЕC, PUP/PI and RED III are controlled exclusively by their layer buttons.
   function setYearFilter(year) {
     // Re-clicking the active year hides all historical fires.
     // null = all years; false = no historical fires.
@@ -3844,7 +3834,6 @@ svg {
     updateSummary(filtered);
     updateDensity(filtered);
     updateFires(filtered);
-    updateRegionLayers();
 
     root.querySelectorAll(".bgwf-year-filter[data-year]").forEach(button => {
       const value = button.dataset.year === "all" ? null : Number(button.dataset.year);
