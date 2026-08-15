@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.54 · 16.08.2026 20:18</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.55 · 16.08.2026 20:27</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1064,6 +1064,21 @@ svg {
     }
   }
 
+
+  /* v0.55: zoom controls float below the sticky filter header */
+  #bg-wildfires-map .bgwf-zoom-controls {
+    position: fixed !important;
+    top: var(--bgwf-zoom-top, 92px) !important;
+    right: max(12px, calc((100vw - min(100vw, 1180px)) / 2 + 12px)) !important;
+    z-index: 120 !important;
+  }
+
+  @media (max-width: 700px) {
+    #bg-wildfires-map .bgwf-zoom-controls {
+      right: 10px !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1075,10 +1090,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.54</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.55</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.54</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.55</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2669,6 +2684,29 @@ svg {
   }
   const layerStatus = root.querySelector('[data-layer-status]');
   const filterPanel = root.querySelector('.bgwf-floating-controls');
+  const zoomControls = root.querySelector('.bgwf-zoom-controls');
+
+  function updateFloatingZoomPosition() {
+    if (!zoomControls || !filterPanel) return;
+
+    const filterRect = filterPanel.getBoundingClientRect();
+    const mapRect = root.querySelector('.bgwf-map-wrap')?.getBoundingClientRect();
+
+    // Keep controls just below the sticky filter panel while the map is in view.
+    const headerBottom = Math.max(8, filterRect.bottom + 8);
+    document.documentElement.style.setProperty('--bgwf-zoom-top', `${Math.round(headerBottom)}px`);
+
+    // Hide only when the map itself has fully left the viewport.
+    if (mapRect) {
+      const visible = mapRect.bottom > 0 && mapRect.top < window.innerHeight;
+      zoomControls.style.visibility = visible ? 'visible' : 'hidden';
+      zoomControls.style.pointerEvents = visible ? 'auto' : 'none';
+    }
+  }
+
+  window.addEventListener('scroll', updateFloatingZoomPosition, { passive: true });
+  window.addEventListener('resize', updateFloatingZoomPosition, { passive: true });
+
   const mobileFooter = root.querySelector('[data-mobile-footer]');
   if (mobileFooter && window.matchMedia('(max-width: 700px)').matches) {
     mobileFooter.open = false;
@@ -2678,6 +2716,7 @@ svg {
     const open = !filterPanel?.classList.contains('is-mobile-open');
     filterPanel?.classList.toggle('is-mobile-open', open);
     mobileFilterToggle.setAttribute('aria-expanded', String(open));
+    window.requestAnimationFrame(updateFloatingZoomPosition);
   });
 
   function setFilterPanelLoading(isLoading) {
@@ -4034,6 +4073,8 @@ svg {
   if (requestedTransform) {
     svg.call(zoomBehavior.transform, requestedTransform);
   }
+
+  window.requestAnimationFrame(updateFloatingZoomPosition);
 
   urlStateReady = true;
   syncUrlState();
