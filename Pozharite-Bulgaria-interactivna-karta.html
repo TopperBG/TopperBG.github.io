@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.60 · 16.08.2026 21:28</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.61 · 16.08.2026 21:36</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1124,6 +1124,17 @@ svg {
     pointer-events: all !important;
   }
 
+
+  #bg-wildfires-map .bgwf-built-wind.is-selected .bgwf-wind-mast,
+  #bg-wildfires-map .bgwf-built-wind.is-selected .bgwf-wind-blades {
+    stroke: var(--foreground);
+    stroke-width: 2.8;
+  }
+  #bg-wildfires-map .bgwf-built-wind.is-selected .bgwf-wind-hub {
+    stroke: var(--foreground);
+    stroke-width: 2;
+  }
+
 </style>
 </head>
 <body>
@@ -1135,10 +1146,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.60</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.61</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.60</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.61</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3514,19 +3525,25 @@ svg {
       .attr("data-wind-source", d => d.source)
       .attr("title", d => windPlantLabel(d))
       .on("mouseenter", function(event, d) {
-        showTooltip(event, windPlantLabel(d));
+        // Same proven tooltip path used by FEC/PUP objects.
+        showTextTooltip(this, windPlantLabel(d));
         activateDetail();
         if (detail) detail.textContent = windPlantLabel(d);
       })
-      .on("mousemove", moveTooltip)
-      .on("mouseleave", hideTooltip)
+      .on("mouseleave", () => { tooltip.hidden = true; })
       .on("focus", function(event, d) {
+        showTextTooltip(this, windPlantLabel(d));
         activateDetail();
         if (detail) detail.textContent = windPlantLabel(d);
       })
+      .on("blur", () => { tooltip.hidden = true; })
       .on("click", function(event, d) {
+        event.preventDefault();
         event.stopPropagation();
         tooltip.hidden = true;
+        if (selected) selected.classList.remove("is-selected");
+        selected = this;
+        selected.classList.add("is-selected");
         activateDetail();
         if (detail) {
           detail.innerHTML = "";
