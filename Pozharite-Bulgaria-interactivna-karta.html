@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.20 · 15.08.2026 16:54</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.21 · 15.08.2026 17:24</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
 
+  /* Agent-facing contract; keep in sync with SKILL.md. */
   --background: var(
     --main-surface-primary,
     light-dark(rgb(255 255 255), rgb(24 24 24))
@@ -40,6 +41,7 @@
   --red: light-dark(rgb(186 38 35), rgb(250 66 62));
   --green: light-dark(rgb(0 162 64), rgb(64 201 119));
 
+  /* Internal implementation variables; not part of the agent contract. */
   --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
   --font-mono:
     ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
@@ -64,6 +66,7 @@
   --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
   --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
 
+  /* Legacy aliases; not part of the current agent contract. */
   --viz-bg: transparent;
   --viz-panel: var(--card);
   --viz-border: var(--border);
@@ -836,6 +839,9 @@ svg {
       <span class="bgwf-control-label">Слоеве</span>
       <div class="viz-row bgwf-layer-controls" aria-label="Слоеве на картата"></div>
     </div>
+    <div class="bgwf-map-loadbar" data-map-loadbar aria-hidden="true">
+      <div class="bgwf-map-loadbar-fill" data-map-loadbar-fill></div>
+    </div>
   </div>
   <div class="bgwf-map-wrap">
     <div class="bgwf-zoom-controls" aria-label="Мащабиране на картата">
@@ -899,7 +905,7 @@ svg {
   #bg-wildfires-map .bgwf-fire:hover,
   #bg-wildfires-map .bgwf-fire.is-selected { stroke: var(--foreground); stroke-width: 1.8; }
   #bg-wildfires-map .bgwf-tooltip { position: absolute; pointer-events: none; max-width: 230px; }
-
+  /* Единствен tooltip за обектите на картата; не използваме data-tooltip върху SVG маркерите. */
   #bg-wildfires-map .bgwf-legend { justify-content: center; gap: 0.4rem; margin-top: 0.45rem; }
   #bg-wildfires-map .bgwf-year-filter {
     display: inline-flex;
@@ -938,7 +944,69 @@ svg {
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="live"] .bgwf-swatch { background: #ff1717; box-shadow: 0 0 0 2px color-mix(in srgb, #ff1717 22%, transparent); }
   #bg-wildfires-map .bgwf-layer-toggle[aria-pressed="true"] { opacity: 1; box-shadow: inset 0 0 0 1px var(--foreground); }
   #bg-wildfires-map .bgwf-layer-toggle[aria-pressed="false"] { opacity: 0.55; }
+
+  /* v0.21: статусът за асинхронно зареждане е върху самите бутони.
+     Цветен сегмент обикаля рамката, докато АГКК връща кадастралните ПИ. */
+  #bg-wildfires-map .bgwf-layer-toggle { position: relative; isolation: isolate; }
+  #bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    pointer-events: none;
+    background: conic-gradient(from 0deg,
+      transparent 0deg 250deg,
+      color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 35%, transparent) 275deg,
+      var(--bgwf-filter-color, var(--primary)) 320deg,
+      transparent 360deg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    filter: drop-shadow(0 0 4px color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 72%, transparent));
+    animation: bgwf-layer-loading-orbit 1.05s linear infinite;
+  }
+  #bg-wildfires-map .bgwf-layer-toggle[data-load-state="error"] {
+    border-color: var(--destructive);
+    box-shadow: inset 0 0 0 1px var(--destructive), 0 0 0 2px color-mix(in srgb, var(--destructive) 14%, transparent);
+  }
+  @keyframes bgwf-layer-loading-orbit { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    #bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]::after {
+      animation-duration: 2.4s;
+    }
+  }
   #bg-wildfires-map .bgwf-layer-status { margin-top: 0.1rem; text-align: center; }
+  #bg-wildfires-map .bgwf-map-loadbar {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    margin-top: 0.34rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--foreground) 9%, transparent);
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+  #bg-wildfires-map .bgwf-map-loadbar.is-active { opacity: 1; }
+  #bg-wildfires-map .bgwf-map-loadbar.is-warning {
+    opacity: 1;
+    background: color-mix(in srgb, #f59e0b 14%, transparent);
+  }
+  #bg-wildfires-map .bgwf-map-loadbar-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #f59e0b 0%, #7c3aed 55%, var(--primary) 100%);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--primary) 45%, transparent);
+    transition: width 220ms ease;
+  }
+  #bg-wildfires-map .bgwf-map-loadbar.is-warning .bgwf-map-loadbar-fill {
+    background: #f59e0b;
+    box-shadow: 0 0 5px color-mix(in srgb, #f59e0b 45%, transparent);
+  }
+
   #bg-wildfires-map .bgwf-region { stroke: none; vector-effect: non-scaling-stroke; cursor: pointer; }
   #bg-wildfires-map .bgwf-region:hover,
   #bg-wildfires-map .bgwf-region.is-selected { stroke: var(--foreground); stroke-width: 1.2; }
@@ -2208,6 +2276,19 @@ svg {
   let currentZoomTransform = d3.zoomIdentity;
   const layerVisibility = { solar: true, projects: true, future: true, live: false };
   const layerStatus = root.querySelector('[data-layer-status]');
+  const mapLoadbar = root.querySelector('[data-map-loadbar]');
+  const mapLoadbarFill = root.querySelector('[data-map-loadbar-fill]');
+
+  function setMapLoadProgress(percent, state = 'loading') {
+    if (!mapLoadbar || !mapLoadbarFill) return;
+    const value = Math.max(0, Math.min(100, Number(percent) || 0));
+    mapLoadbarFill.style.width = `${value}%`;
+    mapLoadbar.classList.toggle('is-active', state === 'loading');
+    mapLoadbar.classList.toggle('is-warning', state === 'warning');
+    if (state === 'ready') {
+      mapLoadbar.classList.remove('is-active', 'is-warning');
+    }
+  }
   const liveCountEl = root.querySelector('[data-live-count]');
   let liveFireDetections = [];
   let liveFireLoadState = 'idle';
@@ -2434,13 +2515,27 @@ svg {
         try { delete window[callbackName]; } catch (_) {}
         error ? reject(error) : resolve(value);
       };
-      const timer = window.setTimeout(() => cleanup(new Error('АГКК: timeout')), 18000);
+      const timer = window.setTimeout(() => cleanup(new Error('АГКК: timeout')), 8000);
       window[callbackName] = value => cleanup(null, value);
       script.onerror = () => cleanup(new Error('АГКК: network error'));
       params.set('callback', callbackName);
       script.src = `https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?${params}`;
       document.head.appendChild(script);
     });
+  }
+
+  function setLayerLoadState(layerKey, state, title = '') {
+    const button = root.querySelector(`.bgwf-layer-toggle[data-layer="${layerKey}"]`);
+    if (!button) return;
+    button.dataset.loadState = state;
+    if (title) button.title = title;
+    else button.removeAttribute('title');
+  }
+
+  function publishLoadedParcels(loaded) {
+    window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
+    window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
+    updateRegionLayers();
   }
 
   async function loadProjectParcels() {
@@ -2450,23 +2545,33 @@ svg {
     const plannedRows = cadastralProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'projects', project, parcelRef })));
     const solarRows = operatingSolarProjects.flatMap(project => project.parcels.map(parcelRef => ({ layerType: 'solar', project, parcelRef })));
     const rows = [...plannedRows, ...solarRows];
-    layerStatus.textContent = `Зареждам ${rows.length} кадастрални идентификатора от публичния INSPIRE слой на АГКК и използвам върнатата геометрия…`;
+    const totalRefs = rows.length;
+
+    setLayerLoadState('solar', 'loading', 'Зареждат се кадастралните ПИ за изградените ФЕЦ…');
+    setLayerLoadState('projects', 'loading', 'Зареждат се кадастралните ПИ за ПУП/ПИ проектите…');
+    layerStatus.textContent = `АГКК: 0 / ${totalRefs} ПИ · зареждане…`;
+    setMapLoadProgress(0, 'loading');
 
     const loaded = [];
     let failedRefs = 0;
+    let processedRefs = 0;
+    let batchErrors = 0;
     const chunkSize = 22;
-    try {
-      for (let offset = 0; offset < rows.length; offset += chunkSize) {
-        const chunk = rows.slice(offset, offset + chunkSize);
+
+    for (let offset = 0; offset < rows.length; offset += chunkSize) {
+      const chunk = rows.slice(offset, offset + chunkSize);
+      const rowsByRef = new Map();
+      chunk.forEach(row => {
+        const ref = sanitizeParcelRef(row.parcelRef);
+        const arr = rowsByRef.get(ref) ?? [];
+        arr.push(row);
+        rowsByRef.set(ref, arr);
+      });
+
+      try {
         const payload = await fetchCadastralBatch(chunk);
         if (payload?.error) throw new Error(payload.error.message ?? 'АГКК query error');
-        const rowsByRef = new Map();
-        chunk.forEach(row => {
-          const ref = sanitizeParcelRef(row.parcelRef);
-          const arr = rowsByRef.get(ref) ?? [];
-          arr.push(row);
-          rowsByRef.set(ref, arr);
-        });
+
         const returnedRefs = new Set();
         (payload?.features ?? []).forEach(esriFeature => {
           const attrs = esriFeature?.attributes ?? {};
@@ -2481,17 +2586,41 @@ svg {
           }));
         });
         failedRefs += [...rowsByRef.keys()].filter(ref => !returnedRefs.has(ref)).length;
+      } catch (error) {
+        batchErrors += 1;
+        failedRefs += rowsByRef.size;
+        console.warn(`АГКК: пропусната партида ${Math.floor(offset / chunkSize) + 1}`, error);
       }
+
+      processedRefs += chunk.length;
       cadastralLoadErrors = failedRefs;
-      window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
-      window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
-    } catch (error) {
-      cadastralLoadErrors = rows.length - loaded.length;
-      window.__bgwfProjectParcels = loaded.filter(d => d.layerType === 'projects');
-      window.__bgwfSolarParcels = loaded.filter(d => d.layerType === 'solar');
-      console.warn('АГКК INSPIRE слоят не отговори за всички партиди', error);
+      publishLoadedParcels(loaded);
+
+      const percent = totalRefs ? Math.round(processedRefs / totalRefs * 100) : 100;
+      setMapLoadProgress(percent, 'loading');
+      layerStatus.textContent = `АГКК: ${processedRefs} / ${totalRefs} ПИ (${percent}%) · ${loaded.length} геометрии заредени${failedRefs ? ` · ${failedRefs} недостъпни` : ''}`;
     }
-    updateRegionLayers();
+
+    cadastralLoadErrors = failedRefs;
+    publishLoadedParcels(loaded);
+
+    const solarLoaded = window.__bgwfSolarParcels.length;
+    const projectsLoaded = window.__bgwfProjectParcels.length;
+    const finalState = batchErrors ? 'error' : 'ready';
+
+    setLayerLoadState('solar', finalState,
+      batchErrors ? `Заредени ${solarLoaded} ФЕЦ полигона; част от заявките към АГКК не отговориха.` : `Заредени ${solarLoaded} ФЕЦ полигона.`);
+    setLayerLoadState('projects', finalState,
+      batchErrors ? `Заредени ${projectsLoaded} ПУП/ПИ полигона; част от заявките към АГКК не отговориха.` : `Заредени ${projectsLoaded} ПУП/ПИ полигона.`);
+
+    layerStatus.textContent = batchErrors
+      ? `АГКК: приключено с предупреждение · ${loaded.length} геометрии · ${failedRefs} недостъпни ПИ`
+      : `АГКК: готово · ${loaded.length} геометрии заредени`;
+
+    setMapLoadProgress(100, batchErrors ? 'warning' : 'ready');
+    if (batchErrors) {
+      window.setTimeout(() => setMapLoadProgress(100, 'ready'), 2600);
+    }
   }
 
   function updateProjectParcels() {
@@ -2985,6 +3114,7 @@ svg {
       .attr('class', 'bgwf-year-filter bgwf-layer-toggle')
       .attr('data-layer', key)
       .style('--bgwf-filter-color', key === 'solar' ? '#f59e0b' : key === 'projects' ? '#7c3aed' : '#2f9e44')
+      .attr('data-load-state', key === 'solar' || key === 'projects' ? 'loading' : 'ready')
       .attr('aria-pressed', 'true')
       .on('click', function() {
         layerVisibility[key] = !layerVisibility[key];
