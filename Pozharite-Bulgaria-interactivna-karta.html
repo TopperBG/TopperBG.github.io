@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.47 · 16.08.2026 01:10</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.48 · 16.08.2026 01:18</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1014,10 +1014,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.47</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.48</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.47</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.48</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1084,6 +1084,7 @@ svg {
       <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
       </p>
       <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
+      <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
       <p><strong>RED III / REPowerEU:</strong> зелените полигони са геореферирани и векторизирани по официалната картографска визуализация към проекта на Плана от март 2026.</p>
@@ -2541,11 +2542,86 @@ svg {
       transformedFireCircle.style.visibility = "hidden";
     }
   }
-  let activeYear = null;
-  let layerYearScope = 2026;
+  const urlParams = new URLSearchParams(window.location.search);
+
+  function parseBoolParam(name, fallback) {
+    const value = urlParams.get(name);
+    if (value == null) return fallback;
+    return value === "1" || value === "true" || value === "on";
+  }
+
+  function parseYearParam() {
+    const value = urlParams.get("year");
+    if (value == null) return 2026;
+    if (value === "all") return null;
+    if (value === "off" || value === "none") return false;
+    const year = Number(value);
+    return years.includes(year) ? year : 2026;
+  }
+
+  let activeYear = parseYearParam();
+  let layerYearScope = activeYear === false ? 2026 : activeYear;
   let activeProvinceFeature = null;
   let currentZoomTransform = d3.zoomIdentity;
-  const layerVisibility = { solar: true, projects: true, future: false, live: false };
+  const layerVisibility = {
+    solar: parseBoolParam("solar", true),
+    projects: parseBoolParam("pup", true),
+    future: parseBoolParam("red", false),
+    live: parseBoolParam("s3", false)
+  };
+
+  let urlStateReady = false;
+  let urlSyncTimer = 0;
+
+  function currentMapCenterLonLat() {
+    const base = currentZoomTransform.invert([width / 2, height / 2]);
+    const geo = projection.invert(base);
+    return geo && Number.isFinite(geo[0]) && Number.isFinite(geo[1]) ? geo : null;
+  }
+
+  function syncUrlState({ replace = true } = {}) {
+    if (!urlStateReady) return;
+    const params = new URLSearchParams(window.location.search);
+
+    params.set("year", activeYear === false ? "off" : activeYear == null ? "all" : String(activeYear));
+    params.set("solar", layerVisibility.solar ? "1" : "0");
+    params.set("pup", layerVisibility.projects ? "1" : "0");
+    params.set("red", layerVisibility.future ? "1" : "0");
+    params.set("s3", layerVisibility.live ? "1" : "0");
+
+    const center = currentMapCenterLonLat();
+    if (center) {
+      params.set("lon", center[0].toFixed(5));
+      params.set("lat", center[1].toFixed(5));
+      params.set("z", currentZoomTransform.k.toFixed(3));
+    }
+
+    const url = `${window.location.pathname}?${params.toString()}${window.location.hash || ""}`;
+    const state = { bgwf: true };
+    if (replace) history.replaceState(state, "", url);
+    else history.pushState(state, "", url);
+  }
+
+  function scheduleUrlSync() {
+    window.clearTimeout(urlSyncTimer);
+    urlSyncTimer = window.setTimeout(() => syncUrlState(), 120);
+  }
+
+  function transformFromUrl() {
+    const lon = Number(urlParams.get("lon"));
+    const lat = Number(urlParams.get("lat"));
+    const zoom = Number(urlParams.get("z"));
+    if (!Number.isFinite(lon) || !Number.isFinite(lat) || !Number.isFinite(zoom)) return null;
+    if (lon < 20 || lon > 31 || lat < 39 || lat > 47 || zoom < 1 || zoom > 14) return null;
+
+    const point = projection([lon, lat]);
+    if (!point) return null;
+
+    return d3.zoomIdentity
+      .translate(width / 2, height / 2)
+      .scale(zoom)
+      .translate(-point[0], -point[1]);
+  }
   const layerStatus = root.querySelector('[data-layer-status]');
   const filterPanel = root.querySelector('.bgwf-floating-controls');
   const mobileFooter = root.querySelector('[data-mobile-footer]');
@@ -2603,7 +2679,8 @@ svg {
       currentZoomTransform = event.transform;
       mapViewport.attr('transform', currentZoomTransform);
       updateZoomSensitiveMarks();
-    });
+    })
+    .on('end', () => scheduleUrlSync());
 
   svg.call(zoomBehavior);
 
@@ -3811,6 +3888,7 @@ svg {
               : "Показани са всички исторически пожари.")
           : `Показани са историческите пожари за ${activeYear} г.`
     );
+    scheduleUrlSync();
   }
 
   const legend = d3.select(root.querySelector(".bgwf-legend"));
@@ -3844,7 +3922,7 @@ svg {
     .attr('class', 'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle')
     .attr('data-layer', 'live')
     .style('--bgwf-filter-color', '#ff1717')
-    .attr('aria-pressed', 'false')
+    .attr('aria-pressed', String(layerVisibility.live))
     .on('click', function() {
       layerVisibility.live = !layerVisibility.live;
       d3.select(this).attr('aria-pressed', String(layerVisibility.live));
@@ -3863,6 +3941,7 @@ svg {
       } else if (activeYear === 2026) {
         setDetailHint(layerVisibility.live ? '2026 + Sentinel-3 · тап върху област или обект за подробности' : '2026 · тап върху област или обект за подробности');
       }
+      scheduleUrlSync();
     });
   liveYearButton.append('span').attr('class', 'bgwf-swatch');
   liveYearButton.append('span').text('🔥 Sentinel-3 пожар');
@@ -3897,6 +3976,7 @@ svg {
           selected = null;
         }
         updateRegionLayers();
+        scheduleUrlSync();
       });
     button.append('span').attr('class', 'bgwf-swatch');
     button.append('span').text(text);
@@ -3906,7 +3986,23 @@ svg {
   // Sentinel-3 е изключен по подразбиране и НЕ прави мрежова заявка до ръчно включване.
   void loadProjectParcels();
 
-  setYearFilter(2026);
+  // Apply the requested URL configuration without interpreting it as a repeat-click.
+  const initialYear = activeYear;
+  activeYear = Symbol("initial");
+  setYearFilter(initialYear);
+
+  const requestedTransform = transformFromUrl();
+  if (requestedTransform) {
+    svg.call(zoomBehavior.transform, requestedTransform);
+  }
+
+  urlStateReady = true;
+  syncUrlState();
+
+  // Sentinel-3 remains opt-in by default, but a shared URL can explicitly enable it.
+  if (layerVisibility.live && (activeYear == null || activeYear === 2026 || activeYear === false)) {
+    void loadLiveSentinelFires();
+  }
 })();
 </script>
 
