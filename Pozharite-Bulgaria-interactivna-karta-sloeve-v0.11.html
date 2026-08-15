@@ -928,6 +928,7 @@ svg {
   }
   #bg-wildfires-map .bgwf-year-filter:not([aria-pressed="true"]) { opacity: 0.72; }
   #bg-wildfires-map .bgwf-year-filter:not([aria-pressed="true"]):hover { opacity: 1; }
+  #bg-wildfires-map .bgwf-iskra-year-link { border-color: color-mix(in srgb, #ef4444 30%, var(--border)); }
   #bg-wildfires-map .bgwf-layer-controls { justify-content: center; gap: 0.45rem; margin-top: 0.2rem; }
   #bg-wildfires-map .bgwf-layer-toggle { display: inline-flex; align-items: center; gap: 0.38rem; }
   #bg-wildfires-map .bgwf-layer-toggle .bgwf-swatch { border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent); }
@@ -2178,12 +2179,20 @@ svg {
       .text(year + ((year === 2021 || year === 2026) ? "*" : ""));
   });
 
+  legend.append('a')
+    .attr('class', 'bgwf-live-link bgwf-iskra-year-link')
+    .attr('href', ISKRA_MAP_URL)
+    .attr('target', '_blank')
+    .attr('rel', 'noopener')
+    .attr('aria-label', 'Отвори текущата карта на ИСКРА в нов раздел')
+    .text('ИСКРА ↗');
+
   const layerControls = d3.select(root.querySelector('.bgwf-layer-controls'));
   [
-    { key: 'live', text: '🔥 Текущи Sentinel-3 засичания' },
-    { key: 'solar', text: 'Проверени изградени ФЕЦ' },
-    { key: 'projects', text: 'ПУП / ПИ проекти' },
-    { key: 'future', text: 'RED III / REPowerEU зони' },
+    { key: 'live', text: '🔥 Sentinel-3 пожар' },
+    { key: 'solar', text: 'Изградени ФЕЦ' },
+    { key: 'projects', text: 'ПУП/ПИ проекти' },
+    { key: 'future', text: 'RED III/REPowerEU' },
   ].forEach(({ key, text }) => {
     const button = layerControls.append('button')
       .attr('type', 'button')
@@ -2204,13 +2213,6 @@ svg {
     button.append('span').attr('class', 'bgwf-swatch');
     button.append('span').text(text);
   });
-
-  layerControls.append('a')
-    .attr('class', 'bgwf-live-link')
-    .attr('href', ISKRA_MAP_URL)
-    .attr('target', '_blank')
-    .attr('rel', 'noopener')
-    .text('ИСКРА — текуща карта ↗');
 
   // Точните ПИ се зареждат асинхронно от АГКК; пожарите остават незабавно видими.
   void loadProjectParcels();
