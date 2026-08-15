@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.34 · 15.08.2026 20:16</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.35 · 15.08.2026 20:25</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -880,10 +880,35 @@ svg {
     }
   }
 
+
+  #bg-wildfires-map .bgwf-data-notice {
+    margin: 0 0 .45rem;
+    padding: .38rem .55rem;
+    border-left: 3px solid #f59e0b;
+    background: color-mix(in srgb, #f59e0b 8%, transparent);
+    font-size: 11px;
+    line-height: 1.35;
+    color: var(--muted-foreground);
+  }
+  #bg-wildfires-map .bgwf-data-notice strong { color: var(--foreground); }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-data-notice {
+      margin-bottom: .3rem;
+      padding: .3rem .45rem;
+      font-size: 10px;
+      line-height: 1.25;
+    }
+  }
+
 </style>
 </head>
 <body>
 <div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
+  <div class="bgwf-data-notice" role="note">
+    <strong>Важно:</strong> картата е справочна и не гарантира 100% пълнота на пожарите.
+    Основните исторически данни от EFFIS/Copernicus картографират предимно пожари около и над 30 ha,
+    поради което по-малки пожари може да липсват.
+  </div>
 <div class="viz-row bgwf-summary" aria-label="Обобщение">
     <span><strong data-total-count></strong> периметъра</span>
     <span><strong data-total-area></strong> ha картографирана площ</span>
@@ -894,10 +919,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.34</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.35</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.34</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.35</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
