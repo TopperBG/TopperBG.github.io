@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.58 · 16.08.2026 21:05</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.59 · 16.08.2026 21:18</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1104,6 +1104,16 @@ svg {
     stroke-width: 2.6;
   }
 
+
+  #bg-wildfires-map .bgwf-built-wind .bgwf-wind-hit {
+    fill: transparent;
+    stroke: none;
+    pointer-events: all;
+  }
+  #bg-wildfires-map .bgwf-built-wind:focus {
+    outline: none;
+  }
+
 </style>
 </head>
 <body>
@@ -1115,10 +1125,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.58</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.59</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.58</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.59</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3463,6 +3473,7 @@ svg {
       .attr("role", "button");
 
     // Minimal wind-turbine pictogram: mast + rotor, fixed screen size.
+    enter.append("circle").attr("class", "bgwf-wind-hit").attr("r", 15);
     enter.append("line").attr("class", "bgwf-wind-mast");
     enter.append("circle").attr("class", "bgwf-wind-hub").attr("r", 2.1);
     enter.append("path").attr("class", "bgwf-wind-blades");
@@ -3473,9 +3484,17 @@ svg {
         return p ? `translate(${p[0]},${p[1]}) scale(${1 / Math.max(1, currentZoomTransform.k)})` : "translate(-9999,-9999)";
       })
       .attr("aria-label", windPlantLabel)
-      .on("mouseenter", (event, d) => showTooltip(event, windPlantLabel(d)))
+      .on("mouseenter", function(event, d) {
+        showTooltip(event, windPlantLabel(d));
+        activateDetail();
+        if (detail) detail.textContent = windPlantLabel(d);
+      })
       .on("mousemove", moveTooltip)
       .on("mouseleave", hideTooltip)
+      .on("focus", function(event, d) {
+        activateDetail();
+        if (detail) detail.textContent = windPlantLabel(d);
+      })
       .on("click", function(event, d) {
         event.stopPropagation();
         tooltip.hidden = true;
