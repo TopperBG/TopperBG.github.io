@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.49 · 16.08.2026 01:13</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.50 · 16.08.2026 01:20</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1014,10 +1014,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.49</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.50</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.49</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.50</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1084,6 +1084,7 @@ svg {
       <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
       </p>
       <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
+      <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ФЕЦ, ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
@@ -2560,7 +2561,6 @@ svg {
   }
 
   let activeYear = parseYearParam();
-  let layerYearScope = activeYear === false ? 2026 : activeYear;
   let activeProvinceFeature = null;
   let currentZoomTransform = d3.zoomIdentity;
   const layerVisibility = {
@@ -3191,9 +3191,7 @@ svg {
 
   function updateProjectParcels() {
     const all = window.__bgwfProjectParcels ?? [];
-    const visible = layerVisibility.projects
-      ? all.filter(d => layerYearScope == null || d.project.year <= layerYearScope)
-      : [];
+    const visible = layerVisibility.projects ? all : [];
 
     projectParcelLayer.selectAll('path')
       .data(visible, d => `${d.project.id}-${d.parcelRef}`)
@@ -3222,9 +3220,7 @@ svg {
 
   function updateSolarParcels() {
     const all = window.__bgwfSolarParcels ?? [];
-    const visible = layerVisibility.solar
-      ? all.filter(d => layerYearScope == null || d.project.year <= layerYearScope)
-      : [];
+    const visible = layerVisibility.solar ? all : [];
 
     solarParcelLayer.selectAll('path')
       .data(visible, d => `${d.project.id}-${d.parcelRef}`)
@@ -3299,14 +3295,10 @@ svg {
 
     const loadedProjects = window.__bgwfProjectParcels?.length ?? 0;
     const loadedSolar = window.__bgwfSolarParcels?.length ?? 0;
-    const scopeText = layerYearScope == null ? 'всички години' : `${layerYearScope} г.`;
+    const scopeText = activeYear === false ? 'пожари скрити' : activeYear == null ? 'всички пожари' : `пожари ${activeYear} г.`;
 
-    const projectCount = layerVisibility.projects
-      ? (window.__bgwfProjectParcels ?? []).filter(d => layerYearScope == null || d.project.year <= layerYearScope).length
-      : 0;
-    const solarVisibleRows = layerVisibility.solar
-      ? (window.__bgwfSolarParcels ?? []).filter(d => layerYearScope == null || d.project.year <= layerYearScope)
-      : [];
+    const projectCount = layerVisibility.projects ? (window.__bgwfProjectParcels ?? []).length : 0;
+    const solarVisibleRows = layerVisibility.solar ? (window.__bgwfSolarParcels ?? []) : [];
     const solarCount = solarVisibleRows.length;
     const solarProjectCount = new Set(solarVisibleRows.map(d => d.project.id)).size;
 
@@ -3429,7 +3421,7 @@ svg {
   }
 
   function updateLiveFires() {
-    const liveAllowedByYear = activeYear === false ? (layerYearScope == null || layerYearScope === 2026) : (activeYear == null || activeYear === 2026);
+    const liveAllowedByYear = activeYear == null || activeYear === 2026 || activeYear === false;
     const visible = layerVisibility.live && liveAllowedByYear ? liveFireDetections : [];
     liveFireLayer.selectAll('g.bgwf-live-fire')
       .data(visible, d => d.id)
@@ -3834,10 +3826,6 @@ svg {
     // null = all years; false = no historical fires.
     const nextYear = (year !== null && activeYear === year) ? false : year;
     activeYear = nextYear;
-    // Hiding historical fires must not hide/filter out FEC/PUP layers.
-    // Keep the last selected year as the independent VЕИ scope.
-    if (year !== null) layerYearScope = year;
-    else if (activeYear !== false) layerYearScope = null;
 
     tooltip.hidden = true;
     restoreTransformedFireCircle();
@@ -3881,7 +3869,7 @@ svg {
 
     setDetailHint(
       activeYear === false
-        ? `Пожарите са скрити · ВЕИ слоевете остават за ${layerYearScope == null ? "всички години" : layerYearScope + " г."}`
+        ? "Пожарите са скрити · ВЕИ слоевете остават непроменени"
         : activeYear == null
           ? (layerVisibility.live
               ? "Показани са всички исторически пожари и текущият Sentinel-3 слой."
