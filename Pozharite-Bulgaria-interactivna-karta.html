@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.41 · 15.08.2026 21:08</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.43 · 15.08.2026 21:36</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -988,10 +988,14 @@ svg {
     }
   }
 
-
   #bg-wildfires-map .bgwf-effis-selected-perimeter {
-    opacity: .72;
-    mix-blend-mode: multiply;
+    fill: #ef4444;
+    fill-opacity: .16;
+    stroke: #b91c1c;
+    stroke-width: 1.8;
+    stroke-opacity: .95;
+    vector-effect: non-scaling-stroke;
+    pointer-events: none;
   }
 
 </style>
@@ -1005,10 +1009,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.41</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.43</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.41</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.43</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1074,7 +1078,7 @@ svg {
       като самостоятелен геометричен периметър.
       <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
       </p>
-      <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява само тогава официалния EFFIS/Copernicus Burnt Areas WMS и наслагва наличния сателитно картографиран периметър. Кръгът остава като сравнителен символ за площта.</p>
+      <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
       <p><strong>RED III / REPowerEU:</strong> зелените полигони са геореферирани и векторизирани по официалната картографска визуализация към проекта на Плана от март 2026.</p>
@@ -2498,7 +2502,10 @@ svg {
 
   // Keep one common radius scale so a 500 ha fire has the same visual size
   // regardless of which year is selected.
-  const radius = d3.scaleSqrt().domain([1, largestAll]).range([1.8, 20]);
+  const radius = d3.scaleSqrt()
+    .domain([1, Math.max(400, d3.max(fires, d => d.area_ha) || 400)])
+    .range([3.2, 31])
+    .clamp(true);
   const detail = root.querySelector("[data-detail]");
   const detailBox = root.querySelector(".bgwf-detail");
   function activateDetail() { detailBox?.classList.remove("is-hint"); }
@@ -2554,7 +2561,9 @@ svg {
   const provinceNameEl = root.querySelector('[data-province-name]');
 
   function screenRadius(area) {
-    return radius(area) / Math.max(1, currentZoomTransform.k);
+    // The symbol's diameter continues to encode burnt area.
+    // d3.scaleSqrt means the circle's visual area is proportional to hectares.
+    return radius(Math.max(1, Number(area) || 1)) / Math.max(1, currentZoomTransform.k);
   }
 
   function updateZoomSensitiveMarks() {
@@ -3427,80 +3436,242 @@ svg {
       );
   }
 
-  // Selected historical fire perimeter from the official EFFIS/Copernicus
-  // Burnt Areas WMS. The overlay is loaded only after a fire is selected,
-  // so it adds no cost to the initial map load.
-  const EFFIS_WMS = "https://maps.effis.emergency.copernicus.eu/effis";
-  const EFFIS_BBOX = { west: 22.25, south: 41.15, east: 28.75, north: 44.30 };
+  // Real EFFIS/Copernicus burnt-area geometry.
+  // WFS returns vector GML; successful matches are cached locally per fire.
+  const EFFIS_WFS = "https://maps.effis.emergency.copernicus.eu/effis";
+  const EFFIS_PERIMETER_CACHE_KEY = "bgwf-effis-perimeters-v1";
 
-  function webMercatorMeters(lon, lat) {
-    const R = 6378137;
-    const x = R * lon * Math.PI / 180;
-    const clamped = Math.max(-85.05112878, Math.min(85.05112878, lat));
-    const y = R * Math.log(Math.tan(Math.PI / 4 + clamped * Math.PI / 360));
-    return [x, y];
+  function readEffisPerimeterCache() {
+    try {
+      return JSON.parse(localStorage.getItem(EFFIS_PERIMETER_CACHE_KEY) || "{}");
+    } catch (_) {
+      return {};
+    }
   }
 
-  function effisOverlayRect() {
-    const tl = projection([EFFIS_BBOX.west, EFFIS_BBOX.north]);
-    const br = projection([EFFIS_BBOX.east, EFFIS_BBOX.south]);
-    return {
-      x: tl[0],
-      y: tl[1],
-      width: br[0] - tl[0],
-      height: br[1] - tl[1]
-    };
+  function writeEffisPerimeterCache(cache) {
+    try {
+      localStorage.setItem(EFFIS_PERIMETER_CACHE_KEY, JSON.stringify(cache));
+    } catch (_) {}
   }
 
   function clearEffisPerimeter() {
     effisPerimeterLayer.selectAll("*").remove();
   }
 
-  function showEffisPerimeter(d) {
+  function drawEffisGeometry(geometry) {
     clearEffisPerimeter();
+    const dPath = projectedGeometryPath(geometry);
+    if (!dPath) return false;
+    effisPerimeterLayer.append("path")
+      .attr("class", "bgwf-effis-selected-perimeter")
+      .attr("d", dPath);
+    return true;
+  }
 
-    const start = d.date;
-    const end = d.final_date || d.date;
-    if (!start) return;
+  function childElements(node) {
+    return Array.from(node?.children || []);
+  }
 
-    const [minx, miny] = webMercatorMeters(EFFIS_BBOX.west, EFFIS_BBOX.south);
-    const [maxx, maxy] = webMercatorMeters(EFFIS_BBOX.east, EFFIS_BBOX.north);
-    const rect = effisOverlayRect();
+  function localElements(node, name) {
+    return Array.from(node?.getElementsByTagNameNS?.("*", name) || []);
+  }
+
+  function parseGmlRing(linearRing) {
+    const coordsNode = localElements(linearRing, "coordinates")[0];
+    if (coordsNode) {
+      return String(coordsNode.textContent || "")
+        .trim()
+        .split(/\s+/)
+        .map(pair => pair.split(",").slice(0, 2).map(Number))
+        .filter(p => p.length === 2 && Number.isFinite(p[0]) && Number.isFinite(p[1]));
+    }
+
+    const posList = localElements(linearRing, "posList")[0];
+    if (posList) {
+      const nums = String(posList.textContent || "").trim().split(/\s+/).map(Number);
+      const ring = [];
+      for (let i = 0; i + 1 < nums.length; i += 2) {
+        if (Number.isFinite(nums[i]) && Number.isFinite(nums[i + 1])) {
+          ring.push([nums[i], nums[i + 1]]);
+        }
+      }
+      return ring;
+    }
+
+    const positions = localElements(linearRing, "pos");
+    return positions.map(pos => {
+      const nums = String(pos.textContent || "").trim().split(/\s+/).map(Number);
+      return [nums[0], nums[1]];
+    }).filter(p => Number.isFinite(p[0]) && Number.isFinite(p[1]));
+  }
+
+  function parseGmlGeometry(featureNode) {
+    const polygons = localElements(featureNode, "Polygon");
+    if (!polygons.length) return null;
+
+    const parsed = polygons.map(poly => {
+      const rings = localElements(poly, "LinearRing")
+        .map(parseGmlRing)
+        .filter(ring => ring.length >= 4);
+      return rings;
+    }).filter(rings => rings.length);
+
+    if (!parsed.length) return null;
+    return parsed.length === 1
+      ? { type: "Polygon", coordinates: parsed[0] }
+      : { type: "MultiPolygon", coordinates: parsed };
+  }
+
+  function readFeatureProperties(featureNode) {
+    const props = {};
+    childElements(featureNode).forEach(el => {
+      if (localElements(el, "Polygon").length || localElements(el, "MultiPolygon").length) return;
+      if (el.children.length === 0) props[el.localName || el.nodeName] = String(el.textContent || "").trim();
+    });
+    return props;
+  }
+
+  function geometryCoords(geometry) {
+    if (!geometry) return [];
+    if (geometry.type === "Polygon") return geometry.coordinates.flat();
+    if (geometry.type === "MultiPolygon") return geometry.coordinates.flat(2);
+    return [];
+  }
+
+  function geometryCenter(geometry) {
+    const pts = geometryCoords(geometry).filter(p => Array.isArray(p) && Number.isFinite(p[0]) && Number.isFinite(p[1]));
+    if (!pts.length) return null;
+    const sum = pts.reduce((a, p) => [a[0] + p[0], a[1] + p[1]], [0, 0]);
+    return [sum[0] / pts.length, sum[1] / pts.length];
+  }
+
+  function featureScore(candidate, fire) {
+    const center = geometryCenter(candidate.geometry);
+    if (!center) return Infinity;
+    const dx = (center[0] - fire.lon) * Math.cos(fire.lat * Math.PI / 180);
+    const dy = center[1] - fire.lat;
+    const distanceKm = Math.hypot(dx, dy) * 111;
+
+    const areaRaw = candidate.properties.AREA_HA ?? candidate.properties.area_ha ?? candidate.properties.AREA;
+    const effisArea = Number(areaRaw);
+    const areaPenalty = Number.isFinite(effisArea) && fire.area_ha > 0
+      ? Math.abs(Math.log(Math.max(effisArea, 0.1) / Math.max(fire.area_ha, 0.1))) * 1.7
+      : 0;
+
+    const fireDate = String(candidate.properties.FIREDATE ?? candidate.properties.firedate ?? "").slice(0, 10);
+    const datePenalty = fireDate && fire.date && fireDate !== fire.date ? 2.5 : 0;
+    return distanceKm + areaPenalty + datePenalty;
+  }
+
+  function parseEffisGml(xmlText) {
+    const xml = new DOMParser().parseFromString(xmlText, "application/xml");
+    if (localElements(xml, "ServiceException").length || localElements(xml, "parsererror").length) {
+      throw new Error("EFFIS WFS върна невалиден отговор");
+    }
+
+    let members = localElements(xml, "featureMember");
+    if (!members.length) members = localElements(xml, "member");
+
+    return members.map(member => {
+      const featureNode = childElements(member)[0];
+      if (!featureNode) return null;
+      const geometry = parseGmlGeometry(featureNode);
+      if (!geometry) return null;
+      return { geometry, properties: readFeatureProperties(featureNode) };
+    }).filter(Boolean);
+  }
+
+  async function fetchEffisCandidates(fire, typeName) {
+    const radiusKm = Math.max(6, Math.min(35, Math.sqrt(Math.max(fire.area_ha, 1) / 100) * 5));
+    const dLat = radiusKm / 111;
+    const dLon = dLat / Math.max(0.55, Math.cos(fire.lat * Math.PI / 180));
 
     const params = new URLSearchParams({
-      SERVICE: "WMS",
-      VERSION: "1.1.1",
-      REQUEST: "GetMap",
-      LAYERS: "modis.ba",
-      STYLES: "",
-      FORMAT: "image/png",
-      TRANSPARENT: "true",
-      SRS: "EPSG:3857",
-      BBOX: `${minx},${miny},${maxx},${maxy}`,
-      WIDTH: "1100",
-      HEIGHT: "720",
-      TIME: start === end ? start : `${start}/${end}`
+      service: "WFS",
+      version: "1.0.0",
+      request: "GetFeature",
+      typename: typeName,
+      srsName: "EPSG:4326",
+      bbox: `${fire.lon - dLon},${fire.lat - dLat},${fire.lon + dLon},${fire.lat + dLat}`
     });
 
-    const image = effisPerimeterLayer.append("image")
-      .attr("class", "bgwf-effis-selected-perimeter")
-      .attr("x", rect.x)
-      .attr("y", rect.y)
-      .attr("width", rect.width)
-      .attr("height", rect.height)
-      .attr("preserveAspectRatio", "none")
-      .attr("href", `${EFFIS_WMS}?${params.toString()}`)
-      .style("pointer-events", "none");
-
-    const node = image.node();
-    if (node) {
-      node.addEventListener("error", () => {
-        clearEffisPerimeter();
-        if (detail) {
-          detail.textContent = `${label(d)} · EFFIS периметърът не е достъпен за този запис`;
-        }
-      }, { once: true });
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), 9000);
+    try {
+      const response = await fetch(`${EFFIS_WFS}?${params}`, {
+        signal: controller.signal,
+        mode: "cors",
+        cache: "force-cache"
+      });
+      if (!response.ok) throw new Error(`EFFIS WFS HTTP ${response.status}`);
+      return parseEffisGml(await response.text());
+    } finally {
+      window.clearTimeout(timer);
     }
+  }
+
+  async function showEffisPerimeter(fire) {
+    clearEffisPerimeter();
+
+    const cache = readEffisPerimeterCache();
+    const cached = cache[fire.id];
+    if (cached?.geometry && drawEffisGeometry(cached.geometry)) {
+      if (detail) detail.textContent = `${label(fire)} · реален EFFIS/Copernicus периметър · от локален кеш`;
+      return;
+    }
+
+    if (detail) detail.textContent = `${label(fire)} · търся реалния EFFIS/Copernicus GIS периметър…`;
+
+    const layerNames = [
+      `modis.ba.poly.${fire.year}`,
+      "ms:modis.ba.poly"
+    ];
+
+    let candidates = [];
+    let lastError = null;
+
+    for (const layerName of layerNames) {
+      try {
+        candidates = await fetchEffisCandidates(fire, layerName);
+        if (candidates.length) break;
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    if (!candidates.length) {
+      if (detail) {
+        detail.textContent = `${label(fire)} · няма намерен EFFIS GIS периметър${lastError ? ` (${lastError.message})` : ""}`;
+      }
+      return;
+    }
+
+    candidates.sort((a, b) => featureScore(a, fire) - featureScore(b, fire));
+    const best = candidates[0];
+    const score = featureScore(best, fire);
+
+    // Avoid drawing a nearby but obviously unrelated polygon.
+    if (!Number.isFinite(score) || score > 18) {
+      if (detail) detail.textContent = `${label(fire)} · EFFIS има близки полигони, но няма достатъчно надеждно съвпадение`;
+      return;
+    }
+
+    if (!drawEffisGeometry(best.geometry)) {
+      if (detail) detail.textContent = `${label(fire)} · EFFIS геометрията не може да се изчертае`;
+      return;
+    }
+
+    cache[fire.id] = {
+      savedAt: Date.now(),
+      geometry: best.geometry,
+      properties: best.properties
+    };
+    writeEffisPerimeterCache(cache);
+
+    const effisArea = Number(best.properties.AREA_HA ?? best.properties.area_ha ?? best.properties.AREA);
+    const areaText = Number.isFinite(effisArea) ? ` · EFFIS ${formatNumber.format(effisArea)} ha` : "";
+    if (detail) detail.textContent = `${label(fire)} · реален EFFIS/Copernicus GIS периметър${areaText}`;
   }
 
   function updateFires(points) {
