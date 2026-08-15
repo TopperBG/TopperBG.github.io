@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.43 · 15.08.2026 21:36</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.44 · 15.08.2026 21:44</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -998,22 +998,26 @@ svg {
     pointer-events: none;
   }
 
+
+  #bg-wildfires-map .bgwf-fire {
+    transition: opacity 120ms ease;
+  }
+
 </style>
 </head>
 <body>
 <div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
   <div class="bgwf-data-notice" role="note">
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
+  </div>
+<div class="card bgwf-important-note" role="note">
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
-<!-- <div class="card bgwf-important-note" role="note">
-    <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
-  </div> -->
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.43</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.44</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.43</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.44</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2520,6 +2524,23 @@ svg {
   const liveFireLayer = mapViewport.append("g").attr("class", "bgwf-live-fire-layer");
   const provinceFocusLayer = mapViewport.append("g").attr("class", "bgwf-province-focus-layer");
   let selected = null;
+  let transformedFireCircle = null;
+
+  function restoreTransformedFireCircle() {
+    if (transformedFireCircle) {
+      transformedFireCircle.style.visibility = "";
+      transformedFireCircle.style.opacity = "";
+      transformedFireCircle = null;
+    }
+  }
+
+  function transformCircleToPerimeter(circleNode) {
+    restoreTransformedFireCircle();
+    transformedFireCircle = circleNode || null;
+    if (transformedFireCircle) {
+      transformedFireCircle.style.visibility = "hidden";
+    }
+  }
   let activeYear = null;
   let activeProvinceFeature = null;
   let currentZoomTransform = d3.zoomIdentity;
@@ -3618,8 +3639,9 @@ svg {
     const cache = readEffisPerimeterCache();
     const cached = cache[fire.id];
     if (cached?.geometry && drawEffisGeometry(cached.geometry)) {
+      transformCircleToPerimeter(selected);
       if (detail) detail.textContent = `${label(fire)} · реален EFFIS/Copernicus периметър · от локален кеш`;
-      return;
+      return true;
     }
 
     if (detail) detail.textContent = `${label(fire)} · търся реалния EFFIS/Copernicus GIS периметър…`;
@@ -3645,7 +3667,7 @@ svg {
       if (detail) {
         detail.textContent = `${label(fire)} · няма намерен EFFIS GIS периметър${lastError ? ` (${lastError.message})` : ""}`;
       }
-      return;
+      return false;
     }
 
     candidates.sort((a, b) => featureScore(a, fire) - featureScore(b, fire));
@@ -3655,13 +3677,15 @@ svg {
     // Avoid drawing a nearby but obviously unrelated polygon.
     if (!Number.isFinite(score) || score > 18) {
       if (detail) detail.textContent = `${label(fire)} · EFFIS има близки полигони, но няма достатъчно надеждно съвпадение`;
-      return;
+      return false;
     }
 
     if (!drawEffisGeometry(best.geometry)) {
       if (detail) detail.textContent = `${label(fire)} · EFFIS геометрията не може да се изчертае`;
-      return;
+      return false;
     }
+
+    transformCircleToPerimeter(selected);
 
     cache[fire.id] = {
       savedAt: Date.now(),
@@ -3673,6 +3697,7 @@ svg {
     const effisArea = Number(best.properties.AREA_HA ?? best.properties.area_ha ?? best.properties.AREA);
     const areaText = Number.isFinite(effisArea) ? ` · EFFIS ${formatNumber.format(effisArea)} ha` : "";
     if (detail) detail.textContent = `${label(fire)} · реален EFFIS/Copernicus GIS периметър${areaText}`;
+    return true;
   }
 
   function updateFires(points) {
@@ -3691,14 +3716,28 @@ svg {
           .on("mouseenter", showTooltip)
           .on("mouseleave", () => { tooltip.hidden = true; })
           .on("click", function(event, d) {
+            // Do not alter the current d3.zoom transform.
+            // The interaction is circle -> real burnt-area polygon only.
+            event.stopPropagation();
+
+            restoreTransformedFireCircle();
+            clearEffisPerimeter();
+
             if (selected) selected.classList.remove("is-selected");
             selected = this;
             selected.classList.add("is-selected");
+
             activateDetail();
             if (detail) {
-              detail.textContent = `${label(d)} · Natura 2000: ${d.natura2000_pct.toLocaleString("bg-BG", { maximumFractionDigits: 1 })}% · EFFIS/Copernicus: зареждане на реалния опожарен периметър…`;
+              detail.textContent = `${label(d)} · Natura 2000: ${d.natura2000_pct.toLocaleString("bg-BG", { maximumFractionDigits: 1 })}% · търся реалния EFFIS/Copernicus GIS периметър…`;
             }
-            showEffisPerimeter(d);
+
+            showEffisPerimeter(d).then(found => {
+              // If no reliable GIS polygon was found, keep the area-scaled circle.
+              if (!found && selected === this) {
+                this.style.visibility = "";
+              }
+            });
           })
           .call(enter => enter.transition().duration(180).attr("r", d => screenRadius(d.area_ha))),
         update => update
@@ -3715,6 +3754,7 @@ svg {
   function setYearFilter(year) {
     activeYear = year;
     tooltip.hidden = true;
+    restoreTransformedFireCircle();
     if (selected) {
       selected.classList.remove("is-selected");
       selected = null;
