@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.70 · OpenLayers full migration · 17.08.2026 18:05</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.70 · OpenLayers full migration · bootstrap fix 21:52</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1828,7 +1828,7 @@ svg {
     const probe={moduleLoaded:!!window.__bgwfModuleLoaded,ready:!!window.__bgwfReady,errors:window.__bgwfBootstrapErrors};
     try {
       const t=performance.now();
-      const r=await fetch('https://cdn.jsdelivr.net/npm/ol@10.10.0/Map.js',{method:'HEAD',mode:'cors',cache:'no-store'});
+      const r=await fetch('https://esm.sh/ol@10.10.0/Map.js',{method:'HEAD',mode:'cors',cache:'no-store'});
       probe.openLayersCdn={ok:r.ok,status:r.status,ms:Math.round(performance.now()-t)};
     } catch(e) {
       probe.openLayersCdn={ok:false,error:String(e?.message||e)};
@@ -1844,7 +1844,7 @@ svg {
 <script type="importmap">
 {
   "imports": {
-    "ol/": "https://cdn.jsdelivr.net/npm/ol@10.10.0/"
+    "ol/": "https://esm.sh/ol@10.10.0/"
   }
 }
 </script>
