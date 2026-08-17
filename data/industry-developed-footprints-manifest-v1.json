@@ -1,0 +1,137 @@
+{
+  "schema": "bgwf-industry-developed-footprints-manifest-v1",
+  "generatedAt": "2026-08-17T14:35:13.511961+00:00",
+  "semantics": "OSM mapped developed/industrial footprint; never a legal concession boundary",
+  "sites": [
+    {
+      "id": "TPP-ME2",
+      "name": "ТЕЦ „Марица изток 2“",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 146641607,
+      "lon": 26.1305,
+      "lat": 42.25302,
+      "source": "https://www.tpp2.com/"
+    },
+    {
+      "id": "TPP-AES-GALABOVO",
+      "name": "ТЕЦ AES Гълъбово",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 918500389,
+      "lon": 25.9035,
+      "lat": 42.15853,
+      "source": "https://www.aesbulgaria.com/"
+    },
+    {
+      "id": "TPP-ME3",
+      "name": "ТЕЦ „Марица изток 3“",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 157660794,
+      "lon": 26.00363,
+      "lat": 42.14497,
+      "source": "https://www.contourglobal.com/location/bulgaria/"
+    },
+    {
+      "id": "TPP-BOBOV-DOL",
+      "name": "ТЕЦ „Бобов дол“",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 439600139,
+      "lon": 23.03415,
+      "lat": 42.2857,
+      "source": "https://www.openstreetmap.org/way/439600139"
+    },
+    {
+      "id": "TPP-MARITSA3",
+      "name": "ТЕЦ „Марица 3“ — Димитровград",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 918500390,
+      "lon": 25.62619,
+      "lat": 42.05263,
+      "source": "https://www.openstreetmap.org/way/918500390"
+    },
+    {
+      "id": "TPP-BRIKEL",
+      "name": "ТЕЦ „Брикел“ — Гълъбово",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 918500388,
+      "lon": 25.90578,
+      "lat": 42.15466,
+      "source": "https://www.openstreetmap.org/way/918500388"
+    },
+    {
+      "id": "TPP-VARNA",
+      "name": "ТЕЦ „Варна“",
+      "type": "tpp",
+      "osmType": "W",
+      "osmId": 111567265,
+      "lon": 27.7638,
+      "lat": 43.19566,
+      "source": "https://www.openstreetmap.org/way/111567265"
+    },
+    {
+      "id": "MINE-MARITSA-EAST",
+      "name": "Мини „Марица-изток“ — открит минен комплекс",
+      "type": "coal",
+      "osmType": "W",
+      "osmId": 137246419,
+      "lon": 26.02066,
+      "lat": 42.22085,
+      "source": "https://www.marica-iztok.com/"
+    },
+    {
+      "id": "MINE-BOBOV-DOL",
+      "name": "Мина „Бобов дол“",
+      "type": "coal",
+      "osmType": "W",
+      "osmId": 124105282,
+      "lon": 23.01245,
+      "lat": 42.37074,
+      "source": "https://www.openstreetmap.org/way/124105282"
+    },
+    {
+      "id": "MINE-ASAREL",
+      "name": "Рудник „Асарел“",
+      "type": "ore",
+      "osmType": "W",
+      "osmId": 124105802,
+      "lon": 24.14554,
+      "lat": 42.54441,
+      "source": "https://www.asarel.com/en/about/"
+    },
+    {
+      "id": "MINE-ELATSITE",
+      "name": "Рудник „Елаците“",
+      "type": "ore",
+      "osmType": "R",
+      "osmId": 18451229,
+      "lon": 24.02605,
+      "lat": 42.76465,
+      "source": "https://www.ellatzite-med.com/"
+    },
+    {
+      "id": "MINE-CHELOPECH",
+      "name": "Рудник „Челопеч“ — надземна площадка",
+      "type": "ore",
+      "osmType": "W",
+      "osmId": 853545188,
+      "lon": 24.07387,
+      "lat": 42.6955,
+      "source": "https://dundeeprecious.com/operations/producing/chelopech/"
+    },
+    {
+      "id": "REF-NEFTOCHIM-BURGAS",
+      "name": "Нефтохим Бургас — рафинерия",
+      "type": "refinery",
+      "osmType": "W",
+      "osmId": 173780738,
+      "lon": 27.33312,
+      "lat": 42.53952,
+      "source": "https://www.openstreetmap.org/way/173780738"
+    }
+  ]
+}

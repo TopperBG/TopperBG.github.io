@@ -1,0 +1,63 @@
+{
+  "schema": "bgwf-source-manifest-v1",
+  "generatedAt": "2026-08-17T14:35:13.512162+00:00",
+  "mapVersion": "0.70",
+  "engine": "OpenLayers 10.10.0",
+  "sources": [
+    {
+      "id": "OPENLAYERS",
+      "kind": "library",
+      "url": "https://github.com/openlayers/openlayers",
+      "version": "10.10.0"
+    },
+    {
+      "id": "EFFIS",
+      "kind": "historical fires / WFS perimeter",
+      "url": "https://forest-fire.emergency.copernicus.eu/"
+    },
+    {
+      "id": "IAG-2025",
+      "kind": "Bulgarian official fire control source",
+      "url": "https://www.iag.bg/data/docs/pojarishta2025.rar"
+    },
+    {
+      "id": "AGKK",
+      "kind": "cadastral parcels ArcGIS REST",
+      "url": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query"
+    },
+    {
+      "id": "SENTINEL3",
+      "kind": "current hotspots WFS",
+      "url": "https://api.sentinel-hub.com/"
+    },
+    {
+      "id": "NOMINATIM-OSM",
+      "kind": "developed industry footprints",
+      "url": "https://nominatim.openstreetmap.org/lookup"
+    },
+    {
+      "id": "MGU-PERNIK-CONCESSIONS",
+      "kind": "official concession polygons ArcGIS",
+      "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer"
+    },
+    {
+      "id": "NKR",
+      "kind": "official concession metadata",
+      "url": "https://nkr.government.bg/"
+    },
+    {
+      "id": "ME-CONCESSIONS",
+      "kind": "national concession reference",
+      "url": "https://me.government.bg/bg/themes/koncesii-za-dobiv-735-406.html"
+    },
+    {
+      "id": "GOATCOUNTER",
+      "kind": "visitor counter",
+      "url": "https://topperbg.goatcounter.com/"
+    }
+  ],
+  "notes": [
+    "Sentinel endpoint is defined in the HTML implementation; source manifest records service family rather than credentials/API-specific query.",
+    "OSM footprints and official concession boundaries are deliberately separate layers."
+  ]
+}
