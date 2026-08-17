@@ -1,0 +1,46 @@
+{
+  "schema": "bgwf-gis-cache-policy-v1",
+  "generatedAt": "2026-08-17T19:45:49.997363+00:00",
+  "policy": {
+    "rotation": "calendar month",
+    "browserCacheNamespace": "bgwf-gis-monthly-YYYY-MM",
+    "localStorageNamespace": "bgwf-gis-monthly:<dataset>",
+    "automaticCleanup": "old Cache Storage monthly namespaces are removed on startup"
+  },
+  "datasets": [
+    {
+      "id": "agkk-parcels",
+      "cache": "localStorage monthly",
+      "live": false
+    },
+    {
+      "id": "agkk-built-static-json",
+      "cache": "Cache Storage monthly",
+      "live": false
+    },
+    {
+      "id": "industry-osm-polygons",
+      "cache": "localStorage + Cache Storage monthly",
+      "live": false
+    },
+    {
+      "id": "official-concessions",
+      "cache": "Cache Storage monthly + repository static JSON",
+      "live": false
+    },
+    {
+      "id": "effis-historical-perimeters",
+      "cache": "localStorage + Cache Storage monthly",
+      "live": false
+    },
+    {
+      "id": "sentinel-3-live",
+      "cache": "not monthly cached",
+      "live": true
+    }
+  ],
+  "manualCommands": [
+    "await bgwfGisCacheStatus()",
+    "await bgwfClearGisCache()"
+  ]
+}

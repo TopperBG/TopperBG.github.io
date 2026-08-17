@@ -1,0 +1,13 @@
+{
+  "version": "v0.75",
+  "checks": {
+    "syntaxOk": true,
+    "monthlyFetchWrapper": true,
+    "monthlyAgkk": true,
+    "monthlyIndustry": true,
+    "monthlyEffis": true,
+    "dynamicConcessionLegend": true,
+    "cacheStatusCommand": true,
+    "clearCommand": true
+  }
+}
