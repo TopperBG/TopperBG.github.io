@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.71-legacy-stable-20260817-2154">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.71 · OpenLayers full migration · legacy stable bootstrap 21:54</title>
+<meta name="bgwf-build" content="v0.72-ol10100-global-20260817-2225">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.72 · OpenLayers 10.10.0 · global hosted build 22:25</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1299,8 +1299,8 @@ svg {
   }
 
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@6.15.1/ol.css">
-<script src="https://cdn.jsdelivr.net/npm/ol@6.15.1/dist/ol.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.10.0/ol.css">
+<script src="https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
@@ -1311,10 +1311,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.71</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.72</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.71</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.72</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1395,7 +1395,7 @@ svg {
       <p><strong>ТЕЦ / мини:</strong> плътният полигон е разработена/индустриална площ; червеният пунктиран контур е официална концесионна граница. От v0.69 официалните концесионни геометрии първо се четат от локален <code>data/industry-concessions-cache-v1.json</code>, а публичният ArcGIS слой за област Перник остава online fallback. Суровите КС1970 регистри за „Асарел“ (40/40 точки) и „Хан Крум/Ада тепе“ (14/14 точки) са извлечени, но не се рисуват, докато не бъдат трансформирани/проверени с BGSTrans. За „Елаците“ НКР потвърждава БГС2005 регистър от 395 точки и площ 21 821,8 дка; числовият регистър остава в прикачения документ на НКР. Никакъв полигон не се създава от площ, приблизителен център или предполагаема форма. © OpenStreetMap contributors, ODbL.</p>
       <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
-<p><strong>Map engine v0.71:</strong> картографският renderer, pan/zoom, hit detection и GeoJSON reprojection са мигрирани изцяло към OpenLayers 6.15.1. D3/SVG вече не се използва като map engine. Диагностичният режим се включва с <code>?debug=1</code> и предоставя <code>bgwfDebugReport()</code>, <code>bgwfRunSelfTests()</code> и JSON export.</p>
+<p><strong>Map engine v0.71:</strong> картографският renderer, pan/zoom, hit detection и GeoJSON reprojection са мигрирани изцяло към OpenLayers 10.10.0. D3/SVG вече не се използва като map engine. Диагностичният режим се включва с <code>?debug=1</code> и предоставя <code>bgwfDebugReport()</code>, <code>bgwfRunSelfTests()</code> и JSON export.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
       <p><strong>RED III / REPowerEU:</strong> зелените полигони са геореферирани и векторизирани по официалната картографска визуализация към проекта на Плана от март 2026.</p>
@@ -1830,7 +1830,7 @@ svg {
     const probe={moduleLoaded:!!window.__bgwfModuleLoaded,ready:!!window.__bgwfReady,errors:window.__bgwfBootstrapErrors};
     try {
       const t=performance.now();
-      const r=await fetch('https://cdn.jsdelivr.net/npm/ol@6.15.1/dist/ol.js',{method:'HEAD',mode:'cors',cache:'no-store'});
+      const r=await fetch('https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js',{method:'HEAD',mode:'cors',cache:'no-store'});
       probe.openLayersCdn={ok:r.ok,status:r.status,ms:Math.round(performance.now()-t)};
     } catch(e) {
       probe.openLayersCdn={ok:false,error:String(e?.message||e)};
@@ -1842,8 +1842,38 @@ svg {
   },8000);
 })();
 </script>
+
 <script>
-// v0.71 GitHub Pages bootstrap: pinned to OpenLayers 6.15.1 legacy browser build.
+(function () {
+  const required = [
+    ["ol", () => window.ol],
+    ["ol.Map", () => window.ol?.Map],
+    ["ol.View", () => window.ol?.View],
+    ["ol.Feature", () => window.ol?.Feature],
+    ["ol.layer.Vector", () => window.ol?.layer?.Vector],
+    ["ol.source.Vector", () => window.ol?.source?.Vector],
+    ["ol.format.GeoJSON", () => window.ol?.format?.GeoJSON],
+    ["ol.proj.fromLonLat", () => window.ol?.proj?.fromLonLat]
+  ];
+  const missing = required.filter(([, getter]) => {
+    try { return typeof getter() !== "function" && !getter(); }
+    catch (_) { return true; }
+  }).map(([name]) => name);
+
+  window.__BGWF_OL_PREFLIGHT__ = {
+    ok: missing.length === 0,
+    missing,
+    versionTarget: "10.10.0",
+    build: "official jsDelivr dist/ol.js"
+  };
+
+  if (missing.length) {
+    throw new Error("OpenLayers preflight failed: " + missing.join(", "));
+  }
+})();
+</script>
+<script>
+// v0.71 GitHub Pages bootstrap: pinned to OpenLayers 10.10.0 legacy browser build.
 // This release exposes a coherent global ol namespace (Map/View/default controls/interactions)
 // and avoids both ESM bare-specifier resolution and OL10 legacy View-instance mismatch.
 if (!window.ol) {
@@ -1868,7 +1898,7 @@ const defaultControls = ol.control.defaults;
 const defaultInteractions = ol.interaction.defaults;
 const getGeodesicArea = ol.sphere.getArea;
 
-window.__BGWF_OL_IMPORT_RESOLVER__ = "OpenLayers 6.15.1 legacy dist/ol.js";
+window.__BGWF_OL_IMPORT_RESOLVER__ = "OpenLayers 10.10.0 legacy dist/ol.js";
 
 window.__bgwfModuleLoaded = true;
 const root = document.getElementById('bg-wildfires-map');
@@ -2965,7 +2995,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.71', engine:'OpenLayers 6.15.1 legacy', startedAt:new Date().toISOString(),
+  version:'0.71', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -3311,7 +3341,7 @@ function runSelfTests(){
   selfTest('mobile-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body'),isMobile:matchMedia('(max-width:700px)').matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded')}));
   selfTest('ol-projection-roundtrip',()=>{const src=[25.25,42.75],back=toLonLat(fromLonLat(src)),err=Math.hypot(back[0]-src[0],back[1]-src[1]);return{ok:err<1e-9,errorDegrees:err};});
   selfTest('geojson-roundtrip',()=>{const raw={type:'Feature',properties:{test:1},geometry:{type:'Polygon',coordinates:[[[25,42],[25.1,42],[25.1,42.1],[25,42.1],[25,42]]]}};const f=cloneGeoFeature(raw);const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'});return{ok:Number.isFinite(area)&&area>0,areaM2:Math.round(area)};});
-  selfTest('openlayers-version-lock',()=>({ok:debugState.engine==='OpenLayers 6.15.1 legacy',engine:debugState.engine}));
+  selfTest('openlayers-version-lock',()=>({ok:debugState.engine==='OpenLayers 10.10.0 legacy',engine:debugState.engine}));
   selfTest('bootstrap-module-loaded',()=>({ok:window.__bgwfModuleLoaded===true,moduleLoaded:window.__bgwfModuleLoaded}));
   selfTest('no-runtime-d3',()=>({ok:typeof window.d3==='undefined',windowD3:typeof window.d3}));
   selfTest('goatcounter-canonical-path',()=>({ok:GOATCOUNTER_MAP_PATH==='/Pozharite-Bulgaria-interactivna-karta.html',path:GOATCOUNTER_MAP_PATH}));
