@@ -13,7 +13,8 @@
       "sourcePoints": 40,
       "sourceCrs": "KS1970",
       "zoneInference": "K9",
-      "status": "source_register_complete_pending_BGSTRans"
+      "status": "source_register_complete_pending_BGSTRans",
+      "officialAreaSource": "РМС №684/13.09.2011, т.16.2"
     },
     {
       "id": "MINE-HAN-KRUM",
@@ -23,7 +24,8 @@
       "sourcePoints": 14,
       "sourceCrs": "KS1970",
       "zoneInference": "K5",
-      "status": "source_register_complete_pending_BGSTRans"
+      "status": "source_register_complete_pending_BGSTRans",
+      "officialAreaSource": "РМС №87/11.02.2011"
     },
     {
       "id": "MINE-ELATSITE",
@@ -33,7 +35,8 @@
       "sourcePoints": 395,
       "sourceCrs": "BGS2005 cadastral",
       "status": "official_attachment_pending_download",
-      "attachment": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb"
+      "attachment": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
+      "officialAreaSource": "НКР D-000074, изменение 26.03.2025"
     },
     {
       "id": "MINE-CHELOPECH",
@@ -42,7 +45,8 @@
       "additionalAreaDka": 1864.0,
       "sourcePointsExpected": 62,
       "sourceCrs": "KS1970",
-      "status": "numeric_register_pending_extraction"
+      "status": "numeric_register_pending_extraction",
+      "officialAreaSource": "РМС №147/26.03.1999, изм. ДВ бр.7/2004; 1864 дка е допълнителна площ, не доказана обща площ"
     },
     {
       "id": "MINE-BOBOV-DOL",

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.72-ol10100-global-20260817-2225">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.72 · OpenLayers 10.10.0 · global hosted build 22:25</title>
+<meta name="bgwf-build" content="v0.74-agkk-resolver-concessions-20260817-2310">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.74 · OpenLayers 10.10.0 · AGKK resolver + concession diagnostics 23:10</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1311,10 +1311,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.72</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.74</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.72</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.74</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1894,8 +1894,6 @@ const CircleStyle = ol.style.Circle;
 const TextStyle = ol.style.Text;
 const fromLonLat = ol.proj.fromLonLat;
 const toLonLat = ol.proj.toLonLat;
-const defaultControls = ol.control.defaults;
-const defaultInteractions = ol.interaction.defaults;
 const getGeodesicArea = ol.sphere.getArea;
 
 window.__BGWF_OL_IMPORT_RESOLVER__ = "OpenLayers 10.10.0 legacy dist/ol.js";
@@ -1903,7 +1901,7 @@ window.__BGWF_OL_IMPORT_RESOLVER__ = "OpenLayers 10.10.0 legacy dist/ol.js";
 window.__bgwfModuleLoaded = true;
 const root = document.getElementById('bg-wildfires-map');
 const mapTarget = root?.querySelector('.bgwf-map');
-if (!root || !mapTarget) throw new Error('BGWF v0.71: map root/target missing');
+if (!root || !mapTarget) throw new Error('BGWF v0.73: map root/target missing');
 mapTarget.classList.add('is-loading');
 
 function normalizeProvinceName(value) {
@@ -3151,7 +3149,8 @@ const fireLayer=new VectorLayer({source:fireSource,zIndex:11,style:f=>{
 const liveLayer=new VectorLayer({source:liveSource,zIndex:12,visible:layerVisibility.live,style:f=>new Style({image:new CircleStyle({radius:f.get('selected')?11:9,fill:new Fill({color:f.get('selected')?'rgba(255,23,23,.34)':'rgba(255,23,23,.22)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ff1717',width:f.get('selected')?3:2})}),text:new TextStyle({text:'🔥',font:f.get('selected')?'17px sans-serif':'15px sans-serif',offsetY:-1})})});
 
 const view=new View({center:fromLonLat([25.25,42.75]),zoom:7,minZoom:5,maxZoom:16,constrainResolution:false});
-map=new MapOL({target:mapTarget,view,layers:[provinceLayer,densityLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,effisLayer,fireLayer,liveLayer],controls:defaultControls({zoom:false,rotate:false,attribution:false}),interactions:defaultInteractions({altShiftDragRotate:false,pinchRotate:false})});
+map=new MapOL({target:mapTarget,view,layers:[provinceLayer,densityLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,effisLayer,fireLayer,liveLayer]});
+window.__BGWF_MAP_CONSTRUCTED__=true;
 window.__bgwfOpenLayersMap=map;
 map.updateSize();
 
@@ -3170,7 +3169,14 @@ view.on('change:center',scheduleUrlSync); view.on('change:resolution',()=>{debug
 map.on('rendercomplete',()=>{debugState.renderCount++;mapTarget.classList.remove('is-loading');refreshDebugPanel();});
 
 function labelFire(d){const where=[d.municipality,d.province].filter(Boolean).join(', обл. ');const date=formatDate.format(new Date(`${d.date}T00:00:00`));return `${where} · ${date} · ${formatNumber.format(d.area_ha)} ha`;}
-function projectLabel(d){const area=Number(d.feature?.properties?.areavalue);const areaText=Number.isFinite(area)?` · ${formatNumber.format(area)} m² КККР`:'';return `${d.project.name} · ПИ ${d.parcelRef}${areaText} · ${d.project.statusLabel}`;}
+function projectLabel(d){
+  const area=Number(d.feature?.properties?.areavalue);
+  const areaText=Number.isFinite(area)?` · ${formatNumber.format(area)} m² КККР`:'';
+  const quality=d.feature?.properties?.__bgwfGeometryQuality||'exact';
+  const qualityText=quality==='extent'?' · ориентировъчен кадастрален обхват'
+    :quality==='simplified'?' · опростена кадастрална геометрия':'';
+  return `${d.project.name} · ПИ ${d.parcelRef}${areaText}${qualityText} · ${d.project.statusLabel}`;
+}
 function solarLabel(d){const area=Number(d.feature?.properties?.areavalue);const areaText=Number.isFinite(area)?` · ${formatNumber.format(area)} m² КККР`:'';const mwText=Number.isFinite(Number(d.project.mw))?` · ${Number(d.project.mw).toLocaleString('bg-BG',{maximumFractionDigits:3})} MW`:'';return `${d.project.name}${mwText} · въведена/действаща от ${d.project.year} г. · ПИ ${d.parcelRef}${areaText}`;}
 function windPlantLabel(d){const mw=Number.isFinite(Number(d.mw))?` · ${Number(d.mw).toLocaleString('bg-BG')} MW`:'';const t=Number.isFinite(Number(d.turbines))?` · ${d.turbines} турбини`:'';return `${d.name}${mw}${t} · ${d.statusLabel}`;}
 function industrialTypeLabel(t){return t==='tpp'?'ТЕЦ':t==='coal'?'Въглищна мина':t==='ore'?'Рудник':t==='refinery'?'Рафинерия':'Индустриален обект';}
@@ -3229,7 +3235,10 @@ loadWind();
 const operatingWindMappedMW=operatingWindProjects.reduce((s,d)=>s+(Number(d.mw)||0),0);
 
 // ---------- AGKK parcels: static cache -> localStorage -> network ----------
-const cadastralCache=new Map();let cadastralLoadStarted=false,cadastralLoadErrors=0;
+const cadastralCache=new Map();
+let cadastralLoadStarted=false,cadastralLoadErrors=0;
+let cadastralUnresolved=[];
+let cadastralResolutionStats={exact:0,simplified:0,extent:0,notFound:0,error:0};
 const CADASTRAL_STORAGE_KEY='bgwf-agkk-geometry-cache-v1';const BUILT_VEI_STATIC_CACHE_URL='./data/agkk-built-vei-cache.json';
 function sanitizeParcelRef(v){return String(v??'').replace(/[^0-9.]/g,'');}
 function readPersistentCadastralCache(){try{return JSON.parse(localStorage.getItem(CADASTRAL_STORAGE_KEY)||'{}')||{};}catch(e){dbgWarn('cadastre-cache-read',{message:e.message});return {};}}
@@ -3243,12 +3252,216 @@ function rowsGroupedByRef(rows){const m=new Map();rows.forEach(row=>{const ref=s
 function addFeatureForRows(loaded,rows,ref,feature){rows?.forEach(row=>{const key=`${row.layerType}|${row.project.id}|${ref}`;if(loaded.some(i=>`${i.layerType}|${i.project.id}|${sanitizeParcelRef(i.parcelRef)}`===key))return;loaded.push({...row,parcelRef:ref,feature});});}
 function fetchCadastralBatch(rows){const refs=[...new Set(rows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean))];if(!refs.length)return Promise.resolve({features:[]});const params=new URLSearchParams({where:`nationalcadastralref IN (${refs.map(r=>`'${r}'`).join(',')})`,outFields:'nationalcadastralref,areavalue,areavalue_uom,admunit,id_namespace',returnGeometry:'true',outSR:'4326',f:'json'});return new Promise((resolve,reject)=>{const cb=`__bgwfAgkkBatch_${Date.now()}_${Math.random().toString(36).slice(2)}`;const s=document.createElement('script');const cleanup=(err,val)=>{clearTimeout(timer);s.remove();try{delete window[cb]}catch{}err?reject(err):resolve(val);};const timer=setTimeout(()=>cleanup(new Error('АГКК timeout')),9000);window[cb]=v=>cleanup(null,v);s.onerror=()=>cleanup(new Error('АГКК network error'));params.set('callback',cb);s.src=`https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?${params}`;document.head.appendChild(s);});}
 function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+function fetchAgkkJsonp(params,{timeoutMs=6500,label='АГКК single'}={}){
+  return new Promise((resolve,reject)=>{
+    const cb=`__bgwfAgkkSingle_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    const s=document.createElement('script');
+    const cleanup=(err,val)=>{
+      clearTimeout(timer);s.remove();try{delete window[cb]}catch{}
+      err?reject(err):resolve(val);
+    };
+    const timer=setTimeout(()=>cleanup(new Error(`${label} timeout`)),timeoutMs);
+    window[cb]=v=>cleanup(null,v);
+    s.onerror=()=>cleanup(new Error(`${label} network error`));
+    params.set('callback',cb);
+    s.src=`https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?${params}`;
+    document.head.appendChild(s);
+  });
+}
+
+function agkkWhereForRef(ref){
+  return `nationalcadastralref='${sanitizeParcelRef(ref)}'`;
+}
+
+async function resolveSingleParcel(ref){
+  const common={
+    where:agkkWhereForRef(ref),
+    outFields:'nationalcadastralref,areavalue,areavalue_uom,admunit,id_namespace',
+    outSR:'4326',
+    f:'json'
+  };
+
+  // A. Individual exact geometry. This avoids one bad/heavy parcel killing a batch.
+  try{
+    const p=new URLSearchParams({...common,returnGeometry:'true'});
+    const data=await fetchAgkkJsonp(p,{label:'АГКК exact'});
+    const ef=data?.features?.[0];
+    if(ef?.geometry?.rings?.length){
+      return {
+        status:'exact',
+        feature:{type:'Feature',properties:{...(ef.attributes||{}),__bgwfGeometryQuality:'exact'},geometry:{type:'Polygon',coordinates:ef.geometry.rings}}
+      };
+    }
+    if(data?.error) throw new Error(data.error.message||'query error');
+  }catch(e){
+    dbgWarn('agkk-single-exact',{ref,error:e.message});
+  }
+
+  // B. Same official geometry, generalized to ~1 m in EPSG:4326.
+  try{
+    const p=new URLSearchParams({
+      ...common,
+      returnGeometry:'true',
+      geometryPrecision:'6',
+      maxAllowableOffset:'0.00001'
+    });
+    const data=await fetchAgkkJsonp(p,{label:'АГКК simplified'});
+    const ef=data?.features?.[0];
+    if(ef?.geometry?.rings?.length){
+      return {
+        status:'simplified',
+        feature:{type:'Feature',properties:{...(ef.attributes||{}),__bgwfGeometryQuality:'simplified'},geometry:{type:'Polygon',coordinates:ef.geometry.rings}}
+      };
+    }
+  }catch(e){
+    dbgWarn('agkk-single-simplified',{ref,error:e.message});
+  }
+
+  // C. First determine whether the identifier exists in the current INSPIRE layer.
+  try{
+    const countParams=new URLSearchParams({
+      where:agkkWhereForRef(ref),
+      returnGeometry:'false',
+      returnCountOnly:'true',
+      f:'json'
+    });
+    const countData=await fetchAgkkJsonp(countParams,{label:'АГКК existence'});
+    if(Number(countData?.count)===0){
+      return {status:'not-found',reason:'identifier not found in current AGKK INSPIRE layer'};
+    }
+  }catch(e){
+    dbgWarn('agkk-single-count',{ref,error:e.message});
+  }
+
+  // D. Official feature extent: rough, but derived from AGKK, never invented.
+  try{
+    const extentParams=new URLSearchParams({
+      where:agkkWhereForRef(ref),
+      outSR:'4326',
+      returnGeometry:'false',
+      returnExtentOnly:'true',
+      f:'json'
+    });
+    const data=await fetchAgkkJsonp(extentParams,{label:'АГКК extent'});
+    const e=data?.extent;
+    if([e?.xmin,e?.ymin,e?.xmax,e?.ymax].every(Number.isFinite)){
+      const ring=[
+        [e.xmin,e.ymin],[e.xmax,e.ymin],[e.xmax,e.ymax],[e.xmin,e.ymax],[e.xmin,e.ymin]
+      ];
+      return {
+        status:'extent',
+        feature:{
+          type:'Feature',
+          properties:{
+            nationalcadastralref:sanitizeParcelRef(ref),
+            __bgwfGeometryQuality:'extent',
+            __bgwfGeometryNote:'official AGKK query extent; not exact parcel boundary'
+          },
+          geometry:{type:'Polygon',coordinates:[ring]}
+        }
+      };
+    }
+  }catch(e){
+    return {status:'error',reason:e.message};
+  }
+
+  return {status:'error',reason:'AGKK returned neither polygon nor extent'};
+}
+
+async function resolveRemainingCadastralRows(rows,loaded,persistent){
+  const grouped=rowsGroupedByRef(rows);
+  const refs=[...grouped.keys()];
+  const unresolved=[];
+  const stats={exact:0,simplified:0,extent:0,notFound:0,error:0};
+  let cursor=0;
+
+  async function worker(){
+    while(cursor<refs.length){
+      const ref=refs[cursor++];
+      const result=await resolveSingleParcel(ref);
+      stats[result.status==='not-found'?'notFound':result.status]=(stats[result.status==='not-found'?'notFound':result.status]||0)+1;
+
+      if(result.feature){
+        cacheFeature(persistent,ref,result.feature);
+        cadastralCache.set(ref,result.feature);
+        addFeatureForRows(loaded,grouped.get(ref),ref,result.feature);
+      }else{
+        unresolved.push({
+          parcelRef:ref,
+          status:result.status,
+          reason:result.reason||'',
+          rows:(grouped.get(ref)||[]).map(r=>({
+            layerType:r.layerType,
+            projectId:r.project.id,
+            projectName:r.project.name
+          }))
+        });
+      }
+      renderParcelRows(loaded);
+    }
+  }
+
+  await Promise.all(Array.from({length:Math.min(4,Math.max(1,refs.length))},()=>worker()));
+  writePersistentCadastralCache(persistent);
+  return {unresolved,stats};
+}
+
+window.bgwfUnresolvedParcels=function(){
+  return structuredClone(cadastralUnresolved);
+};
+window.bgwfDownloadUnresolvedParcels=function(){
+  const payload={
+    generatedAt:new Date().toISOString(),
+    unresolvedCount:cadastralUnresolved.length,
+    resolutionStats:cadastralResolutionStats,
+    parcels:cadastralUnresolved
+  };
+  downloadJson(payload,'bgwf-unresolved-parcels.json');
+  return payload;
+};
+
 function renderParcelRows(loaded){solarSource.clear();projectSource.clear();for(const row of loaded){try{const f=cloneGeoFeature(row.feature);f.set('kind',row.layerType==='solar'?'solar':'project');f.set('data',row);f.set('status',row.project.status);(row.layerType==='solar'?solarSource:projectSource).addFeature(f);}catch(e){dbgWarn('parcel-geometry-rejected',{ref:row.parcelRef,message:e.message});}}
   window.__bgwfProjectParcels=loaded.filter(d=>d.layerType==='projects');window.__bgwfSolarParcels=loaded.filter(d=>d.layerType==='solar');debugState.layerCounts.solar=solarSource.getFeatures().length;debugState.layerCounts.projects=projectSource.getFeatures().length;updateLayerStatus();}
 async function fetchRowsInBatches(rows,loaded,persistent,{chunkSize=22,pauseMs=0,phaseLabel='АГКК',onProgress=null}={}){const failed=[];let failedUniqueRefs=0,batchErrors=0,processed=0;for(let off=0;off<rows.length;off+=chunkSize){const chunk=rows.slice(off,off+chunkSize),grouped=rowsGroupedByRef(chunk);if(pauseMs&&off)await sleep(pauseMs);const t=performance.now();try{const payload=await fetchCadastralBatch(chunk);debugState.network[`${phaseLabel}-${Math.floor(off/chunkSize)+1}`]={ok:true,ms:Math.round(performance.now()-t),rows:chunk.length};if(payload?.error)throw new Error(payload.error.message||'query error');const returned=new Set();for(const ef of payload?.features??[]){const attrs=ef?.attributes??{},ref=sanitizeParcelRef(attrs.nationalcadastralref),rings=ef?.geometry?.rings,matching=grouped.get(ref)||[];if(!ref||!matching.length||!rings?.length)continue;const feature={type:'Feature',properties:attrs,geometry:{type:'Polygon',coordinates:rings}};returned.add(ref);cacheFeature(persistent,ref,feature);cadastralCache.set(ref,feature);addFeatureForRows(loaded,matching,ref,feature);}grouped.forEach((matching,ref)=>{if(!returned.has(ref)){failedUniqueRefs++;failed.push(...matching);}});writePersistentCadastralCache(persistent);}catch(e){batchErrors++;failedUniqueRefs+=grouped.size;failed.push(...chunk);debugState.network[`${phaseLabel}-${Math.floor(off/chunkSize)+1}`]={ok:false,ms:Math.round(performance.now()-t),error:e.message};dbgWarn(`${phaseLabel}-batch-failed`,{batch:Math.floor(off/chunkSize)+1,error:e.message});}processed+=chunk.length;renderParcelRows(loaded);onProgress?.({processed,total:rows.length,failedUniqueRefs,loadedCount:loaded.length});}return{failedRows:failed,failedUniqueRefs,batchErrors};}
 async function loadProjectParcels(){if(cadastralLoadStarted)return;cadastralLoadStarted=true;const started=performance.now();setFilterPanelLoading(true);const plannedRows=cadastralProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'projects',project,parcelRef})));const solarRows=operatingSolarProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'solar',project,parcelRef})));const rows=[...plannedRows,...solarRows];const totalRefs=new Set(rows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;setLayerLoadState('solar','loading');setLayerLoadState('projects','loading');const persistent=readPersistentCadastralCache(),staticBuilt=await loadStaticBuiltVeiCache(),builtRefs=builtSolarRefsSet(),loaded=[],missing=[],grouped=rowsGroupedByRef(rows);grouped.forEach((matching,ref)=>{const sf=builtRefs.has(ref)?featureFromStaticCache(staticBuilt,ref):null;const f=sf||featureFromCache(persistent,ref);if(f){cadastralCache.set(ref,f);if(sf)cacheFeature(persistent,ref,sf);addFeatureForRows(loaded,matching,ref,f);}else missing.push(...matching);});writePersistentCadastralCache(persistent);renderParcelRows(loaded);const cachedRefs=totalRefs-new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;setMapLoadProgress(totalRefs?Math.round(cachedRefs/totalRefs*100):100,'loading');if(!missing.length){cadastralLoadErrors=0;setLayerLoadState('solar','ready');setLayerLoadState('projects','ready');setMapLoadProgress(100,'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);return;}
- const missingUnique=new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;const first=await fetchRowsInBatches(missing,loaded,persistent,{chunkSize:22,onProgress:({processed,total,failedUniqueRefs,loadedCount})=>{const done=Math.min(missingUnique,Math.round(processed/Math.max(total,1)*missingUnique));const overall=Math.min(totalRefs,cachedRefs+done);setMapLoadProgress(totalRefs?Math.round(overall/totalRefs*100):100,'loading');cadastralLoadErrors=failedUniqueRefs;if(layerStatus)layerStatus.textContent=`АГКК: ${overall}/${totalRefs} ПИ · ${loadedCount} геометрии`;}});const retryMap=new Map();first.failedRows.forEach(row=>retryMap.set(`${row.layerType}|${row.project.id}|${sanitizeParcelRef(row.parcelRef)}`,row));const retry=[...retryMap.values()];if(retry.length){setMapLoadProgress(100,'warning');await sleep(1000);const pass=await fetchRowsInBatches(retry,loaded,persistent,{chunkSize:8,pauseMs:350,phaseLabel:'АГКК retry'});cadastralLoadErrors=new Set(pass.failedRows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;}else cadastralLoadErrors=0;renderParcelRows(loaded);setLayerLoadState('solar',cadastralLoadErrors?'error':'ready');setLayerLoadState('projects',cadastralLoadErrors?'error':'ready');setMapLoadProgress(100,cadastralLoadErrors?'warning':'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);dbg('cadastre-finished',{loaded:loaded.length,errors:cadastralLoadErrors,ms:debugState.timings.cadastre});}
+ const missingUnique=new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;const first=await fetchRowsInBatches(missing,loaded,persistent,{chunkSize:22,onProgress:({processed,total,failedUniqueRefs,loadedCount})=>{const done=Math.min(missingUnique,Math.round(processed/Math.max(total,1)*missingUnique));const overall=Math.min(totalRefs,cachedRefs+done);setMapLoadProgress(totalRefs?Math.round(overall/totalRefs*100):100,'loading');cadastralLoadErrors=failedUniqueRefs;if(layerStatus)layerStatus.textContent=`АГКК: ${overall}/${totalRefs} ПИ · ${loadedCount} геометрии`;}});const retryMap=new Map();first.failedRows.forEach(row=>retryMap.set(`${row.layerType}|${row.project.id}|${sanitizeParcelRef(row.parcelRef)}`,row));const retry=[...retryMap.values()];if(retry.length){
+  setMapLoadProgress(100,'warning');
+  await sleep(1000);
+  const pass=await fetchRowsInBatches(retry,loaded,persistent,{chunkSize:8,pauseMs:350,phaseLabel:'АГКК retry'});
+  const retryFailed=pass.failedRows;
+  if(retryFailed.length){
+    if(layerStatus)layerStatus.textContent=`АГКК: индивидуален resolver за ${new Set(retryFailed.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size} ПИ…`;
+    const resolved=await resolveRemainingCadastralRows(retryFailed,loaded,persistent);
+    cadastralUnresolved=resolved.unresolved;
+    cadastralResolutionStats=resolved.stats;
+    cadastralLoadErrors=cadastralUnresolved.length;
+  }else{
+    cadastralUnresolved=[];
+    cadastralResolutionStats={exact:0,simplified:0,extent:0,notFound:0,error:0};
+    cadastralLoadErrors=0;
+  }
+}else{
+  cadastralUnresolved=[];
+  cadastralResolutionStats={exact:0,simplified:0,extent:0,notFound:0,error:0};
+  cadastralLoadErrors=0;
+}
+renderParcelRows(loaded);setLayerLoadState('solar',cadastralLoadErrors?'error':'ready');setLayerLoadState('projects',cadastralLoadErrors?'error':'ready');setMapLoadProgress(100,cadastralLoadErrors?'warning':'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);dbg('cadastre-finished',{loaded:loaded.length,errors:cadastralLoadErrors,ms:debugState.timings.cadastre});}
 window.bgwfExportBuiltVeiCache=function(){const refs=builtSolarRefsSet(),persistent=readPersistentCadastralCache(),features={};refs.forEach(ref=>{const f=featureFromCache(persistent,ref)||cadastralCache.get(ref);if(f?.geometry?.coordinates?.length)features[ref]={feature:f};});const payload={schema:'bgwf-agkk-built-vei-cache-v1',generatedAt:new Date().toISOString(),featureCount:Object.keys(features).length,features};downloadJson(payload,'agkk-built-vei-cache.json');return payload;};
+
+
+window.bgwfConcessionSummary=function(){
+  return officialConcessionPending.map(x=>({
+    id:x.id,
+    concessionId:x.concessionId,
+    name:x.name,
+    officialAreaDka:Number.isFinite(Number(x.officialAreaDka))?Number(x.officialAreaDka):null,
+    additionalAreaDka:Number.isFinite(Number(x.additionalAreaDka))?Number(x.additionalAreaDka):null,
+    sourcePoints:x.sourcePoints??x.sourcePointsExpected??null,
+    sourceCrs:x.sourceCrs??null,
+    status:x.status
+  }));
+};
 
 // ---------- Industrial footprints ----------
 function readIndustrialGeometryCache(){try{return JSON.parse(localStorage.getItem(INDUSTRIAL_GEOMETRY_CACHE_KEY)||'{}')||{};}catch{return {};}}
@@ -3296,7 +3509,10 @@ function drawEffisGeometry(raw,fire){effisSource.clear();try{const f=cloneGeoFea
 async function showEffisPerimeter(fire,fireFeature){effisSource.clear();fireSource.getFeatures().forEach(f=>{if(f!==fireFeature&&f.get('hiddenByPerimeter')){f.set('hiddenByPerimeter',false);f.changed();}});const cache=readEffisPerimeterCache(),cached=cache[fire.id];if(cached?.geometry&&drawEffisGeometry(cached.geometry,fire)){fireFeature.set('hiddenByPerimeter',true);fireFeature.changed();detail.textContent=`${labelFire(fire)} · реален EFFIS/Copernicus периметър · локален кеш`;return true;}let candidates=[],last=null;for(const layerName of[`modis.ba.poly.${fire.year}`,'ms:modis.ba.poly']){try{candidates=await fetchEffisCandidates(fire,layerName);if(candidates.length)break;}catch(e){last=e;}}if(!candidates.length){detail.textContent=`${labelFire(fire)} · няма намерен EFFIS GIS периметър${last?` (${last.message})`:''}`;return false;}candidates.sort((a,b)=>effisScore(a,fire)-effisScore(b,fire));const best=candidates[0],score=effisScore(best,fire);if(!Number.isFinite(score)||score>18||!drawEffisGeometry(best.geometry,fire)){detail.textContent=`${labelFire(fire)} · EFFIS няма достатъчно надеждно съвпадение`;return false;}fireFeature.set('hiddenByPerimeter',true);fireFeature.changed();cache[fire.id]={savedAt:Date.now(),geometry:best.geometry,properties:best.properties};writeEffisPerimeterCache(cache);const area=Number(best.properties.AREA_HA??best.properties.area_ha??best.properties.AREA);detail.textContent=`${labelFire(fire)} · реален EFFIS/Copernicus GIS периметър${Number.isFinite(area)?` · EFFIS ${formatNumber.format(area)} ha`:''}`;return true;}
 
 // ---------- Layer status + controls ----------
-function updateLayerStatus(){if(!layerStatus)return;const loadedProjects=window.__bgwfProjectParcels?.length??0,loadedSolar=window.__bgwfSolarParcels?.length??0;const scope=activeYear===false?'пожари скрити':activeYear==null?'всички пожари':`пожари ${activeYear} г.`;const solarRows=layerVisibility.solar?(window.__bgwfSolarParcels??[]):[],solarCount=solarRows.length,solarProjects=new Set(solarRows.map(d=>d.project.id)).size;const solarText=!layerVisibility.solar?'изградените ВЕИ са изключени':cadastralLoadStarted?`${solarProjects} проверени ФЕЦ / ${solarCount} ПИ · ${operatingWindProjects.filter(isValidWindProject).length} ВяЕЦ`:'изградените ВЕИ още се зареждат';const projectText=!layerVisibility.projects?'ПУП/ПИ слоят е изключен':cadastralLoadStarted?`${layerVisibility.projects?loadedProjects:0} ПУП/ПИ полигона`:'ПУП/ПИ още се зарежда';const extras=[];if(layerVisibility.future)extras.push(`RED III: ${redSource.getFeatures().length} feature`);if(layerVisibility.industry)extras.push(`ТЕЦ/мини: разработени ${industryFootprintSource.getFeatures().length}/${industrialPolygonSites.length} · концесии ${concessionSource.getFeatures().length} · pending ${officialConcessionPending.length}`);if(layerVisibility.live)extras.push((activeYear!=null&&activeYear!==false&&activeYear!==2026)?'Sentinel-3: скрит при избраната историческа година':liveFireLoadState==='loading'?`Sentinel-3: зареждане`:liveFireLoadState==='error'?`Sentinel-3: WFS грешка`:`Sentinel-3: ${liveFireDetections.length} засичания`);layerStatus.textContent=`OpenLayers · ${scope}: ${solarText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}${cadastralLoadErrors?` · ${cadastralLoadErrors} ПИ без геометрия`:''}`;updateDebugLayerCounts();}
+function updateLayerStatus(){if(!layerStatus)return;const loadedProjects=window.__bgwfProjectParcels?.length??0,loadedSolar=window.__bgwfSolarParcels?.length??0;const scope=activeYear===false?'пожари скрити':activeYear==null?'всички пожари':`пожари ${activeYear} г.`;const solarRows=layerVisibility.solar?(window.__bgwfSolarParcels??[]):[],solarCount=solarRows.length,solarProjects=new Set(solarRows.map(d=>d.project.id)).size;const solarText=!layerVisibility.solar?'изградените ВЕИ са изключени':cadastralLoadStarted?`${solarProjects} проверени ФЕЦ / ${solarCount} ПИ · ${operatingWindProjects.filter(isValidWindProject).length} ВяЕЦ`:'изградените ВЕИ още се зареждат';const projectText=!layerVisibility.projects?'ПУП/ПИ слоят е изключен':cadastralLoadStarted?`${layerVisibility.projects?loadedProjects:0} ПУП/ПИ полигона`:'ПУП/ПИ още се зарежда';const extras=[];if(layerVisibility.future)extras.push(`RED III: ${redSource.getFeatures().length} feature`);if(layerVisibility.industry){
+  const knownOfficialAreas=officialConcessionPending.filter(x=>Number.isFinite(Number(x.officialAreaDka))||Number.isFinite(Number(x.additionalAreaDka))).length;
+  extras.push(`ТЕЦ/мини: разработени ${industryFootprintSource.getFeatures().length}/${industrialPolygonSites.length} · GIS концесии ${concessionSource.getFeatures().length} · официална площ известна за ${knownOfficialAreas}/${officialConcessionPending.length}`);
+}if(layerVisibility.live)extras.push((activeYear!=null&&activeYear!==false&&activeYear!==2026)?'Sentinel-3: скрит при избраната историческа година':liveFireLoadState==='loading'?`Sentinel-3: зареждане`:liveFireLoadState==='error'?`Sentinel-3: WFS грешка`:`Sentinel-3: ${liveFireDetections.length} засичания`);layerStatus.textContent=`OpenLayers · ${scope}: ${solarText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}${cadastralLoadErrors?` · ${cadastralLoadErrors} ПИ без геометрия (${cadastralUnresolved.filter(x=>x.status==='not-found').length} липсват в INSPIRE / ${cadastralUnresolved.filter(x=>x.status==='error').length} API грешка)`:''}${(cadastralResolutionStats.simplified||cadastralResolutionStats.extent)?` · fallback: ${cadastralResolutionStats.simplified} опростени / ${cadastralResolutionStats.extent} extent`:''}`;updateDebugLayerCounts();}
 function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,red:redSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
 function createButton(parent,{className,text,year=undefined,layer=null,color=null,pressed=false,onClick}){const b=document.createElement('button');b.type='button';b.className=className;b.setAttribute('aria-pressed',String(pressed));if(year===null)b.dataset.year='all';else if(year!==undefined)b.dataset.year=year;if(layer)b.dataset.layer=layer;if(color)b.style.setProperty('--bgwf-filter-color',color);const sw=document.createElement('span');sw.className='bgwf-swatch';b.appendChild(sw);const tx=document.createElement('span');tx.textContent=text;b.appendChild(tx);b.addEventListener('click',onClick);parent.appendChild(b);return b;}
 const legend=root.querySelector('.bgwf-legend'); if(legend){legend.textContent='';createButton(legend,{className:'bgwf-year-filter',text:'Всички',year:null,pressed:activeYear==null,onClick:()=>setYearFilter(null)});years.forEach(y=>createButton(legend,{className:'bgwf-year-filter',text:String(y),year:String(y),color:yearColors.get(y),pressed:activeYear===y,onClick:()=>setYearFilter(y)}));const liveBtn=createButton(legend,{className:'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle',text:'🔥 Sentinel-3 пожар',layer:'live',color:'#ff1717',pressed:layerVisibility.live,onClick:async function(){layerVisibility.live=!layerVisibility.live;this.setAttribute('aria-pressed',String(layerVisibility.live));if(layerVisibility.live&&(liveFireLoadState==='idle'||liveFireLoadState==='error'))await loadLiveSentinelFires();updateLiveVisibility();updateLayerStatus();scheduleUrlSync();}});const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';legend.appendChild(iskra);}
