@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.68 · 17.08.2026 14:22</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.69 · 17.08.2026 15:38</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1267,10 +1267,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.68</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.69</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.68</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.69</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1341,7 +1341,7 @@ svg {
       <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
       <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
-      <p><strong>ТЕЦ / мини:</strong> плътно оцветените полигони са реално картографирани разработени/индустриални площи (OSM <em>quarry/industrial</em> footprint). Пунктираният червен контур е отделен слой за <strong>официална концесионна граница</strong> и се рисува само когато има публична държавна GIS геометрия. В v0.68 е включен потвърденият ArcGIS FeatureServer за концесиите в област Перник; описанието на слоя посочва, че геометрията е взета от концесионните договори, а атрибутите са допълнени от Националния концесионен регистър. За „Елаците“ НКР посочва официална концесионна площ 21 821,8 дка в два контура (БГС 2005, 395 гранични точки); тази стойност се показва като метаданни, но контур не се генерира по догадки, докато самият координатен регистър не е достъпен като вектор. Аналогично са свързани НКР партидите за „Асарел“ (D-000016), „Челопеч“ (D-000034) и „Хан Крум/Ада тепе“ (D-000610). Министерството на енергетиката поддържа национална карта на действащите концесии, актуална към 29.07.2026 г. © OpenStreetMap contributors, ODbL.</p>
+      <p><strong>ТЕЦ / мини:</strong> плътният полигон е разработена/индустриална площ; червеният пунктиран контур е официална концесионна граница. От v0.69 официалните концесионни геометрии първо се четат от локален <code>data/industry-concessions-cache-v1.json</code>, а публичният ArcGIS слой за област Перник остава online fallback. Суровите КС1970 регистри за „Асарел“ (40/40 точки) и „Хан Крум/Ада тепе“ (14/14 точки) са извлечени, но не се рисуват, докато не бъдат трансформирани/проверени с BGSTrans. За „Елаците“ НКР потвърждава БГС2005 регистър от 395 точки и площ 21 821,8 дка; числовият регистър остава в прикачения документ на НКР. Никакъв полигон не се създава от площ, приблизителен център или предполагаема форма. © OpenStreetMap contributors, ODbL.</p>
       <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
@@ -2459,7 +2459,10 @@ svg {
     }
   ];
 
+  const OFFICIAL_CONCESSION_STATIC_CACHE_URL = "./data/industry-concessions-cache-v1.json";
   let officialConcessionFeatures = [];
+  let officialConcessionPending = [];
+  let officialConcessionCacheMeta = null;
   let officialConcessionLoadState = "idle";
   let officialConcessionLoadError = "";
   let officialConcessionLoadPromise = null;
@@ -4280,6 +4283,88 @@ svg {
     };
   }
 
+  async function loadOfficialConcessionStaticCache() {
+    try {
+      const response = await fetch(OFFICIAL_CONCESSION_STATIC_CACHE_URL, {
+        cache: "force-cache",
+        credentials: "same-origin"
+      });
+      if (!response.ok) return { features: [], pending: [], meta: null };
+
+      const payload = await response.json();
+      const source = {
+        id: "STATIC-CACHE",
+        label: "статичен официален концесионен кеш",
+        sourceUrl: OFFICIAL_CONCESSION_STATIC_CACHE_URL
+      };
+
+      const features = (payload?.features ?? [])
+        .map(feature => normalizeOfficialConcessionFeature(feature, source))
+        .filter(Boolean);
+
+      return {
+        features,
+        pending: Array.isArray(payload?.pending) ? payload.pending : [],
+        meta: payload
+      };
+    } catch (_) {
+      // The file is optional. Online official GIS remains a fallback.
+      return { features: [], pending: [], meta: null };
+    }
+  }
+
+  function mergeOfficialConcessionFeatures(...collections) {
+    const byKey = new Map();
+    for (const item of collections.flat()) {
+      if (!item) continue;
+      const key = item.concessionId && item.concessionId !== "—"
+        ? `concession:${item.concessionId}`
+        : `id:${item.id}`;
+      if (!byKey.has(key) || item.sourceId === "STATIC-CACHE") byKey.set(key, item);
+    }
+    return [...byKey.values()];
+  }
+
+  window.bgwfExportOfficialConcessionCache = function() {
+    const geoFeatures = officialConcessionFeatures.map(d => ({
+      type: "Feature",
+      properties: {
+        concession_id: d.concessionId,
+        name: d.name,
+        concessionaire: d.concessionaire,
+        resource_group: d.resourceGroup,
+        resource_type: d.resourceType,
+        status: d.status,
+        ncr_url: d.nkrUrl,
+        municipality: d.municipality,
+        source_id: d.sourceId,
+        source_url: d.sourceUrl
+      },
+      geometry: d.geometry
+    }));
+
+    const payload = {
+      schema: "bgwf-industry-concessions-cache-v1",
+      generatedAt: new Date().toISOString(),
+      geometryCrs: "EPSG:4326",
+      featureCount: geoFeatures.length,
+      features: geoFeatures,
+      pending: officialConcessionPending,
+      remoteSources: OFFICIAL_CONCESSION_GIS_SOURCES,
+      sourceDataset: "./concession-boundaries-official-source-v2.json"
+    };
+
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type:"application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "industry-concessions-cache-v1.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    return payload;
+  };
+
   async function ensureOfficialConcessionPolygons() {
     if (officialConcessionLoadState === "ready") return officialConcessionFeatures;
     if (officialConcessionLoadPromise) return officialConcessionLoadPromise;
@@ -4290,7 +4375,11 @@ svg {
       updateIndustryButtonLoadState();
       updateRegionLayers();
 
-      const loaded = [];
+      const staticCache = await loadOfficialConcessionStaticCache();
+      officialConcessionPending = staticCache.pending;
+      officialConcessionCacheMeta = staticCache.meta;
+
+      const loaded = [...staticCache.features];
       const errors = [];
 
       for (const source of OFFICIAL_CONCESSION_GIS_SOURCES) {
@@ -4319,8 +4408,8 @@ svg {
         }
       }
 
-      officialConcessionFeatures = loaded;
-      officialConcessionLoadState = loaded.length ? "ready" : (errors.length ? "error" : "ready");
+      officialConcessionFeatures = mergeOfficialConcessionFeatures(loaded);
+      officialConcessionLoadState = officialConcessionFeatures.length ? "ready" : (errors.length ? "error" : "ready");
       officialConcessionLoadError = errors.join(" · ");
       officialConcessionLoadPromise = null;
 
@@ -4564,8 +4653,8 @@ svg {
       : ' ';
     const industryText = !layerVisibility.industry ? ''
       : (industrialPolygonLoadState === "loading" || officialConcessionLoadState === "loading")
-        ? `ТЕЦ/мини: разработени ${industrialPolygonFeatures.length}/${industrialPolygonSites.length} · официални концесии ${officialConcessionFeatures.length} · зареждане`
-        : `ТЕЦ/мини: разработени ${industrialPolygonFeatures.length}/${industrialPolygonSites.length} · официални концесии ${officialConcessionFeatures.length}${industrialPolygonLoadError ? ` · ${industrialPolygonLoadError}` : ''}${officialConcessionLoadError ? ` · ${officialConcessionLoadError}` : ''}`;
+        ? `ТЕЦ/мини: разработени ${industrialPolygonFeatures.length}/${industrialPolygonSites.length} · концесии ${officialConcessionFeatures.length} · pending ${officialConcessionPending.length} · зареждане`
+        : `ТЕЦ/мини: разработени ${industrialPolygonFeatures.length}/${industrialPolygonSites.length} · концесии ${officialConcessionFeatures.length} · pending ${officialConcessionPending.length}${officialConcessionCacheMeta ? ' · static cache' : ''}${industrialPolygonLoadError ? ` · ${industrialPolygonLoadError}` : ''}${officialConcessionLoadError ? ` · ${officialConcessionLoadError}` : ''}`;
     const liveText = liveFireLoadState === 'loading'
       ? `Sentinel-3 live: зареждане (${LIVE_SENTINEL_HOURS} ч.)`
       : liveFireLoadState === 'error'
