@@ -42,5 +42,11 @@
   "manualCommands": [
     "await bgwfGisCacheStatus()",
     "await bgwfClearGisCache()"
-  ]
+  ],
+  "v076": {
+    "goatCounter": "public JSON display + official /count tracking pixel; gc.zgo.at removed",
+    "officialConcessions": "static repository GeoJSON controls rendering; remote GIS refresh runs in background",
+    "hoverHitDetection": "pointermove feature hit-test throttled to about 25/s",
+    "redIII": "important legal/semantic distinction shown on hover/focus"
+  }
 }
