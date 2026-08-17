@@ -1,0 +1,596 @@
+{
+  "schema": "bgwf-official-concession-source-v2",
+  "generatedAt": "2026-08-17T12:39:40+00:00",
+  "scope": "priority large mines used by the TPP/mines layer; source registers are preserved separately from map-ready geometry",
+  "rules": [
+    "Raw KS1970 coordinates are never plotted as WGS84.",
+    "A concession polygon is published to the map only after a defensible transformation or a public official vector source.",
+    "Official area from the concession act overrides a planar QA area.",
+    "OSM quarry/industrial footprint and legal concession boundary are separate concepts."
+  ],
+  "records": [
+    {
+      "id": "MINE-ASAREL",
+      "concession_registry": "D-000016",
+      "name": "Асарел — обща концесионна граница по Решение №684/13.09.2011",
+      "source_coordinate_system": "КС 1970",
+      "zone_inference": "K9",
+      "zone_inference_basis": "Панагюрище is in southwest Bulgaria; KS1970 K9 is the southwest zone. Verify zone in BGSTrans before legal/cadastral use.",
+      "source_coordinate_order": "Y(E), X(N)",
+      "normalized_coordinate_order": "X(N), Y(E)",
+      "point_count": 40,
+      "official_area_dka": 17356.4,
+      "qa_planar_area_dka": 17434.083,
+      "qa_bbox_ks1970": {
+        "min_x": 4585233.6,
+        "min_y": 8560385.7,
+        "max_x": 4589912.7,
+        "max_y": 8567309.5
+      },
+      "coordinates_source_order": [
+        [
+          8564010.6,
+          4588320.1
+        ],
+        [
+          8565845.8,
+          4588258.5
+        ],
+        [
+          8566207.0,
+          4587998.3
+        ],
+        [
+          8566830.8,
+          4587609.3
+        ],
+        [
+          8567309.5,
+          4586927.7
+        ],
+        [
+          8566909.3,
+          4585908.9
+        ],
+        [
+          8565830.3,
+          4585233.6
+        ],
+        [
+          8565327.5,
+          4585288.9
+        ],
+        [
+          8565313.1,
+          4585534.6
+        ],
+        [
+          8565356.1,
+          4585768.3
+        ],
+        [
+          8564770.5,
+          4586200.0
+        ],
+        [
+          8564709.9,
+          4586323.2
+        ],
+        [
+          8564596.9,
+          4586399.7
+        ],
+        [
+          8564228.7,
+          4586631.0
+        ],
+        [
+          8564091.2,
+          4586896.1
+        ],
+        [
+          8563937.6,
+          4587012.0
+        ],
+        [
+          8563745.5,
+          4587098.9
+        ],
+        [
+          8563760.7,
+          4586975.7
+        ],
+        [
+          8563648.8,
+          4586991.2
+        ],
+        [
+          8563582.5,
+          4586974.7
+        ],
+        [
+          8563305.8,
+          4586685.8
+        ],
+        [
+          8563042.7,
+          4586441.3
+        ],
+        [
+          8562887.1,
+          4585915.0
+        ],
+        [
+          8562670.3,
+          4585523.7
+        ],
+        [
+          8561278.3,
+          4585827.7
+        ],
+        [
+          8560825.9,
+          4588732.2
+        ],
+        [
+          8560455.6,
+          4588940.6
+        ],
+        [
+          8560385.7,
+          4589507.2
+        ],
+        [
+          8560734.7,
+          4589848.2
+        ],
+        [
+          8560990.3,
+          4589881.3
+        ],
+        [
+          8561077.1,
+          4589912.7
+        ],
+        [
+          8561202.4,
+          4589840.7
+        ],
+        [
+          8561703.0,
+          4589908.0
+        ],
+        [
+          8562168.9,
+          4589780.9
+        ],
+        [
+          8562364.0,
+          4589662.1
+        ],
+        [
+          8562458.0,
+          4589559.0
+        ],
+        [
+          8562701.9,
+          4589517.0
+        ],
+        [
+          8563078.4,
+          4589316.6
+        ],
+        [
+          8563580.2,
+          4588754.9
+        ],
+        [
+          8563901.1,
+          4588496.7
+        ]
+      ],
+      "coordinates_normalized_xy": [
+        [
+          4588320.1,
+          8564010.6
+        ],
+        [
+          4588258.5,
+          8565845.8
+        ],
+        [
+          4587998.3,
+          8566207.0
+        ],
+        [
+          4587609.3,
+          8566830.8
+        ],
+        [
+          4586927.7,
+          8567309.5
+        ],
+        [
+          4585908.9,
+          8566909.3
+        ],
+        [
+          4585233.6,
+          8565830.3
+        ],
+        [
+          4585288.9,
+          8565327.5
+        ],
+        [
+          4585534.6,
+          8565313.1
+        ],
+        [
+          4585768.3,
+          8565356.1
+        ],
+        [
+          4586200.0,
+          8564770.5
+        ],
+        [
+          4586323.2,
+          8564709.9
+        ],
+        [
+          4586399.7,
+          8564596.9
+        ],
+        [
+          4586631.0,
+          8564228.7
+        ],
+        [
+          4586896.1,
+          8564091.2
+        ],
+        [
+          4587012.0,
+          8563937.6
+        ],
+        [
+          4587098.9,
+          8563745.5
+        ],
+        [
+          4586975.7,
+          8563760.7
+        ],
+        [
+          4586991.2,
+          8563648.8
+        ],
+        [
+          4586974.7,
+          8563582.5
+        ],
+        [
+          4586685.8,
+          8563305.8
+        ],
+        [
+          4586441.3,
+          8563042.7
+        ],
+        [
+          4585915.0,
+          8562887.1
+        ],
+        [
+          4585523.7,
+          8562670.3
+        ],
+        [
+          4585827.7,
+          8561278.3
+        ],
+        [
+          4588732.2,
+          8560825.9
+        ],
+        [
+          4588940.6,
+          8560455.6
+        ],
+        [
+          4589507.2,
+          8560385.7
+        ],
+        [
+          4589848.2,
+          8560734.7
+        ],
+        [
+          4589881.3,
+          8560990.3
+        ],
+        [
+          4589912.7,
+          8561077.1
+        ],
+        [
+          4589840.7,
+          8561202.4
+        ],
+        [
+          4589908.0,
+          8561703.0
+        ],
+        [
+          4589780.9,
+          8562168.9
+        ],
+        [
+          4589662.1,
+          8562364.0
+        ],
+        [
+          4589559.0,
+          8562458.0
+        ],
+        [
+          4589517.0,
+          8562701.9
+        ],
+        [
+          4589316.6,
+          8563078.4
+        ],
+        [
+          4588754.9,
+          8563580.2
+        ],
+        [
+          4588496.7,
+          8563901.1
+        ]
+      ],
+      "official_source": {
+        "publisher": "Държавен вестник",
+        "title": "Решение №684 от 13 септември 2011 г.",
+        "url": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766"
+      },
+      "status": "source_register_complete__40_of_40__pending_BGSTRans_verification"
+    },
+    {
+      "id": "MINE-HAN-KRUM",
+      "concession_registry": "D-000610",
+      "name": "Хан Крум / Ада тепе — концесионна площ",
+      "source_coordinate_system": "КС 1970",
+      "zone_inference": "K5",
+      "zone_inference_basis": "Крумовград is in southeast Bulgaria; KS1970 K5 is the southeast zone. Verify zone in BGSTrans before legal/cadastral use.",
+      "source_coordinate_order": "X(N), Y(E)",
+      "normalized_coordinate_order": "X(N), Y(E)",
+      "point_count": 14,
+      "official_area_dka": 13700.0,
+      "qa_planar_area_dka": 13700.769,
+      "qa_bbox_ks1970": {
+        "min_x": 4519617.69,
+        "min_y": 9431667.52,
+        "max_x": 4524506.01,
+        "max_y": 9437999.2
+      },
+      "coordinates_source_order": [
+        [
+          4524101.82,
+          9431680.69
+        ],
+        [
+          4523654.81,
+          9432386.93
+        ],
+        [
+          4523652.11,
+          9434282.66
+        ],
+        [
+          4523858.87,
+          9434800.91
+        ],
+        [
+          4524503.3,
+          9434806.23
+        ],
+        [
+          4524506.01,
+          9436001.18
+        ],
+        [
+          4523144.74,
+          9437999.2
+        ],
+        [
+          4522026.7,
+          9437668.02
+        ],
+        [
+          4521795.83,
+          9435270.99
+        ],
+        [
+          4519788.19,
+          9435482.92
+        ],
+        [
+          4519617.69,
+          9435100.29
+        ],
+        [
+          4520201.71,
+          9434306.81
+        ],
+        [
+          4521926.99,
+          9434306.67
+        ],
+        [
+          4522557.74,
+          9431667.52
+        ]
+      ],
+      "coordinates_normalized_xy": [
+        [
+          4524101.82,
+          9431680.69
+        ],
+        [
+          4523654.81,
+          9432386.93
+        ],
+        [
+          4523652.11,
+          9434282.66
+        ],
+        [
+          4523858.87,
+          9434800.91
+        ],
+        [
+          4524503.3,
+          9434806.23
+        ],
+        [
+          4524506.01,
+          9436001.18
+        ],
+        [
+          4523144.74,
+          9437999.2
+        ],
+        [
+          4522026.7,
+          9437668.02
+        ],
+        [
+          4521795.83,
+          9435270.99
+        ],
+        [
+          4519788.19,
+          9435482.92
+        ],
+        [
+          4519617.69,
+          9435100.29
+        ],
+        [
+          4520201.71,
+          9434306.81
+        ],
+        [
+          4521926.99,
+          9434306.67
+        ],
+        [
+          4522557.74,
+          9431667.52
+        ]
+      ],
+      "official_source": {
+        "publisher": "Държавен вестник / Министерски съвет",
+        "title": "Решение №87 от 11 февруари 2011 г.",
+        "url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-"
+      },
+      "status": "source_register_complete__14_of_14__pending_BGSTRans_verification"
+    },
+    {
+      "id": "MINE-ELATSITE",
+      "concession_registry": "D-000074",
+      "name": "Елаците",
+      "source_coordinate_system": "БГС2005, кадастрални координати",
+      "official_area_dka": 21821.8,
+      "deposit_area_dka": 821.6,
+      "point_count": 395,
+      "contours": [
+        {
+          "name": "Рудодобивен комплекс",
+          "point_range": "1-160"
+        },
+        {
+          "name": "Обогатителен комплекс",
+          "point_range": "161-395"
+        }
+      ],
+      "deposit_point_range": "1-193",
+      "official_source": {
+        "publisher": "Национален концесионен регистър",
+        "concession_url": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/7869ab1d-867a-4d1f-99e6-7c19cfabcd4b",
+        "current_info_url": "https://nkr.government.bg/Preview/AssignedConcession/b9c56ff0-3e50-4bf7-a545-25a3877ec47d",
+        "amendment_url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/b9c56ff0-3e50-4bf7-a545-25a3877ec47d",
+        "attachment_other_document": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
+        "attachment_additional_agreement": "https://nkr.government.bg/File/Download/92e8889d-4785-45de-8ca4-70267f0d0bec"
+      },
+      "status": "official_BGS2005_register_confirmed__395_points__attachment_download_required"
+    },
+    {
+      "id": "MINE-CHELOPECH",
+      "concession_registry": "D-000034",
+      "name": "Челопеч",
+      "source_coordinate_system": "КС 1970",
+      "deposit_point_count": 15,
+      "additional_concession_activity_area_dka": 1864.0,
+      "additional_area_point_count": 62,
+      "official_source": {
+        "publisher": "Национален концесионен регистър / Министерски съвет",
+        "nkr_url": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/912f6df6-44b6-4bcc-be6a-1479cd2bee19",
+        "decision_url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/-12828671/issue/2417/reshenie-%E2%84%96-147-ot-26-mart-1999-g-za-predostavyane-na-kontsesiya-za-podzemni-bogatstva---zlatno-medno-piritni-rudi-chrez-dobiv-ot-nahodishte-"
+      },
+      "status": "register_structure_confirmed__15_plus_62_points__numeric_attachment_not_extracted"
+    },
+    {
+      "id": "MINE-BOBOV-DOL",
+      "name": "Бобовдолски въглищен басейн — основни действащи партиди",
+      "source_coordinate_system": "various / not yet extracted",
+      "nkr_concessions": [
+        {
+          "id": "D-000327",
+          "name": "Участък „Бобов дол“",
+          "uuid": "9719ee53-d731-4402-9d8a-b1087b23bba1"
+        },
+        {
+          "id": "D-000317",
+          "name": "Участък „Бабино“",
+          "uuid": "997544da-106a-4bc0-91f4-f7fc990d17d0"
+        },
+        {
+          "id": "D-000324",
+          "name": "Участък „Миньор“",
+          "uuid": "48bab936-94c6-40f9-94b9-18951e77116a"
+        }
+      ],
+      "status": "NKR_parties_identified__coordinate_registers_pending_extraction"
+    }
+  ],
+  "transformation_references": [
+    {
+      "name": "BGSTrans 4.6",
+      "authority": "АГКК",
+      "url": "https://www.cadastre.bg/programa-za-transformaciya-na-koordinati-bgstrans-45",
+      "role": "official gold-standard verification"
+    },
+    {
+      "name": "Инструкция № РД-02-20-12/03.08.2012",
+      "authority": "АГКК",
+      "url": "https://www.cadastre.bg/news/instrukciya-za-preobrazuvane-na-sushtestvuvashtite-geodezicheski-i-kartografski-materiali-i-dan",
+      "role": "official transformation methodology"
+    },
+    {
+      "name": "bojko108/transformations",
+      "authority": "open-source MIT",
+      "url": "https://github.com/bojko108/transformations",
+      "role": "reproducible non-official transform/check; v2 contains BGS1970 K3/K5/K7/K9 to BGS2005 grid files"
+    },
+    {
+      "name": "ГЕО МАП online transformation",
+      "authority": "licensed geodesy company",
+      "url": "https://geomapbg.com/transformaciya-na-koordinati",
+      "role": "independent batch cross-check; legal/cadastral use still requires BGSTrans verification"
+    }
+  ]
+}

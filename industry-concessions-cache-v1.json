@@ -1,0 +1,65 @@
+{
+  "schema": "bgwf-industry-concessions-cache-v1",
+  "generatedAt": "2026-08-17T12:39:40+00:00",
+  "geometryCrs": "EPSG:4326",
+  "featureCount": 0,
+  "features": [],
+  "pending": [
+    {
+      "id": "MINE-ASAREL",
+      "concessionId": "D-000016",
+      "name": "Асарел",
+      "officialAreaDka": 17356.4,
+      "sourcePoints": 40,
+      "sourceCrs": "KS1970",
+      "zoneInference": "K9",
+      "status": "source_register_complete_pending_BGSTRans"
+    },
+    {
+      "id": "MINE-HAN-KRUM",
+      "concessionId": "D-000610",
+      "name": "Хан Крум / Ада тепе",
+      "officialAreaDka": 13700.0,
+      "sourcePoints": 14,
+      "sourceCrs": "KS1970",
+      "zoneInference": "K5",
+      "status": "source_register_complete_pending_BGSTRans"
+    },
+    {
+      "id": "MINE-ELATSITE",
+      "concessionId": "D-000074",
+      "name": "Елаците",
+      "officialAreaDka": 21821.8,
+      "sourcePoints": 395,
+      "sourceCrs": "BGS2005 cadastral",
+      "status": "official_attachment_pending_download",
+      "attachment": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb"
+    },
+    {
+      "id": "MINE-CHELOPECH",
+      "concessionId": "D-000034",
+      "name": "Челопеч",
+      "additionalAreaDka": 1864.0,
+      "sourcePointsExpected": 62,
+      "sourceCrs": "KS1970",
+      "status": "numeric_register_pending_extraction"
+    },
+    {
+      "id": "MINE-BOBOV-DOL",
+      "concessionId": "D-000327/D-000317/D-000324",
+      "name": "Бобовдолски въглищен басейн",
+      "status": "NKR_parties_identified_coordinate_registers_pending"
+    }
+  ],
+  "remoteSources": [
+    {
+      "id": "MGU-PERNIK",
+      "type": "ArcGIS FeatureServer",
+      "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query",
+      "sourceUrl": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer",
+      "geometry": "official contract-derived polygons",
+      "note": "Pernik region; attributes supplemented from NKR"
+    }
+  ],
+  "sourceDataset": "./concession-boundaries-official-source-v2.json"
+}
