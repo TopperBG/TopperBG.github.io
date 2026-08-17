@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.77b-empty-warning-row-fix-20260817-2316">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.77 · OpenLayers 10.10.0 · UI cleanup 23:06</title>
+<meta name="bgwf-build" content="v0.77c-exact-ui-cleanup-20260817-2319">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.77 · UI cleanup 23:06</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1331,6 +1331,8 @@ svg {
   transform: translate(-50%, 0);
 }
 
+
+#bg-wildfires-map .bgwf-zoom-controls { display:none !important; }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.10.0/ol.css">
 <script src="https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js" crossorigin="anonymous"></script>
@@ -1340,10 +1342,7 @@ svg {
   <div class="bgwf-data-notice" role="note">
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
-<div class="card bgwf-important-note" role="note">
-    
-  </div>
-  <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
+<div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.77</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
@@ -1371,12 +1370,7 @@ svg {
     </div>
   </div>
   <div class="bgwf-map-wrap">
-    <div class="bgwf-zoom-controls" aria-label="Мащабиране на картата">
-      <button type="button" class="bgwf-map-button" data-zoom-in aria-label="Приближи картата" title="Приближи">+</button>
-      <button type="button" class="bgwf-map-button" data-zoom-out aria-label="Отдалечи картата" title="Отдалечи">−</button>
-      <button type="button" class="bgwf-map-button bgwf-map-reset" data-zoom-reset aria-label="Покажи цяла България" title="Цяла България">⌂</button>
-    </div>
-    <div class="bgwf-province-chip" data-province-chip hidden>
+<div class="bgwf-province-chip" data-province-chip hidden>
       <span data-province-name></span>
       <button type="button" data-province-reset aria-label="Назад към цяла България">×</button>
     </div>
@@ -3168,7 +3162,6 @@ const detailBox = root.querySelector('.bgwf-detail');
 const tooltip = root.querySelector('.bgwf-tooltip');
 const layerStatus = root.querySelector('[data-layer-status]');
 const filterPanel = root.querySelector('.bgwf-floating-controls');
-const zoomControls = root.querySelector('.bgwf-zoom-controls');
 const mapLoadbar = root.querySelector('[data-map-loadbar]');
 const mapLoadbarFill = root.querySelector('[data-map-loadbar-fill]');
 const liveCountEl = root.querySelector('[data-live-count]');
@@ -3282,9 +3275,7 @@ if(Number.isFinite(requestedLon)&&Number.isFinite(requestedLat)&&Number.isFinite
 function setProvinceFocus(feature){activeProvinceCode=feature?.get('provinceCode')||null;if(provinceChip)provinceChip.hidden=!feature;if(provinceNameEl)provinceNameEl.textContent=feature?provinceCodeToName.get(activeProvinceCode)||activeProvinceCode:'';provinceLayer.changed();}
 function zoomToProvince(feature){if(!feature)return;setProvinceFocus(feature);view.fit(feature.getGeometry().getExtent(),{padding:[70,70,70,70],duration:360,maxZoom:10});}
 function resetMapZoom(){setProvinceFocus(null);fitHome({animate:true});}
-root.querySelector('[data-zoom-in]')?.addEventListener('click',()=>view.animate({resolution:view.getResolution()/1.6,duration:180}));
-root.querySelector('[data-zoom-out]')?.addEventListener('click',()=>view.animate({resolution:view.getResolution()*1.6,duration:180}));
-root.querySelector('[data-zoom-reset]')?.addEventListener('click',resetMapZoom);root.querySelector('[data-province-reset]')?.addEventListener('click',resetMapZoom);
+root.querySelector('[data-province-reset]')?.addEventListener('click',resetMapZoom);
 view.on('change:center',scheduleUrlSync); view.on('change:resolution',()=>{debugState.currentScale=currentScale();scheduleUrlSync();refreshDebugPanel();});
 map.on('rendercomplete',()=>{debugState.renderCount++;mapTarget.classList.remove('is-loading');refreshDebugPanel();});
 
