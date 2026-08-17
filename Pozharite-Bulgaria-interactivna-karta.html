@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.63 · 17.08.2026 08:58</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.68 · 17.08.2026 14:22</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1156,6 +1156,106 @@ svg {
     display: none !important;
   }
 
+
+  #bg-wildfires-map .bgwf-visitor-count {
+    opacity: .72;
+    white-space: nowrap;
+  }
+  #bg-wildfires-map .bgwf-visitor-count strong {
+    font-weight: 600;
+  }
+  @media (max-width: 700px) {
+    #bg-wildfires-map .bgwf-visitor-count {
+      font-size: 8px;
+    }
+  }
+
+  /* v0.66 — ТЕЦ/мини в реален географски мащаб, без point markers */
+  #bg-wildfires-map .bgwf-layer-toggle[data-layer="industry"] .bgwf-swatch {
+    background: #4b3428;
+  }
+
+  #bg-wildfires-map .bgwf-industrial-polygon {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    cursor: pointer;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1.15;
+    stroke-linejoin: round;
+    transition: fill-opacity .12s ease, stroke-width .12s ease;
+  }
+
+  #bg-wildfires-map .bgwf-industrial-polygon.is-tpp {
+    fill: #2f2f2f;
+    fill-opacity: .35;
+    stroke: #1f2937;
+  }
+
+  #bg-wildfires-map .bgwf-industrial-polygon.is-coal {
+    fill: #5b3a29;
+    fill-opacity: .42;
+    stroke: #4a2f22;
+  }
+
+  #bg-wildfires-map .bgwf-industrial-polygon.is-ore {
+    fill: #7c2d12;
+    fill-opacity: .32;
+    stroke: #6b2710;
+  }
+
+  #bg-wildfires-map .bgwf-industrial-polygon.is-refinery {
+    fill: #111827;
+    fill-opacity: .38;
+    stroke: #111827;
+  }
+
+  #bg-wildfires-map .bgwf-industrial-polygon:hover,
+  #bg-wildfires-map .bgwf-industrial-polygon:focus,
+  #bg-wildfires-map .bgwf-industrial-polygon.is-selected {
+    fill-opacity: .58;
+    stroke: var(--foreground);
+    stroke-width: 2.1;
+    outline: none;
+  }
+
+
+  /* v0.68: developed footprint vs. official concession boundary */
+  #bg-wildfires-map .bgwf-official-concession {
+    fill: transparent;
+    stroke: #b91c1c;
+    stroke-width: 1.65;
+    stroke-dasharray: 5 3;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  #bg-wildfires-map .bgwf-official-concession:hover,
+  #bg-wildfires-map .bgwf-official-concession:focus,
+  #bg-wildfires-map .bgwf-official-concession.is-selected {
+    stroke: #ef4444;
+    stroke-width: 2.4;
+    outline: none;
+  }
+
+
+  #bg-wildfires-map .bgwf-industry-legend-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 8px;
+    opacity: .72;
+    white-space: nowrap;
+  }
+  #bg-wildfires-map .bgwf-industry-fill-key {
+    width: 8px; height: 6px; display:inline-block;
+    background:#5b3a2966; border:1px solid #4a2f22;
+  }
+  #bg-wildfires-map .bgwf-industry-concession-key {
+    width: 10px; height: 0; display:inline-block;
+    border-top: 1.5px dashed #b91c1c;
+  }
+
 </style>
 </head>
 <body>
@@ -1167,10 +1267,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.63</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.68</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.63</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.68</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1187,6 +1287,7 @@ svg {
         <span><strong data-total-area></strong> ha</span>
         <span>max <strong data-largest></strong> ha</span>
         <span>S3 <strong data-live-count>—</strong></span>
+        <span class="bgwf-visitor-count" title="GoatCounter посещения на картата"><span aria-hidden="true">👁</span> днес <strong data-visits-today>—</strong> · общо <strong data-visits-total>—</strong></span>
       </div>
     </div>
   
@@ -1240,6 +1341,8 @@ svg {
       <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
       <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
+      <p><strong>ТЕЦ / мини:</strong> плътно оцветените полигони са реално картографирани разработени/индустриални площи (OSM <em>quarry/industrial</em> footprint). Пунктираният червен контур е отделен слой за <strong>официална концесионна граница</strong> и се рисува само когато има публична държавна GIS геометрия. В v0.68 е включен потвърденият ArcGIS FeatureServer за концесиите в област Перник; описанието на слоя посочва, че геометрията е взета от концесионните договори, а атрибутите са допълнени от Националния концесионен регистър. За „Елаците“ НКР посочва официална концесионна площ 21 821,8 дка в два контура (БГС 2005, 395 гранични точки); тази стойност се показва като метаданни, но контур не се генерира по догадки, докато самият координатен регистър не е достъпен като вектор. Аналогично са свързани НКР партидите за „Асарел“ (D-000016), „Челопеч“ (D-000034) и „Хан Крум/Ада тепе“ (D-000610). Министерството на енергетиката поддържа национална карта на действащите концесии, актуална към 29.07.2026 г. © OpenStreetMap contributors, ODbL.</p>
+      <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
@@ -2244,6 +2347,130 @@ svg {
 
 
 
+  // ТЕЦ, мини и инфраструктура за фосилни горива — GIS полигони в реален мащаб.
+  // OSM object IDs са проверени срещу имената и координатите на обектите.
+  // Геометрията се взема по точен OSM way/relation ID чрез Nominatim.
+  // ВАЖНО: рисуването е с плоско проектирани SVG пръстени + fill-rule=evenodd,
+  // а не с d3.geoPath(GeoJSON), за да няма "обърнат полигон", запълващ цялата карта.
+  const industrialPolygonSites = [
+    { id:"TPP-ME2", type:"tpp", name:"ТЕЦ „Марица изток 2“",
+      osmType:"W", osmId:146641607, lon:26.13050, lat:42.25302,
+      fuel:"лигнитни въглища", info:"GIS контур на промишлената площадка",
+      source:"https://www.tpp2.com/" },
+
+    { id:"TPP-AES-GALABOVO", type:"tpp", name:"ТЕЦ AES Гълъбово",
+      osmType:"W", osmId:918500389, lon:25.90350, lat:42.15853,
+      fuel:"лигнитни въглища", info:"GIS контур на промишлената площадка",
+      source:"https://www.aesbulgaria.com/" },
+
+    { id:"TPP-ME3", type:"tpp", name:"ТЕЦ „Марица изток 3“",
+      osmType:"W", osmId:157660794, lon:26.00363, lat:42.14497,
+      fuel:"лигнитни въглища", info:"GIS контур на промишлената площадка",
+      source:"https://www.contourglobal.com/location/bulgaria/" },
+
+    { id:"TPP-BOBOV-DOL", type:"tpp", name:"ТЕЦ „Бобов дол“",
+      osmType:"W", osmId:439600139, lon:23.03415, lat:42.28570,
+      fuel:"въглища", info:"GIS контур на промишлената площадка",
+      source:"https://www.openstreetmap.org/way/439600139" },
+
+    { id:"TPP-MARITSA3", type:"tpp", name:"ТЕЦ „Марица 3“ — Димитровград",
+      osmType:"W", osmId:918500390, lon:25.62619, lat:42.05263,
+      fuel:"въглища", info:"GIS контур на промишлената площадка",
+      source:"https://www.openstreetmap.org/way/918500390" },
+
+    { id:"TPP-BRIKEL", type:"tpp", name:"ТЕЦ „Брикел“ — Гълъбово",
+      osmType:"W", osmId:918500388, lon:25.90578, lat:42.15466,
+      fuel:"лигнитни въглища", info:"GIS контур на промишлената площадка",
+      source:"https://www.openstreetmap.org/way/918500388" },
+
+    { id:"TPP-VARNA", type:"tpp", name:"ТЕЦ „Варна“",
+      osmType:"W", osmId:111567265, lon:27.76380, lat:43.19566,
+      fuel:"въглища / природен газ", info:"GIS контур на промишлената площадка",
+      source:"https://www.openstreetmap.org/way/111567265" },
+
+    { id:"MINE-MARITSA-EAST", type:"coal", name:"Мини „Марица-изток“ — открит минен комплекс",
+      osmType:"W", osmId:137246419, lon:26.02066, lat:42.22085,
+      fuel:"лигнитни въглища", info:"GIS landuse=quarry контур на открития минен комплекс",
+      source:"https://www.marica-iztok.com/" },
+
+    { id:"MINE-BOBOV-DOL", type:"coal", name:"Мина „Бобов дол“",
+      osmType:"W", osmId:124105282, lon:23.01245, lat:42.37074,
+      fuel:"въглища", info:"GIS landuse=quarry контур",
+      source:"https://www.openstreetmap.org/way/124105282" },
+
+    { id:"MINE-ASAREL", type:"ore", name:"Рудник „Асарел“",
+      osmType:"W", osmId:124105802, lon:24.14554, lat:42.54441,
+      fuel:"медни руди", info:"GIS landuse=quarry контур на открития рудник",
+      source:"https://www.asarel.com/en/about/" },
+
+    { id:"MINE-ELATSITE", type:"ore", name:"Рудник „Елаците“",
+      osmType:"R", osmId:18451229, lon:24.02605, lat:42.76465,
+      fuel:"медни руди", info:"GIS multipolygon на открития рудник",
+      source:"https://www.ellatzite-med.com/" },
+
+    { id:"MINE-CHELOPECH", type:"ore", name:"Рудник „Челопеч“ — надземна площадка",
+      osmType:"W", osmId:853545188, lon:24.07387, lat:42.69550,
+      fuel:"медно-златни руди", info:"GIS industrial контур на надземната площадка; подземните галерии не са площ",
+      source:"https://dundeeprecious.com/operations/producing/chelopech/" },
+
+    { id:"REF-NEFTOCHIM-BURGAS", type:"refinery", name:"Нефтохим Бургас — рафинерия",
+      osmType:"W", osmId:173780738, lon:27.33312, lat:42.53952,
+      fuel:"нефт / нефтопродукти", info:"GIS контур на промишлената площадка на рафинерията",
+      source:"https://www.openstreetmap.org/way/173780738" }
+  ];
+
+  // v2: старият v1 кеш не се използва, за да не запазваме невалидирани геометрии.
+  // Официални концесионни метаданни (НКР / Министерство на енергетиката).
+  // Наличието на партида/официална площ НЕ се използва за генериране на измислен контур.
+  const industrialConcessionMeta = {
+    "MINE-ELATSITE": {
+      concessionId: "D-000074",
+      officialAreaDka: 21821.8,
+      note: "официална концесионна площ: два контура; БГС 2005; 395 гранични точки",
+      nkrUrl: "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/7869ab1d-867a-4d1f-99e6-7c19cfabcd4b"
+    },
+    "MINE-ASAREL": {
+      concessionId: "D-000016",
+      note: "действаща държавна концесия за находище „Асарел“",
+      nkrUrl: "https://nkr.government.bg/Concessions/Search?page=6&sort=ConcessionSubject&sortdir=ASC"
+    },
+    "MINE-CHELOPECH": {
+      concessionId: "D-000034",
+      note: "действаща държавна концесия за находище „Челопеч“",
+      nkrUrl: "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/912f6df6-44b6-4bcc-be6a-1479cd2bee19"
+    },
+    "MINE-ADA-TEPE": {
+      concessionId: "D-000610",
+      note: "находище „Хан Крум“ — участъци „Ада тепе“, „Къпел“, „Къклица“, „Скалак“, „Зона Синап“ и „Сърнак“",
+      nkrUrl: "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/9c565119-f8d2-4450-adf7-2e1c996511a0"
+    }
+  };
+
+  // Потвърден публичен векторен GIS източник:
+  // данните за местоположение са взети от концесионните договори,
+  // а атрибутите са допълнени от Националния концесионен регистър.
+  const OFFICIAL_CONCESSION_GIS_SOURCES = [
+    {
+      id: "MGU-PERNIK",
+      label: "официални концесии · област Перник",
+      url: "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query",
+      sourceUrl: "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer",
+      where: "1=1"
+    }
+  ];
+
+  let officialConcessionFeatures = [];
+  let officialConcessionLoadState = "idle";
+  let officialConcessionLoadError = "";
+  let officialConcessionLoadPromise = null;
+
+  const INDUSTRIAL_GEOMETRY_CACHE_KEY = "bgwf-industry-osm-polygons-v2";
+  const INDUSTRIAL_NOMINATIM_LOOKUP = "https://nominatim.openstreetmap.org/lookup";
+  let industrialPolygonFeatures = [];
+  let industrialPolygonLoadState = "idle";
+  let industrialPolygonLoadError = "";
+  let industrialPolygonLoadPromise = null;
+
   // Проверени действащи вятърни електроцентрали.
   // Точката обозначава ветропарка/централата, а не всеки отделен фундамент.
   // Източници: операторите и публичният ВЕИ регистър (АУЕР/гаранции за произход).
@@ -2678,6 +2905,8 @@ svg {
   const projectParcelLayer = mapViewport.append("g").attr("class", "bgwf-project-parcel-layer");
   const solarParcelLayer = mapViewport.append("g").attr("class", "bgwf-solar-parcel-layer");
   const windPlantLayer = mapViewport.append("g").attr("class", "bgwf-wind-plant-layer");
+  const industrialSiteLayer = mapViewport.append("g").attr("class", "bgwf-industrial-polygon-layer");
+  const officialConcessionLayer = mapViewport.append("g").attr("class", "bgwf-official-concession-layer");
 
   mapViewport.append("path")
     .datum({ type: "FeatureCollection", features: provinces.features })
@@ -2744,6 +2973,7 @@ svg {
     solar: parseBoolParam("solar", true),
     projects: parseBoolParam("pup", true),
     future: parseBoolParam("red", false),
+    industry: parseBoolParam("industry", false),
     live: parseBoolParam("s3", false)
   };
 
@@ -2764,6 +2994,7 @@ svg {
     params.set("solar", layerVisibility.solar ? "1" : "0");
     params.set("pup", layerVisibility.projects ? "1" : "0");
     params.set("red", layerVisibility.future ? "1" : "0");
+    params.set("industry", layerVisibility.industry ? "1" : "0");
     params.set("s3", layerVisibility.live ? "1" : "0");
 
     const center = currentMapCenterLonLat();
@@ -2853,6 +3084,73 @@ svg {
     }
   }
   const liveCountEl = root.querySelector('[data-live-count]');
+  const visitsTodayEl = root.querySelector('[data-visits-today]');
+  const visitsTotalEl = root.querySelector('[data-visits-total]');
+  const GOATCOUNTER_SITE = 'https://topperbg.goatcounter.com';
+  const GOATCOUNTER_MAP_PATH = '/Pozharite-Bulgaria-interactivna-karta.html';
+
+  function bgwfLocalDateISO(date = new Date()) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
+  function goatCounterJsonUrl(start = null, end = null) {
+    const encodedPath = encodeURIComponent(GOATCOUNTER_MAP_PATH);
+    const url = new URL(`${GOATCOUNTER_SITE}/counter/${encodedPath}.json`);
+    if (start) url.searchParams.set('start', start);
+    if (end) url.searchParams.set('end', end);
+    return url.toString();
+  }
+
+  async function loadPublicVisitCounters() {
+    const today = bgwfLocalDateISO();
+    try {
+      const [todayResponse, totalResponse] = await Promise.all([
+        fetch(goatCounterJsonUrl(today, today), { cache: 'force-cache', mode: 'cors' }),
+        fetch(goatCounterJsonUrl(), { cache: 'force-cache', mode: 'cors' })
+      ]);
+
+      if (todayResponse.ok) {
+        const payload = await todayResponse.json();
+        if (visitsTodayEl) visitsTodayEl.textContent = payload?.count ?? '—';
+      }
+      if (totalResponse.ok) {
+        const payload = await totalResponse.json();
+        if (visitsTotalEl) visitsTotalEl.textContent = payload?.count ?? '—';
+      }
+    } catch (error) {
+      // Public counter is cosmetic; never disturb the map if GoatCounter is unavailable.
+      console.debug('GoatCounter public counter unavailable', error);
+    }
+  }
+
+  function enableGoatCounterTracking() {
+    // Do not pollute production analytics from local previews or other hosts.
+    if (location.hostname !== 'topperbg.github.io') {
+      void loadPublicVisitCounters();
+      return;
+    }
+
+    window.goatcounter = window.goatcounter || {};
+    window.goatcounter.path = GOATCOUNTER_MAP_PATH;
+
+    if (!document.querySelector('script[data-goatcounter]')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://gc.zgo.at/count.js';
+      script.dataset.goatcounter = `${GOATCOUNTER_SITE}/count`;
+      script.addEventListener('load', () => {
+        // Counter endpoint is cached by GoatCounter, so this is informational rather than real-time.
+        window.setTimeout(() => void loadPublicVisitCounters(), 500);
+      }, { once: true });
+      document.head.appendChild(script);
+    } else {
+      void loadPublicVisitCounters();
+    }
+  }
+
   let liveFireDetections = [];
   let liveFireLoadState = 'idle';
   let liveFireError = '';
@@ -3658,10 +3956,582 @@ svg {
       });
   }
 
+  function industrialTypeLabel(type) {
+    return type === "tpp" ? "ТЕЦ"
+      : type === "coal" ? "Въглищна мина"
+      : type === "ore" ? "Рудник"
+      : type === "refinery" ? "Рафинерия"
+      : "Индустриален обект";
+  }
+
+  function industrialOsmKey(site) {
+    return `${site.osmType}${site.osmId}`;
+  }
+
+  function readIndustrialGeometryCache() {
+    try {
+      const raw = localStorage.getItem(INDUSTRIAL_GEOMETRY_CACHE_KEY);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function writeIndustrialGeometryCache(cache) {
+    try {
+      localStorage.setItem(INDUSTRIAL_GEOMETRY_CACHE_KEY, JSON.stringify(cache));
+    } catch (_) {
+      // Cache failure must never prevent rendering.
+    }
+  }
+
+  function osmFeatureKey(feature) {
+    const p = feature?.properties ?? {};
+    const rawType = String(p.osm_type ?? "").toLowerCase();
+    const prefix = rawType === "relation" ? "R" : rawType === "way" ? "W" : rawType === "node" ? "N" : "";
+    return prefix && p.osm_id != null ? `${prefix}${p.osm_id}` : "";
+  }
+
+  function geometryAreaDka(geometry) {
+    if (!geometry) return null;
+    try {
+      const r = 6371008.8;
+      const fullSphere = 4 * Math.PI;
+
+      const polygonSteradians = coordinates => {
+        const raw = d3.geoArea({
+          type: "Feature",
+          properties: {},
+          geometry: { type: "Polygon", coordinates }
+        });
+        // External GeoJSON may have the opposite winding from d3's spherical
+        // convention. Always select the local/smaller spherical complement.
+        return Math.min(raw, Math.max(0, fullSphere - raw));
+      };
+
+      let steradians = 0;
+      if (geometry.type === "Polygon") {
+        steradians = polygonSteradians(geometry.coordinates);
+      } else if (geometry.type === "MultiPolygon") {
+        steradians = geometry.coordinates.reduce(
+          (sum, polygon) => sum + polygonSteradians(polygon),
+          0
+        );
+      } else {
+        return null;
+      }
+
+      const dka = steradians * r * r / 1000;
+      return Number.isFinite(dka) ? dka : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function industrialGeometryBounds(geometry) {
+    let minLon = Infinity, minLat = Infinity, maxLon = -Infinity, maxLat = -Infinity;
+
+    const visit = value => {
+      if (!Array.isArray(value)) return;
+      if (
+        value.length >= 2 &&
+        Number.isFinite(Number(value[0])) &&
+        Number.isFinite(Number(value[1])) &&
+        !Array.isArray(value[0])
+      ) {
+        const lon = Number(value[0]);
+        const lat = Number(value[1]);
+        minLon = Math.min(minLon, lon);
+        minLat = Math.min(minLat, lat);
+        maxLon = Math.max(maxLon, lon);
+        maxLat = Math.max(maxLat, lat);
+        return;
+      }
+      value.forEach(visit);
+    };
+
+    visit(geometry?.coordinates);
+    return Number.isFinite(minLon)
+      ? { minLon, minLat, maxLon, maxLat }
+      : null;
+  }
+
+  function industrialGeometryIsSane(site, geometry) {
+    if (!geometry || !["Polygon", "MultiPolygon"].includes(geometry.type)) return false;
+
+    const bounds = industrialGeometryBounds(geometry);
+    if (!bounds) return false;
+
+    // Hard Bulgaria envelope + small safety margin.
+    if (
+      bounds.minLon < 20.0 || bounds.maxLon > 30.5 ||
+      bounds.minLat < 40.0 || bounds.maxLat > 45.5
+    ) return false;
+
+    const centreLon = (bounds.minLon + bounds.maxLon) / 2;
+    const centreLat = (bounds.minLat + bounds.maxLat) / 2;
+
+    // Exact OSM ID should still be spatially close to the verified facility.
+    if (
+      Math.abs(centreLon - site.lon) > 0.75 ||
+      Math.abs(centreLat - site.lat) > 0.75
+    ) return false;
+
+    const areaDka = geometryAreaDka(geometry);
+    if (!Number.isFinite(areaDka) || areaDka <= 0) return false;
+
+    // 500 km² ceiling: deliberately generous for a large open-cast mine,
+    // but impossible for an accidental "rest of Earth" polygon.
+    if (areaDka > 500000) return false;
+
+    return true;
+  }
+
+  function projectedRingPath(ring) {
+    if (!Array.isArray(ring) || ring.length < 3) return "";
+    const points = ring
+      .map(coord => {
+        if (!Array.isArray(coord) || coord.length < 2) return null;
+        const lon = Number(coord[0]), lat = Number(coord[1]);
+        if (!Number.isFinite(lon) || !Number.isFinite(lat)) return null;
+        return projection([lon, lat]);
+      })
+      .filter(Boolean);
+
+    if (points.length < 3) return "";
+    return `M${points.map(p => `${p[0].toFixed(3)},${p[1].toFixed(3)}`).join("L")}Z`;
+  }
+
+  function industrialProjectedPath(geometry) {
+    // Intentionally NOT d3.geoPath(geometry).
+    // This is a cartesian SVG path after projection, so GeoJSON ring winding
+    // cannot invert the polygon to "everything outside".
+    if (!geometry) return "";
+    const polygons = geometry.type === "Polygon"
+      ? [geometry.coordinates]
+      : geometry.type === "MultiPolygon"
+        ? geometry.coordinates
+        : [];
+
+    return polygons
+      .flatMap(polygon => (polygon ?? []).map(projectedRingPath))
+      .filter(Boolean)
+      .join("");
+  }
+
+  function formatAreaDka(value) {
+    if (!Number.isFinite(value)) return "площ —";
+    if (value >= 10000) return `${Math.round(value / 100) * 100}. дка`;
+    if (value >= 1000) return `${Math.round(value / 10) * 10} дка`;
+    return `${Math.round(value)} дка`;
+  }
+
+  function rebuildIndustrialFeatures(cache) {
+    industrialPolygonFeatures = industrialPolygonSites.flatMap(site => {
+      const cached = cache[industrialOsmKey(site)];
+      const geometry = cached?.geometry;
+      if (!industrialGeometryIsSane(site, geometry)) return [];
+      return [{
+        ...site,
+        geometry,
+        osmProperties: cached.properties ?? {},
+        areaDka: geometryAreaDka(geometry)
+      }];
+    });
+  }
+
+  function updateIndustryButtonLoadState() {
+    const button = d3.select(root.querySelector('.bgwf-layer-toggle[data-layer="industry"]'));
+    if (button.empty()) return;
+    button.attr(
+      "data-load-state",
+      industrialPolygonLoadState === "loading" || officialConcessionLoadState === "loading" ? "loading"
+        : industrialPolygonLoadState === "error" && officialConcessionLoadState === "error" ? "error"
+        : "ready"
+    );
+  }
+
+  async function ensureIndustrialPolygons() {
+    if (industrialPolygonLoadState === "ready") return industrialPolygonFeatures;
+    if (industrialPolygonLoadPromise) return industrialPolygonLoadPromise;
+
+    industrialPolygonLoadPromise = (async () => {
+      industrialPolygonLoadState = "loading";
+      industrialPolygonLoadError = "";
+      updateIndustryButtonLoadState();
+
+      const cache = readIndustrialGeometryCache();
+      rebuildIndustrialFeatures(cache);
+
+      const missing = industrialPolygonSites.filter(site => !cache[industrialOsmKey(site)]?.geometry);
+      if (!missing.length) {
+        industrialPolygonLoadState = "ready";
+        updateIndustryButtonLoadState();
+        return industrialPolygonFeatures;
+      }
+
+      try {
+        const url = new URL(INDUSTRIAL_NOMINATIM_LOOKUP);
+        url.searchParams.set("osm_ids", missing.map(industrialOsmKey).join(","));
+        url.searchParams.set("format", "geojson");
+        url.searchParams.set("polygon_geojson", "1");
+        url.searchParams.set("addressdetails", "0");
+        url.searchParams.set("extratags", "1");
+
+        const response = await fetch(url.toString(), {
+          mode: "cors",
+          cache: "force-cache",
+          headers: { "Accept": "application/geo+json, application/json" }
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const geojson = await response.json();
+        for (const feature of geojson?.features ?? []) {
+          const key = osmFeatureKey(feature);
+          if (!key || !feature?.geometry) continue;
+
+          const site = industrialPolygonSites.find(item => industrialOsmKey(item) === key);
+          if (!site) continue;
+
+          if (!industrialGeometryIsSane(site, feature.geometry)) {
+            console.warn("Отхвърлена невалидна GIS геометрия за", site.name, key);
+            continue;
+          }
+
+          cache[key] = {
+            geometry: feature.geometry,
+            properties: feature.properties ?? {},
+            cachedAt: new Date().toISOString(),
+            validatedAgainst: { lon: site.lon, lat: site.lat }
+          };
+        }
+
+        writeIndustrialGeometryCache(cache);
+        rebuildIndustrialFeatures(cache);
+
+        const unresolved = industrialPolygonSites.length - industrialPolygonFeatures.length;
+        industrialPolygonLoadState = unresolved && industrialPolygonFeatures.length === 0 ? "error" : "ready";
+        industrialPolygonLoadError = unresolved ? `${unresolved} OSM контура не са върнати` : "";
+      } catch (error) {
+        rebuildIndustrialFeatures(cache);
+        industrialPolygonLoadState = industrialPolygonFeatures.length ? "ready" : "error";
+        industrialPolygonLoadError = industrialPolygonFeatures.length
+          ? "показан е локалният кеш; онлайн обновяването не отговори"
+          : `Nominatim: ${error?.message ?? "грешка"}`;
+      } finally {
+        industrialPolygonLoadPromise = null;
+        updateIndustryButtonLoadState();
+        updateIndustrialSites();
+        updateRegionLayers();
+      }
+
+      return industrialPolygonFeatures;
+    })();
+
+    return industrialPolygonLoadPromise;
+  }
+
+  window.bgwfIndustryGeometryAudit = function() {
+    return {
+      developedFootprints: industrialPolygonFeatures.map(d => ({
+        id: d.id,
+        name: d.name,
+        osm: `${d.osmType}${d.osmId}`,
+        areaDka: Math.round(d.areaDka ?? 0),
+        bounds: industrialGeometryBounds(d.geometry),
+        valid: industrialGeometryIsSane(d, d.geometry)
+      })),
+      officialConcessions: officialConcessionFeatures.map(d => ({
+        id: d.id,
+        concessionId: d.concessionId,
+        name: d.name,
+        source: d.sourceId,
+        areaDka: Math.round(d.areaDka ?? 0),
+        bounds: industrialGeometryBounds(d.geometry)
+      }))
+    };
+  };
+
+  function normalizeOfficialConcessionFeature(feature, source) {
+    const properties = feature?.properties ?? {};
+    const geometry = feature?.geometry;
+    if (!geometry || !["Polygon", "MultiPolygon"].includes(geometry.type)) return null;
+
+    const areaDka = geometryAreaDka(geometry);
+    if (!Number.isFinite(areaDka) || areaDka <= 0 || areaDka > 1500000) return null;
+
+    return {
+      id: `${source.id}:${properties.objectid ?? properties.OBJECTID ?? properties.concession_id ?? Math.random()}`,
+      sourceId: source.id,
+      sourceLabel: source.label,
+      sourceUrl: source.sourceUrl,
+      concessionId: properties.concession_id ?? properties["идентификационен_____партиден__"] ?? "—",
+      name: properties.name ?? properties["находище"] ?? "Концесионна площ",
+      deposit: properties["находище"] ?? "",
+      concessionaire: properties["концесионер"] ?? "",
+      resourceGroup: properties["група_подземно_богатство"] ?? "",
+      resourceType: properties["вид_на_подземното_богатство"] ?? "",
+      status: properties.status ?? "",
+      nkrUrl: properties.ncr_url ?? "",
+      municipality: properties["община"] ?? "",
+      areaDka,
+      geometry
+    };
+  }
+
+  async function ensureOfficialConcessionPolygons() {
+    if (officialConcessionLoadState === "ready") return officialConcessionFeatures;
+    if (officialConcessionLoadPromise) return officialConcessionLoadPromise;
+
+    officialConcessionLoadPromise = (async () => {
+      officialConcessionLoadState = "loading";
+      officialConcessionLoadError = "";
+      updateIndustryButtonLoadState();
+      updateRegionLayers();
+
+      const loaded = [];
+      const errors = [];
+
+      for (const source of OFFICIAL_CONCESSION_GIS_SOURCES) {
+        try {
+          const url = new URL(source.url);
+          url.searchParams.set("where", source.where ?? "1=1");
+          url.searchParams.set("outFields", "*");
+          url.searchParams.set("returnGeometry", "true");
+          url.searchParams.set("outSR", "4326");
+          url.searchParams.set("f", "geojson");
+
+          const response = await fetch(url.toString(), {
+            mode: "cors",
+            cache: "force-cache",
+            headers: { "Accept": "application/geo+json, application/json" }
+          });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+          const geojson = await response.json();
+          for (const feature of geojson?.features ?? []) {
+            const normalized = normalizeOfficialConcessionFeature(feature, source);
+            if (normalized) loaded.push(normalized);
+          }
+        } catch (error) {
+          errors.push(`${source.id}: ${error?.message ?? "грешка"}`);
+        }
+      }
+
+      officialConcessionFeatures = loaded;
+      officialConcessionLoadState = loaded.length ? "ready" : (errors.length ? "error" : "ready");
+      officialConcessionLoadError = errors.join(" · ");
+      officialConcessionLoadPromise = null;
+
+      updateIndustryButtonLoadState();
+      updateOfficialConcessionPolygons();
+      updateRegionLayers();
+      return officialConcessionFeatures;
+    })();
+
+    return officialConcessionLoadPromise;
+  }
+
+  function officialConcessionLabel(d) {
+    const details = [
+      "Официална концесионна граница",
+      d.concessionId,
+      d.name,
+      d.resourceType || d.resourceGroup,
+      formatAreaDka(d.areaDka)
+    ].filter(Boolean);
+    return details.join(" · ");
+  }
+
+  function updateOfficialConcessionPolygons() {
+    if (!layerVisibility.industry) {
+      officialConcessionLayer.selectAll("path.bgwf-official-concession").remove();
+      return;
+    }
+
+    if (officialConcessionLoadState === "idle") {
+      void ensureOfficialConcessionPolygons();
+    }
+
+    officialConcessionLayer.selectAll("path.bgwf-official-concession")
+      .data(officialConcessionFeatures, d => d.id)
+      .join(
+        enter => enter.append("path")
+          .attr("class", "bgwf-official-concession")
+          .attr("tabindex", 0)
+          .attr("role", "button")
+          .attr("aria-label", officialConcessionLabel)
+          .on("mouseenter", function(event, d) {
+            showTextTooltip(this, officialConcessionLabel(d));
+          })
+          .on("mouseleave", () => { tooltip.hidden = true; })
+          .on("focus", function(event, d) {
+            showTextTooltip(this, officialConcessionLabel(d));
+          })
+          .on("blur", () => { tooltip.hidden = true; })
+          .on("click", function(event, d) {
+            event.preventDefault();
+            event.stopPropagation();
+            tooltip.hidden = true;
+
+            if (selected) selected.classList.remove("is-selected");
+            selected = this;
+            selected.classList.add("is-selected");
+            activateDetail();
+
+            if (detail) {
+              detail.innerHTML = "";
+
+              const strong = document.createElement("strong");
+              strong.textContent = d.name;
+              detail.appendChild(strong);
+
+              const parts = [
+                `официална концесионна граница`,
+                d.concessionId,
+                d.concessionaire,
+                d.resourceType || d.resourceGroup,
+                formatAreaDka(d.areaDka),
+                d.municipality ? `общ. ${d.municipality}` : ""
+              ].filter(Boolean);
+              detail.appendChild(document.createTextNode(` · ${parts.join(" · ")} · `));
+
+              if (d.nkrUrl && /^https?:\/\//i.test(d.nkrUrl)) {
+                const nkr = document.createElement("a");
+                nkr.href = d.nkrUrl;
+                nkr.target = "_blank";
+                nkr.rel = "noopener";
+                nkr.textContent = "НКР ↗";
+                detail.appendChild(nkr);
+                detail.appendChild(document.createTextNode(" · "));
+              }
+
+              const src = document.createElement("a");
+              src.href = d.sourceUrl;
+              src.target = "_blank";
+              src.rel = "noopener";
+              src.textContent = "GIS източник ↗";
+              detail.appendChild(src);
+            }
+          }),
+        update => update.attr("aria-label", officialConcessionLabel),
+        exit => exit.remove()
+      )
+      .attr("fill-rule", "evenodd")
+      .attr("clip-rule", "evenodd")
+      .attr("d", d => industrialProjectedPath(d.geometry));
+  }
+
+  function industrialPolygonLabel(d) {
+    const meta = industrialConcessionMeta[d.id];
+    const official = meta
+      ? ` · НКР ${meta.concessionId}${Number.isFinite(meta.officialAreaDka) ? ` · концесионна площ ${formatAreaDka(meta.officialAreaDka)}` : ""}`
+      : "";
+    return `${industrialTypeLabel(d.type)} · ${d.name} · разработена/индустриална площ ${formatAreaDka(d.areaDka)}${official} · ${d.info}`;
+  }
+
+  function updateIndustrialSites() {
+    if (!layerVisibility.industry) {
+      industrialSiteLayer.selectAll("path.bgwf-industrial-polygon").remove();
+      officialConcessionLayer.selectAll("path.bgwf-official-concession").remove();
+      return;
+    }
+
+    if (industrialPolygonLoadState === "idle") {
+      void ensureIndustrialPolygons();
+    }
+
+    const visible = industrialPolygonFeatures;
+
+    industrialSiteLayer.selectAll("path.bgwf-industrial-polygon")
+      .data(visible, d => d.id)
+      .join(
+        enter => enter.append("path")
+          .attr("class", d => `bgwf-industrial-polygon is-${d.type}`)
+          .attr("tabindex", 0)
+          .attr("role", "button")
+          .attr("aria-label", industrialPolygonLabel)
+          .on("mouseenter", function(event, d) {
+            showTextTooltip(this, industrialPolygonLabel(d));
+          })
+          .on("mouseleave", () => { tooltip.hidden = true; })
+          .on("focus", function(event, d) {
+            showTextTooltip(this, industrialPolygonLabel(d));
+          })
+          .on("blur", () => { tooltip.hidden = true; })
+          .on("click", function(event, d) {
+            event.preventDefault();
+            event.stopPropagation();
+            tooltip.hidden = true;
+
+            if (selected) selected.classList.remove("is-selected");
+            selected = this;
+            selected.classList.add("is-selected");
+            activateDetail();
+
+            if (detail) {
+              detail.innerHTML = "";
+
+              const strong = document.createElement("strong");
+              strong.textContent = d.name;
+              detail.appendChild(strong);
+
+              detail.appendChild(document.createTextNode(
+                ` · ${d.fuel} · ${formatAreaDka(d.areaDka)} · ${d.info} · `
+              ));
+
+              const sourceLink = document.createElement("a");
+              sourceLink.href = d.source;
+              sourceLink.target = "_blank";
+              sourceLink.rel = "noopener";
+              sourceLink.textContent = "обект/оператор ↗";
+              detail.appendChild(sourceLink);
+
+              detail.appendChild(document.createTextNode(" · "));
+
+              const osmLink = document.createElement("a");
+              osmLink.href = `https://www.openstreetmap.org/${d.osmType === "R" ? "relation" : "way"}/${d.osmId}`;
+              osmLink.target = "_blank";
+              osmLink.rel = "noopener";
+              osmLink.textContent = "разработена площ OSM ↗";
+              detail.appendChild(osmLink);
+
+              const meta = industrialConcessionMeta[d.id];
+              if (meta?.nkrUrl) {
+                detail.appendChild(document.createTextNode(" · "));
+                const nkr = document.createElement("a");
+                nkr.href = meta.nkrUrl;
+                nkr.target = "_blank";
+                nkr.rel = "noopener";
+                nkr.textContent = `НКР ${meta.concessionId} ↗`;
+                detail.appendChild(nkr);
+
+                if (Number.isFinite(meta.officialAreaDka)) {
+                  detail.appendChild(document.createTextNode(
+                    ` · официална концесионна площ ${formatAreaDka(meta.officialAreaDka)}`
+                  ));
+                }
+              }
+            }
+          }),
+        update => update
+          .attr("class", d => `bgwf-industrial-polygon is-${d.type}`)
+          .attr("aria-label", industrialPolygonLabel),
+        exit => exit.remove()
+      )
+      .attr("fill-rule", "evenodd")
+      .attr("clip-rule", "evenodd")
+      .attr("d", d => industrialProjectedPath(d.geometry));
+
+    updateOfficialConcessionPolygons();
+  }
+
   function updateVeiLayers() {
     updateProjectParcels();
     updateSolarParcels();
     updateWindPlants();
+    updateIndustrialSites();
     updatePriorityZones();
     updateLiveFires();
   }
@@ -3692,6 +4562,10 @@ svg {
     const futureText = layerVisibility.future
       ? `RED III: ${priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length ?? 0} полигонни компонента`
       : ' ';
+    const industryText = !layerVisibility.industry ? ''
+      : (industrialPolygonLoadState === "loading" || officialConcessionLoadState === "loading")
+        ? `ТЕЦ/мини: разработени ${industrialPolygonFeatures.length}/${industrialPolygonSites.length} · официални концесии ${officialConcessionFeatures.length} · зареждане`
+        : `ТЕЦ/мини: разработени ${industrialPolygonFeatures.length}/${industrialPolygonSites.length} · официални концесии ${officialConcessionFeatures.length}${industrialPolygonLoadError ? ` · ${industrialPolygonLoadError}` : ''}${officialConcessionLoadError ? ` · ${officialConcessionLoadError}` : ''}`;
     const liveText = liveFireLoadState === 'loading'
       ? `Sentinel-3 live: зареждане (${LIVE_SENTINEL_HOURS} ч.)`
       : liveFireLoadState === 'error'
@@ -3702,7 +4576,8 @@ svg {
             ? 'Sentinel-3 live: показва се само при „Всички“ или 2026'
             : `Sentinel-3 live: ${liveFireDetections.length} засичания / последните ${LIVE_SENTINEL_HOURS} ч.`;
     const errorText = cadastralLoadErrors ? ` · ${cadastralLoadErrors} кадастрални идентификатора без върната геометрия` : '';
-    layerStatus.innerHTML = `Слой за ${scopeText}: ${solarText} · ${projectText} · ${futureText} · ${liveText}${errorText}.`;
+    const extraParts = [futureText, industryText, liveText].filter(Boolean);
+    layerStatus.innerHTML = `Слой за ${scopeText}: ${solarText} · ${projectText}${extraParts.length ? ` · ${extraParts.join(' · ')}` : ''}${errorText}.`;
   }
 
   function firstProperty(props, predicate) {
@@ -4321,17 +5196,23 @@ svg {
     .attr('aria-label', 'Отвори текущата карта на ИСКРА в нов раздел')
     .text('ИСКРА ↗');
 
+  const industryLegendHint = document.createElement("span");
+  industryLegendHint.className = "bgwf-industry-legend-hint";
+  industryLegendHint.innerHTML = '<span class="bgwf-industry-fill-key"></span> разработена площ <span class="bgwf-industry-concession-key"></span> концесия';
+  root.querySelector('.bgwf-layer-controls')?.appendChild(industryLegendHint);
+
   const layerControls = d3.select(root.querySelector('.bgwf-layer-controls'));
   [
     { key: 'solar', text: 'Изградени ВЕИ' },
     { key: 'projects', text: 'ПУП/ПИ проекти' },
     { key: 'future', text: 'RED III/REPowerEU' },
+    { key: 'industry', text: 'ТЕЦ / мини' },
   ].forEach(({ key, text }) => {
     const button = layerControls.append('button')
       .attr('type', 'button')
       .attr('class', 'bgwf-year-filter bgwf-layer-toggle')
       .attr('data-layer', key)
-      .style('--bgwf-filter-color', key === 'solar' ? '#f59e0b' : key === 'projects' ? '#7c3aed' : '#2f9e44')
+      .style('--bgwf-filter-color', key === 'solar' ? '#f59e0b' : key === 'projects' ? '#7c3aed' : key === 'future' ? '#2f9e44' : '#4b5563')
       .attr('data-load-state', key === 'solar' || key === 'projects' ? 'loading' : 'ready')
       .attr('aria-pressed', String(layerVisibility[key]))
       .on('click', function() {
@@ -4343,11 +5224,20 @@ svg {
           selected = null;
         }
         updateRegionLayers();
+        if (key === "industry" && layerVisibility.industry) {
+          void ensureIndustrialPolygons();
+          void ensureOfficialConcessionPolygons();
+        }
         scheduleUrlSync();
       });
     button.append('span').attr('class', 'bgwf-swatch');
     button.append('span').text(text);
   });
+
+  if (layerVisibility.industry) {
+    void ensureIndustrialPolygons();
+    void ensureOfficialConcessionPolygons();
+  }
 
   // Точните ПИ се зареждат асинхронно от АГКК; пожарите остават незабавно видими.
   // Sentinel-3 е изключен по подразбиране и НЕ прави мрежова заявка до ръчно включване.
@@ -4364,6 +5254,8 @@ svg {
   }
 
   window.requestAnimationFrame(updateFloatingZoomPosition);
+
+  enableGoatCounterTracking();
 
   urlStateReady = true;
   syncUrlState();
