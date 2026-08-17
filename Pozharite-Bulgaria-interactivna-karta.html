@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.62 · 16.08.2026 21:44</title>
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.63 · 17.08.2026 08:58</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1167,10 +1167,10 @@ svg {
     <strong>Важно:</strong> приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя
   </div>
   <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.62</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.63</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.62</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.63</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1238,6 +1238,7 @@ svg {
       </p>
       <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
       <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
+      <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
@@ -3111,6 +3112,69 @@ svg {
 
 
   const CADASTRAL_STORAGE_KEY = 'bgwf-agkk-geometry-cache-v1';
+  const BUILT_VEI_STATIC_CACHE_URL = './data/agkk-built-vei-cache.json';
+
+  async function loadStaticBuiltVeiCache() {
+    try {
+      const response = await fetch(BUILT_VEI_STATIC_CACHE_URL, {
+        cache: 'force-cache',
+        credentials: 'same-origin'
+      });
+      if (!response.ok) return {};
+      const payload = await response.json();
+      const features = payload?.features ?? payload ?? {};
+      return features && typeof features === 'object' ? features : {};
+    } catch (_) {
+      // Cache file is optional; AGKK/localStorage fallback remains functional.
+      return {};
+    }
+  }
+
+  function featureFromStaticCache(staticCache, ref) {
+    const item = staticCache?.[ref];
+    const feature = item?.feature ?? item;
+    return feature?.geometry?.coordinates?.length ? feature : null;
+  }
+
+  function builtSolarRefsSet() {
+    return new Set(
+      operatingSolarProjects
+        .flatMap(project => project.parcels ?? [])
+        .map(sanitizeParcelRef)
+        .filter(Boolean)
+    );
+  }
+
+  // Debug/export helper: after a fully loaded session this creates a JSON cache
+  // containing only built-VЕI cadastral polygons. Upload it as:
+  // data/agkk-built-vei-cache.json
+  window.bgwfExportBuiltVeiCache = function() {
+    const refs = builtSolarRefsSet();
+    const persistent = readPersistentCadastralCache();
+    const features = {};
+    refs.forEach(ref => {
+      const feature = featureFromCache(persistent, ref) || cadastralCache.get(ref);
+      if (feature?.geometry?.coordinates?.length) {
+        features[ref] = { feature };
+      }
+    });
+    const payload = {
+      schema: 'bgwf-agkk-built-vei-cache-v1',
+      generatedAt: new Date().toISOString(),
+      featureCount: Object.keys(features).length,
+      features
+    };
+    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'agkk-built-vei-cache.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    return payload;
+  };
+
 
   function readPersistentCadastralCache() {
     try {
@@ -3259,31 +3323,42 @@ svg {
     setLayerLoadState('projects', 'loading', 'Зареждат се кадастралните ПИ за ПУП/ПИ проектите…');
 
     const persistentCache = readPersistentCadastralCache();
+    const staticBuiltCache = await loadStaticBuiltVeiCache();
+    const builtRefs = builtSolarRefsSet();
     const loaded = [];
     const missingRows = [];
     const groupedAll = rowsGroupedByRef(rows);
 
-    // 1) Immediate render from persistent cache.
+    // 1) Immediate render priority:
+    //    GitHub static cache (built VЕI) -> browser localStorage -> AGKK fallback.
     groupedAll.forEach((matchingRows, ref) => {
-      const feature = featureFromCache(persistentCache, ref);
+      const staticFeature = builtRefs.has(ref)
+        ? featureFromStaticCache(staticBuiltCache, ref)
+        : null;
+      const feature = staticFeature || featureFromCache(persistentCache, ref);
+
       if (feature) {
         cadastralCache.set(ref, feature);
+        if (staticFeature) cacheFeature(persistentCache, ref, staticFeature);
         addFeatureForRows(loaded, matchingRows, ref, feature);
       } else {
         missingRows.push(...matchingRows);
       }
     });
 
+    writePersistentCadastralCache(persistentCache);
+
     publishLoadedParcels(loaded);
 
     const cachedRefs = totalRefs - new Set(
       missingRows.map(row => sanitizeParcelRef(row.parcelRef)).filter(Boolean)
     ).size;
+    const staticBuiltRefsLoaded = [...builtRefs].filter(ref => featureFromStaticCache(staticBuiltCache, ref)).length;
 
     if (cachedRefs > 0) {
       const initialPercent = totalRefs ? Math.round(cachedRefs / totalRefs * 100) : 100;
       layerStatus.textContent =
-        `Кеш: ${cachedRefs} / ${totalRefs} ПИ показани веднага · търся ${totalRefs - cachedRefs} липсващи…`;
+        `Кеш: ${cachedRefs} / ${totalRefs} ПИ веднага${staticBuiltRefsLoaded ? ` · ${staticBuiltRefsLoaded} изградени от GitHub` : ''} · търся ${totalRefs - cachedRefs} липсващи…`;
       setMapLoadProgress(initialPercent, 'loading');
     } else {
       layerStatus.textContent = `АГКК: 0 / ${totalRefs} ПИ · зареждане…`;
