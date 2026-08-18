@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.85m-legacy-acid-mine-lakes-20260818">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85m</title>
+<meta name="bgwf-build" content="v0.85n-maritsa3-ash-disposal-sites-20260818">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85n</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1415,10 +1415,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85m</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85n</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85m</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85n</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1497,7 +1497,7 @@ svg {
       <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
       <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
-      <p><strong>ТЕЦ / мини:</strong> индустриалният footprint включва проверени площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища, утаители, технологични съоръжения и изоставени минни котловани с руднични езера. За „Марица-изток“ цялата публикувана концесионна площ от 473 685,54 дка се показва като потенциално ангажирана от минната експлоатация; окръжността представя точно площта, но не претендира да е юридическата ѝ граница. Отделно са показани сателитно установените промишлени отпечатъци, включително „Люляковица“, закритият „Медет“ и изоставеният рудник „Цар Асен“. За „Цар Асен“ картата не твърди лабораторно потвърден състав на водата.</p>
+      <p><strong>ТЕЦ / мини:</strong> индустриалният footprint включва проверени площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища, утаители, технологични съоръжения и изоставени минни котловани с руднични езера. За „Марица-изток“ цялата публикувана концесионна площ от 473 685,54 дка се показва като потенциално ангажирана от минната експлоатация; окръжността представя точно площта, но не претендира да е юридическата ѝ граница. Отделно са показани „Люляковица“, „Медет“, „Цар Асен“ и официално назованите сгуроотвали „Горен бюк“ и „Галдушки ливади“ на ТЕЦ „Марица 3“. За „Цар Асен“ картата не твърди лабораторно потвърден състав на водата.</p>
 <p><strong>Национален ориентир (НСИ):</strong> към 31.12.2025 г. „нарушената територия“ в България е 467,76 km² = 467 760 дка, или 0,42% от територията. НСИ включва тук терени за добив на полезни изкопаеми, терени за индустриални и битови отпадъци и деградирани земи; затова тази стойност е по-широк национален ориентир и не е равна на сумата от полигоните „ТЕЦ / мини“ в картата.</p>
 <p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване административните области се очертават с контрастен двоен контур, а ВЕИ, ПУП/ПИ и ТЕЦ/мини преминават в high-contrast halo стил. При относителен zoom ≥ 55 се показва локален слой с българските имена на градове и села от OpenStreetMap и GeoNames; надписите са малки, неболднати и автоматично се разреждат срещу застъпване.</p>
       <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
@@ -2788,7 +2788,7 @@ function normalizeProvinceName(value) {
 // below, avoiding duplicate polygons when remote OSM lookup also succeeds.
 const INDUSTRIAL_CURATED_AUX = [];
 
-// v0.85m: persistent satellite-traced industrial footprints, including waste
+// v0.85n: persistent satellite-traced industrial footprints, including waste
 // facilities and legacy open-pit mine lakes.
 // These are conservative satellite-traced envelopes around the three locations
 // supplied and checked by the map author. They are not cadastral boundaries.
@@ -2834,6 +2834,20 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
     info:'сателитно установен исторически минен отпечатък; ориентировъчен контур, не кадастрална граница',
     source:'https://btvnovinite.bg/predavania/tazi-sabota-i-nedelia/opasna-krasota-kak-bivshija-rudnik-car-asen-se-prevarna-v-turisticheska-zabelezhitelnost.html',
     geometry:{type:'Polygon',coordinates:[[[24.2120,42.3460],[24.2170,42.3420],[24.2260,42.3430],[24.2320,42.3480],[24.2310,42.3560],[24.2240,42.3610],[24.2150,42.3580],[24.2110,42.3520],[24.2120,42.3460]]]}
+  },
+  {
+    id:'MARITSA3-GALDUSHKI-LIVADI', type:'waste', name:'Сгуроотвал „Галдушки ливади“ · ТЕЦ „Марица 3“',
+    fuel:'депо за неопасни производствени отпадъци и сгуропепелина',
+    info:'сателитно установена площадка; ориентировъчен контур, не кадастрална граница',
+    source:'https://eea.government.bg/bg/r-r/r-kpkz/godishni-dokladi-dokumenti-2023/TEC_MARICA3_GORENBIUKGALDUSHKILIVADI.pdf',
+    geometry:{type:'Polygon',coordinates:[[[25.6038,42.0420],[25.6082,42.0408],[25.6128,42.0432],[25.6134,42.0476],[25.6092,42.0502],[25.6045,42.0486],[25.6038,42.0420]]]}
+  },
+  {
+    id:'MARITSA3-GOREN-BYUK', type:'waste', name:'Сгуроотвал „Горен бюк“ · ТЕЦ „Марица 3“',
+    fuel:'депо за неопасни производствени отпадъци и сгуропепелина',
+    info:'сателитно установена площадка; ориентировъчен контур, не кадастрална граница',
+    source:'https://haskovo.riosv.com/docs/KR%20depo%20TEC.pdf',
+    geometry:{type:'Polygon',coordinates:[[[25.6231,42.0440],[25.6278,42.0428],[25.6321,42.0451],[25.6325,42.0498],[25.6284,42.0522],[25.6240,42.0503],[25.6231,42.0440]]]}
   }
 ];
 
