@@ -1,0 +1,35 @@
+{
+  "schema": "bgwf-industrial-footprint-manifest-v1",
+  "revision": "2026-08-18.1",
+  "complexId": "MEDET-LEGACY",
+  "name": "МОК „Медет“ — закрит комплекс",
+  "refreshPolicy": "manual only",
+  "generatedAt": "2026-08-18T06:44:09.350347+00:00",
+  "features": [
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "МОК „Медет“ — нарушена/унищожена територия",
+      "component": "исторически минен комплекс",
+      "geometryStatus": "verified-area-circle",
+      "lon": 24.18718,
+      "lat": 42.60117,
+      "areaDka": 6000,
+      "note": "Народното събрание описва над 6000 дка унищожени гори, 7 насипища, един отвал и хвостохранилище; кръгът е мащабна визуализация, не точен контур."
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "Хвостохранилище „Медет“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "МОСВ и ИАОС го водят като хвостохранилище/закрито съоръжение за минни отпадъци."
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "Насипища на рудник „Медет“",
+      "component": "насипища",
+      "geometryStatus": "official-coordinates-pending-geojson",
+      "sourceCrs": "BGS2005 / CCS2005 EPSG:7801",
+      "evidence": "Министерство на енергетиката, Заповед Е-РД-16-352/07.06.2022 — публикувани гранични координати."
+    }
+  ]
+}
