@@ -1,0 +1,19 @@
+{
+  "schema": "bgwf-industry-footprint-policy-v1",
+  "generatedAt": "2026-08-18T05:34:31.464938+00:00",
+  "visualGoal": "single fossil/mining industrial footprint for comparison with RES and fires",
+  "included": [
+    "main industrial/TPP sites",
+    "open-pit/quarry footprints",
+    "tailings ponds",
+    "spoil heaps",
+    "slurry/settling/evaporation basins",
+    "technology/wastewater ponds when OSM-tagged as associated",
+    "industrial/landfill areas with mining/fossil-related names/operators"
+  ],
+  "notMergedIntoPhysicalFootprint": [
+    "legal concession boundary (shown separately)",
+    "unverified nearby generic industrial or water areas"
+  ],
+  "cache": "monthly browser GIS cache"
+}
