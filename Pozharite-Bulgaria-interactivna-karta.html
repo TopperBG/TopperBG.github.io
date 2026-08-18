@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.85j-village-labels-zoom-status-url-sync-20260818">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85j</title>
+<meta name="bgwf-build" content="v0.85l-tailings-main-release-20260818">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85l</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1415,10 +1415,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85j</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85l</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85j</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85l</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1497,7 +1497,7 @@ svg {
       <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
       <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
-      <p><strong>ТЕЦ / мини:</strong> индустриалният footprint се поддържа чрез отделни статични inventory файлове по комплекс. Включват се проверени основни площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища и технологични съоръжения. Картата не прави автоматично GIS сканиране; списъкът се променя само след ръчна проверка и нов revision на съответния inventory файл.</p>
+      <p><strong>ТЕЦ / мини:</strong> индустриалният footprint включва проверени площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища, утаители и технологични съоръжения. За „Марица-изток“ цялата публикувана концесионна площ от 473 685,54 дка се показва като потенциално ангажирана от минната експлоатация; окръжността представя точно площта, но не претендира да е юридическата ѝ граница. Отделно са показани сателитно установените промишлени отпечатъци, включително хвостохранилище „Люляковица“ към Асарел–Медет и терени извън основните руднични контури.</p>
 <p><strong>Национален ориентир (НСИ):</strong> към 31.12.2025 г. „нарушената територия“ в България е 467,76 km² = 467 760 дка, или 0,42% от територията. НСИ включва тук терени за добив на полезни изкопаеми, терени за индустриални и битови отпадъци и деградирани земи; затова тази стойност е по-широк национален ориентир и не е равна на сумата от полигоните „ТЕЦ / мини“ в картата.</p>
 <p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване административните области се очертават с контрастен двоен контур, а ВЕИ, ПУП/ПИ и ТЕЦ/мини преминават в high-contrast halo стил. При относителен zoom ≥ 55 се показва локален слой с българските имена на градове и села от OpenStreetMap и GeoNames; надписите са малки, неболднати и автоматично се разреждат срещу застъпване.</p>
       <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
@@ -2784,17 +2784,42 @@ function normalizeProvinceName(value) {
 // Curated, manually verified auxiliary footprints.
 // These override/augment automatic discovery when a related facility is mapped
 // under generic OSM tags (e.g. landuse=landfill) and cannot be reliably inferred.
-const INDUSTRIAL_CURATED_AUX = [
+// Facilities requiring guaranteed display are kept in CURATED_WASTE_FOOTPRINTS
+// below, avoiding duplicate polygons when remote OSM lookup also succeeds.
+const INDUSTRIAL_CURATED_AUX = [];
+
+// v0.85l: persistent satellite-traced waste footprints, including Maritsa-east
+// and the Asarel-Medet tailings facility.
+// These are conservative satellite-traced envelopes around the three locations
+// supplied and checked by the map author. They are not cadastral boundaries.
+const CURATED_WASTE_FOOTPRINTS = [
   {
-    parentId:"MINE-ASAREL",
-    id:"ASAREL-LYULYAKOVITSA",
-    name:"Хвостохранилище „Люляковица“",
-    osmType:"W",
-    osmId:124105571,
-    lon:24.09847,
-    lat:42.56046,
-    component:"хвостохранилище",
-    sourceNote:"проверено свързано съоръжение към Асарел-Медет"
+    id:'ME-WASTE-GALABOVO', type:'waste', name:'Марица-изток · западен сгуро-/пепелен комплекс',
+    fuel:'сгуропепелина, насипи и технологични води',
+    info:'сателитно установен промишлен отпечатък; ориентировъчен контур, не кадастрална граница',
+    source:'https://topperbg.github.io/Pozharite-Bulgaria-interactivna-karta-v0.85j.html?industry=1&lon=25.91035&lat=42.14661&z=101.589&map=sat',
+    geometry:{type:'Polygon',coordinates:[[[25.8870,42.1320],[25.9300,42.1320],[25.9360,42.1450],[25.9290,42.1640],[25.9020,42.1670],[25.8860,42.1540],[25.8870,42.1320]]]}
+  },
+  {
+    id:'ME-WASTE-MEDNIKAROVO-S', type:'waste', name:'Насипище „Медникарово“ · южен компонент',
+    fuel:'минна откривка и производствени неопасни отпадъци',
+    info:'сателитно установен насипищен отпечатък; ориентировъчен контур, не кадастрална граница',
+    source:'https://topperbg.github.io/Pozharite-Bulgaria-interactivna-karta-v0.85j.html?industry=1&lon=26.01340&lat=42.07877&z=51.381&map=sat',
+    geometry:{type:'Polygon',coordinates:[[[25.9840,42.0540],[26.0320,42.0520],[26.0450,42.0710],[26.0410,42.0960],[26.0170,42.1040],[25.9920,42.0950],[25.9820,42.0740],[25.9840,42.0540]]]}
+  },
+  {
+    id:'ME-WASTE-MEDNIKAROVO-N', type:'waste', name:'Насипище „Медникарово“ · северен компонент/утаители',
+    fuel:'насипи, утаители и технологични площи',
+    info:'сателитно установен промишлен отпечатък; ориентировъчен контур, не кадастрална граница',
+    source:'https://topperbg.github.io/Pozharite-Bulgaria-interactivna-karta-v0.85j.html?industry=1&lon=25.97251&lat=42.10685&z=203.286&map=sat',
+    geometry:{type:'Polygon',coordinates:[[[25.9470,42.0910],[25.9810,42.0870],[26.0010,42.1010],[25.9970,42.1210],[25.9730,42.1270],[25.9510,42.1160],[25.9470,42.0910]]]}
+  },
+  {
+    id:'ASAREL-TAILINGS-STATIC', type:'waste', name:'Хвостохранилище „Люляковица“ · Асарел–Медет',
+    fuel:'минни отпадъци, хвост и технологични води',
+    info:'сателитно установен отпечатък на хвостохранилището; постоянен резервен контур, не кадастрална граница',
+    source:'https://topperbg.github.io/Pozharite-Bulgaria-interactivna-karta-v0.85k.html?industry=1&lon=24.09774&lat=42.54808&z=74.173&map=sat',
+    geometry:{type:'Polygon',coordinates:[[[24.0690,42.5420],[24.0800,42.5320],[24.1070,42.5310],[24.1240,42.5440],[24.1270,42.5630],[24.1130,42.5790],[24.0890,42.5810],[24.0720,42.5680],[24.0690,42.5420]]]}
   }
 ];
 
@@ -2803,6 +2828,12 @@ const INDUSTRIAL_CURATED_AUX = [
   // Официални концесионни метаданни (НКР / Министерство на енергетиката).
   // Наличието на партида/официална площ НЕ се използва за генериране на измислен контур.
   const industrialConcessionMeta = {
+    "MINE-MARITSA-EAST": {
+      concessionId: "ИМВБ-2005",
+      officialAreaDka: 473685.54087,
+      note: "официална концесионна площ 473 685,54 дка; визуализацията по площ не е юридическа граница",
+      nkrUrl: "https://www.me.government.bg/themes/koncesii-za-dobiv-735-1613.html"
+    },
     "MINE-ELATSITE": {
       concessionId: "D-000074",
       officialAreaDka: 21821.8,
@@ -3504,25 +3535,25 @@ if(!WEBGL_AVAILABLE) dbgWarn('webgl-unavailable-heatmap-fallback-canvas'); else 
 function selectedStrokeWidth(f,normal=1.2,selected=2.4){return f.get('selected')?selected:normal;}
 
 function satelliteMode(){return !!satelliteLayer?.getVisible?.();}
-function haloPolygonStyles({fill,stroke,innerWidth=2,selected=false,halo='rgba(255,255,255,.96)',haloWidth=4.6,lineDash=null}){
+function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba(255,255,255,.94)',haloWidth=3.5,lineDash=null}){
   if(!satelliteMode()){
     return new Style({
       fill:new Fill({color:fill}),
-      stroke:new Stroke({color:stroke,width:selected?innerWidth+1.2:innerWidth,lineDash})
+      stroke:new Stroke({color:stroke,width:selected?innerWidth+.8:innerWidth,lineDash})
     });
   }
   return [
     new Style({
       fill:new Fill({color:'rgba(0,0,0,0)'}),
-      stroke:new Stroke({color:'rgba(0,0,0,.68)',width:selected?haloWidth+2:haloWidth+1.2,lineDash})
+      stroke:new Stroke({color:'rgba(0,0,0,.62)',width:selected?haloWidth+1.3:haloWidth+.8,lineDash})
     }),
     new Style({
       fill:new Fill({color:fill}),
-      stroke:new Stroke({color:halo,width:selected?haloWidth:haloWidth-1.2,lineDash})
+      stroke:new Stroke({color:halo,width:selected?haloWidth:haloWidth-.8,lineDash})
     }),
     new Style({
       fill:new Fill({color:fill}),
-      stroke:new Stroke({color:stroke,width:selected?innerWidth+1.4:innerWidth,lineDash})
+      stroke:new Stroke({color:stroke,width:selected?innerWidth+.9:innerWidth,lineDash})
     })
   ];
 }
@@ -3579,12 +3610,12 @@ const industryLayer=new VectorLayer({
   style:f=>{
     const type=f.get('industryType'),selected=f.get('selected');
     if(satelliteMode()){
-      const fill=type==='coal'?'rgba(255,82,82,.48)':type==='ore'?'rgba(255,112,67,.48)':type==='refinery'?'rgba(255,23,68,.46)':'rgba(255,82,82,.44)';
-      const stroke=type==='ore'?'#ff7043':type==='refinery'?'#ff1744':'#ff5252';
-      return haloPolygonStyles({fill,stroke,innerWidth:selected?3:2.1,selected,halo:'rgba(255,255,255,.98)',haloWidth:5.2});
+      const fill=type==='waste'?'rgba(168,85,247,.35)':type==='coal'?'rgba(255,82,82,.44)':type==='ore'?'rgba(255,112,67,.44)':type==='refinery'?'rgba(255,23,68,.42)':'rgba(255,82,82,.40)';
+      const stroke=type==='waste'?'#c084fc':type==='ore'?'#ff7043':type==='refinery'?'#ff1744':'#ff5252';
+      return haloPolygonStyles({fill,stroke,innerWidth:selected?2.2:1.45,selected,halo:'rgba(255,255,255,.94)',haloWidth:3.6});
     }
-    const fill=type==='coal'?(selected?'rgba(91,58,41,.58)':'rgba(91,58,41,.42)'):type==='ore'?(selected?'rgba(124,45,18,.48)':'rgba(124,45,18,.32)'):type==='refinery'?(selected?'rgba(17,24,39,.54)':'rgba(17,24,39,.38)'):(selected?'rgba(47,47,47,.50)':'rgba(47,47,47,.35)');
-    const stroke=selected?cssVar('--foreground','#111827'):type==='coal'?'#4a2f22':type==='ore'?'#6b2710':type==='refinery'?'#111827':'#1f2937';
+    const fill=type==='waste'?(selected?'rgba(126,34,206,.44)':'rgba(126,34,206,.28)'):type==='coal'?(selected?'rgba(91,58,41,.58)':'rgba(91,58,41,.42)'):type==='ore'?(selected?'rgba(124,45,18,.48)':'rgba(124,45,18,.32)'):type==='refinery'?(selected?'rgba(17,24,39,.54)':'rgba(17,24,39,.38)'):(selected?'rgba(47,47,47,.50)':'rgba(47,47,47,.35)');
+    const stroke=selected?cssVar('--foreground','#111827'):type==='waste'?'#7e22ce':type==='coal'?'#4a2f22':type==='ore'?'#6b2710':type==='refinery'?'#111827':'#1f2937';
     return new Style({fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selectedStrokeWidth(f,1.2,2.4)})});
   }
 });
@@ -3593,10 +3624,10 @@ const concessionLayer=new VectorLayer({
   style:f=>{
     const selected=f.get('selected');
     const color=satelliteMode()?'#ff00aa':(selected?'#ef4444':'#b91c1c');
-    const inner=new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:selected?3:2,lineDash:[7,4]})});
+    const inner=new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:selected?2.2:1.45,lineDash:[7,4]})});
     if(!satelliteMode())return inner;
     return [
-      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.98)',width:selected?5.5:4.5,lineDash:[7,4]})}),
+      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.94)',width:selected?4:3.2,lineDash:[7,4]})}),
       inner
     ];
   }
@@ -3608,11 +3639,11 @@ const concessionEstimateLayer=new VectorLayer({
   style:f=>{
     const inner=new Style({
       fill:new Fill({color:satelliteMode()?'rgba(255,0,170,.09)':'rgba(185,28,28,0.055)'}),
-      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:satelliteMode()?2:1.4,lineDash:[3,4]})
+      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:satelliteMode()?1.45:1.15,lineDash:[3,4]})
     });
     if(!satelliteMode())return inner;
     return [
-      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.96)',width:4,lineDash:[3,4]})}),
+      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.92)',width:3,lineDash:[3,4]})}),
       inner
     ];
   }
@@ -4547,7 +4578,11 @@ function industrialOsmKey(site){return `${site.osmType}${site.osmId}`;}
 function rawGeometryAreaDka(raw){try{const f=cloneGeoFeature({type:'Feature',properties:{},geometry:raw});return getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'})/1000;}catch{return null;}}
 function rawGeometryBounds(raw){let minLon=Infinity,minLat=Infinity,maxLon=-Infinity,maxLat=-Infinity;const visit=v=>{if(!Array.isArray(v))return;if(v.length>=2&&!Array.isArray(v[0])&&Number.isFinite(Number(v[0]))&&Number.isFinite(Number(v[1]))){const x=Number(v[0]),y=Number(v[1]);minLon=Math.min(minLon,x);maxLon=Math.max(maxLon,x);minLat=Math.min(minLat,y);maxLat=Math.max(maxLat,y);}else v.forEach(visit);};visit(raw?.coordinates);return Number.isFinite(minLon)?{minLon,minLat,maxLon,maxLat}:null;}
 function industrialGeometryIsSane(site,geometry){if(!geometry||!['Polygon','MultiPolygon'].includes(geometry.type))return false;const b=rawGeometryBounds(geometry);if(!b||b.minLon<20||b.maxLon>30.5||b.minLat<40||b.maxLat>45.5)return false;const cx=(b.minLon+b.maxLon)/2,cy=(b.minLat+b.maxLat)/2;if(Math.abs(cx-site.lon)>.75||Math.abs(cy-site.lat)>.75)return false;const a=rawGeometryAreaDka(geometry);return Number.isFinite(a)&&a>0&&a<500000;}
-function rebuildIndustrialFeatures(cache){industrialPolygonFeatures=industrialPolygonSites.flatMap(site=>{const c=cache[industrialOsmKey(site)],geometry=c?.geometry;if(!industrialGeometryIsSane(site,geometry))return[];return[{...site,geometry,areaDka:rawGeometryAreaDka(geometry)}];});}
+function rebuildIndustrialFeatures(cache){
+  const discovered=industrialPolygonSites.flatMap(site=>{const c=cache[industrialOsmKey(site)],geometry=c?.geometry;if(!industrialGeometryIsSane(site,geometry))return[];return[{...site,geometry,areaDka:rawGeometryAreaDka(geometry)}];});
+  const curatedWaste=CURATED_WASTE_FOOTPRINTS.map(site=>({...site,areaDka:rawGeometryAreaDka(site.geometry)}));
+  industrialPolygonFeatures=[...discovered,...curatedWaste];
+}
 function renderIndustryFootprints(){industryFootprintSource.clear();for(const d of industrialPolygonFeatures){try{const f=cloneGeoFeature({type:'Feature',properties:{},geometry:d.geometry});f.set('kind','industry');f.set('data',d);f.set('industryType',d.type);f.set('areaDka',d.areaDka);industryFootprintSource.addFeature(f);}catch(e){dbgWarn('industry-render-rejected',{id:d.id,error:e.message});}}debugState.layerCounts.industry=industryFootprintSource.getFeatures().length;updateLayerStatus();}
 async function ensureIndustrialPolygons(){if(industrialPolygonLoadState==='ready')return industrialPolygonFeatures;if(industrialPolygonLoadPromise)return industrialPolygonLoadPromise;industrialPolygonLoadPromise=(async()=>{const started=performance.now();industrialPolygonLoadState='loading';const cache=readIndustrialGeometryCache();rebuildIndustrialFeatures(cache);renderIndustryFootprints();const missing=industrialPolygonSites.filter(site=>!cache[industrialOsmKey(site)]?.geometry);if(!missing.length){industrialPolygonLoadState='ready';industrialPolygonLoadPromise=null;return industrialPolygonFeatures;}try{const u=new URL(INDUSTRIAL_NOMINATIM_LOOKUP);u.searchParams.set('osm_ids',missing.map(industrialOsmKey).join(','));u.searchParams.set('format','geojson');u.searchParams.set('polygon_geojson','1');u.searchParams.set('addressdetails','0');u.searchParams.set('extratags','1');const r=await fetchMonthlyGis(u,{mode:'cors',headers:{Accept:'application/geo+json, application/json'}});debugState.network.nominatim={status:r.status,ms:Math.round(performance.now()-started)};if(!r.ok)throw new Error(`HTTP ${r.status}`);const gj=await r.json();for(const feature of gj?.features??[]){const p=feature.properties||{},prefix=String(p.osm_type||'').toLowerCase()==='relation'?'R':String(p.osm_type||'').toLowerCase()==='way'?'W':'';const key=prefix&&p.osm_id!=null?`${prefix}${p.osm_id}`:'';const site=industrialPolygonSites.find(s=>industrialOsmKey(s)===key);if(site&&industrialGeometryIsSane(site,feature.geometry))cache[key]={geometry:feature.geometry,properties:p,cachedAt:new Date().toISOString()};else if(site)dbgWarn('industry-geometry-sanity-reject',{site:site.id,key});}writeIndustrialGeometryCache(cache);rebuildIndustrialFeatures(cache);industrialPolygonLoadState='ready';industrialPolygonLoadError=industrialPolygonFeatures.length<industrialPolygonSites.length?`${industrialPolygonSites.length-industrialPolygonFeatures.length} OSM контура липсват`:'';}catch(e){rebuildIndustrialFeatures(cache);industrialPolygonLoadState=industrialPolygonFeatures.length?'ready':'error';industrialPolygonLoadError=e.message;dbgWarn('industry-load-failed',{error:e.message});}industrialPolygonLoadPromise=null;renderIndustryFootprints();debugState.timings.industry=Math.round(performance.now()-started);return industrialPolygonFeatures;})();return industrialPolygonLoadPromise;}
 
