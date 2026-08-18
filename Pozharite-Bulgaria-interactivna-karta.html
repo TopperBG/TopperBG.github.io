@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.85-sentinel3-resilient-ows-20260818-1128">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85</title>
+<meta name="bgwf-build" content="v0.85j-village-labels-zoom-status-url-sync-20260818">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85j</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -928,6 +928,14 @@ svg {
     color: var(--foreground);
     font-size: inherit;
   }
+  #bg-wildfires-map .bgwf-zoom-status {
+    padding: 2px 5px;
+    border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+    border-radius: 999px;
+    color: var(--foreground);
+    background: color-mix(in srgb, var(--background) 88%, transparent);
+    font-variant-numeric: tabular-nums;
+  }
   @media (max-width:700px) {
     #bg-wildfires-map .bgwf-status-row {
       align-items: flex-start;
@@ -1332,7 +1340,18 @@ svg {
 }
 
 
-#bg-wildfires-map .bgwf-zoom-controls { display:none !important; }
+#bg-wildfires-map .bgwf-zoom-controls {
+  position:absolute !important;
+  top:.55rem !important;
+  right:.55rem !important;
+  z-index:120 !important;
+  display:grid !important;
+  gap:.28rem;
+  visibility:visible !important;
+  opacity:1 !important;
+  pointer-events:auto !important;
+}
+#bg-wildfires-map .ol-zoom { display:none !important; }
 
 #bg-wildfires-map .bgwf-industry-estimate-key {
   width:10px;height:10px;display:inline-block;border:1.5px dashed #b91c1c;border-radius:50%;
@@ -1346,10 +1365,43 @@ svg {
 }
 #bg-wildfires-map .bgwf-map-share-menu[hidden]{display:none}
 #bg-wildfires-map .bgwf-map-share-menu button{
-  width:100%;border:0;border-radius:5px;padding:7px 9px;text-align:left;
+  display:block;width:100%;border:0;border-radius:5px;padding:7px 9px;text-align:left;
   background:transparent;color:var(--popover-foreground);font:inherit;cursor:pointer;
 }
+#bg-wildfires-map .bgwf-map-share-menu button+button{margin-top:2px}
 #bg-wildfires-map .bgwf-map-share-menu button:hover{background:var(--muted)}
+
+
+#bg-wildfires-map .bgwf-year-toggle{
+  min-width: 38px;
+  width: 38px;
+  min-height: 26px;
+  padding: 0 4px;
+  border-width: 1px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  line-height: 24px;
+}#bg-wildfires-map .bgwf-year-toggle{
+  color:var(--secondary-foreground);
+  background:var(--secondary);
+  border-color:var(--input);
+}
+#bg-wildfires-map .bgwf-year-toggle[aria-pressed="true"]{
+  color:#fff;
+  background:var(--year-color, var(--primary));
+  border-color:var(--year-color, var(--primary));
+  box-shadow:0 0 0 1px color-mix(in srgb, var(--year-color, var(--primary)) 36%, transparent);
+}@media (max-width:700px){
+  #bg-wildfires-map .bgwf-year-toggle{
+    min-width:34px;
+    width:34px;
+    min-height:24px;
+    padding:0 3px;
+    font-size:10px;
+    line-height:22px;
+  }
+}
 
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.10.0/ol.css">
@@ -1363,10 +1415,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85j</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85j</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1379,6 +1431,7 @@ svg {
     <div class="bgwf-status-row">
       <div class="text-small text-muted bgwf-layer-status bgwf-layer-status-inline" data-layer-status></div>
       <div class="bgwf-summary-inline" aria-label="Обобщение">
+        <span class="bgwf-zoom-status" title="Относителен zoom спрямо изгледа на цяла България">zoom <strong data-zoom-factor>×1</strong></span>
         <span><strong data-total-count></strong> пер.</span>
         <span><strong data-total-area></strong> ha</span>
         <span>max <strong data-largest></strong> ha</span>
@@ -1395,6 +1448,11 @@ svg {
       <button type="button" data-province-reset aria-label="Назад към цяла България">×</button>
     </div>
     <div class="bgwf-map bgwf-ol-map" role="application" aria-label="Пожари и енергийни/GIS слоеве в България" aria-describedby="bgwf-map-desc"></div>
+    <div class="bgwf-zoom-controls" aria-label="Управление на мащаба">
+      <button type="button" class="btn bgwf-map-button" data-zoom-in aria-label="Увеличаване" title="Увеличаване">+</button>
+      <button type="button" class="btn bgwf-map-button" data-zoom-out aria-label="Намаляване" title="Намаляване">−</button>
+      <button type="button" class="btn bgwf-map-button bgwf-map-reset" data-zoom-reset aria-label="Начален изглед — мащаб 1" title="Начален изглед — мащаб 1">⌂</button>
+    </div>
     <div id="bgwf-map-desc" class="bgwf-sr-only">OpenLayers GIS карта. Историческите пожари са кръгове с площово мащабиране; отделни слоеве показват ВЕИ, ПУП/ПИ, RED III, ТЕЦ/мини, концесии и Sentinel-3.</div>
     <div class="tooltip bgwf-tooltip" hidden></div>
     <details class="bgwf-debug-panel" data-debug-panel hidden>
@@ -1441,7 +1499,7 @@ svg {
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>ТЕЦ / мини:</strong> индустриалният footprint се поддържа чрез отделни статични inventory файлове по комплекс. Включват се проверени основни площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища и технологични съоръжения. Картата не прави автоматично GIS сканиране; списъкът се променя само след ръчна проверка и нов revision на съответния inventory файл.</p>
 <p><strong>Национален ориентир (НСИ):</strong> към 31.12.2025 г. „нарушената територия“ в България е 467,76 km² = 467 760 дка, или 0,42% от територията. НСИ включва тук терени за добив на полезни изкопаеми, терени за индустриални и битови отпадъци и деградирани земи; затова тази стойност е по-широк национален ориентир и не е равна на сумата от полигоните „ТЕЦ / мини“ в картата.</p>
-<p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване административните области се очертават с контрастен двоен контур, а ВЕИ, ПУП/ПИ и ТЕЦ/мини преминават в high-contrast halo стил за четимост върху зеления/кафяв imagery фон. Това е визуален ефект, не 3D геометрия.</p>
+<p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване административните области се очертават с контрастен двоен контур, а ВЕИ, ПУП/ПИ и ТЕЦ/мини преминават в high-contrast halo стил. При относителен zoom ≥ 55 се показва локален слой с българските имена на градове и села от OpenStreetMap и GeoNames; надписите са малки, неболднати и автоматично се разреждат срещу застъпване.</p>
       <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
       <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 
@@ -3219,6 +3277,7 @@ const filterPanel = root.querySelector('.bgwf-floating-controls');
 const mapLoadbar = root.querySelector('[data-map-loadbar]');
 const mapLoadbarFill = root.querySelector('[data-map-loadbar-fill]');
 const liveCountEl = root.querySelector('[data-live-count]');
+const zoomFactorEl = root.querySelector('[data-zoom-factor]');
 const provinceChip = root.querySelector('[data-province-chip]');
 const provinceNameEl = root.querySelector('[data-province-name]');
 let map = null;
@@ -3270,17 +3329,52 @@ let selectedFireId=null;
 const layerVisibility={solar:parseBoolParam('solar',true),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),industry:parseBoolParam('industry',false),live:parseBoolParam('s3',false)};
 let urlStateReady=false,urlSyncTimer=0,homeResolution=null;
 function currentScale(){const r=view?.getResolution();return homeResolution&&r?homeResolution/r:1;}
+function formatZoomFactor(scale){
+  const value=Math.max(1,Number(scale)||1);
+  return value<10?value.toFixed(1).replace(/\.0$/,''):String(Math.round(value));
+}
+function updateZoomFactor(){if(zoomFactorEl)zoomFactorEl.textContent=`×${formatZoomFactor(currentScale())}`;}
 function currentMapCenterLonLat(){const c=view?.getCenter();return c?toLonLat(c):null;}
-function syncUrlState(){if(!urlStateReady||!view)return;const p=new URLSearchParams(location.search);p.set('year',activeYear===false?'off':activeYear==null?'all':String(activeYear));p.set('solar',layerVisibility.solar?'1':'0');p.set('pup',layerVisibility.projects?'1':'0');p.set('red',layerVisibility.future?'1':'0');p.set('industry',layerVisibility.industry?'1':'0');p.set('s3',layerVisibility.live?'1':'0');const c=currentMapCenterLonLat();if(c){p.set('lon',c[0].toFixed(5));p.set('lat',c[1].toFixed(5));p.set('z',currentScale().toFixed(3));}
-  if(satelliteLayer.getVisible())p.set('map','sat');else p.delete('map');
-history.replaceState({bgwf:true},'',`${location.pathname}?${p}${location.hash||''}`);}
+
+function buildUrlParams(){
+  const p=new URLSearchParams(location.search);
+  p.set('year',activeYear===false?'off':activeYear==null?'all':String(activeYear));
+  p.set('solar',layerVisibility.solar?'1':'0');
+  p.set('pup',layerVisibility.projects?'1':'0');
+  p.set('red',layerVisibility.future?'1':'0');
+  p.set('industry',layerVisibility.industry?'1':'0');
+  p.set('s3',layerVisibility.live?'1':'0');
+
+  const c=currentMapCenterLonLat();
+  if(c){
+    p.set('lon',c[0].toFixed(5));
+    p.set('lat',c[1].toFixed(5));
+    p.set('z',currentScale().toFixed(3));
+  }
+
+  if(satelliteLayer?.getVisible?.())p.set('map','sat');
+  else p.delete('map');
+
+  return p;
+}
+function buildCurrentMapUrl(){
+  const p=buildUrlParams();
+  const q=p.toString();
+  return `${location.origin}${location.pathname}${q?`?${q}`:''}${location.hash||''}`;
+}
+function syncUrlState(){
+  if(!view)return;
+  const url=buildCurrentMapUrl();
+  history.replaceState({bgwf:true},'',url);
+}
 function scheduleUrlSync(){
   clearTimeout(urlSyncTimer);
   urlSyncTimer=setTimeout(()=>{
     try{syncUrlState();}
     catch(e){dbgWarn('url-sync',{error:e.message});}
-  },140);
+  },80);
 }
+window.bgwfCurrentMapUrl=buildCurrentMapUrl;
 
 function readFeatures(fc){return geojson.readFeatures(fc,{dataProjection:'EPSG:4326',featureProjection:'EPSG:3857'});}
 function cloneGeoFeature(raw){return geojson.readFeature(raw,{dataProjection:'EPSG:4326',featureProjection:'EPSG:3857'});}
@@ -3300,6 +3394,68 @@ const satelliteLayer=new TileLayer({
   zIndex:-100
 });
 satelliteLayer.set('kind','basemap-satellite');
+
+// Local, controllable place labels. OSM city/town nodes are embedded so labels
+// never depend on a runtime style, sprite, font or tile request.
+const PLACE_LABEL_MIN_SCALE=55;
+const PLACE_LABEL_DATA_URL='./data/bg-place-labels-v0.85i.json';
+const PLACE_LABEL_EXPECTED_COUNT=5911;
+const placeLabelsSource=new VectorSource();
+let placeLabelsLoadState='loading';
+async function loadPlaceLabels(){
+  try{
+    const response=await fetch(PLACE_LABEL_DATA_URL,{cache:'force-cache'});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const rows=await response.json();
+    if(!Array.isArray(rows)||rows.length<5000)throw new Error(`Невалиден labels набор: ${rows?.length??'—'}`);
+    placeLabelsSource.addFeatures(rows.map(row=>new Feature({
+      geometry:new Point(fromLonLat([row.lon,row.lat])),
+      ...row,
+      kind:'place-label'
+    })));
+    placeLabelsLoadState='ready';
+    debugState.network.placeLabels={ok:true,state:'ready',type:'static-local-vector',places:rows.length,minScale:PLACE_LABEL_MIN_SCALE,url:PLACE_LABEL_DATA_URL};
+    updatePlaceLabelsVisibility();
+    refreshDebugPanel();
+  }catch(e){
+    placeLabelsLoadState='error';
+    debugState.network.placeLabels={ok:false,state:'error',type:'static-local-vector',error:e.message,url:PLACE_LABEL_DATA_URL};
+    dbgWarn('place-labels-static-load',{error:e.message,url:PLACE_LABEL_DATA_URL});
+  }
+}
+const placeLabelsLayer=new VectorLayer({
+  source:placeLabelsSource,
+  visible:false,
+  zIndex:40,
+  declutter:true,
+  renderOrder:(a,b)=>(Number(b.get('priority'))||0)-(Number(a.get('priority'))||0),
+  style:f=>{
+    const scale=currentScale();
+    if(scale<PLACE_LABEL_MIN_SCALE)return null;
+    const priority=Number(f.get('priority'))||1;
+    return new Style({
+      text:new TextStyle({
+        text:f.get('name'),
+        font:priority>=3?'500 9px system-ui, sans-serif':'400 8px system-ui, sans-serif',
+        fill:new Fill({color:satelliteMode()?'rgba(255,255,255,.92)':'rgba(31,41,55,.82)'}),
+        stroke:new Stroke({color:satelliteMode()?'rgba(0,0,0,.78)':'rgba(255,255,255,.88)',width:2}),
+        padding:[1,2,1,2],
+        overflow:false
+      })
+    });
+  }
+});
+placeLabelsLayer.set('kind','place-labels-bg');
+debugState.network.placeLabels={ok:null,state:'loading',type:'static-local-vector',places:0,minScale:PLACE_LABEL_MIN_SCALE,url:PLACE_LABEL_DATA_URL};
+void loadPlaceLabels();
+function updatePlaceLabelsVisibility(){
+  const scale=currentScale();
+  const show=scale>=PLACE_LABEL_MIN_SCALE;
+  placeLabelsLayer.setVisible(show);
+  if(show)placeLabelsLayer.changed();
+}
+
+
 
 const concessionEstimateSource=new VectorSource();
 
@@ -3371,7 +3527,7 @@ function haloPolygonStyles({fill,stroke,innerWidth=2,selected=false,halo='rgba(2
   ];
 }
 function refreshSatelliteOverlayStyles(){
-  [provinceLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
+  [placeLabelsLayer,provinceLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
   industrialAuxLayer?.changed?.();
 }
@@ -3471,7 +3627,7 @@ const fireLayer=new VectorLayer({source:fireSource,zIndex:11,style:f=>{
 const liveLayer=new VectorLayer({source:liveSource,zIndex:12,visible:layerVisibility.live,style:f=>new Style({image:new CircleStyle({radius:f.get('selected')?11:9,fill:new Fill({color:f.get('selected')?'rgba(255,23,23,.34)':'rgba(255,23,23,.22)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ff1717',width:f.get('selected')?3:2})}),text:new TextStyle({text:'🔥',font:f.get('selected')?'17px sans-serif':'15px sans-serif',offsetY:-1})})});
 
 const view=new View({center:fromLonLat([25.25,42.75]),zoom:7,minZoom:5,maxZoom:16,constrainResolution:false});
-map=new MapOL({target:mapTarget,view,layers:[satelliteLayer,provinceLayer,densityLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer]});
+map=new MapOL({target:mapTarget,view,layers:[satelliteLayer,placeLabelsLayer,provinceLayer,densityLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer]});
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
 // v0.80c: auxiliary fossil/mining footprint is deliberately lazy.
@@ -3682,8 +3838,9 @@ function totalIndustryFootprintDka(){
 window.__bgwfOpenLayersMap=map;
 
 function currentShareUrl(){
-  syncUrlState();
-  return location.href;
+  const url=buildCurrentMapUrl();
+  try{history.replaceState({bgwf:true},'',url);}catch{}
+  return url;
 }
 async function shareCurrentMap(){
   const url=currentShareUrl();
@@ -3705,18 +3862,33 @@ async function shareCurrentMap(){
 const mapShareMenu=document.createElement('div');
 mapShareMenu.className='bgwf-map-share-menu';
 mapShareMenu.hidden=true;
-mapShareMenu.innerHTML='<button type="button">Сподели този изглед</button>';
+mapShareMenu.innerHTML='<button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button>';
 root.appendChild(mapShareMenu);
-mapShareMenu.querySelector('button').addEventListener('click',async()=>{
+let mapContextLonLat=null;
+mapShareMenu.addEventListener('click',async e=>{
+  const btn=e.target.closest('button[data-action]');
+  if(!btn)return;
+  const action=btn.dataset.action;
   mapShareMenu.hidden=true;
-  await shareCurrentMap();
+  if(action==='share'){
+    await shareCurrentMap();
+    return;
+  }
+  if(action==='gmaps'&&mapContextLonLat){
+    const [lon,lat]=mapContextLonLat;
+    const query=encodeURIComponent(`${lat.toFixed(6)},${lon.toFixed(6)}`);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${query}`,'_blank','noopener');
+  }
 });
 mapTarget.addEventListener('contextmenu',e=>{
   e.preventDefault();
   syncUrlState();
+  const pixel=map.getEventPixel(e);
+  const coord=map.getCoordinateFromPixel(pixel);
+  mapContextLonLat=coord?toLonLat(coord):null;
   const rr=root.getBoundingClientRect();
-  mapShareMenu.style.left=`${Math.min(e.clientX-rr.left,rr.width-190)}px`;
-  mapShareMenu.style.top=`${Math.min(e.clientY-rr.top,rr.height-46)}px`;
+  mapShareMenu.style.left=`${Math.min(e.clientX-rr.left,rr.width-210)}px`;
+  mapShareMenu.style.top=`${Math.min(e.clientY-rr.top,rr.height-78)}px`;
   mapShareMenu.hidden=false;
 });
 addEventListener('pointerdown',e=>{
@@ -3725,20 +3897,32 @@ addEventListener('pointerdown',e=>{
 window.bgwfShareCurrentMap=shareCurrentMap;
 
 map.updateSize();
+updatePlaceLabelsVisibility();
+requestAnimationFrame(()=>{try{syncUrlState();}catch(e){dbgWarn('initial-map-url-sync',{error:e.message});}});
 map.on('moveend',()=>{
-  scheduleUrlSync();
+  updatePlaceLabelsVisibility();
+  updateZoomFactor();
+  try{syncUrlState();}catch(e){dbgWarn('moveend-url-sync',{error:e.message});}
 });
 
 function fitHome({animate=false}={}){const extent=provinceSource.getExtent();view.fit(extent,{padding:[60,94,60,94],duration:animate?300:0,maxZoom:8.2});homeResolution=view.getResolution();debugState.homeResolution=homeResolution;}
 fitHome();
 const requestedLon=Number(urlParams.get('lon')),requestedLat=Number(urlParams.get('lat')),requestedScale=Number(urlParams.get('z'));
-if(Number.isFinite(requestedLon)&&Number.isFinite(requestedLat)&&Number.isFinite(requestedScale)&&requestedLon>=20&&requestedLon<=31&&requestedLat>=39&&requestedLat<=47&&requestedScale>=1&&requestedScale<=14){view.setCenter(fromLonLat([requestedLon,requestedLat]));view.setResolution(homeResolution/requestedScale);dbg('url-view-restored',{requestedLon,requestedLat,requestedScale});}
+if(Number.isFinite(requestedLon)&&Number.isFinite(requestedLat)&&Number.isFinite(requestedScale)&&requestedLon>=20&&requestedLon<=31&&requestedLat>=39&&requestedLat<=47&&requestedScale>=1&&requestedScale<=600){view.setCenter(fromLonLat([requestedLon,requestedLat]));view.setResolution(homeResolution/requestedScale);dbg('url-view-restored',{requestedLon,requestedLat,requestedScale});}
+updateZoomFactor();
 
 function setProvinceFocus(feature){activeProvinceCode=feature?.get('provinceCode')||null;if(provinceChip)provinceChip.hidden=!feature;if(provinceNameEl)provinceNameEl.textContent=feature?provinceCodeToName.get(activeProvinceCode)||activeProvinceCode:'';provinceLayer.changed();}
 function zoomToProvince(feature){if(!feature)return;setProvinceFocus(feature);view.fit(feature.getGeometry().getExtent(),{padding:[70,70,70,70],duration:360,maxZoom:10});}
 function resetMapZoom(){setProvinceFocus(null);fitHome({animate:true});}
 root.querySelector('[data-province-reset]')?.addEventListener('click',resetMapZoom);
-view.on('change:center',scheduleUrlSync); view.on('change:resolution',()=>{debugState.currentScale=currentScale();scheduleUrlSync();refreshDebugPanel();});
+root.querySelector('[data-zoom-in]')?.addEventListener('click',()=>{
+  view.animate({zoom:Math.min(view.getMaxZoom(),(view.getZoom()??7)+1),duration:180});
+});
+root.querySelector('[data-zoom-out]')?.addEventListener('click',()=>{
+  view.animate({zoom:Math.max(view.getMinZoom(),(view.getZoom()??7)-1),duration:180});
+});
+root.querySelector('[data-zoom-reset]')?.addEventListener('click',resetMapZoom);
+view.on('change:center',scheduleUrlSync); view.on('change:resolution',()=>{debugState.currentScale=currentScale();updatePlaceLabelsVisibility();updateZoomFactor();scheduleUrlSync();refreshDebugPanel();});
 map.on('rendercomplete',()=>{debugState.renderCount++;mapTarget.classList.remove('is-loading');refreshDebugPanel();});
 
 function labelFire(d){const where=[d.municipality,d.province].filter(Boolean).join(', обл. ');const date=formatDate.format(new Date(`${d.date}T00:00:00`));return `${where} · ${date} · ${formatNumber.format(d.area_ha)} ha`;}
@@ -3786,7 +3970,7 @@ if(e.dragging){hideMapTooltip();return;}const f=topFeatureAtPixel(e.pixel);mapTa
 map.getViewport().addEventListener('pointerleave',hideMapTooltip);
 
 function clearSelection(){if(selectedFeature){selectedFeature.set('selected',false);selectedFeature.changed();}selectedFeature=null;selectedFireId=null;effisSource.clear();fireSource.getFeatures().forEach(f=>{if(f.get('hiddenByPerimeter')){f.set('hiddenByPerimeter',false);f.changed();}});}
-map.on('singleclick',async e=>{const f=topFeatureAtPixel(e.pixel);hideMapTooltip();if(!f)return;const kind=f.get('kind');if(kind==='province'){const same=activeProvinceCode===f.get('provinceCode');if(!same||currentScale()<1.4)zoomToProvince(f);return;}
+map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url-sync',{error:err.message});}const f=topFeatureAtPixel(e.pixel);hideMapTooltip();if(!f)return;const kind=f.get('kind');if(kind==='province'){const same=activeProvinceCode===f.get('provinceCode');if(!same||currentScale()<1.4)zoomToProvince(f);return;}
   if(selectedFeature&&selectedFeature!==f){selectedFeature.set('selected',false);selectedFeature.changed();}
   if(kind!=='fire'){effisSource.clear();fireSource.getFeatures().forEach(ff=>{if(ff.get('hiddenByPerimeter')){ff.set('hiddenByPerimeter',false);ff.changed();}});selectedFireId=null;}
   selectedFeature=f;f.set('selected',true);f.changed();activateDetail();const d=f.get('data');
@@ -3806,6 +3990,18 @@ const fireFeaturesById=new Map();
 function makeFireFeature(d){const f=new Feature({geometry:new Point(fromLonLat([d.lon,d.lat]))});f.setId(`fire-${d.id}`);f.set('kind','fire');f.set('data',d);return f;}
 fires.forEach(d=>fireFeaturesById.set(d.id,makeFireFeature(d)));
 function updateSummary(points){const total=points.reduce((s,d)=>s+(Number(d.area_ha)||0),0);const largest=Math.max(0,...points.map(d=>Number(d.area_ha)||0));root.querySelector('[data-total-count]').textContent=formatNumber.format(points.length);root.querySelector('[data-total-area]').textContent=formatNumber.format(total);root.querySelector('[data-largest]').textContent=formatNumber.format(largest);}
+
+function compactYearFilterButtons(){
+  root.querySelectorAll('button').forEach(btn=>{
+    const txt=(btn.textContent||'').trim();
+    if(!/^(2021|2022|2023|2024|2025|2026)$/.test(txt))return;
+    const year=Number(txt);
+    btn.classList.add('bgwf-year-toggle');
+    btn.style.setProperty('--year-color',yearColors.get(year)||'#64748b');
+    btn.textContent=String(year);
+  });
+}
+
 function updateFiresAndDensity(){
   clearSelection(); const points=activeYear===false?[]:activeYear==null?fires:fires.filter(d=>d.year===activeYear);
   fireSource.clear();densitySource.clear();const ff=points.map(d=>fireFeaturesById.get(d.id));fireSource.addFeatures(ff);
@@ -3839,27 +4035,86 @@ function readPersistentCadastralCache(){return monthlyStorageRead(CADASTRAL_STOR
 function writePersistentCadastralCache(c){monthlyStorageWrite(CADASTRAL_STORAGE_KEY,c);}
 function cacheFeature(c,ref,feature){if(ref&&feature?.geometry?.coordinates?.length)c[ref]={savedAt:Date.now(),feature};}
 function featureFromCache(c,ref){const f=c?.[ref]?.feature;return f?.geometry?.coordinates?.length?f:null;}
+
+function veiDbgStage(stage,detail={}){
+  debugState.network.veiPipeline=debugState.network.veiPipeline||{
+    startedAt:new Date().toISOString(),
+    stages:[]
+  };
+  const rec={stage,t:Math.round(performance.now()-perfStart),...detail};
+  debugState.network.veiPipeline.stages.push(rec);
+  debugState.network.veiPipeline.last=rec;
+  dbg(`vei:${stage}`,detail);
+  refreshDebugPanel?.();
+  return rec;
+}
+function veiLayerSnapshot(){
+  const solarFeatures=solarSource?.getFeatures?.()||[];
+  const projectFeatures=projectSource?.getFeatures?.()||[];
+  return {
+    cadastralLoadStarted,
+    solarVisible:solarLayer?.getVisible?.(),
+    projectsVisible:projectLayer?.getVisible?.(),
+    solarSourceCount:solarFeatures.length,
+    projectSourceCount:projectFeatures.length,
+    solarRows:window.__bgwfSolarParcels?.length||0,
+    projectRows:window.__bgwfProjectParcels?.length||0,
+    cadastralCacheSize:cadastralCache?.size||0,
+    persistentCacheEntries:Object.keys(readPersistentCadastralCache?.()||{}).length,
+    staticBuilt:debugState.network.staticBuilt||null,
+    pipeline:debugState.network.veiPipeline||null,
+    cadastralErrors:cadastralLoadErrors,
+    layerState:{
+      solar:layerLoadState?.solar,
+      projects:layerLoadState?.projects
+    }
+  };
+}
+window.bgwfVeiDebug=function(){
+  const snap=veiLayerSnapshot();
+  console.table((snap.pipeline?.stages||[]).map(x=>x));
+  console.log('[BGWF VEI DEBUG]',snap);
+  return snap;
+};
+window.bgwfReloadVeiLayers=async function(){
+  cadastralLoadStarted=false;
+  veiDbgStage('manual-reload-requested');
+  await loadProjectParcels();
+  return window.bgwfVeiDebug();
+};
+
 async function loadStaticBuiltVeiCache(){
   const started=performance.now();
+  veiDbgStage('static-built-cache-fetch-start',{url:BUILT_VEI_STATIC_CACHE_URL});
   try{
-    // Repository cache is manually regenerated; always revalidate so a newly
-    // uploaded file is visible immediately instead of being pinned for a month.
     const r=await fetch(BUILT_VEI_STATIC_CACHE_URL,{cache:'no-cache',credentials:'same-origin'});
+    const ms=Math.round(performance.now()-started);
     if(!r.ok){
-      debugState.network.staticBuilt={status:r.status,ms:Math.round(performance.now()-started)};
+      debugState.network.staticBuilt={status:r.status,ms,ok:false};
+      veiDbgStage('static-built-cache-http-error',{status:r.status,ms});
       return {};
     }
     const p=await r.json();
     const features=p?.features??p??{};
+    const featureCount=Number(p?.featureCount)||Object.keys(features).length;
+    const validGeometryCount=Object.values(features).filter(v=>{
+      const f=v?.feature??v;
+      return !!f?.geometry?.coordinates?.length;
+    }).length;
     debugState.network.staticBuilt={
-      status:r.status,
-      ms:Math.round(performance.now()-started),
-      featureCount:Number(p?.featureCount)||Object.keys(features).length,
-      generatedAt:p?.generatedAt||null
+      status:r.status,ms,ok:true,
+      featureCount,validGeometryCount,
+      generatedAt:p?.generatedAt||null,
+      schema:p?.schema||null
     };
+    veiDbgStage('static-built-cache-loaded',{
+      status:r.status,ms,featureCount,validGeometryCount,generatedAt:p?.generatedAt||null
+    });
     return features;
   }catch(e){
-    debugState.network.staticBuilt={error:e.message,ms:Math.round(performance.now()-started)};
+    const ms=Math.round(performance.now()-started);
+    debugState.network.staticBuilt={error:e.message,ms,ok:false};
+    veiDbgStage('static-built-cache-exception',{error:e.message,ms});
     return {};
   }
 }
@@ -4038,10 +4293,55 @@ window.bgwfDownloadUnresolvedParcels=function(){
   return payload;
 };
 
-function renderParcelRows(loaded){solarSource.clear();projectSource.clear();for(const row of loaded){try{const f=cloneGeoFeature(row.feature);f.set('kind',row.layerType==='solar'?'solar':'project');f.set('data',row);f.set('status',row.project.status);(row.layerType==='solar'?solarSource:projectSource).addFeature(f);}catch(e){dbgWarn('parcel-geometry-rejected',{ref:row.parcelRef,message:e.message});}}
-  window.__bgwfProjectParcels=loaded.filter(d=>d.layerType==='projects');window.__bgwfSolarParcels=loaded.filter(d=>d.layerType==='solar');debugState.layerCounts.solar=solarSource.getFeatures().length;debugState.layerCounts.projects=projectSource.getFeatures().length;updateLayerStatus();}
+function renderParcelRows(loaded){
+  solarSource.clear();
+  projectSource.clear();
+  let rejected=0;
+  for(const row of loaded){
+    try{
+      const f=cloneGeoFeature(row.feature);
+      f.set('kind',row.layerType==='solar'?'solar':'project');
+      f.set('data',row);
+      f.set('status',row.project.status);
+      (row.layerType==='solar'?solarSource:projectSource).addFeature(f);
+    }catch(e){
+      rejected++;
+      dbgWarn('parcel-geometry-rejected',{ref:row.parcelRef,message:e.message});
+    }
+  }
+  window.__bgwfProjectParcels=loaded.filter(d=>d.layerType==='projects');
+  window.__bgwfSolarParcels=loaded.filter(d=>d.layerType==='solar');
+  debugState.layerCounts.solar=solarSource.getFeatures().length;
+  debugState.layerCounts.projects=projectSource.getFeatures().length;
+  veiDbgStage('render',{
+    loadedRows:loaded.length,
+    solarRows:window.__bgwfSolarParcels.length,
+    projectRows:window.__bgwfProjectParcels.length,
+    solarFeatures:debugState.layerCounts.solar,
+    projectFeatures:debugState.layerCounts.projects,
+    rejected
+  });
+  updateLayerStatus();
+}
 async function fetchRowsInBatches(rows,loaded,persistent,{chunkSize=22,pauseMs=0,phaseLabel='АГКК',onProgress=null}={}){const failed=[];let failedUniqueRefs=0,batchErrors=0,processed=0;for(let off=0;off<rows.length;off+=chunkSize){const chunk=rows.slice(off,off+chunkSize),grouped=rowsGroupedByRef(chunk);if(pauseMs&&off)await sleep(pauseMs);const t=performance.now();try{const payload=await fetchCadastralBatch(chunk);debugState.network[`${phaseLabel}-${Math.floor(off/chunkSize)+1}`]={ok:true,ms:Math.round(performance.now()-t),rows:chunk.length};if(payload?.error)throw new Error(payload.error.message||'query error');const returned=new Set();for(const ef of payload?.features??[]){const attrs=ef?.attributes??{},ref=sanitizeParcelRef(attrs.nationalcadastralref),rings=ef?.geometry?.rings,matching=grouped.get(ref)||[];if(!ref||!matching.length||!rings?.length)continue;const feature={type:'Feature',properties:attrs,geometry:{type:'Polygon',coordinates:rings}};returned.add(ref);cacheFeature(persistent,ref,feature);cadastralCache.set(ref,feature);addFeatureForRows(loaded,matching,ref,feature);}grouped.forEach((matching,ref)=>{if(!returned.has(ref)){failedUniqueRefs++;failed.push(...matching);}});writePersistentCadastralCache(persistent);}catch(e){batchErrors++;failedUniqueRefs+=grouped.size;failed.push(...chunk);debugState.network[`${phaseLabel}-${Math.floor(off/chunkSize)+1}`]={ok:false,ms:Math.round(performance.now()-t),error:e.message};dbgWarn(`${phaseLabel}-batch-failed`,{batch:Math.floor(off/chunkSize)+1,error:e.message});}processed+=chunk.length;renderParcelRows(loaded);onProgress?.({processed,total:rows.length,failedUniqueRefs,loadedCount:loaded.length});}return{failedRows:failed,failedUniqueRefs,batchErrors};}
-async function loadProjectParcels(){if(cadastralLoadStarted)return;cadastralLoadStarted=true;const started=performance.now();setFilterPanelLoading(true);const plannedRows=cadastralProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'projects',project,parcelRef})));const solarRows=operatingSolarProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'solar',project,parcelRef})));const rows=[...plannedRows,...solarRows];const totalRefs=new Set(rows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;setLayerLoadState('solar','loading');setLayerLoadState('projects','loading');const persistent=readPersistentCadastralCache(),staticBuilt=await loadStaticBuiltVeiCache(),builtRefs=builtSolarRefsSet(),loaded=[],missing=[],grouped=rowsGroupedByRef(rows);grouped.forEach((matching,ref)=>{const sf=builtRefs.has(ref)?featureFromStaticCache(staticBuilt,ref):null;const f=sf||featureFromCache(persistent,ref);if(f){cadastralCache.set(ref,f);if(sf)cacheFeature(persistent,ref,sf);addFeatureForRows(loaded,matching,ref,f);}else missing.push(...matching);});writePersistentCadastralCache(persistent);renderParcelRows(loaded);const cachedRefs=totalRefs-new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;setMapLoadProgress(totalRefs?Math.round(cachedRefs/totalRefs*100):100,'loading');if(!missing.length){cadastralLoadErrors=0;setLayerLoadState('solar','ready');setLayerLoadState('projects','ready');setMapLoadProgress(100,'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);return;}
+async function loadProjectParcels(){if(cadastralLoadStarted)return;cadastralLoadStarted=true;const started=performance.now();setFilterPanelLoading(true);const plannedRows=cadastralProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'projects',project,parcelRef})));const solarRows=operatingSolarProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'solar',project,parcelRef})));const rows=[...plannedRows,...solarRows];const totalRefs=new Set(rows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;veiDbgStage('load-start',{plannedRows:plannedRows.length,solarRows:solarRows.length,totalRows:rows.length,totalRefs});setLayerLoadState('solar','loading');setLayerLoadState('projects','loading');const persistent=readPersistentCadastralCache(),staticBuilt=await loadStaticBuiltVeiCache(),builtRefs=builtSolarRefsSet(),loaded=[],missing=[],grouped=rowsGroupedByRef(rows);veiDbgStage('cache-inputs',{
+  persistentEntries:Object.keys(persistent||{}).length,
+  staticBuiltEntries:Object.keys(staticBuilt||{}).length,
+  builtRefs:builtRefs.size,
+  groupedRefs:grouped.size
+});grouped.forEach((matching,ref)=>{const sf=builtRefs.has(ref)?featureFromStaticCache(staticBuilt,ref):null;const f=sf||featureFromCache(persistent,ref);if(f){cadastralCache.set(ref,f);if(sf)cacheFeature(persistent,ref,sf);addFeatureForRows(loaded,matching,ref,f);}else missing.push(...matching);});writePersistentCadastralCache(persistent);
+const preNetworkLoadedRefs=new Set(loaded.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;
+const preNetworkSolar=loaded.filter(r=>r.layerType==='solar').length;
+const preNetworkProjects=loaded.filter(r=>r.layerType==='projects').length;
+veiDbgStage('cache-resolution',{
+  loadedRows:loaded.length,loadedRefs:preNetworkLoadedRefs,
+  loadedSolarRows:preNetworkSolar,loadedProjectRows:preNetworkProjects,
+  missingRows:missing.length,
+  missingRefs:new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size
+});
+renderParcelRows(loaded);const cachedRefs=totalRefs-new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;setMapLoadProgress(totalRefs?Math.round(cachedRefs/totalRefs*100):100,'loading');if(!missing.length){cadastralLoadErrors=0;setLayerLoadState('solar','ready');setLayerLoadState('projects','ready');setMapLoadProgress(100,'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);
+veiDbgStage('complete-cache-only',{ms:debugState.timings.cadastre,...veiLayerSnapshot()});
+return;}
  const missingUnique=new Set(missing.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;const first=await fetchRowsInBatches(missing,loaded,persistent,{chunkSize:22,onProgress:({processed,total,failedUniqueRefs,loadedCount})=>{const done=Math.min(missingUnique,Math.round(processed/Math.max(total,1)*missingUnique));const overall=Math.min(totalRefs,cachedRefs+done);setMapLoadProgress(totalRefs?Math.round(overall/totalRefs*100):100,'loading');cadastralLoadErrors=failedUniqueRefs;if(layerStatus)layerStatus.textContent=`АГКК: ${overall}/${totalRefs} ПИ · ${loadedCount} геометрии`;}});const retryMap=new Map();first.failedRows.forEach(row=>retryMap.set(`${row.layerType}|${row.project.id}|${sanitizeParcelRef(row.parcelRef)}`,row));const retry=[...retryMap.values()];if(retry.length){
   setMapLoadProgress(100,'warning');
   await sleep(1000);
@@ -4063,7 +4363,10 @@ async function loadProjectParcels(){if(cadastralLoadStarted)return;cadastralLoad
   cadastralResolutionStats={exact:0,simplified:0,extent:0,notFound:0,error:0};
   cadastralLoadErrors=0;
 }
-renderParcelRows(loaded);setLayerLoadState('solar',cadastralLoadErrors?'error':'ready');setLayerLoadState('projects',cadastralLoadErrors?'error':'ready');setMapLoadProgress(100,cadastralLoadErrors?'warning':'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);dbg('cadastre-finished',{loaded:loaded.length,errors:cadastralLoadErrors,ms:debugState.timings.cadastre});}
+renderParcelRows(loaded);setLayerLoadState('solar',cadastralLoadErrors?'error':'ready');setLayerLoadState('projects',cadastralLoadErrors?'error':'ready');setMapLoadProgress(100,cadastralLoadErrors?'warning':'ready');setFilterPanelLoading(false);debugState.timings.cadastre=Math.round(performance.now()-started);dbg('cadastre-finished',{loaded:loaded.length,errors:cadastralLoadErrors,ms:debugState.timings.cadastre});
+  debugState.timings.cadastre=Math.round(performance.now()-started);
+  veiDbgStage('complete-network',{ms:debugState.timings.cadastre,...veiLayerSnapshot()});
+}
 window.bgwfExportBuiltVeiCache=function(){const refs=builtSolarRefsSet(),persistent=readPersistentCadastralCache(),features={};refs.forEach(ref=>{const f=featureFromCache(persistent,ref)||cadastralCache.get(ref);if(f?.geometry?.coordinates?.length)features[ref]={feature:f};});const payload={schema:'bgwf-agkk-built-vei-cache-v1',generatedAt:new Date().toISOString(),featureCount:Object.keys(features).length,features};downloadJson(payload,'agkk-built-vei-cache.json');return payload;};
 
 
@@ -4599,6 +4902,15 @@ const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.
   }
 });
 satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
+
+const NSI_DISTURBED_LAND_2025={
+  sqKm:467.76,
+  dka:467760,
+  percent:0.42,
+  asOf:'31.12.2025',
+  note:'НСИ: „Нарушена територия“ включва имоти за добив на полезни изкопаеми, индустриални и битови отпадъци и деградирали земи.'
+};
+
 const configs=[['solar','Изградени ВЕИ','#f59e0b'],['projects','ПУП/ПИ проекти','#7c3aed'],['future','RED III/REPowerEU','#2f9e44'],['industry','ТЕЦ / мини','#4b5563']];configs.forEach(([key,label,color])=>{
   const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar'){solarLayer.setVisible(layerVisibility.solar);windLayer.setVisible(layerVisibility.solar);}if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
@@ -4636,13 +4948,7 @@ window.bgwfGisCacheStatus=async function(){
 const visitsTodayEl=root.querySelector('[data-visits-today]');
 const visitsTotalEl=root.querySelector('[data-visits-total]');
 const GOATCOUNTER_MAP_PATH='/Pozharite-Bulgaria-interactivna-karta.html';
-const NSI_DISTURBED_LAND_2025={
-  sqKm:467.76,
-  dka:467760,
-  percent:0.42,
-  asOf:'31.12.2025',
-  note:'НСИ: „Нарушена територия“ включва имоти за добив на полезни изкопаеми, индустриални и битови отпадъци и деградирали земи.'
-};
+
 
 function localDateISO(d=new Date()){
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
@@ -4687,6 +4993,10 @@ function duplicateValues(values){const seen=new Set(),dupes=new Set();for(const 
 function sourceExtentSane(source){const e=source.getExtent();return e.every(Number.isFinite)&&e[0]<e[2]&&e[1]<e[3];}
 function runSelfTests(){
   debugState.selfTests=[];
+  selfTest('place-labels-local-vector',()=>({ok:placeLabelsLayer.getSource()===placeLabelsSource&&((placeLabelsLoadState==='loading')||(placeLabelsLoadState==='ready'&&placeLabelsSource.getFeatures().length===PLACE_LABEL_EXPECTED_COUNT)),type:'static-local-vector',state:placeLabelsLoadState,places:placeLabelsSource.getFeatures().length,expected:PLACE_LABEL_EXPECTED_COUNT,minScale:PLACE_LABEL_MIN_SCALE}));
+  selfTest('vei-static-cache-url',()=>({ok:BUILT_VEI_STATIC_CACHE_URL==='./data/agkk-built-vei-cache.json',url:BUILT_VEI_STATIC_CACHE_URL}));
+  selfTest('vei-source-layers',()=>({ok:!!solarSource&&!!projectSource,solar:!!solarSource,projects:!!projectSource}));
+  selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
   selfTest('province-count',()=>({ok:provinceSource.getFeatures().length===28,count:provinceSource.getFeatures().length,expected:28}));
   selfTest('province-extent',()=>({ok:sourceExtentSane(provinceSource),extent:provinceSource.getExtent()}));
   selfTest('fire-count-source',()=>({ok:fires.length===817,count:fires.length,expected:817}));
@@ -4709,10 +5019,12 @@ function runSelfTests(){
   selfTest('cadastral-refs-syntax',()=>{const refs=[...cadastralProjects,...operatingSolarProjects].flatMap(p=>p.parcels||[]);const bad=refs.filter(r=>sanitizeParcelRef(r)!==String(r));return{ok:bad.length===0,bad:bad.slice(0,20),total:refs.length};});
   selfTest('url-layer-state',()=>({ok:['solar','projects','future','industry','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
   selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.solar&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
-  selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=20,scale:Number(currentScale().toFixed(3))}));
+  selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
   selfTest('mobile-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body'),isMobile:matchMedia('(max-width:700px)').matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded')}));
+  selfTest('mobile-zoom-controls',()=>({ok:['zoom-in','zoom-out','zoom-reset'].every(name=>!!root.querySelector(`[data-${name}]`)),buttons:root.querySelectorAll('.bgwf-zoom-controls button').length,homeScaleTarget:1}));
+  selfTest('zoom-status-and-url-sync',()=>({ok:!!zoomFactorEl&&typeof window.bgwfCurrentMapUrl==='function',zoomText:zoomFactorEl?.textContent,url:window.bgwfCurrentMapUrl?.()}));
   selfTest('ol-projection-roundtrip',()=>{const src=[25.25,42.75],back=toLonLat(fromLonLat(src)),err=Math.hypot(back[0]-src[0],back[1]-src[1]);return{ok:err<1e-9,errorDegrees:err};});
   selfTest('geojson-roundtrip',()=>{const raw={type:'Feature',properties:{test:1},geometry:{type:'Polygon',coordinates:[[[25,42],[25.1,42],[25.1,42.1],[25,42.1],[25,42]]]}};const f=cloneGeoFeature(raw);const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'});return{ok:Number.isFinite(area)&&area>0,areaM2:Math.round(area)};});
   selfTest('openlayers-version-lock',()=>({ok:debugState.engine==='OpenLayers 10.10.0 legacy',engine:debugState.engine}));
@@ -4729,12 +5041,13 @@ function runSelfTests(){
 window.bgwfRunSelfTests=runSelfTests;
 
 // Initial state
+compactYearFilterButtons();
 updateFiresAndDensity();updateLayerStatus();updateFloatingZoomPosition();enableGoatCounterTracking();
 if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
 if(layerVisibility.live&&(activeYear==null||activeYear===2026||activeYear===false))void loadLiveSentinelFires();
 setTimeout(()=>void loadProjectParcels(),100);
 setTimeout(()=>{
-  runSelfTests();
+  try{runSelfTests();}catch(e){dbgWarn('self-tests-runtime',{error:e.message});}
   urlStateReady=true;
   try{syncUrlState();}catch(e){dbgWarn('initial-url-sync',{error:e.message});}
   debugState.timings.initialReady=Math.round(performance.now()-perfStart);
