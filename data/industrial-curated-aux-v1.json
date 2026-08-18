@@ -1,0 +1,21 @@
+{
+  "schema": "bgwf-industrial-curated-aux-v1",
+  "generatedAt": "2026-08-18T05:59:52.667397+00:00",
+  "records": [
+    {
+      "parentId": "MINE-ASAREL",
+      "id": "ASAREL-LYULYAKOVITSA",
+      "name": "Хвостохранилище „Люляковица“",
+      "osmType": "W",
+      "osmId": 124105571,
+      "lat": 42.56046,
+      "lon": 24.09847,
+      "component": "хвостохранилище",
+      "evidence": [
+        "Asarel-Medet official site identifies Lyulyakovitsa as its tailings pond",
+        "IAG/RDG Sofia records forest land conversion for tailings pond Lyulyakovitsa",
+        "OSM way 124105571, landuse=landfill"
+      ]
+    }
+  ]
+}

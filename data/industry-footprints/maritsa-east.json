@@ -1,0 +1,71 @@
+{
+  "schema": "bgwf-industrial-footprint-manifest-v1",
+  "revision": "2026-08-18.1",
+  "complexId": "MARITSA-EAST",
+  "name": "Комплекс Марица-изток",
+  "refreshPolicy": "manual only; change revision when geometry inventory changes",
+  "features": [
+    {
+      "parentId": "MINE-MARITSA-EAST",
+      "name": "Открит минен комплекс „Марица-изток“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 137246419,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "ТЕЦ „Марица изток 2“ — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 146641607,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "TPP-AES-GALABOVO",
+      "name": "AES Гълъбово — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 918500389,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "TPP-ME3",
+      "name": "ТЕЦ „Марица изток 3“ — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 157660794,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "TPP-BRIKEL",
+      "name": "ТЕЦ „Брикел“ — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 918500388,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "Обединени северни насипища",
+      "component": "насипище/депо",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "АОП/комплексно разрешително: депо за неопасни отпадъци „Обединени северни насипища“, гр. Раднево"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "Сгуроотвал на ТЕЦ „Марица изток 2“",
+      "component": "сгуроотвал",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "официални обществени поръчки на ТЕЦ Марица изток 2"
+    },
+    {
+      "parentId": "TPP-ME3",
+      "name": "Сгуроотвал „Искрица“",
+      "component": "сгуроотвал",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "проектна документация за оросителна система на сгуроотвал Искрица"
+    }
+  ],
+  "generatedAt": "2026-08-18T06:13:56.527747+00:00"
+}

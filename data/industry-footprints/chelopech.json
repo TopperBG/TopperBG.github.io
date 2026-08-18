@@ -1,0 +1,25 @@
+{
+  "schema": "bgwf-industrial-footprint-manifest-v1",
+  "revision": "2026-08-18.1",
+  "complexId": "CHELOPECH",
+  "name": "Челопеч",
+  "refreshPolicy": "manual only",
+  "features": [
+    {
+      "parentId": "MINE-CHELOPECH",
+      "name": "Рудник „Челопеч“ — надземна площадка",
+      "component": "рудник/обогатяване",
+      "osmType": "W",
+      "osmId": 853545188,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "MINE-CHELOPECH",
+      "name": "Хвостохранилище „Челопеч“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "Община Чавдар: ОВОС за повишаване конструктивната сигурност на южната стена на хвостохранилище „Челопеч“"
+    }
+  ],
+  "generatedAt": "2026-08-18T06:13:56.527747+00:00"
+}

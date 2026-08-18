@@ -1,0 +1,32 @@
+{
+  "schema": "bgwf-industrial-footprint-manifest-v1",
+  "revision": "2026-08-18.1",
+  "complexId": "BOBOV-DOL",
+  "name": "Бобов дол",
+  "refreshPolicy": "manual only",
+  "features": [
+    {
+      "parentId": "MINE-BOBOV-DOL",
+      "name": "Мина „Бобов дол“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 124105282,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "TPP-BOBOV-DOL",
+      "name": "ТЕЦ „Бобов дол“",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 439600139,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "MINE-BOBOV-DOL",
+      "name": "Свързани насипища/депа",
+      "component": "минен отпадък",
+      "geometryStatus": "pending-curation"
+    }
+  ],
+  "generatedAt": "2026-08-18T06:13:56.527747+00:00"
+}

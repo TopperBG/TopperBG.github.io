@@ -1,0 +1,26 @@
+{
+  "schema": "bgwf-industrial-footprint-manifest-v1",
+  "revision": "2026-08-18.1",
+  "complexId": "ASAREL",
+  "name": "Асарел-Медет",
+  "refreshPolicy": "manual only",
+  "features": [
+    {
+      "parentId": "MINE-ASAREL",
+      "name": "Рудник „Асарел“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 124105802,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "MINE-ASAREL",
+      "name": "Хвостохранилище „Люляковица“",
+      "component": "хвостохранилище",
+      "osmType": "W",
+      "osmId": 124105571,
+      "geometryStatus": "verified-osm"
+    }
+  ],
+  "generatedAt": "2026-08-18T06:13:56.527747+00:00"
+}

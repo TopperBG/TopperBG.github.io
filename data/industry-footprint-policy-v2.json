@@ -1,0 +1,13 @@
+{
+  "schema": "bgwf-industry-footprint-policy-v2",
+  "loadMode": "lazy-after-map-ready",
+  "goal": "additional fossil/mining industrial GIS must never block map bootstrap",
+  "included": [
+    "tailings ponds",
+    "spoil heaps",
+    "quarries",
+    "settling/slurry basins",
+    "associated wastewater/industrial areas"
+  ],
+  "cache": "monthly"
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "bgwf-industrial-footprint-manifest-v1",
+  "revision": "2026-08-18.1",
+  "complexId": "ELATSITE",
+  "name": "Елаците",
+  "refreshPolicy": "manual only",
+  "features": [
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Рудник „Елаците“",
+      "component": "рудник",
+      "osmType": "R",
+      "osmId": 18451229,
+      "geometryStatus": "verified-osm"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Чавдар“",
+      "component": "хвостохранилище",
+      "osmType": "W",
+      "osmId": 25220328,
+      "geometryStatus": "verified-osm",
+      "note": "историческа/регионална минна footprint площ; текущият оператор не се твърди само от OSM"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Калето“",
+      "component": "хвостохранилище",
+      "osmType": "W",
+      "osmId": 25238366,
+      "geometryStatus": "verified-osm",
+      "note": "историческа/регионална минна footprint площ; текущият оператор не се твърди само от OSM"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Бенковски 2“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "Министерство на енергетиката: съоръжение за минни отпадъци категория А, оператор Елаците-Мед"
+    }
+  ],
+  "generatedAt": "2026-08-18T06:13:56.527747+00:00"
+}
