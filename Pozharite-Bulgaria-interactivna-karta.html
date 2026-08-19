@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.85p-benkovski-footprint-correction-20260818">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85p</title>
+<meta name="bgwf-build" content="v0.85q-karadzhalovo-identification-20260819">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85q</title>
 <style>:root {
   color-scheme: light dark;
   background-color: transparent !important;
@@ -1415,10 +1415,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85p</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85q</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85p</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85q</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1495,7 +1495,7 @@ svg {
       </p>
       <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
       <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
-      <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. Допускат се отделно означени сателитно потвърдени изградени ФЕЦ без установен ПИ, оператор или мощност — например полето край Бяла река. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
+      <p><strong>Кадастрален кеш:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. Допускат се отделно означени сателитно потвърдени изградени ФЕЦ без установен ПИ, оператор или мощност; при последващо надеждно установяване записът се допълва — както за ФЕЦ „Караджалово“. ПУП/ПИ засега използват браузърен кеш + АГКК fallback.</p>
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>ТЕЦ / мини:</strong> индустриалният footprint включва проверени площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища, утаители, технологични съоръжения и изоставени минни котловани с руднични езера. За „Марица-изток“ цялата публикувана концесионна площ от 473 685,54 дка се показва като потенциално ангажирана от минната експлоатация; окръжността представя точно площта, но не претендира да е юридическата ѝ граница. Отделно са показани „Люляковица“, „Медет“, „Цар Асен“, „Горен бюк“, „Галдушки ливади“ и комплексът „Бенковски 1 / Бенковски 2“ на „Елаците-Мед“. За „Цар Асен“ картата не твърди лабораторно потвърден състав на водата.</p>
 <p><strong>Национален ориентир (НСИ):</strong> към 31.12.2025 г. „нарушената територия“ в България е 467,76 km² = 467 760 дка, или 0,42% от територията. НСИ включва тук терени за добив на полезни изкопаеми, терени за индустриални и битови отпадъци и деградирани земи; затова тази стойност е по-широк национален ориентир и не е равна на сумата от полигоните „ТЕЦ / мини“ в картата.</p>
@@ -2790,10 +2790,10 @@ const INDUSTRIAL_CURATED_AUX = [];
 
 const CURATED_SOLAR_FOOTPRINTS = [
   {
-    id:'SOL-BYALA-REKA-SAT-01', name:'Изградена ФЕЦ край Бяла река', year:null, mw:null,
-    statusLabel:'сателитно потвърдена изградена наземна ФЕЦ · оператор и мощност неустановени',
-    source:'https://topperbg.github.io/Pozharite-Bulgaria-interactivna-karta.html?solar=1&lon=25.32264&lat=42.10331&z=392.115&map=sat',
-    parcelRef:'SAT-25.32264-42.10331',
+    id:'SOL-KARADZHALOVO-2012', name:'ФЕЦ „Караджалово“', year:2012, mw:60.4, owner:'Enery Development', areaHa:100,
+    statusLabel:'в експлоатация от март 2012 г. · 60,4 MWp · 100 ha · собственик/оператор Enery Development',
+    source:'https://enery.energy/bg/press/austrian-renewable-energy-company-enery-acquires-single-largest-pv-plant-in-bulgaria/',
+    parcelRef:'KARADZHALOVO-25.32264-42.10331',
     geometry:{type:'Polygon',coordinates:[[[25.3204,42.1020],[25.3220,42.1009],[25.3246,42.1013],[25.3252,42.1034],[25.3238,42.1050],[25.3212,42.1045],[25.3204,42.1020]]]}
   }
 ];
@@ -4010,7 +4010,7 @@ function projectLabel(d){
     :quality==='simplified'?' · опростена кадастрална геометрия':'';
   return `${d.project.name} · ПИ ${d.parcelRef}${areaText}${qualityText} · ${d.project.statusLabel}`;
 }
-function solarLabel(d){const area=Number(d.feature?.properties?.areavalue);const areaText=Number.isFinite(area)?` · ${formatNumber.format(area)} m² КККР`:'';const mwText=d.project.mw!==null&&Number.isFinite(Number(d.project.mw))?` · ${Number(d.project.mw).toLocaleString('bg-BG',{maximumFractionDigits:3})} MW`:'';const timeText=d.project.year!==null&&Number.isFinite(Number(d.project.year))?`въведена/действаща от ${d.project.year} г.`:(d.project.statusLabel||'изградена ФЕЦ');return `${d.project.name}${mwText} · ${timeText} · ${d.parcelRef}${areaText}`;}
+function solarLabel(d){const area=Number(d.feature?.properties?.areavalue);const areaText=Number.isFinite(area)?` · ${formatNumber.format(area)} m² КККР`:(Number.isFinite(Number(d.project.areaHa))?` · ${Number(d.project.areaHa).toLocaleString('bg-BG')} ha`:``);const mwText=d.project.mw!==null&&Number.isFinite(Number(d.project.mw))?` · ${Number(d.project.mw).toLocaleString('bg-BG',{maximumFractionDigits:3})} MWp`:'';const ownerText=d.project.owner?` · ${d.project.owner}`:'';const timeText=d.project.year!==null&&Number.isFinite(Number(d.project.year))?`въведена/действаща от ${d.project.year} г.`:(d.project.statusLabel||'изградена ФЕЦ');return `${d.project.name}${mwText}${ownerText} · ${timeText} · ${d.parcelRef}${areaText}`;}
 function windPlantLabel(d){const mw=Number.isFinite(Number(d.mw))?` · ${Number(d.mw).toLocaleString('bg-BG')} MW`:'';const t=Number.isFinite(Number(d.turbines))?` · ${d.turbines} турбини`:'';return `${d.name}${mw}${t} · ${d.statusLabel}`;}
 function industrialTypeLabel(t){return t==='tpp'?'ТЕЦ':t==='coal'?'Въглищна мина':t==='ore'?'Рудник':t==='refinery'?'Рафинерия':'Индустриален обект';}
 function formatAreaDka(v){return Number.isFinite(v)?(v>=10000?`${Math.round(v/100)*100} дка`:v>=1000?`${Math.round(v/10)*10} дка`:`${Math.round(v)} дка`):'площ —';}
