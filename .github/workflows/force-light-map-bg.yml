@@ -1,4 +1,4 @@
-name: Force light background on fire map
+name: Force light background and north-up map
 
 on:
   push:
@@ -13,43 +13,76 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Force light UI background
+      - name: Force light UI and disable rotation
         shell: python
         run: |
           from pathlib import Path
           p = Path('Pozharite-Bulgaria-interactivna-karta.html')
           s = p.read_text(encoding='utf-8')
-          old = '''<style>:root {
-  color-scheme: light dark;
-  background-color: transparent !important;'''
-          new = '''<style>:root {
-  color-scheme: light;
-  background-color: #f5f7fa !important;'''
-          if old not in s:
-              raise SystemExit('Expected root CSS block not found')
-          s = s.replace(old, new, 1)
-          s = s.replace('''  --background: var(
+
+          # Hard light theme: do not inherit browser/OS dark mode.
+          s = s.replace('color-scheme: light dark;', 'color-scheme: light;', 1)
+          s = s.replace('background-color: transparent !important;', 'background-color: #f5f7fa !important;', 1)
+          s = s.replace('''--background: var(
     --main-surface-primary,
     light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));''', '''  --background: rgb(245 247 250);
-  --foreground: rgb(26 28 31);''', 1)
-          s = s.replace('''html > body {
-  margin: 0;
-  padding: 5px;
-  color: var(--foreground);
-  background: transparent !important;''', '''html > body {
-  margin: 0;
-  padding: 5px;
-  color: var(--foreground);
-  background: #f5f7fa !important;''', 1)
-          # Prevent mobile/system dark mode from re-darkening the page.
-          s += '''\n<style id="topper-force-light-mobile">\nhtml, body { background:#f5f7fa !important; color-scheme:light !important; }\n@media (prefers-color-scheme: dark) { html, body { background:#f5f7fa !important; color:#1a1c1f !important; } }\n</style>\n'''
+  );''', '--background: rgb(245 247 250);', 1)
+          s = s.replace('--foreground: light-dark(rgb(26 28 31), rgb(255 255 255));', '--foreground: rgb(26 28 31);', 1)
+          s = s.replace('background: transparent !important;', 'background: #f5f7fa !important;', 1)
+
+          # Force the document to light mode even on mobile browsers with dark theme.
+          marker = '</head>'
+          hard_light = '''<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f7fa">
+<style id="topper-hard-light">
+html, body { background:#f5f7fa !important; color-scheme:only light !important; }
+@media (prefers-color-scheme: dark) {
+  html, body { background:#f5f7fa !important; color:#1a1c1f !important; color-scheme:only light !important; }
+}
+</style>
+'''
+          if 'id="topper-hard-light"' not in s:
+              s = s.replace(marker, hard_light + marker, 1)
+
+          # OpenLayers: disable pinch/two-finger rotation and keep north up.
+          # Prefer changing the interaction defaults if present.
+          s = s.replace('defaultInteractions()', 'defaultInteractions({altShiftDragRotate:false, pinchRotate:false})')
+          s = s.replace('defaults()', 'defaults({altShiftDragRotate:false, pinchRotate:false})')
+          # Safety net: if the map still receives a rotation from any interaction,
+          # immediately restore north-up without affecting pan or pinch zoom.
+          north_lock = '''
+<script id="topper-north-lock">
+(function(){
+  function lockNorth(){
+    try {
+      if (window.map && map.getView) {
+        var v=map.getView();
+        if (v && v.setRotation) {
+          v.setRotation(0);
+          if (!v.__topperNorthLock) {
+            v.__topperNorthLock=true;
+            v.on('change:rotation', function(){ if (Math.abs(v.getRotation()||0)>1e-8) v.setRotation(0); });
+          }
+        }
+      }
+    } catch(e) {}
+  }
+  document.addEventListener('DOMContentLoaded', function(){ setTimeout(lockNorth,500); setTimeout(lockNorth,1500); });
+})();
+</script>
+'''
+          if 'id="topper-north-lock"' not in s:
+              s = s.replace('</body>', north_lock + '</body>', 1)
+
           p.write_text(s, encoding='utf-8')
       - name: Commit patched map
         run: |
           git config user.name "TopperBG map bot"
           git config user.email "actions@users.noreply.github.com"
           git add Pozharite-Bulgaria-interactivna-karta.html
-          git commit -m "Fix mobile map background: force light theme"
+          if git diff --cached --quiet; then
+            echo "No map changes needed"
+            exit 0
+          fi
+          git commit -m "Mobile UX: hard light theme and north-up rotation lock"
           git push
