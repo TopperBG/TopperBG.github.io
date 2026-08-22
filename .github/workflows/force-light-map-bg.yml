@@ -1,4 +1,4 @@
-name: Force light background and north-up map
+name: Force light background, north-up map and inverse oblast borders
 
 on:
   push:
@@ -13,14 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Force light UI and disable rotation
+      - name: Patch mobile UI, rotation and oblast borders
         shell: python
         run: |
           from pathlib import Path
           p = Path('Pozharite-Bulgaria-interactivna-karta.html')
           s = p.read_text(encoding='utf-8')
 
-          # Hard light theme: do not inherit browser/OS dark mode.
           s = s.replace('color-scheme: light dark;', 'color-scheme: light;', 1)
           s = s.replace('background-color: transparent !important;', 'background-color: #f5f7fa !important;', 1)
           s = s.replace('''--background: var(
@@ -30,7 +29,6 @@ jobs:
           s = s.replace('--foreground: light-dark(rgb(26 28 31), rgb(255 255 255));', '--foreground: rgb(26 28 31);', 1)
           s = s.replace('background: transparent !important;', 'background: #f5f7fa !important;', 1)
 
-          # Force the document to light mode even on mobile browsers with dark theme.
           marker = '</head>'
           hard_light = '''<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
@@ -39,40 +37,65 @@ html, body { background:#f5f7fa !important; color-scheme:only light !important; 
 @media (prefers-color-scheme: dark) {
   html, body { background:#f5f7fa !important; color:#1a1c1f !important; color-scheme:only light !important; }
 }
+/* Inverse/contrast treatment for administrative boundary canvases/layers. */
+.ol-layer.topper-oblast-inverse canvas { filter: invert(1) contrast(1.8); }
 </style>
 '''
           if 'id="topper-hard-light"' not in s:
               s = s.replace(marker, hard_light + marker, 1)
 
-          # OpenLayers: disable pinch/two-finger rotation and keep north up.
-          # Prefer changing the interaction defaults if present.
           s = s.replace('defaultInteractions()', 'defaultInteractions({altShiftDragRotate:false, pinchRotate:false})')
           s = s.replace('defaults()', 'defaults({altShiftDragRotate:false, pinchRotate:false})')
-          # Safety net: if the map still receives a rotation from any interaction,
-          # immediately restore north-up without affecting pan or pinch zoom.
-          north_lock = '''
-<script id="topper-north-lock">
+
+          patch = '''
+<script id="topper-mobile-map-patch">
 (function(){
-  function lockNorth(){
+  function patchMap(){
     try {
-      if (window.map && map.getView) {
-        var v=map.getView();
-        if (v && v.setRotation) {
-          v.setRotation(0);
-          if (!v.__topperNorthLock) {
-            v.__topperNorthLock=true;
-            v.on('change:rotation', function(){ if (Math.abs(v.getRotation()||0)>1e-8) v.setRotation(0); });
-          }
+      if (!window.map || !map.getView) return;
+      var v=map.getView();
+      if (v && v.setRotation) {
+        v.setRotation(0);
+        if (!v.__topperNorthLock) {
+          v.__topperNorthLock=true;
+          v.on('change:rotation', function(){ if (Math.abs(v.getRotation()||0)>1e-8) v.setRotation(0); });
         }
+      }
+      /* Find the administrative oblast vector layer by its feature properties/name.
+         Give it a two-stroke inverse outline: white halo + dark core. This remains
+         visible over both pale vector tiles and satellite imagery. */
+      if (window.ol && ol.style && map.getLayers) {
+        map.getLayers().forEach(function(layer){
+          try {
+            var src=layer.getSource && layer.getSource();
+            var feats=src && src.getFeatures ? src.getFeatures() : [];
+            if (!feats || !feats.length) return;
+            var sample=feats[0];
+            var props=sample.getProperties ? sample.getProperties() : {};
+            var txt=JSON.stringify(props).toLowerCase();
+            var lname=String((layer.get && (layer.get('name')||layer.get('title')||layer.get('id'))) || '').toLowerCase();
+            var isOblast=/oblast|province|adm1|nuts3|област/.test(lname+' '+txt);
+            if (!isOblast) return;
+            var outer=new ol.style.Style({fill:new ol.style.Fill({color:'rgba(255,255,255,0.01)'}),stroke:new ol.style.Stroke({color:'rgba(255,255,255,0.96)',width:4})});
+            var inner=new ol.style.Style({fill:new ol.style.Fill({color:'rgba(255,255,255,0.01)'}),stroke:new ol.style.Stroke({color:'rgba(20,24,28,0.95)',width:1.6})});
+            layer.setStyle([outer,inner]);
+            layer.setZIndex(900);
+          } catch(e) {}
+        });
       }
     } catch(e) {}
   }
-  document.addEventListener('DOMContentLoaded', function(){ setTimeout(lockNorth,500); setTimeout(lockNorth,1500); });
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(patchMap,400); setTimeout(patchMap,1200); setTimeout(patchMap,3000);
+  });
 })();
 </script>
 '''
-          if 'id="topper-north-lock"' not in s:
-              s = s.replace('</body>', north_lock + '</body>', 1)
+          # Replace previous north-lock patch if present, otherwise inject new patch.
+          import re
+          s = re.sub(r'<script id="topper-north-lock">.*?</script>\s*', '', s, flags=re.S)
+          s = re.sub(r'<script id="topper-mobile-map-patch">.*?</script>\s*', '', s, flags=re.S)
+          s = s.replace('</body>', patch + '</body>', 1)
 
           p.write_text(s, encoding='utf-8')
       - name: Commit patched map
@@ -84,5 +107,5 @@ html, body { background:#f5f7fa !important; color-scheme:only light !important; 
             echo "No map changes needed"
             exit 0
           fi
-          git commit -m "Mobile UX: hard light theme and north-up rotation lock"
+          git commit -m "Map UX: inverse high-contrast oblast boundaries"
           git push
