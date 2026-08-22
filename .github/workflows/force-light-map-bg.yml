@@ -1,0 +1,55 @@
+name: Force light background on fire map
+
+on:
+  push:
+    paths:
+      - '.github/workflows/force-light-map-bg.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Force light UI background
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('Pozharite-Bulgaria-interactivna-karta.html')
+          s = p.read_text(encoding='utf-8')
+          old = '''<style>:root {
+  color-scheme: light dark;
+  background-color: transparent !important;'''
+          new = '''<style>:root {
+  color-scheme: light;
+  background-color: #f5f7fa !important;'''
+          if old not in s:
+              raise SystemExit('Expected root CSS block not found')
+          s = s.replace(old, new, 1)
+          s = s.replace('''  --background: var(
+    --main-surface-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));''', '''  --background: rgb(245 247 250);
+  --foreground: rgb(26 28 31);''', 1)
+          s = s.replace('''html > body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;''', '''html > body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: #f5f7fa !important;''', 1)
+          # Prevent mobile/system dark mode from re-darkening the page.
+          s += '''\n<style id="topper-force-light-mobile">\nhtml, body { background:#f5f7fa !important; color-scheme:light !important; }\n@media (prefers-color-scheme: dark) { html, body { background:#f5f7fa !important; color:#1a1c1f !important; } }\n</style>\n'''
+          p.write_text(s, encoding='utf-8')
+      - name: Commit patched map
+        run: |
+          git config user.name "TopperBG map bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add Pozharite-Bulgaria-interactivna-karta.html
+          git commit -m "Fix mobile map background: force light theme"
+          git push
