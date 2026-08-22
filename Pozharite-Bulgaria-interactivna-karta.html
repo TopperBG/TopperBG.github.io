@@ -4,43 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="bgwf-build" content="v0.85q-karadzhalovo-identification-20260819">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85q</title>
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f7fa">
+<meta name="bgwf-build" content="v0.85r-force-light-north-up-20260822">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85r</title>
 <style>:root {
-  color-scheme: light dark;
-  background-color: transparent !important;
+  color-scheme: only light !important;
+  background-color: #f5f7fa !important;
 
   /* Agent-facing contract; keep in sync with SKILL.md. */
-  --background: var(
-    --main-surface-primary,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --background: #f5f7fa !important;
+  --foreground: rgb(26 28 31) !important;
   --card: color-mix(in oklab, var(--foreground) 5%, transparent);
   --card-foreground: var(--foreground);
-  --popover: light-dark(rgb(255 255 255), rgb(45 45 45));
+  --popover: rgb(255 255 255) !important;
   --popover-foreground: var(--foreground);
-  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
-  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
-  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --primary: rgb(51 156 255) !important;
+  --primary-foreground: rgb(255 255 255) !important;
+  --secondary: rgb(255 255 255 / 96%) !important;
   --secondary-foreground: var(--foreground);
   --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
-  --muted-foreground: light-dark(
-    rgb(26 28 31 / 49.4%),
-    rgb(255 255 255 / 49.8%)
-  );
-  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --muted-foreground: rgb(26 28 31 / 49.4%) !important;
+  --accent: rgb(229 242 255) !important;
   --accent-foreground: var(--primary);
-  --destructive: light-dark(rgb(226 85 7), rgb(255 133 73));
-  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
-  --input: light-dark(
-    rgb(26 28 31 / 11.8%),
-    color-mix(in oklab, rgb(0 0 0) 10%, transparent)
-  );
-  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+  --destructive: rgb(226 85 7) !important;
+  --border: rgb(26 28 31 / 12%) !important;
+  --input: rgb(26 28 31 / 14%) !important;
+  --ring: rgb(51 156 255) !important;
   --font-size-base: 14px;
-  --red: light-dark(rgb(186 38 35), rgb(250 66 62));
-  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: rgb(186 38 35) !important;
+  --green: rgb(0 162 64) !important;
 
   /* Internal implementation variables; not part of the agent contract. */
   --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
@@ -91,19 +84,17 @@
    AppBlock hosts set all six variables themselves. */
 :root:not([data-app-block-surface]) {
   --viz-series-1: var(--primary);
-  --viz-series-2: light-dark(#f3883b, #f59a56);
-  --viz-series-3: light-dark(#5dc977, #74d58b);
-  --viz-series-4: light-dark(#eb77b1, #f08fc0);
-  --viz-series-5: light-dark(#9b79ec, #aa91ef);
-  --viz-series-6: light-dark(#3ab9b1, #5acbc2);
+  --viz-series-2: #f3883b;
+  --viz-series-3: #5dc977;
+  --viz-series-4: #eb77b1;
+  --viz-series-5: #9b79ec;
+  --viz-series-6: #3ab9b1;
 }
 
-:root[data-theme="light"] {
-  color-scheme: light;
-}
-
+:root[data-theme="light"],
 :root[data-theme="dark"] {
-  color-scheme: dark;
+  color-scheme: only light !important;
+  background-color: #f5f7fa !important;
 }
 
 * {
@@ -114,7 +105,7 @@ html > body {
   margin: 0;
   padding: 5px;
   color: var(--foreground);
-  background: transparent !important;
+  background: #f5f7fa !important;
   font-family: var(--font-sans);
   font-size: var(--font-size-normal);
   font-weight: var(--font-weight-normal);
@@ -702,9 +693,9 @@ textarea.form-control {
   width: 16px;
   height: 16px;
   box-sizing: border-box;
-  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border: 1px solid var(--primary-foreground);
   border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
+  background: var(--primary-foreground);
   box-shadow: var(--shadow-sm);
   content: "";
   transform: translate(2px, -50%);
@@ -753,7 +744,7 @@ textarea.form-control {
   margin-top: 4px;
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
+  background: var(--primary-foreground);
 }
 
 .form-range:focus-visible::-webkit-slider-thumb {
@@ -771,7 +762,7 @@ textarea.form-control {
   height: 20px;
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
+  background: var(--primary-foreground);
 }
 
 .form-range:focus-visible::-moz-range-thumb {
@@ -1274,7 +1265,7 @@ svg {
     min-height:440px;
     overflow:hidden;
     position:relative;
-    background:color-mix(in srgb, var(--muted) 16%, var(--background));
+    background:#eef2f6 !important;
     border-radius:12px;
     touch-action:none;
   }
@@ -1415,10 +1406,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85q</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85r</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85q</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85r</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3295,7 +3286,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.71', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.85r', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -3550,23 +3541,24 @@ const liveSource=new VectorSource();
 const provinceFeatures=readFeatures(provinces); provinceFeatures.forEach(f=>{f.set('kind','province');f.set('provinceCode',f.get('nuts3'));}); provinceSource.addFeatures(provinceFeatures);
 const provinceLayer=new VectorLayer({
   source:provinceSource,
-  zIndex:1,
+  zIndex:30,
   style:f=>{
     const active=f.get('provinceCode')===activeProvinceCode;
-    if(!satelliteMode()){
-      return new Style({
-        fill:new Fill({color:'rgba(148,163,184,0.12)'}),
-        stroke:new Stroke({color:cssVar('--border','#94a3b8'),width:active?2.2:1})
-      });
-    }
+    const satellite=satelliteMode();
     return [
       new Style({
-        fill:new Fill({color:active?'rgba(255,255,255,.055)':'rgba(0,0,0,0)'}),
-        stroke:new Stroke({color:'rgba(0,0,0,.72)',width:active?4.8:3.4})
+        fill:new Fill({color:satellite?'rgba(0,0,0,0)':(active?'rgba(37,99,235,.055)':'rgba(148,163,184,.035)')}),
+        stroke:new Stroke({
+          color:satellite?'rgba(0,0,0,.82)':'rgba(255,255,255,.98)',
+          width:active?5.4:4.2
+        })
       }),
       new Style({
         fill:new Fill({color:'rgba(0,0,0,0)'}),
-        stroke:new Stroke({color:active?'#fde047':'rgba(255,255,255,.95)',width:active?2.5:1.5})
+        stroke:new Stroke({
+          color:active?(satellite?'#fde047':'#2563eb'):(satellite?'rgba(255,255,255,.98)':'rgba(31,41,55,.88)'),
+          width:active?2.5:1.45
+        })
       })
     ];
   }
@@ -3702,8 +3694,25 @@ const fireLayer=new VectorLayer({source:fireSource,zIndex:11,style:f=>{
 }});
 const liveLayer=new VectorLayer({source:liveSource,zIndex:12,visible:layerVisibility.live,style:f=>new Style({image:new CircleStyle({radius:f.get('selected')?11:9,fill:new Fill({color:f.get('selected')?'rgba(255,23,23,.34)':'rgba(255,23,23,.22)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ff1717',width:f.get('selected')?3:2})}),text:new TextStyle({text:'🔥',font:f.get('selected')?'17px sans-serif':'15px sans-serif',offsetY:-1})})});
 
-const view=new View({center:fromLonLat([25.25,42.75]),zoom:7,minZoom:5,maxZoom:16,constrainResolution:false});
-map=new MapOL({target:mapTarget,view,layers:[satelliteLayer,placeLabelsLayer,provinceLayer,densityLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer]});
+const view=new View({
+  center:fromLonLat([25.25,42.75]),
+  zoom:7,
+  minZoom:5,
+  maxZoom:16,
+  constrainResolution:false,
+  enableRotation:false,
+  rotation:0
+});
+const mapInteractions=ol.interaction.defaults({altShiftDragRotate:false,pinchRotate:false});
+view.on('change:rotation',()=>{
+  if(Math.abs(view.getRotation()||0)>1e-10)view.setRotation(0);
+});
+map=new MapOL({
+  target:mapTarget,
+  view,
+  interactions:mapInteractions,
+  layers:[satelliteLayer,placeLabelsLayer,provinceLayer,densityLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer]
+});
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
 // v0.80c: auxiliary fossil/mining footprint is deliberately lazy.
@@ -5089,6 +5098,16 @@ function runSelfTests(){
   selfTest('vei-source-layers',()=>({ok:!!solarSource&&!!projectSource,solar:!!solarSource,projects:!!projectSource}));
   selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
   selfTest('province-count',()=>({ok:provinceSource.getFeatures().length===28,count:provinceSource.getFeatures().length,expected:28}));
+  selfTest('province-boundary-contrast',()=>{
+    const styles=provinceLayer.getStyleFunction()?.(provinceSource.getFeatures()[0],view.getResolution());
+    return {ok:Array.isArray(styles)&&styles.length===2&&provinceLayer.getZIndex()===30,styles:Array.isArray(styles)?styles.length:0,zIndex:provinceLayer.getZIndex()};
+  });
+  selfTest('forced-light-theme',()=>{
+    const rootStyle=getComputedStyle(document.documentElement),bodyStyle=getComputedStyle(document.body),mapStyle=getComputedStyle(mapTarget);
+    const scheme=rootStyle.colorScheme||'';
+    return {ok:/light/i.test(scheme)&&!/dark/i.test(scheme)&&bodyStyle.backgroundColor!=='rgba(0, 0, 0, 0)'&&mapStyle.backgroundColor!=='rgba(0, 0, 0, 0)',scheme,bodyBackground:bodyStyle.backgroundColor,mapBackground:mapStyle.backgroundColor};
+  });
+  selfTest('north-up-no-pinch-rotation',()=>({ok:Math.abs(view.getRotation()||0)<1e-10,rotation:view.getRotation(),pinchZoomPreserved:true,pinchRotateDisabled:true}));
   selfTest('province-extent',()=>({ok:sourceExtentSane(provinceSource),extent:provinceSource.getExtent()}));
   selfTest('fire-count-source',()=>({ok:fires.length===817,count:fires.length,expected:817}));
   selfTest('fire-years',()=>{const got=[...new Set(fires.map(d=>d.year))].sort();return{ok:JSON.stringify(got)===JSON.stringify([2021,2022,2023,2024,2025,2026]),years:got};});
