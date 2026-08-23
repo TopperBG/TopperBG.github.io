@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.85r-force-light-north-up-20260822">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85r</title>
+<meta name="bgwf-build" content="v0.85s-ol10-interactions-hotfix-20260823">
+<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85s</title>
 <style>:root {
   color-scheme: only light !important;
   background-color: #f5f7fa !important;
@@ -1406,10 +1406,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85r</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85s</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85r</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85s</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3703,7 +3703,18 @@ const view=new View({
   enableRotation:false,
   rotation:0
 });
-const mapInteractions=ol.interaction.defaults({altShiftDragRotate:false,pinchRotate:false});
+const defaultInteractionsFactory=
+  typeof ol.interaction?.defaults==='function'
+    ? ol.interaction.defaults
+    : ol.interaction?.defaults?.defaults;
+if(typeof defaultInteractionsFactory!=='function'){
+  throw new Error('OpenLayers default interactions factory is unavailable');
+}
+const mapInteractions=defaultInteractionsFactory({
+  altShiftDragRotate:false,
+  pinchRotate:false,
+  pinchZoom:true
+});
 view.on('change:rotation',()=>{
   if(Math.abs(view.getRotation()||0)>1e-10)view.setRotation(0);
 });
