@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.85w-verified-large-solar-cadastral-contours-20260827">
-<title>Пожарите и ВЕИ в България — интерактивна карта 2021–2026 · v0.85w</title>
+<meta name="bgwf-build" content="v0.85x-energokarta-branding-20260827">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.85x</title>
 <style>:root {
   color-scheme: only light !important;
   background-color: #f5f7fa !important;
@@ -873,6 +873,30 @@ svg {
   }
 
 
+  #bg-wildfires-map .bgwf-brand {
+    margin: 0 0 .45rem;
+    padding: .18rem .1rem .05rem;
+  }
+  #bg-wildfires-map .bgwf-brand h1 {
+    margin: 0;
+    color: var(--foreground);
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+  #bg-wildfires-map .bgwf-brand p {
+    margin: .2rem 0 0;
+    color: var(--muted-foreground);
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-brand { margin-bottom: .3rem; padding: .05rem 0 0; }
+    #bg-wildfires-map .bgwf-brand h1 { font-size: 19px; }
+    #bg-wildfires-map .bgwf-brand p { margin-top: .12rem; font-size: 10px; }
+  }
+
   #bg-wildfires-map .bgwf-data-notice {
     margin: 0 0 .45rem;
     padding: .38rem .55rem;
@@ -1424,15 +1448,19 @@ svg {
         src="./data/count.js"></script>
 </head>
 <body>
-<div id="bg-wildfires-map" aria-label="Карта на пожарите, проверени изградени ФЕЦ, ВЕИ устройствени процедури и RED III зони в България, 2021–2026 г.">
+<div id="bg-wildfires-map" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
+  <header class="bgwf-brand">
+    <h1>ЕнергоКарта България</h1>
+    <p>Интерактивен атлас на енергията, територията и природните рискове</p>
+  </header>
   <div class="bgwf-data-notice" role="note">
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85w</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85x</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85w</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85x</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -4213,7 +4241,7 @@ function currentShareUrl(){
 }
 async function shareCurrentMap(){
   const url=currentShareUrl();
-  const data={title:document.title,text:'Пожарите и ВЕИ в България — текущ изглед на картата',url};
+  const data={title:document.title,text:'ЕнергоКарта България — текущ изглед на интерактивния атлас',url};
   try{
     if(navigator.share){await navigator.share(data);return true;}
   }catch(e){
