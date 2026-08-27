@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.85x-energokarta-branding-20260827">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.85x</title>
+<meta name="bgwf-build" content="v0.85y-verified-solar-polygons-cleanup-20260827">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.85y</title>
 <style>:root {
   color-scheme: only light !important;
   background-color: #f5f7fa !important;
@@ -1457,10 +1457,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85x</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85y</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85x</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85y</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3404,9 +3404,9 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "year": 2025,
           "mwAc": 33,
           "lon": 27.09, "lat": 43.62,
-          "statusLabel": "действаща · общ. Каолиново · КЕВР Р-583/2025",
-          "source": "https://www.dker.bg/bg/resheniya/resheniya-za-2025-g.html",
-          "parcels": []
+          "statusLabel": "действаща · точни ПИ на двете фотоволтаични полета по КЕВР",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_r_583_25.pdf",
+          "parcels": ["72549.44.621", "36079.80.9906"]
       },
       {
           "id": "SOL-2024-ARATIDEN",
@@ -3426,9 +3426,9 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "mwpDc": 116.027,
           "mwAc": 99,
           "lon": 24.84, "lat": 42.6,
-          "statusLabel": "действаща · район Дъбене/Карлово · КЕВР Р-512/2024",
-          "source": "https://www.dker.bg/bg/resheniya/resheniya-za-2024-g.html",
-          "parcels": []
+          "statusLabel": "действаща · 10 актуални ПИ на фотоволтаични полета по КЕВР; 5 стари ПИ без текуща геометрия",
+          "source": "https://www.dker.bg/uploads/reshenia/2024/res_l-734_24.pdf",
+          "parcels": ["24241.10.719", "24241.250.477", "24241.250.475", "24241.250.476", "24241.297.356", "10207.5.566", "10207.5.610", "10207.20.862", "10207.39.1001", "10207.51.591"]
       },
       {
           "id": "SOL-2024-RAMANUSHA",
@@ -3450,9 +3450,9 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "bessMw": 13.5,
           "bessMwh": 27,
           "lon": 27.52, "lat": 41.98,
-          "statusLabel": "действаща · землището на Малко Търново",
-          "source": "https://winslow-energy.com/",
-          "parcels": []
+          "statusLabel": "действаща · точни ПИ на ФЕЦ по КЕВР",
+          "source": "https://www.dker.bg/uploads/protokoli/zz/2023/prot_zz_120_23.pdf",
+          "parcels": ["46663.52.587", "46663.52.588"]
       },
       {
           "id": "SOL-2023-GALABOVO",
@@ -3471,9 +3471,9 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "mwpDc": 116.423,
           "mwAc": 105,
           "lon": 24.84, "lat": 42.26,
-          "statusLabel": "действащи етапи 1–2 · КЕВР 2022–2023; следващ етап е отчетен отделно",
-          "source": "https://www.dker.bg/bg/resheniya/resheniya-za-2023-g.html",
-          "parcels": []
+          "statusLabel": "действащи етапи 1–2 · точни ПИ на фотоволтаичните полета по КЕВР",
+          "source": "https://www.dker.bg/uploads/reshenia/2023/res_i2_l_605_23.pdf",
+          "parcels": ["35523.43.63", "63567.70.309"]
       },
       {
           "id": "SOL-2023-KARNOBAT",
@@ -3482,9 +3482,9 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "mwpDc": 28.59,
           "mwAc": 25,
           "lon": 26.98, "lat": 42.65,
-          "statusLabel": "действаща · КЕВР 2023",
-          "source": "https://www.dker.bg/bg/resheniya/resheniya-za-2023-g.html",
-          "parcels": []
+          "statusLabel": "действаща · 3 актуални ПИ на фаза 1 по КЕВР; стар ПИ 36525.301.196 без текуща геометрия",
+          "source": "https://www.dker.bg/uploads/protokoli/zz/2024/prot_zz_71_24.pdf",
+          "parcels": ["36525.301.10", "36525.301.14", "36525.301.15"]
       },
       {
           "id": "SOL-2023-RAZLOG",
@@ -3496,16 +3496,6 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "statusLabel": "действаща на етапи 2022–2023 · имоти за електроенергийно производство по КЕВР",
           "source": "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_219_22.pdf",
           "parcels": ["61813.750.153", "61813.750.389", "61813.750.391", "61813.750.392", "61813.750.394", "61813.750.1"]
-      },
-      {
-          "id": "SOL-2019-ZLATEN-LEV",
-          "name": "ФЕЦ „Златен лев Solar“",
-          "year": 2019,
-          "mwpDc": 23.02,
-          "lon": 24.33, "lat": 42.19,
-          "statusLabel": "действаща · обл. Пазарджик · публичен ВЕИ регистър",
-          "source": "https://www.veiregistar.bg/objects&type=solar-power-plants-over-1-mw",
-          "parcels": []
       },
       {
           "id": "SOL-2012-CHERGANOVO",
@@ -3533,9 +3523,9 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "year": 2012,
           "mwpDc": 14.071,
           "lon": 27.82, "lat": 43.57,
-          "statusLabel": "действаща · обл. Добрич · публичен ВЕИ регистър",
-          "source": "https://www.veiregistar.bg/objects&type=solar-power-plants-over-1-mw",
-          "parcels": []
+          "statusLabel": "действаща · точен ПИ за електроенергийно производство по ДКЕВР",
+          "source": "https://www.dker.bg/files/DOWNLOAD/res_r-173_12.pdf",
+          "parcels": ["72624.603.283"]
       },
       {
           "id": "SOL-2011-CHOBANKA",
