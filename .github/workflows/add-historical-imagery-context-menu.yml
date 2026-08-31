@@ -1,0 +1,63 @@
+name: Add historical imagery context menu
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-historical-imagery-context-menu.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add right-click historical imagery menu
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('Pozharite-Bulgaria-interactivna-karta.html')
+          s=p.read_text(encoding='utf-8')
+          if 'id="historical-imagery-menu"' in s:
+              raise SystemExit('already installed')
+          css='''\n<style id="historical-imagery-menu-style">
+#historical-imagery-menu{position:fixed;display:none;z-index:100000;background:#fff;color:#1a1c1f;border:1px solid #9aa0a6;border-radius:8px;box-shadow:0 4px 18px rgba(0,0,0,.25);padding:5px;min-width:205px;font:14px/1.3 system-ui,sans-serif}
+#historical-imagery-menu button{display:block;width:100%;border:0;background:#fff;color:#1a1c1f;text-align:left;padding:9px 11px;border-radius:5px;cursor:pointer}
+#historical-imagery-menu button:hover{background:#eef2f5}
+</style>\n'''
+          s=s.replace('</head>',css+'</head>',1)
+          js='''\n<div id="historical-imagery-menu"><button id="historical-imagery-open">🕘 Исторически снимки</button></div>
+<script id="historical-imagery-context-menu">
+(function(){
+ const el=document.getElementById('historical-imagery-menu'), btn=document.getElementById('historical-imagery-open');
+ let lon=25.25,lat=42.7;
+ function hide(){el.style.display='none'}
+ document.addEventListener('contextmenu',function(e){
+   const target=e.target.closest && e.target.closest('#map,.map,.ol-viewport');
+   if(!target || !window.map || !map.getEventCoordinate || !window.ol) return;
+   e.preventDefault();
+   try{const c=map.getEventCoordinate(e);const ll=ol.proj.toLonLat(c);lon=ll[0];lat=ll[1];}catch(x){return;}
+   el.style.left=Math.min(e.clientX,innerWidth-220)+'px';el.style.top=Math.min(e.clientY,innerHeight-55)+'px';el.style.display='block';
+ });
+ btn.addEventListener('click',function(){
+   /* Google Earth Web opens the selected coordinates. Historical Imagery itself is
+      available from the timeline/Historical imagery control; Google Earth Pro has
+      no reliable public web deep-link that launches the desktop app directly. */
+   const u='https://earth.google.com/web/search/'+lat.toFixed(6)+','+lon.toFixed(6);
+   window.open(u,'_blank','noopener'); hide();
+ });
+ document.addEventListener('click',hide); window.addEventListener('blur',hide);
+})();
+</script>\n'''
+          s=s.replace('</body>',js+'</body>',1)
+          s=s.replace('v0.85y-verified-solar-polygons-cleanup-20260827','v0.85z-historical-imagery-context-menu-20260831',1)
+          s=s.replace('· v0.85y</title>','· v0.85z</title>',1)
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "TopperBG map bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add Pozharite-Bulgaria-interactivna-karta.html
+          git commit -m "Map UX: right-click historical satellite imagery"
+          git push
