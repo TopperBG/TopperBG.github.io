@@ -1,0 +1,69 @@
+name: Identify Solsbor PV plant
+
+on:
+  push:
+    paths:
+      - '.github/workflows/identify-solsbor.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Identify Solsbor marker and add verified metadata
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('Pozharite-Bulgaria-interactivna-karta.html')
+          s=p.read_text(encoding='utf-8')
+
+          # Update build/version.
+          s=s.replace('v0.85y-verified-solar-polygons-cleanup-20260827','v0.86-solsbor-identification-20260831',1)
+          s=s.replace('· v0.85y</title>','· v0.86</title>',1)
+          s=s.replace('v0.85z-historical-imagery-context-menu-20260831','v0.86-solsbor-identification-20260831',1)
+          s=s.replace('· v0.85z</title>','· v0.86</title>',1)
+
+          # Locate the unknown solar record nearest the user-confirmed point and
+          # replace only its descriptive fields, preserving its existing geometry.
+          # Handles common object/GeoJSON layouts in the map source.
+          target_lon='24.30108'; target_lat='42.31894'
+          idx=-1
+          for needle in (target_lon, '24.301', '42.31894', '42.3189'):
+              idx=s.find(needle)
+              if idx>=0: break
+          if idx<0:
+              raise SystemExit('Target Solsbor marker coordinates not found; refusing broad edit')
+          a=max(0,idx-2500); b=min(len(s),idx+2500)
+          chunk=s[a:b]
+
+          # Replace generic unknown labels in the local record only.
+          replacements=[
+            (r'Неизвестен\s+ФЕЦ', 'ФЕЦ „Солсбор“'),
+            (r'неизвестен\s+ФЕЦ', 'ФЕЦ „Солсбор“'),
+            (r'Unknown\s+PV', 'ФЕЦ „Солсбор“'),
+            (r'Неидентифициран\s+ФЕЦ', 'ФЕЦ „Солсбор“'),
+          ]
+          for pat,rep in replacements:
+              chunk=re.sub(pat,rep,chunk,flags=re.I)
+
+          # Add a compact metadata note next to the local object when possible.
+          # This does not claim a modern cadastral polygon until old PI 167017 is
+          # conclusively mapped to current KKKR geometry.
+          if 'СОЛСБОР – К.Г.Д.' not in chunk and 'СОЛСБОР - К.Г.Д.' not in chunk:
+              # Inject into a nearby name/title string if present.
+              chunk=chunk.replace('ФЕЦ „Солсбор“', 'ФЕЦ „Солсбор“ — 10 MW; с. Сбор; СОЛСБОР – К.Г.Д. / СОЛСБОР – Г.К.К.; стар ПИ 167017',1)
+
+          s=s[:a]+chunk+s[b:]
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name "TopperBG map bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add Pozharite-Bulgaria-interactivna-karta.html
+          if git diff --cached --quiet; then echo 'No changes'; exit 1; fi
+          git commit -m "Solar data: identify Solsbor 10 MW near Sbor"
+          git push
