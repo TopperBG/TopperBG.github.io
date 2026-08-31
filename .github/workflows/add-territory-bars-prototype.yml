@@ -1,0 +1,50 @@
+name: Add territory scale bars prototype
+on:
+  push:
+    paths: ['.github/workflows/add-territory-bars-prototype.yml']
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch map
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('Pozharite-Bulgaria-interactivna-karta.html')
+          s=p.read_text(encoding='utf-8')
+          if 'territory-scale-bars' in s: raise SystemExit('already installed')
+          css='''<style id="territory-scale-bars-style">
+#territory-scale-bars{position:fixed;left:8px;top:50%;transform:translateY(-50%);z-index:9500;height:min(52vh,390px);min-height:230px;padding:9px 7px 7px;background:rgba(255,255,255,.78);backdrop-filter:blur(4px);border:1px solid rgba(30,40,50,.18);border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.14);display:none;gap:5px;align-items:flex-end;font:10px/1.1 system-ui,sans-serif;color:#202124}
+#territory-scale-bars .tb{height:100%;width:25px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+#territory-scale-bars .shaft{width:9px;min-height:2px;border-radius:4px 4px 1px 1px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.13)}
+#territory-scale-bars .val{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;margin-bottom:4px;font-weight:650;font-size:9px}
+#territory-scale-bars .lab{writing-mode:vertical-rl;transform:rotate(180deg);height:62px;white-space:nowrap;margin-top:4px;font-size:9px}
+#territory-scale-bars .bg{background:#64748b}.agri{background:#84a94b}.degr{background:#8b5e3c}.solar{background:#e7b416}.pup{background:#f28c28}.industry{background:#555}
+#territory-scale-bars .hint{position:absolute;left:100%;top:0;margin-left:7px;background:#fff;border:1px solid #bbb;border-radius:6px;padding:6px 8px;white-space:nowrap;display:none;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+#territory-scale-bars:hover .hint{display:block}
+@media(max-width:600px){#territory-scale-bars{left:4px;height:43vh;min-height:210px;padding:6px 3px;gap:2px}#territory-scale-bars .tb{width:17px}#territory-scale-bars .shaft{width:6px}#territory-scale-bars .lab,#territory-scale-bars .val{font-size:8px}.tb-degr{display:none!important}}
+</style>'''
+          s=s.replace('</head>',css+'</head>',1)
+          html='''<div id="territory-scale-bars" aria-label="Териториален мащаб">
+<div class="tb"><span class="val">111 000 km²</span><i class="shaft bg" style="height:100%"></i><span class="lab">България</span></div>
+<div class="tb"><span class="val">~47 000 km²</span><i class="shaft agri" style="height:42.34%"></i><span class="lab">Земеделска</span></div>
+<div class="tb tb-degr"><span class="val">нарушени</span><i class="shaft degr" style="height:7%"></i><span class="lab">Нарушени</span></div>
+<div class="tb tb-solar"><span class="val" data-v>слой</span><i class="shaft solar" style="height:1.4%"></i><span class="lab">ФЕЦ</span></div>
+<div class="tb tb-pup"><span class="val" data-v>слой</span><i class="shaft pup" style="height:1.1%"></i><span class="lab">ПУП</span></div>
+<div class="tb tb-ind"><span class="val" data-v>слой</span><i class="shaft industry" style="height:2.2%"></i><span class="lab">ТЕЦ/мини</span></div>
+<div class="hint">Прототип · височината на тематичните слоеве ще се изчислява от полигоните</div></div>'''
+          s=s.replace('</body>',html+'''<script id="territory-scale-bars-script">
+(function(){const box=document.getElementById('territory-scale-bars');function on(id){const e=document.getElementById(id);return !!(e&&e.checked)}function upd(){const sol=on('solarToggle')||on('solar')||new URLSearchParams(location.search).get('solar')==='1';const pup=on('pupToggle')||on('pup')||new URLSearchParams(location.search).get('pup')==='1';const ind=on('industryToggle')||on('industry')||new URLSearchParams(location.search).get('industry')==='1';box.style.display=(sol||pup||ind)?'flex':'none';box.querySelector('.tb-solar').style.display=sol?'flex':'none';box.querySelector('.tb-pup').style.display=pup?'flex':'none';box.querySelector('.tb-ind').style.display=ind?'flex':'none'}document.addEventListener('change',upd);setTimeout(upd,300);setTimeout(upd,1600)})();
+</script></body>''',1)
+          s=s.replace('v0.85y-verified-solar-polygons-cleanup-20260827','v0.86b-territory-bars-prototype-20260831',1).replace('· v0.85y</title>','· v0.86b</title>',1)
+          p.write_text(s,encoding='utf-8')
+      - name: Commit
+        run: |
+          git config user.name 'TopperBG map bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add Pozharite-Bulgaria-interactivna-karta.html
+          git commit -m 'UI: prototype vertical territory comparison bars'
+          git push
