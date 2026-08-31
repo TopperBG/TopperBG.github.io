@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86e-aligned-translucent-territory-bars-20260831">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86e</title>
+<meta name="bgwf-build" content="v0.86f-territory-grid-counter-repair-20260831">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86f</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1475,9 +1475,9 @@ svg {
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.10.0/ol.css">
 <script src="https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js" crossorigin="anonymous"></script>
-<script data-goatcounter="https://topperbg.goatcounter.com/count"
-        data-goatcounter-settings='{"path":"/Pozharite-Bulgaria-interactivna-karta.html"}'
-        src="./data/count.js"></script>
+<script data-map-counter="https://topperbg.goatcounter.com/count"
+        data-map-counter-settings='{"path":"/Pozharite-Bulgaria-interactivna-karta.html"}'
+        src="./data/map-visits.js"></script>
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
@@ -1492,10 +1492,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86e</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86f</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86e</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86f</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -5458,7 +5458,7 @@ function updateTerritoryScaleBars(){
   territoryScaleBars.querySelectorAll('.bgwf-territory-bar').forEach(column=>{
     const key=column.dataset.territoryLayer;
     const area=key?(areas[key]||0):Number(column.dataset.territoryArea)||0;
-    if(key)column.style.display=layerVisibility[key]?'flex':'none';
+    if(key)column.style.display=layerVisibility[key]?'grid':'none';
     const value=column.querySelector('[data-territory-value]');
     const shaft=column.querySelector('.bgwf-territory-shaft');
     if(value)value.textContent=formatTerritoryArea(area);
