@@ -1,0 +1,536 @@
+{
+  "displayFieldName": "Name",
+  "fieldAliases": {
+    "objectid": "OBJECTID",
+    "id": "Идент.",
+    "ekatte": "Населено място",
+    "upi": "Кадастрален идентификатор",
+    "addressid": "Идент. на адрес",
+    "placeid": "Идент. на местност",
+    "cadplancmdid": "Идент. на заповед",
+    "npropertytype": "Вид собственост",
+    "nterrtype": "Вид територия",
+    "nterrtypeold": "Вид територия (стара номенклатура)",
+    "nusetype": "Начин на трайно ползване",
+    "nusetypeold": "Начин на трайно ползване (стара номенклатура)",
+    "nlawtype": "Закон, по който са установени границите",
+    "nrestitution": "Начин на възстановяване",
+    "lotnumber": "Номер на партида от ИР",
+    "agrcategory": "Преобладаваща категория на земята",
+    "agrputposs": "Въвод във владение",
+    "maplabel": "Надпис на картата",
+    "description": "Описание",
+    "metadataid": "Идент. на промени",
+    "fromdate": "Дата на актуалност",
+    "cadyearold": "Година на стария кадастрален план",
+    "regyearold": "Година на стария регулационен план",
+    "oldnumber": "Стар планоснимачен номер",
+    "Name": "Име",
+    "SearchData": "Поле за търсене",
+    "CadArea": "Площ от CAD/ZEM",
+    "regparcel": "Номер на парцел (регулация)",
+    "regquarter": "Номер на квартал (регулация)",
+    "ToDate": "Крайна дата",
+    "areabydoc": "Площ по документ",
+    "created_user": "created_user",
+    "created_date": "created_date",
+    "last_edited_user": "last_edited_user",
+    "last_edited_date": "last_edited_date",
+    "GlobalID": "GlobalID",
+    "shape.STArea()": "shape.STArea()",
+    "shape.STLength()": "shape.STLength()"
+  },
+  "geometryType": "esriGeometryPolygon",
+  "spatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+  },
+  "fields": [
+    {
+      "name": "objectid",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID"
+    },
+    {
+      "name": "id",
+      "type": "esriFieldTypeString",
+      "alias": "Идент.",
+      "length": 50
+    },
+    {
+      "name": "ekatte",
+      "type": "esriFieldTypeString",
+      "alias": "Населено място",
+      "length": 50
+    },
+    {
+      "name": "upi",
+      "type": "esriFieldTypeString",
+      "alias": "Кадастрален идентификатор",
+      "length": 50
+    },
+    {
+      "name": "addressid",
+      "type": "esriFieldTypeString",
+      "alias": "Идент. на адрес",
+      "length": 50
+    },
+    {
+      "name": "placeid",
+      "type": "esriFieldTypeString",
+      "alias": "Идент. на местност",
+      "length": 50
+    },
+    {
+      "name": "cadplancmdid",
+      "type": "esriFieldTypeString",
+      "alias": "Идент. на заповед",
+      "length": 50
+    },
+    {
+      "name": "npropertytype",
+      "type": "esriFieldTypeInteger",
+      "alias": "Вид собственост"
+    },
+    {
+      "name": "nterrtype",
+      "type": "esriFieldTypeString",
+      "alias": "Вид територия",
+      "length": 50
+    },
+    {
+      "name": "nterrtypeold",
+      "type": "esriFieldTypeString",
+      "alias": "Вид територия (стара номенклатура)",
+      "length": 50
+    },
+    {
+      "name": "nusetype",
+      "type": "esriFieldTypeString",
+      "alias": "Начин на трайно ползване",
+      "length": 50
+    },
+    {
+      "name": "nusetypeold",
+      "type": "esriFieldTypeString",
+      "alias": "Начин на трайно ползване (стара номенклатура)",
+      "length": 50
+    },
+    {
+      "name": "nlawtype",
+      "type": "esriFieldTypeInteger",
+      "alias": "Закон, по който са установени границите"
+    },
+    {
+      "name": "nrestitution",
+      "type": "esriFieldTypeInteger",
+      "alias": "Начин на възстановяване"
+    },
+    {
+      "name": "lotnumber",
+      "type": "esriFieldTypeString",
+      "alias": "Номер на партида от ИР",
+      "length": 50
+    },
+    {
+      "name": "agrcategory",
+      "type": "esriFieldTypeString",
+      "alias": "Преобладаваща категория на земята",
+      "length": 50
+    },
+    {
+      "name": "agrputposs",
+      "type": "esriFieldTypeString",
+      "alias": "Въвод във владение",
+      "length": 50
+    },
+    {
+      "name": "maplabel",
+      "type": "esriFieldTypeString",
+      "alias": "Надпис на картата",
+      "length": 50
+    },
+    {
+      "name": "description",
+      "type": "esriFieldTypeString",
+      "alias": "Описание",
+      "length": 1073741822
+    },
+    {
+      "name": "metadataid",
+      "type": "esriFieldTypeString",
+      "alias": "Идент. на промени",
+      "length": 50
+    },
+    {
+      "name": "fromdate",
+      "type": "esriFieldTypeDate",
+      "alias": "Дата на актуалност",
+      "length": 8
+    },
+    {
+      "name": "cadyearold",
+      "type": "esriFieldTypeDate",
+      "alias": "Година на стария кадастрален план",
+      "length": 8
+    },
+    {
+      "name": "regyearold",
+      "type": "esriFieldTypeDate",
+      "alias": "Година на стария регулационен план",
+      "length": 8
+    },
+    {
+      "name": "oldnumber",
+      "type": "esriFieldTypeString",
+      "alias": "Стар планоснимачен номер",
+      "length": 1073741822
+    },
+    {
+      "name": "Name",
+      "type": "esriFieldTypeString",
+      "alias": "Име",
+      "length": 50
+    },
+    {
+      "name": "SearchData",
+      "type": "esriFieldTypeString",
+      "alias": "Поле за търсене",
+      "length": 1073741822
+    },
+    {
+      "name": "CadArea",
+      "type": "esriFieldTypeDouble",
+      "alias": "Площ от CAD/ZEM"
+    },
+    {
+      "name": "regparcel",
+      "type": "esriFieldTypeString",
+      "alias": "Номер на парцел (регулация)",
+      "length": 1073741822
+    },
+    {
+      "name": "regquarter",
+      "type": "esriFieldTypeString",
+      "alias": "Номер на квартал (регулация)",
+      "length": 1073741822
+    },
+    {
+      "name": "ToDate",
+      "type": "esriFieldTypeDate",
+      "alias": "Крайна дата",
+      "length": 8
+    },
+    {
+      "name": "areabydoc",
+      "type": "esriFieldTypeDouble",
+      "alias": "Площ по документ"
+    },
+    {
+      "name": "created_user",
+      "type": "esriFieldTypeString",
+      "alias": "created_user",
+      "length": 255
+    },
+    {
+      "name": "created_date",
+      "type": "esriFieldTypeDate",
+      "alias": "created_date",
+      "length": 8
+    },
+    {
+      "name": "last_edited_user",
+      "type": "esriFieldTypeString",
+      "alias": "last_edited_user",
+      "length": 255
+    },
+    {
+      "name": "last_edited_date",
+      "type": "esriFieldTypeDate",
+      "alias": "last_edited_date",
+      "length": 8
+    },
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "length": 38
+    },
+    {
+      "name": "shape.STArea()",
+      "type": "esriFieldTypeDouble",
+      "alias": "shape.STArea()"
+    },
+    {
+      "name": "shape.STLength()",
+      "type": "esriFieldTypeDouble",
+      "alias": "shape.STLength()"
+    }
+  ],
+  "features": [
+    {
+      "attributes": {
+        "objectid": 1021124,
+        "id": "B2467F5B494B4318BF20EC3ADEDFBCC5",
+        "ekatte": "35167",
+        "upi": "35167.0.3",
+        "addressid": null,
+        "placeid": null,
+        "cadplancmdid": null,
+        "npropertytype": 7,
+        "nterrtype": "1",
+        "nterrtypeold": "За нуждите на селското стопанство",
+        "nusetype": "3330",
+        "nusetypeold": "Машинна пром.",
+        "nlawtype": null,
+        "nrestitution": null,
+        "lotnumber": null,
+        "agrcategory": null,
+        "agrputposs": null,
+        "maplabel": "0.3",
+        "description": null,
+        "metadataid": null,
+        "fromdate": null,
+        "cadyearold": null,
+        "regyearold": null,
+        "oldnumber": null,
+        "Name": "35167.0.3",
+        "SearchData": " 35167.0.3 ИМОТИ КАДАСТЪР CADPARCEL ",
+        "CadArea": null,
+        "regparcel": null,
+        "regquarter": null,
+        "ToDate": null,
+        "areabydoc": null,
+        "created_user": "K.MIHALEV",
+        "created_date": 1684993802000,
+        "last_edited_user": "K.MIHALEV",
+        "last_edited_date": 1684993802000,
+        "GlobalID": "{B52CB0C0-7B99-4C10-AE4D-57EDEB5BEE03}",
+        "shape.STArea()": 3717806.1799154896,
+        "shape.STLength()": 8071.696079897733
+      },
+      "geometry": {
+        "rings": [
+          [
+            [
+              25.386547052368943,
+              42.60905712390392
+            ],
+            [
+              25.387991169387444,
+              42.60868333727715
+            ],
+            [
+              25.398368477441544,
+              42.60590392583259
+            ],
+            [
+              25.39913027353211,
+              42.603852732103306
+            ],
+            [
+              25.399325035860517,
+              42.603164433472024
+            ],
+            [
+              25.400359839388386,
+              42.599506620210704
+            ],
+            [
+              25.40042921041787,
+              42.59923390011294
+            ],
+            [
+              25.400608217123974,
+              42.598530974517026
+            ],
+            [
+              25.400526174289997,
+              42.59851767844741
+            ],
+            [
+              25.400607278118812,
+              42.5981497901222
+            ],
+            [
+              25.40263766012929,
+              42.591426319050164
+            ],
+            [
+              25.402667094613864,
+              42.59132898235709
+            ],
+            [
+              25.403271373177876,
+              42.58932539156016
+            ],
+            [
+              25.403686927182445,
+              42.587947841353504
+            ],
+            [
+              25.403760568971467,
+              42.58770370991196
+            ],
+            [
+              25.398937405596794,
+              42.58223072618406
+            ],
+            [
+              25.394543605978182,
+              42.58226604041713
+            ],
+            [
+              25.390346168260493,
+              42.58149165828182
+            ],
+            [
+              25.385210187743496,
+              42.587421850473724
+            ],
+            [
+              25.38520559114657,
+              42.58752430509987
+            ],
+            [
+              25.38520246589202,
+              42.58759392631491
+            ],
+            [
+              25.385172809003574,
+              42.58825278031993
+            ],
+            [
+              25.385116566268014,
+              42.5895015332157
+            ],
+            [
+              25.38509752383614,
+              42.58992542065716
+            ],
+            [
+              25.384990796520345,
+              42.592296215595766
+            ],
+            [
+              25.384988344928306,
+              42.59235045649496
+            ],
+            [
+              25.384974786016716,
+              42.59268741546709
+            ],
+            [
+              25.38495406027267,
+              42.59319768565513
+            ],
+            [
+              25.384936053313464,
+              42.59364524114281
+            ],
+            [
+              25.384914889134425,
+              42.59418279726264
+            ],
+            [
+              25.384892393832075,
+              42.594765601891574
+            ],
+            [
+              25.384870292386175,
+              42.595339442061714
+            ],
+            [
+              25.384846212342122,
+              42.5959676331806
+            ],
+            [
+              25.38483241568979,
+              42.596326709274784
+            ],
+            [
+              25.38481512075026,
+              42.59677571364876
+            ],
+            [
+              25.38480471122476,
+              42.59704517832157
+            ],
+            [
+              25.384786523603445,
+              42.59751871980883
+            ],
+            [
+              25.38473529598516,
+              42.59882888158459
+            ],
+            [
+              25.384733073089976,
+              42.59888516430244
+            ],
+            [
+              25.384705379606128,
+              42.599561985271436
+            ],
+            [
+              25.384695071660566,
+              42.59981397294913
+            ],
+            [
+              25.384692215572496,
+              42.59988376365674
+            ],
+            [
+              25.384691024298792,
+              42.59998042823331
+            ],
+            [
+              25.38384138107955,
+              42.600187971251565
+            ],
+            [
+              25.383590963658786,
+              42.60025013492452
+            ],
+            [
+              25.38331369954294,
+              42.60031895610225
+            ],
+            [
+              25.380887372946486,
+              42.60091634396919
+            ],
+            [
+              25.380934218426848,
+              42.60098337841449
+            ],
+            [
+              25.38396789056445,
+              42.60532410754268
+            ],
+            [
+              25.38398004454481,
+              42.60534176242989
+            ],
+            [
+              25.383982330199355,
+              42.60534503612393
+            ],
+            [
+              25.384578997253783,
+              42.606197245184134
+            ],
+            [
+              25.385438594950575,
+              42.60742677002678
+            ],
+            [
+              25.386547052368943,
+              42.60905712390392
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
