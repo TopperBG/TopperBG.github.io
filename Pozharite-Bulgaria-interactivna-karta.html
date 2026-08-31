@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86-solsbor-identification-20260831">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86</title>
+<meta name="bgwf-build" content="v0.86c-workflow-improvements-20260831">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86c</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1410,6 +1410,29 @@ svg {
 }
 #bg-wildfires-map .bgwf-map-share-menu button+button{margin-top:2px}
 #bg-wildfires-map .bgwf-map-share-menu button:hover{background:var(--muted)}
+#bg-wildfires-map .bgwf-territory-bars{
+  position:absolute;left:8px;top:50%;transform:translateY(-50%);z-index:9500;
+  height:min(52vh,390px);min-height:230px;padding:9px 7px 7px;
+  background:rgba(255,255,255,.82);backdrop-filter:blur(4px);
+  border:1px solid rgba(30,40,50,.18);border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.14);display:none;gap:5px;
+  align-items:flex-end;font:10px/1.1 system-ui,sans-serif;color:#202124;
+}
+#bg-wildfires-map .bgwf-territory-bars.is-visible{display:flex}
+#bg-wildfires-map .bgwf-territory-bar{height:100%;width:25px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+#bg-wildfires-map .bgwf-territory-shaft{width:9px;min-height:2px;height:var(--bar-pct,1%);border-radius:4px 4px 1px 1px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.13)}
+#bg-wildfires-map .bgwf-territory-value{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;margin-bottom:4px;font-weight:650;font-size:9px}
+#bg-wildfires-map .bgwf-territory-label{writing-mode:vertical-rl;transform:rotate(180deg);height:62px;white-space:nowrap;margin-top:4px;font-size:9px}
+#bg-wildfires-map .bgwf-territory-bg{background:#64748b}.bgwf-territory-agri{background:#84a94b}.bgwf-territory-disturbed{background:#8b5e3c}.bgwf-territory-solar{background:#e7b416}.bgwf-territory-pup{background:#f28c28}.bgwf-territory-industry{background:#555}
+#bg-wildfires-map .bgwf-territory-hint{position:absolute;left:100%;top:0;margin-left:7px;background:#fff;border:1px solid #bbb;border-radius:6px;padding:6px 8px;white-space:nowrap;display:none;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+#bg-wildfires-map .bgwf-territory-bars:hover .bgwf-territory-hint{display:block}
+@media(max-width:600px){
+  #bg-wildfires-map .bgwf-territory-bars{left:4px;height:43vh;min-height:210px;padding:6px 3px;gap:2px}
+  #bg-wildfires-map .bgwf-territory-bar{width:17px}
+  #bg-wildfires-map .bgwf-territory-shaft{width:6px}
+  #bg-wildfires-map .bgwf-territory-label,#bg-wildfires-map .bgwf-territory-value{font-size:8px}
+  #bg-wildfires-map .bgwf-territory-disturbed-column{display:none}
+}
 
 
 #bg-wildfires-map .bgwf-year-toggle{
@@ -1463,10 +1486,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.85y</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86c</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.85y</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86c</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1495,6 +1518,15 @@ svg {
     </div>
   </div>
   <div class="bgwf-map-wrap">
+    <div class="bgwf-territory-bars" data-territory-scale-bars aria-label="Сравнение на териториалните площи">
+      <div class="bgwf-territory-bar"><span class="bgwf-territory-value">111 000 km²</span><i class="bgwf-territory-shaft bgwf-territory-bg" style="--bar-pct:100%"></i><span class="bgwf-territory-label">България</span></div>
+      <div class="bgwf-territory-bar"><span class="bgwf-territory-value">≈47 000 km²</span><i class="bgwf-territory-shaft bgwf-territory-agri" style="--bar-pct:42.34%"></i><span class="bgwf-territory-label">Земеделска</span></div>
+      <div class="bgwf-territory-bar bgwf-territory-disturbed-column"><span class="bgwf-territory-value">467,76 km²</span><i class="bgwf-territory-shaft bgwf-territory-disturbed" style="--bar-pct:.42%"></i><span class="bgwf-territory-label">Нарушена</span></div>
+      <div class="bgwf-territory-bar" data-territory-layer="solar"><span class="bgwf-territory-value" data-territory-value>зарежда…</span><i class="bgwf-territory-shaft bgwf-territory-solar"></i><span class="bgwf-territory-label">ФЕЦ</span></div>
+      <div class="bgwf-territory-bar" data-territory-layer="projects"><span class="bgwf-territory-value" data-territory-value>зарежда…</span><i class="bgwf-territory-shaft bgwf-territory-pup"></i><span class="bgwf-territory-label">ПУП</span></div>
+      <div class="bgwf-territory-bar" data-territory-layer="industry"><span class="bgwf-territory-value" data-territory-value>зарежда…</span><i class="bgwf-territory-shaft bgwf-territory-industry"></i><span class="bgwf-territory-label">ТЕЦ/мини</span></div>
+      <div class="bgwf-territory-hint">Площ на заредените полигонни геометрии; точковите обекти не се включват</div>
+    </div>
 <div class="bgwf-province-chip" data-province-chip hidden>
       <span data-province-name></span>
       <button type="button" data-province-reset aria-label="Назад към цяла България">×</button>
@@ -2920,6 +2952,21 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
   }
 ];
 
+// Проверени промишлени обекти, за които разполагаме с надеждно местоположение,
+// но не и с официална/достатъчно точна публична граница. Показват се като точки,
+// за да не се внушава измислен концесионен или кадастрален контур.
+const CURATED_INDUSTRIAL_POINTS = [
+  {
+    id:'BELASHTITSA-QUARRIES', type:'quarry',
+    name:'Кариери „Белащица“ — „Родопи Север“ / „Родопи Юг“',
+    lon:24.727411, lat:42.046039,
+    fuel:'мрамори / строителни материали',
+    area:'≈53 ha обща докладвана добивна площ',
+    info:'Находище „Белащица“. Точката е ориентир към видимия нарушен терен и не представлява официална концесионна граница.',
+    source:'https://www.parliament.bg/'
+  }
+];
+
 
   // v2: старият v1 кеш не се използва, за да не запазваме невалидирани геометрии.
   // Официални концесионни метаданни (НКР / Министерство на енергетиката).
@@ -3504,6 +3551,16 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
           "parcels": ["61813.750.153", "61813.750.389", "61813.750.391", "61813.750.392", "61813.750.394", "61813.750.1"]
       },
       {
+          "id": "SOL-2012-SOLSBOR",
+          "name": "ФЕЦ „Солсбор“",
+          "year": 2012,
+          "mwAc": 10,
+          "lon": 24.30108, "lat": 42.31894,
+          "statusLabel": "действаща · 10 MW · с. Сбор · „СОЛСБОР – К.Г.Д.“ / „СОЛСБОР – Г.К.К.“ · стар ПИ 167017; показано е само надеждното местоположение",
+          "source": "https://www.veiregistar.bg/objects&type=solar-power-plants-over-1-mw",
+          "parcels": []
+      },
+      {
           "id": "SOL-2012-CHERGANOVO",
           "name": "ФЕЦ „Черганово“",
           "year": 2012,
@@ -3572,7 +3629,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.85v', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.86c', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -3943,6 +4000,14 @@ const industryLayer=new VectorLayer({
   source:industryFootprintSource,zIndex:8,visible:layerVisibility.industry,
   style:f=>{
     const type=f.get('industryType'),selected=f.get('selected');
+    if(f.getGeometry()?.getType()==='Point'){
+      const fill=satelliteMode()?'rgba(255,82,82,.94)':'rgba(75,85,99,.92)';
+      const stroke=selected?cssVar('--foreground','#111827'):'#fff';
+      return [
+        new Style({image:new CircleStyle({radius:10,fill:new Fill({color:'rgba(255,255,255,.94)'})})}),
+        new Style({image:new CircleStyle({radius:selected?8:7,fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selected?3:2})})})
+      ];
+    }
     if(satelliteMode()){
       const fill=type==='legacy-acid'?'rgba(34,211,238,.34)':type==='waste'?'rgba(168,85,247,.35)':type==='coal'?'rgba(255,82,82,.44)':type==='ore'?'rgba(255,112,67,.44)':type==='refinery'?'rgba(255,23,68,.42)':'rgba(255,82,82,.40)';
       const stroke=type==='legacy-acid'?'#fb923c':type==='waste'?'#c084fc':type==='ore'?'#ff7043':type==='refinery'?'#ff1744':'#ff5252';
@@ -4255,7 +4320,7 @@ async function shareCurrentMap(){
 const mapShareMenu=document.createElement('div');
 mapShareMenu.className='bgwf-map-share-menu';
 mapShareMenu.hidden=true;
-mapShareMenu.innerHTML='<button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button>';
+mapShareMenu.innerHTML='<button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button><button type="button" data-action="history">Исторически снимки</button>';
 root.appendChild(mapShareMenu);
 let mapContextLonLat=null;
 mapShareMenu.addEventListener('click',async e=>{
@@ -4272,6 +4337,12 @@ mapShareMenu.addEventListener('click',async e=>{
     const query=encodeURIComponent(`${lat.toFixed(6)},${lon.toFixed(6)}`);
     window.open(`https://www.google.com/maps/search/?api=1&query=${query}`,'_blank','noopener');
   }
+  if(action==='history'&&mapContextLonLat){
+    const [lon,lat]=mapContextLonLat;
+    // Google Earth Web отваря избраните координати; историческите кадри се
+    // избират от timeline/„Historical imagery“ в Earth или Google Earth Pro.
+    window.open(`https://earth.google.com/web/search/${lat.toFixed(6)},${lon.toFixed(6)}`,'_blank','noopener');
+  }
 });
 mapTarget.addEventListener('contextmenu',e=>{
   e.preventDefault();
@@ -4281,7 +4352,7 @@ mapTarget.addEventListener('contextmenu',e=>{
   mapContextLonLat=coord?toLonLat(coord):null;
   const rr=root.getBoundingClientRect();
   mapShareMenu.style.left=`${Math.min(e.clientX-rr.left,rr.width-210)}px`;
-  mapShareMenu.style.top=`${Math.min(e.clientY-rr.top,rr.height-78)}px`;
+  mapShareMenu.style.top=`${Math.min(e.clientY-rr.top,rr.height-118)}px`;
   mapShareMenu.hidden=false;
 });
 addEventListener('pointerdown',e=>{
@@ -4343,7 +4414,7 @@ function solarLabel(d){
   return `${project.name}${powerText}${ownerText} · ${timeText} · ${geometryText}${areaText}`;
 }
 function windPlantLabel(d){const mw=Number.isFinite(Number(d.mw))?` · ${Number(d.mw).toLocaleString('bg-BG')} MW`:'';const t=Number.isFinite(Number(d.turbines))?` · ${d.turbines} турбини`:'';return `${d.name}${mw}${t} · ${d.statusLabel}`;}
-function industrialTypeLabel(t){return t==='tpp'?'ТЕЦ':t==='coal'?'Въглищна мина':t==='ore'?'Рудник':t==='refinery'?'Рафинерия':'Индустриален обект';}
+function industrialTypeLabel(t){return t==='tpp'?'ТЕЦ':t==='coal'?'Въглищна мина':t==='ore'?'Рудник':t==='quarry'?'Кариера':t==='refinery'?'Рафинерия':'Индустриален обект';}
 function formatAreaDka(v){return Number.isFinite(v)?(v>=10000?`${Math.round(v/100)*100} дка`:v>=1000?`${Math.round(v/10)*10} дка`:`${Math.round(v)} дка`):'площ —';}
 function liveFireLabel(d){const when=d.observedAt?formatDateTime.format(d.observedAt):'часът не е наличен';const frp=d.frp==null?'':` · FRP ${d.frp.toLocaleString('bg-BG',{maximumFractionDigits:1})} MW`;return `🔥 Текущо Sentinel-3 засичане · ${d.satellite} · ${when}${frp}`;}
 
@@ -4360,7 +4431,8 @@ if(kind==='industry'){
     if(Number.isFinite(meta.additionalAreaDka))official+=` · допълнителна концесионна площ ${formatAreaDka(meta.additionalAreaDka)}`;
     if((Number.isFinite(meta.officialAreaDka)||Number.isFinite(meta.additionalAreaDka))&&!concessionSource.getFeatures().length)official+=' · GIS граница: подготвя се';
   }
-  return `${industrialTypeLabel(d.type)} · ${d.name} · разработена/индустриална площ ${formatAreaDka(f.get('areaDka'))}${official} · ${d.fuel}`;
+  const geometryText=f.getGeometry()?.getType()==='Point'?'само местоположение':`разработена/индустриална площ ${formatAreaDka(f.get('areaDka'))}`;
+  return `${industrialTypeLabel(d.type)} · ${d.name} · ${geometryText}${d.area?` · ${d.area}`:''}${official} · ${d.fuel}`;
 }if(kind==='concession')return `Официална концесионна граница · ${f.get('concessionId')||'—'} · ${f.get('name')||'Концесия'} · ${formatAreaDka(f.get('areaDka'))}`;if(kind==='live')return liveFireLabel(d);if(kind==='effis')return 'EFFIS/Copernicus реален опожарен периметър';return '';}
 const HIT_ORDER={live:100,fire:90,effis:80,concession:70,industry:65,wind:60,solar:55,project:50,red:40,province:1};
 function topFeatureAtPixel(pixel){const found=[];map.forEachFeatureAtPixel(pixel,(f,l)=>{if(f)found.push(f);},{hitTolerance:5});found.sort((a,b)=>(HIT_ORDER[b.get('kind')]||0)-(HIT_ORDER[a.get('kind')]||0));return found[0]||null;}
@@ -4386,7 +4458,7 @@ map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url
   else if(kind==='solar'){detail.innerHTML=`${solarLabel(d)} · ${d.project.statusLabel} · ${safeLink(d.project.source,'официален източник ↗')}`;}
   else if(kind==='wind'){detail.innerHTML=`${windPlantLabel(d)} · ${safeLink(d.source,'източник ↗')}`;}
   else if(kind==='red'){detail.textContent='RED III / REPowerEU · приоритетна зона · геометрия по официалната картографска визуализация към проекта на Плана от март 2026. Приоритетна зона не означава одобрен проект или засегнат имот.';}
-  else if(kind==='industry'){const meta=industrialConcessionMeta[d.id];detail.innerHTML=`<strong>${d.name}</strong> · ${d.fuel} · разработена площ ${formatAreaDka(f.get('areaDka'))}${Number.isFinite(meta?.officialAreaDka)?` · официална концесионна площ ${formatAreaDka(meta.officialAreaDka)}`:''} · ${safeLink(d.source,'обект/оператор ↗')}${meta?.nkrUrl?` · ${safeLink(meta.nkrUrl,`НКР ${meta.concessionId} ↗`)}`:''}`;}
+  else if(kind==='industry'){const meta=industrialConcessionMeta[d.id];const geometryText=f.getGeometry()?.getType()==='Point'?'само надеждно местоположение; без заявен контур':`разработена площ ${formatAreaDka(f.get('areaDka'))}`;detail.innerHTML=`<strong>${d.name}</strong> · ${d.fuel} · ${geometryText}${d.area?` · ${d.area}`:''}${d.info?` · ${d.info}`:''}${Number.isFinite(meta?.officialAreaDka)?` · официална концесионна площ ${formatAreaDka(meta.officialAreaDka)}`:''} · ${safeLink(d.source,'източник ↗')}${meta?.nkrUrl?` · ${safeLink(meta.nkrUrl,`НКР ${meta.concessionId} ↗`)}`:''}`;}
   else if(kind==='concession'){const nkr=f.get('nkrUrl');const src=f.get('sourceUrl');detail.innerHTML=`<strong>${f.get('name')||'Концесионна площ'}</strong> · официална концесионна граница · ${f.get('concessionId')||'—'} · ${formatAreaDka(f.get('areaDka'))}${nkr?` · ${safeLink(nkr,'НКР ↗')}`:''}${src?` · ${safeLink(src,'GIS източник ↗')}`:''}`;}
   else if(kind==='live'){detail.innerHTML=`${liveFireLabel(d)} · ${safeLink(ISKRA_MAP_URL,'провери текущия статус в ИСКРА ↗')}`;}
   else if(kind==='effis'){detail.textContent='EFFIS/Copernicus · реален опожарен периметър за избрания пожар.';}
@@ -4979,7 +5051,8 @@ function industrialGeometryIsSane(site,geometry){if(!geometry||!['Polygon','Mult
 function rebuildIndustrialFeatures(cache){
   const discovered=industrialPolygonSites.flatMap(site=>{const c=cache[industrialOsmKey(site)],geometry=c?.geometry;if(!industrialGeometryIsSane(site,geometry))return[];return[{...site,geometry,areaDka:rawGeometryAreaDka(geometry)}];});
   const curated=CURATED_INDUSTRIAL_FOOTPRINTS.map(site=>({...site,areaDka:rawGeometryAreaDka(site.geometry)}));
-  industrialPolygonFeatures=[...discovered,...curated];
+  const points=CURATED_INDUSTRIAL_POINTS.map(site=>({...site,areaDka:null,geometry:{type:'Point',coordinates:[site.lon,site.lat]}}));
+  industrialPolygonFeatures=[...discovered,...curated,...points];
 }
 function renderIndustryFootprints(){industryFootprintSource.clear();for(const d of industrialPolygonFeatures){try{const f=cloneGeoFeature({type:'Feature',properties:{},geometry:d.geometry});f.set('kind','industry');f.set('data',d);f.set('industryType',d.type);f.set('areaDka',d.areaDka);industryFootprintSource.addFeature(f);}catch(e){dbgWarn('industry-render-rejected',{id:d.id,error:e.message});}}debugState.layerCounts.industry=industryFootprintSource.getFeatures().length;updateLayerStatus();}
 async function ensureIndustrialPolygons(){if(industrialPolygonLoadState==='ready')return industrialPolygonFeatures;if(industrialPolygonLoadPromise)return industrialPolygonLoadPromise;industrialPolygonLoadPromise=(async()=>{const started=performance.now();industrialPolygonLoadState='loading';const cache=readIndustrialGeometryCache();rebuildIndustrialFeatures(cache);renderIndustryFootprints();const missing=industrialPolygonSites.filter(site=>!cache[industrialOsmKey(site)]?.geometry);if(!missing.length){industrialPolygonLoadState='ready';industrialPolygonLoadPromise=null;return industrialPolygonFeatures;}try{const u=new URL(INDUSTRIAL_NOMINATIM_LOOKUP);u.searchParams.set('osm_ids',missing.map(industrialOsmKey).join(','));u.searchParams.set('format','geojson');u.searchParams.set('polygon_geojson','1');u.searchParams.set('addressdetails','0');u.searchParams.set('extratags','1');const r=await fetchMonthlyGis(u,{mode:'cors',headers:{Accept:'application/geo+json, application/json'}});debugState.network.nominatim={status:r.status,ms:Math.round(performance.now()-started)};if(!r.ok)throw new Error(`HTTP ${r.status}`);const gj=await r.json();for(const feature of gj?.features??[]){const p=feature.properties||{},prefix=String(p.osm_type||'').toLowerCase()==='relation'?'R':String(p.osm_type||'').toLowerCase()==='way'?'W':'';const key=prefix&&p.osm_id!=null?`${prefix}${p.osm_id}`:'';const site=industrialPolygonSites.find(s=>industrialOsmKey(s)===key);if(site&&industrialGeometryIsSane(site,feature.geometry))cache[key]={geometry:feature.geometry,properties:p,cachedAt:new Date().toISOString()};else if(site)dbgWarn('industry-geometry-sanity-reject',{site:site.id,key});}writeIndustrialGeometryCache(cache);rebuildIndustrialFeatures(cache);industrialPolygonLoadState='ready';industrialPolygonLoadError=industrialPolygonFeatures.length<industrialPolygonSites.length?`${industrialPolygonSites.length-industrialPolygonFeatures.length} OSM контура липсват`:'';}catch(e){rebuildIndustrialFeatures(cache);industrialPolygonLoadState=industrialPolygonFeatures.length?'ready':'error';industrialPolygonLoadError=e.message;dbgWarn('industry-load-failed',{error:e.message});}industrialPolygonLoadPromise=null;renderIndustryFootprints();debugState.timings.industry=Math.round(performance.now()-started);return industrialPolygonFeatures;})();return industrialPolygonLoadPromise;}
@@ -5344,13 +5417,51 @@ const NSI_DISTURBED_LAND_2025={
   note:'НСИ: „Нарушена територия“ включва имоти за добив на полезни изкопаеми, индустриални и битови отпадъци и деградирали земи.'
 };
 
+const BULGARIA_AREA_SQ_KM=111000;
+const territoryScaleBars=root.querySelector('[data-territory-scale-bars]');
+function vectorSourceAreaSqKm(source){
+  return (source?.getFeatures?.()||[]).reduce((sum,f)=>{
+    const g=f.getGeometry?.();
+    if(!g||g.getType()==='Point')return sum;
+    try{return sum+Math.abs(getGeodesicArea(g,{projection:'EPSG:3857'}))/1e6;}catch{return sum;}
+  },0);
+}
+function formatTerritoryArea(value){
+  if(!(value>0))return 'само точки';
+  return `${value.toLocaleString('bg-BG',{maximumFractionDigits:value<10?2:1})} km²`;
+}
+function updateTerritoryScaleBars(){
+  if(!territoryScaleBars)return;
+  const areas={
+    solar:vectorSourceAreaSqKm(solarSource),
+    projects:vectorSourceAreaSqKm(projectSource),
+    industry:vectorSourceAreaSqKm(industryFootprintSource)
+  };
+  const any=['solar','projects','industry'].some(key=>layerVisibility[key]);
+  territoryScaleBars.classList.toggle('is-visible',any);
+  territoryScaleBars.querySelectorAll('[data-territory-layer]').forEach(column=>{
+    const key=column.dataset.territoryLayer,visible=!!layerVisibility[key],area=areas[key]||0;
+    column.style.display=visible?'flex':'none';
+    const value=column.querySelector('[data-territory-value]');
+    const shaft=column.querySelector('.bgwf-territory-shaft');
+    if(value)value.textContent=formatTerritoryArea(area);
+    if(shaft)shaft.style.setProperty('--bar-pct',`${Math.max(.18,Math.min(100,area/BULGARIA_AREA_SQ_KM*100))}%`);
+  });
+}
+let territoryScaleUpdateFrame=0;
+function scheduleTerritoryScaleBarsUpdate(){
+  if(territoryScaleUpdateFrame)return;
+  territoryScaleUpdateFrame=requestAnimationFrame(()=>{territoryScaleUpdateFrame=0;updateTerritoryScaleBars();});
+}
+[solarSource,projectSource,industryFootprintSource].forEach(source=>source.on('change',scheduleTerritoryScaleBarsUpdate));
+
 const configs=[['solar','Изградени ВЕИ','#f59e0b'],['projects','ПУП/ПИ проекти','#7c3aed'],['future','RED III/REPowerEU','#2f9e44'],['industry','ТЕЦ / мини','#4b5563']];configs.forEach(([key,label,color])=>{
   const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar'){solarLayer.setVisible(layerVisibility.solar);windLayer.setVisible(layerVisibility.solar);}if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
 concessionLayer.setVisible(layerVisibility.industry);
 rebuildEstimatedConcessionAreas();
-if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints(),0);if(layerVisibility.industry)void Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);}updateLayerStatus();scheduleUrlSync();}});
+if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints(),0);if(layerVisibility.industry)void Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);}updateLayerStatus();updateTerritoryScaleBars();scheduleUrlSync();}});
   if(key==='future'){
     const msg='Важно: приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя';
     btn.dataset.helpTooltip=msg;
@@ -5363,6 +5474,7 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     btn.title=msg;
   }
 });const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);updateIndustryLegendHint();}
+updateTerritoryScaleBars();
 
 
 window.bgwfGisCacheStatus=async function(){
