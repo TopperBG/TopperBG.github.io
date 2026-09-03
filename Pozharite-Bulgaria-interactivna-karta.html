@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86l-marino-pole-solar-20260903">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86l</title>
+<meta name="bgwf-build" content="v0.86m-cherganovo-location-20260903">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86m</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1487,10 +1487,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86l</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86m</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86l</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86m</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2872,6 +2872,13 @@ const INDUSTRIAL_CURATED_AUX = [];
 
 const CURATED_SOLAR_FOOTPRINTS = [
   {
+    id:'SOL-2012-CHERGANOVO', name:'ФЕЦ „Черганово“', year:2012, mwpDc:29.3,
+    statusLabel:'действаща ФЕЦ 29,3 MW · в експлоатация от 28.06.2012 г. · местоположение потвърдено от Waze; проверен OSM контур (не е кадастрална граница)',
+    source:'https://www.openstreetmap.org/way/320537211',
+    parcelRef:'OSM-W320537211',
+    geometry:{type:'Polygon',coordinates:[[[25.4906667,42.5839235],[25.4871804,42.5854522],[25.4871649,42.5857173],[25.4863758,42.5860036],[25.4862573,42.5858570],[25.4812625,42.5880470],[25.4806209,42.5872255],[25.4804170,42.5873085],[25.4799823,42.5867681],[25.4756838,42.5885605],[25.4757392,42.5887224],[25.4759860,42.5887303],[25.4764380,42.5899614],[25.4771501,42.5902469],[25.4785126,42.5919016],[25.4795432,42.5914482],[25.4790437,42.5911078],[25.4795261,42.5907494],[25.4800821,42.5912112],[25.4864779,42.5883974],[25.4864543,42.5892510],[25.4899050,42.5899315],[25.4911868,42.5896866],[25.4925054,42.5897864],[25.4947854,42.5862834],[25.4947507,42.5862302],[25.4922922,42.5859009],[25.4906667,42.5839235]]]}
+  },
+  {
     id:'SOL-2012-MARINO-POLE-ALFA', name:'ФЕЦ „Алфа Солар Инвест“ / „Алфа Солар Груп“ — Марино поле', year:2012, mwAc:8,
     statusLabel:'две действащи ФЕЦ на обща площадка · 5 MW + 3 MW · в експлоатация от 27.06.2012 г. · сателитно проследен контур (не е кадастрална граница)',
     source:'https://www.veiregistar.bg/object/fets-alfa-solar-invest',
@@ -3597,9 +3604,10 @@ const CURATED_INDUSTRIAL_POINTS = [
           "name": "ФЕЦ „Черганово“",
           "year": 2012,
           "mwpDc": 29.3,
-          "lon": 25.34, "lat": 42.59,
-          "statusLabel": "действаща · район Черганово/Казанлък · публичен ВЕИ регистър",
-          "source": "https://www.veiregistar.bg/objects&type=solar-power-plants-over-1-mw",
+          "lon": 25.48565, "lat": 42.58801,
+          "curatedFootprint": true,
+          "statusLabel": "действаща · 29,3 MW · реална площадка източно от Черганово · Waze 42.588012, 25.485650 · OSM контур W320537211",
+          "source": "https://www.veiregistar.bg/object/fets-cherganovo",
           "parcels": []
       },
       {
@@ -3661,7 +3669,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.86l', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.86m', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -5614,6 +5622,7 @@ function runSelfTests(){
   selfTest('maglizh-hybrid-spec',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2026-MAGLIZH');return{ok:p?.mwpDc===161&&p?.mwAc===120&&p?.bessMw===36&&p?.bessMwh===72&&p.parcels.length>=90,project:p&&{mwpDc:p.mwpDc,mwAc:p.mwAc,bessMw:p.bessMw,bessMwh:p.bessMwh,parcels:p.parcels.length}};});
   selfTest('apriltsi-solsbor-separate-projects',()=>{const apriltsi=operatingSolarProjects.find(d=>d.id==='SOL-2024-APRILTSI'),solsbor=operatingSolarProjects.find(d=>d.id==='SOL-2011-SOLSBOR'),apriltsiFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2024-APRILTSI'),solsborFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2011-SOLSBOR');return{ok:apriltsi?.mwAc===400&&apriltsi?.curatedFootprint===true&&solsbor?.mwpDc===10&&solsbor?.curatedFootprint===true&&solsbor.lat<42.325&&Array.isArray(apriltsiFootprint?.geometry?.coordinates?.[0])&&apriltsiFootprint.geometry.coordinates[0].length>300&&Array.isArray(solsborFootprint?.geometry?.coordinates?.[0])&&solsborFootprint.geometry.coordinates[0].length>=14,apriltsi:apriltsi&&{mwAc:apriltsi.mwAc},solsbor:solsbor&&{mwpDc:solsbor.mwpDc,lon:solsbor.lon,lat:solsbor.lat},apriltsiFootprintNodes:apriltsiFootprint?.geometry?.coordinates?.[0]?.length||0,solsborFootprintNodes:solsborFootprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('marino-pole-alfa-solar',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA');return{ok:p?.mwAc===8&&p?.curatedFootprint===true&&p.lon>24.86&&p.lon<24.89&&p.lat>42.57&&p.lat<42.60&&footprint?.geometry?.coordinates?.[0]?.length>=12,project:p&&{mwAc:p.mwAc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
+  selfTest('cherganovo-waze-osm-location',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-CHERGANOVO'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-CHERGANOVO');return{ok:p?.mwpDc===29.3&&p?.curatedFootprint===true&&Math.abs(p.lon-25.48565)<0.00001&&Math.abs(p.lat-42.58801)<0.00001&&footprint?.parcelRef==='OSM-W320537211'&&footprint?.geometry?.coordinates?.[0]?.length>=28,project:p&&{mwpDc:p.mwpDc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('solar-location-fallbacks',()=>{const points=operatingSolarProjects.filter(p=>!p.parcels?.length);const bad=points.filter(p=>!Number.isFinite(Number(p.lon))||!Number.isFinite(Number(p.lat))||p.lon<20||p.lon>31||p.lat<39||p.lat>47);return{ok:points.length>0&&bad.length===0,points:points.length,bad:bad.map(p=>p.id)};});
   selfTest('province-count',()=>({ok:provinceSource.getFeatures().length===28,count:provinceSource.getFeatures().length,expected:28}));
   selfTest('province-boundary-contrast',()=>{
