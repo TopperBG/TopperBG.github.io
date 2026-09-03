@@ -1,0 +1,73 @@
+name: Apply Pazardzhik solar polygons
+on:
+  push:
+    paths:
+      - .github/workflows/apply-pazardzhik-solar-polygons.yml
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch HTML
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('Pozharite-Bulgaria-interactivna-karta.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace('v0.86h-larger-territory-bars-20260903','v0.86i-pazardzhik-solar-polygons-20260903',1)
+          s=s.replace('· v0.86h</title>','· v0.86i</title>',1)
+          old='''          "id": "SOL-2026-APRILTSI-234",
+          "name": "ФЕЦ „Априлци“ — поле 23.4",
+          "year": 2026,
+          "mw": 5.42568,
+          "statusLabel": "въведено в експлоатация поле 23.4 · 2026 · само местоположение",
+          "source": "https://www.dker.bg/uploads/reshenia/2026/res-r-644-2026.pdf",
+          "lon": 24.28255,
+          "lat": 42.34750
+      },'''
+          new='''          "id": "SOL-APRILTSI-REAL-STATES",
+          "name": "ФЕЦ „Априлци“",
+          "year": 2026,
+          "mwpDc": 400,
+          "mwAc": 300,
+          "statusLabel": "действащ комплекс · кадастрални полигони по КЕВР/Община Пазарджик; включени потвърдени ПИ на полета и площадки",
+          "source": "https://portal.dker.bg/registri/razreshenia",
+          "lon": 24.28255,
+          "lat": 42.34750,
+          "parcels": [
+            "65468.48.17","65468.48.18","65468.51.6","65468.51.12","65468.51.13","65468.51.16","65468.52.5","65468.52.8","65468.52.10","65468.52.12","65468.52.13","65468.52.20","65468.52.22","65468.52.23","65468.52.24","65468.52.25","65468.53.3","65468.53.4","65468.53.8","65468.53.10","65468.53.12","65468.53.16","65468.53.17","65468.53.19","65468.53.20","65468.53.22","65468.53.23","65468.53.24","65468.53.27","65468.58.17","65468.58.20","65468.62.1","65468.62.3","65468.62.8","65468.63.6","65468.64.1","65468.64.2","65468.64.6","65468.64.8","65468.64.9","65468.64.17","65468.64.18","65468.64.19","65468.64.21","65468.64.23","65468.64.31","65468.104.16","65468.115.27","65468.115.26","65468.115.6"
+          ]
+      },
+      {
+          "id": "SOL-SOLSBOR-10MW",
+          "name": "ФЕЦ „Солсбор“",
+          "year": 2011,
+          "mw": 10,
+          "statusLabel": "действаща · с. Сбор · приблизителен полигон по площадката на стар ПИ 167017; границата е ориентировъчна",
+          "source": "https://www.ef-panels.com/projects-bg",
+          "lon": 24.3006,
+          "lat": 42.3204,
+          "approxGeometry": {"type":"Polygon","coordinates":[[[24.2929,42.3249],[24.2982,42.3260],[24.3048,42.3252],[24.3090,42.3221],[24.3081,42.3169],[24.3032,42.3148],[24.2970,42.3153],[24.2924,42.3184],[24.2929,42.3249]]]}
+      },'''
+          if old not in s:
+              raise SystemExit('Apriltsi block not found')
+          s=s.replace(old,new,1)
+          # Make approximate geometry render through the same solar source when supported.
+          anchor='''  function hasSolarMapGeometry(project){
+    return !!project.parcels?.length||(Number.isFinite(Number(project.lon))&&Number.isFinite(Number(project.lat)));
+  }'''
+          if anchor in s:
+              s=s.replace(anchor,'''  function hasSolarMapGeometry(project){
+    return !!project.parcels?.length||!!project.approxGeometry||(Number.isFinite(Number(project.lon))&&Number.isFinite(Number(project.lat)));
+  }''',1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit HTML
+        run: |
+          git config user.name "TopperBG map bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add Pozharite-Bulgaria-interactivna-karta.html
+          git commit -m "Map: add Pazardzhik Apriltsi and Solsbor solar geometry"
+          git push
