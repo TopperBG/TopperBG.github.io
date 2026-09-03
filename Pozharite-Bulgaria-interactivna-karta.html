@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86n-chobanka-sliven-solar-20260903">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86n</title>
+<meta name="bgwf-build" content="v0.86o-pobeda-location-20260903">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86o</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1487,10 +1487,10 @@ svg {
     EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86n</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86o</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86n</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86o</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2872,6 +2872,12 @@ const INDUSTRIAL_CURATED_AUX = [];
 
 const CURATED_SOLAR_FOOTPRINTS = [
   {
+    id:'SOL-2012-POBEDA', name:'ФЕЦ „Победа“', year:2012, mwpDc:50,
+    statusLabel:'действаща ФЕЦ 50 MW по ВЕИ регистъра · в експлоатация от 20.06.2012 г. · OSM отбелязва 51 MW · проверен OSM контур (не е кадастрална граница)',
+    source:'https://www.openstreetmap.org/way/469655230', parcelRef:'OSM-W469655230',
+    geometry:{type:'Polygon',coordinates:[[[24.5621673,43.5154352],[24.5608078,43.5140069],[24.5603378,43.5139344],[24.556842,43.515129],[24.5557002,43.5155192],[24.5506706,43.517023],[24.5501158,43.5170924],[24.5410358,43.519573],[24.5404696,43.5194385],[24.5349673,43.5208033],[24.5321537,43.5213255],[24.5317285,43.5214058],[24.5313689,43.5214738],[24.5295819,43.5218114],[24.5292057,43.5218825],[24.5289081,43.5223421],[24.5282637,43.5252397],[24.5317792,43.5254335],[24.5327299,43.5255589],[24.5330852,43.5256494],[24.533306,43.5258861],[24.5570167,43.5178598],[24.5572935,43.5177661],[24.5624994,43.5160037],[24.5622895,43.5156444],[24.5621673,43.5154352]]]}
+  },
+  {
     id:'SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED', name:'ФЕЦ югозападно от Сливен — неидентифициран',
     statusLabel:'изградена соларна площадка · име, мощност и година не са потвърдени · проверен OSM контур (не е кадастрална граница)',
     source:'https://www.openstreetmap.org/way/483626650', parcelRef:'OSM-W483626650',
@@ -3633,9 +3639,10 @@ const CURATED_INDUSTRIAL_POINTS = [
           "name": "ФЕЦ „Победа“",
           "year": 2012,
           "mwpDc": 50,
-          "lon": 24.52, "lat": 43.57,
-          "statusLabel": "действаща · район Победа/Долна Митрополия · публичен ВЕИ регистър",
-          "source": "https://www.veiregistar.bg/objects&type=solar-power-plants-over-1-mw",
+          "lon": 24.54538, "lat": 43.52000,
+          "curatedFootprint": true,
+          "statusLabel": "действаща · 50 MW по ВЕИ регистъра · реална площадка при с. Победа · Google точката попада в OSM контур W469655230",
+          "source": "https://www.veiregistar.bg/object/fets-pobeda",
           "parcels": []
       },
       {
@@ -3714,7 +3721,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.86n', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.86o', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -5669,6 +5676,7 @@ function runSelfTests(){
   selfTest('marino-pole-alfa-solar',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA');return{ok:p?.mwAc===8&&p?.curatedFootprint===true&&p.lon>24.86&&p.lon<24.89&&p.lat>42.57&&p.lat<42.60&&footprint?.geometry?.coordinates?.[0]?.length>=12,project:p&&{mwAc:p.mwAc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('cherganovo-waze-osm-location',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-CHERGANOVO'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-CHERGANOVO');return{ok:p?.mwpDc===29.3&&p?.curatedFootprint===true&&Math.abs(p.lon-25.48565)<0.00001&&Math.abs(p.lat-42.58801)<0.00001&&footprint?.parcelRef==='OSM-W320537211'&&footprint?.geometry?.coordinates?.[0]?.length>=28,project:p&&{mwpDc:p.mwpDc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('chobanka-and-reported-solar-sites',()=>{const chobanka=operatingSolarProjects.find(d=>d.id==='SOL-2011-CHOBANKA'),ids=['SOL-SLIVEN-DINAMO','SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED','SOL-CHERGANOVO-WEST-UNIDENTIFIED'],footprints=ids.map(id=>CURATED_SOLAR_FOOTPRINTS.find(d=>d.id===id));return{ok:chobanka?.parcels?.includes('67338.92.47')&&Math.abs(chobanka.lon-26.35234)<0.00001&&footprints.every(d=>d?.geometry?.coordinates?.[0]?.length>=7),chobanka:chobanka&&{lon:chobanka.lon,lat:chobanka.lat,parcels:chobanka.parcels},footprintNodes:footprints.map(d=>d?.geometry?.coordinates?.[0]?.length||0)};});
+  selfTest('pobeda-google-osm-location',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-POBEDA'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-POBEDA');return{ok:p?.mwpDc===50&&p?.curatedFootprint===true&&Math.abs(p.lon-24.54538)<0.00001&&Math.abs(p.lat-43.52)<0.00001&&footprint?.parcelRef==='OSM-W469655230'&&footprint?.geometry?.coordinates?.[0]?.length===26,project:p&&{mwpDc:p.mwpDc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('solar-location-fallbacks',()=>{const points=operatingSolarProjects.filter(p=>!p.parcels?.length);const bad=points.filter(p=>!Number.isFinite(Number(p.lon))||!Number.isFinite(Number(p.lat))||p.lon<20||p.lon>31||p.lat<39||p.lat>47);return{ok:points.length>0&&bad.length===0,points:points.length,bad:bad.map(p=>p.id)};});
   selfTest('province-count',()=>({ok:provinceSource.getFeatures().length===28,count:provinceSource.getFeatures().length,expected:28}));
   selfTest('province-boundary-contrast',()=>{
