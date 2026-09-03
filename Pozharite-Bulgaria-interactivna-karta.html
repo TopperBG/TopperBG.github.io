@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86g-territory-grid-counter-fallback-20260831">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86g</title>
+<meta name="bgwf-build" content="v0.86h-larger-territory-bars-20260903">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86h</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1481,7 +1481,20 @@ svg {
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
-</head>
+<style id="territory-bars-size-tuning-v086h">
+#territory-scale-bars { height:min(64vh,500px)!important; min-height:300px!important; padding:11px 9px 9px!important; gap:7px!important; }
+#territory-scale-bars .tb { width:31px!important; }
+#territory-scale-bars .shaft { width:13px!important; }
+#territory-scale-bars .val { font-size:10px!important; margin-bottom:5px!important; }
+#territory-scale-bars .lab { font-size:10px!important; height:72px!important; margin-top:5px!important; }
+@media (max-width:600px) {
+  #territory-scale-bars { left:4px!important; height:54vh!important; min-height:270px!important; padding:8px 5px 7px!important; gap:4px!important; }
+  #territory-scale-bars .tb { width:22px!important; }
+  #territory-scale-bars .shaft { width:9px!important; }
+  #territory-scale-bars .lab, #territory-scale-bars .val { font-size:9px!important; }
+  #territory-scale-bars .lab { height:66px!important; }
+}
+</style></head>
 <body>
 <div id="bg-wildfires-map" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
   <header class="bgwf-brand">
