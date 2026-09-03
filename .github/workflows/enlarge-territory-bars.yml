@@ -1,7 +1,6 @@
 name: Enlarge territory bars
 on:
-  push:
-    paths: ['.github/workflows/enlarge-territory-bars.yml']
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -9,37 +8,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Enlarge territory bars
-        shell: python
+      - name: Enlarge bars
         run: |
+          python3 - <<'PY'
           from pathlib import Path
-          p=Path('Pozharite-Bulgaria-interactivna-karta.html')
-          s=p.read_text(encoding='utf-8')
-          marker='territory-bars-size-tuning-v086h'
-          if marker in s: raise SystemExit('already installed')
-          css='''\n<style id="territory-bars-size-tuning-v086h">
-/* Larger territory comparison bars: desktop + portrait mobile */
-#territory-scale-bars{height:min(64vh,500px)!important;min-height:300px!important;padding:11px 9px 9px!important;gap:7px!important}
-#territory-scale-bars .tb{width:31px!important}
-#territory-scale-bars .shaft{width:13px!important}
-#territory-scale-bars .val{font-size:10px!important;margin-bottom:5px!important}
-#territory-scale-bars .lab{font-size:10px!important;height:72px!important;margin-top:5px!important}
-@media(max-width:600px){
- #territory-scale-bars{left:4px!important;height:54vh!important;min-height:270px!important;padding:8px 5px 7px!important;gap:4px!important}
- #territory-scale-bars .tb{width:22px!important}
- #territory-scale-bars .shaft{width:9px!important}
- #territory-scale-bars .lab,#territory-scale-bars .val{font-size:9px!important}
- #territory-scale-bars .lab{height:66px!important}
-}
-</style>\n'''
-          s=s.replace('</head>',css+'</head>',1)
-          s=s.replace('v0.86g-territory-grid-counter-fallback-20260831','v0.86h-larger-territory-bars-20260903',1)
-          s=s.replace('· v0.86g</title>','· v0.86h</title>',1)
-          p.write_text(s,encoding='utf-8')
-      - name: Commit
+          p = Path('Pozharite-Bulgaria-interactivna-karta.html')
+          s = p.read_text(encoding='utf-8')
+          marker = 'territory-bars-size-tuning-v086h'
+          if marker not in s:
+              css = '''<style id="territory-bars-size-tuning-v086h">
+          #territory-scale-bars { height:min(64vh,500px)!important; min-height:300px!important; padding:11px 9px 9px!important; gap:7px!important; }
+          #territory-scale-bars .tb { width:31px!important; }
+          #territory-scale-bars .shaft { width:13px!important; }
+          #territory-scale-bars .val { font-size:10px!important; margin-bottom:5px!important; }
+          #territory-scale-bars .lab { font-size:10px!important; height:72px!important; margin-top:5px!important; }
+          @media (max-width:600px) {
+            #territory-scale-bars { left:4px!important; height:54vh!important; min-height:270px!important; padding:8px 5px 7px!important; gap:4px!important; }
+            #territory-scale-bars .tb { width:22px!important; }
+            #territory-scale-bars .shaft { width:9px!important; }
+            #territory-scale-bars .lab, #territory-scale-bars .val { font-size:9px!important; }
+            #territory-scale-bars .lab { height:66px!important; }
+          }
+          </style>'''
+              s = s.replace('</head>', css + '</head>', 1)
+              s = s.replace('v0.86g-territory-grid-counter-fallback-20260831', 'v0.86h-larger-territory-bars-20260903', 1)
+              s = s.replace('· v0.86g</title>', '· v0.86h</title>', 1)
+              p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit changes
         run: |
-          git config user.name 'TopperBG map bot'
-          git config user.email 'actions@users.noreply.github.com'
+          git config user.name "TopperBG map bot"
+          git config user.email "actions@users.noreply.github.com"
           git add Pozharite-Bulgaria-interactivna-karta.html
-          git commit -m 'UI: enlarge territory bars for desktop and mobile'
+          git diff --cached --quiet || git commit -m "UI enlarge territory bars"
           git push
