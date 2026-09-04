@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86r-data-notice-in-filters-20260904">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86r</title>
+<meta name="bgwf-build" content="v0.86s-landscape-collapsible-filters-20260904">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86s</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -814,7 +814,7 @@ svg {
 }
 
   #bg-wildfires-map .bgwf-mobile-filter-toggle { display:none; }
-  @media (max-width:700px) {
+  @media (max-width:700px), (max-height:600px) and (hover:none) {
     #bg-wildfires-map .bgwf-floating-controls { padding:.34rem .55rem; border-radius:.8rem; }
     #bg-wildfires-map .bgwf-mobile-filter-toggle {
       display:flex; width:100%; min-height:30px; align-items:center; justify-content:space-between;
@@ -1484,10 +1484,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86r</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86s</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86r</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86s</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -3719,7 +3719,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.86r', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.86s', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -3810,7 +3810,8 @@ function updateFloatingZoomPosition(){
 }
 addEventListener('scroll',updateFloatingZoomPosition,{passive:true}); addEventListener('resize',()=>{updateFloatingZoomPosition();map?.updateSize();},{passive:true});
 
-const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia('(max-width:700px)').matches)mobileFooter.open=false;
+const compactMobileQuery='(max-width:700px), (max-height:600px) and (hover:none)';
+const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia(compactMobileQuery).matches)mobileFooter.open=false;
 const mobileFilterToggle=root.querySelector('[data-mobile-filter-toggle]');
 mobileFilterToggle?.addEventListener('click',()=>{
   const open=!filterPanel?.classList.contains('is-mobile-open');
@@ -5712,7 +5713,7 @@ function runSelfTests(){
   selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
-  selfTest('mobile-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body'),isMobile:matchMedia('(max-width:700px)').matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded')}));
+  selfTest('mobile-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded')}));
   selfTest('mobile-zoom-controls',()=>({ok:['zoom-in','zoom-out','zoom-reset'].every(name=>!!root.querySelector(`[data-${name}]`)),buttons:root.querySelectorAll('.bgwf-zoom-controls button').length,homeScaleTarget:1}));
   selfTest('zoom-status-and-url-sync',()=>({ok:!!zoomFactorEl&&typeof window.bgwfCurrentMapUrl==='function',zoomText:zoomFactorEl?.textContent,url:window.bgwfCurrentMapUrl?.()}));
   selfTest('ol-projection-roundtrip',()=>{const src=[25.25,42.75],back=toLonLat(fromLonLat(src)),err=Math.hypot(back[0]-src[0],back[1]-src[1]);return{ok:err<1e-9,errorDegrees:err};});
