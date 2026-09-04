@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86o-pobeda-location-20260903">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86o</title>
+<meta name="bgwf-build" content="v0.86p-belashtitsa-cadastre-solsbor-dedup-20260904">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86p</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1484,13 +1484,13 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
   <div class="bgwf-data-notice" role="note">
-    EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са данни на <strong>ИАГ</strong> към 31.12.2025 г.
+    EFFIS/Copernicus картографира предимно по-големи пожарни периметри. За 2025 г. са използвани данни на <strong>ИАГ</strong> към 31.12.2025 г. Когато източникът предлага онлайн услуга, актуалните данни и геометрии се извличат при зареждане на картата от <strong>АГКК/КАИС–INSPIRE, МОСВ, КЕВР, АУЕР, ИАГ, EFFIS/Copernicus, Sentinel‑3 SLSTR/EUMETSAT, ИСКРА, ArcGIS/Esri и OpenStreetMap</strong>; останалите официални справки са вградени с посочена дата на актуалност.
   </div>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86o</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86p</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86o</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86p</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2938,6 +2938,15 @@ const CURATED_SOLAR_FOOTPRINTS = [
 // supplied and checked by the map author. They are not cadastral boundaries.
 const CURATED_INDUSTRIAL_FOOTPRINTS = [
   {
+    id:'BELASHTITSA-QUARRY-PI-03304-31-1', type:'quarry',
+    name:'Кариера „Белащица“ — кадастрален ПИ 03304.31.1',
+    fuel:'мрамори / строителни материали',
+    area:'кадастрална площ 204 205 m² (20,42 ha); не е равнозначна на пълната концесионна граница',
+    info:'Официална граница на ПИ 03304.31.1 от АГКК INSPIRE; посочената Google точка попада в този имот.',
+    source:'https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0',
+    geometry:{type:'Polygon',coordinates:[[[24.731547289,42.046613293],[24.730665177,42.046453615],[24.730348465,42.046191951],[24.729777258,42.044145731],[24.729962403,42.043775110],[24.729629844,42.043900088],[24.729449452,42.043850262],[24.728995501,42.043824101],[24.728653268,42.043829373],[24.727957550,42.044017970],[24.727589327,42.044157861],[24.727142151,42.044332561],[24.726828876,42.044438647],[24.725465848,42.045190949],[24.725518286,42.047158210],[24.725758141,42.048190913],[24.726037589,42.048319958],[24.727909928,42.048721732],[24.728083834,42.048777467],[24.728517614,42.048850790],[24.730135326,42.048575679],[24.730505015,42.048410319],[24.730458738,42.048382616],[24.730756456,42.048191413],[24.731311438,42.047968991],[24.731547289,42.046613293]]]}
+  },
+  {
     id:'ME-WASTE-GALABOVO', type:'waste', name:'Марица-изток · западен сгуро-/пепелен комплекс',
     fuel:'сгуропепелина, насипи и технологични води',
     info:'сателитно установен промишлен отпечатък; ориентировъчен контур, не кадастрална граница',
@@ -3005,17 +3014,7 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
 // Проверени промишлени обекти, за които разполагаме с надеждно местоположение,
 // но не и с официална/достатъчно точна публична граница. Показват се като точки,
 // за да не се внушава измислен концесионен или кадастрален контур.
-const CURATED_INDUSTRIAL_POINTS = [
-  {
-    id:'BELASHTITSA-QUARRIES', type:'quarry',
-    name:'Кариери „Белащица“ — „Родопи Север“ / „Родопи Юг“',
-    lon:24.727411, lat:42.046039,
-    fuel:'мрамори / строителни материали',
-    area:'≈53 ha обща докладвана добивна площ',
-    info:'Находище „Белащица“. Точката е ориентир към видимия нарушен терен и не представлява официална концесионна граница.',
-    source:'https://www.parliament.bg/'
-  }
-];
+const CURATED_INDUSTRIAL_POINTS = [];
 
 
   // v2: старият v1 кеш не се използва, за да не запазваме невалидирани геометрии.
@@ -3614,16 +3613,6 @@ const CURATED_INDUSTRIAL_POINTS = [
           "parcels": ["61813.750.153", "61813.750.389", "61813.750.391", "61813.750.392", "61813.750.394", "61813.750.1"]
       },
       {
-          "id": "SOL-2012-SOLSBOR",
-          "name": "ФЕЦ „Солсбор“",
-          "year": 2012,
-          "mwAc": 10,
-          "lon": 24.30108, "lat": 42.31894,
-          "statusLabel": "действаща · 10 MW · с. Сбор · „СОЛСБОР – К.Г.Д.“ / „СОЛСБОР – Г.К.К.“ · стар ПИ 167017; показано е само надеждното местоположение",
-          "source": "https://www.veiregistar.bg/objects&type=solar-power-plants-over-1-mw",
-          "parcels": []
-      },
-      {
           "id": "SOL-2012-CHERGANOVO",
           "name": "ФЕЦ „Черганово“",
           "year": 2012,
@@ -3721,7 +3710,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.86o', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.86p', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -5672,7 +5661,8 @@ function runSelfTests(){
   selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
   selfTest('large-solar-national-sample',()=>{const missing=largeOperatingSolarProjects.filter(p=>!hasSolarMapGeometry(p));return{ok:largeOperatingSolarProjects.length>=40&&missing.length===0,thresholdMwp:LARGE_SOLAR_THRESHOLD_MWP,projects:largeOperatingSolarProjects.length,missingGeometry:missing.map(p=>p.id)};});
   selfTest('maglizh-hybrid-spec',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2026-MAGLIZH');return{ok:p?.mwpDc===161&&p?.mwAc===120&&p?.bessMw===36&&p?.bessMwh===72&&p.parcels.length>=90,project:p&&{mwpDc:p.mwpDc,mwAc:p.mwAc,bessMw:p.bessMw,bessMwh:p.bessMwh,parcels:p.parcels.length}};});
-  selfTest('apriltsi-solsbor-separate-projects',()=>{const apriltsi=operatingSolarProjects.find(d=>d.id==='SOL-2024-APRILTSI'),solsbor=operatingSolarProjects.find(d=>d.id==='SOL-2011-SOLSBOR'),apriltsiFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2024-APRILTSI'),solsborFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2011-SOLSBOR');return{ok:apriltsi?.mwAc===400&&apriltsi?.curatedFootprint===true&&solsbor?.mwpDc===10&&solsbor?.curatedFootprint===true&&solsbor.lat<42.325&&Array.isArray(apriltsiFootprint?.geometry?.coordinates?.[0])&&apriltsiFootprint.geometry.coordinates[0].length>300&&Array.isArray(solsborFootprint?.geometry?.coordinates?.[0])&&solsborFootprint.geometry.coordinates[0].length>=14,apriltsi:apriltsi&&{mwAc:apriltsi.mwAc},solsbor:solsbor&&{mwpDc:solsbor.mwpDc,lon:solsbor.lon,lat:solsbor.lat},apriltsiFootprintNodes:apriltsiFootprint?.geometry?.coordinates?.[0]?.length||0,solsborFootprintNodes:solsborFootprint?.geometry?.coordinates?.[0]?.length||0};});
+  selfTest('apriltsi-solsbor-separate-projects',()=>{const apriltsi=operatingSolarProjects.find(d=>d.id==='SOL-2024-APRILTSI'),solsborRows=operatingSolarProjects.filter(d=>d.id.includes('SOLSBOR')),solsbor=solsborRows[0],apriltsiFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2024-APRILTSI'),solsborFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2011-SOLSBOR');return{ok:apriltsi?.mwAc===400&&apriltsi?.curatedFootprint===true&&solsborRows.length===1&&solsbor?.mwpDc===10&&solsbor?.curatedFootprint===true&&solsbor.lat<42.325&&Array.isArray(apriltsiFootprint?.geometry?.coordinates?.[0])&&apriltsiFootprint.geometry.coordinates[0].length>300&&Array.isArray(solsborFootprint?.geometry?.coordinates?.[0])&&solsborFootprint.geometry.coordinates[0].length>=14,apriltsi:apriltsi&&{mwAc:apriltsi.mwAc},solsbor:solsbor&&{mwpDc:solsbor.mwpDc,lon:solsbor.lon,lat:solsbor.lat},solsborRows:solsborRows.length,apriltsiFootprintNodes:apriltsiFootprint?.geometry?.coordinates?.[0]?.length||0,solsborFootprintNodes:solsborFootprint?.geometry?.coordinates?.[0]?.length||0};});
+  selfTest('belashtitsa-cadastral-footprint',()=>{const q=CURATED_INDUSTRIAL_FOOTPRINTS.find(d=>d.id==='BELASHTITSA-QUARRY-PI-03304-31-1');return{ok:CURATED_INDUSTRIAL_POINTS.every(d=>d.id!=='BELASHTITSA-QUARRIES')&&q?.geometry?.coordinates?.[0]?.length===26&&q.area.includes('204 205'),parcel:'03304.31.1',nodes:q?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('marino-pole-alfa-solar',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA');return{ok:p?.mwAc===8&&p?.curatedFootprint===true&&p.lon>24.86&&p.lon<24.89&&p.lat>42.57&&p.lat<42.60&&footprint?.geometry?.coordinates?.[0]?.length>=12,project:p&&{mwAc:p.mwAc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('cherganovo-waze-osm-location',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-CHERGANOVO'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-CHERGANOVO');return{ok:p?.mwpDc===29.3&&p?.curatedFootprint===true&&Math.abs(p.lon-25.48565)<0.00001&&Math.abs(p.lat-42.58801)<0.00001&&footprint?.parcelRef==='OSM-W320537211'&&footprint?.geometry?.coordinates?.[0]?.length>=28,project:p&&{mwpDc:p.mwpDc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('chobanka-and-reported-solar-sites',()=>{const chobanka=operatingSolarProjects.find(d=>d.id==='SOL-2011-CHOBANKA'),ids=['SOL-SLIVEN-DINAMO','SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED','SOL-CHERGANOVO-WEST-UNIDENTIFIED'],footprints=ids.map(id=>CURATED_SOLAR_FOOTPRINTS.find(d=>d.id===id));return{ok:chobanka?.parcels?.includes('67338.92.47')&&Math.abs(chobanka.lon-26.35234)<0.00001&&footprints.every(d=>d?.geometry?.coordinates?.[0]?.length>=7),chobanka:chobanka&&{lon:chobanka.lon,lat:chobanka.lat,parcels:chobanka.parcels},footprintNodes:footprints.map(d=>d?.geometry?.coordinates?.[0]?.length||0)};});
