@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86w-fire-regions-thin-outlines-20260908">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86w</title>
+<meta name="bgwf-build" content="v0.86x-collapsible-filters-wind-area-scale-20260908">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86x</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -813,19 +813,20 @@ svg {
   color: var(--destructive);
 }
 
-  #bg-wildfires-map .bgwf-mobile-filter-toggle { display:none; }
+  #bg-wildfires-map .bgwf-mobile-filter-toggle {
+    display:flex; width:100%; min-height:30px; align-items:center; justify-content:space-between;
+    padding:0 .1rem; border:0; background:transparent; color:var(--foreground);
+    font:inherit; font-size:13px; font-weight:700; cursor:pointer;
+  }
+  #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
+  #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-body { display:block; }
+  #bg-wildfires-map .bgwf-mobile-filter-toggle span:last-child { transition:transform .16s ease; }
+  #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-toggle span:last-child { transform:rotate(180deg); }
+  #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:clamp(520px,78vh,850px); }
   @media (max-width:700px), (max-height:600px) and (hover:none) {
     #bg-wildfires-map .bgwf-floating-controls { padding:.34rem .55rem; border-radius:.8rem; }
-    #bg-wildfires-map .bgwf-mobile-filter-toggle {
-      display:flex; width:100%; min-height:30px; align-items:center; justify-content:space-between;
-      padding:0 .1rem; border:0; background:transparent; color:var(--foreground);
-      font:inherit; font-size:13px; font-weight:700; cursor:pointer;
-    }
-    #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
-    #bg-wildfires-map .bgwf-floating-controls.is-mobile-open .bgwf-mobile-filter-body { display:block; }
-    #bg-wildfires-map .bgwf-mobile-filter-toggle span:last-child { transition:transform .16s ease; }
-    #bg-wildfires-map .bgwf-floating-controls.is-mobile-open .bgwf-mobile-filter-toggle span:last-child { transform:rotate(180deg); }
     #bg-wildfires-map .bgwf-map-wrap { min-height:68vh; }
+    #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:72vh; min-height:400px; }
     #bg-wildfires-map .bgwf-layer-status-inline { font-size:10px; line-height:1.1; }
   }
 
@@ -1394,8 +1395,8 @@ svg {
 #bg-wildfires-map .bgwf-map-share-menu button:hover{background:var(--muted)}
 #bg-wildfires-map .bgwf-territory-bars{
   position:absolute;left:8px;top:50%;transform:translateY(-50%);z-index:9500;
-  height:min(52vh,390px);min-height:230px;padding:28px 3px 5px;
-  background:rgba(255,255,255,.38);backdrop-filter:blur(1.5px);
+  height:min(72vh,600px);min-height:360px;padding:28px 4px 5px;
+  background:rgba(255,255,255,.72);backdrop-filter:blur(1.5px);
   border:1px solid rgba(30,40,50,.13);border-radius:8px;
   box-shadow:0 1px 6px rgba(0,0,0,.10);display:none;gap:0;
   align-items:flex-end;font:10px/1.1 system-ui,sans-serif;color:#202124;
@@ -1403,10 +1404,10 @@ svg {
 #bg-wildfires-map .bgwf-territory-bars.is-visible{display:flex}
 #bg-wildfires-map .bgwf-territory-bar{height:100%;width:11px;display:grid;grid-template-rows:minmax(0,1fr) 61px;position:relative}
 #bg-wildfires-map .bgwf-territory-plot{position:relative;min-height:0}
-#bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:0;bottom:0;width:100%;min-height:2px;height:var(--bar-pct,1%);border-radius:1px 1px 0 0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.10);opacity:.68}
+#bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:0;bottom:0;width:100%;min-height:2px;height:var(--bar-pct,1%);border-radius:1px 1px 0 0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.16);opacity:.9}
 #bg-wildfires-map .bgwf-territory-value{position:absolute;left:50%;bottom:calc(var(--bar-pct,1%) + 3px);writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);white-space:nowrap;font-weight:650;font-size:8px;text-shadow:0 1px 2px rgba(255,255,255,.95)}
 #bg-wildfires-map .bgwf-territory-label{justify-self:center;writing-mode:vertical-rl;transform:rotate(180deg);height:58px;white-space:nowrap;margin-top:3px;font-size:8px;text-shadow:0 1px 2px rgba(255,255,255,.95)}
-#bg-wildfires-map .bgwf-territory-bg{background:#475569}.bgwf-territory-agri{background:#6f9635}.bgwf-territory-disturbed{background:#7c4a29}.bgwf-territory-solar{background:#d6a000}.bgwf-territory-pup{background:#e87817}.bgwf-territory-industry{background:#30343a}
+#bg-wildfires-map .bgwf-territory-bg{background:#475569}.bgwf-territory-agri{background:#6f9635}.bgwf-territory-disturbed{background:#7c4a29}.bgwf-territory-solar{background:#d6a000}.bgwf-territory-wind{background:#0891b2}.bgwf-territory-pup{background:#e87817}.bgwf-territory-industry{background:#30343a}
 #bg-wildfires-map .bgwf-territory-scale-switch{position:absolute;top:4px;left:4px;display:flex;z-index:2;border:1px solid #9aa0a6;border-radius:5px;overflow:hidden;background:#fff}
 #bg-wildfires-map .bgwf-territory-scale-switch button{min-width:29px;height:19px;padding:0 4px;border:0;border-radius:0;background:#fff;color:#374151;font:700 8px/19px system-ui,sans-serif;cursor:pointer}
 #bg-wildfires-map .bgwf-territory-scale-switch button+button{border-left:1px solid #c5c9ce}
@@ -1414,7 +1415,7 @@ svg {
 #bg-wildfires-map .bgwf-territory-hint{position:absolute;left:100%;top:25px;margin-left:7px;background:#fff;border:1px solid #bbb;border-radius:6px;padding:6px 8px;white-space:nowrap;display:none;box-shadow:0 2px 8px rgba(0,0,0,.16)}
 #bg-wildfires-map .bgwf-territory-bars:hover .bgwf-territory-hint{display:block}
 @media(max-width:600px){
-  #bg-wildfires-map .bgwf-territory-bars{left:4px;height:43vh;min-height:210px;padding:27px 2px 4px;gap:0}
+  #bg-wildfires-map .bgwf-territory-bars{left:4px;height:58vh;min-height:290px;padding:27px 2px 4px;gap:0}
   #bg-wildfires-map .bgwf-territory-bar{width:9px}
   #bg-wildfires-map .bgwf-territory-label,#bg-wildfires-map .bgwf-territory-value{font-size:7px}
   #bg-wildfires-map .bgwf-territory-scale-switch{left:2px}
@@ -1463,20 +1464,7 @@ svg {
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
-<style id="territory-bars-size-tuning-v086h">
-#territory-scale-bars { height:min(64vh,500px)!important; min-height:300px!important; padding:11px 9px 9px!important; gap:7px!important; }
-#territory-scale-bars .tb { width:31px!important; }
-#territory-scale-bars .shaft { width:13px!important; }
-#territory-scale-bars .val { font-size:10px!important; margin-bottom:5px!important; }
-#territory-scale-bars .lab { font-size:10px!important; height:72px!important; margin-top:5px!important; }
-@media (max-width:600px) {
-  #territory-scale-bars { left:4px!important; height:54vh!important; min-height:270px!important; padding:8px 5px 7px!important; gap:4px!important; }
-  #territory-scale-bars .tb { width:22px!important; }
-  #territory-scale-bars .shaft { width:9px!important; }
-  #territory-scale-bars .lab, #territory-scale-bars .val { font-size:9px!important; }
-  #territory-scale-bars .lab { height:66px!important; }
-}
-</style></head>
+</head>
 <body>
 <div id="bg-wildfires-map" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
   <header class="bgwf-brand">
@@ -1484,10 +1472,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86w</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86x</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86w</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86x</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1521,9 +1509,10 @@ svg {
       <div class="bgwf-territory-bar" data-territory-area="47000"><span class="bgwf-territory-plot"><span class="bgwf-territory-value">≈47 000 km²</span><i class="bgwf-territory-shaft bgwf-territory-agri"></i></span><span class="bgwf-territory-label">Земеделска</span></div>
       <div class="bgwf-territory-bar bgwf-territory-disturbed-column" data-territory-area="467.76"><span class="bgwf-territory-plot"><span class="bgwf-territory-value">467,76 km²</span><i class="bgwf-territory-shaft bgwf-territory-disturbed"></i></span><span class="bgwf-territory-label">Нарушена</span></div>
       <div class="bgwf-territory-bar" data-territory-layer="solar"><span class="bgwf-territory-plot"><span class="bgwf-territory-value" data-territory-value>зарежда…</span><i class="bgwf-territory-shaft bgwf-territory-solar"></i></span><span class="bgwf-territory-label">ФЕЦ</span></div>
+      <div class="bgwf-territory-bar" data-territory-layer="wind"><span class="bgwf-territory-plot"><span class="bgwf-territory-value" data-territory-value>0,279 km²</span><i class="bgwf-territory-shaft bgwf-territory-wind"></i></span><span class="bgwf-territory-label">ВяЕИ основи</span></div>
       <div class="bgwf-territory-bar" data-territory-layer="projects"><span class="bgwf-territory-plot"><span class="bgwf-territory-value" data-territory-value>зарежда…</span><i class="bgwf-territory-shaft bgwf-territory-pup"></i></span><span class="bgwf-territory-label">ПУП</span></div>
       <div class="bgwf-territory-bar" data-territory-layer="industry"><span class="bgwf-territory-plot"><span class="bgwf-territory-value" data-territory-value>зарежда…</span><i class="bgwf-territory-shaft bgwf-territory-industry"></i></span><span class="bgwf-territory-label">ТЕЦ/мини</span></div>
-      <div class="bgwf-territory-hint" data-territory-hint>Линейна скала · площ на заредените полигони; точковите обекти не се включват</div>
+      <div class="bgwf-territory-hint" data-territory-hint>Линейна скала · полигонни площи + 484 ВяЕИ основи × 576 m²</div>
     </div>
 <div class="bgwf-province-chip" data-province-chip hidden>
       <span data-province-name></span>
@@ -1581,9 +1570,9 @@ svg {
       <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
       <p><strong>ТЕЦ / мини:</strong> индустриалният footprint включва проверени площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища, утаители, технологични съоръжения и изоставени минни котловани с руднични езера. За „Марица-изток“ цялата публикувана концесионна площ от 473 685,54 дка се показва като потенциално ангажирана от минната експлоатация; окръжността представя точно площта, но не претендира да е юридическата ѝ граница. Отделно са показани „Люляковица“, „Медет“, „Цар Асен“, „Горен бюк“, „Галдушки ливади“ и комплексът „Бенковски 1 / Бенковски 2“ на „Елаците-Мед“. За „Цар Асен“ картата не твърди лабораторно потвърден състав на водата.</p>
 <p><strong>Национален ориентир (НСИ):</strong> към 31.12.2025 г. „нарушената територия“ в България е 467,76 km² = 467 760 дка, или 0,42% от територията. НСИ включва тук терени за добив на полезни изкопаеми, терени за индустриални и битови отпадъци и деградирани земи; затова тази стойност е по-широк национален ориентир и не е равна на сумата от полигоните „ТЕЦ / мини“ в картата.</p>
-<p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване административните области се очертават с контрастен двоен контур, а ВЕИ, ПУП/ПИ и ТЕЦ/мини преминават в high-contrast halo стил. При относителен zoom ≥ 55 се показва локален слой с българските имена на градове и села от OpenStreetMap и GeoNames; надписите са малки, неболднати и автоматично се разреждат срещу застъпване.</p>
+<p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване обектите запазват тънки висококонтрастни очертания без удебелен halo ефект. При относителен zoom ≥ 55 се показва локален слой с българските имена на градове и села от OpenStreetMap и GeoNames; надписите са малки, неболднати и автоматично се разреждат срещу застъпване.</p>
       <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
-      <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
+      <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ВяЕИ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
 
 <p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
       <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
@@ -3814,10 +3803,15 @@ addEventListener('scroll',updateFloatingZoomPosition,{passive:true}); addEventLi
 const compactMobileQuery='(max-width:700px), (max-height:600px) and (hover:none)';
 const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia(compactMobileQuery).matches)mobileFooter.open=false;
 const mobileFilterToggle=root.querySelector('[data-mobile-filter-toggle]');
+function setFilterPanelOpen(open){
+  filterPanel?.classList.toggle('is-filter-open',open);
+  root.classList.toggle('is-filter-collapsed',!open);
+  mobileFilterToggle?.setAttribute('aria-expanded',String(open));
+}
+setFilterPanelOpen(!matchMedia(compactMobileQuery).matches);
 mobileFilterToggle?.addEventListener('click',()=>{
-  const open=!filterPanel?.classList.contains('is-mobile-open');
-  filterPanel?.classList.toggle('is-mobile-open',open);
-  mobileFilterToggle.setAttribute('aria-expanded',String(open));
+  const open=!filterPanel?.classList.contains('is-filter-open');
+  setFilterPanelOpen(open);
   requestAnimationFrame(()=>{updateFloatingZoomPosition();map?.updateSize();});
 });
 
@@ -5524,6 +5518,9 @@ const NSI_DISTURBED_LAND_2025={
 };
 
 const BULGARIA_AREA_SQ_KM=111000;
+const WIND_TURBINE_COUNT=484;
+const WIND_TURBINE_FOUNDATION_SQ_M=576;
+const WIND_TURBINE_FOUNDATION_AREA_SQ_KM=WIND_TURBINE_COUNT*WIND_TURBINE_FOUNDATION_SQ_M/1e6;
 const territoryScaleBars=root.querySelector('[data-territory-scale-bars]');
 let territoryScaleMode='linear';
 function vectorSourceAreaSqKm(source){
@@ -5535,7 +5532,7 @@ function vectorSourceAreaSqKm(source){
 }
 function formatTerritoryArea(value){
   if(!(value>0))return 'само точки';
-  return `${value.toLocaleString('bg-BG',{maximumFractionDigits:value<10?2:1})} km²`;
+  return `${value.toLocaleString('bg-BG',{maximumFractionDigits:value<1?3:value<10?2:1})} km²`;
 }
 function territoryBarPercent(area){
   if(!(area>0))return .18;
@@ -5549,10 +5546,11 @@ function updateTerritoryScaleBars(){
   if(!territoryScaleBars)return;
   const areas={
     solar:vectorSourceAreaSqKm(solarSource),
+    wind:WIND_TURBINE_FOUNDATION_AREA_SQ_KM,
     projects:vectorSourceAreaSqKm(projectSource),
     industry:vectorSourceAreaSqKm(industryFootprintSource)
   };
-  const any=['solar','projects','industry'].some(key=>layerVisibility[key]);
+  const any=['solar','wind','projects','industry'].some(key=>layerVisibility[key]);
   territoryScaleBars.classList.toggle('is-visible',any);
   territoryScaleBars.querySelectorAll('.bgwf-territory-bar').forEach(column=>{
     const key=column.dataset.territoryLayer;
@@ -5565,7 +5563,7 @@ function updateTerritoryScaleBars(){
   });
   territoryScaleBars.querySelectorAll('[data-territory-scale]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.territoryScale===territoryScaleMode)));
   const hint=territoryScaleBars.querySelector('[data-territory-hint]');
-  if(hint)hint.textContent=`${territoryScaleMode==='linear'?'Линейна':'Логаритмична'} скала · площ на заредените полигони; точковите обекти не се включват`;
+  if(hint)hint.textContent=`${territoryScaleMode==='linear'?'Линейна':'Логаритмична'} скала · полигонни площи + ${WIND_TURBINE_COUNT} ВяЕИ основи × ${WIND_TURBINE_FOUNDATION_SQ_M} m² = ${(WIND_TURBINE_FOUNDATION_AREA_SQ_KM*1e6).toLocaleString('bg-BG')} m²`;
 }
 let territoryScaleUpdateFrame=0;
 function scheduleTerritoryScaleBarsUpdate(){
@@ -5729,7 +5727,8 @@ function runSelfTests(){
   selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
-  selfTest('mobile-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded')}));
+  selfTest('collapsible-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded')}));
+  selfTest('wind-foundation-area',()=>({ok:WIND_TURBINE_COUNT===individualWindTurbines.length&&Math.abs(WIND_TURBINE_FOUNDATION_AREA_SQ_KM-.278784)<1e-12,count:WIND_TURBINE_COUNT,foundationSqM:WIND_TURBINE_FOUNDATION_SQ_M,totalSqKm:WIND_TURBINE_FOUNDATION_AREA_SQ_KM}));
   selfTest('mobile-zoom-controls',()=>({ok:['zoom-in','zoom-out','zoom-reset'].every(name=>!!root.querySelector(`[data-${name}]`)),buttons:root.querySelectorAll('.bgwf-zoom-controls button').length,homeScaleTarget:1}));
   selfTest('zoom-status-and-url-sync',()=>({ok:!!zoomFactorEl&&typeof window.bgwfCurrentMapUrl==='function',zoomText:zoomFactorEl?.textContent,url:window.bgwfCurrentMapUrl?.()}));
   selfTest('ol-projection-roundtrip',()=>{const src=[25.25,42.75],back=toLonLat(fromLonLat(src)),err=Math.hypot(back[0]-src[0],back[1]-src[1]);return{ok:err<1e-9,errorDegrees:err};});
