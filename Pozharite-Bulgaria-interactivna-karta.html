@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.87b-horizontal-area-bars-20260908">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87b</title>
+<meta name="bgwf-build" content="v0.87c-readable-horizontal-area-bars-20260908">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87c</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1402,9 +1402,9 @@ svg {
 }
 #bg-wildfires-map .bgwf-territory-bars.is-visible{display:flex}
 #bg-wildfires-map .bgwf-territory-bar{width:100%;height:27px;min-width:0;display:grid;grid-template-columns:92px minmax(0,1fr);grid-template-rows:27px;position:relative;align-items:center}
-#bg-wildfires-map .bgwf-territory-plot{position:relative;grid-column:2;grid-row:1;height:18px;min-width:0;background:rgba(71,85,105,.08);border-radius:4px;overflow:hidden}
-#bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:0;top:0;bottom:0;transform:none;width:var(--bar-pct,1%);min-width:3px;height:100%;min-height:0;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.16);opacity:.9}
-#bg-wildfires-map .bgwf-territory-value{position:absolute;z-index:1;left:7px;right:5px;top:50%;bottom:auto;transform:translateY(-50%);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:750;font-size:10px;text-align:left;text-shadow:0 1px 2px rgba(255,255,255,.98)}
+#bg-wildfires-map .bgwf-territory-plot{position:relative;grid-column:2;grid-row:1;height:18px;min-width:0;background:rgba(71,85,105,.18);border:1px solid rgba(71,85,105,.20);border-radius:5px;overflow:hidden}
+#bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:0;top:0;bottom:0;transform:none;width:var(--bar-pct,1%);min-width:5px;height:100%;min-height:0;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.20);opacity:.94}
+#bg-wildfires-map .bgwf-territory-value{position:absolute;z-index:1;left:auto;right:7px;top:50%;bottom:auto;transform:translateY(-50%);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;font-size:10px;text-align:right;color:#111827;text-shadow:0 1px 2px rgba(255,255,255,1),0 0 4px rgba(255,255,255,.9)}
 #bg-wildfires-map .bgwf-territory-label{grid-column:1;grid-row:1;justify-self:start;align-self:center;white-space:nowrap;font-weight:700;font-size:10px;text-align:left;text-shadow:none}
 #bg-wildfires-map .bgwf-territory-bg{background:#475569}.bgwf-territory-agri{background:#6f9635}.bgwf-territory-disturbed{background:#7c4a29}.bgwf-territory-renewables{background:linear-gradient(90deg,#d6a000 0 55%,#0891b2 55% 100%)}.bgwf-territory-pup{background:#e87817}.bgwf-territory-industry{background:#30343a}
 #bg-wildfires-map .bgwf-territory-scale-switch{position:absolute;top:4px;left:4px;display:flex;z-index:2;border:1px solid #9aa0a6;border-radius:5px;overflow:hidden;background:#fff}
@@ -1473,10 +1473,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.87b</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.87c</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.87b</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.87c</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -1528,7 +1528,7 @@ svg {
     </div>
   </div>
   <div class="bgwf-territory-bars" data-territory-scale-bars aria-label="Сравнение на териториалните площи">
-    <div class="bgwf-territory-scale-switch" role="group" aria-label="Мащаб на териториалните барове"><button type="button" data-territory-scale="linear" aria-pressed="true">Лин.</button><button type="button" data-territory-scale="log" aria-pressed="false">Лог.</button></div>
+    <div class="bgwf-territory-scale-switch" role="group" aria-label="Мащаб на териториалните барове"><button type="button" data-territory-scale="linear" aria-pressed="false">Лин.</button><button type="button" data-territory-scale="log" aria-pressed="true">Лог.</button></div>
     <div class="bgwf-territory-bar" data-territory-area="111000"><span class="bgwf-territory-plot"><span class="bgwf-territory-value">111 000 km²</span><i class="bgwf-territory-shaft bgwf-territory-bg"></i></span><span class="bgwf-territory-label">България</span></div>
     <div class="bgwf-territory-bar" data-territory-area="47000"><span class="bgwf-territory-plot"><span class="bgwf-territory-value">≈47 000 km²</span><i class="bgwf-territory-shaft bgwf-territory-agri"></i></span><span class="bgwf-territory-label">Земеделска</span></div>
     <div class="bgwf-territory-bar bgwf-territory-disturbed-column" data-territory-area="467.76"><span class="bgwf-territory-plot"><span class="bgwf-territory-value">467,76 km²</span><i class="bgwf-territory-shaft bgwf-territory-disturbed"></i></span><span class="bgwf-territory-label">Нарушена</span></div>
@@ -5567,7 +5567,7 @@ const WIND_TURBINE_COUNT=484;
 const WIND_TURBINE_FOUNDATION_SQ_M=576;
 const WIND_TURBINE_FOUNDATION_AREA_SQ_KM=WIND_TURBINE_COUNT*WIND_TURBINE_FOUNDATION_SQ_M/1e6;
 const territoryScaleBars=root.querySelector('[data-territory-scale-bars]');
-let territoryScaleMode='linear';
+let territoryScaleMode='log';
 function vectorSourceAreaSqKm(source){
   return (source?.getFeatures?.()||[]).reduce((sum,f)=>{
     const g=f.getGeometry?.();
