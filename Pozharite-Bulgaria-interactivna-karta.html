@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86v-short-wind-label-20260908">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86v</title>
+<meta name="bgwf-build" content="v0.86w-fire-regions-thin-outlines-20260908">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86w</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1484,10 +1484,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86s</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86w</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86s</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86w</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2075,7 +2075,6 @@ const Feature = ol.Feature;
 const GeoJSON = ol.format.GeoJSON;
 const Point = ol.geom.Point;
 const VectorLayer = ol.layer.Vector;
-const HeatmapLayer = ol.layer.Heatmap;
 const TileLayer = ol.layer.Tile;
 const XYZ = ol.source.XYZ;
 const CircleGeom = ol.geom.Circle;
@@ -3829,7 +3828,7 @@ let activeYear=parseYearParam();
 let activeProvinceCode=null;
 let selectedFeature=null;
 let selectedFireId=null;
-const layerVisibility={solar:parseBoolParam('solar',true),wind:parseBoolParam('wind',true),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),industry:parseBoolParam('industry',false),live:parseBoolParam('s3',false)};
+const layerVisibility={solar:parseBoolParam('solar',true),wind:parseBoolParam('wind',false),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),industry:parseBoolParam('industry',false),live:parseBoolParam('s3',false)};
 let urlStateReady=false,urlSyncTimer=0,homeResolution=null;
 function currentScale(){const r=view?.getResolution();return homeResolution&&r?homeResolution/r:1;}
 function formatZoomFactor(scale){
@@ -3982,54 +3981,48 @@ const provinceLayer=new VectorLayer({
   style:f=>{
     const active=f.get('provinceCode')===activeProvinceCode;
     const satellite=satelliteMode();
-    return [
-      new Style({
-        fill:new Fill({color:satellite?'rgba(0,0,0,0)':(active?'rgba(37,99,235,.055)':'rgba(148,163,184,.035)')}),
-        stroke:new Stroke({
-          color:satellite?'rgba(0,0,0,.82)':'rgba(255,255,255,.98)',
-          width:active?5.4:4.2
-        })
-      }),
-      new Style({
-        fill:new Fill({color:'rgba(0,0,0,0)'}),
-        stroke:new Stroke({
-          color:active?(satellite?'#fde047':'#2563eb'):(satellite?'rgba(255,255,255,.98)':'rgba(31,41,55,.88)'),
-          width:active?2.5:1.45
-        })
+    return new Style({
+      fill:new Fill({color:satellite?'rgba(0,0,0,0)':(active?'rgba(37,99,235,.045)':'rgba(148,163,184,.025)')}),
+      stroke:new Stroke({
+        color:active?(satellite?'#fde047':'#2563eb'):(satellite?'rgba(255,255,255,.82)':'rgba(31,41,55,.68)'),
+        width:active?1.6:.8
       })
-    ];
+    });
   }
 });
-const WEBGL_AVAILABLE = (() => { try { const c=document.createElement('canvas'); return !!(c.getContext('webgl2')||c.getContext('webgl')); } catch (_) { return false; } })();
-const densityLayer = WEBGL_AVAILABLE
-  ? new HeatmapLayer({source:densitySource,zIndex:2,blur:24,radius:18,opacity:0.22,gradient:[colorWithAlpha(yearColors.get(2021),0.08),colorWithAlpha(yearColors.get(2021),0.28),colorWithAlpha(yearColors.get(2021),0.58),colorWithAlpha(yearColors.get(2021),0.90)],weight:f=>f.get('weight')||0.3})
-  : new VectorLayer({source:densitySource,zIndex:2,style:f=>new Style({image:new CircleStyle({radius:10+12*(f.get('weight')||0.2),fill:new Fill({color:'rgba(239,68,68,.035)'})})})});
-debugState.environment.webgl=WEBGL_AVAILABLE;
-if(!WEBGL_AVAILABLE) dbgWarn('webgl-unavailable-heatmap-fallback-canvas'); else dbg('webgl-available');
+const densityLayer=new VectorLayer({
+  source:densitySource,
+  zIndex:2,
+  declutter:true,
+  style:(f,resolution)=>{
+    if(resolution<420||Number(f.get('count'))<2)return null;
+    const count=Number(f.get('count'))||1;
+    const color=yearColors.get(f.get('year'))||'#dc2626';
+    const radius=Math.min(34,6+4*Math.sqrt(count));
+    return new Style({
+      image:new CircleStyle({
+        radius,
+        fill:new Fill({color:colorWithAlpha(color,.16)}),
+        stroke:new Stroke({color:colorWithAlpha(color,.62),width:1})
+      }),
+      text:new TextStyle({
+        text:String(count),
+        font:'700 11px sans-serif',
+        fill:new Fill({color:satelliteMode()?'#fff':'#7f1d1d'}),
+        stroke:new Stroke({color:satelliteMode()?'rgba(0,0,0,.82)':'rgba(255,255,255,.92)',width:2})
+      })
+    });
+  }
+});
+debugState.environment.webgl=null;
 function selectedStrokeWidth(f,normal=1.2,selected=2.4){return f.get('selected')?selected:normal;}
 
 function satelliteMode(){return !!satelliteLayer?.getVisible?.();}
 function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba(255,255,255,.94)',haloWidth=3.5,lineDash=null}){
-  if(!satelliteMode()){
-    return new Style({
-      fill:new Fill({color:fill}),
-      stroke:new Stroke({color:stroke,width:selected?innerWidth+.8:innerWidth,lineDash})
-    });
-  }
-  return [
-    new Style({
-      fill:new Fill({color:'rgba(0,0,0,0)'}),
-      stroke:new Stroke({color:'rgba(0,0,0,.62)',width:selected?haloWidth+1.3:haloWidth+.8,lineDash})
-    }),
-    new Style({
-      fill:new Fill({color:fill}),
-      stroke:new Stroke({color:halo,width:selected?haloWidth:haloWidth-.8,lineDash})
-    }),
-    new Style({
-      fill:new Fill({color:fill}),
-      stroke:new Stroke({color:stroke,width:selected?innerWidth+.9:innerWidth,lineDash})
-    })
-  ];
+  return new Style({
+    fill:new Fill({color:fill}),
+    stroke:new Stroke({color:stroke,width:selected?1.8:Math.min(1.05,innerWidth),lineDash})
+  });
 }
 function refreshSatelliteOverlayStyles(){
   [placeLabelsLayer,provinceLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
@@ -4117,12 +4110,7 @@ const concessionLayer=new VectorLayer({
   style:f=>{
     const selected=f.get('selected');
     const color=satelliteMode()?'#ff00aa':(selected?'#ef4444':'#b91c1c');
-    const inner=new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:selected?2.2:1.45,lineDash:[7,4]})});
-    if(!satelliteMode())return inner;
-    return [
-      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.94)',width:selected?4:3.2,lineDash:[7,4]})}),
-      inner
-    ];
+    return new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:selected?1.7:1,lineDash:[7,4]})});
   }
 });
 const concessionEstimateLayer=new VectorLayer({
@@ -4130,20 +4118,15 @@ const concessionEstimateLayer=new VectorLayer({
   visible:layerVisibility.industry,
   zIndex:56,
   style:f=>{
-    const inner=new Style({
+    return new Style({
       fill:new Fill({color:satelliteMode()?'rgba(255,0,170,.09)':'rgba(185,28,28,0.055)'}),
-      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:satelliteMode()?1.45:1.15,lineDash:[3,4]})
+      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:.9,lineDash:[3,4]})
     });
-    if(!satelliteMode())return inner;
-    return [
-      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.92)',width:3,lineDash:[3,4]})}),
-      inner
-    ];
   }
 });
 concessionEstimateLayer.set('kind','concession-estimate');
 
-const effisLayer=new VectorLayer({source:effisSource,zIndex:10,style:f=>new Style({fill:new Fill({color:'rgba(239,68,68,.16)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ef4444',width:selectedStrokeWidth(f,2,2.8)})})});
+const effisLayer=new VectorLayer({source:effisSource,zIndex:10,style:f=>new Style({fill:new Fill({color:'rgba(239,68,68,.16)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ef4444',width:selectedStrokeWidth(f,1.05,1.8)})})});
 function fireRadius(area){const a=Math.max(0,Number(area)||0),max=Math.max(1,largestAll);return 3.2+(31-3.2)*Math.sqrt(a/max);}
 const fireLayer=new VectorLayer({source:fireSource,zIndex:11,style:f=>{
   if(f.get('hiddenByPerimeter'))return null; const d=f.get('data'); const selected=f===selectedFeature;return new Style({image:new CircleStyle({radius:fireRadius(d.area_ha),fill:new Fill({color:colorWithAlpha(yearColors.get(d.year)||'#ef4444',d.area_ha>=1000?0.78:0.58)}),stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):cssVar('--background','#fff'),width:selected?2:0.8})})});
@@ -4529,7 +4512,7 @@ if(kind==='industry'){
   return `${industrialTypeLabel(d.type)} · ${d.name} · ${geometryText}${d.area?` · ${d.area}`:''}${official} · ${d.fuel}`;
 }if(kind==='concession')return `Официална концесионна граница · ${f.get('concessionId')||'—'} · ${f.get('name')||'Концесия'} · ${formatAreaDka(f.get('areaDka'))}`;if(kind==='live')return liveFireLabel(d);if(kind==='effis')return 'EFFIS/Copernicus реален опожарен периметър';return '';}
 const HIT_ORDER={live:100,fire:90,effis:80,concession:70,industry:65,wind:60,solar:55,project:50,red:40,province:1};
-function topFeatureAtPixel(pixel){const found=[];map.forEachFeatureAtPixel(pixel,(f,l)=>{if(f)found.push(f);},{hitTolerance:5});found.sort((a,b)=>(HIT_ORDER[b.get('kind')]||0)-(HIT_ORDER[a.get('kind')]||0));return found[0]||null;}
+function topFeatureAtPixel(pixel){const found=[];map.forEachFeatureAtPixel(pixel,(f,l)=>{if(f&&l!==densityLayer)found.push(f);},{hitTolerance:5});found.sort((a,b)=>(HIT_ORDER[b.get('kind')]||0)-(HIT_ORDER[a.get('kind')]||0));return found[0]||null;}
 let bgwfHoverFrame=0,bgwfHoverLastAt=0;
 map.on('pointermove',e=>{
   const now=performance.now();
@@ -4561,11 +4544,27 @@ map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url
   else if(kind==='effis'){detail.textContent='EFFIS/Copernicus · реален опожарен периметър за избрания пожар.';}
 });
 
-// ---------- Historical fires + heatmap ----------
+// ---------- Historical fires + regional count circles ----------
 const fireFeaturesById=new Map();
 function makeFireFeature(d){const f=new Feature({geometry:new Point(fromLonLat([d.lon,d.lat]))});f.setId(`fire-${d.id}`);f.set('kind','fire');f.set('data',d);return f;}
 fires.forEach(d=>fireFeaturesById.set(d.id,makeFireFeature(d)));
 function updateSummary(points){const total=points.reduce((s,d)=>s+(Number(d.area_ha)||0),0);const largest=Math.max(0,...points.map(d=>Number(d.area_ha)||0));root.querySelector('[data-total-count]').textContent=formatNumber.format(points.length);root.querySelector('[data-total-area]').textContent=formatNumber.format(total);root.querySelector('[data-largest]').textContent=formatNumber.format(largest);}
+function fireRegionFeatures(points){
+  const groups=new Map();
+  points.forEach(d=>{
+    const municipality=String(d.municipality||'').trim();
+    const province=String(d.province||'').trim();
+    const key=municipality?`${province}|${municipality}`:`grid|${Math.round(d.lon*4)}|${Math.round(d.lat*4)}`;
+    const g=groups.get(key)||{count:0,lon:0,lat:0,totalArea:0,municipality,province};
+    g.count+=1;g.lon+=Number(d.lon);g.lat+=Number(d.lat);g.totalArea+=Number(d.area_ha)||0;groups.set(key,g);
+  });
+  return [...groups.values()].map(g=>{
+    const f=new Feature({geometry:new Point(fromLonLat([g.lon/g.count,g.lat/g.count]))});
+    f.set('count',g.count);f.set('totalArea',g.totalArea);f.set('municipality',g.municipality);f.set('province',g.province);
+    f.set('year',Number.isInteger(activeYear)?activeYear:null);
+    return f;
+  });
+}
 
 function compactYearFilterButtons(){
   root.querySelectorAll('button').forEach(btn=>{
@@ -4581,7 +4580,7 @@ function compactYearFilterButtons(){
 function updateFiresAndDensity(){
   clearSelection(); const points=activeYear===false?[]:activeYear==null?fires:fires.filter(d=>d.year===activeYear);
   fireSource.clear();densitySource.clear();const ff=points.map(d=>fireFeaturesById.get(d.id));fireSource.addFeatures(ff);
-  densitySource.addFeatures(points.map(d=>{const f=new Feature({geometry:new Point(fromLonLat([d.lon,d.lat]))});f.set('weight',Math.min(1,Math.sqrt(Math.max(1,d.area_ha))/Math.sqrt(Math.max(1,largestAll))));return f;}));
+  densitySource.addFeatures(fireRegionFeatures(points));
   updateSummary(points);debugState.layerCounts.fires=ff.length;debugState.layerCounts.density=densitySource.getFeatures().length;
   root.querySelectorAll('.bgwf-year-filter[data-year]').forEach(b=>{const v=b.dataset.year==='all'?null:Number(b.dataset.year);const pressed=activeYear!==false&&((activeYear==null&&v==null)||(activeYear!=null&&activeYear===v));b.setAttribute('aria-pressed',String(pressed));});
   root.querySelector('.bgwf-layer-toggle[data-layer="live"]')?.classList.toggle('is-year-muted',activeYear!=null&&activeYear!==false&&activeYear!==2026);
@@ -5713,7 +5712,7 @@ function runSelfTests(){
   selfTest('fire-id-unique',()=>{const dup=duplicateValues(fires.map(d=>d.id));return{ok:dup.length===0,duplicates:dup.slice(0,20)};});
   selfTest('fire-feature-map-parity',()=>({ok:fireFeaturesById.size===fires.length,features:fireFeaturesById.size,rows:fires.length}));
   selfTest('active-fire-filter-parity',()=>{const expected=activeYear===false?0:activeYear==null?fires.length:fires.filter(d=>d.year===activeYear).length;return{ok:fireSource.getFeatures().length===expected,actual:fireSource.getFeatures().length,expected,activeYear};});
-  selfTest('density-parity',()=>({ok:densitySource.getFeatures().length===fireSource.getFeatures().length,density:densitySource.getFeatures().length,fires:fireSource.getFeatures().length}));
+  selfTest('density-parity',()=>{const represented=densitySource.getFeatures().reduce((sum,f)=>sum+(Number(f.get('count'))||0),0);return{ok:represented===fireSource.getFeatures().length,regions:densitySource.getFeatures().length,represented,fires:fireSource.getFeatures().length};});
   selfTest('red-extent',()=>({ok:redSource.getFeatures().every(featureExtentInBulgaria),count:redSource.getFeatures().length}));
   selfTest('red-components',()=>({ok:(priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length||0)===20,components:priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length||0,expected:20}));
   selfTest('individual-wind-coordinates',()=>({ok:individualWindTurbines.length===484&&windSource.getFeatures().length===484&&new Set(individualWindTurbines.map(d=>d.id)).size===484&&individualWindTurbines.every(d=>Number.isFinite(d.lon)&&Number.isFinite(d.lat)&&d.lon>22&&d.lon<29&&d.lat>41&&d.lat<45),count:windSource.getFeatures().length}));
