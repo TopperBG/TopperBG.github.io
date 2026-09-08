@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.87a-horizontal-area-scale-20260908">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87a</title>
+<meta name="bgwf-build" content="v0.87b-horizontal-area-bars-20260908">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87b</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1394,18 +1394,18 @@ svg {
 #bg-wildfires-map .bgwf-map-share-menu button+button{margin-top:2px}
 #bg-wildfires-map .bgwf-map-share-menu button:hover{background:var(--muted)}
 #bg-wildfires-map .bgwf-territory-bars{
-  position:relative;z-index:20;width:100%;height:190px;min-height:0;margin-top:.55rem;padding:35px 10px 8px;
+  position:relative;z-index:20;width:100%;height:auto;min-height:0;margin-top:.55rem;padding:34px 10px 9px;
   background:rgba(255,255,255,.72);backdrop-filter:blur(1.5px);
   border:1px solid rgba(30,40,50,.13);border-radius:8px;
-  box-shadow:0 1px 6px rgba(0,0,0,.10);display:none;gap:8px;overflow-x:auto;overflow-y:hidden;
+  box-shadow:0 1px 6px rgba(0,0,0,.10);display:none;flex-direction:column;gap:5px;overflow:hidden;
   align-items:stretch;font:10px/1.1 system-ui,sans-serif;color:#202124;
 }
 #bg-wildfires-map .bgwf-territory-bars.is-visible{display:flex}
-#bg-wildfires-map .bgwf-territory-bar{height:100%;min-width:82px;flex:1 0 82px;display:grid;grid-template-rows:minmax(0,1fr) 23px;position:relative}
-#bg-wildfires-map .bgwf-territory-plot{position:relative;min-height:0}
-#bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(46px,58%);min-height:3px;height:var(--bar-pct,1%);border-radius:3px 3px 0 0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.16);opacity:.9}
-#bg-wildfires-map .bgwf-territory-value{position:absolute;left:50%;bottom:calc(var(--bar-pct,1%) + 4px);transform:translateX(-50%);white-space:nowrap;font-weight:700;font-size:10px;text-shadow:0 1px 2px rgba(255,255,255,.95)}
-#bg-wildfires-map .bgwf-territory-label{justify-self:center;align-self:center;white-space:nowrap;font-weight:700;font-size:10px;text-align:center;text-shadow:0 1px 2px rgba(255,255,255,.95)}
+#bg-wildfires-map .bgwf-territory-bar{width:100%;height:27px;min-width:0;display:grid;grid-template-columns:92px minmax(0,1fr);grid-template-rows:27px;position:relative;align-items:center}
+#bg-wildfires-map .bgwf-territory-plot{position:relative;grid-column:2;grid-row:1;height:18px;min-width:0;background:rgba(71,85,105,.08);border-radius:4px;overflow:hidden}
+#bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:0;top:0;bottom:0;transform:none;width:var(--bar-pct,1%);min-width:3px;height:100%;min-height:0;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.16);opacity:.9}
+#bg-wildfires-map .bgwf-territory-value{position:absolute;z-index:1;left:7px;right:5px;top:50%;bottom:auto;transform:translateY(-50%);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:750;font-size:10px;text-align:left;text-shadow:0 1px 2px rgba(255,255,255,.98)}
+#bg-wildfires-map .bgwf-territory-label{grid-column:1;grid-row:1;justify-self:start;align-self:center;white-space:nowrap;font-weight:700;font-size:10px;text-align:left;text-shadow:none}
 #bg-wildfires-map .bgwf-territory-bg{background:#475569}.bgwf-territory-agri{background:#6f9635}.bgwf-territory-disturbed{background:#7c4a29}.bgwf-territory-renewables{background:linear-gradient(90deg,#d6a000 0 55%,#0891b2 55% 100%)}.bgwf-territory-pup{background:#e87817}.bgwf-territory-industry{background:#30343a}
 #bg-wildfires-map .bgwf-territory-scale-switch{position:absolute;top:4px;left:4px;display:flex;z-index:2;border:1px solid #9aa0a6;border-radius:5px;overflow:hidden;background:#fff}
 #bg-wildfires-map .bgwf-territory-scale-switch button{min-width:29px;height:19px;padding:0 4px;border:0;border-radius:0;background:#fff;color:#374151;font:700 8px/19px system-ui,sans-serif;cursor:pointer}
@@ -1413,9 +1413,9 @@ svg {
 #bg-wildfires-map .bgwf-territory-scale-switch button[aria-pressed="true"]{background:#334155;color:#fff}
 #bg-wildfires-map .bgwf-territory-hint{position:absolute;left:76px;right:8px;top:7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#4b5563;font-size:9px;line-height:19px}
 @media(max-width:600px){
-  #bg-wildfires-map .bgwf-territory-bars{height:168px;padding:32px 7px 7px;gap:5px}
-  #bg-wildfires-map .bgwf-territory-bar{min-width:72px;flex-basis:72px;grid-template-rows:minmax(0,1fr) 22px}
-  #bg-wildfires-map .bgwf-territory-shaft{width:min(38px,56%)}
+  #bg-wildfires-map .bgwf-territory-bars{height:auto;padding:32px 7px 7px;gap:4px}
+  #bg-wildfires-map .bgwf-territory-bar{height:25px;grid-template-columns:78px minmax(0,1fr);grid-template-rows:25px}
+  #bg-wildfires-map .bgwf-territory-plot{height:17px}
   #bg-wildfires-map .bgwf-territory-label,#bg-wildfires-map .bgwf-territory-value{font-size:9px}
   #bg-wildfires-map .bgwf-territory-scale-switch{left:2px}
   #bg-wildfires-map .bgwf-territory-scale-switch button{min-width:26px;padding:0 2px;font-size:7px}
@@ -1473,10 +1473,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.87a</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.87b</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.87a</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.87b</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
