@@ -3888,7 +3888,7 @@ filterPanel?.addEventListener('click',event=>{
     if(!filterPanel?.classList.contains('is-filter-open'))return;
     setFilterPanelOpen(false);
     requestAnimationFrame(()=>{updateFloatingZoomPosition();map?.updateSize();});
-  },420);
+  },1200);
 });
 
 const urlParams=new URLSearchParams(location.search);
