@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86t-individual-wind-turbines-20260906">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86t</title>
+<meta name="bgwf-build" content="v0.86u-independent-wind-layer-20260908">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86u</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1780,6 +1780,7 @@ svg {
   #bg-wildfires-map .bgwf-project-parcel:hover,
   #bg-wildfires-map .bgwf-project-parcel.is-selected { fill-opacity: 0.42; stroke: var(--foreground); stroke-width: 1.8; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="solar"] .bgwf-swatch { background: #f59e0b; }
+  #bg-wildfires-map .bgwf-layer-toggle[data-layer="wind"] .bgwf-swatch { background: #0891b2; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="projects"] .bgwf-swatch { background: #7c3aed; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="future"] .bgwf-swatch { background: #2f9e44; }
   #bg-wildfires-map .bgwf-data-warning { color: var(--destructive); }
@@ -3828,7 +3829,7 @@ let activeYear=parseYearParam();
 let activeProvinceCode=null;
 let selectedFeature=null;
 let selectedFireId=null;
-const layerVisibility={solar:parseBoolParam('solar',true),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),industry:parseBoolParam('industry',false),live:parseBoolParam('s3',false)};
+const layerVisibility={solar:parseBoolParam('solar',true),wind:parseBoolParam('wind',true),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),industry:parseBoolParam('industry',false),live:parseBoolParam('s3',false)};
 let urlStateReady=false,urlSyncTimer=0,homeResolution=null;
 function currentScale(){const r=view?.getResolution();return homeResolution&&r?homeResolution/r:1;}
 function formatZoomFactor(scale){
@@ -3842,6 +3843,7 @@ function buildUrlParams(){
   const p=new URLSearchParams(location.search);
   p.set('year',activeYear===false?'off':activeYear==null?'all':String(activeYear));
   p.set('solar',layerVisibility.solar?'1':'0');
+  p.set('wind',layerVisibility.wind?'1':'0');
   p.set('pup',layerVisibility.projects?'1':'0');
   p.set('red',layerVisibility.future?'1':'0');
   p.set('industry',layerVisibility.industry?'1':'0');
@@ -4078,7 +4080,7 @@ const solarLayer=new VectorLayer({
   }
 });
 const windLayer=new VectorLayer({
-  source:windSource,zIndex:7,visible:layerVisibility.solar,
+  source:windSource,zIndex:7,visible:layerVisibility.wind,
   style:f=>new Style({
     text:new TextStyle({
       text:'✣',
@@ -5443,10 +5445,13 @@ function updateLayerStatus(){
   const solarCount=solarRows.length;
   const solarProjects=new Set(solarRows.map(d=>d.project.id)).size;
   const solarText=!layerVisibility.solar
-    ?'ВЕИ изключени'
+    ?'ФЕЦ изключени'
     :cadastralLoadStarted
-      ?`${solarProjects} ФЕЦ / ${solarCount} геометрии · ${individualWindTurbines.length} отделни вятърни турбини (OSM; непотвърдена пълнота)`
-      :'ВЕИ се зареждат';
+      ?`${solarProjects} ФЕЦ / ${solarCount} геометрии`
+      :'ФЕЦ се зареждат';
+  const windText=layerVisibility.wind
+    ?`${individualWindTurbines.length} отделни вятърни турбини (OSM; непотвърдена пълнота)`
+    :'вятърни турбини изключени';
 
   const projectText=!layerVisibility.projects
     ?'ПУП/ПИ изключени'
@@ -5466,7 +5471,7 @@ function updateLayerStatus(){
       liveFireLoadState==='error'?'Sentinel-3 временно недостъпен':
       `Sentinel-3 ${liveFireDetections.length}`
     );
-    layerStatus.textContent=`${scope} · ${solarText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}`;
+    layerStatus.textContent=`${scope} · ${solarText} · ${windText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}`;
     updateDebugLayerCounts();
     return;
   }
@@ -5489,7 +5494,7 @@ function updateLayerStatus(){
           :`Sentinel-3: ${liveFireDetections.length} засичания`
   );
 
-  layerStatus.textContent=`OpenLayers · ${scope}: ${solarText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}${cadastralLoadErrors?` · ${cadastralLoadErrors} ПИ без геометрия (${cadastralUnresolved.filter(x=>x.status==='not-found').length} липсват в INSPIRE / ${cadastralUnresolved.filter(x=>x.status==='error').length} API грешка)`:''}${(cadastralResolutionStats.simplified||cadastralResolutionStats.extent)?` · fallback: ${cadastralResolutionStats.simplified} опростени / ${cadastralResolutionStats.extent} extent`:''}`;
+  layerStatus.textContent=`OpenLayers · ${scope}: ${solarText} · ${windText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}${cadastralLoadErrors?` · ${cadastralLoadErrors} ПИ без геометрия (${cadastralUnresolved.filter(x=>x.status==='not-found').length} липсват в INSPIRE / ${cadastralUnresolved.filter(x=>x.status==='error').length} API грешка)`:''}${(cadastralResolutionStats.simplified||cadastralResolutionStats.extent)?` · fallback: ${cadastralResolutionStats.simplified} опростени / ${cadastralResolutionStats.extent} extent`:''}`;
   updateDebugLayerCounts();
 }
 function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,red:redSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
@@ -5574,8 +5579,8 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','Изградени ВЕИ','#f59e0b'],['projects','ПУП/ПИ проекти','#7c3aed'],['future','RED III/REPowerEU','#2f9e44'],['industry','ТЕЦ / мини','#4b5563']];configs.forEach(([key,label,color])=>{
-  const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar'){solarLayer.setVisible(layerVisibility.solar);windLayer.setVisible(layerVisibility.solar);}if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
+const configs=[['solar','Изградени ФЕЦ','#f59e0b'],['wind','Вятърни турбини','#0891b2'],['projects','ПУП/ПИ проекти','#7c3aed'],['future','RED III/REPowerEU','#2f9e44'],['industry','ТЕЦ / мини','#4b5563']];configs.forEach(([key,label,color])=>{
+  const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
 concessionLayer.setVisible(layerVisibility.industry);
@@ -5720,8 +5725,8 @@ function runSelfTests(){
   selfTest('cadastral-project-ids',()=>{const dup=duplicateValues(cadastralProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:cadastralProjects.length};});
   selfTest('solar-project-ids',()=>{const dup=duplicateValues(operatingSolarProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:operatingSolarProjects.length};});
   selfTest('cadastral-refs-syntax',()=>{const refs=[...cadastralProjects,...operatingSolarProjects].flatMap(p=>p.parcels||[]);const bad=refs.filter(r=>sanitizeParcelRef(r)!==String(r));return{ok:bad.length===0,bad:bad.slice(0,20),total:refs.length};});
-  selfTest('url-layer-state',()=>({ok:['solar','projects','future','industry','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
-  selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.solar&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
+  selfTest('url-layer-state',()=>({ok:['solar','wind','projects','future','industry','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
+  selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.wind&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
   selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
