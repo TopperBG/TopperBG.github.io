@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.86y-combined-renewables-area-scale-20260908">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86y</title>
+<meta name="bgwf-build" content="v0.86z-karadzhalovo-osm-footprint-20260908">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.86z</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2213%22 fill=%22%231b5e20%22/%3E%3Ccircle cx=%2245%22 cy=%2219%22 r=%229%22 fill=%22%23ffd54f%22/%3E%3Cpath d=%22M10 42l12-16 10 9 9-8 13 15v10H10z%22 fill=%22%238bc34a%22/%3E%3Cpath d=%22M11 47c10-6 20-5 29-1 6 3 10 3 14 1%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <meta name="apple-mobile-web-app-title" content="ЕнергоКарта България">
 
@@ -1472,10 +1472,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86y</span><span aria-hidden="true">⌄</span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span>Филтри · v0.86z</span><span aria-hidden="true">⌄</span></button>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
-      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86y</span></span>
+      <span class="bgwf-control-label">Година <span style="font-size:.78em;font-weight:700;opacity:.65;white-space:nowrap">· v0.86z</span></span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
     </div>
     <div class="bgwf-filter-strip">
@@ -2913,10 +2913,11 @@ const CURATED_SOLAR_FOOTPRINTS = [
   },
   {
     id:'SOL-KARADZHALOVO-2012', name:'ФЕЦ „Караджалово“', year:2012, mwpDc:60.4, owner:'Enery Development', areaHa:100,
-    statusLabel:'в експлоатация от март 2012 г. · 60,4 MWp · 100 ha · собственик/оператор Enery Development',
+    statusLabel:'в експлоатация от март 2012 г. · 60,4 MWp · ≈102 ha OSM footprint (публикувана площ 100 ha) · собственик/оператор Enery Development',
     source:'https://enery.energy/bg/press/austrian-renewable-energy-company-enery-acquires-single-largest-pv-plant-in-bulgaria/',
-    parcelRef:'KARADZHALOVO-25.32264-42.10331',
-    geometry:{type:'Polygon',coordinates:[[[25.3204,42.1020],[25.3220,42.1009],[25.3246,42.1013],[25.3252,42.1034],[25.3238,42.1050],[25.3212,42.1045],[25.3204,42.1020]]]}
+    secondarySource:'https://www.openstreetmap.org/way/157097156',
+    parcelRef:'OSM-W157097156',
+    geometry:{type:'Polygon',coordinates:[[[25.3124934,42.1081907],[25.3295308,42.1073305],[25.3308612,42.1071712],[25.3295308,42.1059604],[25.3300458,42.1053232],[25.3311616,42.1052595],[25.3319341,42.1058011],[25.3338224,42.1056418],[25.3347236,42.1059923],[25.3356248,42.1056099],[25.3368264,42.1058330],[25.3385431,42.1052913],[25.3364831,42.1012449],[25.3313333,42.1026150],[25.3258401,42.1029336],[25.3202611,42.1031248],[25.3148967,42.1033797],[25.3118497,42.1035390],[25.3124934,42.1081907]]]}
   }
 ];
 
@@ -5684,6 +5685,7 @@ function runSelfTests(){
   selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
   selfTest('large-solar-national-sample',()=>{const missing=largeOperatingSolarProjects.filter(p=>!hasSolarMapGeometry(p));return{ok:largeOperatingSolarProjects.length>=40&&missing.length===0,thresholdMwp:LARGE_SOLAR_THRESHOLD_MWP,projects:largeOperatingSolarProjects.length,missingGeometry:missing.map(p=>p.id)};});
   selfTest('maglizh-hybrid-spec',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2026-MAGLIZH');return{ok:p?.mwpDc===161&&p?.mwAc===120&&p?.bessMw===36&&p?.bessMwh===72&&p.parcels.length>=90,project:p&&{mwpDc:p.mwpDc,mwAc:p.mwAc,bessMw:p.bessMw,bessMwh:p.bessMwh,parcels:p.parcels.length}};});
+  selfTest('karadzhalovo-osm-footprint',()=>{const p=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-KARADZHALOVO-2012'),ring=p?.geometry?.coordinates?.[0]||[];return{ok:p?.parcelRef==='OSM-W157097156'&&ring.length===19&&ring.some(([lon,lat])=>lon<25.313&&lat>42.108)&&ring.some(([lon,lat])=>lon>25.338&&lat>42.105),osmWay:157097156,nodes:ring.length,publishedAreaHa:p?.areaHa};});
   selfTest('apriltsi-solsbor-separate-projects',()=>{const apriltsi=operatingSolarProjects.find(d=>d.id==='SOL-2024-APRILTSI'),solsborRows=operatingSolarProjects.filter(d=>d.id.includes('SOLSBOR')),solsbor=solsborRows[0],apriltsiFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2024-APRILTSI'),solsborFootprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2011-SOLSBOR');return{ok:apriltsi?.mwAc===400&&apriltsi?.curatedFootprint===true&&solsborRows.length===1&&solsbor?.mwpDc===10&&solsbor?.curatedFootprint===true&&solsbor.lat<42.325&&Array.isArray(apriltsiFootprint?.geometry?.coordinates?.[0])&&apriltsiFootprint.geometry.coordinates[0].length>300&&Array.isArray(solsborFootprint?.geometry?.coordinates?.[0])&&solsborFootprint.geometry.coordinates[0].length>=14,apriltsi:apriltsi&&{mwAc:apriltsi.mwAc},solsbor:solsbor&&{mwpDc:solsbor.mwpDc,lon:solsbor.lon,lat:solsbor.lat},solsborRows:solsborRows.length,apriltsiFootprintNodes:apriltsiFootprint?.geometry?.coordinates?.[0]?.length||0,solsborFootprintNodes:solsborFootprint?.geometry?.coordinates?.[0]?.length||0};});
   selfTest('belashtitsa-cadastral-footprint',()=>{const q1=CURATED_INDUSTRIAL_FOOTPRINTS.find(d=>d.id==='BELASHTITSA-QUARRY-PI-03304-31-1'),q2=CURATED_INDUSTRIAL_FOOTPRINTS.find(d=>d.id==='BELASHTITSA-QUARRY-PI-03304-31-2');return{ok:CURATED_INDUSTRIAL_POINTS.every(d=>d.id!=='BELASHTITSA-QUARRIES')&&q1?.geometry?.coordinates?.[0]?.length===26&&q1.area.includes('204 205')&&q2?.geometry?.coordinates?.[0]?.length===103&&q2.area.includes('605 354'),parcels:['03304.31.1','03304.31.2'],nodes:[q1?.geometry?.coordinates?.[0]?.length||0,q2?.geometry?.coordinates?.[0]?.length||0]};});
   selfTest('marino-pole-alfa-solar',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA'),footprint=CURATED_SOLAR_FOOTPRINTS.find(d=>d.id==='SOL-2012-MARINO-POLE-ALFA');return{ok:p?.mwAc===8&&p?.curatedFootprint===true&&p.lon>24.86&&p.lon<24.89&&p.lat>42.57&&p.lat<42.60&&footprint?.geometry?.coordinates?.[0]?.length>=12,project:p&&{mwAc:p.mwAc,lon:p.lon,lat:p.lat},footprintNodes:footprint?.geometry?.coordinates?.[0]?.length||0};});
