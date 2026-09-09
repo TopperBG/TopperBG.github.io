@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.87g-default-satellite-view-20260908">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87g</title>
+<meta name="bgwf-build" content="v0.87h-tsar-asen-corrected-contour-20260909">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87h</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1498,7 +1498,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.87g</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.87h</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
@@ -3056,10 +3056,10 @@ const CURATED_INDUSTRIAL_FOOTPRINTS = [
   },
   {
     id:'TSAR-ASEN-LEGACY-PIT-LAKE', type:'legacy-acid', name:'Изоставен меден рудник „Цар Асен“ · минно езеро',
-    fuel:'изоставен открит рудник; потенциално опасни руднични води с неустановен публичен лабораторен състав',
-    info:'сателитно установен исторически минен отпечатък; ориентировъчен контур, не кадастрална граница',
-    source:'https://btvnovinite.bg/predavania/tazi-sabota-i-nedelia/opasna-krasota-kak-bivshija-rudnik-car-asen-se-prevarna-v-turisticheska-zabelezhitelnost.html',
-    geometry:{type:'Polygon',coordinates:[[[24.2120,42.3460],[24.2170,42.3420],[24.2260,42.3430],[24.2320,42.3480],[24.2310,42.3560],[24.2240,42.3610],[24.2150,42.3580],[24.2110,42.3520],[24.2120,42.3460]]]}
+    fuel:'изоставен открит меден рудник; водонапълнен котлован/окисен отвал с документирани случаи на замърсяване с мед, манган и желязо',
+    info:'около 60,20 ha по OSM/CORINE 2006; коригиран контур по OSM way 124105629; статичен ориентировъчен минен отпечатък, не кадастрална граница',
+    source:'https://www.openstreetmap.org/way/124105629',
+    geometry:{type:'Polygon',coordinates:[[[24.343672,42.354605],[24.343232,42.353941],[24.342792,42.353600],[24.342231,42.353223],[24.341376,42.352864],[24.340694,42.352845],[24.340229,42.352844],[24.338216,42.352833],[24.337514,42.353578],[24.336691,42.353368],[24.335965,42.353017],[24.335682,42.352463],[24.335566,42.351720],[24.334574,42.350937],[24.334038,42.351025],[24.333112,42.351023],[24.332433,42.350800],[24.332221,42.350847],[24.331368,42.350923],[24.329852,42.351004],[24.329874,42.351667],[24.329879,42.351778],[24.329485,42.351838],[24.328956,42.352022],[24.328355,42.352489],[24.328329,42.352850],[24.328367,42.353628],[24.328986,42.354316],[24.329574,42.355089],[24.330003,42.355708],[24.329863,42.356872],[24.329920,42.356998],[24.330334,42.357089],[24.330722,42.356947],[24.331281,42.356679],[24.331791,42.356412],[24.332107,42.356431],[24.332643,42.356665],[24.332925,42.356932],[24.335490,42.355355],[24.336293,42.355926],[24.338248,42.357752],[24.338829,42.357823],[24.339487,42.357806],[24.340413,42.357718],[24.341021,42.357576],[24.341508,42.357254],[24.3420846,42.3570932],[24.3426798,42.3567318],[24.3428998,42.3565234],[24.3434272,42.3560237],[24.3435887,42.3555306],[24.3436398,42.3553746],[24.343672,42.354605]]]}
   },
   {
     id:'MARITSA3-GALDUSHKI-LIVADI', type:'waste', name:'Сгуроотвал „Галдушки ливади“ · ТЕЦ „Марица 3“',
