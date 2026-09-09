@@ -2503,6 +2503,18 @@ function normalizeProvinceName(value) {
           ]
       },
       {
+          "id": "RES-013-SUBSTATION",
+          "name": "ФЕЦ „Чирпан Солар“ — подстанция 33/110 kV",
+          "year": 2025,
+          "status": "construction",
+          "assetType": "substation",
+          "statusLabel": "енергийна инфраструктура към ФЕЦ · без фотоволтаични модули · точен ПИ по МОСВ/КККР",
+          "source": "https://www.moew.government.bg/bg/reshenie-4-pr-2023-g-za-investicionno-predlojenie-izgrajdane-na-vuzdushni-elektroprovodi-visoko-naprejenie-110-kv-ot-nova-podstanciya-v-pozemlen-imot-s-identifikator-78330-63-13-po-kkkr-na-s-celina-obst-chirpan-obl-stara-15390/",
+          "parcels": [
+              "78330.63.13"
+          ]
+      },
+      {
           "id": "RES-014",
           "name": "ФЕЦ „Книжовник и Стамболово“ — Енери БГ 1",
           "year": 2024,
@@ -4154,7 +4166,14 @@ const redLayer=new VectorLayer({
 const projectLayer=new VectorLayer({
   source:projectSource,zIndex:5,visible:layerVisibility.projects,
   style:f=>{
-    const selected=f.get('selected'),planned=f.get('status')==='planned';
+    const selected=f.get('selected'),planned=f.get('status')==='planned',substation=f.get('assetType')==='substation';
+    if(substation){
+      return haloPolygonStyles({
+        fill:satelliteMode()?(selected?'rgba(251,191,36,.52)':'rgba(245,158,11,.34)'):(selected?'rgba(217,119,6,.32)':'rgba(245,158,11,.20)'),
+        stroke:satelliteMode()?'#fbbf24':(selected?cssVar('--foreground','#111827'):'#b45309'),
+        innerWidth:selected?2.7:1.8,selected,halo:'rgba(255,255,255,.98)',haloWidth:4.8,lineDash:[7,4]
+      });
+    }
     const fill=satelliteMode()
       ?(planned?(selected?'rgba(232,121,249,.52)':'rgba(217,70,239,.38)'):(selected?'rgba(56,189,248,.50)':'rgba(14,165,233,.36)'))
       :(planned?(selected?'rgba(124,58,237,.30)':'rgba(124,58,237,.20)'):(selected?'rgba(37,99,235,.28)':'rgba(37,99,235,.18)'));
@@ -4995,6 +5014,7 @@ function renderParcelRows(loaded){
       f.set('kind',row.layerType==='solar'?'solar':'project');
       f.set('data',row);
       f.set('status',row.project.status);
+      f.set('assetType',row.project.assetType||null);
       (row.layerType==='solar'?solarSource:projectSource).addFeature(f);
     }catch(e){
       rejected++;
@@ -5847,6 +5867,7 @@ function runSelfTests(){
   selfTest('industry-site-centres',()=>{const bad=industrialPolygonSites.filter(d=>d.lon<20||d.lon>30.5||d.lat<40||d.lat>45.5);return{ok:bad.length===0,bad:bad.map(d=>d.id),total:industrialPolygonSites.length};});
   selfTest('industry-id-unique',()=>{const dup=duplicateValues(industrialPolygonSites.map(d=>d.id));return{ok:dup.length===0,duplicates:dup};});
   selfTest('cadastral-project-ids',()=>{const dup=duplicateValues(cadastralProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:cadastralProjects.length};});
+  selfTest('chirpan-project-scope',()=>{const pv=cadastralProjects.find(d=>d.id==='RES-013'),substation=cadastralProjects.find(d=>d.id==='RES-013-SUBSTATION');return{ok:pv?.parcels?.length===9&&!pv.parcels.includes('78330.63.13')&&substation?.assetType==='substation'&&substation?.parcels?.length===1&&substation.parcels[0]==='78330.63.13',pvParcels:pv?.parcels?.length,substationParcels:substation?.parcels};});
   selfTest('solar-project-ids',()=>{const dup=duplicateValues(operatingSolarProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:operatingSolarProjects.length};});
   selfTest('cadastral-refs-syntax',()=>{const refs=[...cadastralProjects,...operatingSolarProjects].flatMap(p=>p.parcels||[]);const bad=refs.filter(r=>sanitizeParcelRef(r)!==String(r));return{ok:bad.length===0,bad:bad.slice(0,20),total:refs.length};});
   selfTest('url-layer-state',()=>({ok:['solar','wind','projects','future','industry','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
