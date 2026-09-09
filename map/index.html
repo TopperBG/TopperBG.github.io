@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.87h-tsar-asen-corrected-contour-20260909">
+<meta name="bgwf-build" content="v0.87i-radka-elshitsa-real-osm-polygons-20260909">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.87h</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
@@ -2854,6 +2854,18 @@ function normalizeProvinceName(value) {
   // ВАЖНО: рисуването е с плоско проектирани SVG пръстени + fill-rule=evenodd,
   // а не със сферичния GeoJSON renderer, за да няма "обърнат полигон", запълващ цялата карта.
   const industrialPolygonSites = [
+    { id:"MINE-ELSHITSA-OSM", type:"legacy-acid", name:"Изоставен меден рудник „Елшица“",
+      osmType:"W", osmId:124105233, lon:24.21900, lat:42.34977,
+      fuel:"закрит меден рудник; нарушен минен терен", info:"реален OSM контур на неактивния рудник; OSM way 124105233; не е кадастрална граница",
+      source:"https://www.openstreetmap.org/way/124105233" },
+    { id:"ELSHITSA-RED-LAKE-OSM", type:"legacy-acid", name:"Елшица · „Червеното езеро“",
+      osmType:"W", osmId:1238912175, lon:24.21310, lat:42.35900,
+      fuel:"водно тяло в исторически минно засегната зона", info:"реален OSM контур на водното тяло; OSM way 1238912175; без автоматично твърдение за текущ химичен състав",
+      source:"https://www.openstreetmap.org/way/1238912175" },
+    { id:"MINE-RADKA-OSM", type:"legacy-acid", name:"Бивша медна мина „Радка“",
+      osmType:"W", osmId:200360355, lon:24.288560, lat:42.400492,
+      fuel:"закрит меден рудник; терени, отвали и минно нарушена площ", info:"реален OSM контур, разрешен по името на бившата мина чрез Nominatim; не е кадастрална граница",
+      source:"https://www.openstreetmap.org/way/200360355" },
     { id:"TPP-ME2", type:"tpp", name:"ТЕЦ „Марица изток 2“",
       osmType:"W", osmId:146641607, lon:26.13050, lat:42.25302,
       fuel:"лигнитни въглища", info:"GIS контур на промишлената площадка",
