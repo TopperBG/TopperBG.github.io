@@ -1958,7 +1958,7 @@ svg {
   #bg-wildfires-map .bgwf-map-reset { font-size: 19px; }
   #bg-wildfires-map .bgwf-province-chip {
     position: absolute;
-    z-index: 24;
+    z-index: 42;
     top: 0.55rem;
     left: 0.55rem;
     display: flex;
@@ -3857,6 +3857,7 @@ const liveCountEl = root.querySelector('[data-live-count]');
 const zoomFactorEl = root.querySelector('[data-zoom-factor]');
 const provinceChip = root.querySelector('[data-province-chip]');
 const provinceNameEl = root.querySelector('[data-province-name]');
+const mapWrap = root.querySelector('.bgwf-map-wrap');
 let map = null;
 
 function activateDetail(){detailBox?.classList.remove('is-hint');}
@@ -3882,10 +3883,19 @@ function setLayerLoadState(layerKey,state,title=''){
   const button=root.querySelector(`.bgwf-layer-toggle[data-layer="${layerKey}"]`); if(!button)return;
   button.dataset.loadState=state; if(title)button.title=title; else button.removeAttribute('title');
 }
-function updateFloatingZoomPosition(){
-  // Native OpenLayers controls need no custom positioning.
+function updateProvinceChipPosition(){
+  if(!provinceChip||!filterPanel||!mapWrap)return;
+  const panelRect=filterPanel.getBoundingClientRect();
+  const wrapRect=mapWrap.getBoundingClientRect();
+  const top=Math.max(8,Math.round(panelRect.bottom-wrapRect.top+8));
+  provinceChip.style.top=`${top}px`;
 }
-addEventListener('scroll',updateFloatingZoomPosition,{passive:true}); addEventListener('resize',()=>{updateFloatingZoomPosition();map?.updateSize();},{passive:true});
+function updateFloatingUiPosition(){
+  // Keep the selected-province label below the responsive filter panel.
+  updateProvinceChipPosition();
+}
+addEventListener('scroll',updateFloatingUiPosition,{passive:true}); addEventListener('resize',()=>{updateFloatingUiPosition();map?.updateSize();},{passive:true});
+if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateProvinceChipPosition).observe(filterPanel);
 
 const compactMobileQuery='(max-width:700px), (max-height:600px) and (hover:none)';
 const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia(compactMobileQuery).matches)mobileFooter.open=false;
@@ -3905,7 +3915,7 @@ setFilterPanelOpen(!matchMedia(compactMobileQuery).matches);
 mobileFilterToggle?.addEventListener('click',()=>{
   const open=!filterPanel?.classList.contains('is-filter-open');
   setFilterPanelOpen(open);
-  requestAnimationFrame(()=>{updateFloatingZoomPosition();map?.updateSize();});
+  requestAnimationFrame(()=>{updateFloatingUiPosition();map?.updateSize();});
 });
 if(filterPanel?.classList.contains('is-filter-open')){
   setTimeout(()=>filterPanel?.classList.add('is-filter-coaching'),850);
@@ -3917,7 +3927,7 @@ filterPanel?.addEventListener('click',event=>{
   setTimeout(()=>{
     if(!filterPanel?.classList.contains('is-filter-open'))return;
     setFilterPanelOpen(false);
-    requestAnimationFrame(()=>{updateFloatingZoomPosition();map?.updateSize();});
+    requestAnimationFrame(()=>{updateFloatingUiPosition();map?.updateSize();});
   },1200);
 });
 
@@ -4552,7 +4562,7 @@ const requestedLon=Number(urlParams.get('lon')),requestedLat=Number(urlParams.ge
 if(Number.isFinite(requestedLon)&&Number.isFinite(requestedLat)&&Number.isFinite(requestedScale)&&requestedLon>=20&&requestedLon<=31&&requestedLat>=39&&requestedLat<=47&&requestedScale>=1&&requestedScale<=600){view.setCenter(fromLonLat([requestedLon,requestedLat]));view.setResolution(homeResolution/requestedScale);dbg('url-view-restored',{requestedLon,requestedLat,requestedScale});}
 updateZoomFactor();
 
-function setProvinceFocus(feature){activeProvinceCode=feature?.get('provinceCode')||null;if(provinceChip)provinceChip.hidden=!feature;if(provinceNameEl)provinceNameEl.textContent=feature?provinceCodeToName.get(activeProvinceCode)||activeProvinceCode:'';provinceLayer.changed();}
+function setProvinceFocus(feature){activeProvinceCode=feature?.get('provinceCode')||null;if(provinceChip)provinceChip.hidden=!feature;if(provinceNameEl)provinceNameEl.textContent=feature?provinceCodeToName.get(activeProvinceCode)||activeProvinceCode:'';updateProvinceChipPosition();provinceLayer.changed();}
 function zoomToProvince(feature){if(!feature)return;setProvinceFocus(feature);view.fit(feature.getGeometry().getExtent(),{padding:[70,70,70,70],duration:360,maxZoom:10});}
 function resetMapZoom(){setProvinceFocus(null);fitHome({animate:true});}
 root.querySelector('[data-province-reset]')?.addEventListener('click',resetMapZoom);
@@ -5804,6 +5814,15 @@ function runSelfTests(){
     const styles=provinceLayer.getStyleFunction()?.(provinceSource.getFeatures()[0],view.getResolution());
     return {ok:Array.isArray(styles)&&styles.length===2&&provinceLayer.getZIndex()===30,styles:Array.isArray(styles)?styles.length:0,zIndex:provinceLayer.getZIndex()};
   });
+  selfTest('province-chip-visible-above-filters',()=>{
+    updateProvinceChipPosition();
+    const panelRect=filterPanel?.getBoundingClientRect(),wrapRect=mapWrap?.getBoundingClientRect();
+    const chipTop=Number.parseFloat(provinceChip?.style.top||'');
+    const chipZ=Number.parseInt(getComputedStyle(provinceChip).zIndex,10);
+    const panelZ=Number.parseInt(getComputedStyle(filterPanel).zIndex,10);
+    const panelBottom=panelRect&&wrapRect?panelRect.bottom-wrapRect.top:NaN;
+    return {ok:Number.isFinite(chipTop)&&chipTop>panelBottom&&chipZ>panelZ,chipTop,panelBottom:Math.round(panelBottom),chipZ,panelZ};
+  });
   selfTest('forced-light-theme',()=>{
     const rootStyle=getComputedStyle(document.documentElement),bodyStyle=getComputedStyle(document.body),mapStyle=getComputedStyle(mapTarget);
     const scheme=rootStyle.colorScheme||'';
@@ -5856,7 +5875,7 @@ window.bgwfRunSelfTests=runSelfTests;
 
 // Initial state
 compactYearFilterButtons();
-updateFiresAndDensity();updateLayerStatus();updateFloatingZoomPosition();void showGoatCounter();
+updateFiresAndDensity();updateLayerStatus();updateFloatingUiPosition();void showGoatCounter();
 if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
 if(layerVisibility.live&&(activeYear==null||activeYear===2026||activeYear===false))void loadLiveSentinelFires();
 setTimeout(()=>void loadProjectParcels(),100);
