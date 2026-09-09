@@ -1,0 +1,95 @@
+name: Temporary Radka Elshitsa polygon patch
+on:
+  push:
+    paths:
+      - '.github/workflows/tmp-radka-elshitsa-polygons.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Resolve OSM objects and patch map
+        run: |
+          python - <<'PY'
+          import json, urllib.parse, urllib.request, re, pathlib, time
+
+          UA='TopperBG-EnergyMap/1.0 (GitHub Pages map data maintenance)'
+          def get_json(url):
+              req=urllib.request.Request(url, headers={'User-Agent':UA,'Accept':'application/json'})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  return json.load(r)
+
+          # Resolve Radka by name against Nominatim. Cartogiraffe/OSM already exposes
+          # the feature under the Bulgarian name below; we deliberately do not invent a polygon.
+          queries=[
+              'Бивша медна мина Радка, Пазарджик, България',
+              'Бивша медна мина "Радка", България',
+              'Radka Mine, Pazardzhik, Bulgaria',
+          ]
+          radka=None
+          for q in queries:
+              u='https://nominatim.openstreetmap.org/search?'+urllib.parse.urlencode({
+                  'q':q,'format':'jsonv2','polygon_geojson':1,'addressdetails':1,'limit':10
+              })
+              data=get_json(u)
+              for x in data:
+                  dn=(x.get('display_name') or '').lower()
+                  typ=(x.get('type') or '').lower()
+                  geo=x.get('geojson') or {}
+                  lat=float(x.get('lat',0)); lon=float(x.get('lon',0))
+                  if geo.get('type') in ('Polygon','MultiPolygon') and 42.32 < lat < 42.41 and 24.23 < lon < 24.32:
+                      radka=x; break
+              if radka: break
+              time.sleep(1)
+          if not radka:
+              raise SystemExit('Could not resolve Radka polygon in Nominatim; aborting without modifying map')
+
+          osm_type={'way':'W','relation':'R'}.get((radka.get('osm_type') or '').lower())
+          if not osm_type:
+              raise SystemExit('Radka result is not a way/relation; aborting')
+          radka_id=int(radka['osm_id'])
+          radka_lat=float(radka['lat']); radka_lon=float(radka['lon'])
+
+          p=pathlib.Path('map/index.html')
+          s=p.read_text(encoding='utf-8')
+          marker='  const industrialPolygonSites = [\n'
+          if marker not in s:
+              raise SystemExit('industrialPolygonSites marker not found')
+
+          entries=f'''    {{ id:"MINE-ELSHITSA-OSM", type:"legacy-acid", name:"Изоставен меден рудник „Елшица“",\n      osmType:"W", osmId:124105233, lon:24.21900, lat:42.34977,\n      fuel:"закрит меден рудник; нарушен минен терен", info:"реален OSM контур на неактивния рудник; OSM way 124105233; не е кадастрална граница",\n      source:"https://www.openstreetmap.org/way/124105233" }},\n    {{ id:"ELSHITSA-RED-LAKE-OSM", type:"legacy-acid", name:"Елшица · „Червеното езеро“",\n      osmType:"W", osmId:1238912175, lon:24.21310, lat:42.35900,\n      fuel:"водно тяло в исторически минно засегната зона", info:"реален OSM контур на водното тяло; OSM way 1238912175; без автоматично твърдение за текущ химичен състав",\n      source:"https://www.openstreetmap.org/way/1238912175" }},\n    {{ id:"MINE-RADKA-OSM", type:"legacy-acid", name:"Бивша медна мина „Радка“",\n      osmType:"{osm_type}", osmId:{radka_id}, lon:{radka_lon:.6f}, lat:{radka_lat:.6f},\n      fuel:"закрит меден рудник; терени, отвали и минно нарушена площ", info:"реален OSM контур, разрешен по името на бившата мина чрез Nominatim; не е кадастрална граница",\n      source:"https://www.openstreetmap.org/{'way' if osm_type=='W' else 'relation'}/{radka_id}" }},\n'''
+          # Idempotent insertion.
+          if 'id:"MINE-ELSHITSA-OSM"' not in s:
+              s=s.replace(marker, marker+entries, 1)
+          else:
+              print('Elshitsa/Radka entries already present; not inserting again')
+
+          # Bump build marker only if it has the current known form.
+          s=re.sub(r'<meta name="bgwf-build" content="[^"]+">',
+                   '<meta name="bgwf-build" content="v0.87i-radka-elshitsa-real-osm-polygons-20260909">', s, count=1)
+          p.write_text(s, encoding='utf-8')
+
+          report={
+              'radka_query_result':{
+                  'osm_type':radka.get('osm_type'),'osm_id':radka_id,
+                  'lat':radka_lat,'lon':radka_lon,'display_name':radka.get('display_name'),
+                  'geojson_type':(radka.get('geojson') or {}).get('type')
+              },
+              'added_osm_objects':['W124105233','W1238912175',f'{osm_type}{radka_id}'],
+              'existing_tsar_asen':'W124105629'
+          }
+          pathlib.Path('map/radka-elshitsa-osm-resolution.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(report,ensure_ascii=False,indent=2))
+          PY
+      - name: Commit patch and remove temporary workflow
+        run: |
+          git config user.name "TopperBG map bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/tmp-radka-elshitsa-polygons.yml
+          git add map/index.html map/radka-elshitsa-osm-resolution.json
+          git commit -m "Add real OSM polygons for Radka and Elshitsa mining areas"
+          git push
