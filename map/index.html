@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88-natura-2000-20260911">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88</title>
+<meta name="bgwf-build" content="v0.88a-filter-contrast-20260911">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88a</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88a</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
@@ -1663,9 +1663,29 @@ svg {
   }
   #bg-wildfires-map .bgwf-year-filter:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
   #bg-wildfires-map .bgwf-year-filter[aria-pressed="true"] {
-    border-color: var(--bgwf-filter-color, var(--primary));
-    background: color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 18%, var(--secondary));
-    box-shadow: inset 0 0 0 1px var(--bgwf-filter-color, var(--primary));
+    border-color: color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 74%, #111827);
+    background: color-mix(in srgb, var(--bgwf-filter-color, var(--primary)) 72%, #111827 28%);
+    color: #fff;
+    font-weight: 850;
+    text-shadow: 0 1px 1px rgba(0,0,0,.78), 0 0 3px rgba(0,0,0,.42);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.42), 0 1px 4px rgba(15,23,42,.38);
+    transform: translateY(-1px);
+  }
+  #bg-wildfires-map .bgwf-year-filter[data-year="all"][aria-pressed="true"] {
+    border-color:#334155;
+    background:#334155;
+  }
+  #bg-wildfires-map .bgwf-layer-toggle[data-layer="satellite"] .bgwf-swatch {
+    background:linear-gradient(135deg,#facc15 0 48%,#65a30d 52% 100%);
+    border-color:#4d7c0f;
+  }
+  #bg-wildfires-map .bgwf-layer-toggle[data-layer="satellite"][aria-pressed="true"] {
+    border-color:#4d7c0f;
+    background:linear-gradient(135deg,#fde047 0%,#bef264 48%,#65a30d 100%);
+    color:#17220b;
+    font-weight:850;
+    text-shadow:0 1px 0 rgba(255,255,255,.72);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),0 1px 4px rgba(54,83,20,.38);
   }
   #bg-wildfires-map .bgwf-year-filter:not([aria-pressed="true"]) { opacity: 0.72; }
   #bg-wildfires-map .bgwf-year-filter:not([aria-pressed="true"]):hover { opacity: 1; }
