@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-source-manifest-v1",
   "generatedAt": "2026-08-17T14:35:13.512162+00:00",
-  "mapVersion": "0.70",
+  "mapVersion": "0.88",
   "engine": "OpenLayers 10.10.0",
   "sources": [
     {
@@ -9,6 +9,13 @@
       "kind": "library",
       "url": "https://github.com/openlayers/openlayers",
       "version": "10.10.0"
+    },
+    {
+      "id": "POLYGON-CLIPPING",
+      "kind": "local polygon intersection library",
+      "url": "https://github.com/mfogel/polygon-clipping",
+      "version": "0.15.7",
+      "localFile": "/data/vendor/polygon-clipping-0.15.7.umd.min.js"
     },
     {
       "id": "EFFIS",
@@ -24,6 +31,13 @@
       "id": "AGKK",
       "kind": "cadastral parcels ArcGIS REST",
       "url": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query"
+    },
+    {
+      "id": "MOEW-NATURA-2000",
+      "kind": "official Natura 2000 SPA and habitat polygons; local optimized snapshot",
+      "url": "https://natura2000.egov.bg/arcgis/rest/services/OpenData/ProtectedSitesOpenData_Feature/FeatureServer",
+      "retrievedAt": "2026-09-11T06:06:52Z",
+      "localFile": "/data/natura-2000-bg-v1.json"
     },
     {
       "id": "SENTINEL3",
