@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88a-filter-contrast-20260911">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88a</title>
+<meta name="bgwf-build" content="v0.88b-taller-map-20260911">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88b</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -847,11 +847,11 @@ svg {
   #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
   #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-body { display:block; }
   #bg-wildfires-map .bgwf-filter-chevron { display:inline-block;min-width:10px;text-align:center; }
-  #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:clamp(580px,86vh,940px); }
+  #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:clamp(600px,92vh,1020px); }
   @media (max-width:700px), (max-height:600px) and (hover:none) {
     #bg-wildfires-map .bgwf-floating-controls { padding:.34rem .55rem; border-radius:.8rem; }
     #bg-wildfires-map .bgwf-map-wrap { min-height:68vh; }
-    #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:82vh; min-height:460px; }
+    #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:88vh; min-height:480px; }
     #bg-wildfires-map .bgwf-layer-status-inline { font-size:10px; line-height:1.1; }
   }
 
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88a</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88b</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
@@ -2044,7 +2044,7 @@ svg {
     overflow:hidden;
     border-radius:12px;
   }
-  #bg-wildfires-map .bgwf-map { height:clamp(560px,82vh,900px); }
+  #bg-wildfires-map .bgwf-map { height:clamp(580px,88vh,980px); }
   #bg-wildfires-map .bgwf-brand {
     display:none;
   }
@@ -2070,7 +2070,7 @@ svg {
     box-shadow:0 2px 10px rgb(0 0 0 / 8%);
   }
   @media (max-width:700px), (max-height:600px) and (hover:none) {
-    #bg-wildfires-map .bgwf-map { height:78vh;min-height:440px; }
+    #bg-wildfires-map .bgwf-map { height:84vh;min-height:460px; }
     #bg-wildfires-map .bgwf-floating-controls { top:5px;left:5px;right:5px; }
     #bg-wildfires-map .bgwf-detail { left:5px;right:5px;bottom:5px;font-size:10px;line-height:1.25; }
   }
