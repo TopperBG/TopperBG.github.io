@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88c-clearer-polygon-outlines-20260913">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88c</title>
+<meta name="bgwf-build" content="v0.88d-editorial-map-style-20260913">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88d</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88c</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88d</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
@@ -2045,6 +2045,15 @@ svg {
     border-radius:12px;
   }
   #bg-wildfires-map .bgwf-map { height:clamp(580px,88vh,980px); }
+  #bg-wildfires-map:not(.is-satellite-mode) .bgwf-map {
+    background:#f3eee7 !important;
+  }
+  #bg-wildfires-map:not(.is-satellite-mode) .bgwf-floating-controls,
+  #bg-wildfires-map:not(.is-satellite-mode) .bgwf-detail {
+    border-color:rgba(113,110,105,.16);
+    background:rgba(250,247,241,.88);
+    box-shadow:0 3px 14px rgba(74,66,55,.10);
+  }
   #bg-wildfires-map .bgwf-brand {
     display:none;
   }
@@ -3915,7 +3924,9 @@ function cssVar(name,fallback){
   const resolved=getComputedStyle(probe).color;probe.remove();const value=resolved&&resolved!=='rgba(0, 0, 0, 0)'?resolved:fallback;cssColorCache.set(cacheKey,value);return value;
 }
 function colorWithAlpha(color,alpha){const nums=String(color).match(/[\d.]+/g)?.map(Number);return nums&&nums.length>=3?`rgba(${Math.round(nums[0])},${Math.round(nums[1])},${Math.round(nums[2])},${alpha})`:color;}
-const yearColors = new Map(years.map((year,i)=>[year,cssVar(`--viz-series-${i+1}`,['#e11d48','#f97316','#f59e0b','#84cc16','#0ea5e9','#7c3aed'][i])]));
+// Editorial fire palette from the original “Пожарите в България” visual.
+const fireYearPalette=['rgb(124 109 176)','rgb(79 143 184)','rgb(53 167 122)','rgb(239 181 66)','rgb(223 107 67)','rgb(181 79 103)'];
+const yearColors = new Map(years.map((year,i)=>[year,fireYearPalette[i]]));
 
 function setFilterPanelLoading(isLoading){filterPanel?.classList.toggle('is-ready',!isLoading);}
 function setMapLoadProgress(percent,state='loading'){
@@ -4133,6 +4144,11 @@ const concessionSource=new VectorSource();
 const liveSource=new VectorSource();
 
 const provinceFeatures=readFeatures(provinces); provinceFeatures.forEach(f=>{f.set('kind','province');f.set('provinceCode',f.get('nuts3'));}); provinceSource.addFeatures(provinceFeatures);
+const provinceBackdropLayer=new VectorLayer({
+  source:provinceSource,
+  zIndex:-1,
+  style:()=>satelliteMode()?null:new Style({fill:new Fill({color:'rgba(255,253,249,.94)'})})
+});
 const provinceLayer=new VectorLayer({
   source:provinceSource,
   zIndex:60,
@@ -4140,10 +4156,10 @@ const provinceLayer=new VectorLayer({
     const active=f.get('provinceCode')===activeProvinceCode;
     const satellite=satelliteMode();
     return new Style({
-      fill:new Fill({color:satellite?'rgba(0,0,0,0)':(active?'rgba(37,99,235,.045)':'rgba(148,163,184,.025)')}),
+      fill:new Fill({color:satellite?'rgba(0,0,0,0)':(active?'rgba(100,116,139,.10)':'rgba(0,0,0,0)')}),
       stroke:new Stroke({
-        color:active?(satellite?'#fde047':'#2563eb'):(satellite?'rgba(255,255,255,.82)':'rgba(31,41,55,.68)'),
-        width:active?1.6:.8
+        color:active?(satellite?'#fde047':'#64748b'):(satellite?'rgba(255,255,255,.82)':'rgba(139,148,158,.72)'),
+        width:active?1.6:.9
       })
     });
   }
@@ -4153,6 +4169,7 @@ const densityLayer=new VectorLayer({
   zIndex:2,
   declutter:true,
   style:(f,resolution)=>{
+    if(!satelliteMode())return null;
     if(resolution<420||Number(f.get('count'))<2)return null;
     const count=Number(f.get('count'))||1;
     const color=yearColors.get(f.get('year'))||'#dc2626';
@@ -4190,7 +4207,8 @@ function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba
   });
 }
 function refreshSatelliteOverlayStyles(){
-  [placeLabelsLayer,provinceLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
+  root.classList.toggle('is-satellite-mode',satelliteMode());
+  [placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
   industrialAuxLayer?.changed?.();
 }
@@ -4330,7 +4348,14 @@ concessionEstimateLayer.set('kind','concession-estimate');
 const effisLayer=new VectorLayer({source:effisSource,zIndex:10,style:f=>new Style({fill:new Fill({color:'rgba(239,68,68,.16)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ef4444',width:polygonOutlineWidth(f.get('selected')?1.8:1.05,f.get('selected'))})})});
 function fireRadius(area){const a=Math.max(0,Number(area)||0),max=Math.max(1,largestAll);return 3.2+(31-3.2)*Math.sqrt(a/max);}
 const fireLayer=new VectorLayer({source:fireSource,zIndex:11,style:f=>{
-  if(f.get('hiddenByPerimeter'))return null; const d=f.get('data'); const selected=f===selectedFeature;return new Style({image:new CircleStyle({radius:fireRadius(d.area_ha),fill:new Fill({color:colorWithAlpha(yearColors.get(d.year)||'#ef4444',d.area_ha>=1000?0.78:0.58)}),stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):cssVar('--background','#fff'),width:selected?2:0.8})})});
+  if(f.get('hiddenByPerimeter'))return null;
+  const d=f.get('data'),selected=f===selectedFeature,satellite=satelliteMode();
+  const alpha=d.area_ha>=1000?(satellite ? .78 : .82):(satellite ? .58 : .68);
+  return new Style({image:new CircleStyle({
+    radius:fireRadius(d.area_ha),
+    fill:new Fill({color:colorWithAlpha(yearColors.get(d.year)||'#ef4444',alpha)}),
+    stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):(satellite?'rgba(255,255,255,.92)':'rgba(255,253,249,.96)'),width:selected?2.2:(satellite ? .8 : 1)})
+  })});
 }});
 const liveLayer=new VectorLayer({source:liveSource,zIndex:12,visible:layerVisibility.live,style:f=>new Style({image:new CircleStyle({radius:f.get('selected')?11:9,fill:new Fill({color:f.get('selected')?'rgba(255,23,23,.34)':'rgba(255,23,23,.22)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ff1717',width:f.get('selected')?3:2})}),text:new TextStyle({text:'🔥',font:f.get('selected')?'17px sans-serif':'15px sans-serif',offsetY:-1})})});
 
@@ -4362,7 +4387,7 @@ map=new MapOL({
   target:mapTarget,
   view,
   interactions:mapInteractions,
-  layers:[satelliteLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,provinceLayer]
+  layers:[satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,projectLayer,solarLayer,windLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,provinceLayer]
 });
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
