@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88b-taller-map-20260911">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88b</title>
+<meta name="bgwf-build" content="v0.88c-clearer-polygon-outlines-20260913">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88c</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88b</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88c</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-filter-strip">
@@ -4173,13 +4173,20 @@ const densityLayer=new VectorLayer({
   }
 });
 debugState.environment.webgl=null;
-function selectedStrokeWidth(f,normal=1.2,selected=2.4){return f.get('selected')?selected:normal;}
+
+// Keep polygon boundaries legible at national and regional overview scales,
+// while preserving finer lines when the user zooms into individual parcels.
+function polygonOutlineWidth(base=1.2,selected=false){
+  const scale=currentScale();
+  const boost=scale<=1.5?1.35:scale<=4?1.2:1;
+  return Math.min(selected?3.4:2.2,base*boost);
+}
 
 function satelliteMode(){return !!satelliteLayer?.getVisible?.();}
 function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba(255,255,255,.94)',haloWidth=3.5,lineDash=null}){
   return new Style({
     fill:new Fill({color:fill}),
-    stroke:new Stroke({color:stroke,width:selected?1.8:Math.min(1.05,innerWidth),lineDash})
+    stroke:new Stroke({color:stroke,width:polygonOutlineWidth(selected?Math.min(2.3,innerWidth):Math.min(1.35,innerWidth),selected),lineDash})
   });
 }
 function refreshSatelliteOverlayStyles(){
@@ -4210,7 +4217,7 @@ const naturaLayer=new VectorLayer({
     const stroke=habitat?(satelliteMode()?'#4ade80':'#15803d'):(satelliteMode()?'#2dd4bf':'#0f766e');
     return new Style({
       fill:new Fill({color:selected?(habitat?'rgba(21,128,61,.28)':'rgba(15,118,110,.28)'):fill}),
-      stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):stroke,width:selected?2:0.8,lineDash:habitat?null:[6,3]})
+      stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):stroke,width:polygonOutlineWidth(selected?2:1.1,selected),lineDash:habitat?null:[6,3]})
     });
   }
 });
@@ -4218,14 +4225,14 @@ const naturaRenewablesOverlapLayer=new VectorLayer({
   source:naturaRenewablesOverlapSource,zIndex:58,visible:false,
   style:f=>new Style({
     fill:new Fill({color:satelliteMode()?'rgba(255,0,128,.58)':'rgba(190,24,93,.48)'}),
-    stroke:new Stroke({color:f.get('selected')?'#111827':'#9d174d',width:f.get('selected')?2.4:1.3})
+    stroke:new Stroke({color:f.get('selected')?'#111827':'#9d174d',width:polygonOutlineWidth(f.get('selected')?2.4:1.3,f.get('selected'))})
   })
 });
 const naturaIndustryOverlapLayer=new VectorLayer({
   source:naturaIndustryOverlapSource,zIndex:58,visible:false,
   style:f=>new Style({
     fill:new Fill({color:satelliteMode()?'rgba(255,106,0,.62)':'rgba(124,45,18,.52)'}),
-    stroke:new Stroke({color:f.get('selected')?'#111827':'#7c2d12',width:f.get('selected')?2.4:1.3})
+    stroke:new Stroke({color:f.get('selected')?'#111827':'#7c2d12',width:polygonOutlineWidth(f.get('selected')?2.4:1.3,f.get('selected'))})
   })
 });
 const projectLayer=new VectorLayer({
@@ -4296,7 +4303,7 @@ const industryLayer=new VectorLayer({
     }
     const fill=type==='legacy-acid'?(selected?'rgba(8,145,178,.42)':'rgba(8,145,178,.27)'):type==='waste'?(selected?'rgba(126,34,206,.44)':'rgba(126,34,206,.28)'):type==='coal'?(selected?'rgba(91,58,41,.58)':'rgba(91,58,41,.42)'):type==='ore'?(selected?'rgba(124,45,18,.48)':'rgba(124,45,18,.32)'):type==='refinery'?(selected?'rgba(17,24,39,.54)':'rgba(17,24,39,.38)'):(selected?'rgba(47,47,47,.50)':'rgba(47,47,47,.35)');
     const stroke=selected?cssVar('--foreground','#111827'):type==='legacy-acid'?'#ea580c':type==='waste'?'#7e22ce':type==='coal'?'#4a2f22':type==='ore'?'#6b2710':type==='refinery'?'#111827':'#1f2937';
-    return new Style({fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selectedStrokeWidth(f,1.2,2.4)})});
+    return new Style({fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:polygonOutlineWidth(selected?2.4:1.2,selected)})});
   }
 });
 const concessionLayer=new VectorLayer({
@@ -4304,7 +4311,7 @@ const concessionLayer=new VectorLayer({
   style:f=>{
     const selected=f.get('selected');
     const color=satelliteMode()?'#ff00aa':(selected?'#ef4444':'#b91c1c');
-    return new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:selected?1.7:1,lineDash:[7,4]})});
+    return new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:polygonOutlineWidth(selected?1.7:1,selected),lineDash:[7,4]})});
   }
 });
 const concessionEstimateLayer=new VectorLayer({
@@ -4314,13 +4321,13 @@ const concessionEstimateLayer=new VectorLayer({
   style:f=>{
     return new Style({
       fill:new Fill({color:satelliteMode()?'rgba(255,0,170,.09)':'rgba(185,28,28,0.055)'}),
-      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:.9,lineDash:[3,4]})
+      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:polygonOutlineWidth(.9),lineDash:[3,4]})
     });
   }
 });
 concessionEstimateLayer.set('kind','concession-estimate');
 
-const effisLayer=new VectorLayer({source:effisSource,zIndex:10,style:f=>new Style({fill:new Fill({color:'rgba(239,68,68,.16)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ef4444',width:selectedStrokeWidth(f,1.05,1.8)})})});
+const effisLayer=new VectorLayer({source:effisSource,zIndex:10,style:f=>new Style({fill:new Fill({color:'rgba(239,68,68,.16)'}),stroke:new Stroke({color:f.get('selected')?cssVar('--foreground','#111827'):'#ef4444',width:polygonOutlineWidth(f.get('selected')?1.8:1.05,f.get('selected'))})})});
 function fireRadius(area){const a=Math.max(0,Number(area)||0),max=Math.max(1,largestAll);return 3.2+(31-3.2)*Math.sqrt(a/max);}
 const fireLayer=new VectorLayer({source:fireSource,zIndex:11,style:f=>{
   if(f.get('hiddenByPerimeter'))return null; const d=f.get('data'); const selected=f===selectedFeature;return new Style({image:new CircleStyle({radius:fireRadius(d.area_ha),fill:new Fill({color:colorWithAlpha(yearColors.get(d.year)||'#ef4444',d.area_ha>=1000?0.78:0.58)}),stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):cssVar('--background','#fff'),width:selected?2:0.8})})});
@@ -4389,7 +4396,7 @@ function ensureIndustrialAuxLayer(){
       }
       return new Style({
         fill:new Fill({color:selected?'rgba(75,85,99,.34)':'rgba(75,85,99,.22)'}),
-        stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):'#4b5563',width:selectedStrokeWidth(f,1.0,2.1)})
+        stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):'#4b5563',width:polygonOutlineWidth(selected?2.1:1,selected)})
       });
     }
   });
