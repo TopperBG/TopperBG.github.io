@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88d-editorial-map-style-20260913">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88d</title>
+<meta name="bgwf-build" content="v0.88e-object-search-20260914">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88e</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,9 +1499,18 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88d</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88e</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
+    <div class="bgwf-search" data-map-search>
+      <label class="bgwf-sr-only" for="bgwf-search-input">Търсене на обект</label>
+      <div class="bgwf-search-box">
+        <span class="bgwf-search-icon" aria-hidden="true">⌕</span>
+        <input id="bgwf-search-input" class="bgwf-search-input" data-map-search-input type="search" autocomplete="off" spellcheck="false" placeholder="Търси ФЕЦ, проект, населено място или обект…" aria-controls="bgwf-search-results" aria-expanded="false">
+        <button type="button" class="bgwf-search-clear" data-map-search-clear aria-label="Изчисти търсенето" hidden>×</button>
+      </div>
+      <div id="bgwf-search-results" class="bgwf-search-results" data-map-search-results role="listbox" hidden></div>
+    </div>
     <div class="bgwf-filter-strip">
       <span class="bgwf-control-label">Година</span>
       <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
@@ -2054,6 +2063,27 @@ svg {
     background:rgba(250,247,241,.88);
     box-shadow:0 3px 14px rgba(74,66,55,.10);
   }
+  #bg-wildfires-map .bgwf-search { position:relative;margin-bottom:.28rem;z-index:190; }
+  #bg-wildfires-map .bgwf-search-box { display:flex;align-items:center;gap:.28rem; }
+  #bg-wildfires-map .bgwf-search-input {
+    width:100%;min-height:32px;padding:.34rem 2.2rem .34rem 2rem;border:1px solid color-mix(in srgb,var(--foreground) 18%,transparent);
+    border-radius:999px;background:rgba(255,255,255,.92);color:var(--foreground);font:600 12px/1.2 system-ui,sans-serif;
+    outline:none;box-shadow:0 1px 4px rgba(15,23,42,.10);
+  }
+  #bg-wildfires-map .bgwf-search-input:focus { border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,.16); }
+  #bg-wildfires-map .bgwf-search-icon { position:absolute;left:.72rem;top:.48rem;font-size:13px;pointer-events:none; }
+  #bg-wildfires-map .bgwf-search-clear { position:absolute;right:.38rem;top:.25rem;width:25px;height:25px;border:0;border-radius:50%;background:transparent;color:#64748b;font-size:18px;cursor:pointer; }
+  #bg-wildfires-map .bgwf-search-clear:hover { background:rgba(100,116,139,.12); }
+  #bg-wildfires-map .bgwf-search-results {
+    position:absolute;left:0;right:0;top:calc(100% + 4px);max-height:min(300px,48vh);overflow:auto;padding:4px;
+    border:1px solid rgba(100,116,139,.24);border-radius:10px;background:rgba(255,255,255,.98);box-shadow:0 8px 24px rgba(15,23,42,.18);
+  }
+  #bg-wildfires-map .bgwf-search-result { display:block;width:100%;padding:7px 9px;border:0;border-radius:7px;background:transparent;color:#111827;text-align:left;cursor:pointer; }
+  #bg-wildfires-map .bgwf-search-result:hover,
+  #bg-wildfires-map .bgwf-search-result:focus { background:#eaf2ff;outline:none; }
+  #bg-wildfires-map .bgwf-search-result strong { display:block;font-size:12px;line-height:1.2; }
+  #bg-wildfires-map .bgwf-search-result small { display:block;margin-top:2px;color:#64748b;font-size:10px;line-height:1.2; }
+  #bg-wildfires-map .bgwf-search-empty { padding:8px 9px;color:#64748b;font-size:11px; }
   #bg-wildfires-map .bgwf-brand {
     display:none;
   }
@@ -6007,6 +6037,136 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
 });const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);updateIndustryLegendHint();}
 updateTerritoryScaleBars();
 
+// ---------- Local object search ----------
+const mapSearch=root.querySelector('[data-map-search]');
+const mapSearchInput=root.querySelector('[data-map-search-input]');
+const mapSearchClear=root.querySelector('[data-map-search-clear]');
+const mapSearchResults=root.querySelector('[data-map-search-results]');
+let currentSearchResults=[];
+
+function normalizeSearchText(value){
+  return String(value||'').toLocaleLowerCase('bg-BG').normalize('NFKD').replace(/[„“”'’\-–—_/.,:;()]+/g,' ').replace(/\s+/g,' ').trim();
+}
+function placeTypeLabel(place){return place==='city'?'град':place==='town'?'град':'село';}
+function featureSearchMeta(feature){
+  const kind=feature.get('kind'),d=feature.get('data')||{};
+  if(kind==='place-label'){
+    const title=feature.get('name')||'Населено място';
+    return {title,category:`Населено място · ${placeTypeLabel(feature.get('place'))}`,searchable:`${title} ${feature.get('place')||''}`,groupKey:`place|${title}|${feature.getGeometry()?.getCoordinates?.().join(',')}`};
+  }
+  if(kind==='solar'){
+    const p=d.project||{},title=p.name||'ФЕЦ';
+    return {title,category:`Изградена ФЕЦ${Number.isFinite(Number(p.mwpDc??p.mwAc??p.mw))?` · ${Number(p.mwpDc??p.mwAc??p.mw).toLocaleString('bg-BG')} MW`:''}`,searchable:`${title} ${p.id||''} ${p.owner||''} ${p.statusLabel||''} ${d.parcelRef||''}` ,groupKey:`solar|${p.id||title}`};
+  }
+  if(kind==='project'){
+    const p=d.project||{},title=p.name||'ПУП/ПИ проект';
+    return {title,category:'ПУП/ПИ проект',searchable:`${title} ${p.id||''} ${p.statusLabel||''} ${d.parcelRef||''}`,groupKey:`project|${p.id||title}`};
+  }
+  if(kind==='wind'){
+    const title=d.name||'Ветрогенератор';
+    return {title,category:'ВяЕЦ / ветрогенератор',searchable:`${title} ${d.id||''} ${d.operator||''}`,groupKey:`wind|${d.id||title}`};
+  }
+  if(kind==='industry'||kind==='industry-aux'){
+    const title=d.name||feature.get('name')||'Индустриален обект';
+    return {title,category:kind==='industry'?industrialTypeLabel(d.type):'Индустриален / минен обект',searchable:`${title} ${d.id||''} ${d.area||''} ${d.fuel||''}`,groupKey:`${kind}|${d.id||title}`};
+  }
+  if(kind==='concession'||kind==='concession-estimate'){
+    const title=feature.get('name')||'Концесионна площ';
+    return {title,category:'Концесия',searchable:`${title} ${feature.get('concessionId')||''} ${feature.get('concessionaire')||''}`,groupKey:`${kind}|${feature.get('concessionId')||title}`};
+  }
+  if(kind==='red'){
+    const title=feature.get('name')||'Приоритетна зона';
+    return {title,category:'RED III / REPowerEU',searchable:title,groupKey:`red|${title}`};
+  }
+  if(kind==='natura'){
+    const title=feature.get('SiteNameBG')||'Защитена зона';
+    return {title,category:`Натура 2000 · ${feature.get('SiteCode')||''}`,searchable:`${title} ${feature.get('SiteCode')||''}`,groupKey:`natura|${feature.get('SiteCode')||title}`};
+  }
+  if(kind==='fire'){
+    const title=`${d.municipality||d.province||'България'} · пожар ${d.year}`;
+    return {title,category:`Пожар · ${Number(d.area_ha||0).toLocaleString('bg-BG')} ha`,searchable:`${title} ${d.province||''} ${d.date||''} ${d.id||''}`,groupKey:`fire|${d.id}`};
+  }
+  return null;
+}
+function searchableFeatures(){
+  const sources=[placeLabelsSource,solarSource,projectSource,windSource,redSource,naturaSource,industryFootprintSource,concessionSource,concessionEstimateSource];
+  if(industrialAuxSource)sources.push(industrialAuxSource);
+  return [...sources.flatMap(source=>source.getFeatures()),...fireFeaturesById.values()];
+}
+function collectSearchResults(query){
+  const q=normalizeSearchText(query);if(q.length<2)return [];
+  const grouped=new Map();
+  for(const feature of searchableFeatures()){
+    const meta=featureSearchMeta(feature);if(!meta)continue;
+    const title=normalizeSearchText(meta.title),text=normalizeSearchText(meta.searchable);
+    if(!text.includes(q))continue;
+    const score=title===q?0:title.startsWith(q)?1:title.split(' ').some(word=>word.startsWith(q))?2:title.includes(q)?3:4;
+    const found=grouped.get(meta.groupKey);
+    if(found){found.features.push(feature);found.score=Math.min(found.score,score);}
+    else grouped.set(meta.groupKey,{...meta,features:[feature],score});
+  }
+  return [...grouped.values()].sort((a,b)=>a.score-b.score||a.title.localeCompare(b.title,'bg')).slice(0,10);
+}
+function hideSearchResults(){
+  if(mapSearchResults)mapSearchResults.hidden=true;
+  mapSearchInput?.setAttribute('aria-expanded','false');
+}
+function renderSearchResults(){
+  if(!mapSearchInput||!mapSearchResults)return;
+  const q=mapSearchInput.value.trim();
+  mapSearchClear.hidden=!q;
+  if(q.length<2){currentSearchResults=[];hideSearchResults();return;}
+  currentSearchResults=collectSearchResults(q);mapSearchResults.textContent='';
+  if(!currentSearchResults.length){const empty=document.createElement('div');empty.className='bgwf-search-empty';empty.textContent=placeLabelsLoadState==='loading'?'Зареждам населените места…':'Няма намерен обект';mapSearchResults.appendChild(empty);}
+  currentSearchResults.forEach((item,index)=>{
+    const button=document.createElement('button');button.type='button';button.className='bgwf-search-result';button.setAttribute('role','option');button.dataset.searchIndex=String(index);
+    const strong=document.createElement('strong');strong.textContent=item.title;const small=document.createElement('small');small.textContent=item.category;
+    button.append(strong,small);button.addEventListener('click',()=>void focusSearchResult(item));mapSearchResults.appendChild(button);
+  });
+  mapSearchResults.hidden=false;mapSearchInput.setAttribute('aria-expanded','true');
+}
+function setSearchLayerVisible(kind){
+  const config=kind==='solar'?['solar',solarLayer]:kind==='wind'?['wind',windLayer]:kind==='project'?['projects',projectLayer]:kind==='red'?['future',redLayer]:kind==='natura'?['natura',naturaLayer]:(kind==='industry'||kind==='industry-aux'||kind==='concession'||kind==='concession-estimate')?['industry',industryLayer]:null;
+  if(!config)return;
+  const [key,layer]=config;layerVisibility[key]=true;layer?.setVisible(true);
+  root.querySelector(`.bgwf-layer-toggle[data-layer="${key}"]`)?.setAttribute('aria-pressed','true');
+  if(key==='industry'){industrialAuxLayer?.setVisible(true);concessionLayer.setVisible(true);concessionEstimateLayer.setVisible(true);}
+}
+async function focusSearchResult(item){
+  let features=item.features.filter(Boolean);const first=features[0],kind=first?.get('kind');if(!first)return;
+  if(kind==='fire'){
+    const fire=first.get('data');activeYear=fire.year;updateFiresAndDensity();features=[fireFeaturesById.get(fire.id)].filter(Boolean);
+  }else setSearchLayerVisible(kind);
+  const target=features[0],geometries=features.map(f=>f.getGeometry?.()).filter(Boolean);
+  if(kind==='place-label'){
+    const center=target.getGeometry().getCoordinates();view.animate({center,resolution:homeResolution/70,duration:380});
+    setDetailHint(`Населено място · ${item.title}`);
+  }else{
+    clearSelection();selectedFeature=target;target.set('selected',true);target.changed();activateDetail();if(detail)detail.textContent=featureLabel(target)||item.title;
+    let extent=[Infinity,Infinity,-Infinity,-Infinity];
+    geometries.forEach(geometry=>{const e=geometry.getExtent();extent=[Math.min(extent[0],e[0]),Math.min(extent[1],e[1]),Math.max(extent[2],e[2]),Math.max(extent[3],e[3])];});
+    if(target.getGeometry()?.getType()==='Point')view.animate({center:target.getGeometry().getCoordinates(),resolution:homeResolution/32,duration:380});
+    else view.fit(extent,{padding:[90,90,90,90],duration:420,maxZoom:13});
+  }
+  mapSearchInput.value=item.title;mapSearchClear.hidden=false;hideSearchResults();updateLayerStatus();updateTerritoryScaleBars();scheduleUrlSync();
+}
+let searchInputTimer=0;
+mapSearchInput?.addEventListener('input',()=>{clearTimeout(searchInputTimer);searchInputTimer=setTimeout(renderSearchResults,90);});
+mapSearchInput?.addEventListener('keydown',event=>{
+  if(event.key==='Escape'){hideSearchResults();mapSearchInput.blur();}
+  if(event.key==='Enter'&&currentSearchResults.length){event.preventDefault();void focusSearchResult(currentSearchResults[0]);}
+  if(event.key==='ArrowDown'&&!mapSearchResults.hidden){event.preventDefault();mapSearchResults.querySelector('.bgwf-search-result')?.focus();}
+});
+mapSearchResults?.addEventListener('keydown',event=>{
+  const button=event.target.closest('.bgwf-search-result');if(!button)return;
+  if(event.key==='ArrowDown'){event.preventDefault();(button.nextElementSibling||mapSearchResults.querySelector('.bgwf-search-result'))?.focus();}
+  if(event.key==='ArrowUp'){event.preventDefault();(button.previousElementSibling||mapSearchInput)?.focus();}
+  if(event.key==='Escape'){hideSearchResults();mapSearchInput?.focus();}
+});
+mapSearchClear?.addEventListener('click',()=>{mapSearchInput.value='';mapSearchClear.hidden=true;hideSearchResults();mapSearchInput.focus();});
+document.addEventListener('pointerdown',event=>{if(mapSearch&&!mapSearch.contains(event.target))hideSearchResults();});
+placeLabelsSource.on('change',()=>{if(mapSearchInput?.value.trim().length>=2)renderSearchResults();});
+
 
 window.bgwfGisCacheStatus=async function(){
   let cacheNames=[];
@@ -6151,6 +6311,7 @@ function runSelfTests(){
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
   selfTest('collapsible-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body')&&!!filterActionLabel&&!!root.querySelector('[data-filter-coach]'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded'),action:filterActionLabel?.textContent}));
+  selfTest('local-object-search-contract',()=>({ok:!!mapSearchInput&&!!mapSearchResults&&typeof collectSearchResults==='function'&&typeof focusSearchResult==='function',places:placeLabelsSource.getFeatures().length,fireRecords:fireFeaturesById.size}));
   selfTest('wind-foundation-area',()=>({ok:WIND_TURBINE_COUNT===individualWindTurbines.length&&Math.abs(WIND_TURBINE_FOUNDATION_AREA_SQ_KM-.278784)<1e-12,count:WIND_TURBINE_COUNT,foundationSqM:WIND_TURBINE_FOUNDATION_SQ_M,totalSqKm:WIND_TURBINE_FOUNDATION_AREA_SQ_KM}));
   selfTest('mobile-zoom-controls',()=>({ok:['zoom-in','zoom-out','zoom-reset'].every(name=>!!root.querySelector(`[data-${name}]`)),buttons:root.querySelectorAll('.bgwf-zoom-controls button').length,homeScaleTarget:1}));
   selfTest('zoom-status-and-url-sync',()=>({ok:!!zoomFactorEl&&typeof window.bgwfCurrentMapUrl==='function',zoomText:zoomFactorEl?.textContent,url:window.bgwfCurrentMapUrl?.()}));
