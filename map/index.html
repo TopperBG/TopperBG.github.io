@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88j-aligned-controls-search-stacking-20260915">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88j</title>
+<meta name="bgwf-build" content="v0.88k-unified-pup-project-style-20260915">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88k</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88j</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88k</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -1829,8 +1829,6 @@ svg {
     vector-effect: non-scaling-stroke;
     cursor: pointer;
   }
-  #bg-wildfires-map .bgwf-project-parcel[data-status="approved"] { fill: #2563eb; stroke: #1d4ed8; }
-  #bg-wildfires-map .bgwf-project-parcel[data-status="construction"] { fill: #0891b2; stroke: #0e7490; }
   #bg-wildfires-map .bgwf-project-parcel:hover,
   #bg-wildfires-map .bgwf-project-parcel.is-selected { fill-opacity: 0.42; stroke: var(--foreground); stroke-width: 1.8; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="solar"] .bgwf-swatch { background: #f59e0b; }
@@ -4371,7 +4369,7 @@ const naturaIndustryOverlapLayer=new VectorLayer({
 const projectLayer=new VectorLayer({
   source:projectSource,zIndex:5,visible:layerVisibility.projects,
   style:f=>{
-    const selected=f.get('selected'),planned=f.get('status')==='planned',substation=f.get('assetType')==='substation';
+    const selected=f.get('selected'),substation=f.get('assetType')==='substation';
     if(substation){
       return haloPolygonStyles({
         fill:satelliteMode()?(selected?'rgba(251,191,36,.52)':'rgba(245,158,11,.34)'):(selected?'rgba(217,119,6,.32)':'rgba(245,158,11,.20)'),
@@ -4379,10 +4377,12 @@ const projectLayer=new VectorLayer({
         innerWidth:selected?2.7:1.8,selected,halo:'rgba(255,255,255,.98)',haloWidth:4.8,lineDash:[7,4]
       });
     }
+    // ПУП/ПИ is one map layer: retain the administrative status in the details,
+    // but do not encode planned/approved/construction with conflicting colours.
     const fill=satelliteMode()
-      ?(planned?(selected?'rgba(232,121,249,.52)':'rgba(217,70,239,.38)'):(selected?'rgba(56,189,248,.50)':'rgba(14,165,233,.36)'))
-      :(planned?(selected?'rgba(124,58,237,.30)':'rgba(124,58,237,.20)'):(selected?'rgba(37,99,235,.28)':'rgba(37,99,235,.18)'));
-    const stroke=satelliteMode()?(planned?'#f0abfc':'#38bdf8'):(selected?cssVar('--foreground','#111827'):(planned?'#7c3aed':'#2563eb'));
+      ?(selected?'rgba(232,121,249,.52)':'rgba(217,70,239,.38)')
+      :(selected?'rgba(124,58,237,.30)':'rgba(124,58,237,.20)');
+    const stroke=satelliteMode()?'#f0abfc':(selected?cssVar('--foreground','#111827'):'#7c3aed');
     return haloPolygonStyles({fill,stroke,innerWidth:selected?2.7:1.8,selected,halo:'rgba(255,255,255,.98)',haloWidth:4.8});
   }
 });
