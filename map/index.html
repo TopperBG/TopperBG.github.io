@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88l-longer-filter-auto-hide-20260915">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88l</title>
+<meta name="bgwf-build" content="v0.89-kevr-renewables-audit-20260915">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.89</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88l</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.89</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -1747,7 +1747,7 @@ svg {
     width: 0%;
     height: 100%;
     border-radius: inherit;
-    background: linear-gradient(90deg, #f59e0b 0%, #7c3aed 55%, var(--primary) 100%);
+    background: linear-gradient(90deg, #f59e0b 0%, #2563eb 55%, var(--primary) 100%);
     box-shadow: 0 0 6px color-mix(in srgb, var(--primary) 45%, transparent);
     transition: width 220ms ease;
   }
@@ -1822,9 +1822,9 @@ svg {
     stroke-width: 2.0;
   }
   #bg-wildfires-map .bgwf-project-parcel {
-    fill: #7c3aed;
+    fill: #2563eb;
     fill-opacity: 0.48;
-    stroke: #5b21b6;
+    stroke: #1d4ed8;
     stroke-width: 1.8;
     vector-effect: non-scaling-stroke;
     cursor: pointer;
@@ -1833,7 +1833,7 @@ svg {
   #bg-wildfires-map .bgwf-project-parcel.is-selected { fill-opacity: 0.42; stroke: var(--foreground); stroke-width: 1.8; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="solar"] .bgwf-swatch { background: #f59e0b; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="wind"] .bgwf-swatch { background: #0891b2; }
-  #bg-wildfires-map .bgwf-layer-toggle[data-layer="projects"] .bgwf-swatch { background: #7c3aed; }
+  #bg-wildfires-map .bgwf-layer-toggle[data-layer="projects"] .bgwf-swatch { background: #2563eb; }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="future"] .bgwf-swatch { background: #2f9e44; }
   #bg-wildfires-map .bgwf-data-warning { color: var(--destructive); }
   #bg-wildfires-map .bgwf-swatch { width: 0.75rem; height: 0.75rem; border-radius: 50%; flex: 0 0 auto; }
@@ -2732,6 +2732,7 @@ function normalizeProvinceName(value) {
           "name": "ФЕЦ „Винели“",
           "year": 2025,
           "status": "construction",
+          "mw": 100,
           "statusLabel": "разрешение за строеж 2025 · активен график за строителство 2026 · 100 MW AC",
           "source": "https://www.dker.bg/uploads/_CGCalendar/2026/rep_lic_Vineli_29072026.pdf",
           "parcels": [
@@ -2755,6 +2756,7 @@ function normalizeProvinceName(value) {
           "name": "ФЕЦ „Адасек“",
           "year": 2026,
           "status": "construction",
+          "mw": 60,
           "statusLabel": "строителство през 2026 · 60 MW AC · точни ПИ по КЕВР",
           "source": "https://www.dker.bg/uploads/_CGCalendar/2026/rep_lic_Adasek_29072026.pdf",
           "parcels": [
@@ -2994,8 +2996,158 @@ function normalizeProvinceName(value) {
               "55871.726.72", "72223.55.523", "61577.279.34", "61577.279.49", "61577.281.5",
               "61577.281.7", "61577.281.24", "61577.281.37", "61577.279.45"
           ]
+      },
+      {
+          "id": "RES-037",
+          "name": "ВяЕЦ „Стражица“ — Tessa Green Energy",
+          "year": 2025,
+          "status": "planned",
+          "mw": 70,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 70 MW · четири проектни ПИ на генераторите",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_l_868_25.pdf",
+          "parcels": ["69643.10.14", "69643.10.16", "69643.10.18", "69643.10.12"]
+      },
+      {
+          "id": "RES-038",
+          "name": "ВяЕЦ „Кремена“",
+          "year": 2025,
+          "status": "planned",
+          "mw": 72,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 72 MW · 13 проектни ПИ на генераторите",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_l-862_25.pdf",
+          "parcels": [
+              "39623.16.5", "39623.17.10", "39623.18.10", "39623.18.7", "39623.13.11", "39623.13.9", "39623.19.10",
+              "39623.26.12", "73095.10.7", "73095.12.62", "73095.12.64", "73095.11.5", "73095.12.66"
+          ]
+      },
+      {
+          "id": "RES-039",
+          "name": "ФЕЦ „Меричлери“ — Ангъс България",
+          "year": 2025,
+          "status": "planned",
+          "mw": 40,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 40 MW AC + BESS 19,5 MW / 44,72 MWh · актуални проектни ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res-l-853-2025.pdf",
+          "parcels": ["47843.29.385", "47843.31.362", "47843.31.373", "47843.123.364", "47843.18.177", "47843.20.864", "47843.15.132"]
+      },
+      {
+          "id": "RES-040",
+          "name": "ФЕЦ „Албена Солар“",
+          "year": 2025,
+          "status": "planned",
+          "mw": 24,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 24 MW AC + BESS 12 MW / 24 MWh · три терена на ФЕЦ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_l_851_25.pdf",
+          "parcels": ["53120.29.177", "53120.29.176", "53120.109.72"]
+      },
+      {
+          "id": "RES-041",
+          "name": "ФЕЦ „Радомир“ — Струма Солар Плант",
+          "year": 2025,
+          "status": "planned",
+          "mw": 130,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 130 MW AC / 171,5 MWp · актуални ПУП/ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_l_849_25.pdf",
+          "parcels": ["81709.16.370", "81709.16.364", "24832.85.100", "69239.257.566", "69239.257.568", "69239.257.571", "69239.257.573", "69239.257.576"]
+      },
+      {
+          "id": "RES-042",
+          "name": "ФЕЦ „Парк Гимел“",
+          "year": 2025,
+          "status": "planned",
+          "mw": 42.24,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 42,24 MW AC / 51,197 MWp · два актуални ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_l_846_25.pdf",
+          "parcels": ["30572.48.9902", "48876.79.22"]
+      },
+      {
+          "id": "RES-043",
+          "name": "ФЕЦ „Черногор“ — Енерфин 2",
+          "year": 2025,
+          "status": "planned",
+          "mw": 25,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · три полета, общо 25 MW AC · точни актуални ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res-l-841-2025.pdf",
+          "parcels": ["81075.4.1100", "81075.13.103", "81075.4.1103", "81075.4.1104", "81075.4.1105"]
+      },
+      {
+          "id": "RES-044",
+          "name": "ФЕЦ „Никан Агро“ — Блатска",
+          "year": 2025,
+          "status": "planned",
+          "mw": 50,
+          "statusLabel": "лицензия с условие по КЕВР 2025 · 50 MW · два проектни етапа с актуални ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res-l-824-2025.pdf",
+          "parcels": ["04399.17.38", "04399.17.82", "04399.16.41", "04399.16.64", "04399.16.69", "04399.16.77", "04399.16.83", "04399.17.35", "04399.17.36"]
+      },
+      {
+          "id": "RES-045",
+          "name": "ФЕЦ „Обретеник“ — етап 2",
+          "year": 2025,
+          "status": "planned",
+          "mw": 68.54,
+          "statusLabel": "неизграден втори етап от лицензиран проект 100 MW · първият етап „Две могили“ е отделен в действащите ВЕИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res-l-804-2025.pdf",
+          "parcels": ["53117.61.327", "53117.61.328", "53117.61.329", "53117.61.294", "53117.61.330", "53117.61.298"]
+      },
+      {
+          "id": "RES-046",
+          "name": "ФЕЦ „Лозница“ — Топ Енерджи Солюшънс",
+          "year": 2024,
+          "status": "planned",
+          "mw": 99.99,
+          "statusLabel": "лицензия с условие по КЕВР 2024 · 99,99 MW · шест документални ПИ; ПИ 35715.26.445 не се връща от текущия INSPIRE слой на АГКК",
+          "source": "https://www.dker.bg/uploads/reshenia/2024/res-l-796-2024.pdf",
+          "parcels": ["35715.26.445", "10759.72.340", "35715.25.462", "35715.25.461", "35715.25.460", "35715.25.329"]
+      },
+      {
+          "id": "RES-047",
+          "name": "ФЕЦ „Дебелт“ — SUN BS",
+          "year": 2024,
+          "status": "planned",
+          "mw": 25,
+          "statusLabel": "лицензия с условие по КЕВР 2024 · 25 MW · точен ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2024/res-l-795-2024.pdf",
+          "parcels": ["20273.61.189"]
+      },
+      {
+          "id": "RES-048",
+          "name": "ФЕЦ „КонтурГлобал Марица Солар“",
+          "year": 2024,
+          "status": "planned",
+          "mw": 75.3,
+          "statusLabel": "лицензия с условие по КЕВР 2024 · 75,3 MW · два проектни терена",
+          "source": "https://www.dker.bg/uploads/reshenia/2024/res_l_762_24.pdf",
+          "parcels": ["32857.72.384", "47603.302.5"]
+      },
+      {
+          "id": "RES-049",
+          "name": "ФЕЦ „Воденичане“ — E.ON България",
+          "year": 2022,
+          "status": "planned",
+          "mw": 15,
+          "statusLabel": "лицензия с условие по КЕВР 2022 · 15 MW AC / 15,529 MWp · точен ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2022/res_l-634_22.pdf",
+          "parcels": ["11661.220.173"]
+      },
+      {
+          "id": "RES-050",
+          "name": "ФЕЦ „Лясковец“ — Армако",
+          "year": 2022,
+          "status": "planned",
+          "mw": 12.75,
+          "statusLabel": "лицензия с условие по КЕВР 2022 · 12,75 MW AC · точен ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2022/res-l593-2022.pdf",
+          "parcels": ["23217.251.571"]
       }
   ];
+
+  // Проекти, преминали в експлоатация според решенията на КЕВР, не се
+  // показват втори път в синия слой ПУП/ПИ.
+  const transitionedToOperatingProjectIds = new Set(["RES-011", "RES-014", "RES-015"]);
+  for(let i=cadastralProjects.length-1;i>=0;i--){
+    if(transitionedToOperatingProjectIds.has(cadastralProjects[i].id)) cadastralProjects.splice(i,1);
+  }
 
 
 
@@ -3917,6 +4069,24 @@ const CURATED_INDUSTRIAL_POINTS = [];
           "statusLabel": "изградена · отделен обект от ФЕЦ „Черганово“ · име, мощност и година не са потвърдени",
           "source": "https://www.openstreetmap.org/way/1458329100",
           "parcels": []
+      },
+      {
+          "id": "SOL-2025-GREENS-PARVOMAY",
+          "name": "ФЕЦ „Грийнс“ — Първомай",
+          "year": 2025,
+          "mwAc": 30,
+          "statusLabel": "действаща · разрешено начало на лицензионна дейност с Решение Р-540/09.01.2025 г. · точен ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2025/res_r_540_25.pdf",
+          "parcels": ["59080.42.529"]
+      },
+      {
+          "id": "SOL-2026-ENERI-BG-1",
+          "name": "ФЕЦ „Книжовник и Стамболово“ — Енери БГ 1",
+          "year": 2026,
+          "mwAc": 90,
+          "statusLabel": "действаща · разрешено начало на лицензионна дейност с Решение Р-672/26.08.2026 г. · точни ПИ",
+          "source": "https://www.dker.bg/uploads/reshenia/2026/res_r_672_26.pdf",
+          "parcels": ["37383.500.313", "37383.113.220", "37383.503.132", "37383.113.236", "37383.113.238", "37383.113.232", "37383.113.216", "22589.58.203"]
       }
   ];
 
@@ -4381,9 +4551,9 @@ const projectLayer=new VectorLayer({
     // ПУП/ПИ is one map layer: retain the administrative status in the details,
     // but do not encode planned/approved/construction with conflicting colours.
     const fill=satelliteMode()
-      ?(selected?'rgba(232,121,249,.52)':'rgba(217,70,239,.38)')
-      :(selected?'rgba(124,58,237,.30)':'rgba(124,58,237,.20)');
-    const stroke=satelliteMode()?'#f0abfc':(selected?cssVar('--foreground','#111827'):'#7c3aed');
+      ?(selected?'rgba(56,189,248,.52)':'rgba(14,165,233,.38)')
+      :(selected?'rgba(37,99,235,.30)':'rgba(37,99,235,.20)');
+    const stroke=satelliteMode()?'#38bdf8':(selected?cssVar('--foreground','#111827'):'#2563eb');
     return haloPolygonStyles({fill,stroke,innerWidth:selected?2.7:1.8,selected,halo:'rgba(255,255,255,.98)',haloWidth:4.8});
   }
 });
@@ -6107,7 +6277,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','Изградени ФЕЦ','#f59e0b'],['wind','ВяЕИ','#0891b2'],['projects','ПУП/ПИ проекти','#7c3aed'],['future','RED III/REPowerEU','#2f9e44'],['natura','Натура 2000','#0f766e'],['industry','ТЕЦ / мини','#4b5563']];configs.forEach(([key,label,color])=>{
+const configs=[['solar','Изградени ФЕЦ','#f59e0b'],['wind','ВяЕИ','#0891b2'],['projects','ПУП/ПИ проекти','#2563eb'],['future','RED III/REPowerEU','#2f9e44'],['natura','Натура 2000','#0f766e'],['industry','ТЕЦ / мини','#4b5563']];configs.forEach(([key,label,color])=>{
   const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
@@ -6349,6 +6519,8 @@ function runSelfTests(){
   selfTest('vei-static-cache-url',()=>({ok:BUILT_VEI_STATIC_CACHE_URL==='/data/agkk-built-vei-cache.json',url:BUILT_VEI_STATIC_CACHE_URL}));
   selfTest('vei-source-layers',()=>({ok:!!solarSource&&!!projectSource,solar:!!solarSource,projects:!!projectSource}));
   selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
+  selfTest('kevr-2022-2026-missing-projects-added',()=>{const ids=['RES-037','RES-038','RES-039','RES-040','RES-041','RES-042','RES-043','RES-044','RES-045','RES-046','RES-047','RES-048','RES-049','RES-050'],missing=ids.filter(id=>!cadastralProjects.some(p=>p.id===id));return{ok:missing.length===0&&cadastralProjects.length===48,added:ids.length,missing,total:cadastralProjects.length};});
+  selfTest('kevr-operating-transitions',()=>{const stale=[...transitionedToOperatingProjectIds].filter(id=>cadastralProjects.some(p=>p.id===id)),greens=operatingSolarProjects.find(p=>p.id==='SOL-2025-GREENS-PARVOMAY'),eneri=operatingSolarProjects.find(p=>p.id==='SOL-2026-ENERI-BG-1');return{ok:stale.length===0&&greens?.parcels?.[0]==='59080.42.529'&&eneri?.parcels?.length===8,stale,greens:!!greens,eneriParcels:eneri?.parcels?.length||0};});
   selfTest('suhindol-wabi-sabi-pup-parcels',()=>{const p=cadastralProjects.find(d=>d.id==='RES-036'),suhindol=p?.parcels.filter(ref=>ref.startsWith('70295.'))||[],koevtsi=p?.parcels.filter(ref=>ref.startsWith('37561.'))||[];return{ok:p?.status==='planned'&&p?.mw===500&&p?.parcels.length===77&&suhindol.length===43&&koevtsi.length===34&&new Set(p.parcels).size===77,project:p?.name,total:p?.parcels.length,suhindol:suhindol.length,koevtsi:koevtsi.length};});
   selfTest('large-solar-national-sample',()=>{const missing=largeOperatingSolarProjects.filter(p=>!hasSolarMapGeometry(p));return{ok:largeOperatingSolarProjects.length>=40&&missing.length===0,thresholdMwp:LARGE_SOLAR_THRESHOLD_MWP,projects:largeOperatingSolarProjects.length,missingGeometry:missing.map(p=>p.id)};});
   selfTest('maglizh-hybrid-spec',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2026-MAGLIZH');return{ok:p?.mwpDc===161&&p?.mwAc===120&&p?.bessMw===36&&p?.bessMwh===72&&p.parcels.length>=90,project:p&&{mwpDc:p.mwpDc,mwAc:p.mwAc,bessMw:p.bessMw,bessMwh:p.bessMwh,parcels:p.parcels.length}};});
