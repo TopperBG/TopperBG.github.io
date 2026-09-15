@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88h-suhindol-orisol-fire-year-multiselect-20260915">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88h</title>
+<meta name="bgwf-build" content="v0.88i-compact-fire-controls-search-overlay-20260915">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88i</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88h</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88i</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -1653,10 +1653,10 @@ svg {
   #bg-wildfires-map .bgwf-legend { justify-content: center; gap: 0.4rem; margin-top: 0.45rem; }
   #bg-wildfires-map .bgwf-year-filter {
     display: inline-flex;
-    min-height: 32px;
+    min-height: 28px;
     align-items: center;
     gap: 0.32rem;
-    padding: 0.18rem 0.55rem;
+    padding: 0.1rem 0.5rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-full);
     color: var(--foreground);
@@ -1792,8 +1792,8 @@ svg {
   #bg-wildfires-map .bgwf-live-link {
     display: inline-flex;
     align-items: center;
-    min-height: 32px;
-    padding: 0.18rem 0.62rem;
+    min-height: 28px;
+    padding: 0.1rem 0.55rem;
     border: 1px solid color-mix(in srgb, #ff1717 48%, var(--border));
     border-radius: var(--radius-full);
     color: var(--foreground);
@@ -1873,9 +1873,7 @@ svg {
   #bg-wildfires-map .bgwf-method-content p:last-child { margin-bottom: 0; }
   #bg-wildfires-map .bgwf-method-content a { font-size: inherit; font-weight: 500; }
 
-  #bg-wildfires-map .bgwf-floating-controls {
-    overflow: hidden;
-  }
+  #bg-wildfires-map .bgwf-floating-controls { overflow: visible; }
 
   #bg-wildfires-map .bgwf-floating-controls::before {
     content: "";
@@ -1951,7 +1949,10 @@ svg {
   }
   #bg-wildfires-map .bgwf-floating-controls .bgwf-year-filter,
   #bg-wildfires-map .bgwf-floating-controls .bgwf-live-link {
-    min-height: 38px;
+    min-height: 28px;
+    height: 28px;
+    line-height: 1;
+    font-size: 11px;
     flex: 0 0 auto;
     touch-action: manipulation;
   }
@@ -2042,7 +2043,7 @@ svg {
     #bg-wildfires-map .bgwf-filter-strip + .bgwf-filter-strip { margin-top: 0.18rem; }
     #bg-wildfires-map .bgwf-control-label { min-width: 0; padding-left: 0.18rem; font-size: 10px; line-height: 1.2; }
     #bg-wildfires-map .bgwf-floating-controls .bgwf-year-filter,
-    #bg-wildfires-map .bgwf-floating-controls .bgwf-live-link { min-height: 42px; padding-inline: 0.62rem; }
+    #bg-wildfires-map .bgwf-floating-controls .bgwf-live-link { min-height: 28px; height:28px; padding-inline: 0.5rem; }
     #bg-wildfires-map .bgwf-map-button { width: 44px; height: 44px; }
     #bg-wildfires-map .bgwf-important-note { font-size: var(--font-size-small); padding: 0.5rem 0.6rem; }
   }
@@ -2076,7 +2077,13 @@ svg {
   #bg-wildfires-map .bgwf-search-clear:hover { background:rgba(100,116,139,.12); }
   #bg-wildfires-map .bgwf-search-results {
     position:absolute;left:0;right:0;top:calc(100% + 4px);max-height:min(300px,48vh);overflow:auto;padding:4px;
-    border:1px solid rgba(100,116,139,.24);border-radius:10px;background:rgba(255,255,255,.98);box-shadow:0 8px 24px rgba(15,23,42,.18);
+    z-index:1000;border:1px solid rgba(100,116,139,.24);border-radius:10px;background:rgba(255,255,255,.98);box-shadow:0 8px 24px rgba(15,23,42,.18);
+  }
+  #bg-wildfires-map .bgwf-floating-controls .bgwf-legend:has(.bgwf-search-input:focus),
+  #bg-wildfires-map .bgwf-floating-controls .bgwf-legend:has(.bgwf-search-results:not([hidden])) {
+    position:relative;
+    z-index:500;
+    overflow:visible;
   }
   #bg-wildfires-map .bgwf-search-result { display:block;width:100%;padding:7px 9px;border:0;border-radius:7px;background:transparent;color:#111827;text-align:left;cursor:pointer; }
   #bg-wildfires-map .bgwf-search-result:hover,
