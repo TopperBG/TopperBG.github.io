@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.88k-unified-pup-project-style-20260915">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88k</title>
+<meta name="bgwf-build" content="v0.88l-longer-filter-auto-hide-20260915">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.88l</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88k</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.88l</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4075,6 +4075,7 @@ if(filterPanel?.classList.contains('is-filter-open')){
   setTimeout(()=>filterPanel?.classList.add('is-filter-coaching'),850);
   setTimeout(()=>filterPanel?.classList.remove('is-filter-coaching'),6500);
 }
+const FILTER_AUTO_HIDE_DELAY_MS=3000;
 filterPanel?.addEventListener('click',event=>{
   const selected=event.target.closest?.('.bgwf-year-filter,.bgwf-layer-toggle');
   if(!selected||selected===mobileFilterToggle)return;
@@ -4085,7 +4086,7 @@ filterPanel?.addEventListener('click',event=>{
     if(!filterPanel?.classList.contains('is-filter-open'))return;
     setFilterPanelOpen(false);
     requestAnimationFrame(()=>{updateFloatingUiPosition();map?.updateSize();});
-  },1200);
+  },FILTER_AUTO_HIDE_DELAY_MS);
 });
 
 const urlParams=new URLSearchParams(location.search);
