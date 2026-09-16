@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.90a-foreign-area-circles-20260916">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90a</title>
+<meta name="bgwf-build" content="v0.90b-visible-foreign-area-circles-20260916">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90b</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90a</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90b</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4647,15 +4647,20 @@ const windLayer=new VectorLayer({
 });
 const foreignLayer=new VectorLayer({
   source:foreignSource,zIndex:8,visible:layerVisibility.foreign,
-  style:f=>{
+  style:(f,resolution)=>{
     const project=f.get('data')||{},selected=f.get('selected');
     const operating=project.status==='operating';
-    return [
-      new Style({fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.18)':'rgba(219,39,119,.13)'):(satelliteMode()?'rgba(219,39,119,.10)':'rgba(219,39,119,.07)')}),stroke:new Stroke({color:selected?'#111827':'#db2777',width:selected?2.8:1.5,lineDash:project.areaBasis==='estimated'?[7,4]:null})}),
-      new Style({text:new TextStyle({text:'◆',font:selected?'900 27px sans-serif':'900 22px sans-serif',fill:new Fill({color:'rgba(255,255,255,.98)'}),stroke:new Stroke({color:satelliteMode()?'rgba(0,0,0,.88)':'rgba(255,255,255,.98)',width:4})})}),
-      new Style({text:new TextStyle({text:'◆',font:selected?'900 21px sans-serif':'900 17px sans-serif',fill:new Fill({color:operating?'#db2777':'rgba(219,39,119,.34)'}),stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):'#831843',width:operating?1.5:2.2})})}),
-      new Style({text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 9px sans-serif':'800 8px sans-serif',fill:new Fill({color:operating?'#fff':'#831843'}),stroke:new Stroke({color:'rgba(0,0,0,.28)',width:.6}),offsetY:-1})})
-    ];
+    const circle=f.getGeometry(),center=new Point(circle.getCenter());
+    const radiusPx=circle.getRadius()/Math.max(1,resolution||1);
+    const styles=[new Style({
+      fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.30)':'rgba(219,39,119,.22)'):(satelliteMode()?'rgba(219,39,119,.18)':'rgba(219,39,119,.13)')}),
+      stroke:new Stroke({color:selected?'#111827':satelliteMode()?'#ff4da6':'#be185d',width:selected?4:2.8,lineDash:project.areaBasis==='estimated'?[8,5]:null})
+    })];
+    // At country/region scale the true area can be smaller than one pixel. Keep a
+    // clearly outlined minimum-size locator ring without replacing the real circle.
+    if(radiusPx<11)styles.push(new Style({geometry:center,image:new CircleStyle({radius:11,fill:new Fill({color:'rgba(219,39,119,.08)'}),stroke:new Stroke({color:satelliteMode()?'#ff4da6':'#be185d',width:2.5,lineDash:project.areaBasis==='estimated'?[4,3]:null})})}));
+    styles.push(new Style({geometry:center,text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 11px sans-serif':'800 9px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:operating?'#db2777':'#9d174d'}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    return styles;
   }
 });
 const industryLayer=new VectorLayer({
