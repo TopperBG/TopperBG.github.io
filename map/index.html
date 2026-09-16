@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.90-foreign-renewables-20260916">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90</title>
+<meta name="bgwf-build" content="v0.90a-foreign-area-circles-20260916">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90a</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90a</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4121,6 +4121,21 @@ const CURATED_INDUSTRIAL_POINTS = [];
     {id:'FOREIGN-TR-VIRANSEHIR',name:'Viranşehir Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:320,lon:39.76,lat:37.23,source:'https://www.kalyonenerji.com/en/projects/viransehir-solar-power-plant'},
     {id:'FOREIGN-TR-SOMA',name:'Soma Wind Farm',country:'Турция',technology:'wind',status:'operating',statusLabel:'действащ',mw:288,lon:27.57,lat:39.18,source:'https://www.polatenerji.com/en/power-plants/soma-wind-power-plant'}
   ];
+  const FOREIGN_PUBLISHED_AREAS_HA = {
+    'FOREIGN-RO-FANTANELE-COGEALAC':1100,
+    'FOREIGN-RS-CIBUK-1':3700,
+    'FOREIGN-RS-CIBUK-2':4750,
+    'FOREIGN-GR-KOZANI':450,
+    'FOREIGN-TR-KARAPINAR':2000,
+    'FOREIGN-TR-SOMA':12300
+  };
+  function foreignProjectArea(project){
+    const published=FOREIGN_PUBLISHED_AREAS_HA[project.id];
+    if(Number.isFinite(published))return{areaHa:published,areaBasis:'published'};
+    // Transparent fallback for projects without a published site area: utility PV
+    // 1.5 ha/MW; wind-farm envelope 20 ha/MW. This is not sealed/built footprint.
+    return{areaHa:project.mw*(project.technology==='solar'?1.5:20),areaBasis:'estimated'};
+  }
 
   const LARGE_SOLAR_THRESHOLD_MWP = 10;
   function solarCapacityForThreshold(project){
@@ -4462,8 +4477,11 @@ const concessionSource=new VectorSource();
 const liveSource=new VectorSource();
 
 foreignSource.addFeatures(foreignRenewableProjects.map(project=>{
-  const feature=new Feature({geometry:new Point(fromLonLat([project.lon,project.lat]))});
-  feature.setId(project.id);feature.set('kind','foreign');feature.set('data',project);return feature;
+  const area=foreignProjectArea(project);
+  const groundRadiusM=Math.sqrt(area.areaHa*10000/Math.PI);
+  const mercatorRadiusM=groundRadiusM/Math.cos(project.lat*Math.PI/180);
+  const feature=new Feature({geometry:new CircleGeom(fromLonLat([project.lon,project.lat]),mercatorRadiusM)});
+  feature.setId(project.id);feature.set('kind','foreign');feature.set('data',{...project,...area});return feature;
 }));
 
 const provinceFeatures=readFeatures(provinces); provinceFeatures.forEach(f=>{f.set('kind','province');f.set('provinceCode',f.get('nuts3'));}); provinceSource.addFeatures(provinceFeatures);
@@ -4633,6 +4651,7 @@ const foreignLayer=new VectorLayer({
     const project=f.get('data')||{},selected=f.get('selected');
     const operating=project.status==='operating';
     return [
+      new Style({fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.18)':'rgba(219,39,119,.13)'):(satelliteMode()?'rgba(219,39,119,.10)':'rgba(219,39,119,.07)')}),stroke:new Stroke({color:selected?'#111827':'#db2777',width:selected?2.8:1.5,lineDash:project.areaBasis==='estimated'?[7,4]:null})}),
       new Style({text:new TextStyle({text:'◆',font:selected?'900 27px sans-serif':'900 22px sans-serif',fill:new Fill({color:'rgba(255,255,255,.98)'}),stroke:new Stroke({color:satelliteMode()?'rgba(0,0,0,.88)':'rgba(255,255,255,.98)',width:4})})}),
       new Style({text:new TextStyle({text:'◆',font:selected?'900 21px sans-serif':'900 17px sans-serif',fill:new Fill({color:operating?'#db2777':'rgba(219,39,119,.34)'}),stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):'#831843',width:operating?1.5:2.2})})}),
       new Style({text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 9px sans-serif':'800 8px sans-serif',fill:new Fill({color:operating?'#fff':'#831843'}),stroke:new Stroke({color:'rgba(0,0,0,.28)',width:.6}),offsetY:-1})})
@@ -5061,7 +5080,7 @@ function liveFireLabel(d){const when=d.observedAt?formatDateTime.format(d.observ
 
 function showMapTooltip(pixel,text){if(!tooltip)return;tooltip.hidden=true;tooltip.textContent=text;tooltip.hidden=false;const wrap=root.querySelector('.bgwf-map-wrap');const rect=wrap.getBoundingClientRect();tooltip.style.left=`${Math.min(rect.width-tooltip.offsetWidth-6,Math.max(6,pixel[0]+12))}px`;tooltip.style.top=`${Math.min(rect.height-tooltip.offsetHeight-6,Math.max(6,pixel[1]-tooltip.offsetHeight-8))}px`;}
 function hideMapTooltip(){if(tooltip)tooltip.hidden=true;}
-function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel}`;if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
+function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
 if(kind==='industry-aux'){return industryAuxLabel(f);}
 if(kind==='industry'){
   const meta=industrialConcessionMeta[d.id];
@@ -5101,7 +5120,7 @@ map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url
     detail.textContent=windPlantLabel(d)+' · ';
     const link=document.createElement('a');link.href=d.source;link.target='_blank';link.rel='noopener';link.textContent='OpenStreetMap ↗';detail.appendChild(link);
   }
-  else if(kind==='foreign'){detail.innerHTML=`<strong>${d.name}</strong> · ${d.country} · ${d.technology==='solar'?'соларен парк':'вятърен парк'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · точката показва проверено/представително местоположение, не проектна граница · ${safeLink(d.source,'източник ↗')}`;}
+  else if(kind==='foreign'){detail.innerHTML=`<strong>${d.name}</strong> · ${d.country} · ${d.technology==='solar'?'соларен парк':'вятърен парк'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · окръжност ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha (${d.areaBasis==='published'?'публикувана проектна площ, плътен контур':'ориентировъчна площ по мощност, пунктиран контур'}). Окръжността представя мащаба, а не точната проектна граница${d.technology==='wind'?' или запечатаната площ около турбините':''} · ${safeLink(d.source,'източник ↗')}`;}
   else if(kind==='red'){detail.textContent='RED III / REPowerEU · приоритетна зона · геометрия по официалната картографска визуализация към проекта на Плана от март 2026. Приоритетна зона не означава одобрен проект или засегнат имот.';}
   else if(kind==='natura'){const area=Number(f.get('SiteArea'));detail.innerHTML=`<strong>${f.get('SiteNameBG')||'Защитена зона'}</strong> · ${f.get('SiteCode')||'—'} · ${f.get('naturaClass')==='spa'?'защитена зона за птици (SPA)':'защитена зона за местообитания (pSCI/SCI/SAC)'}${Number.isFinite(area)?` · ${area.toLocaleString('bg-BG',{maximumFractionDigits:1})} ha`:''} · ${safeLink('https://natura2000.egov.bg/','официален източник МОСВ ↗')}`;}
   else if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap'){const zones=f.get('zoneLabels')||[];detail.innerHTML=`<strong>${kind==='natura-renewables-overlap'?'Пресичане Натура 2000 ∩ ВЕИ':'Пресичане Натура 2000 ∩ ТЕЦ/мини'}</strong> · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)} · зони: ${zones.join(', ')}. <strong>Не е автоматично доказателство за нарушение:</strong> провери решението за преценка/оценка за съвместимост по чл. 31 ЗБР и приложимата ОВОС/ЕО на РИОСВ или МОСВ.`;}
@@ -6354,7 +6373,7 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     btn.title=msg;
   }
   if(key==='foreign'){
-    const msg='Подбрани големи соларни и вятърни проекти ≥100 MW в съседните държави. Маркерите са местоположения, не проектни граници; планираните/строящите се обекти са с по-светъл ромб.';
+    const msg='Подбрани големи соларни и вятърни проекти ≥100 MW. Окръжността показва площ в мащаб: плътен контур при публикувана площ, пунктиран при оценка; тя не е точна проектна граница. Планираните/строящите се обекти са по-светли.';
     btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
   }
 });const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);updateIndustryLegendHint();}
@@ -6639,7 +6658,7 @@ function runSelfTests(){
   selfTest('chirpan-project-scope',()=>{const pv=cadastralProjects.find(d=>d.id==='RES-013'),substation=cadastralProjects.find(d=>d.id==='RES-013-SUBSTATION');return{ok:pv?.parcels?.length===9&&!pv.parcels.includes('78330.63.13')&&substation?.assetType==='substation'&&substation?.parcels?.length===1&&substation.parcels[0]==='78330.63.13',pvParcels:pv?.parcels?.length,substationParcels:substation?.parcels};});
   selfTest('solar-project-ids',()=>{const dup=duplicateValues(operatingSolarProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:operatingSolarProjects.length};});
   selfTest('cadastral-refs-syntax',()=>{const refs=[...cadastralProjects,...operatingSolarProjects].flatMap(p=>p.parcels||[]);const bad=refs.filter(r=>sanitizeParcelRef(r)!==String(r));return{ok:bad.length===0,bad:bad.slice(0,20),total:refs.length};});
-  selfTest('foreign-renewables-catalog',()=>{const countries=new Set(foreignRenewableProjects.map(d=>d.country)),ids=foreignRenewableProjects.map(d=>d.id),bad=foreignRenewableProjects.filter(d=>d.mw<100||!Number.isFinite(d.lon)||!Number.isFinite(d.lat)||!/https?:\/\//.test(d.source));return{ok:foreignRenewableProjects.length>=15&&countries.size===5&&new Set(ids).size===ids.length&&bad.length===0,projects:foreignRenewableProjects.length,countries:[...countries],bad:bad.map(d=>d.id)};});
+  selfTest('foreign-renewables-catalog',()=>{const countries=new Set(foreignRenewableProjects.map(d=>d.country)),ids=foreignRenewableProjects.map(d=>d.id),bad=foreignRenewableProjects.filter(d=>d.mw<100||!Number.isFinite(d.lon)||!Number.isFinite(d.lat)||!/https?:\/\//.test(d.source)),areaBad=foreignSource.getFeatures().filter(f=>f.getGeometry()?.getType()!=='Circle'||!(f.get('data')?.areaHa>0));return{ok:foreignRenewableProjects.length>=15&&countries.size===5&&new Set(ids).size===ids.length&&bad.length===0&&areaBad.length===0,projects:foreignRenewableProjects.length,publishedAreas:Object.keys(FOREIGN_PUBLISHED_AREAS_HA).length,countries:[...countries],bad:[...bad.map(d=>d.id),...areaBad.map(f=>f.getId())]};});
   selfTest('url-layer-state',()=>({ok:['solar','wind','projects','future','natura','industry','foreign','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
   selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.wind&&foreignLayer.getVisible()===layerVisibility.foreign&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&naturaLayer.getVisible()===layerVisibility.natura&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),foreign:foreignLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),natura:naturaLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
   selfTest('natura-lazy-layer',()=>({ok:!!naturaLayer&&!!naturaSource&&NATURA_2000_INDEX_URL==='/data/natura-2000-bg-v1.json'&&(!layerVisibility.natura||['loading','ready'].includes(naturaLoadState)),state:naturaLoadState,features:naturaSource.getFeatures().length,url:NATURA_2000_INDEX_URL}));
