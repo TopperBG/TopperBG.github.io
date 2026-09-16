@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.90c-foreign-over-50mw-20260916">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90c</title>
+<meta name="bgwf-build" content="v0.91-foreign-osm-polygons-20260916">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90c</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.91</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4105,30 +4105,30 @@ const CURATED_INDUSTRIAL_POINTS = [];
   // Public project boundaries are not consistently available, so these are explicitly
   // represented as verified/representative locations rather than invented footprints.
   const foreignRenewableProjects = [
-    {id:'FOREIGN-RO-FANTANELE-COGEALAC',name:'Fântânele–Cogealac',country:'Румъния',technology:'wind',status:'operating',statusLabel:'действащ',mw:600,lon:28.58,lat:44.61,source:'https://www.macquarie.com/au/en/about/company/macquarie-asset-management/infrastructure-and-real-assets/our-assets/fantanele-cogealac.html'},
-    {id:'FOREIGN-RO-RATESTI',name:'Rătești Solar Park',country:'Румъния',technology:'solar',status:'operating',statusLabel:'действащ',mw:155,lon:25.13,lat:44.73,source:'https://www.nofar-energy.com/project/ratesti/'},
+    {id:'FOREIGN-RO-FANTANELE-COGEALAC',name:'Fântânele–Cogealac',country:'Румъния',technology:'wind',status:'operating',statusLabel:'действащ',mw:600,lon:28.58,lat:44.61,osmIds:['R5745436'],source:'https://www.macquarie.com/au/en/about/company/macquarie-asset-management/infrastructure-and-real-assets/our-assets/fantanele-cogealac.html'},
+    {id:'FOREIGN-RO-RATESTI',name:'Rătești Solar Park',country:'Румъния',technology:'solar',status:'operating',statusLabel:'действащ',mw:155,lon:25.13,lat:44.73,osmIds:['W1164021912'],source:'https://www.nofar-energy.com/project/ratesti/'},
     {id:'FOREIGN-RO-VIFOR',name:'VIFOR Wind Farm',country:'Румъния',technology:'wind',status:'construction',statusLabel:'в строеж',mw:461,lon:26.73,lat:45.19,source:'https://www.ifc.org/en/pressroom/2025/ifc-provides-financing-for-landmark-wind-plant-to-boost-romania-s-clean-energy-transition'},
     {id:'FOREIGN-RO-DAMA',name:'Dama Solar',country:'Румъния',technology:'solar',status:'planned',statusLabel:'планиран',mw:1044,lon:21.31,lat:46.17,source:'https://rezolv.energy/projects/dama-solar/'},
-    {id:'FOREIGN-RO-RUGINOASA',name:'Ruginoasa Wind Farm',country:'Румъния',technology:'wind',status:'operating',statusLabel:'действащ',mw:60,lon:26.8363,lat:47.2403,source:'https://www.dri-energy.com/projects/ruginoasa/'},
-    {id:'FOREIGN-RO-TEIUS',name:'Teiuș Solar Park',country:'Румъния',technology:'solar',status:'operating',statusLabel:'действащ',mw:60.2,lon:23.68,lat:46.20,source:'https://eurowindenergy.com/insights/eurowind-energy-romania-officially-opens-teius-solar-park'},
-    {id:'FOREIGN-RS-CIBUK-1',name:'Čibuk 1',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:158,lon:20.96,lat:44.84,source:'https://masdar.ae/en/renewables/our-projects/cibuk-1'},
+    {id:'FOREIGN-RO-RUGINOASA',name:'Ruginoasa Wind Farm',country:'Румъния',technology:'wind',status:'operating',statusLabel:'действащ',mw:60,lon:26.8363,lat:47.2403,osmIds:['R17728489'],source:'https://www.dri-energy.com/projects/ruginoasa/'},
+    {id:'FOREIGN-RO-TEIUS',name:'Teiuș Solar Park',country:'Румъния',technology:'solar',status:'operating',statusLabel:'действащ',mw:60.2,lon:23.68,lat:46.20,osmIds:['R19465002'],source:'https://eurowindenergy.com/insights/eurowind-energy-romania-officially-opens-teius-solar-park'},
+    {id:'FOREIGN-RS-CIBUK-1',name:'Čibuk 1',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:158,lon:20.96,lat:44.84,osmIds:['R11535244'],source:'https://masdar.ae/en/renewables/our-projects/cibuk-1'},
     {id:'FOREIGN-RS-CIBUK-2',name:'Čibuk 2',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:154,lon:20.91,lat:44.78,source:'https://cibuk2.rs/en/'},
     {id:'FOREIGN-RS-KOSTOLAC',name:'Kostolac Wind Farm',country:'Сърбия',technology:'wind',status:'construction',statusLabel:'в строеж',mw:103,lon:21.20,lat:44.72,source:'https://www.kfw.de/stories/environment/renewable-energy/serbia-wind-farm/'},
     {id:'FOREIGN-RS-PUPIN',name:'Pupin Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:94.5,lon:20.7346,lat:45.0640,source:'https://enlightenergy.com/project/pupin/'},
-    {id:'FOREIGN-RS-KOVACICA',name:'Kovačica / Blacksmith Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:104.5,lon:20.77,lat:45.05,source:'https://enlightenergy.com/project/blacksmith/'},
-    {id:'FOREIGN-RS-KRIVACA',name:'Krivača Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:105.6,lon:21.64,lat:44.55,source:'https://www.mkgroup.rs/en/our-business/energy/krivaca-wind-farm/'},
+    {id:'FOREIGN-RS-KOVACICA',name:'Kovačica / Blacksmith Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:104.5,lon:20.77,lat:45.05,osmIds:['R11535245'],source:'https://enlightenergy.com/project/blacksmith/'},
+    {id:'FOREIGN-RS-KRIVACA',name:'Krivača Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:105.6,lon:21.64,lat:44.55,osmIds:['R18514479'],source:'https://www.mkgroup.rs/en/our-business/energy/krivaca-wind-farm/'},
     {id:'FOREIGN-MK-STIPION',name:'Štipion Wind Farm',country:'Северна Македония',technology:'wind',status:'planned',statusLabel:'планиран',mw:400,lon:22.18,lat:41.73,source:'https://www.alcazarenergy.com/alcazar-energy-partners-announces-the-largest-wind-farm-project-in-north-macedonia/'},
     {id:'FOREIGN-MK-SOPOT',name:'Sopot Wind Farm',country:'Северна Македония',technology:'wind',status:'construction',statusLabel:'в развитие / строеж',mw:131,lon:21.94,lat:41.47,source:'https://www.ebrd.com/home/news-and-events/news/2026/ebrd-backs-landmark-wind-power-project-in-north-macedonia.html'},
-    {id:'FOREIGN-MK-PEHCEVO',name:'Pehčevo Solar Park',country:'Северна Македония',technology:'solar',status:'planned',statusLabel:'планиран',mw:70,lon:22.88,lat:41.76,source:'https://serbia-energy.eu/north-macedonia-to-ink-first-agreement-with-strategic-investor-for-70-mw-pehcevo-solar-plant/'},
-    {id:'FOREIGN-GR-KOZANI',name:'Kozani Solar Park',country:'Гърция',technology:'solar',status:'operating',statusLabel:'действащ',mw:204,lon:21.78,lat:40.38,source:'https://www.juwi.com/references/solar/kozani-greece'},
+    {id:'FOREIGN-MK-PEHCEVO',name:'Pehčevo Solar Park',country:'Северна Македония',technology:'solar',status:'planned',statusLabel:'планиран',mw:70,lon:22.88,lat:41.76,osmIds:['W1364774962'],source:'https://serbia-energy.eu/north-macedonia-to-ink-first-agreement-with-strategic-investor-for-70-mw-pehcevo-solar-plant/'},
+    {id:'FOREIGN-GR-KOZANI',name:'Kozani Solar Park',country:'Гърция',technology:'solar',status:'operating',statusLabel:'действащ',mw:204,lon:21.78,lat:40.38,osmIds:['W1056457812','W1056457813','W1112005303','W1312509999','W1312510000','W1312510001','W1369657171','W1369657172','W1452326332','W1452326333','W1452326334','W1483445983','W1483451274'],source:'https://www.juwi.com/references/solar/kozani-greece'},
     {id:'FOREIGN-GR-AMYNTAIO',name:'Amyntaio Solar Park',country:'Гърция',technology:'solar',status:'construction',statusLabel:'в строеж',mw:550,lon:21.67,lat:40.61,source:'https://www.ppcgroup.com/media/press-releases/2024/ppc-group-construction-of-a-550-mw-photovoltaic-plant-in-ptolemaida-is-underway/'},
-    {id:'FOREIGN-GR-KAFIREAS',name:'Kafireas Wind Complex',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:330,lon:24.47,lat:38.08,source:'https://www.enelgreenpower.com/our-projects/operating/kafireas-wind-farm'},
-    {id:'FOREIGN-GR-AGIOS-GEORGIOS',name:'Agios Georgios Wind Farm',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:73.2,lon:23.93,lat:37.47,source:'https://www.terna-energy.com/activities/wind-energy/agios-georgios/'},
-    {id:'FOREIGN-GR-ASKIO',name:'Askio Wind Complex',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:88.2,lon:21.55,lat:40.42,source:'https://www.iberdrola.com/about-us/iberdrola-greece'},
-    {id:'FOREIGN-TR-KARAPINAR',name:'Karapınar Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:1350,lon:33.53,lat:37.75,source:'https://www.kalyonenerji.com/en/projects/karapinar-solar-power-plant'},
+    {id:'FOREIGN-GR-KAFIREAS',name:'Kafireas Wind Complex',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:330,lon:24.47,lat:38.08,osmIds:['R15763363','R16100816'],osmScope:'partial',source:'https://www.enelgreenpower.com/our-projects/operating/kafireas-wind-farm'},
+    {id:'FOREIGN-GR-AGIOS-GEORGIOS',name:'Agios Georgios Wind Farm',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:73.2,lon:23.93,lat:37.47,osmIds:['R14075164'],source:'https://www.terna-energy.com/activities/wind-energy/agios-georgios/'},
+    {id:'FOREIGN-GR-ASKIO',name:'Askio Wind Complex',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:88.2,lon:21.55,lat:40.42,osmIds:['R16088467','R21268115'],source:'https://www.iberdrola.com/about-us/iberdrola-greece'},
+    {id:'FOREIGN-TR-KARAPINAR',name:'Karapınar Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:1350,lon:33.53,lat:37.75,osmIds:['W777636971'],source:'https://www.kalyonenerji.com/en/projects/karapinar-solar-power-plant'},
     {id:'FOREIGN-TR-VIRANSEHIR',name:'Viranşehir Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:320,lon:39.76,lat:37.23,source:'https://www.kalyonenerji.com/en/projects/viransehir-solar-power-plant'},
     {id:'FOREIGN-TR-SOMA',name:'Soma Wind Farm',country:'Турция',technology:'wind',status:'operating',statusLabel:'действащ',mw:288,lon:27.57,lat:39.18,source:'https://www.polatenerji.com/en/power-plants/soma-wind-power-plant'},
-    {id:'FOREIGN-TR-ELMALI',name:'Elmalı Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:60,lon:29.92,lat:36.74,source:'https://www.ozaltin.com/en/all-projects/guene%C5%9F-enerjisi-santrali/60-mw-elmal%C4%B1-guene%C5%9F-enerjisi-santrali/'},
+    {id:'FOREIGN-TR-ELMALI',name:'Elmalı Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:60,lon:29.92,lat:36.74,osmIds:['W703803089','W703803090','W703803091','W843130711','W843130712','W843130713','W843130714'],osmScope:'partial',source:'https://www.ozaltin.com/en/all-projects/guene%C5%9F-enerjisi-santrali/60-mw-elmal%C4%B1-guene%C5%9F-enerjisi-santrali/'},
     {id:'FOREIGN-TR-R24-GURUN',name:'R24-Gürün Wind Farm',country:'Турция',technology:'wind',status:'construction',statusLabel:'в строеж',mw:90,lon:37.27,lat:38.72,source:'https://www.nordex-online.com/en/2025/10/nordex-group-receives-90-mw-order-from-turkiye/'},
     {id:'FOREIGN-TR-KARTAL-EXT',name:'Kartal Wind Farm Extension',country:'Турция',technology:'wind',status:'construction',statusLabel:'в строеж',mw:56,lon:30.52,lat:39.72,source:'https://www.nordex-online.com/en/2023/07/nordex-group-receives-orders-for-101-mw-from-turkiye/'}
   ];
@@ -4480,6 +4480,7 @@ const solarSource=new VectorSource();
 const projectSource=new VectorSource();
 const windSource=new VectorSource();
 const foreignSource=new VectorSource();
+const foreignOsmSource=new VectorSource();
 const redSource=new VectorSource();
 const naturaSource=new VectorSource();
 const naturaRenewablesOverlapSource=new VectorSource();
@@ -4561,7 +4562,7 @@ function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba
 }
 function refreshSatelliteOverlayStyles(){
   root.classList.toggle('is-satellite-mode',satelliteMode());
-  [placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
+  [placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
   industrialAuxLayer?.changed?.();
 }
@@ -4660,6 +4661,7 @@ const windLayer=new VectorLayer({
 const foreignLayer=new VectorLayer({
   source:foreignSource,zIndex:8,visible:layerVisibility.foreign,
   style:(f,resolution)=>{
+    if(f.get('hasOsmGeometry'))return null;
     const project=f.get('data')||{},selected=f.get('selected');
     const operating=project.status==='operating';
     const circle=f.getGeometry(),center=new Point(circle.getCenter());
@@ -4675,6 +4677,68 @@ const foreignLayer=new VectorLayer({
     return styles;
   }
 });
+const foreignOsmLayer=new VectorLayer({
+  source:foreignOsmSource,zIndex:9,visible:layerVisibility.foreign,
+  style:f=>{
+    const project=f.get('data')||{},selected=f.get('selected');
+    const styles=[new Style({
+      fill:new Fill({color:project.areaBasis==='osm-hull'?(satelliteMode()?'rgba(219,39,119,.20)':'rgba(219,39,119,.15)'):(satelliteMode()?'rgba(219,39,119,.34)':'rgba(219,39,119,.25)')}),
+      stroke:new Stroke({color:selected?'#111827':satelliteMode()?'#ff4da6':'#be185d',width:selected?4:3,lineDash:project.areaBasis==='osm-hull'?[9,5]:null})
+    })];
+    if(f.get('primaryOsmPart'))styles.push(new Style({text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 11px sans-serif':'800 9px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:'#db2777'}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    return styles;
+  }
+});
+let foreignOsmLoadState='idle',foreignOsmLoadPromise=null;
+function foreignConvexHullRing(points){
+  const pts=points.filter(p=>Array.isArray(p)&&p.every(Number.isFinite)).sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+  if(pts.length<3)return null;const cross=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
+  const lower=[];for(const p of pts){while(lower.length>=2&&cross(lower.at(-2),lower.at(-1),p)<=0)lower.pop();lower.push(p);}
+  const upper=[];for(let i=pts.length-1;i>=0;i--){const p=pts[i];while(upper.length>=2&&cross(upper.at(-2),upper.at(-1),p)<=0)upper.pop();upper.push(p);}
+  const hull=[...lower.slice(0,-1),...upper.slice(0,-1)];if(hull.length<3)return null;hull.push([...hull[0]]);return hull;
+}
+async function ensureForeignOsmPolygons(){
+  if(foreignOsmLoadState==='ready')return foreignOsmSource.getFeatures();
+  if(foreignOsmLoadPromise)return foreignOsmLoadPromise;
+  foreignOsmLoadPromise=(async()=>{
+    foreignOsmLoadState='loading';updateLayerStatus();
+    const osmToProject=new Map();
+    foreignRenewableProjects.forEach(project=>(project.osmIds||[]).forEach(key=>osmToProject.set(key,project)));
+    const keys=[...osmToProject.keys()];
+    if(!keys.length){foreignOsmLoadState='ready';foreignOsmLoadPromise=null;return[];}
+    try{
+      const ways=keys.filter(key=>key[0]==='W').map(key=>key.slice(1)),relations=keys.filter(key=>key[0]==='R').map(key=>key.slice(1));
+      const query=`[out:json][timeout:35];(${ways.length?`way(id:${ways.join(',')});`:''}${relations.length?`relation(id:${relations.join(',')});`:''});out body geom;`;
+      const response=await fetchMonthlyGis(`${INDUSTRIAL_OVERPASS_ENDPOINT}?data=${encodeURIComponent(query)}`,{mode:'cors'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const payload=await response.json(),features=[],counts=new Map(),areas=new Map();
+      for(const el of payload?.elements||[]){
+        const key=`${el.type==='relation'?'R':'W'}${el.id}`,project=osmToProject.get(key);if(!project)continue;
+        let ringSpecs=el.type==='way'?[{ring:industrialAuxRing(el.geometry),basis:'osm'}]:
+          (el.members||[]).filter(member=>member.role==='outer').map(member=>({ring:industrialAuxRing(member.geometry),basis:'osm'}));
+        if(el.type==='relation'&&!ringSpecs.some(item=>item.ring)){
+          const points=[];for(const member of el.members||[]){if(Number.isFinite(member.lon)&&Number.isFinite(member.lat))points.push(fromLonLat([member.lon,member.lat]));for(const p of member.geometry||[])if(Number.isFinite(p.lon)&&Number.isFinite(p.lat))points.push(fromLonLat([p.lon,p.lat]));}
+          ringSpecs=[{ring:foreignConvexHullRing(points),basis:'osm-hull'}];
+        }
+        for(const spec of ringSpecs.filter(item=>item.ring)){
+          const ring=spec.ring;
+          const feature=new Feature({geometry:new PolygonGeom([ring])});let areaHa=0;try{areaHa=Math.abs(getGeodesicArea(feature.getGeometry(),{projection:'EPSG:3857'}))/10000;}catch{}
+          if(!(areaHa>.01))continue;
+          feature.setId(`foreign-osm-${key}-${features.length}`);feature.set('kind','foreign');feature.set('projectId',project.id);feature.set('osmKey',key);
+          feature.set('data',{...project,areaHa,areaBasis:spec.basis,osmKey,osmScope:project.osmScope||'full'});features.push(feature);
+          counts.set(project.id,(counts.get(project.id)||0)+1);areas.set(project.id,(areas.get(project.id)||0)+areaHa);
+        }
+      }
+      const groupBasis=new Map();features.forEach(feature=>{const id=feature.get('projectId'),basis=feature.get('data')?.areaBasis;if(basis==='osm-hull')groupBasis.set(id,'osm-hull');else if(!groupBasis.has(id))groupBasis.set(id,'osm');});
+      const seen=new Set();features.forEach(feature=>{const id=feature.get('projectId'),d=feature.get('data');feature.set('primaryOsmPart',!seen.has(id));seen.add(id);feature.set('data',{...d,areaHa:areas.get(id),areaBasis:groupBasis.get(id),osmPartCount:counts.get(id)});});
+      foreignOsmSource.clear();foreignOsmSource.addFeatures(features);
+      const resolved=new Set(features.map(f=>f.get('projectId')));foreignSource.getFeatures().forEach(f=>{f.set('hasOsmGeometry',resolved.has(f.getId()));f.changed();});
+      foreignOsmLoadState='ready';debugState.network.foreignOsm={ok:true,requested:keys.length,polygons:features.length,projects:resolved.size};
+    }catch(error){foreignOsmLoadState='error';debugState.network.foreignOsm={ok:false,error:error.message};dbgWarn('foreign-osm-load-failed',{error:error.message});}
+    foreignOsmLoadPromise=null;updateLayerStatus();updateDebugLayerCounts();return foreignOsmSource.getFeatures();
+  })();
+  return foreignOsmLoadPromise;
+}
 const industryLayer=new VectorLayer({
   source:industryFootprintSource,zIndex:8,visible:layerVisibility.industry,
   style:f=>{
@@ -4760,7 +4824,7 @@ map=new MapOL({
   target:mapTarget,
   view,
   interactions:mapInteractions,
-  layers:[satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,provinceLayer]
+  layers:[satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,provinceLayer]
 });
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
@@ -5097,7 +5161,7 @@ function liveFireLabel(d){const when=d.observedAt?formatDateTime.format(d.observ
 
 function showMapTooltip(pixel,text){if(!tooltip)return;tooltip.hidden=true;tooltip.textContent=text;tooltip.hidden=false;const wrap=root.querySelector('.bgwf-map-wrap');const rect=wrap.getBoundingClientRect();tooltip.style.left=`${Math.min(rect.width-tooltip.offsetWidth-6,Math.max(6,pixel[0]+12))}px`;tooltip.style.top=`${Math.min(rect.height-tooltip.offsetHeight-6,Math.max(6,pixel[1]-tooltip.offsetHeight-8))}px`;}
 function hideMapTooltip(){if(tooltip)tooltip.hidden=true;}
-function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
+function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='osm-hull'?'обвивка по реални OSM турбини':d.areaBasis==='osm'?(d.osmScope==='partial'?'OSM частичен контур':'реален OSM контур'):d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
 if(kind==='industry-aux'){return industryAuxLabel(f);}
 if(kind==='industry'){
   const meta=industrialConcessionMeta[d.id];
@@ -5137,7 +5201,7 @@ map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url
     detail.textContent=windPlantLabel(d)+' · ';
     const link=document.createElement('a');link.href=d.source;link.target='_blank';link.rel='noopener';link.textContent='OpenStreetMap ↗';detail.appendChild(link);
   }
-  else if(kind==='foreign'){detail.innerHTML=`<strong>${d.name}</strong> · ${d.country} · ${d.technology==='solar'?'соларен парк':'вятърен парк'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · окръжност ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha (${d.areaBasis==='published'?'публикувана проектна площ, плътен контур':'ориентировъчна площ по мощност, пунктиран контур'}). Окръжността представя мащаба, а не точната проектна граница${d.technology==='wind'?' или запечатаната площ около турбините':''} · ${safeLink(d.source,'източник ↗')}`;}
+  else if(kind==='foreign'){const osm=d.areaBasis==='osm'||d.areaBasis==='osm-hull';detail.innerHTML=`<strong>${d.name}</strong> · ${d.country} · ${d.technology==='solar'?'соларен парк':'вятърен парк'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${osm?`${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:1})} ha по ${d.areaBasis==='osm-hull'?'обвивка от реалните позиции на OSM турбините (пунктирана; не е официална граница)':`${d.osmPartCount||1} реални OSM ${d.osmPartCount>1?'полигона':'полигон'}${d.osmScope==='partial'?' (частично покритие)':''}`}`:`окръжност ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha (${d.areaBasis==='published'?'публикувана проектна площ':'ориентировъчна площ по мощност'}); окръжността е fallback, не точна граница`} · ${d.osmKey?safeLink(`https://www.openstreetmap.org/${d.osmKey[0]==='R'?'relation':'way'}/${d.osmKey.slice(1)}`,'OSM ↗')+' · ':''}${safeLink(d.source,'източник ↗')}`;}
   else if(kind==='red'){detail.textContent='RED III / REPowerEU · приоритетна зона · геометрия по официалната картографска визуализация към проекта на Плана от март 2026. Приоритетна зона не означава одобрен проект или засегнат имот.';}
   else if(kind==='natura'){const area=Number(f.get('SiteArea'));detail.innerHTML=`<strong>${f.get('SiteNameBG')||'Защитена зона'}</strong> · ${f.get('SiteCode')||'—'} · ${f.get('naturaClass')==='spa'?'защитена зона за птици (SPA)':'защитена зона за местообитания (pSCI/SCI/SAC)'}${Number.isFinite(area)?` · ${area.toLocaleString('bg-BG',{maximumFractionDigits:1})} ha`:''} · ${safeLink('https://natura2000.egov.bg/','официален източник МОСВ ↗')}`;}
   else if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap'){const zones=f.get('zoneLabels')||[];detail.innerHTML=`<strong>${kind==='natura-renewables-overlap'?'Пресичане Натура 2000 ∩ ВЕИ':'Пресичане Натура 2000 ∩ ТЕЦ/мини'}</strong> · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)} · зони: ${zones.join(', ')}. <strong>Не е автоматично доказателство за нарушение:</strong> провери решението за преценка/оценка за съвместимост по чл. 31 ЗБР и приложимата ОВОС/ЕО на РИОСВ или МОСВ.`;}
@@ -6246,7 +6310,7 @@ function updateLayerStatus(){
       extras.push(`${industrialPolygonSites.length} ТЕЦ/мини · footprint ${formatAreaDka(totalIndustryFootprintDka())}`);if(concessionEstimateSource.getFeatures().length)extras.push(`${concessionEstimateSource.getFeatures().length} концесионни площи`);
       if(concessionSource.getFeatures().length)extras.push(`${concessionSource.getFeatures().length} концесионни граници`);
     }
-    if(layerVisibility.foreign)extras.push(`Foreign ${foreignSource.getFeatures().length} големи ВЕИ проекта`);
+    if(layerVisibility.foreign)extras.push(foreignOsmLoadState==='loading'?'Foreign: OSM геометрията се зарежда':`Foreign ${foreignSource.getFeatures().length} проекта · ${new Set(foreignOsmSource.getFeatures().map(f=>f.get('projectId'))).size} с OSM геометрия`);
     if(layerVisibility.live)extras.push(
       liveFireLoadState==='loading'?'Sentinel-3 зареждане':
       liveFireLoadState==='error'?'Sentinel-3 временно недостъпен':
@@ -6266,7 +6330,7 @@ function updateLayerStatus(){
     ).length;
     extras.push(`ТЕЦ/мини: разработени ${industryFootprintSource.getFeatures().length}/${industrialPolygonSites.length} · GIS концесии ${concessionSource.getFeatures().length} · официална площ известна за ${knownOfficialAreas}/${officialConcessionPending.length}`);
   }
-  if(layerVisibility.foreign)extras.push(`Foreign: ${foreignSource.getFeatures().length} точки`);
+  if(layerVisibility.foreign)extras.push(`Foreign: ${foreignSource.getFeatures().length} проекта · OSM ${foreignOsmLoadState}/${foreignOsmSource.getFeatures().length} полигона`);
   if(layerVisibility.live)extras.push(
     (!fireYearsHidden()&&!allFireYearsSelected()&&!fireYearSelected(2026))
       ?'Sentinel-3: скрит при избраната историческа година'
@@ -6280,7 +6344,7 @@ function updateLayerStatus(){
   layerStatus.textContent=`OpenLayers · ${scope}: ${solarText} · ${windText} · ${projectText}${extras.length?` · ${extras.join(' · ')}`:''}${cadastralLoadErrors?` · ${cadastralLoadErrors} ПИ без геометрия (${cadastralUnresolved.filter(x=>x.status==='not-found').length} липсват в INSPIRE / ${cadastralUnresolved.filter(x=>x.status==='error').length} API грешка)`:''}${(cadastralResolutionStats.simplified||cadastralResolutionStats.extent)?` · fallback: ${cadastralResolutionStats.simplified} опростени / ${cadastralResolutionStats.extent} extent`:''}`;
   updateDebugLayerCounts();
 }
-function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,foreign:foreignSource.getFeatures().length,red:redSource.getFeatures().length,natura:naturaSource.getFeatures().length,naturaRenewablesOverlap:naturaRenewablesOverlapSource.getFeatures().length,naturaIndustryOverlap:naturaIndustryOverlapSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
+function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,foreign:foreignSource.getFeatures().length,foreignOsm:foreignOsmSource.getFeatures().length,red:redSource.getFeatures().length,natura:naturaSource.getFeatures().length,naturaRenewablesOverlap:naturaRenewablesOverlapSource.getFeatures().length,naturaIndustryOverlap:naturaIndustryOverlapSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
 function createButton(parent,{className,text,year=undefined,layer=null,color=null,pressed=false,onClick}){const b=document.createElement('button');b.type='button';b.className=className;b.setAttribute('aria-pressed',String(pressed));if(year===null)b.dataset.year='all';else if(year!==undefined)b.dataset.year=year;if(layer)b.dataset.layer=layer;if(color)b.style.setProperty('--bgwf-filter-color',color);const sw=document.createElement('span');sw.className='bgwf-swatch';b.appendChild(sw);const tx=document.createElement('span');tx.textContent=text;b.appendChild(tx);b.addEventListener('click',onClick);parent.appendChild(b);return b;}
 const legend=root.querySelector('.bgwf-legend'); if(legend){legend.textContent='';createButton(legend,{className:'bgwf-year-filter',text:'Всички',year:null,pressed:allFireYearsSelected(),onClick:()=>setYearFilter(null)});years.forEach(y=>createButton(legend,{className:'bgwf-year-filter',text:String(y),year:String(y),color:yearColors.get(y),pressed:fireYearSelected(y),onClick:()=>setYearFilter(y)}));const liveBtn=createButton(legend,{className:'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle',text:'🔥 Sentinel-3 пожар',layer:'live',color:'#ff1717',pressed:layerVisibility.live,onClick:async function(){layerVisibility.live=!layerVisibility.live;this.setAttribute('aria-pressed',String(layerVisibility.live));if(layerVisibility.live&&(liveFireLoadState==='idle'||liveFireLoadState==='error'))await loadLiveSentinelFires();updateLiveVisibility();updateLayerStatus();scheduleUrlSync();}});const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';legend.appendChild(iskra);const search=root.querySelector('[data-map-search]');if(search)legend.appendChild(search);}
 const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.textContent='';const satBtn=createButton(controls,{
@@ -6368,7 +6432,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
 }));
 
 const configs=[['solar','Изградени ФЕЦ','#f59e0b'],['wind','ВяЕИ','#0891b2'],['projects','ПУП/ПИ проекти','#2563eb'],['future','RED III/REPowerEU','#2f9e44'],['natura','Натура 2000','#0f766e'],['industry','ТЕЦ / мини','#4b5563'],['foreign','Foreign','#db2777']];configs.forEach(([key,label,color])=>{
-  const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='foreign')foreignLayer.setVisible(layerVisibility.foreign);if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
+  const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
 concessionLayer.setVisible(layerVisibility.industry);
@@ -6390,7 +6454,7 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     btn.title=msg;
   }
   if(key==='foreign'){
-    const msg='Подбрани големи соларни и вятърни проекти над 50 MW. Окръжността показва площ в мащаб: плътен контур при публикувана площ, пунктиран при оценка; тя не е точна проектна граница. Планираните/строящите се обекти са по-светли.';
+    const msg='Подбрани ВЕИ проекти над 50 MW. Реалните OSM полигони заменят окръжностите. При ВяЕИ без публикувана граница пунктираният полигон е обвивка по реалните OSM позиции на турбините. Окръжност остава само като fallback без OSM геометрия.';
     btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
   }
 });const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);updateIndustryLegendHint();}
@@ -6453,7 +6517,7 @@ function featureSearchMeta(feature){
   return null;
 }
 function searchableFeatures(){
-  const sources=[placeLabelsSource,solarSource,projectSource,windSource,foreignSource,redSource,naturaSource,industryFootprintSource,concessionSource,concessionEstimateSource];
+  const sources=[placeLabelsSource,solarSource,projectSource,windSource,foreignOsmSource,foreignSource,redSource,naturaSource,industryFootprintSource,concessionSource,concessionEstimateSource];
   if(industrialAuxSource)sources.push(industrialAuxSource);
   return [...sources.flatMap(source=>source.getFeatures()),...fireFeaturesById.values()];
 }
@@ -6496,6 +6560,7 @@ function setSearchLayerVisible(kind){
   const [key,layer]=config;layerVisibility[key]=true;layer?.setVisible(true);
   root.querySelector(`.bgwf-layer-toggle[data-layer="${key}"]`)?.setAttribute('aria-pressed','true');
   if(key==='industry'){industrialAuxLayer?.setVisible(true);concessionLayer.setVisible(true);concessionEstimateLayer.setVisible(true);}
+  if(key==='foreign'){foreignOsmLayer.setVisible(true);if(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error')void ensureForeignOsmPolygons();}
 }
 async function focusSearchResult(item){
   let features=item.features.filter(Boolean);const first=features[0],kind=first?.get('kind');if(!first)return;
@@ -6675,9 +6740,9 @@ function runSelfTests(){
   selfTest('chirpan-project-scope',()=>{const pv=cadastralProjects.find(d=>d.id==='RES-013'),substation=cadastralProjects.find(d=>d.id==='RES-013-SUBSTATION');return{ok:pv?.parcels?.length===9&&!pv.parcels.includes('78330.63.13')&&substation?.assetType==='substation'&&substation?.parcels?.length===1&&substation.parcels[0]==='78330.63.13',pvParcels:pv?.parcels?.length,substationParcels:substation?.parcels};});
   selfTest('solar-project-ids',()=>{const dup=duplicateValues(operatingSolarProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:operatingSolarProjects.length};});
   selfTest('cadastral-refs-syntax',()=>{const refs=[...cadastralProjects,...operatingSolarProjects].flatMap(p=>p.parcels||[]);const bad=refs.filter(r=>sanitizeParcelRef(r)!==String(r));return{ok:bad.length===0,bad:bad.slice(0,20),total:refs.length};});
-  selfTest('foreign-renewables-catalog',()=>{const countries=new Set(foreignRenewableProjects.map(d=>d.country)),ids=foreignRenewableProjects.map(d=>d.id),bad=foreignRenewableProjects.filter(d=>d.mw<=50||!Number.isFinite(d.lon)||!Number.isFinite(d.lat)||!/https?:\/\//.test(d.source)),areaBad=foreignSource.getFeatures().filter(f=>f.getGeometry()?.getType()!=='Circle'||!(f.get('data')?.areaHa>0));return{ok:foreignRenewableProjects.length>=25&&countries.size===5&&new Set(ids).size===ids.length&&bad.length===0&&areaBad.length===0,projects:foreignRenewableProjects.length,thresholdMw:'>50',publishedAreas:Object.keys(FOREIGN_PUBLISHED_AREAS_HA).length,countries:[...countries],bad:[...bad.map(d=>d.id),...areaBad.map(f=>f.getId())]};});
+  selfTest('foreign-renewables-catalog',()=>{const countries=new Set(foreignRenewableProjects.map(d=>d.country)),ids=foreignRenewableProjects.map(d=>d.id),osmIds=foreignRenewableProjects.flatMap(d=>d.osmIds||[]),bad=foreignRenewableProjects.filter(d=>d.mw<=50||!Number.isFinite(d.lon)||!Number.isFinite(d.lat)||!/https?:\/\//.test(d.source)),areaBad=foreignSource.getFeatures().filter(f=>f.getGeometry()?.getType()!=='Circle'||!(f.get('data')?.areaHa>0));return{ok:foreignRenewableProjects.length>=25&&countries.size===5&&new Set(ids).size===ids.length&&new Set(osmIds).size===osmIds.length&&osmIds.every(id=>/^[RW]\d+$/.test(id))&&bad.length===0&&areaBad.length===0,projects:foreignRenewableProjects.length,thresholdMw:'>50',osmProjects:foreignRenewableProjects.filter(d=>d.osmIds?.length).length,osmIds:osmIds.length,publishedAreas:Object.keys(FOREIGN_PUBLISHED_AREAS_HA).length,countries:[...countries],bad:[...bad.map(d=>d.id),...areaBad.map(f=>f.getId())]};});
   selfTest('url-layer-state',()=>({ok:['solar','wind','projects','future','natura','industry','foreign','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
-  selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.wind&&foreignLayer.getVisible()===layerVisibility.foreign&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&naturaLayer.getVisible()===layerVisibility.natura&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),foreign:foreignLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),natura:naturaLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
+  selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.wind&&foreignLayer.getVisible()===layerVisibility.foreign&&foreignOsmLayer.getVisible()===layerVisibility.foreign&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&naturaLayer.getVisible()===layerVisibility.natura&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),foreign:foreignLayer.getVisible(),foreignOsm:foreignOsmLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),natura:naturaLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
   selfTest('natura-lazy-layer',()=>({ok:!!naturaLayer&&!!naturaSource&&NATURA_2000_INDEX_URL==='/data/natura-2000-bg-v1.json'&&(!layerVisibility.natura||['loading','ready'].includes(naturaLoadState)),state:naturaLoadState,features:naturaSource.getFeatures().length,url:NATURA_2000_INDEX_URL}));
   selfTest('natura-local-intersection-engine',()=>({ok:typeof window.polygonClipping?.intersection==='function'&&typeof window.polygonClipping?.union==='function'&&!!naturaRenewablesOverlapLayer&&!!naturaIndustryOverlapLayer,engine:'polygon-clipping 0.15.7',renewables:naturaRenewablesOverlapSource.getFeatures().length,industry:naturaIndustryOverlapSource.getFeatures().length}));
   selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
@@ -6708,6 +6773,7 @@ compactYearFilterButtons();
 updateFiresAndDensity();updateLayerStatus();updateFloatingUiPosition();void showGoatCounter();
 if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
 if(layerVisibility.natura)void ensureNatura2000().catch(()=>{});
+if(layerVisibility.foreign)void ensureForeignOsmPolygons().catch(()=>{});
 if(layerVisibility.live&&(allFireYearsSelected()||fireYearSelected(2026)||fireYearsHidden()))void loadLiveSentinelFires();
 setTimeout(()=>void loadProjectParcels(),100);
 setTimeout(()=>{
