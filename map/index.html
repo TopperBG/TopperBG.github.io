@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.90b-visible-foreign-area-circles-20260916">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90b</title>
+<meta name="bgwf-build" content="v0.90c-foreign-over-50mw-20260916">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.90c</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <script>
   // Keep a real v0.87f snapshot and use a useful satellite view on a bare /map/ URL.
@@ -1499,7 +1499,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90b</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.90c</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4101,7 +4101,7 @@ const CURATED_INDUSTRIAL_POINTS = [];
       }
   ];
 
-  // Large (>=100 MW) renewable projects in Bulgaria's five neighbouring countries.
+  // Large (>50 MW) renewable projects in Bulgaria's five neighbouring countries.
   // Public project boundaries are not consistently available, so these are explicitly
   // represented as verified/representative locations rather than invented footprints.
   const foreignRenewableProjects = [
@@ -4109,17 +4109,28 @@ const CURATED_INDUSTRIAL_POINTS = [];
     {id:'FOREIGN-RO-RATESTI',name:'Rătești Solar Park',country:'Румъния',technology:'solar',status:'operating',statusLabel:'действащ',mw:155,lon:25.13,lat:44.73,source:'https://www.nofar-energy.com/project/ratesti/'},
     {id:'FOREIGN-RO-VIFOR',name:'VIFOR Wind Farm',country:'Румъния',technology:'wind',status:'construction',statusLabel:'в строеж',mw:461,lon:26.73,lat:45.19,source:'https://www.ifc.org/en/pressroom/2025/ifc-provides-financing-for-landmark-wind-plant-to-boost-romania-s-clean-energy-transition'},
     {id:'FOREIGN-RO-DAMA',name:'Dama Solar',country:'Румъния',technology:'solar',status:'planned',statusLabel:'планиран',mw:1044,lon:21.31,lat:46.17,source:'https://rezolv.energy/projects/dama-solar/'},
+    {id:'FOREIGN-RO-RUGINOASA',name:'Ruginoasa Wind Farm',country:'Румъния',technology:'wind',status:'operating',statusLabel:'действащ',mw:60,lon:26.8363,lat:47.2403,source:'https://www.dri-energy.com/projects/ruginoasa/'},
+    {id:'FOREIGN-RO-TEIUS',name:'Teiuș Solar Park',country:'Румъния',technology:'solar',status:'operating',statusLabel:'действащ',mw:60.2,lon:23.68,lat:46.20,source:'https://eurowindenergy.com/insights/eurowind-energy-romania-officially-opens-teius-solar-park'},
     {id:'FOREIGN-RS-CIBUK-1',name:'Čibuk 1',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:158,lon:20.96,lat:44.84,source:'https://masdar.ae/en/renewables/our-projects/cibuk-1'},
     {id:'FOREIGN-RS-CIBUK-2',name:'Čibuk 2',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:154,lon:20.91,lat:44.78,source:'https://cibuk2.rs/en/'},
     {id:'FOREIGN-RS-KOSTOLAC',name:'Kostolac Wind Farm',country:'Сърбия',technology:'wind',status:'construction',statusLabel:'в строеж',mw:103,lon:21.20,lat:44.72,source:'https://www.kfw.de/stories/environment/renewable-energy/serbia-wind-farm/'},
+    {id:'FOREIGN-RS-PUPIN',name:'Pupin Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:94.5,lon:20.7346,lat:45.0640,source:'https://enlightenergy.com/project/pupin/'},
+    {id:'FOREIGN-RS-KOVACICA',name:'Kovačica / Blacksmith Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:104.5,lon:20.77,lat:45.05,source:'https://enlightenergy.com/project/blacksmith/'},
+    {id:'FOREIGN-RS-KRIVACA',name:'Krivača Wind Farm',country:'Сърбия',technology:'wind',status:'operating',statusLabel:'действащ',mw:105.6,lon:21.64,lat:44.55,source:'https://www.mkgroup.rs/en/our-business/energy/krivaca-wind-farm/'},
     {id:'FOREIGN-MK-STIPION',name:'Štipion Wind Farm',country:'Северна Македония',technology:'wind',status:'planned',statusLabel:'планиран',mw:400,lon:22.18,lat:41.73,source:'https://www.alcazarenergy.com/alcazar-energy-partners-announces-the-largest-wind-farm-project-in-north-macedonia/'},
     {id:'FOREIGN-MK-SOPOT',name:'Sopot Wind Farm',country:'Северна Македония',technology:'wind',status:'construction',statusLabel:'в развитие / строеж',mw:131,lon:21.94,lat:41.47,source:'https://www.ebrd.com/home/news-and-events/news/2026/ebrd-backs-landmark-wind-power-project-in-north-macedonia.html'},
+    {id:'FOREIGN-MK-PEHCEVO',name:'Pehčevo Solar Park',country:'Северна Македония',technology:'solar',status:'planned',statusLabel:'планиран',mw:70,lon:22.88,lat:41.76,source:'https://serbia-energy.eu/north-macedonia-to-ink-first-agreement-with-strategic-investor-for-70-mw-pehcevo-solar-plant/'},
     {id:'FOREIGN-GR-KOZANI',name:'Kozani Solar Park',country:'Гърция',technology:'solar',status:'operating',statusLabel:'действащ',mw:204,lon:21.78,lat:40.38,source:'https://www.juwi.com/references/solar/kozani-greece'},
     {id:'FOREIGN-GR-AMYNTAIO',name:'Amyntaio Solar Park',country:'Гърция',technology:'solar',status:'construction',statusLabel:'в строеж',mw:550,lon:21.67,lat:40.61,source:'https://www.ppcgroup.com/media/press-releases/2024/ppc-group-construction-of-a-550-mw-photovoltaic-plant-in-ptolemaida-is-underway/'},
     {id:'FOREIGN-GR-KAFIREAS',name:'Kafireas Wind Complex',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:330,lon:24.47,lat:38.08,source:'https://www.enelgreenpower.com/our-projects/operating/kafireas-wind-farm'},
+    {id:'FOREIGN-GR-AGIOS-GEORGIOS',name:'Agios Georgios Wind Farm',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:73.2,lon:23.93,lat:37.47,source:'https://www.terna-energy.com/activities/wind-energy/agios-georgios/'},
+    {id:'FOREIGN-GR-ASKIO',name:'Askio Wind Complex',country:'Гърция',technology:'wind',status:'operating',statusLabel:'действащ',mw:88.2,lon:21.55,lat:40.42,source:'https://www.iberdrola.com/about-us/iberdrola-greece'},
     {id:'FOREIGN-TR-KARAPINAR',name:'Karapınar Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:1350,lon:33.53,lat:37.75,source:'https://www.kalyonenerji.com/en/projects/karapinar-solar-power-plant'},
     {id:'FOREIGN-TR-VIRANSEHIR',name:'Viranşehir Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:320,lon:39.76,lat:37.23,source:'https://www.kalyonenerji.com/en/projects/viransehir-solar-power-plant'},
-    {id:'FOREIGN-TR-SOMA',name:'Soma Wind Farm',country:'Турция',technology:'wind',status:'operating',statusLabel:'действащ',mw:288,lon:27.57,lat:39.18,source:'https://www.polatenerji.com/en/power-plants/soma-wind-power-plant'}
+    {id:'FOREIGN-TR-SOMA',name:'Soma Wind Farm',country:'Турция',technology:'wind',status:'operating',statusLabel:'действащ',mw:288,lon:27.57,lat:39.18,source:'https://www.polatenerji.com/en/power-plants/soma-wind-power-plant'},
+    {id:'FOREIGN-TR-ELMALI',name:'Elmalı Solar Power Plant',country:'Турция',technology:'solar',status:'operating',statusLabel:'действащ',mw:60,lon:29.92,lat:36.74,source:'https://www.ozaltin.com/en/all-projects/guene%C5%9F-enerjisi-santrali/60-mw-elmal%C4%B1-guene%C5%9F-enerjisi-santrali/'},
+    {id:'FOREIGN-TR-R24-GURUN',name:'R24-Gürün Wind Farm',country:'Турция',technology:'wind',status:'construction',statusLabel:'в строеж',mw:90,lon:37.27,lat:38.72,source:'https://www.nordex-online.com/en/2025/10/nordex-group-receives-90-mw-order-from-turkiye/'},
+    {id:'FOREIGN-TR-KARTAL-EXT',name:'Kartal Wind Farm Extension',country:'Турция',technology:'wind',status:'construction',statusLabel:'в строеж',mw:56,lon:30.52,lat:39.72,source:'https://www.nordex-online.com/en/2023/07/nordex-group-receives-orders-for-101-mw-from-turkiye/'}
   ];
   const FOREIGN_PUBLISHED_AREAS_HA = {
     'FOREIGN-RO-FANTANELE-COGEALAC':1100,
@@ -4127,7 +4138,8 @@ const CURATED_INDUSTRIAL_POINTS = [];
     'FOREIGN-RS-CIBUK-2':4750,
     'FOREIGN-GR-KOZANI':450,
     'FOREIGN-TR-KARAPINAR':2000,
-    'FOREIGN-TR-SOMA':12300
+    'FOREIGN-TR-SOMA':12300,
+    'FOREIGN-TR-ELMALI':85
   };
   function foreignProjectArea(project){
     const published=FOREIGN_PUBLISHED_AREAS_HA[project.id];
@@ -6378,7 +6390,7 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     btn.title=msg;
   }
   if(key==='foreign'){
-    const msg='Подбрани големи соларни и вятърни проекти ≥100 MW. Окръжността показва площ в мащаб: плътен контур при публикувана площ, пунктиран при оценка; тя не е точна проектна граница. Планираните/строящите се обекти са по-светли.';
+    const msg='Подбрани големи соларни и вятърни проекти над 50 MW. Окръжността показва площ в мащаб: плътен контур при публикувана площ, пунктиран при оценка; тя не е точна проектна граница. Планираните/строящите се обекти са по-светли.';
     btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
   }
 });const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);updateIndustryLegendHint();}
@@ -6663,7 +6675,7 @@ function runSelfTests(){
   selfTest('chirpan-project-scope',()=>{const pv=cadastralProjects.find(d=>d.id==='RES-013'),substation=cadastralProjects.find(d=>d.id==='RES-013-SUBSTATION');return{ok:pv?.parcels?.length===9&&!pv.parcels.includes('78330.63.13')&&substation?.assetType==='substation'&&substation?.parcels?.length===1&&substation.parcels[0]==='78330.63.13',pvParcels:pv?.parcels?.length,substationParcels:substation?.parcels};});
   selfTest('solar-project-ids',()=>{const dup=duplicateValues(operatingSolarProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:operatingSolarProjects.length};});
   selfTest('cadastral-refs-syntax',()=>{const refs=[...cadastralProjects,...operatingSolarProjects].flatMap(p=>p.parcels||[]);const bad=refs.filter(r=>sanitizeParcelRef(r)!==String(r));return{ok:bad.length===0,bad:bad.slice(0,20),total:refs.length};});
-  selfTest('foreign-renewables-catalog',()=>{const countries=new Set(foreignRenewableProjects.map(d=>d.country)),ids=foreignRenewableProjects.map(d=>d.id),bad=foreignRenewableProjects.filter(d=>d.mw<100||!Number.isFinite(d.lon)||!Number.isFinite(d.lat)||!/https?:\/\//.test(d.source)),areaBad=foreignSource.getFeatures().filter(f=>f.getGeometry()?.getType()!=='Circle'||!(f.get('data')?.areaHa>0));return{ok:foreignRenewableProjects.length>=15&&countries.size===5&&new Set(ids).size===ids.length&&bad.length===0&&areaBad.length===0,projects:foreignRenewableProjects.length,publishedAreas:Object.keys(FOREIGN_PUBLISHED_AREAS_HA).length,countries:[...countries],bad:[...bad.map(d=>d.id),...areaBad.map(f=>f.getId())]};});
+  selfTest('foreign-renewables-catalog',()=>{const countries=new Set(foreignRenewableProjects.map(d=>d.country)),ids=foreignRenewableProjects.map(d=>d.id),bad=foreignRenewableProjects.filter(d=>d.mw<=50||!Number.isFinite(d.lon)||!Number.isFinite(d.lat)||!/https?:\/\//.test(d.source)),areaBad=foreignSource.getFeatures().filter(f=>f.getGeometry()?.getType()!=='Circle'||!(f.get('data')?.areaHa>0));return{ok:foreignRenewableProjects.length>=25&&countries.size===5&&new Set(ids).size===ids.length&&bad.length===0&&areaBad.length===0,projects:foreignRenewableProjects.length,thresholdMw:'>50',publishedAreas:Object.keys(FOREIGN_PUBLISHED_AREAS_HA).length,countries:[...countries],bad:[...bad.map(d=>d.id),...areaBad.map(f=>f.getId())]};});
   selfTest('url-layer-state',()=>({ok:['solar','wind','projects','future','natura','industry','foreign','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
   selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.wind&&foreignLayer.getVisible()===layerVisibility.foreign&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&naturaLayer.getVisible()===layerVisibility.natura&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),foreign:foreignLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),natura:naturaLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
   selfTest('natura-lazy-layer',()=>({ok:!!naturaLayer&&!!naturaSource&&NATURA_2000_INDEX_URL==='/data/natura-2000-bg-v1.json'&&(!layerVisibility.natura||['loading','ready'].includes(naturaLoadState)),state:naturaLoadState,features:naturaSource.getFeatures().length,url:NATURA_2000_INDEX_URL}));
