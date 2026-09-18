@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.91-og-preview-20260917b">
+<meta name="bgwf-build" content="v0.91-short-layer-labels-20260918">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -6368,7 +6368,7 @@ function createButton(parent,{className,text,year=undefined,layer=null,color=nul
 const legend=root.querySelector('.bgwf-legend'); if(legend){legend.textContent='';createButton(legend,{className:'bgwf-year-filter',text:'Всички',year:null,pressed:allFireYearsSelected(),onClick:()=>setYearFilter(null)});years.forEach(y=>createButton(legend,{className:'bgwf-year-filter',text:String(y),year:String(y),color:yearColors.get(y),pressed:fireYearSelected(y),onClick:()=>setYearFilter(y)}));const liveBtn=createButton(legend,{className:'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle',text:'🔥 Sentinel-3 пожар',layer:'live',color:'#ff1717',pressed:layerVisibility.live,onClick:async function(){layerVisibility.live=!layerVisibility.live;this.setAttribute('aria-pressed',String(layerVisibility.live));if(layerVisibility.live&&(liveFireLoadState==='idle'||liveFireLoadState==='error'))await loadLiveSentinelFires();updateLiveVisibility();updateLayerStatus();scheduleUrlSync();}});const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';legend.appendChild(iskra);const search=root.querySelector('[data-map-search]');if(search)legend.appendChild(search);}
 const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.textContent='';const satBtn=createButton(controls,{
   className:'bgwf-layer-toggle',
-  text:'Сателит',
+  text:'SAT',
   layer:'satellite',
   color:'#64748b',
   pressed:urlParams.get('map')==='sat',
@@ -6450,7 +6450,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','Изградени ФЕЦ','#f59e0b'],['wind','ВяЕИ','#0891b2'],['projects','ПУП/ПИ проекти','#2563eb'],['future','RED III/REPowerEU','#2f9e44'],['natura','Натура 2000','#0f766e'],['industry','ТЕЦ / мини','#4b5563'],['foreign','Foreign','#db2777']];configs.forEach(([key,label,color])=>{
+const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проект','#2563eb'],['future','RED III','#2f9e44'],['natura','Natura 2000','#0f766e'],['industry','Мини','#4b5563'],['foreign','Foreign','#db2777']];configs.forEach(([key,label,color])=>{
   const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
