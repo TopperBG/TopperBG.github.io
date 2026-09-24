@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.91-short-layer-labels-20260918b">
+<meta name="bgwf-build" content="v0.92-devnya-hybrid-20260924">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -3906,11 +3906,14 @@ const CURATED_INDUSTRIAL_POINTS = [];
           "id": "SOL-2026-DEVNYA",
           "name": "ФЕЦ „Девня Солар“",
           "year": 2026,
+          "mwpDc": 65,
           "mwAc": 42.4,
+          "bessMw": 60,
+          "bessMwh": 165,
           "lon": 27.56, "lat": 43.22,
-          "statusLabel": "действаща · точни ПИ на ФЕЦ по КЕВР",
-          "source": "https://www.dker.bg/uploads/protokoli/zz/2026/prot_zz_176_26.pdf",
-          "parcels": ["20482.505.471", "20482.505.475", "20482.505.584"]
+          "statusLabel": "действаща хибридна централа · 65 MWp DC / 42,4 MW AC · BESS 60 MW / 165 MWh · 6 точни ПИ по КЕВР",
+          "source": "https://www.dker.bg/uploads/reshenia/2026/res-r-670-2026.pdf",
+          "parcels": ["20482.505.470", "20482.505.471", "20482.505.472", "20482.505.474", "20482.505.475", "20482.505.584"]
       },
       {
           "id": "SOL-2025-DVE-MOGILI",
@@ -6702,7 +6705,7 @@ function runSelfTests(){
   selfTest('vei-source-layers',()=>({ok:!!solarSource&&!!projectSource,solar:!!solarSource,projects:!!projectSource}));
   selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
   selfTest('kevr-2022-2026-missing-projects-added',()=>{const ids=['RES-037','RES-038','RES-039','RES-040','RES-041','RES-042','RES-043','RES-044','RES-045','RES-046','RES-047','RES-048','RES-049','RES-050'],missing=ids.filter(id=>!cadastralProjects.some(p=>p.id===id));return{ok:missing.length===0&&cadastralProjects.length===48,added:ids.length,missing,total:cadastralProjects.length};});
-  selfTest('kevr-operating-transitions',()=>{const stale=[...transitionedToOperatingProjectIds].filter(id=>cadastralProjects.some(p=>p.id===id)),greens=operatingSolarProjects.find(p=>p.id==='SOL-2025-GREENS-PARVOMAY'),eneri=operatingSolarProjects.find(p=>p.id==='SOL-2026-ENERI-BG-1');return{ok:stale.length===0&&greens?.parcels?.[0]==='59080.42.529'&&eneri?.parcels?.length===8,stale,greens:!!greens,eneriParcels:eneri?.parcels?.length||0};});
+  selfTest('kevr-operating-transitions',()=>{const stale=[...transitionedToOperatingProjectIds].filter(id=>cadastralProjects.some(p=>p.id===id)),greens=operatingSolarProjects.find(p=>p.id==='SOL-2025-GREENS-PARVOMAY'),eneri=operatingSolarProjects.find(p=>p.id==='SOL-2026-ENERI-BG-1'),devnya=operatingSolarProjects.find(p=>p.id==='SOL-2026-DEVNYA');return{ok:stale.length===0&&greens?.parcels?.[0]==='59080.42.529'&&eneri?.parcels?.length===8&&devnya?.parcels?.length===6&&devnya?.mwpDc===65&&devnya?.bessMw===60&&devnya?.bessMwh===165,stale,greens:!!greens,eneriParcels:eneri?.parcels?.length||0,devnya:devnya&&{parcels:devnya.parcels.length,mwpDc:devnya.mwpDc,mwAc:devnya.mwAc,bessMw:devnya.bessMw,bessMwh:devnya.bessMwh}};});
   selfTest('kalkas-vmv-dapalis-cadastral-site',()=>{const p=operatingSolarProjects.find(d=>d.id==='SOL-2023-KALKAS-VMV-DAPALIS');return{ok:p?.parcels?.length===1&&p.parcels[0]==='55871.222.132'&&!('mw' in p)&&!('mwAc' in p)&&!('mwpDc' in p),project:p?.name,parcel:p?.parcels?.[0],capacityPublished:false};});
   selfTest('suhindol-wabi-sabi-pup-parcels',()=>{const p=cadastralProjects.find(d=>d.id==='RES-036'),suhindol=p?.parcels.filter(ref=>ref.startsWith('70295.'))||[],koevtsi=p?.parcels.filter(ref=>ref.startsWith('37561.'))||[];return{ok:p?.status==='planned'&&p?.mw===500&&p?.parcels.length===77&&suhindol.length===43&&koevtsi.length===34&&new Set(p.parcels).size===77,project:p?.name,total:p?.parcels.length,suhindol:suhindol.length,koevtsi:koevtsi.length};});
   selfTest('large-solar-national-sample',()=>{const missing=largeOperatingSolarProjects.filter(p=>!hasSolarMapGeometry(p));return{ok:largeOperatingSolarProjects.length>=40&&missing.length===0,thresholdMwp:LARGE_SOLAR_THRESHOLD_MWP,projects:largeOperatingSolarProjects.length,missingGeometry:missing.map(p=>p.id)};});
