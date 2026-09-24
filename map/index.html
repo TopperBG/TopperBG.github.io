@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93-filter-layout-20260924">
+<meta name="bgwf-build" content="v0.94-collapsed-map-20260924">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -870,9 +870,15 @@ svg {
   #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
   #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-body { display:block; }
   #bg-wildfires-map .bgwf-filter-chevron { display:inline-block;min-width:10px;text-align:center; }
+  #bg-wildfires-map.is-filter-collapsed .bgwf-map {
+    height:calc(100dvh - 24px);
+    min-height:480px;
+    max-height:none;
+  }
   @media (max-width:700px), (max-height:600px) and (hover:none) {
     #bg-wildfires-map .bgwf-floating-controls { padding:.34rem .55rem; border-radius:.8rem; }
-    #bg-wildfires-map .bgwf-map-wrap { min-height:68vh; }
+    #bg-wildfires-map .bgwf-map-wrap { min-height:0; }
+    #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:calc(100dvh - 24px);min-height:360px; }
     #bg-wildfires-map .bgwf-layer-status-inline { font-size:10px; line-height:1.1; }
   }
 
@@ -6315,11 +6321,8 @@ function updateIndustryLegendHint(){
 function updateCompactFilterSummary(){
   if(!filterSummary)return;
   const parts=[satelliteLayer.getVisible()?'SAT':'MAP'];
-  if(layerVisibility.solar&&layerVisibility.wind)parts.push('ВЕИ');
-  else{
-    if(layerVisibility.solar)parts.push('ФЕЦ');
-    if(layerVisibility.wind)parts.push('ВяЕЦ');
-  }
+  if(layerVisibility.solar)parts.push('ФЕЦ');
+  if(layerVisibility.wind)parts.push('ВяЕЦ');
   if(layerVisibility.projects)parts.push('Проект');
   if(layerVisibility.future)parts.push('RED III');
   if(layerVisibility.natura)parts.push('Natura 2000');
