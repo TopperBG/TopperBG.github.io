@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92-devnya-hybrid-20260924">
+<meta name="bgwf-build" content="v0.93-filter-layout-20260924">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -858,6 +858,10 @@ svg {
   #bg-wildfires-map .bgwf-filter-toggle-copy{display:flex;align-items:center;gap:.42rem;min-width:0;text-align:left;flex-wrap:wrap}
   #bg-wildfires-map .bgwf-filter-toggle-copy strong{font-size:14px;line-height:1;white-space:nowrap}
   #bg-wildfires-map .bgwf-filter-version{font-size:10px;color:var(--muted-foreground);white-space:nowrap}
+  #bg-wildfires-map .bgwf-filter-summary{display:none;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted-foreground);font-size:10px;font-weight:700;line-height:1.2}
+  #bg-wildfires-map.is-filter-collapsed .bgwf-filter-toggle-copy{width:100%;flex-wrap:nowrap}
+  #bg-wildfires-map.is-filter-collapsed .bgwf-filter-summary{display:block;flex:1 1 auto}
+  #bg-wildfires-map.is-filter-collapsed .bgwf-filter-action{margin-left:auto}
   #bg-wildfires-map .bgwf-filter-action{display:inline-flex;align-items:center;gap:.25rem;padding:4px 8px;border:1px solid color-mix(in srgb,var(--primary) 45%,var(--border));border-radius:999px;background:color-mix(in srgb,var(--primary) 14%,var(--background));color:var(--foreground);font-size:11px;font-weight:800;line-height:1;white-space:nowrap;box-shadow:0 0 0 0 color-mix(in srgb,var(--primary) 28%,transparent)}
   #bg-wildfires-map .bgwf-floating-controls.is-filter-open.is-filter-coaching .bgwf-filter-action{animation:bgwf-filter-nudge 1.15s ease-in-out 3}
   @keyframes bgwf-filter-nudge{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--primary) 28%,transparent)}50%{box-shadow:0 0 0 5px color-mix(in srgb,var(--primary) 22%,transparent)}}
@@ -866,11 +870,9 @@ svg {
   #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
   #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-body { display:block; }
   #bg-wildfires-map .bgwf-filter-chevron { display:inline-block;min-width:10px;text-align:center; }
-  #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:clamp(600px,92vh,1020px); }
   @media (max-width:700px), (max-height:600px) and (hover:none) {
     #bg-wildfires-map .bgwf-floating-controls { padding:.34rem .55rem; border-radius:.8rem; }
     #bg-wildfires-map .bgwf-map-wrap { min-height:68vh; }
-    #bg-wildfires-map.is-filter-collapsed .bgwf-map { height:88vh; min-height:480px; }
     #bg-wildfires-map .bgwf-layer-status-inline { font-size:10px; line-height:1.1; }
   }
 
@@ -1445,6 +1447,8 @@ svg {
   align-items:stretch;font:10px/1.1 system-ui,sans-serif;color:#202124;
 }
 #bg-wildfires-map .bgwf-territory-bars.is-visible{display:flex}
+#bg-wildfires-map.is-filter-collapsed .bgwf-territory-bars,
+#bg-wildfires-map.is-filter-collapsed .bgwf-mobile-footer{display:none!important}
 #bg-wildfires-map .bgwf-territory-bar{width:100%;height:21px;min-width:0;display:grid;grid-template-columns:86px minmax(0,1fr);grid-template-rows:21px;position:relative;align-items:center}
 #bg-wildfires-map .bgwf-territory-plot{position:relative;grid-column:2;grid-row:1;height:14px;min-width:0;background:rgba(71,85,105,.18);border:1px solid rgba(71,85,105,.20);border-radius:4px;overflow:hidden}
 #bg-wildfires-map .bgwf-territory-shaft{position:absolute;left:0;top:0;bottom:0;transform:none;width:var(--bar-pct,1%);min-width:5px;height:100%;min-height:0;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.20);opacity:.94}
@@ -1518,7 +1522,7 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.91</span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.91</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4306,6 +4310,7 @@ const compactMobileQuery='(max-width:700px), (max-height:600px) and (hover:none)
 const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia(compactMobileQuery).matches)mobileFooter.open=false;
 const mobileFilterToggle=root.querySelector('[data-mobile-filter-toggle]');
 const filterActionLabel=root.querySelector('[data-filter-action]');
+const filterSummary=root.querySelector('[data-filter-summary]');
 const filterChevron=root.querySelector('.bgwf-filter-chevron');
 function setFilterPanelOpen(open){
   filterPanel?.classList.toggle('is-filter-open',open);
@@ -4314,13 +4319,22 @@ function setFilterPanelOpen(open){
   mobileFilterToggle?.setAttribute('aria-label',open?'Скрий филтрите':'Покажи филтрите');
   if(filterActionLabel)filterActionLabel.textContent=open?'Скрий филтрите':'Покажи филтрите';
   if(filterChevron)filterChevron.textContent=open?'▲':'▼';
+  if(mobileFooter)mobileFooter.open=open;
   if(!open)filterPanel?.classList.remove('is-filter-coaching');
+}
+function refreshFilterLayout(){
+  const currentCenter=map?.getView()?.getCenter()?.slice();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    map?.updateSize();
+    if(currentCenter)map.getView().setCenter(currentCenter);
+    updateFloatingUiPosition();
+  }));
 }
 setFilterPanelOpen(!matchMedia(compactMobileQuery).matches);
 mobileFilterToggle?.addEventListener('click',()=>{
   const open=!filterPanel?.classList.contains('is-filter-open');
   setFilterPanelOpen(open);
-  requestAnimationFrame(()=>{updateFloatingUiPosition();map?.updateSize();});
+  refreshFilterLayout();
 });
 if(filterPanel?.classList.contains('is-filter-open')){
   setTimeout(()=>filterPanel?.classList.add('is-filter-coaching'),850);
@@ -4336,7 +4350,7 @@ filterPanel?.addEventListener('click',event=>{
   setTimeout(()=>{
     if(!filterPanel?.classList.contains('is-filter-open'))return;
     setFilterPanelOpen(false);
-    requestAnimationFrame(()=>{updateFloatingUiPosition();map?.updateSize();});
+    refreshFilterLayout();
   },FILTER_AUTO_HIDE_DELAY_MS);
 });
 
@@ -6298,7 +6312,29 @@ function updateIndustryLegendHint(){
     +(hasEstimate?' <span class="bgwf-industry-estimate-key"></span> концесионна площ (ориент.)':'');
 }
 
+function updateCompactFilterSummary(){
+  if(!filterSummary)return;
+  const parts=[satelliteLayer.getVisible()?'SAT':'MAP'];
+  if(layerVisibility.solar&&layerVisibility.wind)parts.push('ВЕИ');
+  else{
+    if(layerVisibility.solar)parts.push('ФЕЦ');
+    if(layerVisibility.wind)parts.push('ВяЕЦ');
+  }
+  if(layerVisibility.projects)parts.push('Проект');
+  if(layerVisibility.future)parts.push('RED III');
+  if(layerVisibility.natura)parts.push('Natura 2000');
+  if(layerVisibility.industry)parts.push('Мини');
+  if(layerVisibility.foreign)parts.push('Foreign');
+  if(activeYears===null)parts.push('Fire all');
+  else if(fireYearsHidden())parts.push('Fire off');
+  else parts.push(`Fire ${selectedFireYearList().join('+')}`);
+  if(layerVisibility.live)parts.push('Sentinel');
+  filterSummary.textContent=parts.join(' · ');
+  filterSummary.title=parts.join(' / ');
+}
+
 function updateLayerStatus(){
+  updateCompactFilterSummary();
   updateIndustryLegendHint();
   if(!layerStatus)return;
 
@@ -6380,6 +6416,7 @@ const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.
     satelliteLayer.setVisible(next);
     this.setAttribute('aria-pressed',String(next));
     refreshSatelliteOverlayStyles();
+    updateLayerStatus();
     scheduleUrlSync();
   }
 });
@@ -6770,7 +6807,7 @@ function runSelfTests(){
   selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
-  selfTest('collapsible-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body')&&!!filterActionLabel&&!!root.querySelector('[data-filter-coach]'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded'),action:filterActionLabel?.textContent}));
+  selfTest('collapsible-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body')&&!!filterActionLabel&&!!filterSummary?.textContent&&!!mobileFooter&&!!root.querySelector('[data-filter-coach]'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded'),action:filterActionLabel?.textContent,summary:filterSummary?.textContent,footerOpen:mobileFooter?.open}));
   selfTest('local-object-search-contract',()=>({ok:!!mapSearchInput&&!!mapSearchResults&&typeof collectSearchResults==='function'&&typeof focusSearchResult==='function',places:placeLabelsSource.getFeatures().length,fireRecords:fireFeaturesById.size}));
   selfTest('wind-foundation-area',()=>({ok:WIND_TURBINE_COUNT===individualWindTurbines.length&&Math.abs(WIND_TURBINE_FOUNDATION_AREA_SQ_KM-.278784)<1e-12,count:WIND_TURBINE_COUNT,foundationSqM:WIND_TURBINE_FOUNDATION_SQ_M,totalSqKm:WIND_TURBINE_FOUNDATION_AREA_SQ_KM}));
   selfTest('mobile-zoom-controls',()=>({ok:['zoom-in','zoom-out','zoom-reset'].every(name=>!!root.querySelector(`[data-${name}]`)),buttons:root.querySelectorAll('.bgwf-zoom-controls button').length,homeScaleTarget:1}));
