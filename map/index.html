@@ -6494,7 +6494,14 @@ const satBtn=createButton(secondaryRow,{
   pressed:urlParams.get('map')==='sat',
   onClick:function(){
     const next=!satelliteLayer.getVisible();
-    satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
+    satelliteLayer.setVisible(next);
+    this.setAttribute('aria-pressed',String(next));
+    refreshSatelliteOverlayStyles();
+    updateLayerStatus();
+    scheduleUrlSync();
+  }
+});
+satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
 
 const NSI_DISTURBED_LAND_2025={
   sqKm:467.76,
