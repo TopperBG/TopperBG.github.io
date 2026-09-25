@@ -6403,7 +6403,7 @@ function updateCompactFilterSummary(){
   if(layerVisibility.natura)parts.push('Natura 2000');
   if(layerVisibility.industry)parts.push('Мини');
   if(layerVisibility.foreign)parts.push('Foreign');
-  if(layerVisibility.epm)parts.push('ЕПМ');
+  if(layerVisibility.epm)parts.push('ЕРМ');
   if(activeYears===null)parts.push('Fire all');
   else if(fireYearsHidden())parts.push('Fire off');
   else parts.push(`Fire ${selectedFireYearList().join('+')}`);
@@ -6574,7 +6574,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проектни ВЕИ','#2563eb'],['future','RED III','#2f9e44'],['foreign','Foreign','#db2777'],['natura','Натура 2000','#0f766e'],['epm','ЕПМ','#e11d48'],['industry','ТЕЦ/мини','#4b5563']];configs.forEach(([key,label,color])=>{
+const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проектни ВЕИ','#2563eb'],['future','RED III','#2f9e44'],['foreign','Foreign','#db2777'],['natura','Натура 2000','#0f766e'],['epm','ЕРМ','#e11d48'],['industry','ТЕЦ/мини','#4b5563']];configs.forEach(([key,label,color])=>{
   const btn=createButton(['natura','epm','industry'].includes(key)?secondaryRow:primaryRow,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
@@ -6584,25 +6584,25 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
   if(key==='future'){
     const msg='Важно: приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя';
     btn.dataset.helpTooltip=msg;
-    btn.title=msg;
+    btn.removeAttribute('title');
     btn.setAttribute('aria-description',msg);
   }
   if(key==='natura'){
     const msg='Официални граници на МОСВ: SPA за птици и pSCI/SCI/SAC за местообитания. Слоят се зарежда при включване.';
-    btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
+    btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
   }
   if(key==='industry'){
     const msg=`НСИ към ${NSI_DISTURBED_LAND_2025.asOf}: нарушена територия ${NSI_DISTURBED_LAND_2025.dka.toLocaleString('bg-BG')} дка (${NSI_DISTURBED_LAND_2025.percent}%). Категорията е по-широка от слоя ТЕЦ/мини.`;
     btn.dataset.helpTooltip=msg;
-    btn.title=msg;
+    btn.removeAttribute('title');
   }
   if(key==='foreign'){
     const msg='Подбрани ВЕИ проекти над 50 MW. Реалните OSM полигони заменят окръжностите. При ВяЕИ без публикувана граница пунктираният полигон е обвивка по реалните OSM позиции на турбините. Окръжност остава само като fallback без OSM геометрия.';
-    btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
+    btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
   }
   if(key==='epm'){
-    const msg='Индикативни OSM трасета 110/220/400 kV. Наличието на далекопровод не е доказателство за свободен капацитет; присъединяването се потвърждава от ЕСО за конкретна подстанция.';
-    btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
+    const msg='ЕРМ — електроразпределителна мрежа. Индикативни OSM трасета 110/220/400 kV. Наличието на далекопровод не е доказателство за свободен капацитет; присъединяването се потвърждава за конкретна подстанция.';
+    btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
   }
 });
 const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';secondaryRow.appendChild(hint);
