@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.101-filter-rows-fine-epm-20260925">
+<meta name="bgwf-build" content="v0.92a-mobile-header-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -1549,7 +1549,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.91</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92a</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -2152,8 +2152,10 @@ svg {
   #bg-wildfires-map .bgwf-mobile-filter-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.28rem;align-items:center}
   #bg-wildfires-map .bgwf-mobile-filter-toggle{width:100%;min-width:0;overflow:hidden}
   #bg-wildfires-map .bgwf-filter-toggle-copy{width:100%;min-width:0;gap:.28rem;flex-wrap:nowrap}
-  #bg-wildfires-map .bgwf-filter-toggle-copy strong{display:none}
-  #bg-wildfires-map .bgwf-filter-version{display:none}
+  #bg-wildfires-map .bgwf-filter-toggle-copy strong{display:inline;flex:0 0 auto}
+  #bg-wildfires-map .bgwf-filter-version{display:inline;flex:0 0 auto}
+  #bg-wildfires-map.is-filter-collapsed .bgwf-filter-toggle-copy strong,
+  #bg-wildfires-map.is-filter-collapsed .bgwf-filter-version{display:none}
   #bg-wildfires-map .bgwf-filter-summary{display:block;flex:1 1 auto;min-width:0}
   #bg-wildfires-map .bgwf-filter-action{margin-left:0;flex:0 0 auto;padding:4px 7px}
   #bg-wildfires-map .bgwf-compact-info-button{margin-inline-start:0;position:relative;z-index:2}
@@ -4218,7 +4220,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.86s', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.92a', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
