@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92a-mobile-header-20260925">
+<meta name="bgwf-build" content="v0.92b-mobile-header-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -1549,7 +1549,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92a</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92b</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -6593,7 +6593,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проектни ВЕИ','#2563eb'],['future','RED III','#2f9e44'],['foreign','Foreign','#db2777'],['natura','Натура 2000','#0f766e'],['epm','ЕРМ','#e11d48'],['industry','ТЕЦ/мини','#4b5563']];configs.forEach(([key,label,color])=>{
+const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проектни ВЕИ','#2563eb'],['future','RED III','#2f9e44'],['foreign','Foreign','#db2777'],['natura','Натура 2000','#0f766e'],['epm','HV','#e11d48'],['industry','ТЕЦ/мини','#4b5563']];configs.forEach(([key,label,color])=>{
   const btn=createButton(['natura','epm','industry'].includes(key)?secondaryRow:primaryRow,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
