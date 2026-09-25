@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.100-persistent-object-detail-20260925">
+<meta name="bgwf-build" content="v0.101-filter-rows-fine-epm-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -1718,7 +1718,9 @@ svg {
   #bg-wildfires-map .bgwf-year-filter:not([aria-pressed="true"]):hover { opacity: 1; }
   #bg-wildfires-map .bgwf-iskra-year-link { border-color: color-mix(in srgb, #ef4444 30%, var(--border)); }
   #bg-wildfires-map .bgwf-live-year-toggle { border-color: color-mix(in srgb, #ff1717 48%, var(--border)); }
-  #bg-wildfires-map .bgwf-layer-controls { justify-content: center; gap: 0.45rem; margin-top: 0.2rem; }
+  #bg-wildfires-map .bgwf-layer-controls { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.28rem; margin-top:.2rem; }
+  #bg-wildfires-map .bgwf-layer-row { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:.45rem; width:100%; }
+  #bg-wildfires-map .bgwf-layer-row-secondary { padding-top:.28rem; border-top:1px solid color-mix(in srgb,var(--foreground) 9%,transparent); }
   #bg-wildfires-map .bgwf-layer-toggle { display: inline-flex; align-items: center; gap: 0.38rem; }
   #bg-wildfires-map .bgwf-layer-toggle .bgwf-swatch { border: 1px solid color-mix(in srgb, var(--foreground) 10%, transparent); }
   #bg-wildfires-map .bgwf-layer-toggle[data-layer="installed"] .bgwf-swatch { background: linear-gradient(90deg, var(--viz-series-1), var(--viz-series-2), var(--viz-series-3), var(--viz-series-4), var(--viz-series-5), var(--viz-series-6)); }
@@ -4860,15 +4862,17 @@ function epmVoltageKv(feature){
   const values=String(feature.get('voltage')||'').split(';').map(v=>Number(v)/1000).filter(Number.isFinite);
   return Math.max(0,...values);
 }
-function epmLineStyles(feature){
+function epmLineStyles(feature,resolution){
   const kv=epmVoltageKv(feature),selected=feature.get('selected');
   const color=kv>=400?'#e11d48':kv>=220?'#f97316':'#0284c7';
-  const width=kv>=400?2.8:kv>=220?2.2:1.6;
-  const key=`${kv}|${selected?'1':'0'}|${satelliteMode()?'1':'0'}`;
+  const baseWidth=kv>=400?1.55:kv>=220?1.2:.9;
+  const zoomFactor=resolution>700?.55:resolution>350?.68:resolution>170?.82:1;
+  const width=baseWidth*zoomFactor;
+  const key=`${kv}|${selected?'1':'0'}|${satelliteMode()?'1':'0'}|${zoomFactor}`;
   if(!selected&&epmStyles.has(key))return epmStyles.get(key);
   const styles=[
-    new Style({stroke:new Stroke({color:satelliteMode()?'rgba(255,255,255,.92)':'rgba(255,255,255,.80)',width:width+3.2})}),
-    new Style({stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):color,width:selected?width+1.5:width})})
+    new Style({stroke:new Stroke({color:satelliteMode()?'rgba(255,255,255,.72)':'rgba(255,255,255,.62)',width:width+(resolution>350?.75:1.05)})}),
+    new Style({stroke:new Stroke({color:selected?cssVar('--foreground','#111827'):color,width:selected?Math.max(1.8,width+1):width})})
   ];
   if(!selected)epmStyles.set(key,styles);
   return styles;
@@ -6479,7 +6483,10 @@ function updateLayerStatus(){
 function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,foreign:foreignSource.getFeatures().length,foreignOsm:foreignOsmSource.getFeatures().length,red:redSource.getFeatures().length,natura:naturaSource.getFeatures().length,naturaRenewablesOverlap:naturaRenewablesOverlapSource.getFeatures().length,naturaIndustryOverlap:naturaIndustryOverlapSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
 function createButton(parent,{className,text,year=undefined,layer=null,color=null,pressed=false,onClick}){const b=document.createElement('button');b.type='button';b.className=className;b.setAttribute('aria-pressed',String(pressed));if(year===null)b.dataset.year='all';else if(year!==undefined)b.dataset.year=year;if(layer)b.dataset.layer=layer;if(color)b.style.setProperty('--bgwf-filter-color',color);const sw=document.createElement('span');sw.className='bgwf-swatch';b.appendChild(sw);const tx=document.createElement('span');tx.textContent=text;b.appendChild(tx);b.addEventListener('click',onClick);parent.appendChild(b);return b;}
 const legend=root.querySelector('.bgwf-legend'); if(legend){legend.textContent='';createButton(legend,{className:'bgwf-year-filter',text:'Всички',year:null,pressed:allFireYearsSelected(),onClick:()=>setYearFilter(null)});years.forEach(y=>createButton(legend,{className:'bgwf-year-filter',text:String(y),year:String(y),color:yearColors.get(y),pressed:fireYearSelected(y),onClick:()=>setYearFilter(y)}));const liveBtn=createButton(legend,{className:'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle',text:'Sentinel',layer:'live',color:'#ff1717',pressed:layerVisibility.live,onClick:async function(){layerVisibility.live=!layerVisibility.live;this.setAttribute('aria-pressed',String(layerVisibility.live));if(layerVisibility.live&&(liveFireLoadState==='idle'||liveFireLoadState==='error'))await loadLiveSentinelFires();updateLiveVisibility();updateLayerStatus();scheduleUrlSync();}});const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';legend.appendChild(iskra);const search=root.querySelector('[data-map-search]');if(search)legend.appendChild(search);}
-const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.textContent='';const satBtn=createButton(controls,{
+const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.textContent='';
+const primaryRow=document.createElement('div');primaryRow.className='bgwf-layer-row bgwf-layer-row-primary';primaryRow.setAttribute('aria-label','Основни тематични слоеве');controls.appendChild(primaryRow);
+const secondaryRow=document.createElement('div');secondaryRow.className='bgwf-layer-row bgwf-layer-row-secondary';secondaryRow.setAttribute('aria-label','Сателитни, природни и инфраструктурни слоеве');controls.appendChild(secondaryRow);
+const satBtn=createButton(secondaryRow,{
   className:'bgwf-layer-toggle',
   text:'SAT',
   layer:'satellite',
@@ -6487,14 +6494,7 @@ const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.
   pressed:urlParams.get('map')==='sat',
   onClick:function(){
     const next=!satelliteLayer.getVisible();
-    satelliteLayer.setVisible(next);
-    this.setAttribute('aria-pressed',String(next));
-    refreshSatelliteOverlayStyles();
-    updateLayerStatus();
-    scheduleUrlSync();
-  }
-});
-satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
+    satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
 
 const NSI_DISTURBED_LAND_2025={
   sqKm:467.76,
@@ -6564,8 +6564,8 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проект','#2563eb'],['future','RED III','#2f9e44'],['natura','Natura 2000','#0f766e'],['industry','Мини','#4b5563'],['foreign','Foreign','#db2777'],['epm','ЕПМ','#e11d48']];configs.forEach(([key,label,color])=>{
-  const btn=createButton(controls,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
+const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проект','#2563eb'],['future','RED III','#2f9e44'],['foreign','Foreign','#db2777'],['natura','Натура 2000','#0f766e'],['epm','ЕПМ','#e11d48'],['industry','ТЕЦ/мини','#4b5563']];configs.forEach(([key,label,color])=>{
+  const btn=createButton(['natura','epm','industry'].includes(key)?secondaryRow:primaryRow,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
 if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
 concessionEstimateLayer.setVisible(layerVisibility.industry);
 concessionLayer.setVisible(layerVisibility.industry);
@@ -6595,8 +6595,8 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
   }
 });
-const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);
-const infoButton=document.createElement('button');infoButton.type='button';infoButton.className='bgwf-info-button';infoButton.textContent='Info';infoButton.title='Методика и източници';infoButton.setAttribute('aria-label','Отвори Методика и източници');infoButton.addEventListener('click',openAndFocusMethods);controls.appendChild(infoButton);
+const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';secondaryRow.appendChild(hint);
+const infoButton=document.createElement('button');infoButton.type='button';infoButton.className='bgwf-info-button';infoButton.textContent='Info';infoButton.title='Методика и източници';infoButton.setAttribute('aria-label','Отвори Методика и източници');infoButton.addEventListener('click',openAndFocusMethods);secondaryRow.appendChild(infoButton);
 updateIndustryLegendHint();}
 updateTerritoryScaleBars();
 void loadMethodsSource();
