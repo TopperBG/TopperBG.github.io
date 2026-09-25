@@ -6382,10 +6382,12 @@ async function showEffisPerimeter(fire,fireFeature){effisSource.clear();fireSour
 function updateIndustryLegendHint(){
   const hint=root.querySelector('[data-industry-legend="1"]');
   if(!hint)return;
+  hint.hidden=!layerVisibility.industry;
+  if(hint.hidden){hint.innerHTML='';return;}
   const hasConcession=concessionSource.getFeatures().length>0;
   const hasEstimate=concessionEstimateSource.getFeatures().length>0;
   hint.innerHTML=
-    '<span class="bgwf-industry-fill-key"></span> разработена площ'
+    '<strong>ТЕЦ/мини:</strong> <span class="bgwf-industry-fill-key"></span> разработена площ'
     +(hasConcession?' <span class="bgwf-industry-concession-key"></span> концесионна граница':'')
     +(hasEstimate?' <span class="bgwf-industry-estimate-key"></span> концесионна площ (ориент.)':'');
 }
