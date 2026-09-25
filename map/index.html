@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.95-fullscreen-collapse-20260924">
+<meta name="bgwf-build" content="v0.96-methods-info-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -870,6 +870,10 @@ svg {
   #bg-wildfires-map .bgwf-mobile-filter-body { display:none; padding-top:.3rem; }
   #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-body { display:block; }
   #bg-wildfires-map .bgwf-filter-chevron { display:inline-block;min-width:10px;text-align:center; }
+  #bg-wildfires-map .bgwf-info-button{
+    flex:0 0 auto;margin-inline-start:auto;border-color:color-mix(in srgb,var(--primary) 42%,var(--border));
+    background:color-mix(in srgb,var(--primary) 10%,var(--background));font-weight:800;
+  }
   #bg-wildfires-map:not(.is-filter-collapsed) .bgwf-detail {
     background:#fff;
     backdrop-filter:none;
@@ -1623,44 +1627,10 @@ svg {
     <span>Исторически пожари: EFFIS / Copernicus + официална проверка по ИАГ (2025) · live термални засичания: Sentinel-3 SLSTR / EUMETSAT · оперативна справка: ИСКРА</span>
     <span>Концепция, реализация и дизайн: TopperBG!</span>
   </div>
-<details class="bgwf-method-note">
-    <summary>Методика и източници</summary>
-    <div class="bgwf-method-content">
-            <p><strong>ИАГ — официални данни за 2025 г.:</strong>
-      използвана е публикуваната от Изпълнителна агенция по горите инвентаризация
-      „Резултати от извършената инвентаризация на наличните пожарища и невъзобновени сечища,
-      както и на унищожени гори от други природни въздействия в горските територии към 31.12.2025 г.“.
-      Архивът съдържа четири официални XLS справки:
-      <code>Pozharishta_spravka_UOGS-2025.xls</code>,
-      <code>Pozharishta_spravka_4GT-2025.xls</code>,
-      <code>Pozharishta_spravka_DGT-2025.xls</code> и
-      <code>Pozharishta_spravka_OGT-2025.xls</code>.
-      Данните от ИАГ се използват като официален национален контролен източник за пожарища и площи;
-      когато липсва достатъчно географска информация за точно позициониране, записът не се представя
-      като самостоятелен геометричен периметър.
-      <a href="https://www.iag.bg/data/docs/pojarishta2025.rar" target="_blank" rel="noopener">Изтегли официалния архив на ИАГ</a>.
-      </p>
-      <p><strong>Опожарен периметър:</strong> при избор на пожар картата заявява от официалния EFFIS/Copernicus WFS реалната векторна Burnt Areas GIS геометрия около избраната точка. Намереният полигон се съпоставя по местоположение, площ и дата и се кешира локално. Кръгът остава като сравнителен символ за площта.</p>
-      <p><strong>Вятърни ВЕИ:</strong> всеки показан символ е свързан с конкретен проверен обект с име, координати и източник; анонимни/непроверени windmill маркери не се изчертават.  картата включва проверен набор от големи действащи ветропаркове с публично установимо местоположение. Националният публичен ВЕИ регистър отчита общо 707 MW ВтЕЦ; малките и единични генератори ще се добавят само когато местоположението им може да се установи надеждно, без догадки.</p>
-      <p><strong>Кадастър и точкови записи:</strong> изградените ВЕИ първо се зареждат от статичен GeoJSON/JSON кеш в GitHub, след това от браузърния кеш; АГКК се заявява само за липсващи геометрии. Когато действащ голям обект е доказан, но пълният му кадастрален контур не е публично установен, той се показва с отделен кръгъл маркер „само местоположение“, а не с измислен полигон. Сателитно проверените контури са означени отделно.</p>
-      <p><strong>Филтри по години:</strong> управляват само историческите пожари. Изградените ВЕИ (ФЕЦ и ВяЕЦ), ПУП/ПИ проектите и RED III не се филтрират по година.</p>
-      <p><strong>Натура 2000:</strong> отделният слой съдържа официалните полигони на МОСВ за 120 защитени зони за птици (SPA) и 233 защитени зони за местообитания (pSCI, SCI и SAC), изтеглени на 11.09.2026 г. от отворената ArcGIS услуга на <a href="https://natura2000.egov.bg/" target="_blank" rel="noopener">Националната информационна система за Натура 2000</a>. Данните са локално кеширани под <code>./data/</code> с индекс <code>natura-2000-bg-v1.json</code> и 12 GeoJSON части, които се зареждат паралелно. Слоят е изключен по подразбиране и файловете се заявяват едва при включване, за да не забавят началното отваряне на картата. При общите SPA&amp;SCI зони официалните два записа могат да се припокриват.</p>
-      <p><strong>Пресичания с Натура 2000:</strong> когато са включени съответните слоеве, картата изчислява в браузъра точната обща геометрия „Натура ∩ ВЕИ“ и „Натура ∩ ТЕЦ/мини“, оцветява я и показва площ в km²/дка, брой полигонни обекти и защитени зони. Дублираната площ между SPA и SCI се обединява за всеки обект и не се брои два пъти. За ВяЕИ точковите позиции се отчитат като брой турбини в Натура 2000, но не се превръщат в измислена площ. Пространственото пресичане означава необходимост да се провери приложимият административен акт — преценка или оценка за съвместимост по чл. 31 ЗБР и евентуална ОВОС/ЕО от компетентната РИОСВ или МОСВ. Самото пресичане не доказва нито наличие на разрешение, нито нарушение.</p>
-      <p><strong>ТЕЦ / мини:</strong> индустриалният footprint включва проверени площадки, рудници, хвостохранилища, сгуро/пепелни площи, насипища, утаители, технологични съоръжения и изоставени минни котловани с руднични езера. За „Марица-изток“ цялата публикувана концесионна площ от 473 685,54 дка се показва като потенциално ангажирана от минната експлоатация; окръжността представя точно площта, но не претендира да е юридическата ѝ граница. Отделно са показани „Люляковица“, „Медет“, „Цар Асен“, „Горен бюк“, „Галдушки ливади“ и комплексът „Бенковски 1 / Бенковски 2“ на „Елаците-Мед“. За „Цар Асен“ картата не твърди лабораторно потвърден състав на водата.</p>
-<p><strong>Национален ориентир (НСИ):</strong> към 31.12.2025 г. „нарушената територия“ в България е 467,76 km² = 467 760 дка, или 0,42% от територията. НСИ включва тук терени за добив на полезни изкопаеми, терени за индустриални и битови отпадъци и деградирани земи; затова тази стойност е по-широк национален ориентир и не е равна на сумата от полигоните „ТЕЦ / мини“ в картата.</p>
-<p><strong>Сателитен фон:</strong> опционален слой Esri World Imagery, изключен по подразбиране. При включване обектите запазват тънки висококонтрастни очертания без удебелен halo ефект. При относителен zoom ≥ 55 се показва локален слой с българските имена на градове и села от OpenStreetMap и GeoNames; надписите са малки, неболднати и автоматично се разреждат срещу застъпване.</p>
-      <p><strong>Посещения:</strong> дискретният брояч използва GoatCounter и отчита посещенията на картата като една страница независимо от URL параметрите за филтри и zoom. Статистиката започва от активирането на брояча и може да се кешира от услугата.</p>
-      <p><strong>Споделяне:</strong> текущата конфигурация се записва автоматично в URL — избрана година/скрити пожари, ФЕЦ, ВяЕИ, ПУП, RED III, Sentinel‑3, център и zoom. Копираният адрес отваря картата в същото състояние.</p>
-
-<p><strong>Навигация:</strong> докоснете/кликнете върху област за автоматично приближение; използвайте +/− или ⌂ за цяла България. На мобилни устройства картата поддържа панорама и pinch-zoom.</p>
-      <p><strong>ПУП / ПИ:</strong> използва се кадастрален идентификатор от публичния INSPIRE слой на АГКК и се използва върнатата от АГКК геометрия. ПИ се оцветява само когато идентификаторът е посочен в проверен ПУП/административен документ.</p>
-      <p><strong>RED III / REPowerEU:</strong> зелените полигони са геореферирани и векторизирани по официалната картографска визуализация към проекта на Плана от март 2026.</p>
-      <p><strong>Sentinel-3:</strong> текущият слой използва Near Real Time Fire Radiative Power (FRP) засичания от Sentinel-3A/3B SLSTR чрез публичния WFS на <a href="https://view.eumetsat.int/productviewer/productDetails/copernicus%3Asentinel3a_slstr_level2_frp" target="_blank" rel="noopener">EUMETView / EUMETSAT</a>. Яркочервеният пламък означава скорошно термално засичане в зададения live прозорец, а не самостоятелно официално потвърждение, че пожарът все още гори.</p>
-      <p><strong>ИСКРА:</strong> за оперативна проверка и допълнителни спътникови източници използвайте <a href="https://iskra.gamera.bg/" target="_blank" rel="noopener">информацията за ИСКРА</a> и <a href="https://iskra.gamera.bg/map/" target="_blank" rel="noopener">текущата карта на засичанията</a>. ИСКРА обединява данни от полярни и геостационарни спътници, включително Sentinel-3, и показва статуси като „засича се сега“, „няма ново засичане“ и „вече не се засича“.</p>
-      <p><strong>Проверка на ВЕИ проекти:</strong> националната извадка за големи действащи ФЕЦ използва решенията на КЕВР за започване на лицензирана дейност, публичния ВЕИ регистър (данни от АУЕР/гаранции за произход), операторски първоизточници и АГКК. Публикации се ползват само като насока. MWp (DC), MW (AC) и BESS се съхраняват и изписват отделно.</p>
-      <p><strong>Актуализация на ВЕИ регистъра:</strong> 03.09.2026 г. — добавени са ФЕЦ „Априлци“ (400 MW), коригираният контур на „Солсбор“ и общата площадка „Алфа Солар Инвест“ / „Алфа Солар Груп“ (5 + 3 MW) край Марино поле. Записите с непълен публичен кадастър са показани само като местоположение.</p>
-            <p><strong>Частично засягане на ПИ:</strong> когато официалният документ посочва, че ВЕИ използва само реална част от по-голям поземлен имот, целият ПИ не се оцветява. Показва се само геометрия, за която може да се докаже пълното проектно покритие; останалата част се оставя неоцветена до налична точна граница.</p>
-<p><strong>Проверени изградени ФЕЦ:</strong> слоят включва националната извадка на установените действащи големи наземни ФЕЦ над 10 MWp и допълнителни проверени етапи. Полигон означава установен кадастър/проверен контур; кръг означава само надеждно местоположение. Публичните регистри имат пропуски и несъответствия, затова съмнителни записи не се представят като сигурни.</p>
+<details id="bgwf-methods" class="bgwf-method-note" data-method-note>
+    <summary tabindex="-1">Методика и източници</summary>
+    <div class="bgwf-method-content" data-method-content aria-live="polite">
+      <p>Зареждане на методиката и източниците…</p>
     </div>
   </details>
     </div>
@@ -4325,6 +4295,40 @@ if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateProvinceChip
 
 const compactMobileQuery='(max-width:700px), (max-height:600px) and (hover:none)';
 const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia(compactMobileQuery).matches)mobileFooter.open=false;
+const methodNote=root.querySelector('[data-method-note]');
+const methodContent=root.querySelector('[data-method-content]');
+let methodsSourcePromise=null;
+function loadMethodsSource(){
+  if(!methodContent)return Promise.resolve(false);
+  if(methodContent.dataset.loaded==='true')return Promise.resolve(true);
+  if(methodsSourcePromise)return methodsSourcePromise;
+  methodsSourcePromise=fetch('./data/methods_source.json',{cache:'no-cache'})
+    .then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();})
+    .then(data=>{
+      if(!Array.isArray(data?.paragraphs)||!data.paragraphs.length)throw new Error('липсват paragraphs');
+      const fragment=document.createDocumentFragment();
+      data.paragraphs.forEach(html=>{const paragraph=document.createElement('p');paragraph.innerHTML=String(html);fragment.appendChild(paragraph);});
+      methodContent.replaceChildren(fragment);
+      methodContent.querySelectorAll('a[target="_blank"]').forEach(link=>link.rel='noopener');
+      const summary=methodNote?.querySelector('summary');
+      if(summary&&data.title)summary.textContent=String(data.title);
+      methodContent.dataset.loaded='true';
+      return true;
+    })
+    .catch(error=>{methodContent.textContent=`Методиката не може да бъде заредена (${error.message}).`;methodsSourcePromise=null;return false;});
+  return methodsSourcePromise;
+}
+async function openAndFocusMethods(){
+  setFilterPanelOpen(true);
+  if(mobileFooter)mobileFooter.open=true;
+  if(methodNote)methodNote.open=true;
+  await loadMethodsSource();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    methodNote?.scrollIntoView({behavior:'smooth',block:'start'});
+    methodNote?.querySelector('summary')?.focus({preventScroll:true});
+    refreshFilterLayout();
+  }));
+}
 const mobileFilterToggle=root.querySelector('[data-mobile-filter-toggle]');
 const filterActionLabel=root.querySelector('[data-filter-action]');
 const filterSummary=root.querySelector('[data-filter-summary]');
@@ -6530,8 +6534,12 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     const msg='Подбрани ВЕИ проекти над 50 MW. Реалните OSM полигони заменят окръжностите. При ВяЕИ без публикувана граница пунктираният полигон е обвивка по реалните OSM позиции на турбините. Окръжност остава само като fallback без OSM геометрия.';
     btn.dataset.helpTooltip=msg;btn.title=msg;btn.setAttribute('aria-description',msg);
   }
-});const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);updateIndustryLegendHint();}
+});
+const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';controls.appendChild(hint);
+const infoButton=document.createElement('button');infoButton.type='button';infoButton.className='bgwf-info-button';infoButton.textContent='Info';infoButton.title='Методика и източници';infoButton.setAttribute('aria-label','Отвори Методика и източници');infoButton.addEventListener('click',openAndFocusMethods);controls.appendChild(infoButton);
+updateIndustryLegendHint();}
 updateTerritoryScaleBars();
+void loadMethodsSource();
 
 // ---------- Local object search ----------
 const mapSearch=root.querySelector('[data-map-search]');
