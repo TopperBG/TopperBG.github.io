@@ -1628,8 +1628,6 @@ svg {
     <summary>Информация и методика <span aria-hidden="true">⌄</span></summary>
     <div class="bgwf-mobile-footer-body">
 <div class="viz-row text-small text-muted bgwf-note">
-    <span>Кръг: исторически пожар · 🔥 яркочервено: текущо Sentinel-3 засичане · жълто/оранжево: проверени изградени ФЕЦ · лилаво/синьо: ПУП/ПИ · зелено: RED III</span>
-    <span>Исторически пожари: EFFIS / Copernicus + официална проверка по ИАГ (2025) · live термални засичания: Sentinel-3 SLSTR / EUMETSAT · оперативна справка: ИСКРА</span>
     <span>Концепция, реализация и дизайн: TopperBG!</span>
   </div>
 <details id="bgwf-methods" class="bgwf-method-note" data-method-note>
@@ -2149,6 +2147,25 @@ svg {
     #bg-wildfires-map .bgwf-floating-controls { top:5px;left:5px;right:5px; }
     #bg-wildfires-map .bgwf-detail { left:5px;right:5px;bottom:5px;font-size:10px;line-height:1.25; }
   }
+/* v0.102: mobile layout fixes */
+@media (max-width:700px), (max-height:600px) and (hover:none) {
+  #bg-wildfires-map .bgwf-mobile-filter-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.28rem;align-items:center}
+  #bg-wildfires-map .bgwf-mobile-filter-toggle{width:100%;min-width:0;overflow:hidden}
+  #bg-wildfires-map .bgwf-filter-toggle-copy{width:100%;min-width:0;gap:.28rem;flex-wrap:nowrap}
+  #bg-wildfires-map .bgwf-filter-toggle-copy strong{display:none}
+  #bg-wildfires-map .bgwf-filter-version{display:none}
+  #bg-wildfires-map .bgwf-filter-summary{display:block;flex:1 1 auto;min-width:0}
+  #bg-wildfires-map .bgwf-filter-action{margin-left:0;flex:0 0 auto;padding:4px 7px}
+  #bg-wildfires-map .bgwf-compact-info-button{margin-inline-start:0;position:relative;z-index:2}
+  #bg-wildfires-map .bgwf-layer-row-primary{flex-wrap:nowrap;justify-content:flex-start;gap:.22rem}
+  #bg-wildfires-map .bgwf-layer-row-primary .bgwf-layer-toggle{flex:1 1 0;min-width:0;justify-content:center;gap:.18rem;padding-left:.24rem;padding-right:.24rem;font-size:8px;white-space:nowrap}
+  #bg-wildfires-map .bgwf-layer-row-primary .bgwf-swatch{width:.5rem;height:.5rem}
+  #bg-wildfires-map .bgwf-map-wrap,
+  #bg-wildfires-map.is-filter-collapsed .bgwf-map-wrap{height:calc(100dvh - 8px);min-height:560px}
+  #bg-wildfires-map .bgwf-map,
+  #bg-wildfires-map.is-filter-collapsed .bgwf-map{height:100%;min-height:560px;max-height:none}
+  #bg-wildfires-map .bgwf-detail{left:5px;right:5px;bottom:max(54px,calc(env(safe-area-inset-bottom) + 44px));font-size:10px;line-height:1.25}
+}
 /* v0.87f: keep map navigation clear of the filter row and map header */
 #bg-wildfires-map .bgwf-zoom-controls {
   position: absolute !important;
@@ -5224,7 +5241,7 @@ map.on('moveend',()=>{
   try{syncUrlState();}catch(e){dbgWarn('moveend-url-sync',{error:e.message});}
 });
 
-function fitHome({animate=false}={}){const extent=provinceSource.getExtent();view.fit(extent,{padding:[60,94,60,94],duration:animate?300:0,maxZoom:8.2});homeResolution=view.getResolution();debugState.homeResolution=homeResolution;}
+function fitHome({animate=false}={}){const extent=provinceSource.getExtent();const mobile=matchMedia('(max-width:700px), (max-height:600px) and (hover:none)').matches;view.fit(extent,{padding:mobile?[18,14,18,14]:[60,94,60,94],duration:animate?300:0,maxZoom:mobile?9.4:8.2});homeResolution=view.getResolution();debugState.homeResolution=homeResolution;}
 fitHome();
 const requestedLon=Number(urlParams.get('lon')),requestedLat=Number(urlParams.get('lat')),requestedScale=Number(urlParams.get('z'));
 if(Number.isFinite(requestedLon)&&Number.isFinite(requestedLat)&&Number.isFinite(requestedScale)&&requestedLon>=20&&requestedLon<=31&&requestedLat>=39&&requestedLat<=47&&requestedScale>=1&&requestedScale<=600){view.setCenter(fromLonLat([requestedLon,requestedLat]));view.setResolution(homeResolution/requestedScale);dbg('url-view-restored',{requestedLon,requestedLat,requestedScale});}
