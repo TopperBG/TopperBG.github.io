@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.98-methods-bold-20260925">
+<meta name="bgwf-build" content="v0.99-compact-info-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -850,8 +850,9 @@ svg {
   color: var(--destructive);
 }
 
+  #bg-wildfires-map .bgwf-mobile-filter-head{display:flex;width:100%;align-items:center;gap:.35rem}
   #bg-wildfires-map .bgwf-mobile-filter-toggle {
-    display:flex; width:100%; min-height:30px; align-items:center; justify-content:flex-start;
+    display:flex; flex:1 1 auto;min-width:0;min-height:30px; align-items:center; justify-content:flex-start;
     padding:0 .1rem; border:0; background:transparent; color:var(--foreground);
     font:inherit; font-size:13px; font-weight:700; cursor:pointer;
   }
@@ -874,6 +875,8 @@ svg {
     flex:0 0 auto;margin-inline-start:auto;border-color:color-mix(in srgb,var(--primary) 42%,var(--border));
     background:color-mix(in srgb,var(--primary) 10%,var(--background));font-weight:800;
   }
+  #bg-wildfires-map .bgwf-compact-info-button{display:none;min-height:26px;height:26px;padding-inline:8px;font-size:11px}
+  #bg-wildfires-map.is-filter-collapsed .bgwf-compact-info-button{display:inline-flex}
   #bg-wildfires-map:not(.is-filter-collapsed) .bgwf-detail {
     background:#fff;
     backdrop-filter:none;
@@ -1543,7 +1546,10 @@ svg {
     <p>Интерактивен атлас на енергията, територията и природните рискове</p>
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
-    <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.91</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+    <div class="bgwf-mobile-filter-head">
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.91</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
+    </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
     <div class="bgwf-search" data-map-search>
@@ -4332,6 +4338,7 @@ async function openAndFocusMethods(){
     refreshFilterLayout();
   }));
 }
+root.querySelector('[data-compact-info]')?.addEventListener('click',openAndFocusMethods);
 const mobileFilterToggle=root.querySelector('[data-mobile-filter-toggle]');
 const filterActionLabel=root.querySelector('[data-filter-action]');
 const filterSummary=root.querySelector('[data-filter-summary]');
