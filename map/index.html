@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.99-compact-info-20260925">
+<meta name="bgwf-build" content="v0.100-persistent-object-detail-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -872,17 +872,19 @@ svg {
   #bg-wildfires-map .bgwf-floating-controls.is-filter-open .bgwf-mobile-filter-body { display:block; }
   #bg-wildfires-map .bgwf-filter-chevron { display:inline-block;min-width:10px;text-align:center; }
   #bg-wildfires-map .bgwf-info-button{
-    flex:0 0 auto;margin-inline-start:auto;border-color:color-mix(in srgb,var(--primary) 42%,var(--border));
-    background:color-mix(in srgb,var(--primary) 10%,var(--background));font-weight:800;
+    display:inline-flex;flex:0 0 auto;min-height:28px;height:28px;align-items:center;justify-content:center;
+    margin-inline-start:auto;padding:0 9px;border:1px solid color-mix(in srgb,var(--primary) 42%,var(--border));
+    border-radius:999px;background:color-mix(in srgb,var(--primary) 10%,var(--background));
+    color:var(--foreground);font:800 11px/1 var(--font-sans);cursor:pointer;white-space:nowrap;
   }
-  #bg-wildfires-map .bgwf-compact-info-button{display:none;min-height:26px;height:26px;padding-inline:8px;font-size:11px}
+  #bg-wildfires-map .bgwf-compact-info-button{display:none}
   #bg-wildfires-map.is-filter-collapsed .bgwf-compact-info-button{display:inline-flex}
-  #bg-wildfires-map:not(.is-filter-collapsed) .bgwf-detail {
-    background:#fff;
-    backdrop-filter:none;
-    -webkit-backdrop-filter:none;
+  #bg-wildfires-map .bgwf-detail { display:block; }
+  #bg-wildfires-map .bgwf-detail:not(.is-hint) {
+    background:#fff!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
   }
-  #bg-wildfires-map.is-filter-collapsed .bgwf-detail { display:none; }
   #bg-wildfires-map.is-filter-collapsed .bgwf-map-wrap {
     height:calc(100vh - 24px);
     min-height:0;
@@ -2128,7 +2130,7 @@ svg {
     backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   }
   #bg-wildfires-map .bgwf-detail {
-    position:absolute;z-index:41;left:8px;right:8px;bottom:8px;
+    position:absolute;z-index:160;left:8px;right:8px;bottom:8px;
     margin:0;padding:.48rem .68rem;border-radius:9px;
     background:color-mix(in srgb,var(--background) 76%,transparent);
     box-shadow:0 2px 12px rgb(0 0 0 / 11%);
