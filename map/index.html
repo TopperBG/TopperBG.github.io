@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.96-methods-info-20260925">
+<meta name="bgwf-build" content="v0.97-methods-refresh-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -4298,11 +4298,13 @@ const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&
 const methodNote=root.querySelector('[data-method-note]');
 const methodContent=root.querySelector('[data-method-content]');
 let methodsSourcePromise=null;
-function loadMethodsSource(){
+function loadMethodsSource(force=false){
   if(!methodContent)return Promise.resolve(false);
+  if(force){methodContent.dataset.loaded='false';methodsSourcePromise=null;}
   if(methodContent.dataset.loaded==='true')return Promise.resolve(true);
   if(methodsSourcePromise)return methodsSourcePromise;
-  methodsSourcePromise=fetch('./data/methods_source.json',{cache:'no-cache'})
+  const sourceUrl=force?`./data/methods_source.json?refresh=${Date.now()}`:'./data/methods_source.json';
+  methodsSourcePromise=fetch(sourceUrl,{cache:force?'no-store':'no-cache'})
     .then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json();})
     .then(data=>{
       if(!Array.isArray(data?.paragraphs)||!data.paragraphs.length)throw new Error('липсват paragraphs');
@@ -4322,7 +4324,7 @@ async function openAndFocusMethods(){
   setFilterPanelOpen(true);
   if(mobileFooter)mobileFooter.open=true;
   if(methodNote)methodNote.open=true;
-  await loadMethodsSource();
+  await loadMethodsSource(true);
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     methodNote?.scrollIntoView({behavior:'smooth',block:'start'});
     methodNote?.querySelector('summary')?.focus({preventScroll:true});
