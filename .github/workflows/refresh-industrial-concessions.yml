@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -34,10 +34,17 @@ jobs:
         run: |
           python - <<'PY'
           import json
-          p=json.load(open("map/data/industrial-zones-cache-v1.json", encoding="utf-8"))
-          n=p.get("concessions",{}).get("featureCount",0)
-          assert n > 0, f"Expected concession polygons, got {n}"
-          print("Concession polygons:", n)
+          path="map/data/industrial-zones-cache-v1.json"
+          p=json.load(open(path, encoding="utf-8"))
+          assert p.get("schema") == "bgwf-industrial-zones-cache-v1"
+          section=p.get("concessions",{})
+          features=section.get("features") or []
+          declared=int(section.get("featureCount", len(features)) or 0)
+          assert declared == len(features), f"featureCount={declared}, actual={len(features)}"
+          if not features:
+              print("::warning title=Concession cache empty::No cached official concession polygons yet; MGU may be temporarily unavailable.")
+          else:
+              print("Concession polygons:", len(features))
           PY
       - name: Commit updated cache
         run: |
