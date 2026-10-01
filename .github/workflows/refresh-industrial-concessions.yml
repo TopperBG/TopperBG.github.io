@@ -8,6 +8,8 @@ on:
   push:
     paths:
       - "scripts/refresh-industrial-concessions.py"
+      - "scripts/sync-concession-inventory.py"
+      - "scripts/snapshot-industrial-footprints.py"
       - "scripts/build-concession-baseline.mjs"
       - "map/data/concession-boundaries-official-source-v2.json"
       - ".github/workflows/refresh-industrial-concessions.yml"
@@ -32,11 +34,19 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install reproducible Bulgarian coordinate transform
-        run: npm install --no-save --no-package-lock transformations@2.0.0
+      - name: Install data parsers and reproducible Bulgarian coordinate transform
+        run: |
+          python -m pip install --disable-pip-version-check xlrd==2.0.1
+          npm install --no-save --no-package-lock transformations@2.0.0
 
-      - name: Build repository concession baseline
+      - name: Refresh repository-owned national inventory
+        run: python scripts/sync-concession-inventory.py
+
+      - name: Build repository concession baseline and pending queue
         run: node scripts/build-concession-baseline.mjs
+
+      - name: Snapshot known industrial and disturbed-land polygons
+        run: python scripts/snapshot-industrial-footprints.py
 
       - name: Check primary and fallback concession sources
         run: python scripts/refresh-industrial-concessions.py
@@ -47,10 +57,25 @@ jobs:
           import json
           cache=json.load(open("map/data/industrial-zones-cache-v1.json", encoding="utf-8"))
           health=json.load(open("map/data/gis-source-health-v1.json", encoding="utf-8"))
+          inventory=json.load(open("map/data/concession-inventory-v1.json", encoding="utf-8"))
+          baseline=json.load(open("map/data/official-concessions-baseline.geojson", encoding="utf-8"))
+          pending=json.load(open("map/data/pending-concessions-v1.json", encoding="utf-8"))
+          disturbed=json.load(open("map/data/disturbed-mining-sites-v1.geojson", encoding="utf-8"))
+          industry_snapshot=json.load(open("map/data/industry-footprints-baseline.geojson", encoding="utf-8"))
           assert cache.get("schema") == "bgwf-industrial-zones-cache-v1"
+          assert inventory.get("schema") == "bgwf-concession-inventory-v1"
+          assert baseline.get("schema") == "bgwf-official-concessions-baseline-v1"
+          assert pending.get("schema") == "bgwf-pending-concessions-v1"
+          assert disturbed.get("schema") == "bgwf-disturbed-mining-sites-v1"
+          assert industry_snapshot.get("schema") == "bgwf-industry-footprints-baseline-v1"
+          assert int(inventory.get("recordCount",0)) == len(inventory.get("records") or [])
+          if inventory.get("recordCount",0) < 50:
+              print("::warning title=National concession inventory incomplete::Only",inventory.get("recordCount",0),"records are archived.")
           section=cache.get("concessions",{})
-          features=section.get("features") or []
-          assert int(section.get("featureCount", len(features)) or 0) == len(features)
+          features=baseline.get("features") or []
+          assert int(baseline.get("featureCount", len(features)) or 0) == len(features)
+          assert int(section.get("featureCount", len(section.get("features") or [])) or 0) == len(section.get("features") or [])
+          assert int(pending.get("publishedGeometryCount",0)) == len(features)
           if len(features) == 0:
               print("::warning title=Concession geometry baseline empty::No official-register polygon passed the publication gate.")
           else:
@@ -69,7 +94,11 @@ jobs:
           failed=[s.get("id") for s in sources if not s.get("ok")]
           if failed:
               print("::warning title=Some official sources unavailable::" + ", ".join(failed) + ". Last-known-good cache is preserved.")
+          print("National concession inventory:", inventory.get("recordCount",0))
           print("Concession polygons preserved:", len(features))
+          print("Pending geometry queue:", pending.get("pendingCount",0))
+          print("Disturbed/mining polygons archived:", disturbed.get("featureCount",0))
+          print("Industry polygons archived:", industry_snapshot.get("featureCount",0))
           print("Active registry source:", health.get("concessions",{}).get("activeRegistrySource"))
           PY
 
@@ -78,14 +107,26 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json; then
+          TRACKED_GENERATED=(
+            map/data/industrial-zones-cache-v1.json
+            map/data/gis-source-health-v1.json
+            map/data/concession-inventory-v1.json
+            map/data/official-concessions-baseline.geojson
+            map/data/pending-concessions-v1.json
+            map/data/industry-footprints-baseline.geojson
+            map/data/disturbed-mining-sites-v1.geojson
+            map/data/disturbed-mining-sites-pending-v1.json
+            map/data/source-archive/concessions
+          )
+
+          if git diff --quiet -- "${TRACKED_GENERATED[@]}"; then
             echo "No source-health changes."
             exit 0
           fi
 
           # Fast path: publish the already validated snapshot without repeating
           # external checks. Only rebuild if main moved and the push races.
-          git add map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json
+          git add "${TRACKED_GENERATED[@]}"
           git commit -m "Refresh national concession source health"
           if git push origin HEAD:main; then
             exit 0
@@ -95,15 +136,17 @@ jobs:
             echo "::warning title=Concurrent main update::Push race; rebuilding on latest main (attempt ${attempt}/3)."
             git fetch origin main
             git reset --hard origin/main
+            python scripts/sync-concession-inventory.py
             node scripts/build-concession-baseline.mjs
+            python scripts/snapshot-industrial-footprints.py
             python scripts/refresh-industrial-concessions.py
 
-            if git diff --quiet -- map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json; then
+            if git diff --quiet -- "${TRACKED_GENERATED[@]}"; then
               echo "Latest main already contains equivalent generated data."
               exit 0
             fi
 
-            git add map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json
+            git add "${TRACKED_GENERATED[@]}"
             git commit -m "Refresh national concession source health"
             if git push origin HEAD:main; then
               exit 0
