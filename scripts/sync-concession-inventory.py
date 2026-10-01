@@ -39,12 +39,14 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "map" / "data"
 ARCHIVE = DATA / "source-archive" / "concessions"
 INVENTORY_PATH = DATA / "concession-inventory-v1.json"
+ABANDONED_INVENTORY_PATH = DATA / "abandoned-mining-waste-inventory-v1.json"
 CURATED_SOURCE_PATH = DATA / "concession-boundaries-official-source-v2.json"
 INDUSTRIAL_CACHE_PATH = DATA / "industrial-zones-cache-v1.json"
 
 ME_XLS = "https://www.me.government.bg/uploads/manager/source/NGS/koncesii_public.xls"
 ME_PAGE = "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html"
 ME_ABANDONED = "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html"
+ME_ABANDONED_XLS = "https://www.me.government.bg/files/useruploads/files/prk/old_mining_sites_2020.xls"
 NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
 USER_AGENT = "EnergoKarta-Bulgaria-inventory/1.0 (+https://topperbg.github.io/map/)"
 
@@ -381,6 +383,72 @@ def merge_records(base: list[dict], additions: list[dict]) -> list[dict]:
     return [by_key[k] for k in order]
 
 
+def parse_abandoned_xls(raw: bytes) -> tuple[list[dict], dict]:
+    book = xlrd.open_workbook(file_contents=raw)
+    result = []
+    sheet_meta = []
+    hints = ("съоръж", "обект", "наимен", "община", "област", "местонах", "отпад", "оператор", "собствен", "рудник", "мина")
+    for sheet in book.sheets():
+        rows = [[norm(sheet.cell_value(r, col)) for col in range(sheet.ncols)] for r in range(sheet.nrows)]
+        if not rows:
+            continue
+        def score(row):
+            blob = " | ".join(text_key(v) for v in row)
+            return sum(1 for h in hints if h in blob)
+        candidates = [(score(row), i, row) for i, row in enumerate(rows[:50])]
+        sc, header_i, header = max(candidates, default=(0, 0, []))
+        if sc < 1:
+            nonempty = [(sum(bool(v) for v in row), i, row) for i, row in enumerate(rows[:50])]
+            _, header_i, header = max(nonempty, default=(0,0,[]))
+        seen = {}
+        headers = []
+        for i, value in enumerate(header):
+            base = slug_header(value, i)
+            seen[base] = seen.get(base, 0) + 1
+            headers.append(base if seen[base] == 1 else f"{base} [{seen[base]}]")
+        count = 0
+        for row_index, values in enumerate(rows[header_i+1:], start=header_i+2):
+            if not any(values):
+                continue
+            row = {headers[i]: values[i] for i in range(min(len(headers), len(values))) if values[i]}
+            if not row:
+                continue
+            name = find_any(row, [["наимен"], ["съоръж"], ["обект"], ["рудник"], ["мина"]])
+            municipality = find_any(row, [["община"]])
+            province = find_any(row, [["област"]])
+            location = find_any(row, [["местонах"], ["населен"]])
+            operator = find_any(row, [["оператор"], ["собствен"]])
+            blob = " ".join(row.values()).strip()
+            if not (name or municipality or province or location) and len(blob) < 20:
+                continue
+            rid = hashlib.sha1(f"{sheet.name}|{row_index}|{json.dumps(row, ensure_ascii=False, sort_keys=True)}".encode("utf-8")).hexdigest()[:16]
+            result.append({
+                "id": f"ME-ABANDONED-{rid}",
+                "name": name,
+                "municipality": municipality,
+                "province": province,
+                "location": location,
+                "operatorOrOwner": operator,
+                "status": "official-closed-or-abandoned-mining-waste",
+                "sourceSheet": sheet.name,
+                "sourceRowNo": row_index,
+                "source": "ME-ABANDONED-MINING-WASTE-XLS",
+                "raw": row,
+            })
+            count += 1
+        sheet_meta.append({"name": sheet.name, "rows": sheet.nrows, "headerRow": header_i+1, "headerScore": sc, "records": count, "headers": headers})
+    return result, {"sheets": sheet_meta}
+
+
+def existing_abandoned_inventory() -> dict:
+    if not ABANDONED_INVENTORY_PATH.exists():
+        return {}
+    try:
+        return json.loads(ABANDONED_INVENTORY_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
 def existing_inventory() -> dict:
     if not INVENTORY_PATH.exists():
         return {}
@@ -448,6 +516,43 @@ def main() -> None:
         except Exception as exc:
             source_runs.append({"id": sid, "ok": False, "url": url, "error": str(exc)})
 
+    # 4) Archive and normalize the official closed/abandoned mining-waste XLS.
+    abandoned_existing = existing_abandoned_inventory()
+    abandoned_records = []
+    abandoned_mode = "empty-bootstrap"
+    abandoned_source = {"id": "ME-ABANDONED-MINING-WASTE-XLS", "ok": False, "url": ME_ABANDONED_XLS}
+    try:
+        raw = fetch(ME_ABANDONED_XLS)
+        if len(raw) < 500:
+            raise RuntimeError(f"unexpectedly small abandoned-sites XLS ({len(raw)} bytes)")
+        parsed, meta = parse_abandoned_xls(raw)
+        if not parsed:
+            raise RuntimeError("abandoned-sites XLS produced no records")
+        atomic_write(ARCHIVE / "old_mining_sites_2020.xls", raw)
+        abandoned_records = parsed
+        abandoned_mode = "refreshed"
+        abandoned_source = {
+            "id": "ME-ABANDONED-MINING-WASTE-XLS", "ok": True, "url": ME_ABANDONED_XLS,
+            "bytes": len(raw), "sha256": sha256(raw), "records": len(parsed), **meta,
+        }
+    except Exception as exc:
+        abandoned_records = abandoned_existing.get("records") or []
+        abandoned_mode = "last-known-good-preserved" if abandoned_records else "empty-bootstrap"
+        abandoned_source["error"] = str(exc)
+
+    abandoned_payload = {
+        "schema": "bgwf-abandoned-mining-waste-inventory-v1",
+        "generatedAt": now_iso(),
+        "mode": abandoned_mode,
+        "scope": "Official Ministry of Energy list of closed including abandoned mining-waste facilities",
+        "recordCount": len(abandoned_records),
+        "runtimeDependency": False,
+        "source": abandoned_source,
+        "records": abandoned_records,
+    }
+    ABANDONED_INVENTORY_PATH.write_text(json.dumps(abandoned_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    source_runs.append(abandoned_source)
+
     # Curated official-source records are always merged, including historical/closed cases,
     # but they do not count as proof that the national online inventory refreshed successfully.
     curated, curated_groups = curated_records()
@@ -507,6 +612,7 @@ def main() -> None:
     }
     INVENTORY_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Inventory {mode}: {len(records)} records; IDs={with_id}; area={with_area}.")
+    print(f"Abandoned/mining-waste inventory {abandoned_mode}: {len(abandoned_records)} records.")
     for run in source_runs:
         print(("OK  " if run.get("ok") else "FAIL"), run["id"], run.get("records", ""), run.get("error", ""))
 
