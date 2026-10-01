@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install projection support
+        run: python -m pip install --disable-pip-version-check pyproj
       - name: Refresh official Pernik concession polygons
         run: python scripts/refresh-industrial-concessions.py
       - name: Validate cache
@@ -46,4 +48,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add map/data/industrial-zones-cache-v1.json
           git commit -m "Refresh official Pernik concession cache"
+          git pull --rebase origin main
           git push
