@@ -179,6 +179,7 @@ def normalized_record(source: str, row: dict, *, default_status: str | None = No
     area = normalize_area_dka(row)
     return {
         "id": stable_id(source, row),
+        "sourceRowNo": find_any(row, [["no по ред"], ["номер по ред"], ["пореден"]]),
         "concessionId": cid,
         "name": deposit,
         "concessionaire": operator,
@@ -246,7 +247,20 @@ def parse_me_xls(raw: bytes) -> tuple[list[dict], dict]:
             "records": count,
             "headers": headers,
         })
-    return all_records, {"sheets": sheet_meta}
+    counts = {}
+    for rec in all_records:
+        cid = norm(rec.get("concessionId"))
+        if cid:
+            counts[cid] = counts.get(cid, 0) + 1
+    collisions = {cid: count for cid, count in counts.items() if count > 1}
+    for rec in all_records:
+        cid = norm(rec.get("concessionId"))
+        if cid and cid in collisions:
+            row_no = norm(rec.get("sourceRowNo")) or hashlib.sha1(json.dumps(rec.get("raw") or {}, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()[:8]
+            rec["id"] = f"{cid}#row-{row_no}"
+            rec["concessionIdCollision"] = True
+            rec["concessionIdCollisionCount"] = collisions[cid]
+    return all_records, {"sheets": sheet_meta, "duplicateConcessionIds": collisions}
 
 
 def parse_delimited(text: str, source: str) -> list[dict]:
@@ -280,13 +294,14 @@ def parse_delimited(text: str, source: str) -> list[dict]:
     return records
 
 
-def curated_records() -> list[dict]:
+def curated_records() -> tuple[list[dict], list[dict]]:
     if not CURATED_SOURCE_PATH.exists():
-        return []
+        return [], []
     data = json.loads(CURATED_SOURCE_PATH.read_text(encoding="utf-8"))
-    result = []
+    records = []
+    groups = []
     for r in data.get("records") or []:
-        result.append({
+        item = {
             "id": r.get("concession_registry") or r.get("id"),
             "concessionId": r.get("concession_registry"),
             "name": r.get("name"),
@@ -302,7 +317,39 @@ def curated_records() -> list[dict]:
             "geometrySourceStatus": r.get("status"),
             "officialSource": r.get("official_source") or {},
             "raw": None,
-        })
+        }
+        if item["concessionId"]:
+            records.append(item)
+        else:
+            groups.append(item)
+    return records, groups
+
+
+def enrich_preserve_rows(base: list[dict], additions: list[dict]) -> list[dict]:
+    """Enrich official rows without collapsing duplicate concession IDs."""
+    result = [dict(r) for r in base]
+    by_cid: dict[str, list[int]] = {}
+    for i, rec in enumerate(result):
+        cid = norm(rec.get("concessionId"))
+        if cid:
+            by_cid.setdefault(cid, []).append(i)
+
+    for add in additions:
+        cid = norm(add.get("concessionId"))
+        matches = by_cid.get(cid, []) if cid else []
+        if matches:
+            for idx in matches:
+                old = result[idx]
+                old.setdefault("sources", [old.get("source")])
+                if add.get("source") and add["source"] not in old["sources"]:
+                    old["sources"].append(add["source"])
+                for field in ("geometrySourceStatus", "officialSource", "areaDka"):
+                    if old.get(field) in (None, "") and add.get(field) not in (None, ""):
+                        old[field] = add[field]
+        else:
+            result.append(dict(add))
+            if cid:
+                by_cid.setdefault(cid, []).append(len(result)-1)
     return result
 
 
@@ -382,8 +429,8 @@ def main() -> None:
             "bytes": len(raw), "sha256": sha256(raw), "records": len(nkr_records),
         })
         if nkr_records:
-            official_refresh_records = merge_records(official_refresh_records, nkr_records)
-            candidate_records = merge_records(candidate_records, nkr_records)
+            official_refresh_records = enrich_preserve_rows(official_refresh_records, nkr_records)
+            candidate_records = enrich_preserve_rows(candidate_records, nkr_records)
     except Exception as exc:
         source_runs.append({"id": "NKR", "ok": False, "url": NKR_EXPORT, "error": str(exc)})
 
@@ -403,13 +450,13 @@ def main() -> None:
 
     # Curated official-source records are always merged, including historical/closed cases,
     # but they do not count as proof that the national online inventory refreshed successfully.
-    curated = curated_records()
-    candidate_records = merge_records(candidate_records, curated)
+    curated, curated_groups = curated_records()
+    candidate_records = enrich_preserve_rows(candidate_records, curated)
 
     if len(official_refresh_records) < 50 and len(existing_records) >= 50:
         # Network/parser regression: preserve last known good inventory, while still
         # ensuring newly curated historical records are not lost.
-        records = merge_records(existing_records, curated)
+        records = enrich_preserve_rows(existing_records, curated)
         mode = "last-known-good-preserved"
     elif len(official_refresh_records) >= 50:
         records = candidate_records
@@ -431,6 +478,8 @@ def main() -> None:
     active = sum(1 for r in records if "active" in text_key(r.get("status") or ""))
     with_id = sum(1 for r in records if r.get("concessionId"))
     with_area = sum(1 for r in records if isinstance(r.get("areaDka"), (int, float)) and r["areaDka"] > 0)
+    collision_rows = [r for r in records if r.get("concessionIdCollision")]
+    collision_ids = sorted({r.get("concessionId") for r in collision_rows if r.get("concessionId")})
 
     payload = {
         "schema": "bgwf-concession-inventory-v1",
@@ -442,7 +491,11 @@ def main() -> None:
             "activeStatusRecords": active,
             "withConcessionId": with_id,
             "withAreaDka": with_area,
+            "duplicateConcessionIdCount": len(collision_ids),
+            "duplicateConcessionRowCount": len(collision_rows),
         },
+        "duplicateConcessionIds": collision_ids,
+        "curatedGroups": curated_groups,
         "runtimeDependency": False,
         "updatePolicy": {
             "onlineSourcesAreRefreshInputsOnly": True,
