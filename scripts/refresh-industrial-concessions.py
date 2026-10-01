@@ -23,6 +23,10 @@ import urllib.request
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CACHE_PATH = ROOT / "map" / "data" / "industrial-zones-cache-v1.json"
 HEALTH_PATH = ROOT / "map" / "data" / "gis-source-health-v1.json"
+INVENTORY_PATH = ROOT / "map" / "data" / "concession-inventory-v1.json"
+BASELINE_PATH = ROOT / "map" / "data" / "official-concessions-baseline.geojson"
+PENDING_PATH = ROOT / "map" / "data" / "pending-concessions-v1.json"
+DISTURBED_PATH = ROOT / "map" / "data" / "disturbed-mining-sites-v1.geojson"
 
 EGOV_API = "https://data.egov.bg/api"
 NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
@@ -140,6 +144,14 @@ def main() -> None:
 
     section = cache.setdefault("concessions", {})
     features = section.get("features") or []
+    inventory = json.loads(INVENTORY_PATH.read_text(encoding="utf-8")) if INVENTORY_PATH.exists() else {"records": []}
+    baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8")) if BASELINE_PATH.exists() else {"features": features}
+    pending = json.loads(PENDING_PATH.read_text(encoding="utf-8")) if PENDING_PATH.exists() else {"pending": section.get("pending") or []}
+    disturbed = json.loads(DISTURBED_PATH.read_text(encoding="utf-8")) if DISTURBED_PATH.exists() else {"features": []}
+    inventory_count = len(inventory.get("records") or [])
+    baseline_count = len(baseline.get("features") or [])
+    pending_count = len(pending.get("pending") or [])
+    disturbed_count = len(disturbed.get("features") or [])
     section["schema"] = section.get("schema") or "bgwf-industry-concessions-cache-v1"
     section["geometryCrs"] = "EPSG:4326"
     section["featureCount"] = len(features)
@@ -166,6 +178,10 @@ def main() -> None:
         "concessions": {
             "activeRegistrySource": active,
             "cacheFeatureCount": len(features),
+            "inventoryRecordCount": inventory_count,
+            "baselineFeatureCount": baseline_count,
+            "pendingGeometryCount": pending_count,
+            "disturbedMiningFeatureCount": disturbed_count,
             "cacheMode": "normal" if features else "metadata-only",
             "sources": sources,
         },
@@ -185,7 +201,10 @@ def main() -> None:
         status = "OK" if s["ok"] else "FAIL"
         print(f"{status:4} {s['id']}: {s.get('error','')}")
     print(f"Active registry source: {active}")
-    print(f"Repository concession polygons preserved: {len(features)}")
+    print(f"Repository concession inventory: {inventory_count}")
+    print(f"Repository concession polygons preserved: {baseline_count}")
+    print(f"Pending concession geometries: {pending_count}")
+    print(f"Archived disturbed/mining polygons: {disturbed_count}")
 
 if __name__ == "__main__":
     main()
