@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92g-mobile-header-20260925">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92g</title>
+<meta name="bgwf-build" content="v0.92h-mobile-header-20260925">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92h</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1553,7 +1553,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92g</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92h</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -2172,7 +2172,7 @@ svg {
   #bg-wildfires-map.is-filter-collapsed .bgwf-map{height:100%;min-height:560px;max-height:none}
   #bg-wildfires-map .bgwf-detail{left:5px;right:5px;bottom:max(54px,calc(env(safe-area-inset-bottom) + 44px));font-size:10px;line-height:1.25}
 }
-/* v0.92g: second-row tooltips must escape the scrolling filter strip. */
+/* v0.92h: second-row tooltips must escape the scrolling filter strip. */
 #bg-wildfires-map .bgwf-floating-controls .bgwf-layer-controls,
 #bg-wildfires-map .bgwf-layer-row,
 #bg-wildfires-map .bgwf-layer-row-secondary { overflow:visible !important; }
@@ -2194,7 +2194,7 @@ svg {
 #bg-wildfires-map .bgwf-layer-row-secondary .bgwf-layer-toggle[data-layer="industry"]:is(:hover,:focus-visible)::after {
   transform:translateY(0) !important;
 }
-/* v0.92g: one control plane + one tooltip system for every filter/layer control. */
+/* v0.92h: one control plane + one tooltip system for every filter/layer control. */
 #bg-wildfires-map .bgwf-mobile-filter-body{position:relative;isolation:isolate;overflow:visible}
 #bg-wildfires-map .bgwf-year-strip,
 #bg-wildfires-map .bgwf-layer-strip,
@@ -6794,34 +6794,6 @@ if(layerRow){
   infoButton.setAttribute('aria-label','Отвори Методология');setControlHelp(infoButton,'Info — отваря методологията, източниците и поясненията към данните.');
   infoButton.addEventListener('click',openAndFocusMethods);layerRow.appendChild(infoButton);updateIndustryLegendHint();
 }
-updateTerritoryScaleBars();scheduleNaturaOverlapUpdate();scheduleUrlSync();}});
-  if(key==='future'){
-    const msg='Важно: приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя';
-    btn.dataset.helpTooltip=msg;
-    btn.removeAttribute('title');
-    btn.setAttribute('aria-description',msg);
-  }
-  if(key==='natura'){
-    const msg='Официални граници на МОСВ: SPA за птици и pSCI/SCI/SAC за местообитания. Слоят се зарежда при включване.';
-    btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
-  }
-  if(key==='industry'){
-    const msg=`НСИ към ${NSI_DISTURBED_LAND_2025.asOf}: нарушена територия ${NSI_DISTURBED_LAND_2025.dka.toLocaleString('bg-BG')} дка (${NSI_DISTURBED_LAND_2025.percent}%). Категорията е по-широка от слоя ТЕЦ/мини.`;
-    btn.dataset.helpTooltip=msg;
-    btn.removeAttribute('title');
-  }
-  if(key==='foreign'){
-    const msg='Подбрани ВЕИ проекти над 50 MW. Реалните OSM полигони заменят окръжностите. При ВяЕИ без публикувана граница пунктираният полигон е обвивка по реалните OSM позиции на турбините. Окръжност остава само като fallback без OSM геометрия.';
-    btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
-  }
-  if(key==='epm'){
-    const msg='HV — високоволтова електропреносна мрежа. Индикативни OSM трасета 110/220/400 kV. Наличието на далекопровод не е доказателство за свободен капацитет; присъединяването се потвърждава за конкретна подстанция.';
-    btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
-  }
-});
-const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';secondaryRow.appendChild(hint);
-const infoButton=document.createElement('button');infoButton.type='button';infoButton.className='bgwf-info-button';infoButton.textContent='Info';infoButton.title='Методика и източници';infoButton.setAttribute('aria-label','Отвори Методика и източници');infoButton.addEventListener('click',openAndFocusMethods);secondaryRow.appendChild(infoButton);
-updateIndustryLegendHint();}
 updateTerritoryScaleBars();
 void loadMethodsSource();
 
