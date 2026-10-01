@@ -9,59 +9,86 @@ import pathlib
 import urllib.parse
 import urllib.request
 
+from pyproj import Transformer
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CACHE_PATH = ROOT / "map" / "data" / "industrial-zones-cache-v1.json"
 SERVICE = "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query"
 SOURCE_URL = "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer"
+OUT_FIELDS = "objectid,concession_id,name,находище,концесионер,ncr_url,status,lastupdate,SHAPE__Area"
 
-PARAMS = {
-    "where": "1=1",
-    "outFields": "*",
-    "returnGeometry": "true",
-    "outSR": "4326",
-    "f": "geojson",
-}
+WGS84 = Transformer.from_crs("EPSG:7801", "EPSG:4326", always_xy=True)
 
 
-def fetch_geojson() -> dict:
-    url = SERVICE + "?" + urllib.parse.urlencode(PARAMS)
+def post_json(params: dict[str, str]) -> dict:
     request = urllib.request.Request(
-        url,
+        SERVICE,
+        data=urllib.parse.urlencode(params).encode("utf-8"),
         headers={
-            "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.0",
-            "Accept": "application/geo+json, application/json",
+            "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.1",
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
         },
+        method="POST",
     )
     with urllib.request.urlopen(request, timeout=90) as response:
         payload = json.load(response)
     if payload.get("error"):
         raise RuntimeError(payload["error"].get("message", "ArcGIS error"))
-    if payload.get("type") != "FeatureCollection":
-        raise RuntimeError("ArcGIS response is not a GeoJSON FeatureCollection")
     return payload
 
 
-def stable_features(payload: dict) -> list[dict]:
+def transform_ring(ring: list[list[float]]) -> list[list[float]]:
+    out: list[list[float]] = []
+    for point in ring:
+        if len(point) < 2:
+            continue
+        lon, lat = WGS84.transform(float(point[0]), float(point[1]))
+        out.append([round(lon, 8), round(lat, 8)])
+    if len(out) >= 3 and out[0] != out[-1]:
+        out.append(out[0])
+    return out
+
+
+def fetch_features() -> list[dict]:
+    payload = post_json(
+        {
+            "where": "1=1",
+            "outFields": OUT_FIELDS,
+            "returnGeometry": "true",
+            "outSR": "7801",
+            "f": "json",
+            "resultRecordCount": "2000",
+        }
+    )
+
     features: list[dict] = []
-    for raw in payload.get("features", []):
-        geometry = raw.get("geometry") or {}
-        if geometry.get("type") not in {"Polygon", "MultiPolygon"}:
+    for item in payload.get("features", []):
+        rings = (item.get("geometry") or {}).get("rings") or []
+        polygons = []
+        for ring in rings:
+            transformed = transform_ring(ring)
+            if len(transformed) >= 4:
+                # Each ArcGIS ring is kept as a separate polygon part. The map
+                # renders boundaries only, so this preserves all official rings
+                # without inventing topology between multiple outer rings/holes.
+                polygons.append([transformed])
+        if not polygons:
             continue
-        if not geometry.get("coordinates"):
-            continue
-        properties = dict(raw.get("properties") or {})
-        properties.setdefault("source_url", SOURCE_URL)
+
+        properties = dict(item.get("attributes") or {})
+        properties["source_url"] = SOURCE_URL
         features.append(
-            {"type": "Feature", "properties": properties, "geometry": geometry}
+            {
+                "type": "Feature",
+                "properties": properties,
+                "geometry": {"type": "MultiPolygon", "coordinates": polygons},
+            }
         )
 
     features.sort(
         key=lambda feature: (
-            str(
-                feature["properties"].get("concession_id")
-                or feature["properties"].get("идентификационен_____партиден__")
-                or ""
-            ),
+            str(feature["properties"].get("concession_id") or ""),
             str(
                 feature["properties"].get("name")
                 or feature["properties"].get("находище")
@@ -79,7 +106,7 @@ def main() -> None:
     if cache.get("schema") != "bgwf-industrial-zones-cache-v1":
         raise RuntimeError("Unexpected industrial cache schema")
 
-    features = stable_features(fetch_geojson())
+    features = fetch_features()
     now = (
         dt.datetime.now(dt.timezone.utc)
         .replace(microsecond=0)
@@ -107,7 +134,8 @@ def main() -> None:
             "type": "ArcGIS FeatureServer",
             "url": SERVICE,
             "sourceUrl": SOURCE_URL,
-            "geometry": "official contract-derived polygons",
+            "sourceCrs": "EPSG:7801",
+            "geometry": "official contract-derived polygons; transformed in GitHub Actions to EPSG:4326",
             "lastFetchedAt": now,
             "featureCount": len(features),
         }
