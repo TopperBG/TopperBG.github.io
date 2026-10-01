@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92c-mobile-header-20260925">
+<meta name="bgwf-build" content="v0.92d-mobile-header-20260925">
 <title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.91</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
@@ -1403,21 +1403,25 @@ svg {
 
 
 /* v0.76 — contextual explanation for RED III */
-#bg-wildfires-map .bgwf-layer-toggle[data-help-tooltip] { position: relative; }
+#bg-wildfires-map .bgwf-floating-controls { overflow:visible; }
+#bg-wildfires-map .bgwf-floating-controls:has(.bgwf-layer-toggle[data-help-tooltip]:is(:hover,:focus-visible)) { z-index:500; }
+#bg-wildfires-map .bgwf-layer-row { overflow:visible; }
+#bg-wildfires-map .bgwf-layer-toggle[data-help-tooltip] { position: relative; z-index:1; }
+#bg-wildfires-map .bgwf-layer-toggle[data-help-tooltip]:is(:hover,:focus-visible) { z-index:520; }
 #bg-wildfires-map .bgwf-layer-toggle[data-help-tooltip]::after {
   content: attr(data-help-tooltip);
   position: absolute;
-  z-index: 120;
+  z-index: 1000;
   left: 50%;
   top: calc(100% + 6px);
   width: min(360px, calc(100vw - 24px));
   padding: 6px 8px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: 7px;
-  color: var(--popover-foreground);
-  background: var(--popover);
-  box-shadow: 0 3px 12px rgb(0 0 0 / 16%);
-  font-size: 10px;
+  color: #fff;
+  background: rgba(10,12,16,.96);
+  box-shadow: 0 6px 22px rgb(0 0 0 / 35%);
+  font-size: 11px;
   font-weight: 500;
   line-height: 1.35;
   text-align: left;
@@ -1549,7 +1553,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92c</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92d</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -6111,6 +6115,7 @@ async function loadStaticIndustrialFootprints(){
     };
     updateLayerStatus();
   }catch(e){
+    industrialStaticLoadStarted=false;
     debugState.network.industryStatic={ok:false,error:e.message};
     dbgWarn('industry-static-load',{error:e.message});
   }
@@ -6193,8 +6198,38 @@ async function ensureOfficialConcessionPolygons(){
     officialConcessionLoadError='';
     const started=performance.now();
 
-    // Render only from repository static cache. External GIS never blocks the layer.
-    const loaded=await loadOfficialConcessionStaticCache();
+    // Prefer repository static cache. If it is empty (currently true for Pernik),
+    // immediately query the official MGU FeatureServer instead of rendering an empty layer.
+    let loaded=await loadOfficialConcessionStaticCache();
+    if(!loaded.length){
+      debugState.network.concessionCache.empty=true;
+      try{
+        const remote=[];
+        for(const source of OFFICIAL_CONCESSION_GIS_SOURCES){
+          const u=new URL(source.url);
+          u.searchParams.set('where',source.where||'1=1');
+          u.searchParams.set('outFields','*');
+          u.searchParams.set('returnGeometry','true');
+          u.searchParams.set('outSR','4326');
+          u.searchParams.set('f','geojson');
+          u.searchParams.set('_bgwf',GIS_CACHE_POLICY.monthKey);
+          const r=await fetch(u,{mode:'cors',cache:'no-store'});
+          if(!r.ok)throw new Error(`HTTP ${r.status}`);
+          const p=await r.json();
+          if(p?.error)throw new Error(p.error.message||'ArcGIS error');
+          if(!Array.isArray(p?.features))throw new Error('ArcGIS response has no features array');
+          for(const raw of p.features){
+            const cf=concessionFeatureFromGeoJSON(raw,source.id,source.sourceUrl);
+            if(cf)remote.push(cf);
+          }
+          debugState.network[`concession-${source.id}`]={ok:true,status:r.status,features:remote.length,direct:true};
+        }
+        if(remote.length)loaded=remote;
+      }catch(e){
+        officialConcessionLoadError=e.message;
+        dbgWarn('official-concession-direct-load-failed',{error:e.message});
+      }
+    }
     concessionSource.clear();
     concessionSource.addFeatures(loaded);
     officialConcessionFeatures=loaded;
@@ -6205,7 +6240,7 @@ async function ensureOfficialConcessionPolygons(){
     debugState.timings.concessions=Math.round(performance.now()-started);
     updateLayerStatus();
 
-    // Monthly cached external GIS is refresh-only and delayed.
+    // Background refresh remains as a secondary path when static/direct data are available.
     setTimeout(()=>void refreshOfficialConcessionsRemoteInBackground(loaded),1500);
     return loaded;
   })();
@@ -6620,7 +6655,7 @@ if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints()
     btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
   }
   if(key==='epm'){
-    const msg='ЕРМ — електроразпределителна мрежа. Индикативни OSM трасета 110/220/400 kV. Наличието на далекопровод не е доказателство за свободен капацитет; присъединяването се потвърждава за конкретна подстанция.';
+    const msg='HV — високоволтова електропреносна мрежа. Индикативни OSM трасета 110/220/400 kV. Наличието на далекопровод не е доказателство за свободен капацитет; присъединяването се потвърждава за конкретна подстанция.';
     btn.dataset.helpTooltip=msg;btn.removeAttribute('title');btn.setAttribute('aria-description',msg);
   }
 });
