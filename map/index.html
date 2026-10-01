@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92j-mobile-header-20260925">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92j</title>
+<meta name="bgwf-build" content="v0.92k-mobile-header-20260925">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92k</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1359,6 +1359,9 @@ svg {
     width: 10px; height: 0; display:inline-block;
     border-top: 1.5px dashed #b91c1c;
   }
+  #bg-wildfires-map .bgwf-concession-unavailable {
+    color:#b91c1c;font-weight:700;white-space:normal;
+  }
 
 
   /* v0.71 — OpenLayers engine */
@@ -1553,7 +1556,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92j</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92k</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -2175,7 +2178,7 @@ svg {
   #bg-wildfires-map.is-filter-collapsed .bgwf-map{height:100%;min-height:560px;max-height:none}
   #bg-wildfires-map .bgwf-detail{left:5px;right:5px;bottom:max(54px,calc(env(safe-area-inset-bottom) + 44px));font-size:10px;line-height:1.25}
 }
-/* v0.92j: one control plane + one tooltip system for every filter/layer control. */
+/* v0.92k: one control plane + one tooltip system for every filter/layer control. */
 #bg-wildfires-map .bgwf-mobile-filter-body{position:relative;isolation:isolate;overflow:visible}
 #bg-wildfires-map .bgwf-year-strip,
 #bg-wildfires-map .bgwf-layer-strip,
@@ -5345,7 +5348,7 @@ if(kind==='industry'){
     official+=` · НКР ${meta.concessionId}`;
     if(Number.isFinite(meta.officialAreaDka))official+=` · концесионна площ ${formatAreaDka(meta.officialAreaDka)}`;
     if(Number.isFinite(meta.additionalAreaDka))official+=` · допълнителна концесионна площ ${formatAreaDka(meta.additionalAreaDka)}`;
-    if((Number.isFinite(meta.officialAreaDka)||Number.isFinite(meta.additionalAreaDka))&&!concessionSource.getFeatures().length)official+=' · GIS граница: подготвя се';
+    if((Number.isFinite(meta.officialAreaDka)||Number.isFinite(meta.additionalAreaDka))&&!concessionSource.getFeatures().length)official+=officialConcessionLoadState==='error'?' · официална GIS граница: източникът е недостъпен':' · официална GIS граница: няма кеширана геометрия';
   }
   const geometryText=f.getGeometry()?.getType()==='Point'?'само местоположение':`разработена/индустриална площ ${formatAreaDka(f.get('areaDka'))}`;
   return `${industrialTypeLabel(d.type)} · ${d.name} · ${geometryText}${d.area?` · ${d.area}`:''}${official} · ${d.fuel}`;
@@ -6554,10 +6557,14 @@ function updateIndustryLegendHint(){
   if(hint.hidden){hint.innerHTML='';return;}
   const hasConcession=concessionSource.getFeatures().length>0;
   const hasEstimate=concessionEstimateSource.getFeatures().length>0;
+  const concessionState=!hasConcession&&officialConcessionLoadState==='error'
+    ?' <span class="bgwf-concession-unavailable">официалният GIS за концесии е недостъпен</span>'
+    :'';
   hint.innerHTML=
     '<strong>ТЕЦ/мини:</strong> <span class="bgwf-industry-fill-key"></span> разработена площ'
     +(hasConcession?' <span class="bgwf-industry-concession-key"></span> официална концесионна граница':'')
-    +(hasEstimate?' <span class="bgwf-industry-estimate-key"></span> ориентировъчна концесионна площ':'');
+    +(hasEstimate?' <span class="bgwf-industry-estimate-key"></span> ориентировъчна концесионна площ':'')
+    +concessionState;
 }
 
 function updateCompactFilterSummary(){
@@ -6612,7 +6619,8 @@ function updateLayerStatus(){
     if(layerVisibility.natura)extras.push(naturaLoadState==='loading'?'Натура 2000 зареждане':naturaLoadState==='error'?'Натура 2000 грешка':`Натура 2000 ${naturaSource.getFeatures().length} полигона`);
     if(layerVisibility.industry){
       extras.push(`${industrialPolygonSites.length} ТЕЦ/мини · footprint ${formatAreaDka(totalIndustryFootprintDka())}`);if(concessionEstimateSource.getFeatures().length)extras.push(`${concessionEstimateSource.getFeatures().length} концесионни площи`);
-      if(concessionSource.getFeatures().length)extras.push(`${concessionSource.getFeatures().length} концесионни граници`);
+      if(concessionSource.getFeatures().length)extras.push(`${concessionSource.getFeatures().length} официални концесионни граници`);
+      else if(officialConcessionLoadState==='error')extras.push('официални концесионни граници: GIS източникът е недостъпен');
     }
     if(layerVisibility.foreign)extras.push(foreignOsmLoadState==='loading'?'Foreign: OSM геометрията се зарежда':`Foreign ${foreignSource.getFeatures().length} проекта · ${new Set(foreignOsmSource.getFeatures().map(f=>f.get('projectId'))).size} с OSM геометрия`);
     if(layerVisibility.epm)extras.push(epmLoadState==='loading'?'ЕПМ се зарежда':epmLoadState==='error'?'ЕПМ: грешка при зареждане':`ЕПМ ${epmSource.getFeatures().length} трасета (110/220/400 kV)`);
