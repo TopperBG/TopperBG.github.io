@@ -1,204 +1,191 @@
 #!/usr/bin/env python3
-"""Refresh official Pernik concession polygons in the consolidated industrial cache."""
+"""Weekly national concession source check.
+
+Primary inventory/status source: data.egov.bg.
+Secondary fallback/check: National Concession Register (NKR).
+Tertiary official audit/fallback: Ministry of Energy register pages.
+
+The geometry baseline is repository-owned and last-known-good. This job NEVER
+empties concession geometry when a remote source is unavailable.
+"""
 
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import pathlib
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
-import urllib.error
-import time
-
-from pyproj import Transformer
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CACHE_PATH = ROOT / "map" / "data" / "industrial-zones-cache-v1.json"
-SERVICE = "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query"
-SOURCE_URL = "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer"
-OUT_FIELDS = "objectid,concession_id,name,находище,концесионер,ncr_url,status,lastupdate,SHAPE__Area"
+HEALTH_PATH = ROOT / "map" / "data" / "gis-source-health-v1.json"
 
-WGS84 = Transformer.from_crs("EPSG:7801", "EPSG:4326", always_xy=True)
+EGOV_API = "https://data.egov.bg/api"
+NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
+ME_CONCESSIONS = "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html"
+ME_ABANDONED = "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html"
+USER_AGENT = "EnergoKarta-Bulgaria-concessions/2.0 (+https://topperbg.github.io/map/)"
 
+def now_iso() -> str:
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
-def post_json(params: dict[str, str]) -> dict:
-    """Fetch ArcGIS JSON with retries and GET fallback.
+def request_bytes(url: str, *, data: bytes | None = None, content_type: str | None = None, timeout: int = 45) -> bytes:
+    last: Exception | None = None
+    for attempt in range(1, 4):
+        headers = {"User-Agent": USER_AGENT, "Accept": "*/*"}
+        if content_type:
+            headers["Content-Type"] = content_type
+        req = urllib.request.Request(url, data=data, headers=headers, method="POST" if data is not None else "GET")
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                return response.read()
+        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
+            last = exc
+            if attempt < 3:
+                time.sleep(attempt * 3)
+    raise RuntimeError(f"{url}: {last}")
 
-    maps.mgu.bg occasionally returns HTTP 500 from its Web Adaptor while the
-    repository cache is still perfectly usable. Treat 5xx/network failures as
-    transient; never destroy the last-known-good cache because of them.
-    """
-    encoded = urllib.parse.urlencode(params)
-    last_error: Exception | None = None
-    for attempt in range(1, 5):
-        for method in ("POST", "GET"):
-            if method == "POST":
-                request = urllib.request.Request(
-                    SERVICE,
-                    data=encoded.encode("utf-8"),
-                    headers={
-                        "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.2",
-                        "Accept": "application/json",
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    method="POST",
-                )
-            else:
-                request = urllib.request.Request(
-                    f"{SERVICE}?{encoded}",
-                    headers={
-                        "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.2",
-                        "Accept": "application/json",
-                    },
-                    method="GET",
-                )
-            try:
-                with urllib.request.urlopen(request, timeout=90) as response:
-                    payload = json.load(response)
-                if payload.get("error"):
-                    raise RuntimeError(payload["error"].get("message", "ArcGIS error"))
-                return payload
-            except urllib.error.HTTPError as error:
-                body = error.read().decode("utf-8", "replace")
-                last_error = RuntimeError(
-                    f"ArcGIS {method} HTTP {error.code}: {body[:600]}"
-                )
-                if error.code < 500:
-                    raise last_error from error
-            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
-                last_error = RuntimeError(f"ArcGIS {method} network/JSON error: {error}")
-        if attempt < 4:
-            time.sleep(4 * attempt)
-    raise RuntimeError(f"MGU ArcGIS unavailable after retries: {last_error}")
-
-
-def transform_ring(ring: list[list[float]]) -> list[list[float]]:
-    out: list[list[float]] = []
-    for point in ring:
-        if len(point) < 2:
-            continue
-        lon, lat = WGS84.transform(float(point[0]), float(point[1]))
-        out.append([round(lon, 8), round(lat, 8)])
-    if len(out) >= 3 and out[0] != out[-1]:
-        out.append(out[0])
-    return out
-
-
-def fetch_features() -> list[dict]:
-    payload = post_json(
-        {
-            "where": "1=1",
-            "outFields": "*",
-            "returnGeometry": "true",
-            "f": "json",
+def check_egov() -> dict:
+    checked = now_iso()
+    payload = {
+        "records_per_page": 100,
+        "page_number": 1,
+        "criteria": {"keywords": "подземни богатства", "locale": "bg"},
+    }
+    try:
+        raw = request_bytes(
+            f"{EGOV_API}/listDatasets",
+            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            content_type="application/json",
+        )
+        data = json.loads(raw.decode("utf-8"))
+        datasets = data.get("datasets") or []
+        relevant = []
+        for ds in datasets:
+            blob = " ".join(str(ds.get(k) or "") for k in ("name", "descript")).lower()
+            if "концес" in blob or "подземни богатства" in blob:
+                relevant.append({
+                    "uri": ds.get("uri"),
+                    "name": ds.get("name"),
+                    "updated_at": ds.get("updated_at"),
+                    "resourceCount": len(ds.get("resource") or {}),
+                })
+        digest = hashlib.sha256(json.dumps(relevant, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+        return {
+            "id": "DATA-EGOV-BG", "role": "primary", "ok": True, "checkedAt": checked,
+            "url": EGOV_API, "datasetMatches": len(relevant),
+            "totalRecords": data.get("total_records"), "digest": digest,
+            "datasets": relevant[:20],
         }
-    )
+    except Exception as exc:
+        return {"id": "DATA-EGOV-BG", "role": "primary", "ok": False, "checkedAt": checked, "url": EGOV_API, "error": str(exc)}
 
-    features: list[dict] = []
-    for item in payload.get("features", []):
-        rings = (item.get("geometry") or {}).get("rings") or []
-        polygons = []
-        for ring in rings:
-            transformed = transform_ring(ring)
-            if len(transformed) >= 4:
-                # Each ArcGIS ring is kept as a separate polygon part. The map
-                # renders boundaries only, so this preserves all official rings
-                # without inventing topology between multiple outer rings/holes.
-                polygons.append([transformed])
-        if not polygons:
-            continue
+def check_nkr() -> dict:
+    checked = now_iso()
+    try:
+        raw = request_bytes(NKR_EXPORT)
+        text = raw.decode("cp1251", errors="replace")
+        rows = [line for line in text.splitlines() if line.strip()]
+        if len(rows) < 50:
+            raise RuntimeError(f"unexpectedly small export: {len(rows)} rows")
+        return {
+            "id": "NKR", "role": "secondary", "ok": True, "checkedAt": checked,
+            "url": NKR_EXPORT, "rows": len(rows),
+            "digest": hashlib.sha256(raw).hexdigest(),
+        }
+    except Exception as exc:
+        return {"id": "NKR", "role": "secondary", "ok": False, "checkedAt": checked, "url": NKR_EXPORT, "error": str(exc)}
 
-        properties = dict(item.get("attributes") or {})
-        properties["source_url"] = SOURCE_URL
-        features.append(
-            {
-                "type": "Feature",
-                "properties": properties,
-                "geometry": {"type": "MultiPolygon", "coordinates": polygons},
-            }
-        )
-
-    features.sort(
-        key=lambda feature: (
-            str(feature["properties"].get("concession_id") or ""),
-            str(
-                feature["properties"].get("name")
-                or feature["properties"].get("находище")
-                or ""
-            ),
-        )
-    )
-    if not features:
-        raise RuntimeError("Official Pernik concession service returned zero polygon features")
-    return features
-
+def check_page(source_id: str, role: str, url: str, marker: str) -> dict:
+    checked = now_iso()
+    try:
+        raw = request_bytes(url)
+        text = raw.decode("utf-8", errors="replace")
+        if marker.lower() not in text.lower():
+            raise RuntimeError(f"expected marker not found: {marker}")
+        return {
+            "id": source_id, "role": role, "ok": True, "checkedAt": checked,
+            "url": url, "bytes": len(raw), "digest": hashlib.sha256(raw).hexdigest(),
+        }
+    except Exception as exc:
+        return {"id": source_id, "role": role, "ok": False, "checkedAt": checked, "url": url, "error": str(exc)}
 
 def main() -> None:
     cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
     if cache.get("schema") != "bgwf-industrial-zones-cache-v1":
         raise RuntimeError("Unexpected industrial cache schema")
 
-    try:
-        features = fetch_features()
-    except Exception as error:
-        section = cache.get("concessions") or {}
-        cached = section.get("features") or []
-        cached_count = len(cached)
-        print(
-            "::warning title=MGU concession refresh skipped::"
-            f"{error}. Preserving last-known-good cache ({cached_count} polygons)."
-        )
-        if cached_count == 0:
-            print(
-                "::warning title=Concession cache currently empty::"
-                "The official MGU service is unavailable and there is no previously "
-                "cached polygon set yet. The workflow remains green so a temporary "
-                "external outage does not look like a repository/build failure."
-            )
-        return
+    sources = [
+        check_egov(),
+        check_nkr(),
+        check_page("ME-CONCESSIONS", "tertiary", ME_CONCESSIONS, "Концесии за добив"),
+        check_page("ME-ABANDONED-MINING-WASTE", "historical-disturbed", ME_ABANDONED, "изоставените"),
+    ]
+    primary = next(s for s in sources if s["id"] == "DATA-EGOV-BG")
+    secondary = next(s for s in sources if s["id"] == "NKR")
+    tertiary = next(s for s in sources if s["id"] == "ME-CONCESSIONS")
 
-    now = (
-        dt.datetime.now(dt.timezone.utc)
-        .replace(microsecond=0)
-        .isoformat()
-        .replace("+00:00", "Z")
-    )
+    if primary["ok"]:
+        active = "DATA-EGOV-BG"
+    elif secondary["ok"]:
+        active = "NKR"
+    elif tertiary["ok"]:
+        active = "ME-CONCESSIONS"
+    else:
+        active = "REPOSITORY-CACHE"
 
     section = cache.setdefault("concessions", {})
-    section["schema"] = "bgwf-industry-concessions-cache-v1"
-    section["generatedAt"] = now
+    features = section.get("features") or []
+    section["schema"] = section.get("schema") or "bgwf-industry-concessions-cache-v1"
     section["geometryCrs"] = "EPSG:4326"
     section["featureCount"] = len(features)
-    section["features"] = features
+    section["sourcePolicy"] = {
+        "primary": "DATA-EGOV-BG",
+        "secondary": "NKR",
+        "tertiary": "ME-CONCESSIONS",
+        "geometry": "repository baseline from official coordinate registers/acts",
+        "runtimeRemoteDependency": False,
+        "lastKnownGood": True,
+        "activeRegistrySource": active,
+    }
+    section["sourceHealthCheckedAt"] = now_iso()
+    section["sourceHealth"] = sources
 
-    remote_sources = section.setdefault("remoteSources", [])
-    source = next(
-        (item for item in remote_sources if item.get("id") == "MGU-PERNIK"),
-        None,
-    )
-    if source is None:
-        source = {"id": "MGU-PERNIK"}
-        remote_sources.append(source)
-    source.update(
-        {
-            "type": "ArcGIS FeatureServer",
-            "url": SERVICE,
-            "sourceUrl": SOURCE_URL,
-            "sourceCrs": "EPSG:7801",
-            "geometry": "official contract-derived polygons; transformed in GitHub Actions to EPSG:4326",
-            "lastFetchedAt": now,
-            "featureCount": len(features),
-        }
-    )
+    historical = cache.setdefault("historicalDisturbedMining", {})
+    historical["policy"] = "retain closed/abandoned mining and mining-waste footprints independently of current concession status"
+    historical["officialRegister"] = "ME-ABANDONED-MINING-WASTE"
+    historical["sourceHealth"] = next(s for s in sources if s["id"] == "ME-ABANDONED-MINING-WASTE")
 
-    cache.setdefault("lastUpdatedSections", {})["concessions"] = now
-    CACHE_PATH.write_text(
-        json.dumps(cache, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    print(f"Wrote {len(features)} concession polygons to {CACHE_PATH}")
+    health = {
+        "schema": "bgwf-gis-source-health-v1",
+        "checkedAt": now_iso(),
+        "concessions": {
+            "activeRegistrySource": active,
+            "cacheFeatureCount": len(features),
+            "cacheMode": "normal" if features else "metadata-only",
+            "sources": sources,
+        },
+        "policy": {
+            "primary": "data.egov.bg",
+            "secondary": "National Concession Register",
+            "tertiary": "Ministry of Energy",
+            "browserUsesRepositoryBaseline": True,
+            "preserveLastKnownGoodOnSourceFailure": True,
+        },
+    }
 
+    CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    HEALTH_PATH.write_text(json.dumps(health, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    for s in sources:
+        status = "OK" if s["ok"] else "FAIL"
+        print(f"{status:4} {s['id']}: {s.get('error','')}")
+    print(f"Active registry source: {active}")
+    print(f"Repository concession polygons preserved: {len(features)}")
 
 if __name__ == "__main__":
     main()
