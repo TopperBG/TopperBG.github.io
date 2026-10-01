@@ -61,12 +61,14 @@ jobs:
           baseline=json.load(open("map/data/official-concessions-baseline.geojson", encoding="utf-8"))
           pending=json.load(open("map/data/pending-concessions-v1.json", encoding="utf-8"))
           disturbed=json.load(open("map/data/disturbed-mining-sites-v1.geojson", encoding="utf-8"))
+          abandoned=json.load(open("map/data/abandoned-mining-waste-inventory-v1.json", encoding="utf-8"))
           industry_snapshot=json.load(open("map/data/industry-footprints-baseline.geojson", encoding="utf-8"))
           assert cache.get("schema") == "bgwf-industrial-zones-cache-v1"
           assert inventory.get("schema") == "bgwf-concession-inventory-v1"
           assert baseline.get("schema") == "bgwf-official-concessions-baseline-v1"
           assert pending.get("schema") == "bgwf-pending-concessions-v1"
           assert disturbed.get("schema") == "bgwf-disturbed-mining-sites-v1"
+          assert abandoned.get("schema") == "bgwf-abandoned-mining-waste-inventory-v1"
           assert industry_snapshot.get("schema") == "bgwf-industry-footprints-baseline-v1"
           assert int(inventory.get("recordCount",0)) == len(inventory.get("records") or [])
           if inventory.get("recordCount",0) < 50:
@@ -98,6 +100,7 @@ jobs:
           print("Concession polygons preserved:", len(features))
           print("Pending geometry queue:", pending.get("pendingCount",0))
           print("Disturbed/mining polygons archived:", disturbed.get("featureCount",0))
+          print("Official abandoned/mining-waste inventory:", abandoned.get("recordCount",0))
           print("Industry polygons archived:", industry_snapshot.get("featureCount",0))
           print("Active registry source:", health.get("concessions",{}).get("activeRegistrySource"))
           PY
@@ -116,6 +119,7 @@ jobs:
             map/data/industry-footprints-baseline.geojson
             map/data/disturbed-mining-sites-v1.geojson
             map/data/disturbed-mining-sites-pending-v1.json
+            map/data/abandoned-mining-waste-inventory-v1.json
             map/data/source-archive/concessions
           )
 
