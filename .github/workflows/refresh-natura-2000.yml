@@ -3,7 +3,8 @@ name: Refresh Natura 2000
 on:
   workflow_dispatch:
   schedule:
-    - cron: "13 4 1 * *"
+    - cron: "13 7 1 * *"
+      timezone: "Europe/Sofia"
   push:
     paths:
       - "scripts/build-natura-2000.sh"
