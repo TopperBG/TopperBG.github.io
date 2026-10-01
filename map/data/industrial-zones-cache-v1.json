@@ -448,6 +448,66 @@
         "note": "Pernik region; attributes supplemented from NKR"
       }
     ],
-    "sourceDataset": "./concession-boundaries-official-source-v2.json"
+    "sourceDataset": "./concession-boundaries-official-source-v2.json",
+    "geometryCrs": "EPSG:4326",
+    "sourcePolicy": {
+      "primary": "DATA-EGOV-BG",
+      "secondary": "NKR",
+      "tertiary": "ME-CONCESSIONS",
+      "geometry": "repository baseline from official coordinate registers/acts",
+      "runtimeRemoteDependency": false,
+      "lastKnownGood": true,
+      "activeRegistrySource": "ME-CONCESSIONS"
+    },
+    "sourceHealthCheckedAt": "2026-10-01T11:17:01Z",
+    "sourceHealth": [
+      {
+        "id": "DATA-EGOV-BG",
+        "role": "primary",
+        "ok": false,
+        "checkedAt": "2026-10-01T11:15:59Z",
+        "url": "https://data.egov.bg/api",
+        "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
+      },
+      {
+        "id": "NKR",
+        "role": "secondary",
+        "ok": false,
+        "checkedAt": "2026-10-01T11:16:22Z",
+        "url": "https://nkr.government.bg/Concessions/Export?file=csv",
+        "error": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
+      },
+      {
+        "id": "ME-CONCESSIONS",
+        "role": "tertiary",
+        "ok": true,
+        "checkedAt": "2026-10-01T11:16:50Z",
+        "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
+        "bytes": 45894,
+        "digest": "0d6a839bbd7b8b6f0a17c04e96b141f5791013f9d8b0316ff73a8c92d416f0f8"
+      },
+      {
+        "id": "ME-ABANDONED-MINING-WASTE",
+        "role": "historical-disturbed",
+        "ok": true,
+        "checkedAt": "2026-10-01T11:16:55Z",
+        "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
+        "bytes": 51478,
+        "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
+      }
+    ]
+  },
+  "historicalDisturbedMining": {
+    "policy": "retain closed/abandoned mining and mining-waste footprints independently of current concession status",
+    "officialRegister": "ME-ABANDONED-MINING-WASTE",
+    "sourceHealth": {
+      "id": "ME-ABANDONED-MINING-WASTE",
+      "role": "historical-disturbed",
+      "ok": true,
+      "checkedAt": "2026-10-01T11:16:55Z",
+      "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
+      "bytes": 51478,
+      "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
+    }
   }
 }
