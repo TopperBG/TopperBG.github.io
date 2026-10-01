@@ -1,20 +1,21 @@
 {
   "schema": "bgwf-gis-source-health-v1",
-  "checkedAt": "2026-10-01T12:23:15Z",
+  "checkedAt": "2026-10-01T12:30:50Z",
   "concessions": {
     "activeRegistrySource": "NKR",
     "cacheFeatureCount": 2,
-    "inventoryRecordCount": 528,
+    "inventoryRecordCount": 530,
     "baselineFeatureCount": 2,
-    "pendingGeometryCount": 526,
+    "pendingGeometryCount": 528,
     "disturbedMiningFeatureCount": 19,
+    "abandonedMiningWasteInventoryCount": 459,
     "cacheMode": "normal",
     "sources": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-01T12:22:10Z",
+        "checkedAt": "2026-10-01T12:29:46Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -22,7 +23,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-01T12:22:22Z",
+        "checkedAt": "2026-10-01T12:29:58Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
@@ -33,19 +34,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-01T12:23:03Z",
+        "checkedAt": "2026-10-01T12:30:38Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 45894,
-        "digest": "c78ba5b9dafd0eec2366fe1556d562765cb46ecc679066f5510d4c9d74192f71"
+        "digest": "795f79b870a83686129cd2f9c2344b36822f32dcb6dd5a0f10ce1696e79cc1b2"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-01T12:23:09Z",
+        "checkedAt": "2026-10-01T12:30:44Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51478,
-        "digest": "a4ce6afeb7842190f0a52557e64b3dc16bc257c7b5c2acf139ea8f82f27635a0"
+        "digest": "26599bf9905084533f319fc877b4859f47e7918c6f38f5b699532c253f5be33a"
       }
     ]
   },
