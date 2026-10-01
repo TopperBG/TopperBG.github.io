@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-source-manifest-v1",
-  "generatedAt": "2026-08-17T14:35:13.512162+00:00",
-  "mapVersion": "0.88",
+  "generatedAt": "2026-10-01T00:00:00Z",
+  "mapVersion": "0.92g",
   "engine": "OpenLayers 10.10.0",
   "sources": [
     {
@@ -15,7 +15,7 @@
       "kind": "local polygon intersection library",
       "url": "https://github.com/mfogel/polygon-clipping",
       "version": "0.15.7",
-      "localFile": "/data/vendor/polygon-clipping-0.15.7.umd.min.js"
+      "localFile": "/map/data/vendor/polygon-clipping-0.15.7.umd.min.js"
     },
     {
       "id": "EFFIS",
@@ -37,7 +37,7 @@
       "kind": "official Natura 2000 SPA and habitat polygons; local optimized snapshot",
       "url": "https://natura2000.egov.bg/arcgis/rest/services/OpenData/ProtectedSitesOpenData_Feature/FeatureServer",
       "retrievedAt": "2026-09-11T06:06:52Z",
-      "localFile": "/data/natura-2000-bg-v1.json"
+      "localFile": "/map/data/natura-2000-bg-v1.json"
     },
     {
       "id": "SENTINEL3",

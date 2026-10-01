@@ -16,8 +16,8 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 HTML_PATH = ROOT / "map" / "index.html"
-SOLAR_CACHE_PATH = ROOT / "data" / "agkk-built-vei-cache.json"
-WIND_PATH = ROOT / "data" / "wind-turbines-bg.json"
+SOLAR_CACHE_PATH = ROOT / "map" / "data" / "agkk-built-vei-cache.json"
+WIND_PATH = ROOT / "map" / "data" / "wind-turbines-bg.json"
 OUTPUT_PATH = ROOT / "map" / "assets" / "energokarta-preview.jpg"
 
 WIDTH, HEIGHT = 1200, 630

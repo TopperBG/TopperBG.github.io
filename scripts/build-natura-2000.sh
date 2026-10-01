@@ -2,7 +2,7 @@
 set -euo pipefail
 
 service="https://natura2000.egov.bg/arcgis/rest/services/OpenData/ProtectedSitesOpenData_Feature/FeatureServer"
-index_file="${1:-data/natura-2000-bg-v1.json}"
+index_file="${1:-map/data/natura-2000-bg-v1.json}"
 output_dir="$(dirname "$index_file")"
 base_name="$(basename "$index_file" .json)"
 work_dir="$(mktemp -d)"

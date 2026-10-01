@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92f-mobile-header-20260925">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92f</title>
+<meta name="bgwf-build" content="v0.92g-mobile-header-20260925">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92g</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1536,10 +1536,10 @@ svg {
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.10.0/ol.css">
 <script src="https://cdn.jsdelivr.net/npm/ol@10.10.0/dist/ol.js" crossorigin="anonymous"></script>
-<script src="/data/vendor/polygon-clipping-0.15.7.umd.min.js"></script>
+<script src="./data/vendor/polygon-clipping-0.15.7.umd.min.js"></script>
 <script data-map-counter="https://topperbg.goatcounter.com/count"
         data-map-counter-settings='{"path":"/Pozharite-Bulgaria-interactivna-karta.html"}'
-        src="/data/map-visits.js"></script>
+        src="./data/map-visits.js"></script>
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
@@ -1553,7 +1553,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92f</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92g</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -2172,7 +2172,7 @@ svg {
   #bg-wildfires-map.is-filter-collapsed .bgwf-map{height:100%;min-height:560px;max-height:none}
   #bg-wildfires-map .bgwf-detail{left:5px;right:5px;bottom:max(54px,calc(env(safe-area-inset-bottom) + 44px));font-size:10px;line-height:1.25}
 }
-/* v0.92f: second-row tooltips must escape the scrolling filter strip. */
+/* v0.92g: second-row tooltips must escape the scrolling filter strip. */
 #bg-wildfires-map .bgwf-floating-controls .bgwf-layer-controls,
 #bg-wildfires-map .bgwf-layer-row,
 #bg-wildfires-map .bgwf-layer-row-secondary { overflow:visible !important; }
@@ -2194,6 +2194,24 @@ svg {
 #bg-wildfires-map .bgwf-layer-row-secondary .bgwf-layer-toggle[data-layer="industry"]:is(:hover,:focus-visible)::after {
   transform:translateY(0) !important;
 }
+/* v0.92g: one control plane + one tooltip system for every filter/layer control. */
+#bg-wildfires-map .bgwf-mobile-filter-body{position:relative;isolation:isolate;overflow:visible}
+#bg-wildfires-map .bgwf-year-strip,
+#bg-wildfires-map .bgwf-layer-strip,
+#bg-wildfires-map .bgwf-legend,
+#bg-wildfires-map .bgwf-layer-controls,
+#bg-wildfires-map .bgwf-layer-row{position:relative;z-index:1!important}
+#bg-wildfires-map .bgwf-layer-controls{display:block!important;overflow:visible!important}
+#bg-wildfires-map .bgwf-layer-row-all{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:.35rem;width:100%;overflow:visible}
+#bg-wildfires-map [data-help-tooltip]::after{display:none!important}
+.bgwf-control-tooltip{
+  position:fixed;z-index:1000000;max-width:min(380px,calc(100vw - 16px));
+  padding:7px 9px;border:1px solid rgba(255,255,255,.22);border-radius:8px;
+  color:#fff;background:rgba(5,7,10,.985);box-shadow:0 8px 28px rgba(0,0,0,.48);
+  font:600 11px/1.4 -apple-system,system-ui,"Segoe UI",sans-serif;text-align:left;
+  white-space:normal;pointer-events:none;
+}
+.bgwf-control-tooltip[hidden]{display:none!important}
 /* v0.87f: keep map navigation clear of the filter row and map header */
 #bg-wildfires-map .bgwf-zoom-controls {
   position: absolute !important;
@@ -4529,7 +4547,7 @@ satelliteLayer.set('kind','basemap-satellite');
 // Local, controllable place labels. OSM city/town nodes are embedded so labels
 // never depend on a runtime style, sprite, font or tile request.
 const PLACE_LABEL_MIN_SCALE=55;
-const PLACE_LABEL_DATA_URL='/data/bg-place-labels-v0.85i.json';
+const PLACE_LABEL_DATA_URL='./data/bg-place-labels-v0.85i.json';
 const PLACE_LABEL_EXPECTED_COUNT=5911;
 const placeLabelsSource=new VectorSource();
 let placeLabelsLoadState='loading';
@@ -5430,7 +5448,7 @@ function loadRedZones(){redSource.clear();if(!priorityZonesGeoJSON?.features)ret
 loadRedZones();
 
 // ---------- Natura 2000 (official MOEW polygons; lazy local snapshot) ----------
-const NATURA_2000_INDEX_URL='/data/natura-2000-bg-v1.json';
+const NATURA_2000_INDEX_URL='./data/natura-2000-bg-v1.json';
 let naturaLoadState='idle';
 let naturaLoadPromise=null;
 async function ensureNatura2000(){
@@ -5444,7 +5462,7 @@ async function ensureNatura2000(){
       const index=await indexResponse.json();
       if(index?.schema!=='bgwf-natura-2000-index-v1'||!Array.isArray(index.files))throw new Error('невалиден индекс');
       const collections=await Promise.all(index.files.map(async file=>{
-        const response=await fetch(`/data/${encodeURIComponent(file)}`,{cache:'force-cache'});
+        const response=await fetch(`./data/${encodeURIComponent(file)}`,{cache:'force-cache'});
         if(!response.ok)throw new Error(`${file} HTTP ${response.status}`);
         return response.json();
       }));
@@ -5614,7 +5632,7 @@ const cadastralCache=new Map();
 let cadastralLoadStarted=false,cadastralLoadErrors=0;
 let cadastralUnresolved=[];
 let cadastralResolutionStats={exact:0,simplified:0,extent:0,notFound:0,error:0};
-const CADASTRAL_STORAGE_KEY='agkk-geometry';const BUILT_VEI_STATIC_CACHE_URL='./data/agkk-built-vei-cache.json';
+const CADASTRAL_STORAGE_KEY='agkk-geometry';const BUILT_VEI_STATIC_CACHE_URL='../data/agkk-built-vei-cache.json';
 function sanitizeParcelRef(v){return String(v??'').replace(/[^0-9.]/g,'');}
 function readPersistentCadastralCache(){return monthlyStorageRead(CADASTRAL_STORAGE_KEY);}
 function writePersistentCadastralCache(c){monthlyStorageWrite(CADASTRAL_STORAGE_KEY,c);}
@@ -6609,27 +6627,69 @@ function updateLayerStatus(){
   updateDebugLayerCounts();
 }
 function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,foreign:foreignSource.getFeatures().length,foreignOsm:foreignOsmSource.getFeatures().length,red:redSource.getFeatures().length,natura:naturaSource.getFeatures().length,naturaRenewablesOverlap:naturaRenewablesOverlapSource.getFeatures().length,naturaIndustryOverlap:naturaIndustryOverlapSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
-function createButton(parent,{className,text,year=undefined,layer=null,color=null,pressed=false,onClick}){const b=document.createElement('button');b.type='button';b.className=className;b.setAttribute('aria-pressed',String(pressed));if(year===null)b.dataset.year='all';else if(year!==undefined)b.dataset.year=year;if(layer)b.dataset.layer=layer;if(color)b.style.setProperty('--bgwf-filter-color',color);const sw=document.createElement('span');sw.className='bgwf-swatch';b.appendChild(sw);const tx=document.createElement('span');tx.textContent=text;b.appendChild(tx);b.addEventListener('click',onClick);parent.appendChild(b);return b;}
-const legend=root.querySelector('.bgwf-legend'); if(legend){legend.textContent='';createButton(legend,{className:'bgwf-year-filter',text:'Всички',year:null,pressed:allFireYearsSelected(),onClick:()=>setYearFilter(null)});years.forEach(y=>createButton(legend,{className:'bgwf-year-filter',text:String(y),year:String(y),color:yearColors.get(y),pressed:fireYearSelected(y),onClick:()=>setYearFilter(y)}));const liveBtn=createButton(legend,{className:'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle',text:'Sentinel',layer:'live',color:'#ff1717',pressed:layerVisibility.live,onClick:async function(){layerVisibility.live=!layerVisibility.live;this.setAttribute('aria-pressed',String(layerVisibility.live));if(layerVisibility.live&&(liveFireLoadState==='idle'||liveFireLoadState==='error'))await loadLiveSentinelFires();updateLiveVisibility();updateLayerStatus();scheduleUrlSync();}});const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';legend.appendChild(iskra);const search=root.querySelector('[data-map-search]');if(search)legend.appendChild(search);}
-const controls=root.querySelector('.bgwf-layer-controls');if(controls){controls.textContent='';
-const primaryRow=document.createElement('div');primaryRow.className='bgwf-layer-row bgwf-layer-row-primary';primaryRow.setAttribute('aria-label','Основни тематични слоеве');controls.appendChild(primaryRow);
-const secondaryRow=document.createElement('div');secondaryRow.className='bgwf-layer-row bgwf-layer-row-secondary';secondaryRow.setAttribute('aria-label','Сателитни, природни и инфраструктурни слоеве');controls.appendChild(secondaryRow);
-const satBtn=createButton(secondaryRow,{
-  className:'bgwf-layer-toggle',
-  text:'SAT',
-  layer:'satellite',
-  color:'#64748b',
-  pressed:urlParams.get('map')==='sat',
-  onClick:function(){
-    const next=!satelliteLayer.getVisible();
-    satelliteLayer.setVisible(next);
-    this.setAttribute('aria-pressed',String(next));
-    refreshSatelliteOverlayStyles();
-    updateLayerStatus();
-    scheduleUrlSync();
-  }
-});
-satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
+function setControlHelp(el,text){
+  if(!el||!text)return el;
+  el.dataset.helpTooltip=text;
+  el.removeAttribute('title');
+  el.setAttribute('aria-description',text);
+  return el;
+}
+function createButton(parent,{className,text,year=undefined,layer=null,color=null,pressed=false,help='',onClick}){
+  const b=document.createElement('button');b.type='button';b.className=className;b.setAttribute('aria-pressed',String(pressed));
+  if(year===null)b.dataset.year='all';else if(year!==undefined)b.dataset.year=year;
+  if(layer)b.dataset.layer=layer;if(color)b.style.setProperty('--bgwf-filter-color',color);
+  const sw=document.createElement('span');sw.className='bgwf-swatch';b.appendChild(sw);
+  const tx=document.createElement('span');tx.textContent=text;b.appendChild(tx);
+  if(help)setControlHelp(b,help);
+  b.addEventListener('click',onClick);parent.appendChild(b);return b;
+}
+function installUnifiedControlTooltip(){
+  let tip=document.querySelector('.bgwf-control-tooltip');
+  if(!tip){tip=document.createElement('div');tip.className='bgwf-control-tooltip';tip.hidden=true;tip.setAttribute('role','tooltip');document.body.appendChild(tip);}
+  let active=null;
+  const hide=()=>{active=null;tip.hidden=true;};
+  const show=el=>{
+    if(!el?.dataset?.helpTooltip)return hide();
+    active=el;tip.textContent=el.dataset.helpTooltip;tip.hidden=false;tip.style.left='0px';tip.style.top='0px';
+    requestAnimationFrame(()=>{
+      if(active!==el||tip.hidden)return;
+      const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight,cx=r.left+r.width/2;
+      const left=Math.max(8,Math.min(window.innerWidth-w-8,cx-w/2));
+      const top=r.top>h+14?r.top-h-8:Math.min(window.innerHeight-h-8,r.bottom+8);
+      tip.style.left=`${Math.round(left)}px`;tip.style.top=`${Math.round(Math.max(8,top))}px`;
+    });
+  };
+  root.addEventListener('pointerover',e=>{const el=e.target.closest?.('[data-help-tooltip]');if(el&&root.contains(el))show(el);});
+  root.addEventListener('pointerout',e=>{const from=e.target.closest?.('[data-help-tooltip]');if(from&&!from.contains(e.relatedTarget))hide();});
+  root.addEventListener('focusin',e=>{const el=e.target.closest?.('[data-help-tooltip]');if(el)show(el);});
+  root.addEventListener('focusout',e=>{if(e.target.closest?.('[data-help-tooltip]'))hide();});
+  window.addEventListener('scroll',hide,true);window.addEventListener('resize',hide);
+}
+installUnifiedControlTooltip();
+setControlHelp(root.querySelector('[data-compact-info]'),'Info — отваря методологията, използваните източници и поясненията към картата.');
+
+const legend=root.querySelector('.bgwf-legend');
+if(legend){
+  legend.textContent='';
+  createButton(legend,{className:'bgwf-year-filter',text:'Всички',year:null,pressed:allFireYearsSelected(),help:'Всички пожари — показва историческите пожари от всички налични години.',onClick:()=>setYearFilter(null)});
+  years.forEach(y=>createButton(legend,{className:'bgwf-year-filter',text:String(y),year:String(y),color:yearColors.get(y),pressed:fireYearSelected(y),help:`Пожари ${y} — включва или изключва историческите пожари за ${y} г.`,onClick:()=>setYearFilter(y)}));
+  createButton(legend,{className:'bgwf-year-filter bgwf-layer-toggle bgwf-live-year-toggle',text:'Sentinel-3',layer:'live',color:'#ff1717',pressed:layerVisibility.live,help:'Sentinel-3 — текущи/скорошни термални засичания от SLSTR/EUMETSAT. Засичането е индикация, а не само по себе си потвърден пожар.',onClick:async function(){layerVisibility.live=!layerVisibility.live;this.setAttribute('aria-pressed',String(layerVisibility.live));if(layerVisibility.live&&(liveFireLoadState==='idle'||liveFireLoadState==='error'))await loadLiveSentinelFires();updateLiveVisibility();updateLayerStatus();scheduleUrlSync();}});
+  const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';
+  setControlHelp(iskra,'ИСКРА — оперативна система/карта за справка за пожари. Отваря външния източник в нов раздел.');
+  legend.appendChild(iskra);
+  const search=root.querySelector('[data-map-search]');if(search)legend.appendChild(search);
+}
+const controls=root.querySelector('.bgwf-layer-controls');
+let layerRow=null;
+if(controls){
+  controls.textContent='';
+  layerRow=document.createElement('div');layerRow.className='bgwf-layer-row bgwf-layer-row-all';layerRow.setAttribute('aria-label','Тематични слоеве');controls.appendChild(layerRow);
+  createButton(layerRow,{className:'bgwf-layer-toggle',text:'SAT',layer:'satellite',color:'#64748b',pressed:urlParams.get('map')==='sat',
+    help:'SAT — сателитна базова карта (World Imagery), върху която се наслагват тематичните слоеве.',
+    onClick:function(){const next=!satelliteLayer.getVisible();satelliteLayer.setVisible(next);this.setAttribute('aria-pressed',String(next));refreshSatelliteOverlayStyles();updateLayerStatus();scheduleUrlSync();}
+  });
+  satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
+}
 
 const NSI_DISTURBED_LAND_2025={
   sqKm:467.76,
@@ -6699,13 +6759,42 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
   updateTerritoryScaleBars();
 }));
 
-const configs=[['solar','ФЕЦ','#f59e0b'],['wind','ВяЕЦ','#0891b2'],['projects','Проектни ВЕИ','#2563eb'],['future','RED III','#2f9e44'],['foreign','Foreign','#db2777'],['natura','Натура 2000','#0f766e'],['epm','HV','#e11d48'],['industry','ТЕЦ/мини','#4b5563']];configs.forEach(([key,label,color])=>{
-  const btn=createButton(['natura','epm','industry'].includes(key)?secondaryRow:primaryRow,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],onClick:async function(){layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));if(key==='solar')solarLayer.setVisible(layerVisibility.solar);if(key==='wind')windLayer.setVisible(layerVisibility.wind);if(key==='projects')projectLayer.setVisible(layerVisibility.projects);if(key==='future')redLayer.setVisible(layerVisibility.future);if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}if(key==='industry'){industryLayer.setVisible(layerVisibility.industry);
-if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
-concessionEstimateLayer.setVisible(layerVisibility.industry);
-concessionLayer.setVisible(layerVisibility.industry);
-rebuildEstimatedConcessionAreas();
-if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints(),0);if(layerVisibility.industry)void Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);}updateLayerStatus();updateTerritoryScaleBars();scheduleNaturaOverlapUpdate();scheduleUrlSync();}});
+const configs=[
+  ['solar','ФЕЦ','#f59e0b','ФЕЦ — фотоволтаична електрическа централа. Показва проверените изградени соларни електроцентрали.'],
+  ['wind','ВяЕЦ','#0891b2','ВяЕЦ — вятърна електрическа централа. Показва нанесените вятърни турбини и ветропаркове.'],
+  ['projects','Проектни ВЕИ','#2563eb','Проектни ВЕИ — планирани или процедирани възобновяеми енергийни проекти по налични ПУП/ПИ и официални документи.'],
+  ['future','RED III','#2f9e44','RED III — приоритетни зони по Директивата за възобновяема енергия. Приоритетна зона ≠ одобрен проект ≠ засегнат имот ≠ отчуждена земя.'],
+  ['foreign','Foreign','#db2777','Foreign — големи ВЕИ проекти в съседни държави, основно над 50 MW; използват се реални полигони, когато са налични.'],
+  ['natura','Натура 2000','#0f766e','Натура 2000 — официални защитени зони за птици и местообитания по данни на МОСВ.'],
+  ['epm','HV','#e11d48','HV — High Voltage / високоволтова електропреносна мрежа. Показва индикативни OSM трасета 110/220/400 kV; свободният капацитет се потвърждава отделно.'],
+  ['industry','ТЕЦ/мини','#4b5563',`ТЕЦ/мини — топлоелектрически централи, мини, кариери, хвостохранилища, разработени площи и налични концесионни граници. НСИ: нарушена територия ${NSI_DISTURBED_LAND_2025.dka.toLocaleString('bg-BG')} дка към ${NSI_DISTURBED_LAND_2025.asOf}.`]
+];
+if(layerRow)configs.forEach(([key,label,color,help])=>{
+  createButton(layerRow,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],help,onClick:async function(){
+    layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));
+    if(key==='solar')solarLayer.setVisible(layerVisibility.solar);
+    if(key==='wind')windLayer.setVisible(layerVisibility.wind);
+    if(key==='projects')projectLayer.setVisible(layerVisibility.projects);
+    if(key==='future')redLayer.setVisible(layerVisibility.future);
+    if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}
+    if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}
+    if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}
+    if(key==='industry'){
+      industryLayer.setVisible(layerVisibility.industry);if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
+      concessionEstimateLayer.setVisible(layerVisibility.industry);concessionLayer.setVisible(layerVisibility.industry);rebuildEstimatedConcessionAreas();
+      if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints(),0);
+      if(layerVisibility.industry)void Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
+    }
+    updateLayerStatus();updateTerritoryScaleBars();scheduleNaturaOverlapUpdate();scheduleUrlSync();
+  }});
+});
+if(layerRow){
+  const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';layerRow.appendChild(hint);
+  const infoButton=document.createElement('button');infoButton.type='button';infoButton.className='bgwf-info-button';infoButton.textContent='Info';
+  infoButton.setAttribute('aria-label','Отвори Методология');setControlHelp(infoButton,'Info — отваря методологията, източниците и поясненията към данните.');
+  infoButton.addEventListener('click',openAndFocusMethods);layerRow.appendChild(infoButton);updateIndustryLegendHint();
+}
+updateTerritoryScaleBars();scheduleNaturaOverlapUpdate();scheduleUrlSync();}});
   if(key==='future'){
     const msg='Важно: приоритетна зона ≠ одобрен ВЕИ проект ≠ засегнат имот ≠ отчуждена земя';
     btn.dataset.helpTooltip=msg;
@@ -6955,7 +7044,7 @@ function sourceExtentSane(source){const e=source.getExtent();return e.every(Numb
 function runSelfTests(){
   debugState.selfTests=[];
   selfTest('place-labels-local-vector',()=>({ok:placeLabelsLayer.getSource()===placeLabelsSource&&((placeLabelsLoadState==='loading')||(placeLabelsLoadState==='ready'&&placeLabelsSource.getFeatures().length===PLACE_LABEL_EXPECTED_COUNT)),type:'static-local-vector',state:placeLabelsLoadState,places:placeLabelsSource.getFeatures().length,expected:PLACE_LABEL_EXPECTED_COUNT,minScale:PLACE_LABEL_MIN_SCALE}));
-  selfTest('vei-static-cache-url',()=>({ok:BUILT_VEI_STATIC_CACHE_URL==='/data/agkk-built-vei-cache.json',url:BUILT_VEI_STATIC_CACHE_URL}));
+  selfTest('vei-static-cache-url',()=>({ok:BUILT_VEI_STATIC_CACHE_URL==='./data/agkk-built-vei-cache.json',url:BUILT_VEI_STATIC_CACHE_URL}));
   selfTest('vei-source-layers',()=>({ok:!!solarSource&&!!projectSource,solar:!!solarSource,projects:!!projectSource}));
   selfTest('vei-registry-rows',()=>({ok:operatingSolarProjects.length>0&&cadastralProjects.length>0,solarProjects:operatingSolarProjects.length,plannedProjects:cadastralProjects.length}));
   selfTest('kevr-2022-2026-missing-projects-added',()=>{const ids=['RES-037','RES-038','RES-039','RES-040','RES-041','RES-042','RES-043','RES-044','RES-045','RES-046','RES-047','RES-048','RES-049','RES-050'],missing=ids.filter(id=>!cadastralProjects.some(p=>p.id===id));return{ok:missing.length===0&&cadastralProjects.length===48,added:ids.length,missing,total:cadastralProjects.length};});
@@ -7020,7 +7109,7 @@ function runSelfTests(){
   selfTest('url-layer-state',()=>({ok:['solar','wind','projects','future','natura','industry','foreign','epm','live'].every(k=>typeof layerVisibility[k]==='boolean'),state:{...layerVisibility}}));
   selfTest('layer-visibility-parity',()=>({ok:solarLayer.getVisible()===layerVisibility.solar&&windLayer.getVisible()===layerVisibility.wind&&foreignLayer.getVisible()===layerVisibility.foreign&&foreignOsmLayer.getVisible()===layerVisibility.foreign&&epmLayer.getVisible()===layerVisibility.epm&&projectLayer.getVisible()===layerVisibility.projects&&redLayer.getVisible()===layerVisibility.future&&naturaLayer.getVisible()===layerVisibility.natura&&industryLayer.getVisible()===layerVisibility.industry&&concessionLayer.getVisible()===layerVisibility.industry,actual:{solar:solarLayer.getVisible(),wind:windLayer.getVisible(),foreign:foreignLayer.getVisible(),foreignOsm:foreignOsmLayer.getVisible(),epm:epmLayer.getVisible(),projects:projectLayer.getVisible(),red:redLayer.getVisible(),natura:naturaLayer.getVisible(),industry:industryLayer.getVisible(),concession:concessionLayer.getVisible()},state:{...layerVisibility}}));
   selfTest('epm-local-layer',()=>({ok:!!epmLayer&&EPM_DATA_URLS.length===3&&EPM_DATA_URLS.every(url=>url.startsWith('./data/'))&&(!layerVisibility.epm||['loading','ready'].includes(epmLoadState)),state:epmLoadState,features:epmSource.getFeatures().length,urls:EPM_DATA_URLS}));
-  selfTest('natura-lazy-layer',()=>({ok:!!naturaLayer&&!!naturaSource&&NATURA_2000_INDEX_URL==='/data/natura-2000-bg-v1.json'&&(!layerVisibility.natura||['loading','ready'].includes(naturaLoadState)),state:naturaLoadState,features:naturaSource.getFeatures().length,url:NATURA_2000_INDEX_URL}));
+  selfTest('natura-lazy-layer',()=>({ok:!!naturaLayer&&!!naturaSource&&NATURA_2000_INDEX_URL==='./data/natura-2000-bg-v1.json'&&(!layerVisibility.natura||['loading','ready'].includes(naturaLoadState)),state:naturaLoadState,features:naturaSource.getFeatures().length,url:NATURA_2000_INDEX_URL}));
   selfTest('natura-local-intersection-engine',()=>({ok:typeof window.polygonClipping?.intersection==='function'&&typeof window.polygonClipping?.union==='function'&&!!naturaRenewablesOverlapLayer&&!!naturaIndustryOverlapLayer,engine:'polygon-clipping 0.15.7',renewables:naturaRenewablesOverlapSource.getFeatures().length,industry:naturaIndustryOverlapSource.getFeatures().length}));
   selfTest('url-scale',()=>({ok:currentScale()>=.5&&currentScale()<=600,scale:Number(currentScale().toFixed(3))}));
   selfTest('map-size',()=>{const size=map.getSize();return{ok:!!size&&size[0]>200&&size[1]>200,size};});
