@@ -29,6 +29,15 @@ const CACHE_PATH = path.join(ROOT, "map", "data", "industrial-zones-cache-v1.jso
 
 const source = JSON.parse(fs.readFileSync(SOURCE_PATH, "utf8"));
 const cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+
+// transformations@2.0.0 resolves its binary grids from process.cwd() rather
+// than from the package directory. Run the transformation phase from the
+// package root while keeping all project file paths absolute.
+const TRANSFORM_PACKAGE_ROOT = path.resolve(
+  path.dirname(fileURLToPath(import.meta.resolve("transformations/src/main.js"))),
+  ".."
+);
+process.chdir(TRANSFORM_PACKAGE_ROOT);
 const bgs = new BGSCoordinates();
 
 function projectionFor(record) {
