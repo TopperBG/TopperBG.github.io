@@ -1,0 +1,167 @@
+{
+  "schema": "bgwf-concession-inventory-v1",
+  "generatedAt": "2026-10-01T12:15:09Z",
+  "mode": "refreshed",
+  "scope": "Bulgaria; mining/extraction concessions plus curated historical official records",
+  "recordCount": 5,
+  "stats": {
+    "activeStatusRecords": 0,
+    "withConcessionId": 4,
+    "withAreaDka": 3
+  },
+  "runtimeDependency": false,
+  "updatePolicy": {
+    "onlineSourcesAreRefreshInputsOnly": true,
+    "neverReplaceNonEmptyInventoryWithFailedOrEmptyFetch": true,
+    "rawOfficialSnapshotsArchivedInRepository": true
+  },
+  "sourceRuns": [
+    {
+      "id": "ME-CONCESSIONS-XLS",
+      "ok": false,
+      "url": "https://www.me.government.bg/bg/themes/uploads/manager/source/NGS/koncesii_public.xls",
+      "error": "unexpectedly small XLS (0 bytes)"
+    },
+    {
+      "id": "NKR",
+      "ok": false,
+      "url": "https://nkr.government.bg/Concessions/Export?file=csv",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "id": "ME-CONCESSIONS-PAGE",
+      "ok": true,
+      "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
+      "bytes": 45894,
+      "sha256": "70bd4a14ba0c7b5400b0f4f9da6547c0e94fcf272d49eeeebc1047c919172315"
+    },
+    {
+      "id": "ME-ABANDONED-MINING-WASTE",
+      "ok": true,
+      "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
+      "bytes": 51478,
+      "sha256": "e298b2bbd4b07d12021532abe86f5647ce4db1bb54f818eec0947ad7c2c81653"
+    }
+  ],
+  "records": [
+    {
+      "id": "D-000016",
+      "concessionId": "D-000016",
+      "name": "Асарел — обща концесионна граница по Решение №684/13.09.2011",
+      "concessionaire": null,
+      "resource": null,
+      "municipality": null,
+      "province": null,
+      "status": "curated-official-source-register",
+      "contractDate": null,
+      "endDate": null,
+      "areaDka": 17356.4,
+      "source": "REPOSITORY-CURATED-OFFICIAL",
+      "geometrySourceStatus": "source_register_complete__40_of_40__pending_BGSTRans_verification",
+      "officialSource": {
+        "publisher": "Държавен вестник",
+        "title": "Решение №684 от 13 септември 2011 г.",
+        "url": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766"
+      },
+      "raw": null,
+      "sources": [
+        "REPOSITORY-CURATED-OFFICIAL"
+      ]
+    },
+    {
+      "id": "MINE-BOBOV-DOL",
+      "concessionId": null,
+      "name": "Бобовдолски въглищен басейн — основни действащи партиди",
+      "concessionaire": null,
+      "resource": null,
+      "municipality": null,
+      "province": null,
+      "status": "curated-official-source-register",
+      "contractDate": null,
+      "endDate": null,
+      "areaDka": null,
+      "source": "REPOSITORY-CURATED-OFFICIAL",
+      "geometrySourceStatus": "NKR_parties_identified__coordinate_registers_pending_extraction",
+      "officialSource": {},
+      "raw": null,
+      "sources": [
+        "REPOSITORY-CURATED-OFFICIAL"
+      ]
+    },
+    {
+      "id": "D-000074",
+      "concessionId": "D-000074",
+      "name": "Елаците",
+      "concessionaire": null,
+      "resource": null,
+      "municipality": null,
+      "province": null,
+      "status": "curated-official-source-register",
+      "contractDate": null,
+      "endDate": null,
+      "areaDka": 21821.8,
+      "source": "REPOSITORY-CURATED-OFFICIAL",
+      "geometrySourceStatus": "official_BGS2005_register_confirmed__395_points__attachment_download_required",
+      "officialSource": {
+        "publisher": "Национален концесионен регистър",
+        "concession_url": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/7869ab1d-867a-4d1f-99e6-7c19cfabcd4b",
+        "current_info_url": "https://nkr.government.bg/Preview/AssignedConcession/b9c56ff0-3e50-4bf7-a545-25a3877ec47d",
+        "amendment_url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/b9c56ff0-3e50-4bf7-a545-25a3877ec47d",
+        "attachment_other_document": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
+        "attachment_additional_agreement": "https://nkr.government.bg/File/Download/92e8889d-4785-45de-8ca4-70267f0d0bec"
+      },
+      "raw": null,
+      "sources": [
+        "REPOSITORY-CURATED-OFFICIAL"
+      ]
+    },
+    {
+      "id": "D-000610",
+      "concessionId": "D-000610",
+      "name": "Хан Крум / Ада тепе — концесионна площ",
+      "concessionaire": null,
+      "resource": null,
+      "municipality": null,
+      "province": null,
+      "status": "curated-official-source-register",
+      "contractDate": null,
+      "endDate": null,
+      "areaDka": 13700.0,
+      "source": "REPOSITORY-CURATED-OFFICIAL",
+      "geometrySourceStatus": "source_register_complete__14_of_14__pending_BGSTRans_verification",
+      "officialSource": {
+        "publisher": "Държавен вестник / Министерски съвет",
+        "title": "Решение №87 от 11 февруари 2011 г.",
+        "url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-"
+      },
+      "raw": null,
+      "sources": [
+        "REPOSITORY-CURATED-OFFICIAL"
+      ]
+    },
+    {
+      "id": "D-000034",
+      "concessionId": "D-000034",
+      "name": "Челопеч",
+      "concessionaire": null,
+      "resource": null,
+      "municipality": null,
+      "province": null,
+      "status": "curated-official-source-register",
+      "contractDate": null,
+      "endDate": null,
+      "areaDka": null,
+      "source": "REPOSITORY-CURATED-OFFICIAL",
+      "geometrySourceStatus": "register_structure_confirmed__15_plus_62_points__numeric_attachment_not_extracted",
+      "officialSource": {
+        "publisher": "Национален концесионен регистър / Министерски съвет",
+        "nkr_url": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/912f6df6-44b6-4bcc-be6a-1479cd2bee19",
+        "decision_url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/-12828671/issue/2417/reshenie-%E2%84%96-147-ot-26-mart-1999-g-za-predostavyane-na-kontsesiya-za-podzemni-bogatstva---zlatno-medno-piritni-rudi-chrez-dobiv-ot-nahodishte-"
+      },
+      "raw": null,
+      "sources": [
+        "REPOSITORY-CURATED-OFFICIAL"
+      ]
+    }
+  ]
+}

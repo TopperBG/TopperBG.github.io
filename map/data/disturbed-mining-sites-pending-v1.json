@@ -1,0 +1,107 @@
+{
+  "schema": "bgwf-disturbed-mining-pending-v1",
+  "generatedAt": "2026-10-01T12:15:10Z",
+  "pendingCount": 9,
+  "remoteErrors": [],
+  "pending": [
+    {
+      "parentId": "TPP-ME2",
+      "name": "Обединени северни насипища",
+      "component": "насипище/депо",
+      "geometryStatus": "verified-facility-pending-vector",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "Сгуроотвал на ТЕЦ „Марица изток 2“",
+      "component": "сгуроотвал",
+      "geometryStatus": "verified-facility-pending-vector",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "TPP-ME3",
+      "name": "Сгуроотвал „Искрица“",
+      "component": "сгуроотвал",
+      "geometryStatus": "verified-facility-pending-vector",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Бенковски 2“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "MINE-CHELOPECH",
+      "name": "Хвостохранилище „Челопеч“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "MINE-BOBOV-DOL",
+      "name": "Свързани насипища/депа",
+      "component": "минен отпадък",
+      "geometryStatus": "pending-curation",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "МОК „Медет“ — нарушена/унищожена територия",
+      "component": "исторически минен комплекс",
+      "geometryStatus": "verified-area-circle",
+      "osmKey": null,
+      "areaDka": 6000,
+      "lon": 24.18718,
+      "lat": 42.60117,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "Хвостохранилище „Медет“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "Насипища на рудник „Медет“",
+      "component": "насипища",
+      "geometryStatus": "official-coordinates-pending-geojson",
+      "osmKey": null,
+      "areaDka": null,
+      "lon": null,
+      "lat": null,
+      "reason": "exact_polygon_not_archived"
+    }
+  ]
+}

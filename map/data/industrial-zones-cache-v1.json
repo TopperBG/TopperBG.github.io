@@ -385,7 +385,7 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-01T11:27:08Z",
+    "generatedAt": "2026-10-01T12:15:09Z",
     "featureCount": 2,
     "features": [
       {
@@ -665,16 +665,6 @@
     ],
     "pending": [
       {
-        "id": "MINE-CHELOPECH",
-        "concessionId": "D-000034",
-        "name": "Челопеч",
-        "officialAreaDka": null,
-        "sourceCrs": "КС 1970",
-        "sourcePoints": null,
-        "status": "register_structure_confirmed__15_plus_62_points__numeric_attachment_not_extracted",
-        "sourceUrl": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/-12828671/issue/2417/reshenie-%E2%84%96-147-ot-26-mart-1999-g-za-predostavyane-na-kontsesiya-za-podzemni-bogatstva---zlatno-medno-piritni-rudi-chrez-dobiv-ot-nahodishte-"
-      },
-      {
         "id": "MINE-ELATSITE",
         "concessionId": "D-000074",
         "name": "Елаците",
@@ -682,7 +672,15 @@
         "sourceCrs": "БГС2005, кадастрални координати",
         "sourcePoints": 395,
         "status": "official_BGS2005_register_confirmed__395_points__attachment_download_required",
-        "sourceUrl": "https://nkr.government.bg/Preview/AssignedConcession/b9c56ff0-3e50-4bf7-a545-25a3877ec47d"
+        "sourceUrl": "https://nkr.government.bg/Preview/AssignedConcession/b9c56ff0-3e50-4bf7-a545-25a3877ec47d",
+        "queueSource": "curated-official-register",
+        "inventoryStatus": "curated-official-source-register",
+        "concessionaire": null,
+        "resource": null,
+        "municipality": null,
+        "province": null,
+        "inventoryAreaDka": 21821.8,
+        "priority": 1
       },
       {
         "id": "MINE-BOBOV-DOL",
@@ -692,7 +690,33 @@
         "sourceCrs": "various / not yet extracted",
         "sourcePoints": null,
         "status": "NKR_parties_identified__coordinate_registers_pending_extraction",
-        "sourceUrl": null
+        "sourceUrl": null,
+        "queueSource": "curated-official-register",
+        "inventoryStatus": "curated-official-source-register",
+        "concessionaire": null,
+        "resource": null,
+        "municipality": null,
+        "province": null,
+        "inventoryAreaDka": null,
+        "priority": 2
+      },
+      {
+        "id": "MINE-CHELOPECH",
+        "concessionId": "D-000034",
+        "name": "Челопеч",
+        "officialAreaDka": null,
+        "sourceCrs": "КС 1970",
+        "sourcePoints": null,
+        "status": "register_structure_confirmed__15_plus_62_points__numeric_attachment_not_extracted",
+        "sourceUrl": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/-12828671/issue/2417/reshenie-%E2%84%96-147-ot-26-mart-1999-g-za-predostavyane-na-kontsesiya-za-podzemni-bogatstva---zlatno-medno-piritni-rudi-chrez-dobiv-ot-nahodishte-",
+        "queueSource": "curated-official-register",
+        "inventoryStatus": "curated-official-source-register",
+        "concessionaire": null,
+        "resource": null,
+        "municipality": null,
+        "province": null,
+        "inventoryAreaDka": null,
+        "priority": 2
       }
     ],
     "remoteSources": [
@@ -741,43 +765,46 @@
       "geometry": "repository baseline from official coordinate registers/acts",
       "runtimeRemoteDependency": false,
       "lastKnownGood": true,
-      "activeRegistrySource": "ME-CONCESSIONS"
+      "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-01T11:30:20Z",
+    "sourceHealthCheckedAt": "2026-10-01T12:16:08Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:29:25Z",
+        "checkedAt": "2026-10-01T12:15:10Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
       {
         "id": "NKR",
         "role": "secondary",
-        "ok": false,
-        "checkedAt": "2026-10-01T11:29:42Z",
-        "url": "https://nkr.government.bg/Concessions/Export?file=csv",
-        "error": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
+        "ok": true,
+        "checkedAt": "2026-10-01T12:15:21Z",
+        "url": "https://nkr.government.bg/Concessions",
+        "mode": "html-registry-fallback",
+        "bytes": 19734,
+        "digest": "df9d193b599d41ec760603e7cefdaae7a40ab3156df67bf46e68bb8f67512dfa",
+        "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-01T11:30:09Z",
+        "checkedAt": "2026-10-01T12:15:57Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 45894,
-        "digest": "0d2fd1a8b8b3921efcd166a72ff5f3cb00329329b0a3d4bb17c31444d592bd62"
+        "digest": "2b1c4799a7492375c56dd55f1b06ebc9eb31f44817d11c961d68d317aeac2b37"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-01T11:30:15Z",
+        "checkedAt": "2026-10-01T12:16:02Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51478,
-        "digest": "a37a209fc6f6ef6590c957457cf30be615d761bbdfb62d0b109a47279bd373b0"
+        "digest": "9d7f42ef9f1249c0be4ccdd008addf7a48fbedfe181a97cd48ed5337d4670dd1"
       }
     ],
     "coverage": {
@@ -788,7 +815,8 @@
       "includesAbandonedMiningWasteFacilities": true,
       "note": "Legal concession boundary and developed/disturbed footprint are separate geometries.",
       "publishedOfficialRegisterPolygons": 2,
-      "pendingOfficialRecords": 3
+      "pendingOfficialRecords": 3,
+      "inventoryRecordCount": 5
     },
     "baselineBuilder": {
       "id": "official-coordinate-registers-v1",
@@ -804,14 +832,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-01T11:30:15Z",
+      "checkedAt": "2026-10-01T12:16:02Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51478,
-      "digest": "a37a209fc6f6ef6590c957457cf30be615d761bbdfb62d0b109a47279bd373b0"
+      "digest": "9d7f42ef9f1249c0be4ccdd008addf7a48fbedfe181a97cd48ed5337d4670dd1"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-01T11:27:08Z"
+    "concessionsBaseline": "2026-10-01T12:15:09Z"
   }
 }

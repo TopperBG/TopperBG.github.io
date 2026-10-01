@@ -1,44 +1,51 @@
 {
   "schema": "bgwf-gis-source-health-v1",
-  "checkedAt": "2026-10-01T11:30:20Z",
+  "checkedAt": "2026-10-01T12:16:08Z",
   "concessions": {
-    "activeRegistrySource": "ME-CONCESSIONS",
+    "activeRegistrySource": "NKR",
     "cacheFeatureCount": 2,
+    "inventoryRecordCount": 5,
+    "baselineFeatureCount": 2,
+    "pendingGeometryCount": 3,
+    "disturbedMiningFeatureCount": 19,
     "cacheMode": "normal",
     "sources": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:29:25Z",
+        "checkedAt": "2026-10-01T12:15:10Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
       {
         "id": "NKR",
         "role": "secondary",
-        "ok": false,
-        "checkedAt": "2026-10-01T11:29:42Z",
-        "url": "https://nkr.government.bg/Concessions/Export?file=csv",
-        "error": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
+        "ok": true,
+        "checkedAt": "2026-10-01T12:15:21Z",
+        "url": "https://nkr.government.bg/Concessions",
+        "mode": "html-registry-fallback",
+        "bytes": 19734,
+        "digest": "df9d193b599d41ec760603e7cefdaae7a40ab3156df67bf46e68bb8f67512dfa",
+        "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-01T11:30:09Z",
+        "checkedAt": "2026-10-01T12:15:57Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 45894,
-        "digest": "0d2fd1a8b8b3921efcd166a72ff5f3cb00329329b0a3d4bb17c31444d592bd62"
+        "digest": "2b1c4799a7492375c56dd55f1b06ebc9eb31f44817d11c961d68d317aeac2b37"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-01T11:30:15Z",
+        "checkedAt": "2026-10-01T12:16:02Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51478,
-        "digest": "a37a209fc6f6ef6590c957457cf30be615d761bbdfb62d0b109a47279bd373b0"
+        "digest": "9d7f42ef9f1249c0be4ccdd008addf7a48fbedfe181a97cd48ed5337d4670dd1"
       }
     ]
   },
