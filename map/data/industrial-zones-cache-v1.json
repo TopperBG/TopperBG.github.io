@@ -385,58 +385,59 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-08-17T12:39:40+00:00",
+    "generatedAt": "2026-10-01T11:23:54Z",
     "featureCount": 0,
     "features": [],
     "pending": [
       {
         "id": "MINE-ASAREL",
         "concessionId": "D-000016",
-        "name": "Асарел",
+        "name": "Асарел — обща концесионна граница по Решение №684/13.09.2011",
         "officialAreaDka": 17356.4,
+        "sourceCrs": "КС 1970",
         "sourcePoints": 40,
-        "sourceCrs": "KS1970",
-        "zoneInference": "K9",
-        "status": "source_register_complete_pending_BGSTRans",
-        "officialAreaSource": "РМС №684/13.09.2011, т.16.2"
+        "status": "transformation_failed: ENOENT: no such file or directory, open './src/grids/BGS_1970_K9_to_BGS_2005_KK.bcsg'",
+        "sourceUrl": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766"
       },
       {
-        "id": "MINE-HAN-KRUM",
-        "concessionId": "D-000610",
-        "name": "Хан Крум / Ада тепе",
-        "officialAreaDka": 13700,
-        "sourcePoints": 14,
-        "sourceCrs": "KS1970",
-        "zoneInference": "K5",
-        "status": "source_register_complete_pending_BGSTRans",
-        "officialAreaSource": "РМС №87/11.02.2011"
+        "id": "MINE-CHELOPECH",
+        "concessionId": "D-000034",
+        "name": "Челопеч",
+        "officialAreaDka": null,
+        "sourceCrs": "КС 1970",
+        "sourcePoints": null,
+        "status": "register_structure_confirmed__15_plus_62_points__numeric_attachment_not_extracted",
+        "sourceUrl": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/-12828671/issue/2417/reshenie-%E2%84%96-147-ot-26-mart-1999-g-za-predostavyane-na-kontsesiya-za-podzemni-bogatstva---zlatno-medno-piritni-rudi-chrez-dobiv-ot-nahodishte-"
       },
       {
         "id": "MINE-ELATSITE",
         "concessionId": "D-000074",
         "name": "Елаците",
         "officialAreaDka": 21821.8,
+        "sourceCrs": "БГС2005, кадастрални координати",
         "sourcePoints": 395,
-        "sourceCrs": "BGS2005 cadastral",
-        "status": "official_attachment_pending_download",
-        "attachment": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
-        "officialAreaSource": "НКР D-000074, изменение 26.03.2025"
+        "status": "official_BGS2005_register_confirmed__395_points__attachment_download_required",
+        "sourceUrl": "https://nkr.government.bg/Preview/AssignedConcession/b9c56ff0-3e50-4bf7-a545-25a3877ec47d"
       },
       {
-        "id": "MINE-CHELOPECH",
-        "concessionId": "D-000034",
-        "name": "Челопеч",
-        "additionalAreaDka": 1864,
-        "sourcePointsExpected": 62,
-        "sourceCrs": "KS1970",
-        "status": "numeric_register_pending_extraction",
-        "officialAreaSource": "РМС №147/26.03.1999, изм. ДВ бр.7/2004; 1864 дка е допълнителна площ, не доказана обща площ"
+        "id": "MINE-HAN-KRUM",
+        "concessionId": "D-000610",
+        "name": "Хан Крум / Ада тепе — концесионна площ",
+        "officialAreaDka": 13700,
+        "sourceCrs": "КС 1970",
+        "sourcePoints": 14,
+        "status": "transformation_failed: ENOENT: no such file or directory, open './src/grids/BGS_1970_K5_to_BGS_2005_KK.bcsg'",
+        "sourceUrl": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-"
       },
       {
         "id": "MINE-BOBOV-DOL",
-        "concessionId": "D-000327/D-000317/D-000324",
-        "name": "Бобовдолски въглищен басейн",
-        "status": "NKR_parties_identified_coordinate_registers_pending"
+        "concessionId": null,
+        "name": "Бобовдолски въглищен басейн — основни действащи партиди",
+        "officialAreaDka": null,
+        "sourceCrs": "various / not yet extracted",
+        "sourcePoints": null,
+        "status": "NKR_parties_identified__coordinate_registers_pending_extraction",
+        "sourceUrl": null
       }
     ],
     "remoteSources": [
@@ -487,13 +488,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "ME-CONCESSIONS"
     },
-    "sourceHealthCheckedAt": "2026-10-01T11:17:01Z",
+    "sourceHealthCheckedAt": "2026-10-01T11:24:46Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:15:59Z",
+        "checkedAt": "2026-10-01T11:23:54Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -501,7 +502,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:16:22Z",
+        "checkedAt": "2026-10-01T11:24:08Z",
         "url": "https://nkr.government.bg/Concessions/Export?file=csv",
         "error": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
@@ -509,19 +510,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-01T11:16:50Z",
+        "checkedAt": "2026-10-01T11:24:35Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 45894,
-        "digest": "0d6a839bbd7b8b6f0a17c04e96b141f5791013f9d8b0316ff73a8c92d416f0f8"
+        "digest": "7a40b5598aeb48674b164de764a8c58a0712e4b88633b024b9756d34e52dde10"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-01T11:16:55Z",
+        "checkedAt": "2026-10-01T11:24:41Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51478,
-        "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
+        "digest": "590aa6837c20a8c876f50939093b095fed50d04582e33608f29c049e935244a0"
       }
     ],
     "coverage": {
@@ -530,21 +531,32 @@
       "includesActiveConcessions": true,
       "includesClosedOrExpiredConcessionsWhenLegacyImpactRemains": true,
       "includesAbandonedMiningWasteFacilities": true,
-      "note": "Legal concession boundary and developed/disturbed footprint are separate geometries."
+      "note": "Legal concession boundary and developed/disturbed footprint are separate geometries.",
+      "publishedOfficialRegisterPolygons": 0,
+      "pendingOfficialRecords": 5
+    },
+    "baselineBuilder": {
+      "id": "official-coordinate-registers-v1",
+      "transformLibrary": "transformations@2.0.0",
+      "publicationAreaTolerancePct": 2,
+      "legalUse": false
     }
   },
   "historicalDisturbedMining": {
-    "policy": "retain closed, expired and abandoned mining/mining-waste footprints when land remains visibly disturbed, fenced/guarded, hazardous or industrially occupied, independently of current concession status",
+    "policy": "retain closed/abandoned mining and mining-waste footprints independently of current concession status",
     "officialRegister": "ME-ABANDONED-MINING-WASTE",
     "sourceHealth": {
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-01T11:16:55Z",
+      "checkedAt": "2026-10-01T11:24:41Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51478,
-      "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
+      "digest": "590aa6837c20a8c876f50939093b095fed50d04582e33608f29c049e935244a0"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
+  },
+  "lastUpdatedSections": {
+    "concessionsBaseline": "2026-10-01T11:23:54Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-gis-source-health-v1",
-  "checkedAt": "2026-10-01T11:17:01Z",
+  "checkedAt": "2026-10-01T11:24:46Z",
   "concessions": {
     "activeRegistrySource": "ME-CONCESSIONS",
     "cacheFeatureCount": 0,
@@ -10,7 +10,7 @@
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:15:59Z",
+        "checkedAt": "2026-10-01T11:23:54Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -18,7 +18,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:16:22Z",
+        "checkedAt": "2026-10-01T11:24:08Z",
         "url": "https://nkr.government.bg/Concessions/Export?file=csv",
         "error": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
@@ -26,19 +26,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-01T11:16:50Z",
+        "checkedAt": "2026-10-01T11:24:35Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 45894,
-        "digest": "0d6a839bbd7b8b6f0a17c04e96b141f5791013f9d8b0316ff73a8c92d416f0f8"
+        "digest": "7a40b5598aeb48674b164de764a8c58a0712e4b88633b024b9756d34e52dde10"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-01T11:16:55Z",
+        "checkedAt": "2026-10-01T11:24:41Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51478,
-        "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
+        "digest": "590aa6837c20a8c876f50939093b095fed50d04582e33608f29c049e935244a0"
       }
     ]
   },
