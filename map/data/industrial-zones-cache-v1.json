@@ -2,10 +2,11 @@
   "schema": "bgwf-industrial-zones-cache-v1",
   "generatedAt": "2026-10-01T00:00:00Z",
   "geometryCrs": "EPSG:4326",
-  "revision": "2026-10-01.1",
+  "revision": "2026-10-01.2",
   "semantics": {
     "footprints": "OSM/curated developed mining, quarry, TPP and waste footprints; not legal concession boundaries unless explicitly marked concession",
-    "concessions": "official concession polygons are separate; repository cache may be empty and MGU Pernik FeatureServer is runtime fallback"
+    "concessions": "national legal concession boundaries from repository baseline; official coordinate registers/acts are authoritative, while remote registries are used for weekly inventory/status checks",
+    "historicalDisturbedMining": "closed/abandoned mining, mining-waste and visibly disturbed industrial footprints remain mapped independently of current concession status"
   },
   "sourceFiles": [
     "legacy map/radka-elshitsa-osm-resolution.json",
@@ -440,12 +441,39 @@
     ],
     "remoteSources": [
       {
+        "id": "DATA-EGOV-BG",
+        "role": "primary inventory/status check",
+        "type": "official open-data API",
+        "url": "https://data.egov.bg/api",
+        "geometryRole": "none unless an official resource explicitly publishes coordinates"
+      },
+      {
+        "id": "NKR",
+        "role": "secondary fallback and document/coordinate-register source",
+        "type": "official national concession register",
+        "url": "https://nkr.government.bg/",
+        "geometryRole": "official coordinate registers/attachments"
+      },
+      {
+        "id": "ME-CONCESSIONS",
+        "role": "tertiary audit/fallback",
+        "type": "official Ministry of Energy register/maps/decisions",
+        "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
+        "geometryRole": "official decisions, contracts and coordinate registers"
+      },
+      {
+        "id": "ME-ABANDONED-MINING-WASTE",
+        "role": "historical disturbed-land register",
+        "type": "official Ministry of Energy register",
+        "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-396.html",
+        "geometryRole": "inventory/status; geometry retained in repository when independently verified"
+      },
+      {
         "id": "MGU-PERNIK",
+        "role": "optional cross-check only",
         "type": "ArcGIS FeatureServer",
         "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query",
-        "sourceUrl": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer",
-        "geometry": "official contract-derived polygons",
-        "note": "Pernik region; attributes supplemented from NKR"
+        "geometryRole": "non-critical cross-check; never required at browser runtime"
       }
     ],
     "sourceDataset": "./concession-boundaries-official-source-v2.json",
@@ -495,10 +523,18 @@
         "bytes": 51478,
         "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
       }
-    ]
+    ],
+    "coverage": {
+      "scope": "national",
+      "baselineStatus": "bootstrapping",
+      "includesActiveConcessions": true,
+      "includesClosedOrExpiredConcessionsWhenLegacyImpactRemains": true,
+      "includesAbandonedMiningWasteFacilities": true,
+      "note": "Legal concession boundary and developed/disturbed footprint are separate geometries."
+    }
   },
   "historicalDisturbedMining": {
-    "policy": "retain closed/abandoned mining and mining-waste footprints independently of current concession status",
+    "policy": "retain closed, expired and abandoned mining/mining-waste footprints when land remains visibly disturbed, fenced/guarded, hazardous or industrially occupied, independently of current concession status",
     "officialRegister": "ME-ABANDONED-MINING-WASTE",
     "sourceHealth": {
       "id": "ME-ABANDONED-MINING-WASTE",
@@ -508,6 +544,7 @@
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51478,
       "digest": "29522608ec88da07f1c79e22c6fdc011b80362ad68ef0c5922f006d2a54e7b65"
-    }
+    },
+    "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   }
 }
