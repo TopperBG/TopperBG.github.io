@@ -1,0 +1,50 @@
+{
+  "schema": "bgwf-gis-source-health-v1",
+  "checkedAt": "2026-10-01T00:00:00Z",
+  "concessions": {
+    "activeRegistrySource": "REPOSITORY-CACHE",
+    "cacheFeatureCount": 0,
+    "cacheMode": "metadata-only",
+    "sources": [
+      {
+        "id": "DATA-EGOV-BG",
+        "role": "primary",
+        "ok": null,
+        "checkedAt": null,
+        "url": "https://data.egov.bg/api",
+        "note": "awaiting weekly workflow"
+      },
+      {
+        "id": "NKR",
+        "role": "secondary",
+        "ok": null,
+        "checkedAt": null,
+        "url": "https://nkr.government.bg/",
+        "note": "awaiting weekly workflow"
+      },
+      {
+        "id": "ME-CONCESSIONS",
+        "role": "tertiary",
+        "ok": null,
+        "checkedAt": null,
+        "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
+        "note": "awaiting weekly workflow"
+      },
+      {
+        "id": "ME-ABANDONED-MINING-WASTE",
+        "role": "historical-disturbed",
+        "ok": null,
+        "checkedAt": null,
+        "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
+        "note": "awaiting weekly workflow"
+      }
+    ]
+  },
+  "policy": {
+    "primary": "data.egov.bg",
+    "secondary": "National Concession Register",
+    "tertiary": "Ministry of Energy",
+    "browserUsesRepositoryBaseline": true,
+    "preserveLastKnownGoodOnSourceFailure": true
+  }
+}
