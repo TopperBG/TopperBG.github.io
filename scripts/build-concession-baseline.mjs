@@ -172,43 +172,64 @@ features.sort((a, b) =>
 
 const publishedIds = new Set(features.map(f => String(f.properties.concession_id || "")));
 const pendingById = new Map();
+const curatedGroupsPending = [];
+const curatedPendingByCid = new Map();
+
 for (const item of pending) {
-  const key = String(item.concessionId || item.id || item.name || "");
+  const cid = String(item.concessionId || "");
+  if (!cid) {
+    curatedGroupsPending.push({...item, queueSource: "curated-group"});
+    continue;
+  }
+  const key = `curated:${cid}`;
   pendingById.set(key, {...item, queueSource: "curated-official-register"});
+  curatedPendingByCid.set(cid, key);
 }
 
 for (const rec of inventory.records || []) {
-  const cid = String(rec.concessionId || rec.id || "");
-  if (!cid || publishedIds.has(cid)) continue;
-  if (pendingById.has(cid)) {
-    const current = pendingById.get(cid);
-    pendingById.set(cid, {
+  const cid = String(rec.concessionId || "");
+  if (!cid) continue;
+  // A duplicated source ID cannot safely inherit geometry by ID alone.
+  if (publishedIds.has(cid) && !rec.concessionIdCollision) continue;
+
+  const curatedKey = !rec.concessionIdCollision ? curatedPendingByCid.get(cid) : null;
+  if (curatedKey && pendingById.has(curatedKey)) {
+    const current = pendingById.get(curatedKey);
+    pendingById.set(curatedKey, {
       ...current,
+      inventoryId: rec.id,
       inventoryStatus: rec.status ?? null,
       concessionaire: rec.concessionaire ?? null,
       resource: rec.resource ?? null,
       municipality: rec.municipality ?? null,
       province: rec.province ?? null,
       inventoryAreaDka: rec.areaDka ?? null,
+      concessionIdCollision: !!rec.concessionIdCollision,
     });
     continue;
   }
+
   const area = Number(rec.areaDka);
-  pendingById.set(cid, {
+  const key = `inventory:${rec.id || cid}`;
+  pendingById.set(key, {
     id: rec.id,
     concessionId: rec.concessionId || null,
     name: rec.name || "Концесия без нормализирано име",
     officialAreaDka: Number.isFinite(area) && area > 0 ? area : null,
     sourceCrs: null,
     sourcePoints: null,
-    status: "official_coordinate_register_not_archived",
+    status: rec.concessionIdCollision
+      ? "source_concession_id_collision_requires_NKR_verification"
+      : "official_coordinate_register_not_archived",
     sourceUrl: null,
     queueSource: "national-inventory",
+    sourceRowNo: rec.sourceRowNo ?? null,
     inventoryStatus: rec.status ?? null,
     concessionaire: rec.concessionaire ?? null,
     resource: rec.resource ?? null,
     municipality: rec.municipality ?? null,
     province: rec.province ?? null,
+    concessionIdCollision: !!rec.concessionIdCollision,
   });
 }
 
@@ -248,6 +269,8 @@ const pendingPayload = {
   inventoryRecordCount: (inventory.records||[]).length,
   publishedGeometryCount: features.length,
   pendingCount: pendingQueue.length,
+  curatedGroupPendingCount: curatedGroupsPending.length,
+  curatedGroupsPending,
   priorityMeaning: {
     "1": "very large area (>= 10 000 dka)",
     "2": "large/curated official source",
