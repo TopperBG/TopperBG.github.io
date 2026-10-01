@@ -8,6 +8,8 @@ on:
   push:
     paths:
       - "scripts/refresh-industrial-concessions.py"
+      - "scripts/build-concession-baseline.mjs"
+      - "map/data/concession-boundaries-official-source-v2.json"
       - ".github/workflows/refresh-industrial-concessions.yml"
 
 permissions:
@@ -26,6 +28,15 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Install reproducible Bulgarian coordinate transform
+        run: npm install --no-save --no-package-lock transformations@2.0.0
+
+      - name: Build repository concession baseline
+        run: node scripts/build-concession-baseline.mjs
 
       - name: Check primary and fallback concession sources
         run: python scripts/refresh-industrial-concessions.py
@@ -40,6 +51,15 @@ jobs:
           section=cache.get("concessions",{})
           features=section.get("features") or []
           assert int(section.get("featureCount", len(features)) or 0) == len(features)
+          if len(features) == 0:
+              print("::warning title=Concession geometry baseline empty::No official-register polygon passed the publication gate.")
+          else:
+              for f in features:
+                  p=f.get("properties") or {}
+                  assert p.get("source_kind") == "official-coordinate-register"
+                  assert p.get("geometry_status") == "repository-baseline-official-register-transformed"
+                  assert float(p.get("area_qa_error_pct", 999)) <= 2.0
+              print("Validated official-register baseline polygons:", len(features))
           assert health.get("schema") == "bgwf-gis-source-health-v1"
           sources=health.get("concessions",{}).get("sources") or []
           ids={s.get("id") for s in sources}
@@ -64,6 +84,7 @@ jobs:
           for attempt in 1 2 3; do
             git fetch origin main
             git reset --hard origin/main
+            node scripts/build-concession-baseline.mjs
             python scripts/refresh-industrial-concessions.py
 
             if git diff --quiet -- map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json; then
