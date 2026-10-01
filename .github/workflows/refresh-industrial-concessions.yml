@@ -1,4 +1,4 @@
-name: Refresh industrial concessions
+name: Refresh national concession sources
 
 on:
   workflow_dispatch:
@@ -20,41 +20,48 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - name: Install projection support
-        run: python -m pip install --disable-pip-version-check pyproj
-      - name: Refresh official Pernik concession polygons
+
+      - name: Check primary and fallback concession sources
         run: python scripts/refresh-industrial-concessions.py
-      - name: Validate cache
+
+      - name: Validate last-known-good cache and source health
         run: |
           python - <<'PY'
           import json
-          path="map/data/industrial-zones-cache-v1.json"
-          p=json.load(open(path, encoding="utf-8"))
-          assert p.get("schema") == "bgwf-industrial-zones-cache-v1"
-          section=p.get("concessions",{})
+          cache=json.load(open("map/data/industrial-zones-cache-v1.json", encoding="utf-8"))
+          health=json.load(open("map/data/gis-source-health-v1.json", encoding="utf-8"))
+          assert cache.get("schema") == "bgwf-industrial-zones-cache-v1"
+          section=cache.get("concessions",{})
           features=section.get("features") or []
-          declared=int(section.get("featureCount", len(features)) or 0)
-          assert declared == len(features), f"featureCount={declared}, actual={len(features)}"
+          assert int(section.get("featureCount", len(features)) or 0) == len(features)
+          assert health.get("schema") == "bgwf-gis-source-health-v1"
+          sources=health.get("concessions",{}).get("sources") or []
+          ids={s.get("id") for s in sources}
+          assert {"DATA-EGOV-BG","NKR","ME-CONCESSIONS"} <= ids
           if not features:
-              print("::warning title=Concession cache empty::No cached official concession polygons yet; MGU may be temporarily unavailable.")
-          else:
-              print("Concession polygons:", len(features))
+              print("::warning title=Concession geometry baseline incomplete::No repository concession polygons yet; metadata source checks still run and the map will show a visible warning.")
+          failed=[s.get("id") for s in sources if not s.get("ok")]
+          if failed:
+              print("::warning title=Some official sources unavailable::" + ", ".join(failed) + ". Last-known-good cache is preserved.")
+          print("Concession polygons preserved:", len(features))
+          print("Active registry source:", health.get("concessions",{}).get("activeRegistrySource"))
           PY
-      - name: Commit updated cache
+
+      - name: Commit source-health/cache metadata
         run: |
-          if git diff --quiet -- map/data/industrial-zones-cache-v1.json; then
-            echo "No concession changes."
+          if git diff --quiet -- map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json; then
+            echo "No source-health changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add map/data/industrial-zones-cache-v1.json
-          git commit -m "Refresh official Pernik concession cache"
+          git add map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json
+          git commit -m "Refresh national concession source health"
           git pull --rebase origin main
           git push
