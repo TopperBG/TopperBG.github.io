@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92h-mobile-header-20260925">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92h</title>
+<meta name="bgwf-build" content="v0.92i-mobile-header-20260925">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92i</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1553,23 +1553,26 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92h</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92i</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
     <div class="bgwf-mobile-filter-body">
-    <div class="bgwf-search" data-map-search>
-      <label class="bgwf-sr-only" for="bgwf-search-input">Търсене на обект</label>
-      <div class="bgwf-search-box">
-        <span class="bgwf-search-icon" aria-hidden="true">⌕</span>
-        <input id="bgwf-search-input" class="bgwf-search-input" data-map-search-input type="search" autocomplete="off" spellcheck="false" placeholder="Търси обект…" aria-label="Търси ФЕЦ, проект, населено място или друг обект" aria-controls="bgwf-search-results" aria-expanded="false">
-        <button type="button" class="bgwf-search-clear" data-map-search-clear aria-label="Изчисти търсенето" hidden>×</button>
-      </div>
-      <div id="bgwf-search-results" class="bgwf-search-results" data-map-search-results role="listbox" hidden></div>
-    </div>
     <div class="bgwf-filter-strip bgwf-year-strip">
-      <span class="bgwf-control-label">Година</span>
-      <div class="viz-row bgwf-legend" aria-label="Филтър по години"></div>
+      <span class="bgwf-control-label">Пожари</span>
+      <div class="viz-row bgwf-legend" aria-label="Филтър по години и пожарни източници"></div>
+    </div>
+    <div class="bgwf-filter-strip bgwf-search-strip">
+      <span class="bgwf-control-label">Търси</span>
+      <div class="bgwf-search" data-map-search>
+        <label class="bgwf-sr-only" for="bgwf-search-input">Търсене на обект</label>
+        <div class="bgwf-search-box">
+          <span class="bgwf-search-icon" aria-hidden="true">⌕</span>
+          <input id="bgwf-search-input" class="bgwf-search-input" data-map-search-input type="search" autocomplete="off" spellcheck="false" placeholder="Търси обект…" aria-label="Търси ФЕЦ, проект, населено място или друг обект" aria-controls="bgwf-search-results" aria-expanded="false">
+          <button type="button" class="bgwf-search-clear" data-map-search-clear aria-label="Изчисти търсенето" hidden>×</button>
+        </div>
+        <div id="bgwf-search-results" class="bgwf-search-results" data-map-search-results role="listbox" hidden></div>
+      </div>
     </div>
     <div class="bgwf-filter-strip bgwf-layer-strip">
       <span class="bgwf-control-label">Слоеве</span>
@@ -2172,7 +2175,7 @@ svg {
   #bg-wildfires-map.is-filter-collapsed .bgwf-map{height:100%;min-height:560px;max-height:none}
   #bg-wildfires-map .bgwf-detail{left:5px;right:5px;bottom:max(54px,calc(env(safe-area-inset-bottom) + 44px));font-size:10px;line-height:1.25}
 }
-/* v0.92h: second-row tooltips must escape the scrolling filter strip. */
+/* v0.92i: second-row tooltips must escape the scrolling filter strip. */
 #bg-wildfires-map .bgwf-floating-controls .bgwf-layer-controls,
 #bg-wildfires-map .bgwf-layer-row,
 #bg-wildfires-map .bgwf-layer-row-secondary { overflow:visible !important; }
@@ -2194,7 +2197,7 @@ svg {
 #bg-wildfires-map .bgwf-layer-row-secondary .bgwf-layer-toggle[data-layer="industry"]:is(:hover,:focus-visible)::after {
   transform:translateY(0) !important;
 }
-/* v0.92h: one control plane + one tooltip system for every filter/layer control. */
+/* v0.92i: one control plane + one tooltip system for every filter/layer control. */
 #bg-wildfires-map .bgwf-mobile-filter-body{position:relative;isolation:isolate;overflow:visible}
 #bg-wildfires-map .bgwf-year-strip,
 #bg-wildfires-map .bgwf-layer-strip,
@@ -2202,7 +2205,20 @@ svg {
 #bg-wildfires-map .bgwf-layer-controls,
 #bg-wildfires-map .bgwf-layer-row{position:relative;z-index:1!important}
 #bg-wildfires-map .bgwf-layer-controls{display:block!important;overflow:visible!important}
-#bg-wildfires-map .bgwf-layer-row-all{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:.35rem;width:100%;overflow:visible}
+#bg-wildfires-map .bgwf-layer-row-a,
+#bg-wildfires-map .bgwf-layer-row-b{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:.35rem;width:100%;overflow:visible;z-index:1!important}
+#bg-wildfires-map .bgwf-layer-row-b{margin-top:.28rem}
+#bg-wildfires-map .bgwf-search-strip .bgwf-search{flex:1 1 auto;min-width:0;width:auto;margin:0}
+#bg-wildfires-map .bgwf-search-strip .bgwf-search-box{width:100%}
+@media (max-width:700px){
+  #bg-wildfires-map .bgwf-layer-row-a,
+  #bg-wildfires-map .bgwf-layer-row-b{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.24rem;width:100%}
+  #bg-wildfires-map .bgwf-layer-row-a .bgwf-layer-toggle,
+  #bg-wildfires-map .bgwf-layer-row-b .bgwf-layer-toggle,
+  #bg-wildfires-map .bgwf-layer-row-b .bgwf-info-button{min-width:0;width:100%;justify-content:center;padding:.28rem .18rem;font-size:8.5px;white-space:nowrap}
+  #bg-wildfires-map .bgwf-layer-row-a .bgwf-swatch,
+  #bg-wildfires-map .bgwf-layer-row-b .bgwf-swatch{width:.5rem;height:.5rem}
+}
 #bg-wildfires-map [data-help-tooltip]::after{display:none!important}
 .bgwf-control-tooltip{
   position:fixed;z-index:1000000;max-width:min(380px,calc(100vw - 16px));
@@ -6677,14 +6693,15 @@ if(legend){
   const iskra=document.createElement('a');iskra.className='bgwf-live-link bgwf-iskra-year-link';iskra.href=ISKRA_MAP_URL;iskra.target='_blank';iskra.rel='noopener';iskra.textContent='ИСКРА ↗';
   setControlHelp(iskra,'ИСКРА — оперативна система/карта за справка за пожари. Отваря външния източник в нов раздел.');
   legend.appendChild(iskra);
-  const search=root.querySelector('[data-map-search]');if(search)legend.appendChild(search);
 }
 const controls=root.querySelector('.bgwf-layer-controls');
-let layerRow=null;
+let layerRow1=null,layerRow2=null;
 if(controls){
   controls.textContent='';
-  layerRow=document.createElement('div');layerRow.className='bgwf-layer-row bgwf-layer-row-all';layerRow.setAttribute('aria-label','Тематични слоеве');controls.appendChild(layerRow);
-  createButton(layerRow,{className:'bgwf-layer-toggle',text:'SAT',layer:'satellite',color:'#64748b',pressed:urlParams.get('map')==='sat',
+  layerRow1=document.createElement('div');layerRow1.className='bgwf-layer-row bgwf-layer-row-a';layerRow1.setAttribute('aria-label','Тематични слоеве — ред 1');
+  layerRow2=document.createElement('div');layerRow2.className='bgwf-layer-row bgwf-layer-row-b';layerRow2.setAttribute('aria-label','Тематични слоеве — ред 2');
+  controls.append(layerRow1,layerRow2);
+  createButton(layerRow1,{className:'bgwf-layer-toggle',text:'SAT',layer:'satellite',color:'#64748b',pressed:urlParams.get('map')==='sat',
     help:'SAT — сателитна базова карта (World Imagery), върху която се наслагват тематичните слоеве.',
     onClick:function(){const next=!satelliteLayer.getVisible();satelliteLayer.setVisible(next);this.setAttribute('aria-pressed',String(next));refreshSatelliteOverlayStyles();updateLayerStatus();scheduleUrlSync();}
   });
@@ -6769,8 +6786,9 @@ const configs=[
   ['epm','HV','#e11d48','HV — High Voltage / високоволтова електропреносна мрежа. Показва индикативни OSM трасета 110/220/400 kV; свободният капацитет се потвърждава отделно.'],
   ['industry','ТЕЦ/мини','#4b5563',`ТЕЦ/мини — топлоелектрически централи, мини, кариери, хвостохранилища, разработени площи и налични концесионни граници. НСИ: нарушена територия ${NSI_DISTURBED_LAND_2025.dka.toLocaleString('bg-BG')} дка към ${NSI_DISTURBED_LAND_2025.asOf}.`]
 ];
-if(layerRow)configs.forEach(([key,label,color,help])=>{
-  createButton(layerRow,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],help,onClick:async function(){
+configs.forEach(([key,label,color,help])=>{
+  const parent=['foreign','natura','epm','industry'].includes(key)?layerRow2:layerRow1;
+  createButton(parent,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],help,onClick:async function(){
     layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));
     if(key==='solar')solarLayer.setVisible(layerVisibility.solar);
     if(key==='wind')windLayer.setVisible(layerVisibility.wind);
@@ -6788,11 +6806,11 @@ if(layerRow)configs.forEach(([key,label,color,help])=>{
     updateLayerStatus();updateTerritoryScaleBars();scheduleNaturaOverlapUpdate();scheduleUrlSync();
   }});
 });
-if(layerRow){
-  const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';layerRow.appendChild(hint);
+if(layerRow2){
+  const hint=document.createElement('span');hint.className='bgwf-industry-legend-hint';hint.dataset.industryLegend='1';layerRow2.appendChild(hint);
   const infoButton=document.createElement('button');infoButton.type='button';infoButton.className='bgwf-info-button';infoButton.textContent='Info';
   infoButton.setAttribute('aria-label','Отвори Методология');setControlHelp(infoButton,'Info — отваря методологията, източниците и поясненията към данните.');
-  infoButton.addEventListener('click',openAndFocusMethods);layerRow.appendChild(infoButton);updateIndustryLegendHint();
+  infoButton.addEventListener('click',openAndFocusMethods);layerRow2.appendChild(infoButton);updateIndustryLegendHint();
 }
 updateTerritoryScaleBars();
 void loadMethodsSource();
@@ -6802,7 +6820,7 @@ const mapSearch=root.querySelector('[data-map-search]');
 const mapSearchInput=root.querySelector('[data-map-search-input]');
 const mapSearchClear=root.querySelector('[data-map-search-clear]');
 const mapSearchResults=root.querySelector('[data-map-search-results]');
-const mapSearchStrip=mapSearch?.closest('.bgwf-year-strip');
+const mapSearchStrip=mapSearch?.closest('.bgwf-search-strip');
 let currentSearchResults=[];
 
 function normalizeSearchText(value){
