@@ -1,0 +1,42 @@
+name: Refresh social preview
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 4 2 * *"
+  push:
+    paths:
+      - "scripts/build-social-preview.py"
+      - ".github/workflows/refresh-social-preview.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-social-preview
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Build Open Graph preview
+        run: python scripts/build-social-preview.py
+      - name: Commit preview if changed
+        run: |
+          if git diff --quiet -- map/assets/energokarta-preview.jpg; then
+            echo "Preview unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add map/assets/energokarta-preview.jpg
+          git commit -m "Refresh EnergoKarta social preview"
+          git push
