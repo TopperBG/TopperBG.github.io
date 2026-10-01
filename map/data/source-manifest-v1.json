@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-source-manifest-v1",
   "generatedAt": "2026-10-01T00:00:00Z",
-  "mapVersion": "0.92g",
+  "mapVersion": "0.93a",
   "engine": "OpenLayers 10.10.0",
   "sources": [
     {
@@ -50,28 +50,41 @@
       "url": "https://nominatim.openstreetmap.org/lookup"
     },
     {
-      "id": "MGU-PERNIK-CONCESSIONS",
-      "kind": "official concession polygons ArcGIS",
-      "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer"
+      "id": "GOATCOUNTER",
+      "kind": "visitor counter",
+      "url": "https://topperbg.goatcounter.com/"
+    },
+    {
+      "id": "DATA-EGOV-CONCESSIONS",
+      "kind": "primary official concession inventory/status source; weekly server-side check",
+      "url": "https://data.egov.bg/api"
     },
     {
       "id": "NKR",
-      "kind": "official concession metadata",
+      "kind": "secondary official concession register/fallback; weekly export check",
       "url": "https://nkr.government.bg/"
     },
     {
       "id": "ME-CONCESSIONS",
-      "kind": "national concession reference",
-      "url": "https://me.government.bg/bg/themes/koncesii-za-dobiv-735-406.html"
+      "kind": "tertiary official concession audit/fallback and published concession maps",
+      "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html"
     },
     {
-      "id": "GOATCOUNTER",
-      "kind": "visitor counter",
-      "url": "https://topperbg.goatcounter.com/"
+      "id": "ME-ABANDONED-MINING-WASTE",
+      "kind": "official register of closed and abandoned mining-waste facilities; historical disturbed-land scope",
+      "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html"
+    },
+    {
+      "id": "MGU-PERNIK-CONCESSIONS",
+      "kind": "optional non-critical GIS cross-check only; not a browser or workflow dependency",
+      "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer"
     }
   ],
   "notes": [
+    "Concession rendering is repository-cache-first: browser runtime does not depend on MGU or another single remote GIS endpoint.",
+    "Weekly source policy: data.egov.bg primary; NKR secondary fallback/check; Ministry of Energy tertiary audit/fallback.",
+    "Closed/abandoned mining and mining-waste footprints remain in scope independently of whether a concession is currently active.",
     "Sentinel endpoint is defined in the HTML implementation; source manifest records service family rather than credentials/API-specific query.",
-    "OSM footprints and official concession boundaries are deliberately separate layers."
+    "OSM/developed footprints and legal concession boundaries are deliberately separate geometries."
   ]
 }
