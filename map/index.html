@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93a-source-health-20261001">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93a</title>
+<meta name="bgwf-build" content="v0.93b-national-baseline-20261001">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93b</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4419,7 +4419,9 @@ function layerSourceWarnings(){
       warnings.push({severity:'error',text:'ТЕЦ/мини: няма кеширани официални концесионни граници. Онлайн източниците не могат да заместят липсващ baseline в браузъра; показват се наличните локални индустриални/нарушени площи.'});
     }else if(primary&&primary.ok===false){
       const fallback=secondary?.ok?'НКР':tertiary?.ok?'Министерството на енергетиката':'последния добър repository cache';
-      warnings.push({severity:(secondary?.ok||tertiary?.ok)?'warning':'error',text:`Концесии: data.egov.bg е недостъпен при последната седмична проверка; използва се ${fallback}. Картата показва last-known-good cache.`});
+      const inv=Number(registry?.inventoryRecordCount)||0;
+      const geo=Number(registry?.baselineFeatureCount)||cachedConcessions;
+      warnings.push({severity:(secondary?.ok||tertiary?.ok)?'warning':'error',text:`Концесии: data.egov.bg е недостъпен за последната седмична проверка; локалният национален cache остава активен${inv?` (${inv} записа · ${geo} официални полигона)`:''}. За проверка се използва ${fallback}; картата работи от repository baseline.`});
     }
     if(industrialPolygonLoadState==='error'&&industryFootprintSource.getFeatures().length===0){
       warnings.push({severity:'error',text:'ТЕЦ/мини: няма наличен footprint cache и онлайн GIS/OSM геометрията е недостъпна.'});
@@ -6158,6 +6160,8 @@ function concessionEstimateLabel(f){
 
 // ---------- Static industrial footprint inventories (v0.82b) ----------
 const INDUSTRIAL_ZONE_CACHE_URL='./data/industrial-zones-cache-v1.json';
+const INDUSTRIAL_FOOTPRINT_BASELINE_URL='./data/industry-footprints-baseline.geojson';
+const DISTURBED_MINING_BASELINE_URL='./data/disturbed-mining-sites-v1.geojson';
 const INDUSTRIAL_STATIC_GEOMETRY_PREFIX='bgwf-industry-static-geometry:';
 let industrialStaticLoadStarted=false;
 let industrialZoneCachePromise=null;
@@ -6228,6 +6232,18 @@ async function loadStaticIndustrialFootprints(){
     const manifest=await loadIndustrialZoneCache();
     const items=manifest.footprints||[];
     const features=[],pending=[],missing=[];
+    const baselineByKey=new Map();
+    try{
+      const r=await fetch(INDUSTRIAL_FOOTPRINT_BASELINE_URL,{cache:'no-cache',credentials:'same-origin'});
+      if(r.ok){
+        const fc=await r.json();
+        for(const raw of fc.features||[]){
+          const p=raw.properties||{},key=String(p.osm_key||'');
+          if(key&&raw.geometry&&['Polygon','MultiPolygon'].includes(raw.geometry.type))baselineByKey.set(key,raw);
+        }
+        debugState.network.industryFootprintBaseline={ok:true,features:baselineByKey.size,generatedAt:fc.generatedAt||null};
+      }else debugState.network.industryFootprintBaseline={ok:false,status:r.status};
+    }catch(e){debugState.network.industryFootprintBaseline={ok:false,error:e.message};}
     const addRaw=(item,raw)=>{
       if(!raw?.geometry||!['Polygon','MultiPolygon'].includes(raw.geometry.type))return false;
       const f=cloneGeoFeature(raw);
@@ -6241,8 +6257,11 @@ async function loadStaticIndustrialFootprints(){
     };
     for(const item of items){
       if(item.geometryStatus==='verified-osm'&&item.osmType&&item.osmId){
+        const osmKey=`${item.osmType}${item.osmId}`;
+        const repoRaw=baselineByKey.get(osmKey);
+        if(repoRaw&&addRaw(item,repoRaw))continue;
         const revision=item.revision||manifest.revision||'1';
-        const key=`${revision}:${item.osmType}${item.osmId}`;
+        const key=`${revision}:${osmKey}`;
         const cached=staticIndustryCacheRead(key);
         if(cached?.feature){try{if(addRaw(item,cached.feature))continue;}catch{}}
         missing.push(item);
@@ -6310,17 +6329,47 @@ function rebuildIndustrialFeatures(cache){
 function renderIndustryFootprints(){industryFootprintSource.clear();for(const d of industrialPolygonFeatures){try{const f=cloneGeoFeature({type:'Feature',properties:{},geometry:d.geometry});f.set('kind','industry');f.set('data',d);f.set('industryType',d.type);f.set('areaDka',d.areaDka);industryFootprintSource.addFeature(f);}catch(e){dbgWarn('industry-render-rejected',{id:d.id,error:e.message});}}debugState.layerCounts.industry=industryFootprintSource.getFeatures().length;updateLayerStatus();}
 async function ensureIndustrialPolygons(){if(industrialPolygonLoadState==='ready')return industrialPolygonFeatures;if(industrialPolygonLoadPromise)return industrialPolygonLoadPromise;industrialPolygonLoadPromise=(async()=>{const started=performance.now();industrialPolygonLoadState='loading';const cache=readIndustrialGeometryCache();rebuildIndustrialFeatures(cache);renderIndustryFootprints();const missing=industrialPolygonSites.filter(site=>!cache[industrialOsmKey(site)]?.geometry);if(!missing.length){industrialPolygonLoadState='ready';industrialPolygonLoadPromise=null;return industrialPolygonFeatures;}try{const u=new URL(INDUSTRIAL_NOMINATIM_LOOKUP);u.searchParams.set('osm_ids',missing.map(industrialOsmKey).join(','));u.searchParams.set('format','geojson');u.searchParams.set('polygon_geojson','1');u.searchParams.set('addressdetails','0');u.searchParams.set('extratags','1');const r=await fetchMonthlyGis(u,{mode:'cors',headers:{Accept:'application/geo+json, application/json'}});debugState.network.nominatim={status:r.status,ms:Math.round(performance.now()-started)};if(!r.ok)throw new Error(`HTTP ${r.status}`);const gj=await r.json();for(const feature of gj?.features??[]){const p=feature.properties||{},prefix=String(p.osm_type||'').toLowerCase()==='relation'?'R':String(p.osm_type||'').toLowerCase()==='way'?'W':'';const key=prefix&&p.osm_id!=null?`${prefix}${p.osm_id}`:'';const site=industrialPolygonSites.find(s=>industrialOsmKey(s)===key);if(site&&industrialGeometryIsSane(site,feature.geometry))cache[key]={geometry:feature.geometry,properties:p,cachedAt:new Date().toISOString()};else if(site)dbgWarn('industry-geometry-sanity-reject',{site:site.id,key});}writeIndustrialGeometryCache(cache);rebuildIndustrialFeatures(cache);industrialPolygonLoadState='ready';industrialPolygonLoadError=industrialPolygonFeatures.length<industrialPolygonSites.length?`${industrialPolygonSites.length-industrialPolygonFeatures.length} OSM контура липсват`:'';}catch(e){rebuildIndustrialFeatures(cache);industrialPolygonLoadState=industrialPolygonFeatures.length?'ready':'error';industrialPolygonLoadError=e.message;dbgWarn('industry-load-failed',{error:e.message});}industrialPolygonLoadPromise=null;renderIndustryFootprints();debugState.timings.industry=Math.round(performance.now()-started);return industrialPolygonFeatures;})();return industrialPolygonLoadPromise;}
 
-// ---------- Official concession cache + Pernik ArcGIS ----------
+// ---------- Official concession repository baseline ----------
+const OFFICIAL_CONCESSION_BASELINE_URL='./data/official-concessions-baseline.geojson';
+const PENDING_CONCESSIONS_URL='./data/pending-concessions-v1.json';
 const OFFICIAL_CONCESSION_CACHE_URL=INDUSTRIAL_ZONE_CACHE_URL;
 function concessionFeatureFromGeoJSON(raw,sourceId='STATIC-CACHE',sourceUrl=OFFICIAL_CONCESSION_CACHE_URL){try{const f=cloneGeoFeature(raw);const p=raw.properties||{};const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'})/1000;if(!Number.isFinite(area)||area<=0||area>1500000)return null;f.set('kind','concession');f.set('concessionId',p.concession_id??p['идентификационен_____партиден__']??'—');f.set('name',p.name??p['находище']??'Концесионна площ');f.set('concessionaire',p.concessionaire??p['концесионер']??'');f.set('nkrUrl',p.ncr_url??'');f.set('sourceUrl',p.source_url??sourceUrl);f.set('sourceId',sourceId);f.set('areaDka',area);return f;}catch(e){dbgWarn('concession-feature-reject',{error:e.message});return null;}}
 async function loadOfficialConcessionStaticCache(){
+  let standaloneError=null;
+  try{
+    const [baseResponse,pendingResponse]=await Promise.all([
+      fetch(OFFICIAL_CONCESSION_BASELINE_URL,{cache:'no-cache',credentials:'same-origin'}),
+      fetch(PENDING_CONCESSIONS_URL,{cache:'no-cache',credentials:'same-origin'})
+    ]);
+    if(!baseResponse.ok)throw new Error(`HTTP ${baseResponse.status}: ${OFFICIAL_CONCESSION_BASELINE_URL}`);
+    const base=await baseResponse.json();
+    if(base?.type!=='FeatureCollection'||base?.schema!=='bgwf-official-concessions-baseline-v1')throw new Error('invalid official concession baseline');
+    let pendingPayload=null;
+    if(pendingResponse.ok){try{pendingPayload=await pendingResponse.json();}catch{}}
+    officialConcessionPending=Array.isArray(pendingPayload?.pending)?pendingPayload.pending:[];
+    officialConcessionCacheMeta={
+      schema:base.schema,
+      generatedAt:base.generatedAt,
+      featureCount:base.featureCount,
+      inventoryRecordCount:base.inventoryRecordCount,
+      pendingCount:pendingPayload?.pendingCount??officialConcessionPending.length,
+      source:OFFICIAL_CONCESSION_BASELINE_URL
+    };
+    debugState.network.concessionCache={status:200,ok:true,features:Array.isArray(base.features)?base.features.length:0,inventory:Number(base.inventoryRecordCount)||0,pending:officialConcessionPending.length,source:OFFICIAL_CONCESSION_BASELINE_URL};
+    return (base.features??[]).map(x=>concessionFeatureFromGeoJSON(x,'REPOSITORY-BASELINE',OFFICIAL_CONCESSION_BASELINE_URL)).filter(Boolean);
+  }catch(e){standaloneError=e;}
+
+  // Backward-compatible fallback while older cache revisions still exist.
   try{
     const p=await loadIndustrialZoneCache(),section=p.concessions||{};
     officialConcessionPending=Array.isArray(section.pending)?section.pending:[];
     officialConcessionCacheMeta=section;
-    debugState.network.concessionCache={status:200,ok:true,features:Array.isArray(section.features)?section.features.length:0,source:INDUSTRIAL_ZONE_CACHE_URL};
-    return (section.features??[]).map(x=>concessionFeatureFromGeoJSON(x,'STATIC-CACHE',INDUSTRIAL_ZONE_CACHE_URL)).filter(Boolean);
-  }catch(e){debugState.network.concessionCache={error:e.message,ok:false,source:INDUSTRIAL_ZONE_CACHE_URL};return[];}
+    debugState.network.concessionCache={status:200,ok:true,fallback:true,features:Array.isArray(section.features)?section.features.length:0,source:INDUSTRIAL_ZONE_CACHE_URL,standaloneError:standaloneError?.message||null};
+    return (section.features??[]).map(x=>concessionFeatureFromGeoJSON(x,'EMBEDDED-CACHE',INDUSTRIAL_ZONE_CACHE_URL)).filter(Boolean);
+  }catch(e){
+    debugState.network.concessionCache={error:e.message,standaloneError:standaloneError?.message||null,ok:false,source:OFFICIAL_CONCESSION_BASELINE_URL};
+    return[];
+  }
 }
 
 function fetchArcGisConcessionsJsonp(source,timeoutMs=12000){
@@ -6700,7 +6749,7 @@ function updateLayerStatus(){
     if(layerVisibility.natura)extras.push(naturaLoadState==='loading'?'Натура 2000 зареждане':naturaLoadState==='error'?'Натура 2000 грешка':`Натура 2000 ${naturaSource.getFeatures().length} полигона`);
     if(layerVisibility.industry){
       extras.push(`${industrialPolygonSites.length} ТЕЦ/мини · footprint ${formatAreaDka(totalIndustryFootprintDka())}`);if(concessionEstimateSource.getFeatures().length)extras.push(`${concessionEstimateSource.getFeatures().length} концесионни площи`);
-      if(concessionSource.getFeatures().length)extras.push(`${concessionSource.getFeatures().length} официални концесионни граници`);
+      if(concessionSource.getFeatures().length)extras.push(`${concessionSource.getFeatures().length} официални концесионни граници · локален baseline`);
       else if(officialConcessionLoadState==='error')extras.push('официални концесионни граници: няма repository baseline');
     }
     if(layerVisibility.foreign)extras.push(foreignOsmLoadState==='loading'?'Foreign: OSM геометрията се зарежда':`Foreign ${foreignSource.getFeatures().length} проекта · ${new Set(foreignOsmSource.getFeatures().map(f=>f.get('projectId'))).size} с OSM геометрия`);
