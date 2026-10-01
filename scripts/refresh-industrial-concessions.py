@@ -30,6 +30,7 @@ DISTURBED_PATH = ROOT / "map" / "data" / "disturbed-mining-sites-v1.geojson"
 
 EGOV_API = "https://data.egov.bg/api"
 NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
+NKR_PAGE = "https://nkr.government.bg/Concessions"
 ME_CONCESSIONS = "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html"
 ME_ABANDONED = "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html"
 USER_AGENT = "EnergoKarta-Bulgaria-concessions/2.0 (+https://topperbg.github.io/map/)"
@@ -90,6 +91,7 @@ def check_egov() -> dict:
 
 def check_nkr() -> dict:
     checked = now_iso()
+    export_error = None
     try:
         raw = request_bytes(NKR_EXPORT)
         text = raw.decode("cp1251", errors="replace")
@@ -98,11 +100,33 @@ def check_nkr() -> dict:
             raise RuntimeError(f"unexpectedly small export: {len(rows)} rows")
         return {
             "id": "NKR", "role": "secondary", "ok": True, "checkedAt": checked,
-            "url": NKR_EXPORT, "rows": len(rows),
+            "url": NKR_EXPORT, "mode": "export", "rows": len(rows),
             "digest": hashlib.sha256(raw).hexdigest(),
         }
     except Exception as exc:
-        return {"id": "NKR", "role": "secondary", "ok": False, "checkedAt": checked, "url": NKR_EXPORT, "error": str(exc)}
+        export_error = str(exc)
+
+    # The export endpoint has historically returned 5xx while the public
+    # registry itself remains healthy. Treat the HTML registry as a valid
+    # availability/change-check fallback, without pretending it is a full dump.
+    try:
+        raw = request_bytes(NKR_PAGE)
+        text = raw.decode("utf-8", errors="replace")
+        low = text.lower()
+        if "концес" not in low or ("подзем" not in low and "добив" not in low):
+            raise RuntimeError("registry HTML does not contain expected concession markers")
+        return {
+            "id": "NKR", "role": "secondary", "ok": True, "checkedAt": checked,
+            "url": NKR_PAGE, "mode": "html-registry-fallback",
+            "bytes": len(raw), "digest": hashlib.sha256(raw).hexdigest(),
+            "exportError": export_error,
+        }
+    except Exception as html_exc:
+        return {
+            "id": "NKR", "role": "secondary", "ok": False, "checkedAt": checked,
+            "url": NKR_PAGE,
+            "error": f"export: {export_error}; html: {html_exc}",
+        }
 
 def check_page(source_id: str, role: str, url: str, marker: str) -> dict:
     checked = now_iso()
