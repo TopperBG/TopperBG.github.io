@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-source-manifest-v1",
-  "generatedAt": "2026-10-01T00:00:00Z",
-  "mapVersion": "0.93a",
+  "generatedAt": "2026-10-01T12:00:00Z",
+  "mapVersion": "0.93b",
   "engine": "OpenLayers 10.10.0",
   "sources": [
     {
@@ -81,10 +81,20 @@
     }
   ],
   "notes": [
-    "Concession rendering is repository-cache-first: browser runtime does not depend on MGU or another single remote GIS endpoint.",
-    "Weekly source policy: data.egov.bg primary; NKR secondary fallback/check; Ministry of Energy tertiary audit/fallback.",
-    "Closed/abandoned mining and mining-waste footprints remain in scope independently of whether a concession is currently active.",
-    "Sentinel endpoint is defined in the HTML implementation; source manifest records service family rather than credentials/API-specific query.",
+    "Map runtime is repository-cache-first for known concession and industrial/mining geometries.",
+    "Government registries are refresh/audit inputs; a temporary outage must not remove locally archived data.",
+    "The national concession inventory archives the last valid official snapshot and never replaces it with an empty/failed fetch.",
+    "Official concession polygons require an official coordinate register/act and QA; missing geometries are explicit in pending-concessions-v1.json.",
+    "Closed/abandoned mining and mining-waste footprints remain in scope independently of current concession status.",
     "OSM/developed footprints and legal concession boundaries are deliberately separate geometries."
-  ]
+  ],
+  "localBaselines": {
+    "concessionInventory": "./concession-inventory-v1.json",
+    "officialConcessions": "./official-concessions-baseline.geojson",
+    "pendingConcessions": "./pending-concessions-v1.json",
+    "industryFootprints": "./industry-footprints-baseline.geojson",
+    "disturbedMining": "./disturbed-mining-sites-v1.geojson",
+    "disturbedMiningPending": "./disturbed-mining-sites-pending-v1.json",
+    "sourceArchive": "./source-archive/concessions/"
+  }
 }
