@@ -6,6 +6,9 @@ on:
     - cron: "37 4 2 * *"
   push:
     paths:
+      - "map/index.html"
+      - "map/data/agkk-built-vei-cache.json"
+      - "map/data/wind-turbines-bg.json"
       - "scripts/build-social-preview.py"
       - ".github/workflows/refresh-social-preview.yml"
 
