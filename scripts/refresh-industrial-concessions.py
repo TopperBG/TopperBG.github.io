@@ -27,6 +27,7 @@ INVENTORY_PATH = ROOT / "map" / "data" / "concession-inventory-v1.json"
 BASELINE_PATH = ROOT / "map" / "data" / "official-concessions-baseline.geojson"
 PENDING_PATH = ROOT / "map" / "data" / "pending-concessions-v1.json"
 DISTURBED_PATH = ROOT / "map" / "data" / "disturbed-mining-sites-v1.geojson"
+ABANDONED_INVENTORY_PATH = ROOT / "map" / "data" / "abandoned-mining-waste-inventory-v1.json"
 
 EGOV_API = "https://data.egov.bg/api"
 NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
@@ -172,10 +173,12 @@ def main() -> None:
     baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8")) if BASELINE_PATH.exists() else {"features": features}
     pending = json.loads(PENDING_PATH.read_text(encoding="utf-8")) if PENDING_PATH.exists() else {"pending": section.get("pending") or []}
     disturbed = json.loads(DISTURBED_PATH.read_text(encoding="utf-8")) if DISTURBED_PATH.exists() else {"features": []}
+    abandoned = json.loads(ABANDONED_INVENTORY_PATH.read_text(encoding="utf-8")) if ABANDONED_INVENTORY_PATH.exists() else {"records": []}
     inventory_count = len(inventory.get("records") or [])
     baseline_count = len(baseline.get("features") or [])
     pending_count = len(pending.get("pending") or [])
     disturbed_count = len(disturbed.get("features") or [])
+    abandoned_count = len(abandoned.get("records") or [])
     section["schema"] = section.get("schema") or "bgwf-industry-concessions-cache-v1"
     section["geometryCrs"] = "EPSG:4326"
     section["featureCount"] = len(features)
@@ -206,6 +209,7 @@ def main() -> None:
             "baselineFeatureCount": baseline_count,
             "pendingGeometryCount": pending_count,
             "disturbedMiningFeatureCount": disturbed_count,
+            "abandonedMiningWasteInventoryCount": abandoned_count,
             "cacheMode": "normal" if features else "metadata-only",
             "sources": sources,
         },
@@ -229,6 +233,7 @@ def main() -> None:
     print(f"Repository concession polygons preserved: {baseline_count}")
     print(f"Pending concession geometries: {pending_count}")
     print(f"Archived disturbed/mining polygons: {disturbed_count}")
+    print(f"Official abandoned/mining-waste inventory: {abandoned_count}")
 
 if __name__ == "__main__":
     main()
