@@ -385,20 +385,285 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-01T11:23:54Z",
-    "featureCount": 0,
-    "features": [],
-    "pending": [
+    "generatedAt": "2026-10-01T11:27:08Z",
+    "featureCount": 2,
+    "features": [
       {
-        "id": "MINE-ASAREL",
-        "concessionId": "D-000016",
-        "name": "Асарел — обща концесионна граница по Решение №684/13.09.2011",
-        "officialAreaDka": 17356.4,
-        "sourceCrs": "КС 1970",
-        "sourcePoints": 40,
-        "status": "transformation_failed: ENOENT: no such file or directory, open './src/grids/BGS_1970_K9_to_BGS_2005_KK.bcsg'",
-        "sourceUrl": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766"
+        "type": "Feature",
+        "properties": {
+          "concession_id": "D-000016",
+          "name": "Асарел — обща концесионна граница по Решение №684/13.09.2011",
+          "official_area_dka": 17356.4,
+          "transformed_area_dka": 17431.717,
+          "area_qa_error_pct": 0.4339,
+          "source_coordinate_system": "КС 1970",
+          "source_zone": "K9",
+          "source_point_count": 40,
+          "source_url": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "bojko108/transformations@2.0.0 BGS1970 grid -> BGS2005/CCS2005 -> WGS84",
+          "transformation_note": "Grid model derived from AGCC official-engine control points; informational map geometry. Verify with official BGSTrans for legal/cadastral use."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.12016851,
+                42.55801473
+              ],
+              [
+                24.14250825,
+                42.557322
+              ],
+              [
+                24.14687922,
+                42.554952
+              ],
+              [
+                24.15443355,
+                42.55140202
+              ],
+              [
+                24.1601895,
+                42.54522898
+              ],
+              [
+                24.1552102,
+                42.53608913
+              ],
+              [
+                24.1420066,
+                42.53009342
+              ],
+              [
+                24.13589268,
+                42.5306295
+              ],
+              [
+                24.1357426,
+                42.53284236
+              ],
+              [
+                24.13628996,
+                42.53494285
+              ],
+              [
+                24.12920591,
+                42.53887316
+              ],
+              [
+                24.12848075,
+                42.53998675
+              ],
+              [
+                24.12711295,
+                42.54068386
+              ],
+              [
+                24.12265411,
+                42.54279349
+              ],
+              [
+                24.12100688,
+                42.54519011
+              ],
+              [
+                24.11914858,
+                42.54624481
+              ],
+              [
+                24.1168186,
+                42.54704127
+              ],
+              [
+                24.11699134,
+                42.54593112
+              ],
+              [
+                24.11563061,
+                42.5460789
+              ],
+              [
+                24.11482182,
+                42.54593525
+              ],
+              [
+                24.11142463,
+                42.54335492
+              ],
+              [
+                24.10819765,
+                42.54117317
+              ],
+              [
+                24.10625176,
+                42.53644678
+              ],
+              [
+                24.10357449,
+                42.53294005
+              ],
+              [
+                24.08666068,
+                42.53577609
+              ],
+              [
+                24.08142925,
+                42.56195388
+              ],
+              [
+                24.07693965,
+                42.5638557
+              ],
+              [
+                24.07614172,
+                42.56896102
+              ],
+              [
+                24.08042431,
+                42.57200635
+              ],
+              [
+                24.08354045,
+                42.57228641
+              ],
+              [
+                24.0846006,
+                42.57256297
+              ],
+              [
+                24.08611978,
+                42.57190601
+              ],
+              [
+                24.09222313,
+                42.57247638
+              ],
+              [
+                24.09788508,
+                42.57129896
+              ],
+              [
+                24.10024962,
+                42.57021552
+              ],
+              [
+                24.10138436,
+                42.56928065
+              ],
+              [
+                24.1043506,
+                42.56888495
+              ],
+              [
+                24.10891603,
+                42.56705362
+              ],
+              [
+                24.11497108,
+                42.56196053
+              ],
+              [
+                24.11885288,
+                42.55961257
+              ],
+              [
+                24.12016851,
+                42.55801473
+              ]
+            ]
+          ]
+        }
       },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "D-000610",
+          "name": "Хан Крум / Ада тепе — концесионна площ",
+          "official_area_dka": 13700,
+          "transformed_area_dka": 13700.941,
+          "area_qa_error_pct": 0.0069,
+          "source_coordinate_system": "КС 1970",
+          "source_zone": "K5",
+          "source_point_count": 14,
+          "source_url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "bojko108/transformations@2.0.0 BGS1970 grid -> BGS2005/CCS2005 -> WGS84",
+          "transformation_note": "Grid model derived from AGCC official-engine control points; informational map geometry. Verify with official BGSTrans for legal/cadastral use."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                25.607018,
+                41.44188455
+              ],
+              [
+                25.61551591,
+                41.43791878
+              ],
+              [
+                25.63819454,
+                41.43804784
+              ],
+              [
+                25.64437259,
+                41.43995027
+              ],
+              [
+                25.64436855,
+                41.44575199
+              ],
+              [
+                25.65866506,
+                41.44586993
+              ],
+              [
+                25.68270578,
+                41.4337678
+              ],
+              [
+                25.67885613,
+                41.42367804
+              ],
+              [
+                25.65021123,
+                41.42141537
+              ],
+              [
+                25.65295422,
+                41.4033588
+              ],
+              [
+                25.64839714,
+                41.40179394
+              ],
+              [
+                25.63884847,
+                41.40698861
+              ],
+              [
+                25.63866432,
+                41.42251988
+              ],
+              [
+                25.60703073,
+                41.42798338
+              ],
+              [
+                25.607018,
+                41.44188455
+              ]
+            ]
+          ]
+        }
+      }
+    ],
+    "pending": [
       {
         "id": "MINE-CHELOPECH",
         "concessionId": "D-000034",
@@ -418,16 +683,6 @@
         "sourcePoints": 395,
         "status": "official_BGS2005_register_confirmed__395_points__attachment_download_required",
         "sourceUrl": "https://nkr.government.bg/Preview/AssignedConcession/b9c56ff0-3e50-4bf7-a545-25a3877ec47d"
-      },
-      {
-        "id": "MINE-HAN-KRUM",
-        "concessionId": "D-000610",
-        "name": "Хан Крум / Ада тепе — концесионна площ",
-        "officialAreaDka": 13700,
-        "sourceCrs": "КС 1970",
-        "sourcePoints": 14,
-        "status": "transformation_failed: ENOENT: no such file or directory, open './src/grids/BGS_1970_K5_to_BGS_2005_KK.bcsg'",
-        "sourceUrl": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-"
       },
       {
         "id": "MINE-BOBOV-DOL",
@@ -488,13 +743,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "ME-CONCESSIONS"
     },
-    "sourceHealthCheckedAt": "2026-10-01T11:24:46Z",
+    "sourceHealthCheckedAt": "2026-10-01T11:28:04Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:23:54Z",
+        "checkedAt": "2026-10-01T11:27:08Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -502,7 +757,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": false,
-        "checkedAt": "2026-10-01T11:24:08Z",
+        "checkedAt": "2026-10-01T11:27:19Z",
         "url": "https://nkr.government.bg/Concessions/Export?file=csv",
         "error": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
@@ -510,30 +765,30 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-01T11:24:35Z",
+        "checkedAt": "2026-10-01T11:27:52Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 45894,
-        "digest": "7a40b5598aeb48674b164de764a8c58a0712e4b88633b024b9756d34e52dde10"
+        "digest": "badb4d0f3a075adbfd35825f499cd30fde39ddfa725802e3c91767c64c90d62b"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-01T11:24:41Z",
+        "checkedAt": "2026-10-01T11:27:58Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51478,
-        "digest": "590aa6837c20a8c876f50939093b095fed50d04582e33608f29c049e935244a0"
+        "digest": "0395ef5cf955327f66aa7d298eb4fc9ef14982d5104b7aea8c2d93bb8ca7a180"
       }
     ],
     "coverage": {
       "scope": "national",
-      "baselineStatus": "bootstrapping",
+      "baselineStatus": "partial",
       "includesActiveConcessions": true,
       "includesClosedOrExpiredConcessionsWhenLegacyImpactRemains": true,
       "includesAbandonedMiningWasteFacilities": true,
       "note": "Legal concession boundary and developed/disturbed footprint are separate geometries.",
-      "publishedOfficialRegisterPolygons": 0,
-      "pendingOfficialRecords": 5
+      "publishedOfficialRegisterPolygons": 2,
+      "pendingOfficialRecords": 3
     },
     "baselineBuilder": {
       "id": "official-coordinate-registers-v1",
@@ -549,14 +804,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-01T11:24:41Z",
+      "checkedAt": "2026-10-01T11:27:58Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51478,
-      "digest": "590aa6837c20a8c876f50939093b095fed50d04582e33608f29c049e935244a0"
+      "digest": "0395ef5cf955327f66aa7d298eb4fc9ef14982d5104b7aea8c2d93bb8ca7a180"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-01T11:23:54Z"
+    "concessionsBaseline": "2026-10-01T11:27:08Z"
   }
 }
