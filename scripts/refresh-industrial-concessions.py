@@ -8,6 +8,7 @@ import json
 import pathlib
 import urllib.parse
 import urllib.request
+import urllib.error
 
 from pyproj import Transformer
 
@@ -31,8 +32,12 @@ def post_json(params: dict[str, str]) -> dict:
         },
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=90) as response:
-        payload = json.load(response)
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            payload = json.load(response)
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", "replace")
+        raise RuntimeError(f"ArcGIS HTTP {error.code}: {body[:2000]}") from error
     if payload.get("error"):
         raise RuntimeError(payload["error"].get("message", "ArcGIS error"))
     return payload
@@ -54,11 +59,9 @@ def fetch_features() -> list[dict]:
     payload = post_json(
         {
             "where": "1=1",
-            "outFields": OUT_FIELDS,
+            "outFields": "*",
             "returnGeometry": "true",
-            "outSR": "7801",
             "f": "json",
-            "resultRecordCount": "2000",
         }
     )
 
