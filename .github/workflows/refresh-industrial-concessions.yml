@@ -55,13 +55,31 @@ jobs:
 
       - name: Commit source-health/cache metadata
         run: |
-          if git diff --quiet -- map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json; then
-            echo "No source-health changes."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json
-          git commit -m "Refresh national concession source health"
-          git pull --rebase origin main
-          git push
+
+          # The source check is deterministic and cheap compared with resolving a
+          # generated-file rebase conflict. If main moved while this job was
+          # running, rebuild the health snapshot on top of the new HEAD.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/refresh-industrial-concessions.py
+
+            if git diff --quiet -- map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json; then
+              echo "No source-health changes."
+              exit 0
+            fi
+
+            git add map/data/industrial-zones-cache-v1.json map/data/gis-source-health-v1.json
+            git commit -m "Refresh national concession source health"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "::warning title=Concurrent main update::Push race on attempt ${attempt}; rebuilding the generated source-health snapshot."
+            sleep 2
+          done
+
+          echo "::error title=Source-health commit failed::Could not publish after 3 attempts."
+          exit 1
