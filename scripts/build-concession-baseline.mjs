@@ -261,7 +261,9 @@ fs.writeFileSync(PENDING_PATH, JSON.stringify(pendingPayload, null, 2) + "\n", "
 
 const section = cache.concessions ||= {};
 const previousFeatures = Array.isArray(section.features) ? section.features : [];
-const changed = !sameFeatureSet(previousFeatures, features) || !sameFeatureSet(section.pending || [], pending);
+const changed = !sameFeatureSet(previousFeatures, features)
+  || !sameFeatureSet(section.pending || [], pendingQueue)
+  || Number(section.coverage?.inventoryRecordCount || 0) !== Number((inventory.records||[]).length);
 
 section.schema = "bgwf-industry-concessions-cache-v1";
 section.geometryCrs = "EPSG:4326";
