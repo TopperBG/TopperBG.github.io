@@ -20,7 +20,7 @@ import {
   BGSCoordinates,
   projections,
   transformLambertToGeographic,
-} from "transformations";
+} from "transformations/src/main.js";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "..");
