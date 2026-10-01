@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92k-mobile-header-20260925">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92k</title>
+<meta name="bgwf-build" content="v0.93a-source-health-20261001">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93a</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -983,6 +983,40 @@ svg {
     color: var(--muted-foreground);
   }
   #bg-wildfires-map .bgwf-data-notice strong { color: var(--foreground); }
+
+  #bg-wildfires-map .bgwf-source-warning {
+    position:absolute;
+    z-index:125;
+    left:50%;
+    top:46px;
+    transform:translateX(-50%);
+    width:min(760px,calc(100% - 6.5rem));
+    padding:.42rem .62rem;
+    border:1px solid color-mix(in srgb,#d97706 48%,var(--border));
+    border-radius:9px;
+    background:color-mix(in srgb,#fff7ed 94%,transparent);
+    color:#7c2d12;
+    box-shadow:0 2px 12px rgb(0 0 0 / 12%);
+    font-size:10px;
+    font-weight:650;
+    line-height:1.28;
+    text-align:center;
+    pointer-events:auto;
+  }
+  #bg-wildfires-map .bgwf-source-warning[data-severity="error"] {
+    border-color:color-mix(in srgb,#dc2626 58%,var(--border));
+    background:color-mix(in srgb,#fef2f2 96%,transparent);
+    color:#991b1b;
+  }
+  #bg-wildfires-map .bgwf-source-warning[hidden] { display:none!important; }
+  @media (max-width:700px) {
+    #bg-wildfires-map .bgwf-source-warning {
+      width:calc(100% - 4.5rem);
+      padding:.34rem .48rem;
+      border-radius:8px;
+      font-size:9px;
+    }
+  }
   @media (max-width:700px) {
     #bg-wildfires-map .bgwf-data-notice {
       margin-top: .3rem;
@@ -1603,6 +1637,7 @@ svg {
       <span data-province-name></span>
       <button type="button" data-province-reset aria-label="Назад към цяла България">×</button>
     </div>
+    <div class="bgwf-source-warning" data-source-warning role="status" aria-live="polite" hidden></div>
     <div class="bgwf-map bgwf-ol-map" role="application" aria-label="Пожари и енергийни/GIS слоеве в България" aria-describedby="bgwf-map-desc"></div>
     <div class="bgwf-zoom-controls" aria-label="Управление на мащаба">
       <button type="button" class="btn bgwf-map-button" data-zoom-in aria-label="Увеличаване" title="Увеличаване">+</button>
@@ -3524,18 +3559,12 @@ const CURATED_INDUSTRIAL_POINTS = [];
     }
   };
 
-  // Потвърден публичен векторен GIS източник:
-  // данните за местоположение са взети от концесионните договори,
-  // а атрибутите са допълнени от Националния концесионен регистър.
-  const OFFICIAL_CONCESSION_GIS_SOURCES = [
-    {
-      id: "MGU-PERNIK",
-      label: "официални концесии · област Перник",
-      url: "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query",
-      sourceUrl: "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer",
-      where: "1=1"
-    }
-  ];
+  // Официалните концесионни граници са cache-first и национални.
+  // Browser runtime не зависи от MGU или друг единичен GIS сървър.
+  // Weekly workflow проверява data.egov.bg (primary), НКР (secondary)
+  // и Министерството на енергетиката (tertiary/audit), без да унищожава
+  // последния добър repository cache при временна недостъпност.
+  const OFFICIAL_CONCESSION_GIS_SOURCES = [];
 
   const OFFICIAL_CONCESSION_STATIC_CACHE_URL = "./data/industrial-zones-cache-v1.json";
   let officialConcessionFeatures = [];
@@ -4359,11 +4388,78 @@ function updateProvinceChipPosition(){
   provinceChip.style.top=`${top}px`;
 }
 function updateFloatingUiPosition(){
-  // Keep the selected-province label below the responsive filter panel.
+  // Keep persistent overlays below the responsive filter panel.
   updateProvinceChipPosition();
+  updateSourceWarningPosition();
 }
 addEventListener('scroll',updateFloatingUiPosition,{passive:true}); addEventListener('resize',()=>{updateFloatingUiPosition();map?.updateSize();},{passive:true});
 if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateProvinceChipPosition).observe(filterPanel);
+
+const sourceWarning=root.querySelector('[data-source-warning]');
+const SOURCE_HEALTH_URL='./data/gis-source-health-v1.json';
+let sourceHealth=null;
+let sourceHealthLoadState='idle';
+
+function updateSourceWarningPosition(){
+  if(!sourceWarning||!filterPanel||!mapWrap)return;
+  const panelRect=filterPanel.getBoundingClientRect();
+  const wrapRect=mapWrap.getBoundingClientRect();
+  const top=Math.max(42,Math.round(panelRect.bottom-wrapRect.top+8));
+  sourceWarning.style.top=`${top}px`;
+}
+function layerSourceWarnings(){
+  const warnings=[];
+  if(layerVisibility.industry){
+    const cachedConcessions=concessionSource?.getFeatures?.().length||0;
+    const registry=sourceHealth?.concessions;
+    const primary=registry?.sources?.find?.(s=>s.id==='DATA-EGOV-BG');
+    const secondary=registry?.sources?.find?.(s=>s.id==='NKR');
+    const tertiary=registry?.sources?.find?.(s=>s.id==='ME-CONCESSIONS');
+    if(officialConcessionLoadState==='error'&&cachedConcessions===0){
+      warnings.push({severity:'error',text:'ТЕЦ/мини: няма кеширани официални концесионни граници. Онлайн източниците не могат да заместят липсващ baseline в браузъра; показват се наличните локални индустриални/нарушени площи.'});
+    }else if(primary&&primary.ok===false){
+      const fallback=secondary?.ok?'НКР':tertiary?.ok?'Министерството на енергетиката':'последния добър repository cache';
+      warnings.push({severity:(secondary?.ok||tertiary?.ok)?'warning':'error',text:`Концесии: data.egov.bg е недостъпен при последната седмична проверка; използва се ${fallback}. Картата показва last-known-good cache.`});
+    }
+    if(industrialPolygonLoadState==='error'&&industryFootprintSource.getFeatures().length===0){
+      warnings.push({severity:'error',text:'ТЕЦ/мини: няма наличен footprint cache и онлайн GIS/OSM геометрията е недостъпна.'});
+    }
+  }
+  if(layerVisibility.natura&&naturaLoadState==='error'&&naturaSource.getFeatures().length===0)
+    warnings.push({severity:'error',text:'Натура 2000: локалният GIS cache не може да бъде зареден и няма налична геометрия за слоя.'});
+  if(layerVisibility.epm&&epmLoadState==='error'&&epmSource.getFeatures().length===0)
+    warnings.push({severity:'error',text:'ЕПМ: локалният GIS cache не може да бъде зареден и няма налична геометрия за слоя.'});
+  if(layerVisibility.foreign&&foreignOsmLoadState==='error'&&foreignOsmSource.getFeatures().length===0)
+    warnings.push({severity:'warning',text:'Foreign: онлайн OSM GIS геометрията е недостъпна; показват се само наличните локални/площови представяния.'});
+  if(layerVisibility.live&&liveFireLoadState==='error')
+    warnings.push({severity:'warning',text:'Sentinel-3: оперативният онлайн източник е временно недостъпен; няма текущо опресняване на засичанията.'});
+  return warnings;
+}
+function renderSourceWarning(){
+  if(!sourceWarning)return;
+  const warnings=layerSourceWarnings();
+  if(!warnings.length){sourceWarning.hidden=true;sourceWarning.textContent='';sourceWarning.removeAttribute('data-severity');return;}
+  sourceWarning.hidden=false;
+  sourceWarning.dataset.severity=warnings.some(w=>w.severity==='error')?'error':'warning';
+  sourceWarning.textContent=warnings.map(w=>w.text).join(' ');
+  updateSourceWarningPosition();
+}
+async function loadSourceHealth(){
+  if(sourceHealthLoadState==='loading'||sourceHealthLoadState==='ready')return sourceHealth;
+  sourceHealthLoadState='loading';
+  try{
+    const r=await fetch(SOURCE_HEALTH_URL,{cache:'no-cache'});
+    if(!r.ok)throw new Error(`HTTP ${r.status}`);
+    sourceHealth=await r.json();
+    sourceHealthLoadState='ready';
+    debugState.network.sourceHealth={ok:true,status:r.status,checkedAt:sourceHealth?.checkedAt||null};
+  }catch(e){
+    sourceHealthLoadState='error';
+    debugState.network.sourceHealth={ok:false,error:e.message};
+  }
+  renderSourceWarning();
+  return sourceHealth;
+}
 
 const compactMobileQuery='(max-width:700px), (max-height:600px) and (hover:none)';
 const mobileFooter=root.querySelector('[data-mobile-footer]'); if(mobileFooter&&matchMedia(compactMobileQuery).matches)mobileFooter.open=false;
@@ -5348,7 +5444,7 @@ if(kind==='industry'){
     official+=` · НКР ${meta.concessionId}`;
     if(Number.isFinite(meta.officialAreaDka))official+=` · концесионна площ ${formatAreaDka(meta.officialAreaDka)}`;
     if(Number.isFinite(meta.additionalAreaDka))official+=` · допълнителна концесионна площ ${formatAreaDka(meta.additionalAreaDka)}`;
-    if((Number.isFinite(meta.officialAreaDka)||Number.isFinite(meta.additionalAreaDka))&&!concessionSource.getFeatures().length)official+=officialConcessionLoadState==='error'?' · официална GIS граница: източникът е недостъпен':' · официална GIS граница: няма кеширана геометрия';
+    if((Number.isFinite(meta.officialAreaDka)||Number.isFinite(meta.additionalAreaDka))&&!concessionSource.getFeatures().length)official+=officialConcessionLoadState==='error'?' · официална GIS граница: няма repository baseline':' · официална GIS граница: няма кеширана геометрия';
   }
   const geometryText=f.getGeometry()?.getType()==='Point'?'само местоположение':`разработена/индустриална площ ${formatAreaDka(f.get('areaDka'))}`;
   return `${industrialTypeLabel(d.type)} · ${d.name} · ${geometryText}${d.area?` · ${d.area}`:''}${official} · ${d.fuel}`;
@@ -6309,32 +6405,16 @@ async function ensureOfficialConcessionPolygons(){
   officialConcessionLoadPromise=(async()=>{
     officialConcessionLoadState='loading';officialConcessionLoadError='';
     const started=performance.now();
-    let loaded=await loadOfficialConcessionStaticCache();
-    if(!loaded.length){
-      const direct=[];
-      try{
-        for(const source of OFFICIAL_CONCESSION_GIS_SOURCES){
-          const u=new URL(source.url);
-          u.searchParams.set('where',source.where||'1=1');u.searchParams.set('outFields','*');u.searchParams.set('returnGeometry','true');
-          u.searchParams.set('outSR','4326');u.searchParams.set('f','geojson');u.searchParams.set('_bgwf',GIS_CACHE_POLICY.monthKey);
-          const r=await fetch(u,{mode:'cors',cache:'no-store'});
-          if(!r.ok)throw new Error(`HTTP ${r.status}`);
-          const p=await r.json();if(p?.error)throw new Error(p.error.message||'ArcGIS error');
-          for(const raw of p.features||[]){const f=concessionFeatureFromGeoJSON(raw,source.id,source.sourceUrl);if(f)direct.push(f);}
-          debugState.network[`concession-${source.id}`]={ok:true,status:r.status,features:direct.length,direct:true};
-        }
-      }catch(e){officialConcessionLoadError=e.message;dbgWarn('official-concession-direct-load-failed',{error:e.message});}
-      if(direct.length)loaded=direct;
-    }
-    // CORS-safe fallback: ArcGIS REST JSONP. This is especially important for the Pernik layer.
-    if(!loaded.length){const jsonp=await loadOfficialConcessionsJsonpFallback();if(jsonp.length)loaded=jsonp;}
+    const loaded=await loadOfficialConcessionStaticCache();
     concessionSource.clear();concessionSource.addFeatures(loaded);officialConcessionFeatures=loaded;
     rebuildEstimatedConcessionAreas();
     officialConcessionLoadState=loaded.length?'ready':'error';
-    if(!loaded.length&&!officialConcessionLoadError)officialConcessionLoadError='Не са заредени официални концесионни полигони.';
+    if(!loaded.length)officialConcessionLoadError='Няма кеширани официални концесионни полигони в repository baseline.';
     officialConcessionLoadPromise=null;
-    debugState.layerCounts.concessions=loaded.length;debugState.timings.concessions=Math.round(performance.now()-started);updateLayerStatus();
-    if(loaded.length)setTimeout(()=>void refreshOfficialConcessionsRemoteInBackground(loaded),1500);
+    debugState.layerCounts.concessions=loaded.length;
+    debugState.timings.concessions=Math.round(performance.now()-started);
+    updateLayerStatus();
+    renderSourceWarning();
     return loaded;
   })();
   return officialConcessionLoadPromise;
@@ -6589,6 +6669,7 @@ function updateCompactFilterSummary(){
 function updateLayerStatus(){
   updateCompactFilterSummary();
   updateIndustryLegendHint();
+  renderSourceWarning();
   if(!layerStatus)return;
 
   const loadedProjects=window.__bgwfProjectParcels?.length??0;
@@ -6620,7 +6701,7 @@ function updateLayerStatus(){
     if(layerVisibility.industry){
       extras.push(`${industrialPolygonSites.length} ТЕЦ/мини · footprint ${formatAreaDka(totalIndustryFootprintDka())}`);if(concessionEstimateSource.getFeatures().length)extras.push(`${concessionEstimateSource.getFeatures().length} концесионни площи`);
       if(concessionSource.getFeatures().length)extras.push(`${concessionSource.getFeatures().length} официални концесионни граници`);
-      else if(officialConcessionLoadState==='error')extras.push('официални концесионни граници: GIS източникът е недостъпен');
+      else if(officialConcessionLoadState==='error')extras.push('официални концесионни граници: няма repository baseline');
     }
     if(layerVisibility.foreign)extras.push(foreignOsmLoadState==='loading'?'Foreign: OSM геометрията се зарежда':`Foreign ${foreignSource.getFeatures().length} проекта · ${new Set(foreignOsmSource.getFeatures().map(f=>f.get('projectId'))).size} с OSM геометрия`);
     if(layerVisibility.epm)extras.push(epmLoadState==='loading'?'ЕПМ се зарежда':epmLoadState==='error'?'ЕПМ: грешка при зареждане':`ЕПМ ${epmSource.getFeatures().length} трасета (110/220/400 kV)`);
@@ -7142,6 +7223,7 @@ window.bgwfRunSelfTests=runSelfTests;
 
 // Initial state
 compactYearFilterButtons();
+void loadSourceHealth();
 updateFiresAndDensity();updateLayerStatus();updateFloatingUiPosition();void showGoatCounter();
 if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
 if(layerVisibility.natura)void ensureNatura2000().catch(()=>{});
