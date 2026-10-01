@@ -26,9 +26,15 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "..");
 const SOURCE_PATH = path.join(ROOT, "map", "data", "concession-boundaries-official-source-v2.json");
 const CACHE_PATH = path.join(ROOT, "map", "data", "industrial-zones-cache-v1.json");
+const INVENTORY_PATH = path.join(ROOT, "map", "data", "concession-inventory-v1.json");
+const BASELINE_PATH = path.join(ROOT, "map", "data", "official-concessions-baseline.geojson");
+const PENDING_PATH = path.join(ROOT, "map", "data", "pending-concessions-v1.json");
 
 const source = JSON.parse(fs.readFileSync(SOURCE_PATH, "utf8"));
 const cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+const inventory = fs.existsSync(INVENTORY_PATH)
+  ? JSON.parse(fs.readFileSync(INVENTORY_PATH, "utf8"))
+  : { records: [] };
 
 // transformations@2.0.0 resolves its binary grids from process.cwd() rather
 // than from the package directory. Run the transformation phase from the
@@ -163,7 +169,95 @@ for (const record of source.records || []) {
 features.sort((a, b) =>
   String(a.properties.concession_id).localeCompare(String(b.properties.concession_id), "bg")
 );
-pending.sort((a, b) => String(a.concessionId || a.id).localeCompare(String(b.concessionId || b.id), "bg"));
+
+const publishedIds = new Set(features.map(f => String(f.properties.concession_id || "")));
+const pendingById = new Map();
+for (const item of pending) {
+  const key = String(item.concessionId || item.id || item.name || "");
+  pendingById.set(key, {...item, queueSource: "curated-official-register"});
+}
+
+for (const rec of inventory.records || []) {
+  const cid = String(rec.concessionId || rec.id || "");
+  if (!cid || publishedIds.has(cid)) continue;
+  if (pendingById.has(cid)) {
+    const current = pendingById.get(cid);
+    pendingById.set(cid, {
+      ...current,
+      inventoryStatus: rec.status ?? null,
+      concessionaire: rec.concessionaire ?? null,
+      resource: rec.resource ?? null,
+      municipality: rec.municipality ?? null,
+      province: rec.province ?? null,
+      inventoryAreaDka: rec.areaDka ?? null,
+    });
+    continue;
+  }
+  const area = Number(rec.areaDka);
+  pendingById.set(cid, {
+    id: rec.id,
+    concessionId: rec.concessionId || null,
+    name: rec.name || "Концесия без нормализирано име",
+    officialAreaDka: Number.isFinite(area) && area > 0 ? area : null,
+    sourceCrs: null,
+    sourcePoints: null,
+    status: "official_coordinate_register_not_archived",
+    sourceUrl: null,
+    queueSource: "national-inventory",
+    inventoryStatus: rec.status ?? null,
+    concessionaire: rec.concessionaire ?? null,
+    resource: rec.resource ?? null,
+    municipality: rec.municipality ?? null,
+    province: rec.province ?? null,
+  });
+}
+
+const pendingQueue = [...pendingById.values()];
+function queuePriority(item){
+  const area=Number(item.officialAreaDka ?? item.inventoryAreaDka);
+  if(Number.isFinite(area)&&area>=10000)return 1;
+  if(Number.isFinite(area)&&area>=3000)return 2;
+  if(Number.isFinite(area)&&area>=1000)return 3;
+  if(item.queueSource==="curated-official-register")return 2;
+  return 4;
+}
+pendingQueue.forEach(item=>item.priority=queuePriority(item));
+pendingQueue.sort((a,b)=>a.priority-b.priority
+  || (Number(b.officialAreaDka??b.inventoryAreaDka)||0)-(Number(a.officialAreaDka??a.inventoryAreaDka)||0)
+  || String(a.name||"").localeCompare(String(b.name||""),"bg"));
+
+const now = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+const baselinePayload = {
+  type: "FeatureCollection",
+  schema: "bgwf-official-concessions-baseline-v1",
+  generatedAt: now,
+  geometryCrs: "EPSG:4326",
+  runtimeDependency: false,
+  featureCount: features.length,
+  inventoryRecordCount: (inventory.records||[]).length,
+  publicationGate: {
+    officialCoordinateRegisterRequired: true,
+    areaTolerancePct: 2.0,
+    approximateGeometryAllowed: false,
+  },
+  features,
+};
+const pendingPayload = {
+  schema: "bgwf-pending-concessions-v1",
+  generatedAt: now,
+  inventoryRecordCount: (inventory.records||[]).length,
+  publishedGeometryCount: features.length,
+  pendingCount: pendingQueue.length,
+  priorityMeaning: {
+    "1": "very large area (>= 10 000 dka)",
+    "2": "large/curated official source",
+    "3": "medium area (>= 1 000 dka)",
+    "4": "remaining national inventory",
+  },
+  pending: pendingQueue,
+};
+fs.writeFileSync(BASELINE_PATH, JSON.stringify(baselinePayload, null, 2) + "\n", "utf8");
+fs.writeFileSync(PENDING_PATH, JSON.stringify(pendingPayload, null, 2) + "\n", "utf8");
 
 const section = cache.concessions ||= {};
 const previousFeatures = Array.isArray(section.features) ? section.features : [];
@@ -173,7 +267,7 @@ section.schema = "bgwf-industry-concessions-cache-v1";
 section.geometryCrs = "EPSG:4326";
 section.featureCount = features.length;
 section.features = features;
-section.pending = pending;
+section.pending = pendingQueue;
 section.sourceDataset = "./concession-boundaries-official-source-v2.json";
 section.baselineBuilder = {
   id: "official-coordinate-registers-v1",
@@ -186,17 +280,17 @@ section.coverage = {
   scope: "national",
   baselineStatus: features.length ? "partial" : "bootstrapping",
   publishedOfficialRegisterPolygons: features.length,
-  pendingOfficialRecords: pending.length,
+  inventoryRecordCount: (inventory.records||[]).length,
+  pendingOfficialRecords: pendingQueue.length,
   note: "Legal concession boundary and developed/disturbed footprint are separate geometries.",
 };
 
 if (changed) {
-  const now = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
   section.generatedAt = now;
   cache.lastUpdatedSections ||= {};
   cache.lastUpdatedSections.concessionsBaseline = now;
   fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2) + "\n", "utf8");
-  console.log(`Updated baseline: ${features.length} published polygon(s), ${pending.length} pending record(s).`);
+  console.log(`Updated baseline: ${features.length} published polygon(s), ${pendingQueue.length} pending record(s), inventory ${(inventory.records||[]).length}.`);
 } else {
-  console.log(`Baseline unchanged: ${features.length} published polygon(s), ${pending.length} pending record(s).`);
+  console.log(`Baseline unchanged: ${features.length} published polygon(s), ${pendingQueue.length} pending record(s), inventory ${(inventory.records||[]).length}.`);
 }
