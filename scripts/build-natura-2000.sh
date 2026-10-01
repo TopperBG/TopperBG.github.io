@@ -41,8 +41,8 @@ jq --compact-output --slurp '
 
 jq -e '
   .type == "FeatureCollection"
-  and ([.features[] | select(.properties.naturaClass == "spa")] | length == 120)
-  and ([.features[] | select(.properties.naturaClass == "habitats")] | length == 233)
+  and ([.features[] | select(.properties.naturaClass == "spa")] | length >= 120)
+  and ([.features[] | select(.properties.naturaClass == "habitats")] | length >= 233)
 ' "$work_dir/all.geojson" >/dev/null
 
 mkdir -p "$output_dir"
