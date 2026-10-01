@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-gis-cache-policy-v1",
-  "generatedAt": "2026-08-17T19:45:49.997363+00:00",
+  "generatedAt": "2026-10-01T00:00:00Z",
   "policy": {
     "rotation": "calendar month",
     "browserCacheNamespace": "bgwf-gis-monthly-YYYY-MM",
@@ -48,5 +48,9 @@
     "officialConcessions": "static repository GeoJSON controls rendering; remote GIS refresh runs in background",
     "hoverHitDetection": "pointermove feature hit-test throttled to about 25/s",
     "redIII": "important legal/semantic distinction shown on hover/focus"
+  },
+  "v092e": {
+    "cacheLocation": "/map/data/",
+    "industrialZones": "single consolidated repository cache: industrial-zones-cache-v1.json"
   }
 }

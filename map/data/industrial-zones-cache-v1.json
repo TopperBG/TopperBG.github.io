@@ -1,0 +1,453 @@
+{
+  "schema": "bgwf-industrial-zones-cache-v1",
+  "generatedAt": "2026-10-01T00:00:00Z",
+  "geometryCrs": "EPSG:4326",
+  "revision": "2026-10-01.1",
+  "semantics": {
+    "footprints": "OSM/curated developed mining, quarry, TPP and waste footprints; not legal concession boundaries unless explicitly marked concession",
+    "concessions": "official concession polygons are separate; repository cache may be empty and MGU Pernik FeatureServer is runtime fallback"
+  },
+  "sourceFiles": [
+    "legacy map/radka-elshitsa-osm-resolution.json",
+    "legacy data/industry-footprints/*.json",
+    "legacy data/industrial-curated-aux-v1.json",
+    "legacy data/industry-concessions-cache-v1.json"
+  ],
+  "osmResolution": {
+    "radka_query_result": {
+      "osm_type": "way",
+      "osm_id": 200360355,
+      "lat": 42.400492,
+      "lon": 24.2885598,
+      "display_name": "Бивша медна мина \"Радка\" (закрит рудник), Панагюрище, Пазарджик, България",
+      "geojson_type": "Polygon"
+    },
+    "added_osm_objects": [
+      "W124105233",
+      "W1238912175",
+      "W200360355"
+    ],
+    "existing_tsar_asen": "W124105629"
+  },
+  "footprints": [
+    {
+      "parentId": "MINE-MARITSA-EAST",
+      "name": "Открит минен комплекс „Марица-изток“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 137246419,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "ТЕЦ „Марица изток 2“ — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 146641607,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-AES-GALABOVO",
+      "name": "AES Гълъбово — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 918500389,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-ME3",
+      "name": "ТЕЦ „Марица изток 3“ — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 157660794,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-BRIKEL",
+      "name": "ТЕЦ „Брикел“ — площадка",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 918500388,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "Обединени северни насипища",
+      "component": "насипище/депо",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "АОП/комплексно разрешително: депо за неопасни отпадъци „Обединени северни насипища“, гр. Раднево",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-ME2",
+      "name": "Сгуроотвал на ТЕЦ „Марица изток 2“",
+      "component": "сгуроотвал",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "официални обществени поръчки на ТЕЦ Марица изток 2",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "TPP-ME3",
+      "name": "Сгуроотвал „Искрица“",
+      "component": "сгуроотвал",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "проектна документация за оросителна система на сгуроотвал Искрица",
+      "revision": "2026-08-18.1",
+      "complexId": "MARITSA-EAST"
+    },
+    {
+      "parentId": "MINE-ASAREL",
+      "name": "Рудник „Асарел“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 124105802,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "ASAREL"
+    },
+    {
+      "parentId": "MINE-ASAREL",
+      "name": "Хвостохранилище „Люляковица“",
+      "component": "хвостохранилище",
+      "osmType": "W",
+      "osmId": 124105571,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "complexId": "ASAREL",
+      "id": "ASAREL-LYULYAKOVITSA",
+      "lat": 42.56046,
+      "lon": 24.09847,
+      "evidence": [
+        "Asarel-Medet official site identifies Lyulyakovitsa as its tailings pond",
+        "IAG/RDG Sofia records forest land conversion for tailings pond Lyulyakovitsa",
+        "OSM way 124105571, landuse=landfill"
+      ],
+      "sourceKind": "curated-aux"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Рудник „Елаците“",
+      "component": "рудник",
+      "osmType": "R",
+      "osmId": 18451229,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "ELATSITE"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Чавдар“",
+      "component": "хвостохранилище",
+      "osmType": "W",
+      "osmId": 25220328,
+      "geometryStatus": "verified-osm",
+      "note": "историческа/регионална минна footprint площ; текущият оператор не се твърди само от OSM",
+      "revision": "2026-08-18.1",
+      "complexId": "ELATSITE"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Калето“",
+      "component": "хвостохранилище",
+      "osmType": "W",
+      "osmId": 25238366,
+      "geometryStatus": "verified-osm",
+      "note": "историческа/регионална минна footprint площ; текущият оператор не се твърди само от OSM",
+      "revision": "2026-08-18.1",
+      "complexId": "ELATSITE"
+    },
+    {
+      "parentId": "MINE-ELATSITE",
+      "name": "Хвостохранилище „Бенковски 2“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "Министерство на енергетиката: съоръжение за минни отпадъци категория А, оператор Елаците-Мед",
+      "revision": "2026-08-18.1",
+      "complexId": "ELATSITE"
+    },
+    {
+      "parentId": "MINE-CHELOPECH",
+      "name": "Рудник „Челопеч“ — надземна площадка",
+      "component": "рудник/обогатяване",
+      "osmType": "W",
+      "osmId": 853545188,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "CHELOPECH"
+    },
+    {
+      "parentId": "MINE-CHELOPECH",
+      "name": "Хвостохранилище „Челопеч“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "Община Чавдар: ОВОС за повишаване конструктивната сигурност на южната стена на хвостохранилище „Челопеч“",
+      "revision": "2026-08-18.1",
+      "complexId": "CHELOPECH"
+    },
+    {
+      "parentId": "MINE-BOBOV-DOL",
+      "name": "Мина „Бобов дол“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 124105282,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "BOBOV-DOL"
+    },
+    {
+      "parentId": "TPP-BOBOV-DOL",
+      "name": "ТЕЦ „Бобов дол“",
+      "component": "ТЕЦ",
+      "osmType": "W",
+      "osmId": 439600139,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-08-18.1",
+      "complexId": "BOBOV-DOL"
+    },
+    {
+      "parentId": "MINE-BOBOV-DOL",
+      "name": "Свързани насипища/депа",
+      "component": "минен отпадък",
+      "geometryStatus": "pending-curation",
+      "revision": "2026-08-18.1",
+      "complexId": "BOBOV-DOL"
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "МОК „Медет“ — нарушена/унищожена територия",
+      "component": "исторически минен комплекс",
+      "geometryStatus": "verified-area-circle",
+      "lon": 24.18718,
+      "lat": 42.60117,
+      "areaDka": 6000,
+      "note": "Народното събрание описва над 6000 дка унищожени гори, 7 насипища, един отвал и хвостохранилище; кръгът е мащабна визуализация, не точен контур.",
+      "revision": "2026-08-18.1",
+      "complexId": "MEDET-LEGACY"
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "Хвостохранилище „Медет“",
+      "component": "хвостохранилище",
+      "geometryStatus": "verified-facility-pending-vector",
+      "evidence": "МОСВ и ИАОС го водят като хвостохранилище/закрито съоръжение за минни отпадъци.",
+      "revision": "2026-08-18.1",
+      "complexId": "MEDET-LEGACY"
+    },
+    {
+      "parentId": "MINE-MEDET-LEGACY",
+      "name": "Насипища на рудник „Медет“",
+      "component": "насипища",
+      "geometryStatus": "official-coordinates-pending-geojson",
+      "sourceCrs": "BGS2005 / CCS2005 EPSG:7801",
+      "evidence": "Министерство на енергетиката, Заповед Е-РД-16-352/07.06.2022 — публикувани гранични координати.",
+      "revision": "2026-08-18.1",
+      "complexId": "MEDET-LEGACY"
+    },
+    {
+      "parentId": "MINE-ELSHITSA-OSM",
+      "name": "Изоставен меден рудник „Елшица“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 124105233,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "sourceKind": "radka-elshitsa-resolution"
+    },
+    {
+      "parentId": "ELSHITSA-RED-LAKE-OSM",
+      "name": "Елшица · „Червеното езеро“",
+      "component": "минно засегната водна площ",
+      "osmType": "W",
+      "osmId": 1238912175,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "sourceKind": "radka-elshitsa-resolution"
+    },
+    {
+      "parentId": "MINE-RADKA-OSM",
+      "name": "Бивша медна мина „Радка“",
+      "component": "закрит рудник",
+      "osmType": "W",
+      "osmId": 200360355,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 24.2885598,
+      "lat": 42.400492,
+      "sourceKind": "radka-elshitsa-resolution"
+    },
+    {
+      "parentId": "MINE-TSAR-ASEN-OSM",
+      "name": "Рудник „Цар Асен“",
+      "component": "рудник",
+      "osmType": "W",
+      "osmId": 124105629,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "sourceKind": "radka-elshitsa-resolution"
+    },
+    {
+      "parentId": "PERNIK-QUARRIES",
+      "name": "Кариера „Студена“",
+      "component": "кариера",
+      "osmType": "W",
+      "osmId": 583515098,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 23.12002,
+      "lat": 42.51516,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    },
+    {
+      "parentId": "PERNIK-QUARRIES",
+      "name": "Кариера „Пери“",
+      "component": "кариера",
+      "osmType": "W",
+      "osmId": 583516429,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 23.11665,
+      "lat": 42.51928,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    },
+    {
+      "parentId": "PERNIK-QUARRIES",
+      "name": "Кариера за инертни материали · Студена",
+      "component": "кариера",
+      "osmType": "W",
+      "osmId": 583515099,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 23.12232,
+      "lat": 42.50691,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    },
+    {
+      "parentId": "PERNIK-MINES",
+      "name": "Кариера „Калкас“",
+      "component": "кариера",
+      "osmType": "W",
+      "osmId": 124105560,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 23.05212,
+      "lat": 42.58122,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    },
+    {
+      "parentId": "PERNIK-MINES",
+      "name": "Мина „Бела вода“",
+      "component": "рудник/кариера",
+      "osmType": "W",
+      "osmId": 124105239,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 22.9891,
+      "lat": 42.60523,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    },
+    {
+      "parentId": "PERNIK-MINES",
+      "name": "Мина „Куциян“",
+      "component": "рудник/кариера",
+      "osmType": "W",
+      "osmId": 124105760,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 23.07217,
+      "lat": 42.59337,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    },
+    {
+      "parentId": "PERNIK-MINES",
+      "name": "Шлакохранилище · Перник",
+      "component": "шлакохранилище",
+      "osmType": "W",
+      "osmId": 176656977,
+      "geometryStatus": "verified-osm",
+      "revision": "2026-10-01.1",
+      "lon": 23.06522,
+      "lat": 42.59027,
+      "sourceKind": "OSM/Mapcarta cross-check"
+    }
+  ],
+  "concessions": {
+    "schema": "bgwf-industry-concessions-cache-v1",
+    "generatedAt": "2026-08-17T12:39:40+00:00",
+    "featureCount": 0,
+    "features": [],
+    "pending": [
+      {
+        "id": "MINE-ASAREL",
+        "concessionId": "D-000016",
+        "name": "Асарел",
+        "officialAreaDka": 17356.4,
+        "sourcePoints": 40,
+        "sourceCrs": "KS1970",
+        "zoneInference": "K9",
+        "status": "source_register_complete_pending_BGSTRans",
+        "officialAreaSource": "РМС №684/13.09.2011, т.16.2"
+      },
+      {
+        "id": "MINE-HAN-KRUM",
+        "concessionId": "D-000610",
+        "name": "Хан Крум / Ада тепе",
+        "officialAreaDka": 13700,
+        "sourcePoints": 14,
+        "sourceCrs": "KS1970",
+        "zoneInference": "K5",
+        "status": "source_register_complete_pending_BGSTRans",
+        "officialAreaSource": "РМС №87/11.02.2011"
+      },
+      {
+        "id": "MINE-ELATSITE",
+        "concessionId": "D-000074",
+        "name": "Елаците",
+        "officialAreaDka": 21821.8,
+        "sourcePoints": 395,
+        "sourceCrs": "BGS2005 cadastral",
+        "status": "official_attachment_pending_download",
+        "attachment": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
+        "officialAreaSource": "НКР D-000074, изменение 26.03.2025"
+      },
+      {
+        "id": "MINE-CHELOPECH",
+        "concessionId": "D-000034",
+        "name": "Челопеч",
+        "additionalAreaDka": 1864,
+        "sourcePointsExpected": 62,
+        "sourceCrs": "KS1970",
+        "status": "numeric_register_pending_extraction",
+        "officialAreaSource": "РМС №147/26.03.1999, изм. ДВ бр.7/2004; 1864 дка е допълнителна площ, не доказана обща площ"
+      },
+      {
+        "id": "MINE-BOBOV-DOL",
+        "concessionId": "D-000327/D-000317/D-000324",
+        "name": "Бобовдолски въглищен басейн",
+        "status": "NKR_parties_identified_coordinate_registers_pending"
+      }
+    ],
+    "remoteSources": [
+      {
+        "id": "MGU-PERNIK",
+        "type": "ArcGIS FeatureServer",
+        "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query",
+        "sourceUrl": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer",
+        "geometry": "official contract-derived polygons",
+        "note": "Pernik region; attributes supplemented from NKR"
+      }
+    ],
+    "sourceDataset": "./concession-boundaries-official-source-v2.json"
+  }
+}
