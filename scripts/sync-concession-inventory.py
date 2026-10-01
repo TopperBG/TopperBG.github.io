@@ -168,7 +168,7 @@ def stable_id(source: str, row: dict) -> str:
 
 def normalized_record(source: str, row: dict, *, default_status: str | None = None) -> dict:
     cid = find_any(row, [["партид"], ["идентификац"], ["номер", "концес"], ["№", "концес"]])
-    deposit = find_any(row, [["находище"], ["обект", "концес"]], [["име", "находище"]])
+    deposit = find_any(row, [["находище"], ["обект", "концес"], ["име", "находище"]])
     operator = find_any(row, [["концесионер"], ["оператор"]])
     mineral = find_any(row, [["подземн", "богат"], ["полезн", "изкоп"], ["суровин"], ["ресурс"]])
     municipality = find_any(row, [["община"]])
