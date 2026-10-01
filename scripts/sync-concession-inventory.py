@@ -42,7 +42,7 @@ INVENTORY_PATH = DATA / "concession-inventory-v1.json"
 CURATED_SOURCE_PATH = DATA / "concession-boundaries-official-source-v2.json"
 INDUSTRIAL_CACHE_PATH = DATA / "industrial-zones-cache-v1.json"
 
-ME_XLS = "https://www.me.government.bg/bg/themes/uploads/manager/source/NGS/koncesii_public.xls"
+ME_XLS = "https://www.me.government.bg/uploads/manager/source/NGS/koncesii_public.xls"
 ME_PAGE = "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html"
 ME_ABANDONED = "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html"
 NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
@@ -349,6 +349,7 @@ def main() -> None:
     existing_records = existing.get("records") or []
     source_runs = []
     candidate_records: list[dict] = []
+    official_refresh_records: list[dict] = []
 
     # 1) Ministry of Energy XLS: most reliable bootstrap source from GitHub-hosted runners.
     try:
@@ -360,6 +361,7 @@ def main() -> None:
             raise RuntimeError(f"XLS parse produced only {len(records)} records")
         atomic_write(ARCHIVE / "koncesii_public.xls", raw)
         candidate_records = records
+        official_refresh_records = records
         source_runs.append({
             "id": "ME-CONCESSIONS-XLS", "ok": True, "url": ME_XLS,
             "bytes": len(raw), "sha256": sha256(raw), "records": len(records), **meta,
@@ -380,6 +382,7 @@ def main() -> None:
             "bytes": len(raw), "sha256": sha256(raw), "records": len(nkr_records),
         })
         if nkr_records:
+            official_refresh_records = merge_records(official_refresh_records, nkr_records)
             candidate_records = merge_records(candidate_records, nkr_records)
     except Exception as exc:
         source_runs.append({"id": "NKR", "ok": False, "url": NKR_EXPORT, "error": str(exc)})
@@ -398,16 +401,22 @@ def main() -> None:
         except Exception as exc:
             source_runs.append({"id": sid, "ok": False, "url": url, "error": str(exc)})
 
-    # Curated official-source records are always merged, including historical/closed cases.
-    candidate_records = merge_records(candidate_records, curated_records())
+    # Curated official-source records are always merged, including historical/closed cases,
+    # but they do not count as proof that the national online inventory refreshed successfully.
+    curated = curated_records()
+    candidate_records = merge_records(candidate_records, curated)
 
-    if len(candidate_records) < 50 and len(existing_records) >= 50:
-        # Network/parser regression: preserve last known good inventory verbatim.
-        records = existing_records
+    if len(official_refresh_records) < 50 and len(existing_records) >= 50:
+        # Network/parser regression: preserve last known good inventory, while still
+        # ensuring newly curated historical records are not lost.
+        records = merge_records(existing_records, curated)
         mode = "last-known-good-preserved"
-    elif candidate_records:
+    elif len(official_refresh_records) >= 50:
         records = candidate_records
         mode = "refreshed"
+    elif candidate_records:
+        records = candidate_records
+        mode = "bootstrap-partial"
     else:
         records = existing_records
         mode = "last-known-good-preserved" if existing_records else "empty-bootstrap"
