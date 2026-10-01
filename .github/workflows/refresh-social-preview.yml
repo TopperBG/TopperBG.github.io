@@ -3,7 +3,8 @@ name: Refresh social preview
 on:
   workflow_dispatch:
   schedule:
-    - cron: "37 4 2 * *"
+    - cron: "37 7 2 * *"
+      timezone: "Europe/Sofia"
   push:
     paths:
       - "map/index.html"
