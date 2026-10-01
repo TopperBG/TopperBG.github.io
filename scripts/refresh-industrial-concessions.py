@@ -9,6 +9,7 @@ import pathlib
 import urllib.parse
 import urllib.request
 import urllib.error
+import time
 
 from pyproj import Transformer
 
@@ -22,25 +23,54 @@ WGS84 = Transformer.from_crs("EPSG:7801", "EPSG:4326", always_xy=True)
 
 
 def post_json(params: dict[str, str]) -> dict:
-    request = urllib.request.Request(
-        SERVICE,
-        data=urllib.parse.urlencode(params).encode("utf-8"),
-        headers={
-            "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.1",
-            "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(request, timeout=90) as response:
-            payload = json.load(response)
-    except urllib.error.HTTPError as error:
-        body = error.read().decode("utf-8", "replace")
-        raise RuntimeError(f"ArcGIS HTTP {error.code}: {body[:2000]}") from error
-    if payload.get("error"):
-        raise RuntimeError(payload["error"].get("message", "ArcGIS error"))
-    return payload
+    """Fetch ArcGIS JSON with retries and GET fallback.
+
+    maps.mgu.bg occasionally returns HTTP 500 from its Web Adaptor while the
+    repository cache is still perfectly usable. Treat 5xx/network failures as
+    transient; never destroy the last-known-good cache because of them.
+    """
+    encoded = urllib.parse.urlencode(params)
+    last_error: Exception | None = None
+    for attempt in range(1, 5):
+        for method in ("POST", "GET"):
+            if method == "POST":
+                request = urllib.request.Request(
+                    SERVICE,
+                    data=encoded.encode("utf-8"),
+                    headers={
+                        "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.2",
+                        "Accept": "application/json",
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    method="POST",
+                )
+            else:
+                request = urllib.request.Request(
+                    f"{SERVICE}?{encoded}",
+                    headers={
+                        "User-Agent": "EnergoKarta-Bulgaria-cache-refresh/1.2",
+                        "Accept": "application/json",
+                    },
+                    method="GET",
+                )
+            try:
+                with urllib.request.urlopen(request, timeout=90) as response:
+                    payload = json.load(response)
+                if payload.get("error"):
+                    raise RuntimeError(payload["error"].get("message", "ArcGIS error"))
+                return payload
+            except urllib.error.HTTPError as error:
+                body = error.read().decode("utf-8", "replace")
+                last_error = RuntimeError(
+                    f"ArcGIS {method} HTTP {error.code}: {body[:600]}"
+                )
+                if error.code < 500:
+                    raise last_error from error
+            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as error:
+                last_error = RuntimeError(f"ArcGIS {method} network/JSON error: {error}")
+        if attempt < 4:
+            time.sleep(4 * attempt)
+    raise RuntimeError(f"MGU ArcGIS unavailable after retries: {last_error}")
 
 
 def transform_ring(ring: list[list[float]]) -> list[list[float]]:
@@ -109,7 +139,25 @@ def main() -> None:
     if cache.get("schema") != "bgwf-industrial-zones-cache-v1":
         raise RuntimeError("Unexpected industrial cache schema")
 
-    features = fetch_features()
+    try:
+        features = fetch_features()
+    except Exception as error:
+        section = cache.get("concessions") or {}
+        cached = section.get("features") or []
+        cached_count = len(cached)
+        print(
+            "::warning title=MGU concession refresh skipped::"
+            f"{error}. Preserving last-known-good cache ({cached_count} polygons)."
+        )
+        if cached_count == 0:
+            print(
+                "::warning title=Concession cache currently empty::"
+                "The official MGU service is unavailable and there is no previously "
+                "cached polygon set yet. The workflow remains green so a temporary "
+                "external outage does not look like a repository/build failure."
+            )
+        return
+
     now = (
         dt.datetime.now(dt.timezone.utc)
         .replace(microsecond=0)
