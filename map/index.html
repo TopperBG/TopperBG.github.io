@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.92i-mobile-header-20260925">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92i</title>
+<meta name="bgwf-build" content="v0.92j-mobile-header-20260925">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.92j</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1453,7 +1453,7 @@ svg {
 #bg-wildfires-map .ol-zoom { display:none !important; }
 
 #bg-wildfires-map .bgwf-industry-estimate-key {
-  width:10px;height:10px;display:inline-block;border:1.5px dashed #b91c1c;border-radius:50%;
+  width:10px;height:10px;display:inline-block;border:1.5px dotted #d97706;border-radius:50%;
 }
 
 
@@ -1553,7 +1553,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92i</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92j</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -2175,29 +2175,7 @@ svg {
   #bg-wildfires-map.is-filter-collapsed .bgwf-map{height:100%;min-height:560px;max-height:none}
   #bg-wildfires-map .bgwf-detail{left:5px;right:5px;bottom:max(54px,calc(env(safe-area-inset-bottom) + 44px));font-size:10px;line-height:1.25}
 }
-/* v0.92i: second-row tooltips must escape the scrolling filter strip. */
-#bg-wildfires-map .bgwf-floating-controls .bgwf-layer-controls,
-#bg-wildfires-map .bgwf-layer-row,
-#bg-wildfires-map .bgwf-layer-row-secondary { overflow:visible !important; }
-#bg-wildfires-map .bgwf-layer-row-secondary { position:relative; z-index:540; }
-#bg-wildfires-map .bgwf-layer-row-secondary .bgwf-layer-toggle[data-help-tooltip]::after {
-  top:auto !important;
-  bottom:calc(100% + 7px) !important;
-  z-index:2200 !important;
-  color:#fff !important;
-  background:rgba(5,7,10,.985) !important;
-  border-color:rgba(255,255,255,.22) !important;
-  box-shadow:0 8px 28px rgba(0,0,0,.48) !important;
-  font-size:11px !important;
-  line-height:1.38 !important;
-}
-#bg-wildfires-map .bgwf-layer-row-secondary .bgwf-layer-toggle[data-layer="industry"]::after {
-  left:auto !important; right:0 !important; transform:translateY(2px) !important;
-}
-#bg-wildfires-map .bgwf-layer-row-secondary .bgwf-layer-toggle[data-layer="industry"]:is(:hover,:focus-visible)::after {
-  transform:translateY(0) !important;
-}
-/* v0.92i: one control plane + one tooltip system for every filter/layer control. */
+/* v0.92j: one control plane + one tooltip system for every filter/layer control. */
 #bg-wildfires-map .bgwf-mobile-filter-body{position:relative;isolation:isolate;overflow:visible}
 #bg-wildfires-map .bgwf-year-strip,
 #bg-wildfires-map .bgwf-layer-strip,
@@ -4915,21 +4893,25 @@ const industryLayer=new VectorLayer({
   }
 });
 const concessionLayer=new VectorLayer({
-  source:concessionSource,zIndex:9,visible:layerVisibility.industry,
+  source:concessionSource,zIndex:57,visible:layerVisibility.industry,
   style:f=>{
     const selected=f.get('selected');
-    const color=satelliteMode()?'#ff00aa':(selected?'#ef4444':'#b91c1c');
-    return new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color,width:polygonOutlineWidth(selected?1.7:1,selected),lineDash:[7,4]})});
+    const width=polygonOutlineWidth(selected?2.2:1.45,selected);
+    return [
+      new Style({fill:new Fill({color:'rgba(0,0,0,0)'}),stroke:new Stroke({color:'rgba(255,255,255,.94)',width:width+2.2,lineDash:[8,4]})}),
+      new Style({stroke:new Stroke({color:selected?'#dc2626':'#ef4444',width,lineDash:[8,4]})})
+    ];
   }
 });
+concessionLayer.set('kind','concession');
 const concessionEstimateLayer=new VectorLayer({
   source:concessionEstimateSource,
   visible:layerVisibility.industry,
   zIndex:56,
   style:f=>{
     return new Style({
-      fill:new Fill({color:satelliteMode()?'rgba(255,0,170,.09)':'rgba(185,28,28,0.055)'}),
-      stroke:new Stroke({color:satelliteMode()?'#ff00aa':'rgba(185,28,28,0.78)',width:polygonOutlineWidth(.9),lineDash:[3,4]})
+      fill:new Fill({color:satelliteMode()?'rgba(245,158,11,.10)':'rgba(245,158,11,.055)'}),
+      stroke:new Stroke({color:satelliteMode()?'#fbbf24':'rgba(217,119,6,.9)',width:polygonOutlineWidth(.9),lineDash:[2,4]})
     });
   }
 });
@@ -6094,7 +6076,7 @@ async function loadIndustrialZoneCache(){
     if(!r.ok)throw new Error(`HTTP ${r.status}: ${INDUSTRIAL_ZONE_CACHE_URL}`);
     const payload=await r.json();
     if(payload?.schema!=='bgwf-industrial-zones-cache-v1'||!Array.isArray(payload?.footprints))throw new Error('invalid industrial zone cache');
-    debugState.network.industryRepositoryCache={ok:true,features:payload.footprints.length,revision:payload.revision||null};
+    debugState.network.industryRepositoryCache={ok:true,features:payload.footprints.length,revision:payload.revision||null,generatedAt:payload.generatedAt||null,concessions:Number(payload?.concessions?.featureCount)||0,concessionsGeneratedAt:payload?.concessions?.generatedAt||null};
     return payload;
   }).catch(e=>{
     industrialZoneCachePromise=null;
@@ -6344,13 +6326,39 @@ async function ensureOfficialConcessionPolygons(){
     // CORS-safe fallback: ArcGIS REST JSONP. This is especially important for the Pernik layer.
     if(!loaded.length){const jsonp=await loadOfficialConcessionsJsonpFallback();if(jsonp.length)loaded=jsonp;}
     concessionSource.clear();concessionSource.addFeatures(loaded);officialConcessionFeatures=loaded;
-    rebuildEstimatedConcessionAreas();officialConcessionLoadState='ready';officialConcessionLoadPromise=null;
+    rebuildEstimatedConcessionAreas();
+    officialConcessionLoadState=loaded.length?'ready':'error';
+    if(!loaded.length&&!officialConcessionLoadError)officialConcessionLoadError='Не са заредени официални концесионни полигони.';
+    officialConcessionLoadPromise=null;
     debugState.layerCounts.concessions=loaded.length;debugState.timings.concessions=Math.round(performance.now()-started);updateLayerStatus();
     if(loaded.length)setTimeout(()=>void refreshOfficialConcessionsRemoteInBackground(loaded),1500);
     return loaded;
   })();
   return officialConcessionLoadPromise;
 }
+window.bgwfConcessionAudit=function(){
+  const exact=concessionSource.getFeatures().map(f=>({id:f.get('concessionId'),name:f.get('name'),sourceId:f.get('sourceId'),areaDka:f.get('areaDka')}));
+  return {
+    industryVisible:layerVisibility.industry,
+    exactCount:exact.length,
+    exact,
+    estimateCount:concessionEstimateSource.getFeatures().length,
+    officialLayerZIndex:concessionLayer.getZIndex(),
+    estimateLayerZIndex:concessionEstimateLayer.getZIndex(),
+    auxiliaryIndustryZIndex:industrialAuxLayer?.getZIndex?.()??null,
+    officialLoadState:officialConcessionLoadState,
+    officialLoadError:officialConcessionLoadError||null,
+    cache:officialConcessionCacheMeta,
+    repositoryCache:debugState.network.industryRepositoryCache||null,
+    network:Object.fromEntries(Object.entries(debugState.network).filter(([k])=>k.startsWith('concession-')||k==='concessionCache'))
+  };
+};
+window.bgwfReloadOfficialConcessions=async function(){
+  officialConcessionLoadState='idle';officialConcessionLoadPromise=null;officialConcessionLoadError='';
+  industrialZoneCachePromise=null;concessionSource.clear();officialConcessionFeatures=[];
+  await ensureOfficialConcessionPolygons();
+  return window.bgwfConcessionAudit();
+};
 window.bgwfExportOfficialConcessionCache=function(){const features=concessionSource.getFeatures().map(f=>geojson.writeFeatureObject(f,{featureProjection:'EPSG:3857',dataProjection:'EPSG:4326'})).map(raw=>{raw.properties={...raw.properties,concession_id:raw.properties.concessionId,name:raw.properties.name,ncr_url:raw.properties.nkrUrl,source_url:raw.properties.sourceUrl};return raw;});const payload={schema:'bgwf-industry-concessions-cache-v1',generatedAt:new Date().toISOString(),geometryCrs:'EPSG:4326',featureCount:features.length,features,pending:officialConcessionPending,remoteSources:OFFICIAL_CONCESSION_GIS_SOURCES};downloadJson(payload,'industrial-zones-concessions-export.json');return payload;};
 function downloadJson(payload,name){const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
 
@@ -6548,8 +6556,8 @@ function updateIndustryLegendHint(){
   const hasEstimate=concessionEstimateSource.getFeatures().length>0;
   hint.innerHTML=
     '<strong>ТЕЦ/мини:</strong> <span class="bgwf-industry-fill-key"></span> разработена площ'
-    +(hasConcession?' <span class="bgwf-industry-concession-key"></span> концесионна граница':'')
-    +(hasEstimate?' <span class="bgwf-industry-estimate-key"></span> концесионна площ (ориент.)':'');
+    +(hasConcession?' <span class="bgwf-industry-concession-key"></span> официална концесионна граница':'')
+    +(hasEstimate?' <span class="bgwf-industry-estimate-key"></span> ориентировъчна концесионна площ':'');
 }
 
 function updateCompactFilterSummary(){
@@ -6562,11 +6570,11 @@ function updateCompactFilterSummary(){
   if(layerVisibility.natura)parts.push('Natura 2000');
   if(layerVisibility.industry)parts.push('Мини');
   if(layerVisibility.foreign)parts.push('Foreign');
-  if(layerVisibility.epm)parts.push('ЕРМ');
+  if(layerVisibility.epm)parts.push('HV');
   if(activeYears===null)parts.push('Fire all');
   else if(fireYearsHidden())parts.push('Fire off');
   else parts.push(`Fire ${selectedFireYearList().join('+')}`);
-  if(layerVisibility.live)parts.push('Sentinel');
+  if(layerVisibility.live)parts.push('Sentinel-3');
   filterSummary.textContent=parts.join(' · ');
   filterSummary.title=parts.join(' / ');
 }
