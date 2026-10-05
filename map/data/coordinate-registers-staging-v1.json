@@ -6,7 +6,7 @@
     "curated": "./concession-boundaries-official-source-v2.json"
   },
   "runtimeDependency": false,
-  "registerCount": 48,
+  "registerCount": 51,
   "publicationReadyCount": 11,
   "rules": [
     "Extraction is evidence staging, not legal geometry publication.",
@@ -16560,6 +16560,753 @@
           "pointNo": 8,
           "a": 4516778.2,
           "b": 8464838.2
+        }
+      ]
+    },
+    {
+      "concessionId": "D-000278",
+      "curatedId": null,
+      "name": null,
+      "fileId": "ed660823-12ad-4d5d-8311-8ebe54ab20f5",
+      "sha256": "cf2d886e3b16d3c00eec18309d4e5e83fc2ee334bf7d45db206c51680a00dc2f",
+      "archivePath": "source-archive/concessions/nkr-attachments/cf2d886e3b16d3c00eec18309d4e5e83fc2ee334bf7d45db206c51680a00dc2f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cf2d886e3b16d3c00eec18309d4e5e83fc2ee334bf7d45db206c51680a00dc2f.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/ed660823-12ad-4d5d-8311-8ebe54ab20f5",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202%20%D0%A1%D0%BA%D1%80%D0%B0%D0%B2%D0%B5%D0%BD%D0%B0.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "numericDominantCrsClass": "WGS84",
+      "numericCrsCounts": {
+        "WGS84": 1
+      },
+      "declaredCrsFromDocument": "BGS2005",
+      "axisOrderFromDocument": null,
+      "officialAreaDkaFromDocument": 234.936,
+      "rangeEndsFoundInDocument": [
+        30
+      ],
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": 234.936,
+      "expectedPointCount": 30,
+      "extractedPointCount": 0,
+      "pointNumberRanges": [],
+      "declaredContours": {},
+      "explicitContourCount": 0,
+      "contoursRaw": [],
+      "geometryStructure": "Polygon",
+      "conflictCount": 1,
+      "conflicts": [
+        {
+          "pointNo": 4,
+          "first": {
+            "pointNo": 4,
+            "a": 28.0,
+            "b": 41.0,
+            "crsClass": "WGS84"
+          },
+          "other": {
+            "pointNo": 4,
+            "a": 29.0,
+            "b": 41.0,
+            "crsClass": "WGS84"
+          }
+        }
+      ],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "conflicting_duplicate_point_numbers",
+        "expected_30_got_0",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [],
+      "points": []
+    },
+    {
+      "concessionId": "D-000282",
+      "curatedId": null,
+      "name": null,
+      "fileId": "37c0c362-b235-42d4-bf46-9da67150a610",
+      "sha256": "ae478f725bb2c140226ec697de73472e135d347848265c61e05ff04a453f5b1d",
+      "archivePath": "source-archive/concessions/nkr-attachments/ae478f725bb2c140226ec697de73472e135d347848265c61e05ff04a453f5b1d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ae478f725bb2c140226ec697de73472e135d347848265c61e05ff04a453f5b1d.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/37c0c362-b235-42d4-bf46-9da67150a610",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202-27-10-23.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "numericDominantCrsClass": "WGS84",
+      "numericCrsCounts": {
+        "WGS84": 2
+      },
+      "declaredCrsFromDocument": "BGS2005",
+      "axisOrderFromDocument": null,
+      "officialAreaDkaFromDocument": 211.727,
+      "rangeEndsFoundInDocument": [
+        14
+      ],
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": 211.727,
+      "expectedPointCount": 14,
+      "extractedPointCount": 0,
+      "pointNumberRanges": [],
+      "declaredContours": {},
+      "explicitContourCount": 0,
+      "contoursRaw": [],
+      "geometryStructure": "Polygon",
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_14_got_0",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [],
+      "points": []
+    },
+    {
+      "concessionId": "D-000310",
+      "curatedId": null,
+      "name": null,
+      "fileId": "a0c67c5d-7539-4086-9f71-a5c0e2f4ad0f",
+      "sha256": "e40bc91f86154fb8a04a3bfd5d7c92bf21301752095ab80d10d33e66ffbe2d74",
+      "archivePath": "source-archive/concessions/nkr-attachments/e40bc91f86154fb8a04a3bfd5d7c92bf21301752095ab80d10d33e66ffbe2d74.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e40bc91f86154fb8a04a3bfd5d7c92bf21301752095ab80d10d33e66ffbe2d74.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/a0c67c5d-7539-4086-9f71-a5c0e2f4ad0f",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%813_%D0%93%D0%BE%D1%80%D0%BD%D0%B8%20%D0%94%D1%8A%D0%B1%D0%BD%D0%B8%D0%BA.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "numericDominantCrsClass": "BGS1970",
+      "numericCrsCounts": {
+        "BGS1970": 66
+      },
+      "declaredCrsFromDocument": "BGS1970",
+      "axisOrderFromDocument": null,
+      "officialAreaDkaFromDocument": null,
+      "rangeEndsFoundInDocument": [],
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 66,
+      "pointNumberRanges": [
+        "1-66"
+      ],
+      "declaredContours": {},
+      "explicitContourCount": 0,
+      "contoursRaw": [],
+      "geometryStructure": "Polygon",
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          8593243.6,
+          4722349.5
+        ],
+        [
+          8593316.7,
+          4722299.3
+        ],
+        [
+          8593432.6,
+          4722232.0
+        ],
+        [
+          8593529.3,
+          4722152.5
+        ],
+        [
+          8593638.0,
+          4722050.8
+        ],
+        [
+          8593730.9,
+          4721972.1
+        ],
+        [
+          8593776.7,
+          4721935.8
+        ],
+        [
+          8593818.7,
+          4721902.8
+        ],
+        [
+          8593846.7,
+          4721833.5
+        ],
+        [
+          8593882.9,
+          4721777.3
+        ],
+        [
+          8593940.8,
+          4721667.0
+        ],
+        [
+          8593953.5,
+          4721622.6
+        ],
+        [
+          8593965.5,
+          4721550.1
+        ],
+        [
+          8593914.5,
+          4721421.7
+        ],
+        [
+          8593838.1,
+          4721395.7
+        ],
+        [
+          8593685.9,
+          4721392.5
+        ],
+        [
+          8593559.2,
+          4721385.5
+        ],
+        [
+          8593420.4,
+          4721375.4
+        ],
+        [
+          8593248.5,
+          4721353.1
+        ],
+        [
+          8593089.3,
+          4721285.1
+        ],
+        [
+          8592967.0,
+          4721201.2
+        ],
+        [
+          8592862.6,
+          4721133.9
+        ],
+        [
+          8592768.3,
+          4721084.9
+        ],
+        [
+          8592609.2,
+          4721051.9
+        ],
+        [
+          8592454.4,
+          4721035.4
+        ],
+        [
+          8592295.9,
+          4721029.7
+        ],
+        [
+          8592153.3,
+          4721063.3
+        ],
+        [
+          8592021.1,
+          4721112.3
+        ],
+        [
+          8591883.5,
+          4721144.0
+        ],
+        [
+          8591808.4,
+          4721160.6
+        ],
+        [
+          8591703.3,
+          4721167.5
+        ],
+        [
+          8591503.5,
+          4721175.2
+        ],
+        [
+          8591382.5,
+          4721170.7
+        ],
+        [
+          8591231.6,
+          4721180.9
+        ],
+        [
+          8591099.2,
+          4721202.5
+        ],
+        [
+          8590902.6,
+          4721248.2
+        ],
+        [
+          8590722.4,
+          4721313.1
+        ],
+        [
+          8590247.7,
+          4721481.4
+        ],
+        [
+          8590138.2,
+          4721521.5
+        ],
+        [
+          8590041.5,
+          4721558.3
+        ],
+        [
+          8590001.4,
+          4721574.8
+        ],
+        [
+          8589964.5,
+          4721597.1
+        ],
+        [
+          8589924.4,
+          4721635.8
+        ],
+        [
+          8589902.8,
+          4721681.0
+        ],
+        [
+          8589900.9,
+          4721719.1
+        ],
+        [
+          8589920.0,
+          4721761.7
+        ],
+        [
+          8589995.9,
+          4721836.0
+        ],
+        [
+          8590109.9,
+          4721933.9
+        ],
+        [
+          8590264.7,
+          4722044.4
+        ],
+        [
+          8590475.5,
+          4722200.1
+        ],
+        [
+          8590583.1,
+          4722309.4
+        ],
+        [
+          8590854.4,
+          4722394.0
+        ],
+        [
+          8591032.1,
+          4722464.5
+        ],
+        [
+          8591201.5,
+          4722515.3
+        ],
+        [
+          8591351.1,
+          4722540.1
+        ],
+        [
+          8591537.6,
+          4722550.3
+        ],
+        [
+          8591715.2,
+          4722561.7
+        ],
+        [
+          8591889.7,
+          4722564.9
+        ],
+        [
+          8592063.5,
+          4722577.0
+        ],
+        [
+          8592409.1,
+          4722565.5
+        ],
+        [
+          8592583.6,
+          4722539.5
+        ],
+        [
+          8592716.0,
+          4722516.6
+        ],
+        [
+          8592851.5,
+          4722490.6
+        ],
+        [
+          8592927.3,
+          4722469.6
+        ],
+        [
+          8593048.2,
+          4722431.5
+        ],
+        [
+          8593156.4,
+          4722388.9
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 8593243.6,
+          "b": 4722349.5
+        },
+        {
+          "pointNo": 2,
+          "a": 8593316.7,
+          "b": 4722299.3
+        },
+        {
+          "pointNo": 3,
+          "a": 8593432.6,
+          "b": 4722232.0
+        },
+        {
+          "pointNo": 4,
+          "a": 8593529.3,
+          "b": 4722152.5
+        },
+        {
+          "pointNo": 5,
+          "a": 8593638.0,
+          "b": 4722050.8
+        },
+        {
+          "pointNo": 6,
+          "a": 8593730.9,
+          "b": 4721972.1
+        },
+        {
+          "pointNo": 7,
+          "a": 8593776.7,
+          "b": 4721935.8
+        },
+        {
+          "pointNo": 8,
+          "a": 8593818.7,
+          "b": 4721902.8
+        },
+        {
+          "pointNo": 9,
+          "a": 8593846.7,
+          "b": 4721833.5
+        },
+        {
+          "pointNo": 10,
+          "a": 8593882.9,
+          "b": 4721777.3
+        },
+        {
+          "pointNo": 11,
+          "a": 8593940.8,
+          "b": 4721667.0
+        },
+        {
+          "pointNo": 12,
+          "a": 8593953.5,
+          "b": 4721622.6
+        },
+        {
+          "pointNo": 13,
+          "a": 8593965.5,
+          "b": 4721550.1
+        },
+        {
+          "pointNo": 14,
+          "a": 8593914.5,
+          "b": 4721421.7
+        },
+        {
+          "pointNo": 15,
+          "a": 8593838.1,
+          "b": 4721395.7
+        },
+        {
+          "pointNo": 16,
+          "a": 8593685.9,
+          "b": 4721392.5
+        },
+        {
+          "pointNo": 17,
+          "a": 8593559.2,
+          "b": 4721385.5
+        },
+        {
+          "pointNo": 18,
+          "a": 8593420.4,
+          "b": 4721375.4
+        },
+        {
+          "pointNo": 19,
+          "a": 8593248.5,
+          "b": 4721353.1
+        },
+        {
+          "pointNo": 20,
+          "a": 8593089.3,
+          "b": 4721285.1
+        },
+        {
+          "pointNo": 21,
+          "a": 8592967.0,
+          "b": 4721201.2
+        },
+        {
+          "pointNo": 22,
+          "a": 8592862.6,
+          "b": 4721133.9
+        },
+        {
+          "pointNo": 23,
+          "a": 8592768.3,
+          "b": 4721084.9
+        },
+        {
+          "pointNo": 24,
+          "a": 8592609.2,
+          "b": 4721051.9
+        },
+        {
+          "pointNo": 25,
+          "a": 8592454.4,
+          "b": 4721035.4
+        },
+        {
+          "pointNo": 26,
+          "a": 8592295.9,
+          "b": 4721029.7
+        },
+        {
+          "pointNo": 27,
+          "a": 8592153.3,
+          "b": 4721063.3
+        },
+        {
+          "pointNo": 28,
+          "a": 8592021.1,
+          "b": 4721112.3
+        },
+        {
+          "pointNo": 29,
+          "a": 8591883.5,
+          "b": 4721144.0
+        },
+        {
+          "pointNo": 30,
+          "a": 8591808.4,
+          "b": 4721160.6
+        },
+        {
+          "pointNo": 31,
+          "a": 8591703.3,
+          "b": 4721167.5
+        },
+        {
+          "pointNo": 32,
+          "a": 8591503.5,
+          "b": 4721175.2
+        },
+        {
+          "pointNo": 33,
+          "a": 8591382.5,
+          "b": 4721170.7
+        },
+        {
+          "pointNo": 34,
+          "a": 8591231.6,
+          "b": 4721180.9
+        },
+        {
+          "pointNo": 35,
+          "a": 8591099.2,
+          "b": 4721202.5
+        },
+        {
+          "pointNo": 36,
+          "a": 8590902.6,
+          "b": 4721248.2
+        },
+        {
+          "pointNo": 37,
+          "a": 8590722.4,
+          "b": 4721313.1
+        },
+        {
+          "pointNo": 38,
+          "a": 8590247.7,
+          "b": 4721481.4
+        },
+        {
+          "pointNo": 39,
+          "a": 8590138.2,
+          "b": 4721521.5
+        },
+        {
+          "pointNo": 40,
+          "a": 8590041.5,
+          "b": 4721558.3
+        },
+        {
+          "pointNo": 41,
+          "a": 8590001.4,
+          "b": 4721574.8
+        },
+        {
+          "pointNo": 42,
+          "a": 8589964.5,
+          "b": 4721597.1
+        },
+        {
+          "pointNo": 43,
+          "a": 8589924.4,
+          "b": 4721635.8
+        },
+        {
+          "pointNo": 44,
+          "a": 8589902.8,
+          "b": 4721681.0
+        },
+        {
+          "pointNo": 45,
+          "a": 8589900.9,
+          "b": 4721719.1
+        },
+        {
+          "pointNo": 46,
+          "a": 8589920.0,
+          "b": 4721761.7
+        },
+        {
+          "pointNo": 47,
+          "a": 8589995.9,
+          "b": 4721836.0
+        },
+        {
+          "pointNo": 48,
+          "a": 8590109.9,
+          "b": 4721933.9
+        },
+        {
+          "pointNo": 49,
+          "a": 8590264.7,
+          "b": 4722044.4
+        },
+        {
+          "pointNo": 50,
+          "a": 8590475.5,
+          "b": 4722200.1
+        },
+        {
+          "pointNo": 51,
+          "a": 8590583.1,
+          "b": 4722309.4
+        },
+        {
+          "pointNo": 52,
+          "a": 8590854.4,
+          "b": 4722394.0
+        },
+        {
+          "pointNo": 53,
+          "a": 8591032.1,
+          "b": 4722464.5
+        },
+        {
+          "pointNo": 54,
+          "a": 8591201.5,
+          "b": 4722515.3
+        },
+        {
+          "pointNo": 55,
+          "a": 8591351.1,
+          "b": 4722540.1
+        },
+        {
+          "pointNo": 56,
+          "a": 8591537.6,
+          "b": 4722550.3
+        },
+        {
+          "pointNo": 57,
+          "a": 8591715.2,
+          "b": 4722561.7
+        },
+        {
+          "pointNo": 58,
+          "a": 8591889.7,
+          "b": 4722564.9
+        },
+        {
+          "pointNo": 59,
+          "a": 8592063.5,
+          "b": 4722577.0
+        },
+        {
+          "pointNo": 60,
+          "a": 8592409.1,
+          "b": 4722565.5
+        },
+        {
+          "pointNo": 61,
+          "a": 8592583.6,
+          "b": 4722539.5
+        },
+        {
+          "pointNo": 62,
+          "a": 8592716.0,
+          "b": 4722516.6
+        },
+        {
+          "pointNo": 63,
+          "a": 8592851.5,
+          "b": 4722490.6
+        },
+        {
+          "pointNo": 64,
+          "a": 8592927.3,
+          "b": 4722469.6
+        },
+        {
+          "pointNo": 65,
+          "a": 8593048.2,
+          "b": 4722431.5
+        },
+        {
+          "pointNo": 66,
+          "a": 8593156.4,
+          "b": 4722388.9
         }
       ]
     }

@@ -385,7 +385,7 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-05T08:59:31Z",
+    "generatedAt": "2026-10-05T11:55:50Z",
     "featureCount": 11,
     "features": [
       {
@@ -2426,6 +2426,48 @@
         "priority": 4
       },
       {
+        "id": "D-000278",
+        "concessionId": "D-000278",
+        "name": "Скравена",
+        "officialAreaDka": 234.936,
+        "sourceCrs": "BGS2005",
+        "sourcePoints": 0,
+        "status": "coordinate_register_archived__QA_blocked__conflicting_duplicate_point_numbers__expected_30_got_0__coordinate_order_unverified",
+        "sourceUrl": "https://nkr.government.bg/File/Download/ed660823-12ad-4d5d-8311-8ebe54ab20f5",
+        "stagingEvidence": {
+          "fileId": "ed660823-12ad-4d5d-8311-8ebe54ab20f5",
+          "sha256": "cf2d886e3b16d3c00eec18309d4e5e83fc2ee334bf7d45db206c51680a00dc2f",
+          "archivePath": "source-archive/concessions/nkr-attachments/cf2d886e3b16d3c00eec18309d4e5e83fc2ee334bf7d45db206c51680a00dc2f.pdf",
+          "blockers": [
+            "conflicting_duplicate_point_numbers",
+            "expected_30_got_0",
+            "coordinate_order_unverified"
+          ],
+          "declaredCrs": "BGS2005",
+          "numericCrsCounts": {
+            "WGS84": 1
+          },
+          "pointNumberRanges": []
+        },
+        "queueSource": "national-inventory",
+        "sourceRowNo": "415",
+        "inventoryStatus": "active",
+        "concessionaire": "\"Находище Скравена\" ЕООД, гр. София",
+        "resource": "Строителни материали",
+        "municipality": "Ботевград",
+        "province": "София",
+        "concessionIdCollision": false,
+        "nkrParties": [
+          {
+            "guid": "ca059416-dc8e-4c97-af16-58803a8eb1c4",
+            "concessionId": "D-000278",
+            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ca059416-dc8e-4c97-af16-58803a8eb1c4",
+            "searchText": "D-000278 | Открита | Отворена | Концесия за добив от находище \"Скравена\", област София, община Ботевград, населено място Скравена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+          }
+        ],
+        "priority": 4
+      },
+      {
         "id": "216-378",
         "concessionId": "216-378",
         "name": "Големия връх",
@@ -2591,6 +2633,47 @@
             "concessionId": "216-256",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/3bcb22a2-ae09-4883-8da2-6633e5276f3b",
             "searchText": "216-256/13.07.2023 | Открита | Отворена | Kонцесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - аркозни пясъчници, от находище “Градец-2”, разположено в землището на с. Градец, община Котел, област Сливен | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+          }
+        ],
+        "priority": 4
+      },
+      {
+        "id": "D-000282",
+        "concessionId": "D-000282",
+        "name": "Студена - участък ІІІ",
+        "officialAreaDka": 211.727,
+        "sourceCrs": "BGS2005",
+        "sourcePoints": 0,
+        "status": "coordinate_register_archived__QA_blocked__expected_14_got_0__coordinate_order_unverified",
+        "sourceUrl": "https://nkr.government.bg/File/Download/37c0c362-b235-42d4-bf46-9da67150a610",
+        "stagingEvidence": {
+          "fileId": "37c0c362-b235-42d4-bf46-9da67150a610",
+          "sha256": "ae478f725bb2c140226ec697de73472e135d347848265c61e05ff04a453f5b1d",
+          "archivePath": "source-archive/concessions/nkr-attachments/ae478f725bb2c140226ec697de73472e135d347848265c61e05ff04a453f5b1d.pdf",
+          "blockers": [
+            "expected_14_got_0",
+            "coordinate_order_unverified"
+          ],
+          "declaredCrs": "BGS2005",
+          "numericCrsCounts": {
+            "WGS84": 2
+          },
+          "pointNumberRanges": []
+        },
+        "queueSource": "national-inventory",
+        "sourceRowNo": "411",
+        "inventoryStatus": "active",
+        "concessionaire": "\"Находище Студена\" ЕООД, гр. София",
+        "resource": "Строителни материали",
+        "municipality": "Перник",
+        "province": "Перник",
+        "concessionIdCollision": false,
+        "nkrParties": [
+          {
+            "guid": "b9bdbd1e-5793-4a6e-8448-1b43322df881",
+            "concessionId": "D-000282",
+            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b9bdbd1e-5793-4a6e-8448-1b43322df881",
+            "searchText": "D-000282 | Открита | Отворена | Концесия за добив от находище \"Студена - участък III\", област Перник, община Перник, населено място Студена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -5705,11 +5788,28 @@
         "concessionId": "D-000310",
         "name": "Горни Дъбник",
         "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "stagingEvidence": null,
+        "sourceCrs": "BGS1970",
+        "sourcePoints": 66,
+        "status": "coordinate_register_archived__QA_blocked__expected_point_count_unknown__official_area_missing__BGS1970_zone_unverified__coordinate_order_unverified",
+        "sourceUrl": "https://nkr.government.bg/File/Download/a0c67c5d-7539-4086-9f71-a5c0e2f4ad0f",
+        "stagingEvidence": {
+          "fileId": "a0c67c5d-7539-4086-9f71-a5c0e2f4ad0f",
+          "sha256": "e40bc91f86154fb8a04a3bfd5d7c92bf21301752095ab80d10d33e66ffbe2d74",
+          "archivePath": "source-archive/concessions/nkr-attachments/e40bc91f86154fb8a04a3bfd5d7c92bf21301752095ab80d10d33e66ffbe2d74.pdf",
+          "blockers": [
+            "expected_point_count_unknown",
+            "official_area_missing",
+            "BGS1970_zone_unverified",
+            "coordinate_order_unverified"
+          ],
+          "declaredCrs": "BGS1970",
+          "numericCrsCounts": {
+            "BGS1970": 66
+          },
+          "pointNumberRanges": [
+            "1-66"
+          ]
+        },
         "queueSource": "national-inventory",
         "sourceRowNo": "393",
         "inventoryStatus": "active",
@@ -13776,34 +13876,6 @@
         "priority": 4
       },
       {
-        "id": "D-000278",
-        "concessionId": "D-000278",
-        "name": "Скравена",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "stagingEvidence": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "415",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Находище Скравена\" ЕООД, гр. София",
-        "resource": "Строителни материали",
-        "municipality": "Ботевград",
-        "province": "София",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "ca059416-dc8e-4c97-af16-58803a8eb1c4",
-            "concessionId": "D-000278",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ca059416-dc8e-4c97-af16-58803a8eb1c4",
-            "searchText": "D-000278 | Открита | Отворена | Концесия за добив от находище \"Скравена\", област София, община Ботевград, населено място Скравена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "D-000792",
         "concessionId": "D-000792",
         "name": "Скрибин",
@@ -14436,34 +14508,6 @@
             "concessionId": "D-000439",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/58bd122c-d827-4a32-a610-f3251210c860",
             "searchText": "D-000439 | Открита | Отворена | Концесия за добив от находище \"Студена - кариера ГУСВ\", област Перник, община Перник, населено място Студена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
-        "id": "D-000282",
-        "concessionId": "D-000282",
-        "name": "Студена - участък ІІІ",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "stagingEvidence": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "411",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Находище Студена\" ЕООД, гр. София",
-        "resource": "Строителни материали",
-        "municipality": "Перник",
-        "province": "Перник",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "b9bdbd1e-5793-4a6e-8448-1b43322df881",
-            "concessionId": "D-000282",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b9bdbd1e-5793-4a6e-8448-1b43322df881",
-            "searchText": "D-000282 | Открита | Отворена | Концесия за добив от находище \"Студена - участък III\", област Перник, община Перник, населено място Студена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -16787,13 +16831,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-05T08:59:57Z",
+    "sourceHealthCheckedAt": "2026-10-05T11:56:20Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-05T08:59:33Z",
+        "checkedAt": "2026-10-05T11:55:51Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -16801,7 +16845,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:59:44Z",
+        "checkedAt": "2026-10-05T11:56:03Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
@@ -16809,22 +16853,31 @@
         "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
+        "id": "MGU-PERNIK-CONCESSIONS",
+        "role": "geometry-cross-check",
+        "ok": true,
+        "checkedAt": "2026-10-05T11:56:16Z",
+        "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0",
+        "records": 19,
+        "digest": "1979d07629e47ad96b7f8308da75e9b78b39cf47bd579338fee14fc7f8fffd3f"
+      },
+      {
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:59:55Z",
+        "checkedAt": "2026-10-05T11:56:17Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 46023,
-        "digest": "59f9c294f3bad9ff9d7ee6ae8097bfc2c9912445d172d12ad044cc3c59dc0382"
+        "digest": "c6141a3d620865ba43b6b93f7e9c9aea5cc1d50e52d5d1ff3541533546d6dfda"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-05T08:59:56Z",
+        "checkedAt": "2026-10-05T11:56:18Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51607,
-        "digest": "c8a4572d732255997c91f20915a63c592efb7da44a50ecc34c352cd94696cd3a"
+        "digest": "4e55919069d571b5aa4aea84cf271631e2a72be9f9ee415cf1d71150d80374bd"
       }
     ],
     "coverage": {
@@ -16853,14 +16906,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-05T08:59:56Z",
+      "checkedAt": "2026-10-05T11:56:18Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51607,
-      "digest": "c8a4572d732255997c91f20915a63c592efb7da44a50ecc34c352cd94696cd3a"
+      "digest": "4e55919069d571b5aa4aea84cf271631e2a72be9f9ee415cf1d71150d80374bd"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-05T08:59:31Z"
+    "concessionsBaseline": "2026-10-05T11:55:50Z"
   }
 }
