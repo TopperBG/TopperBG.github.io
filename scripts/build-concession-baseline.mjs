@@ -29,12 +29,17 @@ const CACHE_PATH = path.join(ROOT, "map", "data", "industrial-zones-cache-v1.jso
 const INVENTORY_PATH = path.join(ROOT, "map", "data", "concession-inventory-v1.json");
 const BASELINE_PATH = path.join(ROOT, "map", "data", "official-concessions-baseline.geojson");
 const PENDING_PATH = path.join(ROOT, "map", "data", "pending-concessions-v1.json");
+const NKR_PARTY_INDEX_PATH = path.join(ROOT, "map", "data", "nkr-party-index-v1.json");
 
 const source = JSON.parse(fs.readFileSync(SOURCE_PATH, "utf8"));
 const cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
 const inventory = fs.existsSync(INVENTORY_PATH)
   ? JSON.parse(fs.readFileSync(INVENTORY_PATH, "utf8"))
   : { records: [] };
+const nkrPartyIndex = fs.existsSync(NKR_PARTY_INDEX_PATH)
+  ? JSON.parse(fs.readFileSync(NKR_PARTY_INDEX_PATH, "utf8"))
+  : { inventoryLookup: {} };
+const nkrInventoryLookup = nkrPartyIndex.inventoryLookup || {};
 
 // transformations@2.0.0 resolves its binary grids from process.cwd() rather
 // than from the package directory. Run the transformation phase from the
@@ -205,6 +210,7 @@ for (const rec of inventory.records || []) {
       province: rec.province ?? null,
       inventoryAreaDka: rec.areaDka ?? null,
       concessionIdCollision: !!rec.concessionIdCollision,
+      nkrParties: nkrInventoryLookup[rec.id] || [],
     });
     continue;
   }
@@ -230,6 +236,7 @@ for (const rec of inventory.records || []) {
     municipality: rec.municipality ?? null,
     province: rec.province ?? null,
     concessionIdCollision: !!rec.concessionIdCollision,
+    nkrParties: nkrInventoryLookup[rec.id] || [],
   });
 }
 
@@ -269,6 +276,7 @@ const pendingPayload = {
   inventoryRecordCount: (inventory.records||[]).length,
   publishedGeometryCount: features.length,
   pendingCount: pendingQueue.length,
+  withNkrPartyCount: pendingQueue.filter(x=>Array.isArray(x.nkrParties)&&x.nkrParties.length).length,
   curatedGroupPendingCount: curatedGroupsPending.length,
   curatedGroupsPending,
   priorityMeaning: {
@@ -307,6 +315,7 @@ section.coverage = {
   publishedOfficialRegisterPolygons: features.length,
   inventoryRecordCount: (inventory.records||[]).length,
   pendingOfficialRecords: pendingQueue.length,
+  pendingWithNkrParty: pendingQueue.filter(x=>Array.isArray(x.nkrParties)&&x.nkrParties.length).length,
   note: "Legal concession boundary and developed/disturbed footprint are separate geometries.",
 };
 
