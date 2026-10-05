@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-concession-inventory-v1",
-  "generatedAt": "2026-10-04T09:47:30Z",
+  "generatedAt": "2026-10-05T06:31:53Z",
   "mode": "refreshed",
   "scope": "Bulgaria; mining/extraction concessions plus curated historical official records",
   "recordCount": 530,
@@ -49,6 +49,8 @@
       "bytes": 243200,
       "sha256": "6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b",
       "records": 530,
+      "archiveCurrent": "source-archive/concessions/koncesii_public.xls",
+      "archiveSnapshot": "source-archive/concessions/snapshots/me-concessions-xls/6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b.xls",
       "sheets": [
         {
           "name": "ME_Public",
@@ -89,14 +91,18 @@
       "ok": true,
       "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
       "bytes": 46023,
-      "sha256": "169001c708fd67f2f2d4af5cd1b35cb8b19ddd8e4fbaa41bf28130c83c36fd6e"
+      "sha256": "1f2c69bb569a0652ef85ac2519aa8e7645401b6776a4655531e8c796aee6b4ad",
+      "archiveCurrent": "source-archive/concessions/me-concessions-page.html",
+      "archiveSnapshot": "source-archive/concessions/snapshots/me-concessions-page/1f2c69bb569a0652ef85ac2519aa8e7645401b6776a4655531e8c796aee6b4ad.html"
     },
     {
       "id": "ME-ABANDONED-MINING-WASTE",
       "ok": true,
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51607,
-      "sha256": "69a3cf0856ca37e91152f41e0696c8bbd1f69034a2dd3f9c7232d80cb0e83c8c"
+      "sha256": "af0ecef9c727aa47661ee1c29092d85a23472dcca99fdc671232da96aab0b5f3",
+      "archiveCurrent": "source-archive/concessions/me-abandoned-mining-waste.html",
+      "archiveSnapshot": "source-archive/concessions/snapshots/me-abandoned-mining-waste/af0ecef9c727aa47661ee1c29092d85a23472dcca99fdc671232da96aab0b5f3.html"
     },
     {
       "id": "ME-ABANDONED-MINING-WASTE-XLS",
@@ -104,23 +110,27 @@
       "url": "https://www.me.government.bg/files/useruploads/files/prk/old_mining_sites_2020.xls",
       "bytes": 126464,
       "sha256": "15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7",
-      "records": 459,
+      "records": 480,
+      "archiveCurrent": "source-archive/concessions/old_mining_sites_2020.xls",
+      "archiveSnapshot": "source-archive/concessions/snapshots/me-abandoned-mining-waste-xls/15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7.xls",
       "sheets": [
         {
           "name": "Sheet1",
           "rows": 488,
-          "headerRow": 29,
+          "headerRow": null,
           "headerScore": 1,
-          "records": 459,
+          "parserMode": "official-positional-8-column",
+          "dataStartRow": 9,
+          "records": 480,
           "headers": [
-            "\"Еко-Елшица\" ЕООД",
-            "Отвали рудник \"Елшица\"",
-            "насипища",
-            "1960",
-            "1998",
-            "534100",
-            "2500000",
-            "column_8"
+            "operator_or_owner",
+            "facility_name",
+            "facility_type",
+            "operation_start_year",
+            "closure_year",
+            "area_m2",
+            "volume_m3",
+            "location"
           ]
         }
       ]

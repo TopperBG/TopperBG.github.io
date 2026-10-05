@@ -1,0 +1,70 @@
+{
+  "schema": "bgwf-concession-source-archive-v1",
+  "sources": {
+    "ME-CONCESSIONS-XLS": {
+      "id": "ME-CONCESSIONS-XLS",
+      "url": "https://www.me.government.bg/uploads/manager/source/NGS/koncesii_public.xls",
+      "current": "koncesii_public.xls",
+      "snapshots": [
+        {
+          "sha256": "6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b",
+          "bytes": 243200,
+          "firstSeenAt": "2026-10-05T06:31:50Z",
+          "path": "snapshots/me-concessions-xls/6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b.xls"
+        }
+      ],
+      "latestSha256": "6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b",
+      "latestBytes": 243200,
+      "lastCheckedAt": "2026-10-05T06:31:50Z"
+    },
+    "ME-CONCESSIONS-PAGE": {
+      "id": "ME-CONCESSIONS-PAGE",
+      "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
+      "current": "me-concessions-page.html",
+      "snapshots": [
+        {
+          "sha256": "1f2c69bb569a0652ef85ac2519aa8e7645401b6776a4655531e8c796aee6b4ad",
+          "bytes": 46023,
+          "firstSeenAt": "2026-10-05T06:31:52Z",
+          "path": "snapshots/me-concessions-page/1f2c69bb569a0652ef85ac2519aa8e7645401b6776a4655531e8c796aee6b4ad.html"
+        }
+      ],
+      "latestSha256": "1f2c69bb569a0652ef85ac2519aa8e7645401b6776a4655531e8c796aee6b4ad",
+      "latestBytes": 46023,
+      "lastCheckedAt": "2026-10-05T06:31:52Z"
+    },
+    "ME-ABANDONED-MINING-WASTE": {
+      "id": "ME-ABANDONED-MINING-WASTE",
+      "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
+      "current": "me-abandoned-mining-waste.html",
+      "snapshots": [
+        {
+          "sha256": "af0ecef9c727aa47661ee1c29092d85a23472dcca99fdc671232da96aab0b5f3",
+          "bytes": 51607,
+          "firstSeenAt": "2026-10-05T06:31:52Z",
+          "path": "snapshots/me-abandoned-mining-waste/af0ecef9c727aa47661ee1c29092d85a23472dcca99fdc671232da96aab0b5f3.html"
+        }
+      ],
+      "latestSha256": "af0ecef9c727aa47661ee1c29092d85a23472dcca99fdc671232da96aab0b5f3",
+      "latestBytes": 51607,
+      "lastCheckedAt": "2026-10-05T06:31:52Z"
+    },
+    "ME-ABANDONED-MINING-WASTE-XLS": {
+      "id": "ME-ABANDONED-MINING-WASTE-XLS",
+      "url": "https://www.me.government.bg/files/useruploads/files/prk/old_mining_sites_2020.xls",
+      "current": "old_mining_sites_2020.xls",
+      "snapshots": [
+        {
+          "sha256": "15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7",
+          "bytes": 126464,
+          "firstSeenAt": "2026-10-05T06:31:53Z",
+          "path": "snapshots/me-abandoned-mining-waste-xls/15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7.xls"
+        }
+      ],
+      "latestSha256": "15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7",
+      "latestBytes": 126464,
+      "lastCheckedAt": "2026-10-05T06:31:53Z"
+    }
+  },
+  "generatedAt": "2026-10-05T06:31:53Z"
+}
