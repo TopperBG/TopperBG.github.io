@@ -12,6 +12,7 @@ on:
       - "scripts/sync-nkr-party-index.py"
       - "scripts/harvest-nkr-priority-documents.py"
       - "scripts/harvest-nkr-attachments.py"
+      - "scripts/extract-coordinate-registers.py"
       - "scripts/snapshot-industrial-footprints.py"
       - "scripts/build-concession-baseline.mjs"
       - "map/data/concession-boundaries-official-source-v2.json"
@@ -56,6 +57,9 @@ jobs:
       - name: Archive and inspect NKR attachments
         run: python scripts/harvest-nkr-attachments.py
 
+      - name: Stage extracted coordinate registers
+        run: python scripts/extract-coordinate-registers.py
+
       - name: Build repository concession baseline and pending queue
         run: node scripts/build-concession-baseline.mjs
 
@@ -80,6 +84,7 @@ jobs:
           nkr_docs=json.load(open("map/data/nkr-party-documents-v1.json", encoding="utf-8"))
           nkr_attachments=json.load(open("map/data/nkr-attachment-index-v1.json", encoding="utf-8"))
           coordinate_candidates=json.load(open("map/data/coordinate-document-candidates-v1.json", encoding="utf-8"))
+          coordinate_registers=json.load(open("map/data/coordinate-registers-staging-v1.json", encoding="utf-8"))
           industry_snapshot=json.load(open("map/data/industry-footprints-baseline.geojson", encoding="utf-8"))
           assert cache.get("schema") == "bgwf-industrial-zones-cache-v1"
           assert inventory.get("schema") == "bgwf-concession-inventory-v1"
@@ -91,6 +96,7 @@ jobs:
           assert nkr_docs.get("schema") == "bgwf-nkr-party-documents-v1"
           assert nkr_attachments.get("schema") == "bgwf-nkr-attachment-index-v1"
           assert coordinate_candidates.get("schema") == "bgwf-coordinate-document-candidates-v1"
+          assert coordinate_registers.get("schema") == "bgwf-coordinate-registers-staging-v1"
           assert industry_snapshot.get("schema") == "bgwf-industry-footprints-baseline-v1"
           assert int(inventory.get("recordCount",0)) == len(inventory.get("records") or [])
           if inventory.get("recordCount",0) < 50:
@@ -126,6 +132,7 @@ jobs:
           print("NKR party index:", nkr_index.get("recordCount",0), "records; inventory links:", nkr_index.get("stats",{}).get("inventoryIdsWithNkrParty",0))
           print("NKR party documents archived:", nkr_docs.get("archivedOkCount",0), "file links:", nkr_docs.get("totalFileLinks",0))
           print("NKR attachments archived:", nkr_attachments.get("archivedOkCount",0), "coordinate candidates:", coordinate_candidates.get("candidateCount",0), "ready:", coordinate_candidates.get("readyForCoordinateParserCount",0))
+          print("Coordinate registers staged:", coordinate_registers.get("registerCount",0), "publication-ready:", coordinate_registers.get("publicationReadyCount",0))
           print("Industry polygons archived:", industry_snapshot.get("featureCount",0))
           print("Active registry source:", health.get("concessions",{}).get("activeRegistrySource"))
           PY
@@ -143,6 +150,7 @@ jobs:
             map/data/nkr-party-documents-v1.json
             map/data/nkr-attachment-index-v1.json
             map/data/coordinate-document-candidates-v1.json
+            map/data/coordinate-registers-staging-v1.json
             map/data/official-concessions-baseline.geojson
             map/data/pending-concessions-v1.json
             map/data/industry-footprints-baseline.geojson
@@ -173,6 +181,7 @@ jobs:
             python scripts/sync-nkr-party-index.py
             python scripts/harvest-nkr-priority-documents.py
             python scripts/harvest-nkr-attachments.py
+            python scripts/extract-coordinate-registers.py
             node scripts/build-concession-baseline.mjs
             python scripts/snapshot-industrial-footprints.py
             python scripts/refresh-industrial-concessions.py
