@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93f-weekly-concession-cache-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93f</title>
+<meta name="bgwf-build" content="v0.93g-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93g</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1009,6 +1009,7 @@ svg {
     color:#991b1b;
   }
   #bg-wildfires-map .bgwf-source-warning[hidden] { display:none!important; }
+  #bg-wildfires-map.is-filter-collapsed .bgwf-source-warning { display:none!important; }
   @media (max-width:700px) {
     #bg-wildfires-map .bgwf-source-warning {
       width:calc(100% - 4.5rem);
@@ -3564,8 +3565,6 @@ const CURATED_INDUSTRIAL_POINTS = [];
   // Weekly workflow проверява data.egov.bg (primary), НКР (secondary)
   // и Министерството на енергетиката (tertiary/audit), без да унищожава
   // последния добър repository cache при временна недостъпност.
-  const OFFICIAL_CONCESSION_GIS_SOURCES = [];
-
   const OFFICIAL_CONCESSION_STATIC_CACHE_URL = "./data/industrial-zones-cache-v1.json";
   let officialConcessionFeatures = [];
   let officialConcessionPending = [];
@@ -4397,27 +4396,6 @@ if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateProvinceChip
 
 const sourceWarning=root.querySelector('[data-source-warning]');
 const SOURCE_HEALTH_URL='./data/gis-source-health-v1.json';
-const CONCESSION_VISIT_CHECK_KEY='bgwf-concession-source-check-v1';
-const CONCESSION_VISIT_CHECK_MS=7*24*60*60*1000;
-async function weeklyConcessionVisitCheck(){
-  let last=0;try{last=Number(localStorage.getItem(CONCESSION_VISIT_CHECK_KEY)||0);}catch{}
-  if(Date.now()-last<CONCESSION_VISIT_CHECK_MS)return;
-  try{localStorage.setItem(CONCESSION_VISIT_CHECK_KEY,String(Date.now()));}catch{}
-  // Repository health is authoritative. Direct browser probes are best-effort:
-  // MGU normally permits ArcGIS CORS; NKR/data.egov may reject browser CORS.
-  const probes=[
-    ['MGU-PERNIK-CONCESSIONS','https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query?where=1%3D1&returnCountOnly=true&f=json'],
-    ['NKR','https://nkr.government.bg/Concessions'],
-    ['DATA-EGOV-BG','https://data.egov.bg/api']
-  ];
-  const results={checkedAt:new Date().toISOString(),repositoryHealthCheckedAt:sourceHealth?.checkedAt||null,sources:{}};
-  await Promise.all(probes.map(async([id,url])=>{
-    try{const r=await fetch(url,{method:'GET',mode:'cors',cache:'no-store'});results.sources[id]={reachable:r.ok,status:r.status};}
-    catch(e){results.sources[id]={reachable:null,browserBlocked:true,error:e.message};}
-  }));
-  debugState.network.concessionVisitCheck=results;
-  try{localStorage.setItem(CONCESSION_VISIT_CHECK_KEY+':result',JSON.stringify(results));}catch{}
-}
 let sourceHealth=null;
 let sourceHealthLoadState='idle';
 
@@ -4490,7 +4468,6 @@ async function loadSourceHealth(){
     debugState.network.sourceHealth={ok:false,error:e.message};
   }
   renderSourceWarning();
-  void weeklyConcessionVisitCheck();
   return sourceHealth;
 }
 
@@ -6408,93 +6385,9 @@ async function loadOfficialConcessionStaticCache(){
     return merged.map(x=>concessionFeatureFromGeoJSON(x,x?.properties?.source_kind==='MGU-concession-contract-geometry'?'MGU-PERNIK-CACHE':'REPOSITORY-BASELINE',x?.properties?.source_kind==='MGU-concession-contract-geometry'?MGU_PERNIK_CONCESSION_CACHE_URL:OFFICIAL_CONCESSION_BASELINE_URL)).filter(Boolean);
   }catch(e){standaloneError=e;}
 
-  // Backward-compatible fallback while older cache revisions still exist.
-  try{
-    const p=await loadIndustrialZoneCache(),section=p.concessions||{};
-    officialConcessionPending=Array.isArray(section.pending)?section.pending:[];
-    officialConcessionCacheMeta=section;
-    debugState.network.concessionCache={status:200,ok:true,fallback:true,features:Array.isArray(section.features)?section.features.length:0,source:INDUSTRIAL_ZONE_CACHE_URL,standaloneError:standaloneError?.message||null};
-    return (section.features??[]).map(x=>concessionFeatureFromGeoJSON(x,'EMBEDDED-CACHE',INDUSTRIAL_ZONE_CACHE_URL)).filter(Boolean);
-  }catch(e){
-    debugState.network.concessionCache={error:e.message,standaloneError:standaloneError?.message||null,ok:false,source:OFFICIAL_CONCESSION_BASELINE_URL};
-    return[];
-  }
-}
+  debugState.network.concessionCache={error:standaloneError?.message||'repository concession baseline unavailable',ok:false,source:OFFICIAL_CONCESSION_BASELINE_URL};
+  return[];
 
-function fetchArcGisConcessionsJsonp(source,timeoutMs=12000){
-  return new Promise((resolve,reject)=>{
-    const cb=`__bgwfConcession_${Date.now()}_${Math.random().toString(36).slice(2)}`;
-    const script=document.createElement('script');
-    const cleanup=(err,val)=>{clearTimeout(timer);script.remove();try{delete window[cb]}catch{}err?reject(err):resolve(val);};
-    const timer=setTimeout(()=>cleanup(new Error('ArcGIS JSONP timeout')),timeoutMs);
-    window[cb]=payload=>{
-      if(payload?.error)return cleanup(new Error(payload.error.message||'ArcGIS JSONP error'));
-      const raws=(payload?.features||[]).flatMap(item=>{
-        const rings=item?.geometry?.rings;
-        if(!Array.isArray(rings)||!rings.length)return[];
-        return [{type:'Feature',properties:item.attributes||{},geometry:{type:'Polygon',coordinates:rings}}];
-      });
-      cleanup(null,raws);
-    };
-    script.onerror=()=>cleanup(new Error('ArcGIS JSONP network error'));
-    const u=new URL(source.url);
-    u.searchParams.set('where',source.where||'1=1');u.searchParams.set('outFields','*');u.searchParams.set('returnGeometry','true');
-    u.searchParams.set('outSR','4326');u.searchParams.set('f','json');u.searchParams.set('callback',cb);
-    script.src=u.toString();document.head.appendChild(script);
-  });
-}
-async function loadOfficialConcessionsJsonpFallback(){
-  const loaded=[];
-  for(const source of OFFICIAL_CONCESSION_GIS_SOURCES){
-    try{
-      const raws=await fetchArcGisConcessionsJsonp(source);
-      for(const raw of raws){const f=concessionFeatureFromGeoJSON(raw,source.id,source.sourceUrl);if(f)loaded.push(f);}
-      debugState.network[`concession-${source.id}-jsonp`]={ok:true,features:loaded.length};
-    }catch(e){debugState.network[`concession-${source.id}-jsonp`]={ok:false,error:e.message};}
-  }
-  return loaded;
-}
-
-async function refreshOfficialConcessionsRemoteInBackground(seedFeatures=[]){
-  const loaded=[...seedFeatures];
-  const keys=new Set(loaded.map(f=>`${f.get('concessionId')}|${f.get('name')}`));
-  let changed=false;
-
-  for(const source of OFFICIAL_CONCESSION_GIS_SOURCES){
-    try{
-      const u=new URL(source.url);
-      u.searchParams.set('where',source.where||'1=1');
-      u.searchParams.set('outFields','*');
-      u.searchParams.set('returnGeometry','true');
-      u.searchParams.set('outSR','4326');
-      u.searchParams.set('f','geojson');
-
-      const r=await fetchMonthlyGis(u,{mode:'cors'});
-      if(!r.ok)throw new Error(`HTTP ${r.status}`);
-      debugState.network[`concession-${source.id}`]={ok:true,status:r.status,background:true};
-
-      const p=await r.json();
-      for(const raw of p.features??[]){
-        const f=concessionFeatureFromGeoJSON(raw,source.id,source.sourceUrl);
-        if(!f)continue;
-        const k=`${f.get('concessionId')}|${f.get('name')}`;
-        if(!keys.has(k)){ keys.add(k); loaded.push(f); changed=true; }
-      }
-    }catch(e){
-      debugState.network[`concession-${source.id}`]={ok:false,background:true,error:e.message};
-      dbgWarn('official-concession-refresh-failed',{source:source.id,error:e.message});
-    }
-  }
-
-  if(changed){
-    concessionSource.clear();
-    concessionSource.addFeatures(loaded);
-    officialConcessionFeatures=loaded;
-    rebuildEstimatedConcessionAreas();
-    debugState.layerCounts.concessions=loaded.length;
-    updateLayerStatus();
-  }
-  return loaded;
 }
 
 async function ensureOfficialConcessionPolygons(){
@@ -6540,7 +6433,7 @@ window.bgwfReloadOfficialConcessions=async function(){
   await ensureOfficialConcessionPolygons();
   return window.bgwfConcessionAudit();
 };
-window.bgwfExportOfficialConcessionCache=function(){const features=concessionSource.getFeatures().map(f=>geojson.writeFeatureObject(f,{featureProjection:'EPSG:3857',dataProjection:'EPSG:4326'})).map(raw=>{raw.properties={...raw.properties,concession_id:raw.properties.concessionId,name:raw.properties.name,ncr_url:raw.properties.nkrUrl,source_url:raw.properties.sourceUrl};return raw;});const payload={schema:'bgwf-industry-concessions-cache-v1',generatedAt:new Date().toISOString(),geometryCrs:'EPSG:4326',featureCount:features.length,features,pending:officialConcessionPending,remoteSources:OFFICIAL_CONCESSION_GIS_SOURCES};downloadJson(payload,'industrial-zones-concessions-export.json');return payload;};
+window.bgwfExportOfficialConcessionCache=function(){const features=concessionSource.getFeatures().map(f=>geojson.writeFeatureObject(f,{featureProjection:'EPSG:3857',dataProjection:'EPSG:4326'})).map(raw=>{raw.properties={...raw.properties,concession_id:raw.properties.concessionId,name:raw.properties.name,ncr_url:raw.properties.nkrUrl,source_url:raw.properties.sourceUrl};return raw;});const payload={schema:'bgwf-industry-concessions-cache-v1',generatedAt:new Date().toISOString(),geometryCrs:'EPSG:4326',featureCount:features.length,features,pending:officialConcessionPending};downloadJson(payload,'industrial-zones-concessions-export.json');return payload;};
 function downloadJson(payload,name){const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
 
 // ---------- Sentinel-3 ----------
@@ -7284,6 +7177,7 @@ function runSelfTests(){
   selfTest('wind-validity',()=>({ok:operatingWindProjects.filter(isValidWindProject).length===operatingWindProjects.length,valid:operatingWindProjects.filter(isValidWindProject).length,total:operatingWindProjects.length}));
   selfTest('wind-id-unique',()=>{const dup=duplicateValues(operatingWindProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup};});
   selfTest('wind-no-anonymous',()=>{const bad=operatingWindProjects.filter(d=>!String(d.name||'').trim()||!/https?:\/\//i.test(d.source||''));return{ok:bad.length===0,bad:bad.map(d=>d.id)};});
+  selfTest('concessions-repository-only',()=>({ok:OFFICIAL_CONCESSION_BASELINE_URL.startsWith('./data/')&&MGU_PERNIK_CONCESSION_CACHE_URL.startsWith('./data/'),baseline:OFFICIAL_CONCESSION_BASELINE_URL,mgu:MGU_PERNIK_CONCESSION_CACHE_URL,features:concessionSource.getFeatures().length}));
   selfTest('industry-site-centres',()=>{const bad=industrialPolygonSites.filter(d=>d.lon<20||d.lon>30.5||d.lat<40||d.lat>45.5);return{ok:bad.length===0,bad:bad.map(d=>d.id),total:industrialPolygonSites.length};});
   selfTest('industry-id-unique',()=>{const dup=duplicateValues(industrialPolygonSites.map(d=>d.id));return{ok:dup.length===0,duplicates:dup};});
   selfTest('cadastral-project-ids',()=>{const dup=duplicateValues(cadastralProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup,total:cadastralProjects.length};});
