@@ -295,7 +295,11 @@ def main() -> None:
         numeric_dominant = by_class.most_common(1)[0][0]
         dominant = doc_meta.get("declaredCrs") or numeric_dominant
         if doc_meta.get("declaredCrs") in ("BGS1970", "BGS2005"):
-            dominant_rows = [r for r in rows if r["crsClass"] in ("BGS1970", "BGS2005")]
+            # Official documents may contain both the legacy register and its
+            # BGS2005 equivalent. Never merge the two coordinate systems into
+            # one ring; use only the rows matching the CRS explicitly declared
+            # for the concession boundary being staged.
+            dominant_rows = [r for r in rows if r["crsClass"] == doc_meta["declaredCrs"]]
         else:
             dominant_rows = [r for r in rows if r["crsClass"] == dominant]
         point_numbers = [r["pointNo"] for r in dominant_rows]
@@ -319,6 +323,8 @@ def main() -> None:
                 contour_problems = []
                 for contour_no, expected_n in sorted(declared_contours.items()):
                     crow = extracted_by_no.get(contour_no) or []
+                    if dominant in ("BGS1970", "BGS2005"):
+                        crow = [r for r in crow if r["crsClass"] == dominant]
                     numbers = [r["pointNo"] for r in crow]
                     if len(crow) != expected_n or set(numbers) != set(range(1, expected_n + 1)):
                         contour_problems.append(
@@ -380,6 +386,7 @@ def main() -> None:
                 "coordinateParserVersion": meta.get("coordinateParserVersion"),
                 "dominantCrsClass": dominant,
                 "numericDominantCrsClass": numeric_dominant,
+                "numericCrsCounts": dict(by_class),
                 "declaredCrsFromDocument": doc_meta.get("declaredCrs"),
                 "axisOrderFromDocument": doc_meta.get("axisOrder"),
                 "officialAreaDkaFromDocument": doc_meta.get("officialAreaDka"),
