@@ -6340,16 +6340,18 @@ async function ensureIndustrialPolygons(){if(industrialPolygonLoadState==='ready
 // ---------- Official concession repository baseline ----------
 const OFFICIAL_CONCESSION_BASELINE_URL='./data/official-concessions-baseline.geojson';
 const MGU_PERNIK_CONCESSION_CACHE_URL='./data/mgu-pernik-concessions-v1.geojson';
+const GEOREFERENCED_CONCESSION_SCHEMES_URL='./data/georeferenced-concession-schemes-v1.geojson';
 const PENDING_CONCESSIONS_URL='./data/pending-concessions-v1.json';
 const OFFICIAL_CONCESSION_CACHE_URL=INDUSTRIAL_ZONE_CACHE_URL;
 function concessionFeatureFromGeoJSON(raw,sourceId='STATIC-CACHE',sourceUrl=OFFICIAL_CONCESSION_CACHE_URL){try{const f=cloneGeoFeature(raw);const p=raw.properties||{};const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'})/1000;if(!Number.isFinite(area)||area<=0||area>1500000)return null;f.set('kind','concession');f.set('concessionId',p.concession_id??p['идентификационен_____партиден__']??'—');f.set('name',p.name??p['находище']??'Концесионна площ');f.set('concessionaire',p.concessionaire??p['концесионер']??'');f.set('nkrUrl',p.ncr_url??'');f.set('sourceUrl',p.source_url??sourceUrl);f.set('sourceId',sourceId);f.set('areaDka',area);return f;}catch(e){dbgWarn('concession-feature-reject',{error:e.message});return null;}}
 async function loadOfficialConcessionStaticCache(){
   let standaloneError=null;
   try{
-    const [baseResponse,pendingResponse,mguResponse]=await Promise.all([
+    const [baseResponse,pendingResponse,mguResponse,schemeResponse]=await Promise.all([
       fetch(OFFICIAL_CONCESSION_BASELINE_URL,{cache:'no-cache',credentials:'same-origin'}),
       fetch(PENDING_CONCESSIONS_URL,{cache:'no-cache',credentials:'same-origin'}),
-      fetch(MGU_PERNIK_CONCESSION_CACHE_URL,{cache:'no-cache',credentials:'same-origin'})
+      fetch(MGU_PERNIK_CONCESSION_CACHE_URL,{cache:'no-cache',credentials:'same-origin'}),
+      fetch(GEOREFERENCED_CONCESSION_SCHEMES_URL,{cache:'no-cache',credentials:'same-origin'})
     ]);
     if(!baseResponse.ok)throw new Error(`HTTP ${baseResponse.status}: ${OFFICIAL_CONCESSION_BASELINE_URL}`);
     const base=await baseResponse.json();
