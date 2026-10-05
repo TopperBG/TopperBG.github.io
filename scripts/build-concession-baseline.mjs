@@ -41,6 +41,9 @@ const nkrPartyIndex = fs.existsSync(NKR_PARTY_INDEX_PATH)
   ? JSON.parse(fs.readFileSync(NKR_PARTY_INDEX_PATH, "utf8"))
   : { inventoryLookup: {} };
 const nkrInventoryLookup = nkrPartyIndex.inventoryLookup || {};
+const inventoryByConcession = new Map(
+  (inventory.records || []).map(r => [String(r.concessionId || r.id || ""), r])
+);
 const extractedRegisters = fs.existsSync(EXTRACTED_REGISTERS_PATH)
   ? JSON.parse(fs.readFileSync(EXTRACTED_REGISTERS_PATH, "utf8"))
   : { registers: [] };
@@ -68,17 +71,33 @@ function coordinateMode(record) {
   return null;
 }
 
-function normalizedPointsFromRecord(record) {
-  if (Array.isArray(record.coordinates_normalized_xy)) return record.coordinates_normalized_xy;
-  if (!Array.isArray(record.coordinatesRaw)) return null;
-  const order = String(record.sourceCoordinateOrder || record.normalized_coordinate_order || "");
+function normalizeCoordinatePairs(pairs, orderValue) {
+  if (!Array.isArray(pairs)) return null;
+  const order = String(orderValue || "");
   if (/X\s*\(N\).*Y\s*\(E\)/i.test(order) || /X.*Y/i.test(order)) {
-    return record.coordinatesRaw;
+    return pairs.map(([a,b])=>[Number(a),Number(b)]);
   }
   if (/Y\s*\(E\).*X\s*\(N\)/i.test(order) || /Y.*X/i.test(order)) {
-    return record.coordinatesRaw.map(([a,b])=>[b,a]);
+    return pairs.map(([a,b])=>[Number(b),Number(a)]);
   }
   return null;
+}
+
+function normalizedPointsFromRecord(record) {
+  if (Array.isArray(record.coordinates_normalized_xy)) return record.coordinates_normalized_xy;
+  return normalizeCoordinatePairs(
+    record.coordinatesRaw,
+    record.sourceCoordinateOrder || record.normalized_coordinate_order
+  );
+}
+
+function normalizedContoursFromRecord(record) {
+  if (!Array.isArray(record.contoursRaw) || record.contoursRaw.length < 2) return null;
+  const order = record.sourceCoordinateOrder || record.normalized_coordinate_order;
+  const rings = record.contoursRaw
+    .map(c=>normalizeCoordinatePairs(c.coordinatesRaw, order))
+    .filter(r=>Array.isArray(r)&&r.length>=3);
+  return rings.length === record.contoursRaw.length ? rings : null;
 }
 
 function polygonAreaSqM(points) {
@@ -124,14 +143,20 @@ for (const reg of extractedRegisters.registers || []) {
   const cid=String(reg.concessionId||"");
   const existing=sourceRecords.find(r=>String(r.concession_registry||"")===cid && Array.isArray(r.coordinates_normalized_xy) && r.coordinates_normalized_xy.length>=3);
   if (existing) continue;
+  const inv = inventoryByConcession.get(cid);
   sourceRecords.push({
     id: reg.curatedId || `NKR-${cid}`,
     concession_registry: cid,
-    name: reg.name || cid,
+    name: reg.name || inv?.name || cid,
+    resource: inv?.resource || null,
+    municipality: inv?.municipality || null,
+    province: inv?.province || null,
     source_coordinate_system: reg.sourceCoordinateSystem || reg.dominantCrsClass,
     zone_inference: reg.sourceZone || null,
     sourceCoordinateOrder: reg.sourceCoordinateOrder || null,
     coordinatesRaw: reg.coordinatesRaw,
+    contoursRaw: Array.isArray(reg.contoursRaw) ? reg.contoursRaw : null,
+    geometryStructure: reg.geometryStructure || "Polygon",
     point_count: reg.extractedPointCount,
     official_area_dka: reg.officialAreaDka,
     official_source: {
@@ -145,11 +170,13 @@ for (const reg of extractedRegisters.registers || []) {
 }
 
 for (const record of sourceRecords) {
-  const points = normalizedPointsFromRecord(record);
+  const singlePoints = normalizedPointsFromRecord(record);
+  const contourPoints = normalizedContoursFromRecord(record);
+  const sourceRings = contourPoints || (Array.isArray(singlePoints) && singlePoints.length >= 3 ? [singlePoints] : []);
   const mode = coordinateMode(record);
   const projection = mode==="BGS1970" ? projectionFor(record) : null;
 
-  if (!Array.isArray(points) || points.length < 3) {
+  if (!sourceRings.length) {
     pending.push(shortPending(record, record.status || "coordinate_register_not_extracted"));
     continue;
   }
@@ -166,21 +193,22 @@ for (const record of sourceRecords) {
     continue;
   }
 
-  let bgs2005;
+  let bgs2005Rings;
   try {
-    if (mode==="BGS1970") {
-      // TPS is preferred by the library for the BGS1970 grid transformation.
-      bgs2005 = bgs.transformArray(points, projection, projections.BGS_2005_KK, true);
-    } else {
+    bgs2005Rings = sourceRings.map(points => {
+      if (mode==="BGS1970") {
+        // TPS is preferred by the library for the BGS1970 grid transformation.
+        return bgs.transformArray(points, projection, projections.BGS_2005_KK, true);
+      }
       // Official BGS2005 cadastral coordinates are already in CCS2005.
-      bgs2005 = points.map(([x,y])=>[Number(x),Number(y)]);
-    }
+      return points.map(([x,y])=>[Number(x),Number(y)]);
+    });
   } catch (error) {
     pending.push(shortPending(record, `transformation_failed: ${error.message}`));
     continue;
   }
 
-  const transformedAreaDka = polygonAreaSqM(bgs2005) / 1000;
+  const transformedAreaDka = bgs2005Rings.reduce((sum,ring)=>sum+polygonAreaSqM(ring),0) / 1000;
   const officialAreaDka = Number(record.official_area_dka);
   const areaErrorPct = Math.abs(transformedAreaDka - officialAreaDka) / officialAreaDka * 100;
   if (!Number.isFinite(areaErrorPct) || areaErrorPct > 2.0) {
@@ -188,24 +216,29 @@ for (const record of sourceRecords) {
     continue;
   }
 
-  const ring = [];
+  const wgsRings = [];
   let badPoint = false;
-  for (const point of bgs2005) {
-    const geo = transformLambertToGeographic(point);
-    const lat = Number(geo?.[0]);
-    const lon = Number(geo?.[1]);
-    if (!Number.isFinite(lat) || !Number.isFinite(lon) || lat < 41.0 || lat > 44.5 || lon < 22.0 || lon > 29.5) {
-      badPoint = true;
-      break;
+  for (const sourceRing of bgs2005Rings) {
+    const ring = [];
+    for (const point of sourceRing) {
+      const geo = transformLambertToGeographic(point);
+      const lat = Number(geo?.[0]);
+      const lon = Number(geo?.[1]);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon) || lat < 41.0 || lat > 44.5 || lon < 22.0 || lon > 29.5) {
+        badPoint = true;
+        break;
+      }
+      ring.push([Number(lon.toFixed(8)), Number(lat.toFixed(8))]);
     }
-    ring.push([Number(lon.toFixed(8)), Number(lat.toFixed(8))]);
+    if (badPoint || ring.length < 3) break;
+    if (ring[0][0] !== ring[ring.length - 1][0] || ring[0][1] !== ring[ring.length - 1][1]) {
+      ring.push([...ring[0]]);
+    }
+    wgsRings.push(ring);
   }
-  if (badPoint || ring.length < 3) {
+  if (badPoint || wgsRings.length !== bgs2005Rings.length) {
     pending.push(shortPending(record, "WGS84_Bulgaria_bounds_QA_failed"));
     continue;
-  }
-  if (ring[0][0] !== ring[ring.length - 1][0] || ring[0][1] !== ring[ring.length - 1][1]) {
-    ring.push([...ring[0]]);
   }
 
   features.push({
@@ -218,7 +251,11 @@ for (const record of sourceRecords) {
       area_qa_error_pct: Number(areaErrorPct.toFixed(4)),
       source_coordinate_system: record.source_coordinate_system,
       source_zone: record.zone_inference || null,
-      source_point_count: points.length,
+      source_point_count: sourceRings.reduce((n,r)=>n+r.length,0),
+      source_contour_count: sourceRings.length,
+      resource: record.resource || null,
+      municipality: record.municipality || null,
+      province: record.province || null,
       source_url: sourceUrl(record),
       source_attachment_sha256: record.official_source?.attachment_sha256 || null,
       source_archive_path: record.official_source?.archive_path || null,
@@ -231,9 +268,12 @@ for (const record of sourceRecords) {
         ? "Grid model derived from AGCC official-engine control points; informational map geometry. Verify with official BGSTrans for legal/cadastral use."
         : "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register.",
     },
-    geometry: {
+    geometry: wgsRings.length > 1 ? {
+      type: "MultiPolygon",
+      coordinates: wgsRings.map(ring=>[ring]),
+    } : {
       type: "Polygon",
-      coordinates: [ring],
+      coordinates: [wgsRings[0]],
     },
   });
 }
