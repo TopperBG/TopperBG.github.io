@@ -88,6 +88,55 @@ def parse_numbered_triples(text: str) -> list[dict]:
     return rows
 
 
+def parse_explicit_contours(text: str) -> list[dict]:
+    """Parse only contours explicitly labelled 'Контур N' in the official attachment.
+
+    We deliberately do not infer rings from coordinate jumps or repeated point
+    numbering alone. That would be a geometry guess.
+    """
+    matches = list(re.finditer(r"(?im)^\s*Контур\s+(\d+)\s*$", text))
+    contours = []
+    for idx, match in enumerate(matches):
+        contour_no = int(match.group(1))
+        end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
+        segment = text[match.end():end]
+        rows = []
+        for line in segment.splitlines():
+            m = re.match(
+                r"^\s*(\d{1,4})[.)]?\s+([-+]?\d+(?:[.,]\d+)?)\s+([-+]?\d+(?:[.,]\d+)?)\s*$",
+                line,
+            )
+            if not m:
+                continue
+            point_no = int(m.group(1))
+            a = safe_number(m.group(2))
+            b = safe_number(m.group(3))
+            if a is None or b is None:
+                continue
+            crs = classify_pair(a, b)
+            if not crs:
+                continue
+            rows.append({"pointNo": point_no, "a": a, "b": b, "crsClass": crs})
+        if len(rows) >= 3:
+            contours.append({"contourNo": contour_no, "rows": rows})
+    return contours
+
+
+def declared_contour_ranges(text: str) -> dict[int, int]:
+    compact = re.sub(r"\s+", " ", text)
+    clause = re.search(r"Определя\s+концесионна\s+площ.{0,1200}", compact, re.I)
+    if not clause:
+        return {}
+    out = {}
+    for m in re.finditer(
+        r"контур\s*(\d+)\s*[-–—:]?\s*от\s*№?\s*1\s*до\s*№?\s*(\d{1,4})",
+        clause.group(0),
+        re.I,
+    ):
+        out[int(m.group(1))] = int(m.group(2))
+    return out
+
+
 def dedupe(rows: list[dict]) -> tuple[list[dict], list[dict]]:
     kept = {}
     conflicts = []
@@ -235,6 +284,8 @@ def main() -> None:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         doc_meta = document_metadata(text)
+        explicit_contours = parse_explicit_contours(text)
+        declared_contours = declared_contour_ranges(text)
         raw_rows = parse_numbered_triples(text)
         rows, conflicts = dedupe(raw_rows)
         if not rows:
@@ -261,14 +312,41 @@ def main() -> None:
             source_crs = str(rec.get("source_coordinate_system") or "") if rec else ""
 
             reasons = []
-            if conflicts:
+            contour_payload = []
+            contour_ready = False
+            if declared_contours:
+                extracted_by_no = {x["contourNo"]: x["rows"] for x in explicit_contours}
+                contour_problems = []
+                for contour_no, expected_n in sorted(declared_contours.items()):
+                    crow = extracted_by_no.get(contour_no) or []
+                    numbers = [r["pointNo"] for r in crow]
+                    if len(crow) != expected_n or set(numbers) != set(range(1, expected_n + 1)):
+                        contour_problems.append(
+                            f"contour_{contour_no}_expected_{expected_n}_got_{len(crow)}"
+                        )
+                    contour_payload.append({
+                        "contourNo": contour_no,
+                        "expectedPointCount": expected_n,
+                        "extractedPointCount": len(crow),
+                        "coordinatesRaw": [[r["a"], r["b"]] for r in sorted(crow, key=lambda x: x["pointNo"])],
+                    })
+                missing_labels = set(declared_contours) - set(extracted_by_no)
+                if missing_labels:
+                    contour_problems.append("missing_explicit_contour_labels_" + "_".join(map(str, sorted(missing_labels))))
+                if contour_problems:
+                    reasons.extend(contour_problems)
+                else:
+                    contour_ready = True
+
+            if conflicts and not contour_ready:
                 reasons.append("conflicting_duplicate_point_numbers")
-            if expected is None:
-                reasons.append("expected_point_count_unknown")
-            elif not exact:
-                reasons.append(f"expected_{expected}_got_{unique_count}")
-            elif not full_range:
-                reasons.append("point_numbers_not_complete_1_to_N")
+            if not contour_ready:
+                if expected is None:
+                    reasons.append("expected_point_count_unknown")
+                elif not exact:
+                    reasons.append(f"expected_{expected}_got_{unique_count}")
+                elif not full_range:
+                    reasons.append("point_numbers_not_complete_1_to_N")
             if area in (None, ""):
                 reasons.append("official_area_missing")
             if dominant == "BGS1970":
@@ -313,6 +391,10 @@ def main() -> None:
                 "expectedPointCount": expected,
                 "extractedPointCount": unique_count,
                 "pointNumberRanges": contiguous_ranges(point_numbers),
+                "declaredContours": declared_contours,
+                "explicitContourCount": len(explicit_contours),
+                "contoursRaw": contour_payload if contour_ready else [],
+                "geometryStructure": "MultiPolygon" if contour_ready and len(contour_payload) > 1 else "Polygon",
                 "conflictCount": len(conflicts),
                 "conflicts": conflicts[:20],
                 "publicationReady": publication_ready,
