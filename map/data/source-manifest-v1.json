@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-source-manifest-v1",
-  "generatedAt": "2026-10-05T06:35:00Z",
-  "mapVersion": "0.93c",
+  "generatedAt": "2026-10-05T06:43:00Z",
+  "mapVersion": "0.93d",
   "engine": "OpenLayers 10.10.0",
   "sources": [
     {
@@ -88,7 +88,8 @@
     "The repository-owned NKR party index maps local concession inventory records to NKR GUID/party URLs; browser runtime never queries NKR.",
     "Official concession polygons require an official coordinate register/act and QA; missing geometries are explicit in pending-concessions-v1.json.",
     "Closed/abandoned mining and mining-waste footprints remain in scope independently of current concession status.",
-    "OSM/developed footprints and legal concession boundaries are deliberately separate geometries."
+    "OSM/developed footprints and legal concession boundaries are deliberately separate geometries.",
+    "NKR party pages for pending concession geometries are archived incrementally; extracted File/Preview links form the offline document-harvest queue."
   ],
   "localBaselines": {
     "concessionInventory": "./concession-inventory-v1.json",
@@ -100,6 +101,7 @@
     "disturbedMining": "./disturbed-mining-sites-v1.geojson",
     "disturbedMiningPending": "./disturbed-mining-sites-pending-v1.json",
     "sourceArchiveIndex": "./source-archive/concessions/index-v1.json",
-    "sourceArchive": "./source-archive/concessions/"
+    "sourceArchive": "./source-archive/concessions/",
+    "nkrPartyDocuments": "./nkr-party-documents-v1.json"
   }
 }
