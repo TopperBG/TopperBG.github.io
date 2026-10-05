@@ -58,6 +58,7 @@ MAX_NEW_FILES = 60
 MAX_TOTAL_BYTES = 60 * 1024 * 1024
 MAX_FILE_BYTES = 15 * 1024 * 1024
 SLEEP = 0.8
+COORDINATE_PARSER_VERSION = 2
 
 PRIORITY_IDS = {
     "D-000074": 0,  # Elatsite
@@ -386,6 +387,8 @@ def main() -> None:
         old = files.get(link["fileId"])
         if not old or old.get("status") != "ok":
             return True
+        if int(old.get("coordinateParserVersion") or 0) != COORDINATE_PARSER_VERSION:
+            return True
         extractor = str(old.get("extractor") or "")
         if extractor.startswith("unsupported") or extractor.startswith("extract-error"):
             return True
@@ -451,6 +454,7 @@ def main() -> None:
                 "extractor": extractor,
                 "textChars": len(text),
                 "keywordHit": bool(KEYWORDS.search(text)),
+                "coordinateParserVersion": COORDINATE_PARSER_VERSION,
                 "coordinateRowCount": len(rows),
                 "coordinateClassCounts": counts,
                 "coordinateSample": rows[:12],
