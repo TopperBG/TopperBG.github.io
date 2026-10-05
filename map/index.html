@@ -4418,10 +4418,19 @@ function layerSourceWarnings(){
     if(officialConcessionLoadState==='error'&&cachedConcessions===0){
       warnings.push({severity:'error',text:'ТЕЦ/мини: няма кеширани официални концесионни граници. Онлайн източниците не могат да заместят липсващ baseline в браузъра; показват се наличните локални индустриални/нарушени площи.'});
     }else if(primary&&primary.ok===false){
-      const fallback=secondary?.ok?'НКР':tertiary?.ok?'Министерството на енергетиката':'последния добър repository cache';
+      const fallback=secondary?.ok?'НКР':tertiary?.ok?'Министерството на енергетиката':'няма достъпен онлайн регистър';
       const inv=Number(registry?.inventoryRecordCount)||0;
       const geo=Number(registry?.baselineFeatureCount)||cachedConcessions;
-      warnings.push({severity:(secondary?.ok||tertiary?.ok)?'warning':'error',text:`Концесии: data.egov.bg е недостъпен за последната седмична проверка; локалният национален cache остава активен${inv?` (${inv} записа · ${geo} официални полигона)`:''}. За проверка се използва ${fallback}; картата работи от repository baseline.`});
+      const pending=Number(registry?.pendingGeometryCount)||Math.max(0,inv-geo);
+      const disturbed=Number(registry?.disturbedMiningFeatureCount)||0;
+      const abandoned=Number(registry?.abandonedMiningWasteInventoryCount)||0;
+      const localOk=inv>0||geo>0||disturbed>0||abandoned>0;
+      warnings.push({
+        severity:localOk?'warning':'error',
+        text:localOk
+          ?`Концесии · локален cache: ${inv||'—'} регистърни записа · ${geo} официални граници${pending?` · ${pending} очакват геометрия`:''}${abandoned?` · ${abandoned} закрити/изоставени минни съоръжения`:''}. data.egov.bg не е бил достъпен при последната проверка; сверяването е през ${fallback}. Картата не зависи от текущ онлайн достъп.`
+          :'Концесии: няма локален baseline и онлайн официалните регистри са недостъпни.'
+      });
     }
     if(industrialPolygonLoadState==='error'&&industryFootprintSource.getFeatures().length===0){
       warnings.push({severity:'error',text:'ТЕЦ/мини: няма наличен footprint cache и онлайн GIS/OSM геометрията е недостъпна.'});
