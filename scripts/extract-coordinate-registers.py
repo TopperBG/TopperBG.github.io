@@ -193,9 +193,18 @@ def document_metadata(text: str) -> dict:
         n = int(m.group(1))
         if n >= 3:
             ranges.append(n)
-    # A single 1..N range is safe for one-ring automatic publication. Multiple
-    # ranges normally mean multiple contours and require explicit ring splitting.
-    expected = ranges[0] if len(set(ranges)) == 1 else None
+
+    # Prefer the range explicitly tied to "Определя концесионна площ". Later
+    # paragraphs may contain sub-deposit ranges that are not the concession
+    # boundary and must not make an otherwise unambiguous main ring ambiguous.
+    expected = None
+    main_clause = re.search(r"Определя\s+концесионна\s+площ.{0,700}", compact, re.I)
+    if main_clause:
+        m = re.search(r"от\s*№?\s*1\s*до\s*№?\s*(\d{1,4})", main_clause.group(0), re.I)
+        if m and int(m.group(1)) >= 3:
+            expected = int(m.group(1))
+    if expected is None and len(set(ranges)) == 1:
+        expected = ranges[0]
 
     return {
         "declaredCrs": declared_crs,
