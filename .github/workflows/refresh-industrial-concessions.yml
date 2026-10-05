@@ -9,6 +9,7 @@ on:
     paths:
       - "scripts/refresh-industrial-concessions.py"
       - "scripts/sync-concession-inventory.py"
+      - "scripts/sync-nkr-party-index.py"
       - "scripts/snapshot-industrial-footprints.py"
       - "scripts/build-concession-baseline.mjs"
       - "map/data/concession-boundaries-official-source-v2.json"
@@ -36,11 +37,14 @@ jobs:
 
       - name: Install data parsers and reproducible Bulgarian coordinate transform
         run: |
-          python -m pip install --disable-pip-version-check xlrd==2.0.1
+          python -m pip install --disable-pip-version-check xlrd==2.0.1 requests==2.32.5 beautifulsoup4==4.14.2 lxml==6.0.2
           npm install --no-save --no-package-lock transformations@2.0.0
 
       - name: Refresh repository-owned national inventory
         run: python scripts/sync-concession-inventory.py
+
+      - name: Refresh repository-owned NKR party index
+        run: python scripts/sync-nkr-party-index.py
 
       - name: Build repository concession baseline and pending queue
         run: node scripts/build-concession-baseline.mjs
@@ -62,6 +66,7 @@ jobs:
           pending=json.load(open("map/data/pending-concessions-v1.json", encoding="utf-8"))
           disturbed=json.load(open("map/data/disturbed-mining-sites-v1.geojson", encoding="utf-8"))
           abandoned=json.load(open("map/data/abandoned-mining-waste-inventory-v1.json", encoding="utf-8"))
+          nkr_index=json.load(open("map/data/nkr-party-index-v1.json", encoding="utf-8"))
           industry_snapshot=json.load(open("map/data/industry-footprints-baseline.geojson", encoding="utf-8"))
           assert cache.get("schema") == "bgwf-industrial-zones-cache-v1"
           assert inventory.get("schema") == "bgwf-concession-inventory-v1"
@@ -69,6 +74,7 @@ jobs:
           assert pending.get("schema") == "bgwf-pending-concessions-v1"
           assert disturbed.get("schema") == "bgwf-disturbed-mining-sites-v1"
           assert abandoned.get("schema") == "bgwf-abandoned-mining-waste-inventory-v1"
+          assert nkr_index.get("schema") == "bgwf-nkr-party-index-v1"
           assert industry_snapshot.get("schema") == "bgwf-industry-footprints-baseline-v1"
           assert int(inventory.get("recordCount",0)) == len(inventory.get("records") or [])
           if inventory.get("recordCount",0) < 50:
@@ -101,6 +107,7 @@ jobs:
           print("Pending geometry queue:", pending.get("pendingCount",0))
           print("Disturbed/mining polygons archived:", disturbed.get("featureCount",0))
           print("Official abandoned/mining-waste inventory:", abandoned.get("recordCount",0))
+          print("NKR party index:", nkr_index.get("recordCount",0), "records; inventory links:", nkr_index.get("stats",{}).get("inventoryIdsWithNkrParty",0))
           print("Industry polygons archived:", industry_snapshot.get("featureCount",0))
           print("Active registry source:", health.get("concessions",{}).get("activeRegistrySource"))
           PY
@@ -114,6 +121,7 @@ jobs:
             map/data/industrial-zones-cache-v1.json
             map/data/gis-source-health-v1.json
             map/data/concession-inventory-v1.json
+            map/data/nkr-party-index-v1.json
             map/data/official-concessions-baseline.geojson
             map/data/pending-concessions-v1.json
             map/data/industry-footprints-baseline.geojson
@@ -141,6 +149,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python scripts/sync-concession-inventory.py
+            python scripts/sync-nkr-party-index.py
             node scripts/build-concession-baseline.mjs
             python scripts/snapshot-industrial-footprints.py
             python scripts/refresh-industrial-concessions.py
