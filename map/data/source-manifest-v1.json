@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-source-manifest-v1",
-  "generatedAt": "2026-10-01T12:00:00Z",
-  "mapVersion": "0.93b",
+  "generatedAt": "2026-10-05T06:35:00Z",
+  "mapVersion": "0.93c",
   "engine": "OpenLayers 10.10.0",
   "sources": [
     {
@@ -84,17 +84,22 @@
     "Map runtime is repository-cache-first for known concession and industrial/mining geometries.",
     "Government registries are refresh/audit inputs; a temporary outage must not remove locally archived data.",
     "The national concession inventory archives the last valid official snapshot and never replaces it with an empty/failed fetch.",
+    "Raw official XLS/HTML source snapshots are content-addressed by SHA-256 under source-archive/concessions/snapshots, so older source states remain reproducible after an upstream change or disappearance.",
+    "The repository-owned NKR party index maps local concession inventory records to NKR GUID/party URLs; browser runtime never queries NKR.",
     "Official concession polygons require an official coordinate register/act and QA; missing geometries are explicit in pending-concessions-v1.json.",
     "Closed/abandoned mining and mining-waste footprints remain in scope independently of current concession status.",
     "OSM/developed footprints and legal concession boundaries are deliberately separate geometries."
   ],
   "localBaselines": {
     "concessionInventory": "./concession-inventory-v1.json",
+    "nkrPartyIndex": "./nkr-party-index-v1.json",
     "officialConcessions": "./official-concessions-baseline.geojson",
     "pendingConcessions": "./pending-concessions-v1.json",
+    "abandonedMiningWasteInventory": "./abandoned-mining-waste-inventory-v1.json",
     "industryFootprints": "./industry-footprints-baseline.geojson",
     "disturbedMining": "./disturbed-mining-sites-v1.geojson",
     "disturbedMiningPending": "./disturbed-mining-sites-pending-v1.json",
+    "sourceArchiveIndex": "./source-archive/concessions/index-v1.json",
     "sourceArchive": "./source-archive/concessions/"
   }
 }
