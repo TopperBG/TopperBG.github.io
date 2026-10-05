@@ -191,7 +191,7 @@ def infer_extension(headers: dict, data: bytes) -> tuple[str, str | None]:
     return ext, filename
 
 
-def extract_text(data: bytes, ext: str) -> tuple[str, str]:
+def extract_text(data: bytes, ext: str, *, allow_ocr: bool = False) -> tuple[str, str]:
     ext = ext.lower()
     try:
         if ext == ".pdf":
@@ -207,7 +207,7 @@ def extract_text(data: bytes, ext: str) -> tuple[str, str]:
                     alt = out.read_text(encoding="utf-8", errors="replace") if out.exists() else ""
                     if len(alt.strip()) > len(text.strip()):
                         text, method = alt, "pdftotext"
-            if len(text.strip()) < 500 and shutil.which("pdftoppm") and shutil.which("tesseract"):
+            if allow_ocr and len(text.strip()) < 500 and shutil.which("pdftoppm") and shutil.which("tesseract"):
                 with tempfile.TemporaryDirectory() as td:
                     src = pathlib.Path(td) / "source.pdf"
                     src.write_bytes(data)
@@ -363,7 +363,8 @@ def main() -> None:
         if extractor.startswith("unsupported") or extractor.startswith("extract-error"):
             return True
         if old.get("extension") == ".pdf" and int(old.get("textChars") or 0) < 500:
-            return True
+            return any(cid in PRIORITY_IDS for cid in link.get("concessionIds") or [])
+
         return False
 
     todo = [x for x in links.values() if needs_processing(x)]
@@ -398,7 +399,10 @@ def main() -> None:
             raw_path = RAW_DIR / f"{digest}{ext}"
             if not raw_path.exists():
                 raw_path.write_bytes(data)
-            text, extractor = extract_text(data, ext)
+            text, extractor = extract_text(
+                data, ext,
+                allow_ocr=any(cid in PRIORITY_IDS for cid in item.get("concessionIds") or [])
+            )
             text_path = TEXT_DIR / f"{digest}.txt"
             if text and not text_path.exists():
                 text_path.write_text(text, encoding="utf-8")
