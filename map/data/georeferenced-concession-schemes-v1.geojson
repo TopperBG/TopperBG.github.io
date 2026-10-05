@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "schema": "bgwf-georeferenced-concession-schemes-v1",
+  "generatedAt": "2026-10-05T00:00:00Z",
+  "geometryCrs": "EPSG:4326",
+  "accuracyClass": "schematic-georeferenced",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "concession_id": "D-000465",
+        "name": "Източномаришки въглищен басейн — концесионна площ",
+        "concessionaire": "Мини Марица-изток ЕАД",
+        "official_area_dka": 473685.54087,
+        "transformed_area_dka": 473591.5,
+        "resource": "Твърди горива — въглища",
+        "municipality": "Раднево, Гълъбово",
+        "province": "Стара Загора",
+        "source_kind": "official-map-georeferenced",
+        "geometry_status": "georeferenced-from-official-cartographic-scheme",
+        "geometry_label": "геореферирана по официална карта",
+        "source_url": "https://www.marica-iztok.com/cms/user/files/vajni-za-balgariia-2025/mmireportbg250709.pdf",
+        "secondary_source_url": "https://www.me.government.bg/uploads/manager/source/NGS/Maps_statichna_str/2_4_EVE_WGS35_tvyrdi_goriva.pdf",
+        "nkr_url": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/e0912dea-c56b-4ca9-8825-e3974247e006",
+        "source_note": "Векторизирана/геореферирана интерпретация на официална картографска схема. Не е кадастрална или правно меродавна координатна граница."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.9714,
+              42.2626
+            ],
+            [
+              26.0572,
+              42.3022
+            ],
+            [
+              26.1694,
+              42.2956
+            ],
+            [
+              26.2552,
+              42.2494
+            ],
+            [
+              26.2618,
+              42.1636
+            ],
+            [
+              26.2288,
+              42.1042
+            ],
+            [
+              26.143,
+              42.0778
+            ],
+            [
+              26.0506,
+              42.0976
+            ],
+            [
+              25.9978,
+              42.1438
+            ],
+            [
+              25.9648,
+              42.2032
+            ],
+            [
+              25.9714,
+              42.2626
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
