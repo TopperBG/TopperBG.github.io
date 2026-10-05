@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93b-national-baseline-20261001">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93b</title>
+<meta name="bgwf-build" content="v0.93f-weekly-concession-cache-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93f</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4441,7 +4441,7 @@ function layerSourceWarnings(){
     }else if(primary&&primary.ok===false){
       const fallback=secondary?.ok?'НКР':tertiary?.ok?'Министерството на енергетиката':'няма достъпен онлайн регистър';
       const inv=Number(registry?.inventoryRecordCount)||0;
-      const geo=Number(registry?.baselineFeatureCount)||cachedConcessions;
+      const geo=(Number(registry?.baselineFeatureCount)||0)+(Number(registry?.mguPernikFeatureCount)||0)||cachedConcessions;
       const pending=Number(registry?.pendingGeometryCount)||Math.max(0,inv-geo);
       const disturbed=Number(registry?.disturbedMiningFeatureCount)||0;
       const abandoned=Number(registry?.abandonedMiningWasteInventoryCount)||0;
