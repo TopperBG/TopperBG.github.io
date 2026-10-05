@@ -76,8 +76,10 @@
     },
     {
       "id": "MGU-PERNIK-CONCESSIONS",
-      "kind": "optional non-critical GIS cross-check only; not a browser or workflow dependency",
-      "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer"
+      "kind": "Pernik concession contract geometry; weekly repository snapshot and change check",
+      "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer",
+      "localFile": "/map/data/mgu-pernik-concessions-v1.geojson",
+      "refreshPolicy": "weekly + best-effort browser reachability probe every 7 days"
     }
   ],
   "notes": [
@@ -90,7 +92,9 @@
     "Closed/abandoned mining and mining-waste footprints remain in scope independently of current concession status.",
     "OSM/developed footprints and legal concession boundaries are deliberately separate geometries.",
     "NKR party pages for pending concession geometries are archived incrementally; extracted File/Preview links form the offline document-harvest queue.",
-    "Coordinate registers extracted from archived NKR attachments enter a staging gate first; map publication requires complete numbered points, verified CRS/order/zone where applicable, official area and independent <=2% area QA."
+    "Coordinate registers extracted from archived NKR attachments enter a staging gate first; map publication requires complete numbered points, verified CRS/order/zone where applicable, official area and independent <=2% area QA.",
+    "MGU Pernik concession polygons are copied into a repository-owned GeoJSON snapshot; browser rendering never depends on live MGU availability.",
+    "On a user's first visit after seven days, the browser performs best-effort reachability probes for MGU, NKR and data.egov; authoritative change detection and repository refresh remain server-side because NKR/data.egov may block browser CORS."
   ],
   "localBaselines": {
     "concessionInventory": "./concession-inventory-v1.json",
@@ -106,6 +110,7 @@
     "nkrPartyDocuments": "./nkr-party-documents-v1.json",
     "nkrAttachmentIndex": "./nkr-attachment-index-v1.json",
     "coordinateDocumentCandidates": "./coordinate-document-candidates-v1.json",
-    "coordinateRegistersStaging": "./coordinate-registers-staging-v1.json"
+    "coordinateRegistersStaging": "./coordinate-registers-staging-v1.json",
+    "mguPernikConcessions": "./mgu-pernik-concessions-v1.geojson"
   }
 }
