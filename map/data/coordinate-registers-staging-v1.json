@@ -6,7 +6,7 @@
     "curated": "./concession-boundaries-official-source-v2.json"
   },
   "runtimeDependency": false,
-  "registerCount": 46,
+  "registerCount": 48,
   "publicationReadyCount": 11,
   "rules": [
     "Extraction is evidence staging, not legal geometry publication.",
@@ -16173,6 +16173,393 @@
           "pointNo": 395,
           "a": 4725273.3,
           "b": 378214.1
+        }
+      ]
+    },
+    {
+      "concessionId": "D-000075",
+      "curatedId": null,
+      "name": null,
+      "fileId": "9ea04542-f9ba-4d4f-9987-1838ab207753",
+      "sha256": "59ff64c5fd56c7e17af407ec00dab0c88f1a376bfc18a7168411c82a6e3fab12",
+      "archivePath": "source-archive/concessions/nkr-attachments/59ff64c5fd56c7e17af407ec00dab0c88f1a376bfc18a7168411c82a6e3fab12.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/59ff64c5fd56c7e17af407ec00dab0c88f1a376bfc18a7168411c82a6e3fab12.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/9ea04542-f9ba-4d4f-9987-1838ab207753",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%814_%D0%A7%D0%B0%D0%BB%D0%B0_Redacted.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "numericDominantCrsClass": "BGS1970",
+      "numericCrsCounts": {
+        "BGS1970": 24
+      },
+      "declaredCrsFromDocument": "BGS1970",
+      "axisOrderFromDocument": "X(N), Y(E)",
+      "officialAreaDkaFromDocument": 5447.5,
+      "rangeEndsFoundInDocument": [
+        24,
+        38,
+        42
+      ],
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": "X(N), Y(E)",
+      "sourceZone": null,
+      "officialAreaDka": 5447.5,
+      "expectedPointCount": null,
+      "extractedPointCount": 24,
+      "pointNumberRanges": [
+        "1-24"
+      ],
+      "declaredContours": {},
+      "explicitContourCount": 0,
+      "contoursRaw": [],
+      "geometryStructure": "Polygon",
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "BGS1970_zone_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4576030.0,
+          9405180.0
+        ],
+        [
+          4576030.0,
+          9406440.0
+        ],
+        [
+          4576400.0,
+          9406440.0
+        ],
+        [
+          4576400.0,
+          9406765.0
+        ],
+        [
+          4577225.0,
+          9406765.0
+        ],
+        [
+          4577225.0,
+          9409060.0
+        ],
+        [
+          4576285.0,
+          9409060.0
+        ],
+        [
+          4576285.0,
+          9408660.0
+        ],
+        [
+          4575626.0,
+          9408660.0
+        ],
+        [
+          4575626.0,
+          9408461.0
+        ],
+        [
+          4575334.0,
+          9408461.0
+        ],
+        [
+          4575334.0,
+          9408197.0
+        ],
+        [
+          4575213.0,
+          9408197.0
+        ],
+        [
+          4575213.0,
+          9407446.0
+        ],
+        [
+          4575172.0,
+          9407446.0
+        ],
+        [
+          4575172.0,
+          9407340.0
+        ],
+        [
+          4575266.0,
+          9407340.0
+        ],
+        [
+          4575266.0,
+          9407007.0
+        ],
+        [
+          4575200.0,
+          9407007.0
+        ],
+        [
+          4575200.0,
+          9406522.56
+        ],
+        [
+          4575367.5,
+          9406522.56
+        ],
+        [
+          4575367.5,
+          9406207.31
+        ],
+        [
+          4575200.0,
+          9406207.31
+        ],
+        [
+          4575200.0,
+          9405180.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4576030.0,
+          "b": 9405180.0
+        },
+        {
+          "pointNo": 2,
+          "a": 4576030.0,
+          "b": 9406440.0
+        },
+        {
+          "pointNo": 3,
+          "a": 4576400.0,
+          "b": 9406440.0
+        },
+        {
+          "pointNo": 4,
+          "a": 4576400.0,
+          "b": 9406765.0
+        },
+        {
+          "pointNo": 5,
+          "a": 4577225.0,
+          "b": 9406765.0
+        },
+        {
+          "pointNo": 6,
+          "a": 4577225.0,
+          "b": 9409060.0
+        },
+        {
+          "pointNo": 7,
+          "a": 4576285.0,
+          "b": 9409060.0
+        },
+        {
+          "pointNo": 8,
+          "a": 4576285.0,
+          "b": 9408660.0
+        },
+        {
+          "pointNo": 9,
+          "a": 4575626.0,
+          "b": 9408660.0
+        },
+        {
+          "pointNo": 10,
+          "a": 4575626.0,
+          "b": 9408461.0
+        },
+        {
+          "pointNo": 11,
+          "a": 4575334.0,
+          "b": 9408461.0
+        },
+        {
+          "pointNo": 12,
+          "a": 4575334.0,
+          "b": 9408197.0
+        },
+        {
+          "pointNo": 13,
+          "a": 4575213.0,
+          "b": 9408197.0
+        },
+        {
+          "pointNo": 14,
+          "a": 4575213.0,
+          "b": 9407446.0
+        },
+        {
+          "pointNo": 15,
+          "a": 4575172.0,
+          "b": 9407446.0
+        },
+        {
+          "pointNo": 16,
+          "a": 4575172.0,
+          "b": 9407340.0
+        },
+        {
+          "pointNo": 17,
+          "a": 4575266.0,
+          "b": 9407340.0
+        },
+        {
+          "pointNo": 18,
+          "a": 4575266.0,
+          "b": 9407007.0
+        },
+        {
+          "pointNo": 19,
+          "a": 4575200.0,
+          "b": 9407007.0
+        },
+        {
+          "pointNo": 20,
+          "a": 4575200.0,
+          "b": 9406522.56
+        },
+        {
+          "pointNo": 21,
+          "a": 4575367.5,
+          "b": 9406522.56
+        },
+        {
+          "pointNo": 22,
+          "a": 4575367.5,
+          "b": 9406207.31
+        },
+        {
+          "pointNo": 23,
+          "a": 4575200.0,
+          "b": 9406207.31
+        },
+        {
+          "pointNo": 24,
+          "a": 4575200.0,
+          "b": 9405180.0
+        }
+      ]
+    },
+    {
+      "concessionId": "D-000247",
+      "curatedId": null,
+      "name": null,
+      "fileId": "2087b718-7123-4ca3-b703-988db07e3428",
+      "sha256": "e0b10b8fcff8da0e9523b05f52f5bb49ea8f464759476a740119b1d53268d53c",
+      "archivePath": "source-archive/concessions/nkr-attachments/e0b10b8fcff8da0e9523b05f52f5bb49ea8f464759476a740119b1d53268d53c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e0b10b8fcff8da0e9523b05f52f5bb49ea8f464759476a740119b1d53268d53c.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/2087b718-7123-4ca3-b703-988db07e3428",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%811_%D0%A2%D0%B5%D0%B2%D0%BD%D0%B8%20%D0%B4%D0%BE%D0%BB_Redacted.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "numericDominantCrsClass": "BGS1970",
+      "numericCrsCounts": {
+        "BGS1970": 8
+      },
+      "declaredCrsFromDocument": "BGS1970",
+      "axisOrderFromDocument": null,
+      "officialAreaDkaFromDocument": null,
+      "rangeEndsFoundInDocument": [
+        8
+      ],
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": 8,
+      "extractedPointCount": 8,
+      "pointNumberRanges": [
+        "1-8"
+      ],
+      "declaredContours": {},
+      "explicitContourCount": 0,
+      "contoursRaw": [],
+      "geometryStructure": "Polygon",
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4516785.1,
+          8464806.8
+        ],
+        [
+          4516816.7,
+          8464808.0
+        ],
+        [
+          4516809.7,
+          8464841.9
+        ],
+        [
+          4516811.6,
+          8464870.7
+        ],
+        [
+          4516779.2,
+          8464868.8
+        ],
+        [
+          4516771.0,
+          8464870.8
+        ],
+        [
+          4516745.5,
+          8464868.3
+        ],
+        [
+          4516778.2,
+          8464838.2
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4516785.1,
+          "b": 8464806.8
+        },
+        {
+          "pointNo": 2,
+          "a": 4516816.7,
+          "b": 8464808.0
+        },
+        {
+          "pointNo": 3,
+          "a": 4516809.7,
+          "b": 8464841.9
+        },
+        {
+          "pointNo": 4,
+          "a": 4516811.6,
+          "b": 8464870.7
+        },
+        {
+          "pointNo": 5,
+          "a": 4516779.2,
+          "b": 8464868.8
+        },
+        {
+          "pointNo": 6,
+          "a": 4516771.0,
+          "b": 8464870.8
+        },
+        {
+          "pointNo": 7,
+          "a": 4516745.5,
+          "b": 8464868.3
+        },
+        {
+          "pointNo": 8,
+          "a": 4516778.2,
+          "b": 8464838.2
         }
       ]
     }
