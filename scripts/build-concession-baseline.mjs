@@ -47,6 +47,16 @@ const inventoryByConcession = new Map(
 const extractedRegisters = fs.existsSync(EXTRACTED_REGISTERS_PATH)
   ? JSON.parse(fs.readFileSync(EXTRACTED_REGISTERS_PATH, "utf8"))
   : { registers: [] };
+const stagingByConcession = new Map();
+for (const reg of extractedRegisters.registers || []) {
+  const cid = String(reg.concessionId || "");
+  if (!cid) continue;
+  const score = (reg.publicationReady ? 1000 : 0)
+    + Number(reg.extractedPointCount || 0)
+    - 100 * Number((reg.publicationBlockers || []).length);
+  const old = stagingByConcession.get(cid);
+  if (!old || score > old._score) stagingByConcession.set(cid, {...reg, _score: score});
+}
 
 // transformations@2.0.0 resolves its binary grids from process.cwd() rather
 // than from the package directory. Run the transformation phase from the
@@ -323,18 +333,35 @@ for (const rec of inventory.records || []) {
   }
 
   const area = Number(rec.areaDka);
+  const staged = stagingByConcession.get(cid);
+  const stagedBlockers = Array.isArray(staged?.publicationBlockers) ? staged.publicationBlockers : [];
+  const stagedStatus = staged
+    ? `coordinate_register_archived__QA_blocked__${stagedBlockers.join("__") || "publication_gate_not_passed"}`
+    : "official_coordinate_register_not_archived";
+  const stagedArea = Number(staged?.officialAreaDka);
   const key = `inventory:${rec.id || cid}`;
   pendingById.set(key, {
     id: rec.id,
     concessionId: rec.concessionId || null,
     name: rec.name || "Концесия без нормализирано име",
-    officialAreaDka: Number.isFinite(area) && area > 0 ? area : null,
-    sourceCrs: null,
-    sourcePoints: null,
+    officialAreaDka: Number.isFinite(stagedArea) && stagedArea > 0
+      ? stagedArea
+      : (Number.isFinite(area) && area > 0 ? area : null),
+    sourceCrs: staged?.sourceCoordinateSystem || staged?.dominantCrsClass || null,
+    sourcePoints: staged?.extractedPointCount ?? null,
     status: rec.concessionIdCollision
       ? "source_concession_id_collision_requires_NKR_verification"
-      : "official_coordinate_register_not_archived",
-    sourceUrl: null,
+      : stagedStatus,
+    sourceUrl: staged?.sourceUrl || null,
+    stagingEvidence: staged ? {
+      fileId: staged.fileId || null,
+      sha256: staged.sha256 || null,
+      archivePath: staged.archivePath || null,
+      blockers: stagedBlockers,
+      declaredCrs: staged.declaredCrsFromDocument || null,
+      numericCrsCounts: staged.numericCrsCounts || null,
+      pointNumberRanges: staged.pointNumberRanges || [],
+    } : null,
     queueSource: "national-inventory",
     sourceRowNo: rec.sourceRowNo ?? null,
     inventoryStatus: rec.status ?? null,
