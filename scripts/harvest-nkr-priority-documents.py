@@ -68,6 +68,13 @@ def make_session() -> requests.Session:
 
 
 def extract_links(html: str) -> tuple[list[dict], list[dict]]:
+    """Extract links plus the NKR table metadata surrounding each document.
+
+    The anchor itself is usually only "Свали"; the useful classification
+    ("Решение за предоставяне...", "договор", "приложение") lives in sibling
+    table cells. Preserve it so the attachment harvester can prioritize official
+    acts likely to contain coordinate registers.
+    """
     soup = BeautifulSoup(html, "lxml")
     files = {}
     previews = {}
@@ -75,10 +82,27 @@ def extract_links(html: str) -> tuple[list[dict], list[dict]]:
         href = a["href"].strip()
         title = re.sub(r"\s+", " ", a.get_text(" ")).strip() or None
         absolute = urljoin(BASE, href)
+        tr = a.find_parent("tr")
+        cells = []
+        if tr:
+            cells = [re.sub(r"\s+", " ", td.get_text(" ", strip=True)).strip() for td in tr.find_all("td")]
         if "/File/Download" in href or "/Content/Download" in href:
-            files[href] = {"href": href, "url": absolute, "title": title}
+            files[href] = {
+                "href": href,
+                "url": absolute,
+                "title": title,
+                "documentType": cells[0] if len(cells) > 0 else None,
+                "description": cells[1] if len(cells) > 1 else None,
+                "publishedAt": cells[2] if len(cells) > 2 else None,
+            }
         elif re.search(r"/Preview/[A-Za-z]+/[0-9a-f-]{36}", href, re.I):
-            previews[href] = {"href": href, "url": absolute, "title": title}
+            previews[href] = {
+                "href": href,
+                "url": absolute,
+                "title": title,
+                "documentType": cells[0] if len(cells) > 0 else None,
+                "publishedAt": cells[1] if len(cells) > 1 else None,
+            }
     return list(files.values()), list(previews.values())
 
 
@@ -87,6 +111,30 @@ def main() -> None:
     index = json.loads(INDEX.read_text(encoding="utf-8")) if INDEX.exists() else {"records": []}
     old = existing()
     old_parties = old.get("parties") or {}
+
+    # Re-enrich archived parties locally on every parser revision; this requires
+    # no NKR request and upgrades old "Свали"-only file links in place.
+    reparsed_parties = {}
+    for guid, previous in old_parties.items():
+        archive_path = previous.get("archivePath")
+        if archive_path:
+            local = DATA / archive_path
+            if local.exists():
+                try:
+                    html = local.read_text(encoding="utf-8", errors="replace")
+                    file_links, preview_links = extract_links(html)
+                    previous = {
+                        **previous,
+                        "fileLinkCount": len(file_links),
+                        "previewLinkCount": len(preview_links),
+                        "fileLinks": file_links,
+                        "previewLinks": preview_links,
+                        "linkParserVersion": 2,
+                    }
+                except Exception:
+                    pass
+        reparsed_parties[guid] = previous
+    old_parties = reparsed_parties
 
     index_by_guid = {r.get("guid"): r for r in index.get("records") or [] if r.get("guid")}
     wanted = {}
@@ -162,6 +210,7 @@ def main() -> None:
                 "previewLinkCount": len(preview_links),
                 "fileLinks": file_links,
                 "previewLinks": preview_links,
+                "linkParserVersion": 2,
                 "indexRecord": index_by_guid.get(guid),
             }
         except Exception as exc:
