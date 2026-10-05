@@ -39,6 +39,8 @@ jobs:
 
       - name: Install data parsers and reproducible Bulgarian coordinate transform
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends antiword poppler-utils tesseract-ocr tesseract-ocr-bul tesseract-ocr-eng
           python -m pip install --disable-pip-version-check xlrd==2.0.1 requests==2.32.5 beautifulsoup4==4.14.2 lxml==6.0.2 pypdf==6.1.1 python-docx==1.2.0 openpyxl==3.1.5
           npm install --no-save --no-package-lock transformations@2.0.0
 
