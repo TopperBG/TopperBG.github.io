@@ -368,6 +368,9 @@ def main() -> None:
                 "fileId": fid,
                 "url": url,
                 "title": link.get("title"),
+                "documentType": link.get("documentType"),
+                "description": link.get("description"),
+                "publishedAt": link.get("publishedAt"),
                 "partyGuids": [],
                 "inventoryIds": [],
                 "concessionIds": [],
@@ -382,6 +385,20 @@ def main() -> None:
             for x in cids:
                 if x and x not in rec["concessionIds"]:
                     rec["concessionIds"].append(x)
+
+    def semantic_priority(link: dict) -> int:
+        blob = " ".join(str(link.get(k) or "") for k in ("documentType", "description", "title")).lower()
+        if re.search(r"координат|координатен регистър|схема", blob):
+            return 0
+        if re.search(r"решение за предоставяне|решение за изменение|решение за промяна|решение", blob):
+            return 1
+        if re.search(r"приложение|анекс|допълнително споразумение", blob):
+            return 2
+        if re.search(r"концесионн.*договор|договор за предоставяне", blob):
+            return 3
+        if re.search(r"отчет|формуляр|гаранц|плащан", blob):
+            return 8
+        return 5
 
     def needs_processing(link: dict) -> bool:
         old = files.get(link["fileId"])
@@ -398,7 +415,12 @@ def main() -> None:
         return False
 
     todo = [x for x in links.values() if needs_processing(x)]
-    todo.sort(key=lambda x: (x["priority"], x["concessionIds"][0] if x["concessionIds"] else "", x["fileId"]))
+    todo.sort(key=lambda x: (
+        min(x["priority"], semantic_priority(x)),
+        semantic_priority(x),
+        x["concessionIds"][0] if x["concessionIds"] else "",
+        x["fileId"],
+    ))
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     TEXT_DIR.mkdir(parents=True, exist_ok=True)
