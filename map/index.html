@@ -4397,6 +4397,27 @@ if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateProvinceChip
 
 const sourceWarning=root.querySelector('[data-source-warning]');
 const SOURCE_HEALTH_URL='./data/gis-source-health-v1.json';
+const CONCESSION_VISIT_CHECK_KEY='bgwf-concession-source-check-v1';
+const CONCESSION_VISIT_CHECK_MS=7*24*60*60*1000;
+async function weeklyConcessionVisitCheck(){
+  let last=0;try{last=Number(localStorage.getItem(CONCESSION_VISIT_CHECK_KEY)||0);}catch{}
+  if(Date.now()-last<CONCESSION_VISIT_CHECK_MS)return;
+  try{localStorage.setItem(CONCESSION_VISIT_CHECK_KEY,String(Date.now()));}catch{}
+  // Repository health is authoritative. Direct browser probes are best-effort:
+  // MGU normally permits ArcGIS CORS; NKR/data.egov may reject browser CORS.
+  const probes=[
+    ['MGU-PERNIK-CONCESSIONS','https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query?where=1%3D1&returnCountOnly=true&f=json'],
+    ['NKR','https://nkr.government.bg/Concessions'],
+    ['DATA-EGOV-BG','https://data.egov.bg/api']
+  ];
+  const results={checkedAt:new Date().toISOString(),repositoryHealthCheckedAt:sourceHealth?.checkedAt||null,sources:{}};
+  await Promise.all(probes.map(async([id,url])=>{
+    try{const r=await fetch(url,{method:'GET',mode:'cors',cache:'no-store'});results.sources[id]={reachable:r.ok,status:r.status};}
+    catch(e){results.sources[id]={reachable:null,browserBlocked:true,error:e.message};}
+  }));
+  debugState.network.concessionVisitCheck=results;
+  try{localStorage.setItem(CONCESSION_VISIT_CHECK_KEY+':result',JSON.stringify(results));}catch{}
+}
 let sourceHealth=null;
 let sourceHealthLoadState='idle';
 
@@ -4469,6 +4490,7 @@ async function loadSourceHealth(){
     debugState.network.sourceHealth={ok:false,error:e.message};
   }
   renderSourceWarning();
+  void weeklyConcessionVisitCheck();
   return sourceHealth;
 }
 
@@ -6340,15 +6362,17 @@ async function ensureIndustrialPolygons(){if(industrialPolygonLoadState==='ready
 
 // ---------- Official concession repository baseline ----------
 const OFFICIAL_CONCESSION_BASELINE_URL='./data/official-concessions-baseline.geojson';
+const MGU_PERNIK_CONCESSION_CACHE_URL='./data/mgu-pernik-concessions-v1.geojson';
 const PENDING_CONCESSIONS_URL='./data/pending-concessions-v1.json';
 const OFFICIAL_CONCESSION_CACHE_URL=INDUSTRIAL_ZONE_CACHE_URL;
 function concessionFeatureFromGeoJSON(raw,sourceId='STATIC-CACHE',sourceUrl=OFFICIAL_CONCESSION_CACHE_URL){try{const f=cloneGeoFeature(raw);const p=raw.properties||{};const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'})/1000;if(!Number.isFinite(area)||area<=0||area>1500000)return null;f.set('kind','concession');f.set('concessionId',p.concession_id??p['идентификационен_____партиден__']??'—');f.set('name',p.name??p['находище']??'Концесионна площ');f.set('concessionaire',p.concessionaire??p['концесионер']??'');f.set('nkrUrl',p.ncr_url??'');f.set('sourceUrl',p.source_url??sourceUrl);f.set('sourceId',sourceId);f.set('areaDka',area);return f;}catch(e){dbgWarn('concession-feature-reject',{error:e.message});return null;}}
 async function loadOfficialConcessionStaticCache(){
   let standaloneError=null;
   try{
-    const [baseResponse,pendingResponse]=await Promise.all([
+    const [baseResponse,pendingResponse,mguResponse]=await Promise.all([
       fetch(OFFICIAL_CONCESSION_BASELINE_URL,{cache:'no-cache',credentials:'same-origin'}),
-      fetch(PENDING_CONCESSIONS_URL,{cache:'no-cache',credentials:'same-origin'})
+      fetch(PENDING_CONCESSIONS_URL,{cache:'no-cache',credentials:'same-origin'}),
+      fetch(MGU_PERNIK_CONCESSION_CACHE_URL,{cache:'no-cache',credentials:'same-origin'})
     ]);
     if(!baseResponse.ok)throw new Error(`HTTP ${baseResponse.status}: ${OFFICIAL_CONCESSION_BASELINE_URL}`);
     const base=await baseResponse.json();
@@ -6364,8 +6388,24 @@ async function loadOfficialConcessionStaticCache(){
       pendingCount:pendingPayload?.pendingCount??officialConcessionPending.length,
       source:OFFICIAL_CONCESSION_BASELINE_URL
     };
-    debugState.network.concessionCache={status:200,ok:true,features:Array.isArray(base.features)?base.features.length:0,inventory:Number(base.inventoryRecordCount)||0,pending:officialConcessionPending.length,source:OFFICIAL_CONCESSION_BASELINE_URL};
-    return (base.features??[]).map(x=>concessionFeatureFromGeoJSON(x,'REPOSITORY-BASELINE',OFFICIAL_CONCESSION_BASELINE_URL)).filter(Boolean);
+    const merged=[...(base.features??[])];
+    let mguCount=0;
+    if(mguResponse.ok){
+      try{
+        const mgu=await mguResponse.json();
+        if(mgu?.schema==='bgwf-mgu-pernik-concessions-v1'){
+          const existing=new Set(merged.map(x=>String(x?.properties?.concession_id??x?.properties?.['идентификационен_____партиден__']??'')+'|'+String(x?.properties?.name??x?.properties?.['находище']??'')));
+          for(const raw of mgu.features??[]){
+            const p=raw.properties||{},k=String(p.concession_id??p['идентификационен_____партиден__']??'')+'|'+String(p.name??p['находище']??'');
+            if(!existing.has(k)){merged.push(raw);existing.add(k);mguCount++;}
+          }
+          officialConcessionCacheMeta.mguPernik={generatedAt:mgu.generatedAt,featureCount:mgu.featureCount,digest:mgu.digest};
+        }
+      }catch(e){debugState.network.mguPernikCache={ok:false,error:e.message};}
+    }
+    debugState.network.mguPernikCache={ok:mguResponse.ok,features:mguCount,status:mguResponse.status};
+    debugState.network.concessionCache={status:200,ok:true,features:merged.length,officialRegisterFeatures:Array.isArray(base.features)?base.features.length:0,mguPernikAdded:mguCount,inventory:Number(base.inventoryRecordCount)||0,pending:officialConcessionPending.length,source:OFFICIAL_CONCESSION_BASELINE_URL};
+    return merged.map(x=>concessionFeatureFromGeoJSON(x,x?.properties?.source_kind==='MGU-concession-contract-geometry'?'MGU-PERNIK-CACHE':'REPOSITORY-BASELINE',x?.properties?.source_kind==='MGU-concession-contract-geometry'?MGU_PERNIK_CONCESSION_CACHE_URL:OFFICIAL_CONCESSION_BASELINE_URL)).filter(Boolean);
   }catch(e){standaloneError=e;}
 
   // Backward-compatible fallback while older cache revisions still exist.
