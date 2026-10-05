@@ -8,6 +8,7 @@ on:
   push:
     paths:
       - "scripts/refresh-industrial-concessions.py"
+      - "scripts/sync-mgu-pernik-concessions.py"
       - "scripts/sync-concession-inventory.py"
       - "scripts/sync-nkr-party-index.py"
       - "scripts/harvest-nkr-priority-documents.py"
@@ -48,6 +49,9 @@ jobs:
       - name: Refresh repository-owned national inventory
         run: python scripts/sync-concession-inventory.py
 
+      - name: Refresh MGU Pernik concession polygon cache
+        run: python scripts/sync-mgu-pernik-concessions.py
+
       - name: Refresh repository-owned NKR party index
         run: python scripts/sync-nkr-party-index.py
 
@@ -77,6 +81,7 @@ jobs:
           health=json.load(open("map/data/gis-source-health-v1.json", encoding="utf-8"))
           inventory=json.load(open("map/data/concession-inventory-v1.json", encoding="utf-8"))
           baseline=json.load(open("map/data/official-concessions-baseline.geojson", encoding="utf-8"))
+          mgu=json.load(open("map/data/mgu-pernik-concessions-v1.geojson", encoding="utf-8"))
           pending=json.load(open("map/data/pending-concessions-v1.json", encoding="utf-8"))
           disturbed=json.load(open("map/data/disturbed-mining-sites-v1.geojson", encoding="utf-8"))
           abandoned=json.load(open("map/data/abandoned-mining-waste-inventory-v1.json", encoding="utf-8"))
@@ -89,6 +94,8 @@ jobs:
           assert cache.get("schema") == "bgwf-industrial-zones-cache-v1"
           assert inventory.get("schema") == "bgwf-concession-inventory-v1"
           assert baseline.get("schema") == "bgwf-official-concessions-baseline-v1"
+          assert mgu.get("schema") == "bgwf-mgu-pernik-concessions-v1"
+          assert int(mgu.get("featureCount",0)) == len(mgu.get("features") or [])
           assert pending.get("schema") == "bgwf-pending-concessions-v1"
           assert disturbed.get("schema") == "bgwf-disturbed-mining-sites-v1"
           assert abandoned.get("schema") == "bgwf-abandoned-mining-waste-inventory-v1"
@@ -152,6 +159,7 @@ jobs:
             map/data/coordinate-document-candidates-v1.json
             map/data/coordinate-registers-staging-v1.json
             map/data/official-concessions-baseline.geojson
+            map/data/mgu-pernik-concessions-v1.geojson
             map/data/pending-concessions-v1.json
             map/data/industry-footprints-baseline.geojson
             map/data/disturbed-mining-sites-v1.geojson
@@ -178,6 +186,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python scripts/sync-concession-inventory.py
+            python scripts/sync-mgu-pernik-concessions.py
             python scripts/sync-nkr-party-index.py
             python scripts/harvest-nkr-priority-documents.py
             python scripts/harvest-nkr-attachments.py
