@@ -33,7 +33,7 @@ BASE = "https://nkr.government.bg"
 LANDING = "/Concessions"
 SEARCH = "/Concessions/Search"
 SLEEP = 1.0
-MAX_PAGES = 30
+MAX_PAGES = 100
 UA = "EnergoKarta-Bulgaria-NKR-index/1.0 (+https://topperbg.github.io/map/)"
 
 
