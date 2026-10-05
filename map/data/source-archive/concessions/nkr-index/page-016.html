@@ -1,0 +1,419 @@
+
+
+
+
+
+    <script type="text/javascript">
+        if (typeof (Callbacks) === 'undefined') {
+            Callbacks = {};
+        }
+
+        Callbacks['ConcessionsFilterRow'] = function () {
+            return "<tr id='FilterForms' class='searches filterRow'><td id='FilterId' class='hiddenColumn'><input type='text' name='Id' class='filterField form-control' /></td><td id='FilterRegNumber' class=''><input type='text' name='RegNumber' class='filterField form-control' /></td><td id='FilterStatus' class=''><input type='text' name='Status' class='filterField form-control' /></td><td id='FilterProcedureStatus' class=''><input type='text' name='ProcedureStatus' class='filterField form-control' /></td><td id='FilterConcessionName' class=''><input type='text' name='ConcessionName' class='filterField form-control' /></td><td id='FilterConcessionType' class=''><input type='text' name='ConcessionType' class='filterField form-control' /></td><td id='FilterConcessionSubject' class=''><input type='text' name='ConcessionSubject' class='filterField form-control' /></td><td id='FilterAreaExtent' class=''><input type='text' name='AreaExtent' class='filterField form-control' /></td><td id='FilterConceder' class=''><input type='text' name='Conceder' class='filterField form-control' /></td><td id='FilterTypeId' class='hiddenColumn'><input type='text' name='TypeId' class='filterField form-control' /></td><td id='FilterRelatedLotId' class='hiddenColumn'><input type='text' name='RelatedLotId' class='filterField form-control' /></td><td id='FilterRelatedLotRegNumber' class=''><input type='text' name='RelatedLotRegNumber' class='filterField form-control' /></td></tr>";
+        };
+
+        Callbacks['ConcessionsTotalRow'] = function () {
+            return "<tr class='sumRow'><td class='hiddenColumn'><b></b></td><td><b>Общо:</b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td class='hiddenColumn'><b></b></td><td class='hiddenColumn'><b></b></td><td><b></b></td></tr>";
+        };
+    </script>
+    <div id="ConcessionsResultsTable">
+<form action="/Concessions/FilterResults" class="ResultsTable" data-ajax="true" data-ajax-begin="Callbacks.ConcessionsOnBeginCallback" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="Callbacks.ConcessionsTableCallback" data-ajax-update="#ConcessionsResultsTable" id="filterFormConcessions" method="post">            <div class="col-lg-12">
+                <div class="group-icons">
+                    <div class="pull-left btn-group">
+
+                    </div>
+
+
+                    <div class="pull-right  btn-group">
+                        <a class='btneq dl-link'title='Експорт в pdf' href='/Concessions/Export?file=pdf'><i class='fa fa-file-pdf-o'></i></a><a class='btneq dl-link'title='Експорт в xls' href='/Concessions/Export?file=xls'><i class='fa fa-file-xls-o'></i></a><a class='btneq dl-link'title='Експорт в csv' href='/Concessions/Export?file=csv'><i class='fa fa-file-csv-o'></i></a>
+
+                    </div>
+                </div>
+                <div class="group-icons">
+                    <div class="pagination pull-left">
+                        <span data-swhgajax="true" data-swhgcallback="Callbacks.ConcessionsTableCallback" data-swhgcontainer="ConcessionsResultsTable"><ul class="pagination"><li><a data-swhglnk="true" href="/Concessions/Search?page=1&amp;rowsPerPage=100">&lt;&lt;</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=15&amp;rowsPerPage=100">&lt;</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=14&amp;rowsPerPage=100">14</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=15&amp;rowsPerPage=100">15</a></li><li class="active"><a data-swhglnk="true" href="/Concessions/Search?page=16&amp;rowsPerPage=100">16</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=17&amp;rowsPerPage=100">17</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=18&amp;rowsPerPage=100">18</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=17&amp;rowsPerPage=100">&gt;</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=73&amp;rowsPerPage=100">&gt;&gt;</a></li></ul></span>
+                    </div>
+                    <div class="pagination nopadding pull-right">
+                        <label>Общо: 1442</label>
+                    </div>
+                    <div class="top-buttons in-head pagination pull-none">
+                            <div class="nopadding">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Резултати</label>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <select class="form-control rowsPerPageDropDown" data-val="true" data-val-number="The field Int32 must be a number." data-val-required="The Int32 field is required." id="rowsPerPage" name="rowsPerPage"><option selected="selected" value="20">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</select>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+<div class="clearfix"></div>            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                                <script type="text/javascript">
+        (function($) {
+            $.fn.swhgLoad = function(url, containerId, callback) {
+                url = url + (url.indexOf('?') == -1 ? '?' : '&') + '__swhg=' + new Date().getTime();
+
+                $('<div/>').load(url + ' ' + containerId, function(data, status, xhr) {
+                    $(containerId).replaceWith($(this).html());
+                    if (typeof(callback) === 'function') {
+                        callback.apply(this, arguments);
+                    }
+                });
+                return this;
+            }
+
+            $(function() {
+                $('table[data-swhgajax="true"],span[data-swhgajax="true"]').each(function() {
+                    var self = $(this);
+                    var containerId = '#' + self.data('swhgcontainer');
+                    var callback = getFunction(self.data('swhgcallback'));
+
+                    $(containerId).parent().delegate(containerId + ' a[data-swhglnk="true"]', 'click', function() {
+                        $(containerId).swhgLoad($(this).attr('href'), containerId, callback);
+                        return false;
+                    });
+                })
+            });
+
+            function getFunction(code, argNames) {
+                argNames = argNames || [];
+                var fn = window, parts = (code || "").split(".");
+                while (fn && parts.length) {
+                    fn = fn[parts.shift()];
+                }
+                if (typeof (fn) === "function") {
+                    return fn;
+                }
+                argNames.push(code);
+                return Function.constructor.apply(null, argNames);
+            }
+        })(jQuery);
+        </script>
+    <table class="table table-striped table-bordered table-hover table-bordered tableResults queryTable" id="ConcessionsTable" data-swhgajax="true" data-swhgcontainer="ConcessionsResultsTable" data-swhgcallback="Callbacks.ConcessionsTableCallback">
+    <thead>
+        <tr>
+            <th scope="col">
+             </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=RegNumber&amp;sortdir=ASC">Номер </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=Status&amp;sortdir=ASC">Статус на партида </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ProcedureStatus&amp;sortdir=ASC">Статус на процедура </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ConcessionName&amp;sortdir=ASC">Име на концесия </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ConcessionType&amp;sortdir=ASC">Вид на концесия </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ConcessionSubject&amp;sortdir=ASC">Предмет на концесия </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=AreaExtent&amp;sortdir=ASC">С/без трансграничен интерес </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=Conceder&amp;sortdir=ASC">Концедент </a>            </th>
+            <th scope="col">
+             </th>
+            <th scope="col">
+             </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=RelatedLotRegNumber&amp;sortdir=ASC">№ на свързана процедура/концесия </a>            </th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr  class="hide-footer-paging">
+            <td colspan="12"><a data-swhglnk="true" href="/Concessions/Search?page=15&amp;rowsPerPage=100">&lt;</a> <a data-swhglnk="true" href="/Concessions/Search?page=14&amp;rowsPerPage=100">14</a> <a data-swhglnk="true" href="/Concessions/Search?page=15&amp;rowsPerPage=100">15</a> 16 <a data-swhglnk="true" href="/Concessions/Search?page=17&amp;rowsPerPage=100">17</a> <a data-swhglnk="true" href="/Concessions/Search?page=18&amp;rowsPerPage=100">18</a> <a data-swhglnk="true" href="/Concessions/Search?page=17&amp;rowsPerPage=100">&gt;</a> </td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">19637cc8-5529-41f0-ad3e-0ce92d3e6813</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000858</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Козя поляна&quot;,  област Варна, община Дългопол, населено място Поляците</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1991de59-b0a0-4c55-90ef-895a8e163180</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000607</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Янкова чешма&quot;, участъци &quot;Янкова чешма-север&quot; и &quot;Янкова чешма-юг&quot;,  област Хасково, община Ивайловград, населено място Нова ливада </td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">19acb5d0-ea76-48a5-a1f8-92a43d532d45</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-000695</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за строителство на автобусни спирки,  област Варна, община Варна, населено място Варна</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Варна</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">19bc0fca-fa38-4bd8-8480-9dd57a58788b</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-000431</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за строителство на търговски обект,  област Добрич, община Добрич, населено място Добрич</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Добрич-град</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">19de52b3-2282-4811-9c4a-aff506a98765</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000755</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td> Концесия за морски плаж &quot;СВ. СВ. КОНСТАНТИН И ЕЛЕНА - МАЛЪК ПЛАЖ&quot;,  област Варна, община Варна, населено място Варна</td>
+            <td>Държавна</td>
+            <td>Концесия за морски плаж</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">19e00f97-9640-4b32-9075-ba5f8538c518</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000664</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Старите колиби&quot;,  област Пловдив, община Асеновград, населено място Мулдава</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1a23ee3a-bda0-443a-a71a-b3e5f74c147c</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-000776</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Приключена</td>
+            <td>Отворена</td>
+            <td>Концесия за услуга на язовир &quot;Челаркосу&quot;, землище с.Зафирово,  област Силистра, община Главиница, населено място Зафирово</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Главиница</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1a3144c9-392a-4459-92cf-bcfa207d72ea</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000847</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td> Концесия за морски плаж &quot;Робинзон&quot;,  област Бургас, община Несебър</td>
+            <td>Държавна</td>
+            <td>Концесия за морски плаж</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1a571a77-b81d-4ad8-80a6-34c77ee826de</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000609</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Асарел&quot; - участък &quot;Запад&quot;,  област Пазарджик, община Панагюрище, населено място Панагюрище</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1a928ee1-4d08-4a2a-a4e1-a00a55a8039b</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000166</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Върли бряг&quot; ,  област Бургас, община Бургас, населено място Бургас </td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1a9b4e94-bb32-42aa-88a5-3b9aeb624df3</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000241</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Казаните-1&quot;,  област Пазарджик, община Пазарджик, населено място Дебръщица</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1abba8d1-7505-42fc-8365-bb5461afec7e</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-001121</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за услуга на язовир &quot;Малауча&quot;,  област Габрово, община Севлиево, населено място Сенник</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Севлиево</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1af2629a-16b6-40cc-a0cc-48717f64b4f3</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000498</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Столюва чукара&quot;,  област Пазарджик, община Панагюрище, населено място Оборище</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1b4a1f18-cec2-42a6-a714-a9f8ce1adb51</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-001187</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за строителство на спортен център за тенис на корт и скуош, област Бургас, община Бургас, населено място Бургас</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Бургас</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1b62c37d-1735-45b1-9058-72558bee2681</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-000063</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за услуга на автогара  гр. Ихтиман ,  област София, община Ихтиман, населено място Ихтиман</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Ихтиман</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1badd900-2f9c-4ec5-bfaa-ef1ad40f0688</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-000765</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Приключена</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от минерален извор от сондаж Р-77Х-Търговище находище на минерална вода район Североизточна България - малмовалнжски водоносен хоризонт,  област Търговище, община Търговище, населено място Търговище</td>
+            <td>Общинска</td>
+            <td>Концесия за добив на минерална вода</td>
+            <td>Не е приложимо</td>
+            <td>Общински съвет Търговище</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1bf4d46e-e11f-41f3-9f49-69cedf1a3864</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000759</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за морски плаж &quot;СВ. СВ. КОНСТАНТИН И ЕЛЕНА - ГОЛЯМ ПЛАЖ&quot;,  област Варна, община Варна, населено място Варна </td>
+            <td>Държавна</td>
+            <td>Концесия за морски плаж</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1c1001f1-c9bb-4545-9bce-5efc5e646912</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>O-000155</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за услуга на язовир в местността &quot;Гичита&quot;,  област Пловдив, община Съединение, населено място Церетелево </td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Не е приложимо</td>
+            <td>Кмет на община Съединение</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1c8ec6d4-2c04-4d73-92e6-d9ac1876e80a</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000584</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от находище &quot;Две могили&quot; - участък &quot;Маргарита-2&quot; и участък &quot;Пристое-3&quot;,  област Шумен, община Каолиново</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1c95abd3-e6f3-44ab-bb7c-8284e4ad5f04</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>D-000710</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за добив от НАХОДИЩЕ &quot;КОБИЛИНО&quot;, УЧАСТЪК &quot;СТАРИЯ ДАСКАЛ&quot;,  област Хасково, община Ивайловград, населено място Кобилино</td>
+            <td>Държавна</td>
+            <td>Концесия за добив на подземни богатства</td>
+            <td>Не е приложимо</td>
+            <td>Министерски съвет</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>Не е приложимо</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+    </tbody>
+    </table>
+
+                    </div>
+                </div>
+            </div>            
+</form>    </div>
