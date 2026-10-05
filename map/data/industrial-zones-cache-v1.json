@@ -385,20 +385,24 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-05T08:43:35Z",
-    "featureCount": 8,
+    "generatedAt": "2026-10-05T08:53:26Z",
+    "featureCount": 11,
     "features": [
       {
         "type": "Feature",
         "properties": {
           "concession_id": "216-125",
-          "name": "216-125",
+          "name": "Хитрино - 3",
           "official_area_dka": 117.5,
           "transformed_area_dka": 117.505,
           "area_qa_error_pct": 0.0043,
           "source_coordinate_system": "BGS2005",
           "source_zone": null,
           "source_point_count": 6,
+          "source_contour_count": 1,
+          "resource": "Строителни материали",
+          "municipality": "Хитрино",
+          "province": "Шумен",
           "source_url": "https://nkr.government.bg/File/Download/f5a3513c-71a1-4212-921b-c06b134fe927",
           "source_attachment_sha256": "83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6",
           "source_archive_path": "source-archive/concessions/nkr-attachments/83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6.doc",
@@ -447,13 +451,17 @@
         "type": "Feature",
         "properties": {
           "concession_id": "216-128",
-          "name": "216-128",
+          "name": "Цар Асен - 2",
           "official_area_dka": 646.4,
           "transformed_area_dka": 646.399,
           "area_qa_error_pct": 0.0002,
           "source_coordinate_system": "BGS2005",
           "source_zone": null,
           "source_point_count": 99,
+          "source_contour_count": 1,
+          "resource": "Метални полезни изкопаеми",
+          "municipality": "Пазарджик",
+          "province": "Пазарджик",
           "source_url": "https://nkr.government.bg/File/Download/48064150-ccbe-44ea-b862-c302ba8f56d4",
           "source_attachment_sha256": "f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0",
           "source_archive_path": "source-archive/concessions/nkr-attachments/f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0.pdf",
@@ -874,13 +882,17 @@
         "type": "Feature",
         "properties": {
           "concession_id": "216-223",
-          "name": "216-223",
+          "name": "Бешовица",
           "official_area_dka": 246.3,
           "transformed_area_dka": 246.312,
           "area_qa_error_pct": 0.0047,
           "source_coordinate_system": "BGS2005",
           "source_zone": null,
           "source_point_count": 14,
+          "source_contour_count": 1,
+          "resource": "Скално-облицовъчни материали",
+          "municipality": "Роман",
+          "province": "Враца",
           "source_url": "https://nkr.government.bg/File/Download/63231b75-fb47-475e-847b-b70af7f8c65b",
           "source_attachment_sha256": "22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1",
           "source_archive_path": "source-archive/concessions/nkr-attachments/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.doc",
@@ -961,13 +973,17 @@
         "type": "Feature",
         "properties": {
           "concession_id": "216-261",
-          "name": "216-261",
+          "name": "Янаклъка",
           "official_area_dka": 130.2,
           "transformed_area_dka": 130.248,
           "area_qa_error_pct": 0.037,
           "source_coordinate_system": "BGS2005",
           "source_zone": null,
           "source_point_count": 14,
+          "source_contour_count": 1,
+          "resource": "Строителни материали",
+          "municipality": "Димитровград",
+          "province": "Хасково",
           "source_url": "https://nkr.government.bg/File/Download/1814d064-15d3-4662-87d2-ce4f3b852931",
           "source_attachment_sha256": "fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae",
           "source_archive_path": "source-archive/concessions/nkr-attachments/fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae.doc",
@@ -1047,14 +1063,125 @@
       {
         "type": "Feature",
         "properties": {
+          "concession_id": "216-306",
+          "name": "Делчевото - 2, у-к \"Делчевото - 2 юг\"",
+          "official_area_dka": 65.2,
+          "transformed_area_dka": 65.153,
+          "area_qa_error_pct": 0.0722,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 18,
+          "source_contour_count": 1,
+          "resource": "Неметални полезни изкопаеми - индустриални минерали",
+          "municipality": "Асеновград",
+          "province": "Пловдив",
+          "source_url": "https://nkr.government.bg/File/Download/be5f75f1-c008-490a-a242-40ccf0c230e0",
+          "source_attachment_sha256": "881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d.pdf",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.93897786,
+                41.92656547
+              ],
+              [
+                24.93938802,
+                41.92667194
+              ],
+              [
+                24.93977589,
+                41.92684673
+              ],
+              [
+                24.94070415,
+                41.92658212
+              ],
+              [
+                24.94168588,
+                41.926677
+              ],
+              [
+                24.94212481,
+                41.92680341
+              ],
+              [
+                24.94270314,
+                41.92698182
+              ],
+              [
+                24.94326627,
+                41.92724298
+              ],
+              [
+                24.94360956,
+                41.92727888
+              ],
+              [
+                24.94395205,
+                41.92740481
+              ],
+              [
+                24.94416827,
+                41.927495
+              ],
+              [
+                24.94485655,
+                41.92764783
+              ],
+              [
+                24.94525996,
+                41.92770203
+              ],
+              [
+                24.94528252,
+                41.92732941
+              ],
+              [
+                24.94679012,
+                41.92754026
+              ],
+              [
+                24.94419095,
+                41.92587813
+              ],
+              [
+                24.94037356,
+                41.92592955
+              ],
+              [
+                24.93896285,
+                41.92594778
+              ],
+              [
+                24.93897786,
+                41.92656547
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
           "concession_id": "216-379",
-          "name": "216-379",
+          "name": "Кралево-2",
           "official_area_dka": 174.9,
           "transformed_area_dka": 174.892,
           "area_qa_error_pct": 0.0045,
           "source_coordinate_system": "BGS2005",
           "source_zone": null,
           "source_point_count": 16,
+          "source_contour_count": 1,
+          "resource": "Строителни материали",
+          "municipality": "Търговище",
+          "province": "Търговище",
           "source_url": "https://nkr.government.bg/File/Download/4a563805-fa49-4446-b5ec-900af15e3509",
           "source_attachment_sha256": "6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea",
           "source_archive_path": "source-archive/concessions/nkr-attachments/6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea.docx",
@@ -1143,13 +1270,17 @@
         "type": "Feature",
         "properties": {
           "concession_id": "216-406",
-          "name": "216-406",
+          "name": "Карлуково",
           "official_area_dka": 212.1,
           "transformed_area_dka": 212.129,
           "area_qa_error_pct": 0.0138,
           "source_coordinate_system": "BGS2005",
           "source_zone": null,
           "source_point_count": 30,
+          "source_contour_count": 1,
+          "resource": "Строителни материали",
+          "municipality": "Луковит",
+          "province": "Ловеч",
           "source_url": "https://nkr.government.bg/File/Download/225b2c5a-fafc-45a8-877d-e9200b718969",
           "source_attachment_sha256": "3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae",
           "source_archive_path": "source-archive/concessions/nkr-attachments/3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae.docx",
@@ -1301,6 +1432,10 @@
           "source_coordinate_system": "КС 1970",
           "source_zone": "K9",
           "source_point_count": 40,
+          "source_contour_count": 1,
+          "resource": null,
+          "municipality": null,
+          "province": null,
           "source_url": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766",
           "source_attachment_sha256": null,
           "source_archive_path": null,
@@ -1492,6 +1627,10 @@
           "source_coordinate_system": "КС 1970",
           "source_zone": "K5",
           "source_point_count": 14,
+          "source_contour_count": 1,
+          "resource": null,
+          "municipality": null,
+          "province": null,
           "source_url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-",
           "source_attachment_sha256": null,
           "source_archive_path": null,
@@ -1567,6 +1706,184 @@
             ]
           ]
         }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "D-000613",
+          "name": "Шереметя, у-к \"Изток\"",
+          "official_area_dka": 72.7,
+          "transformed_area_dka": 72.685,
+          "area_qa_error_pct": 0.0203,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 8,
+          "source_contour_count": 1,
+          "resource": "Строителни материали",
+          "municipality": "Велико Търново, Лясковец",
+          "province": "Велико Търново",
+          "source_url": "https://nkr.government.bg/File/Download/a2b68128-2cf3-4f2d-85e9-abbb09794bad",
+          "source_attachment_sha256": "ecb9b80ec6641e6ec33799b2fedf209912faf9ab392b0b9985093794403ff67e",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/ecb9b80ec6641e6ec33799b2fedf209912faf9ab392b0b9985093794403ff67e.doc",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                25.7112489,
+                43.07294473
+              ],
+              [
+                25.7137903,
+                43.07285093
+              ],
+              [
+                25.7149787,
+                43.07208537
+              ],
+              [
+                25.71560985,
+                43.07138925
+              ],
+              [
+                25.71496908,
+                43.07108349
+              ],
+              [
+                25.71239688,
+                43.07076779
+              ],
+              [
+                25.71092255,
+                43.07049684
+              ],
+              [
+                25.71086725,
+                43.07120628
+              ],
+              [
+                25.7112489,
+                43.07294473
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "O-000794",
+          "name": "Каменец",
+          "official_area_dka": 82.1,
+          "transformed_area_dka": 82.118,
+          "area_qa_error_pct": 0.0215,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 19,
+          "source_contour_count": 1,
+          "resource": "Строителни материали",
+          "municipality": "Стралджа",
+          "province": "Ямбол",
+          "source_url": "https://nkr.government.bg/File/Download/edfa1165-4472-4ae6-b510-26f79850e279",
+          "source_attachment_sha256": "6f9c842fd71e36fe965ea93fa45cc92c4bb1f29b32b70201c112d0e5cdcd3ad9",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/6f9c842fd71e36fe965ea93fa45cc92c4bb1f29b32b70201c112d0e5cdcd3ad9.pdf",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                26.74788541,
+                42.32906275
+              ],
+              [
+                26.74809098,
+                42.32933151
+              ],
+              [
+                26.74815378,
+                42.32937765
+              ],
+              [
+                26.74820766,
+                42.32940227
+              ],
+              [
+                26.74838312,
+                42.32943816
+              ],
+              [
+                26.7484259,
+                42.3294539
+              ],
+              [
+                26.74972657,
+                42.32877605
+              ],
+              [
+                26.7508817,
+                42.32962415
+              ],
+              [
+                26.7516871,
+                42.33021497
+              ],
+              [
+                26.7526637,
+                42.33093176
+              ],
+              [
+                26.75178618,
+                42.3311665
+              ],
+              [
+                26.75406691,
+                42.33210575
+              ],
+              [
+                26.75529106,
+                42.32960536
+              ],
+              [
+                26.75296125,
+                42.32924294
+              ],
+              [
+                26.74986826,
+                42.32876189
+              ],
+              [
+                26.74978543,
+                42.32874569
+              ],
+              [
+                26.74856848,
+                42.32850872
+              ],
+              [
+                26.74844936,
+                42.32855955
+              ],
+              [
+                26.74808503,
+                42.32884987
+              ],
+              [
+                26.74788541,
+                42.32906275
+              ]
+            ]
+          ]
+        }
       }
     ],
     "pending": [
@@ -1601,7 +1918,7 @@
       {
         "id": "NKR-216-123",
         "concessionId": "216-123",
-        "name": "216-123",
+        "name": "Раденка, у-ци \"Урвата\", \"Лозята\" и \"Кавака\"",
         "officialAreaDka": 239,
         "sourceCrs": "BGS2005",
         "sourcePoints": 56,
@@ -1627,37 +1944,9 @@
         "priority": 2
       },
       {
-        "id": "NKR-216-124",
-        "concessionId": "216-124",
-        "name": "216-124",
-        "officialAreaDka": 225,
-        "sourceCrs": "BGS2005",
-        "sourcePoints": 22,
-        "status": "area_QA_failed_696527.832pct",
-        "sourceUrl": "https://nkr.government.bg/File/Download/c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
-        "queueSource": "curated-official-register",
-        "inventoryId": "216-124",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Пътища М\" ЕООД, гр. Монтана",
-        "resource": "Строителни материали",
-        "municipality": "Бойчиновци",
-        "province": "Монтана",
-        "inventoryAreaDka": null,
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
-            "concessionId": "216-124",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
-            "searchText": "216-124/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясъци и чакъли, от находище “Лемище“, участък „Лемище - изток“ и участък „Лемище - запад“, разположено в землището на с. Владимирово, община Бойчиновци, област Монтана, описано в Акт за изключителна държавна собственост № 1695/13.02.2020г., утвърден от министъра на регионалното развитие и благоустройството | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 2
-      },
-      {
         "id": "NKR-216-225",
         "concessionId": "216-225",
-        "name": "216-225",
+        "name": "Бистрица",
         "officialAreaDka": 95.5,
         "sourceCrs": "BGS2005",
         "sourcePoints": 50,
@@ -1678,34 +1967,6 @@
             "concessionId": "216-225",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f63cf7be-bfd2-46ba-872f-00109a4c9904",
             "searchText": "216-225/06.03.2023 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболити и гнайси, от находище „Бистрица“, разположено в землището на с. Плетена, община Сатовча, област Благоевгра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 2
-      },
-      {
-        "id": "NKR-216-306",
-        "concessionId": "216-306",
-        "name": "216-306",
-        "officialAreaDka": 65.2,
-        "sourceCrs": "BGS2005",
-        "sourcePoints": 18,
-        "status": "area_QA_failed_2.226pct",
-        "sourceUrl": "https://nkr.government.bg/File/Download/be5f75f1-c008-490a-a242-40ccf0c230e0",
-        "queueSource": "curated-official-register",
-        "inventoryId": "216-306",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Запрянови - 03\" ООД, гр. Асеновград",
-        "resource": "Неметални полезни изкопаеми - индустриални минерали",
-        "municipality": "Асеновград",
-        "province": "Пловдив",
-        "inventoryAreaDka": null,
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "aece63a8-212e-4be0-801f-cb95eb5d0a30",
-            "concessionId": "216-306",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/aece63a8-212e-4be0-801f-cb95eb5d0a30",
-            "searchText": "216-306/28.03.2024 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) - неметални полезни изкопаеми - индустриални минерали - мрамори, от находище “Делчевото - 2“, участък „Делчевото - 2 юг“, разположено в землището на с. Горнослав, община Асеновград, област Пловдив | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 2
@@ -7489,33 +7750,6 @@
         "priority": 4
       },
       {
-        "id": "O-000794",
-        "concessionId": "O-000794",
-        "name": "Каменец",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "283",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Варовик Комерс\" ЕООД, с. Каменец",
-        "resource": "Строителни материали",
-        "municipality": "Стралджа",
-        "province": "Ямбол",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "7ba38774-24fa-4f84-8a46-76b8a3603b93",
-            "concessionId": "O-000794",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/7ba38774-24fa-4f84-8a46-76b8a3603b93",
-            "searchText": "O-000794 | Открита | Отворена | Концесия за добив на Строителни материали - варовици за добив на негасена вар, област Ямбол, община Стралджа, населено място Каменец | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "D-000520",
         "concessionId": "D-000520",
         "name": "Каменец, у-к Kаменец-1 и у-к Каменец-2",
@@ -9455,6 +9689,33 @@
             "concessionId": "D-000438",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/dac90a87-68af-4783-8450-7f59c20f9863",
             "searchText": "D-000438 | Открита | Отворена | Концесия за добив от находище \"Лахъма\", област Сливен, община Котел, населено място Котел | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+          }
+        ],
+        "priority": 4
+      },
+      {
+        "id": "216-124",
+        "concessionId": "216-124",
+        "name": "Лемище, у-к \"Лемище - изток\" и у-к \"Лемище - запад\"",
+        "officialAreaDka": null,
+        "sourceCrs": null,
+        "sourcePoints": null,
+        "status": "official_coordinate_register_not_archived",
+        "sourceUrl": null,
+        "queueSource": "national-inventory",
+        "sourceRowNo": "36",
+        "inventoryStatus": "active",
+        "concessionaire": "\"Пътища М\" ЕООД, гр. Монтана",
+        "resource": "Строителни материали",
+        "municipality": "Бойчиновци",
+        "province": "Монтана",
+        "concessionIdCollision": false,
+        "nkrParties": [
+          {
+            "guid": "25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
+            "concessionId": "216-124",
+            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
+            "searchText": "216-124/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясъци и чакъли, от находище “Лемище“, участък „Лемище - изток“ и участък „Лемище - запад“, разположено в землището на с. Владимирово, община Бойчиновци, област Монтана, описано в Акт за изключителна държавна собственост № 1695/13.02.2020г., утвърден от министъра на регионалното развитие и благоустройството | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -15203,33 +15464,6 @@
         "priority": 4
       },
       {
-        "id": "D-000613",
-        "concessionId": "D-000613",
-        "name": "Шереметя, у-к \"Изток\"",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "174",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Стрела - 92\" ООД, гр. Велико Търново",
-        "resource": "Строителни материали",
-        "municipality": "Велико Търново, Лясковец",
-        "province": "Велико Търново",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "619091c6-4481-47a1-ae44-1c905bb09258",
-            "concessionId": "D-000613",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/619091c6-4481-47a1-ae44-1c905bb09258",
-            "searchText": "D-000613 | Открита | Отворена | Концесия за добив от Находище \"Шереметя\", участък \"Изток\", област Велико Търново, община Велико Търново, Лясковец, населено място Драгижево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "D-000600",
         "concessionId": "D-000600",
         "name": "Шишманци, у-к \"2\"",
@@ -15649,13 +15883,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-05T08:44:06Z",
+    "sourceHealthCheckedAt": "2026-10-05T08:53:57Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-05T08:43:38Z",
+        "checkedAt": "2026-10-05T08:53:29Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -15663,7 +15897,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:43:50Z",
+        "checkedAt": "2026-10-05T08:53:42Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
@@ -15674,19 +15908,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:44:04Z",
+        "checkedAt": "2026-10-05T08:53:55Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 46023,
-        "digest": "1299d2825cea75b8ea96964f0d4058e12bd4c500511bc01f1435ce3684fb1d7f"
+        "digest": "739ddbc1d41847c544b4c66bd33bff785d81f0613053ebb8daa61b205e5a095b"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-05T08:44:05Z",
+        "checkedAt": "2026-10-05T08:53:56Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51607,
-        "digest": "2b9ecd23fdfd8bca7184ba5fc10032bcc31c7951d813747474ef36095471402c"
+        "digest": "8d1d3956bab9fde54f532992114064912200842d2999a836b73c4acbbdb73fc4"
       }
     ],
     "coverage": {
@@ -15696,10 +15930,10 @@
       "includesClosedOrExpiredConcessionsWhenLegacyImpactRemains": true,
       "includesAbandonedMiningWasteFacilities": true,
       "note": "Legal concession boundary and developed/disturbed footprint are separate geometries.",
-      "publishedOfficialRegisterPolygons": 8,
-      "pendingOfficialRecords": 522,
+      "publishedOfficialRegisterPolygons": 11,
+      "pendingOfficialRecords": 519,
       "inventoryRecordCount": 530,
-      "pendingWithNkrParty": 512
+      "pendingWithNkrParty": 509
     },
     "baselineBuilder": {
       "id": "official-coordinate-registers-v1",
@@ -15715,14 +15949,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-05T08:44:05Z",
+      "checkedAt": "2026-10-05T08:53:56Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51607,
-      "digest": "2b9ecd23fdfd8bca7184ba5fc10032bcc31c7951d813747474ef36095471402c"
+      "digest": "8d1d3956bab9fde54f532992114064912200842d2999a836b73c4acbbdb73fc4"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-05T08:43:35Z"
+    "concessionsBaseline": "2026-10-05T08:53:26Z"
   }
 }
