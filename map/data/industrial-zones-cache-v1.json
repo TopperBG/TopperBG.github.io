@@ -385,9 +385,911 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-05T08:31:59Z",
-    "featureCount": 2,
+    "generatedAt": "2026-10-05T08:43:35Z",
+    "featureCount": 8,
     "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "216-125",
+          "name": "216-125",
+          "official_area_dka": 117.5,
+          "transformed_area_dka": 117.505,
+          "area_qa_error_pct": 0.0043,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 6,
+          "source_url": "https://nkr.government.bg/File/Download/f5a3513c-71a1-4212-921b-c06b134fe927",
+          "source_attachment_sha256": "83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6.doc",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                26.94784183,
+                43.4305615
+              ],
+              [
+                26.95024791,
+                43.42887958
+              ],
+              [
+                26.94936305,
+                43.42633859
+              ],
+              [
+                26.95003693,
+                43.42621314
+              ],
+              [
+                26.94945983,
+                43.42415261
+              ],
+              [
+                26.94642792,
+                43.42742126
+              ],
+              [
+                26.94784183,
+                43.4305615
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "216-128",
+          "name": "216-128",
+          "official_area_dka": 646.4,
+          "transformed_area_dka": 646.399,
+          "area_qa_error_pct": 0.0002,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 99,
+          "source_url": "https://nkr.government.bg/File/Download/48064150-ccbe-44ea-b862-c302ba8f56d4",
+          "source_attachment_sha256": "f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0.pdf",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.33943233,
+                42.3577124
+              ],
+              [
+                24.34041546,
+                42.35770451
+              ],
+              [
+                24.34144294,
+                42.35740816
+              ],
+              [
+                24.34162132,
+                42.35715464
+              ],
+              [
+                24.34241632,
+                42.3567341
+              ],
+              [
+                24.34331529,
+                42.3559526
+              ],
+              [
+                24.34323985,
+                42.35494485
+              ],
+              [
+                24.3438831,
+                42.35493967
+              ],
+              [
+                24.34720744,
+                42.35483181
+              ],
+              [
+                24.34791982,
+                42.35457396
+              ],
+              [
+                24.34801638,
+                42.35453716
+              ],
+              [
+                24.34827894,
+                42.35505721
+              ],
+              [
+                24.34787462,
+                42.35562768
+              ],
+              [
+                24.3494762,
+                42.35722626
+              ],
+              [
+                24.35112812,
+                42.35647461
+              ],
+              [
+                24.35172927,
+                42.35608259
+              ],
+              [
+                24.35236054,
+                42.35608646
+              ],
+              [
+                24.35314745,
+                42.35594501
+              ],
+              [
+                24.35485785,
+                42.35504877
+              ],
+              [
+                24.35582999,
+                42.35430257
+              ],
+              [
+                24.35638344,
+                42.35315466
+              ],
+              [
+                24.35716443,
+                42.3526171
+              ],
+              [
+                24.35676483,
+                42.3518641
+              ],
+              [
+                24.35713517,
+                42.35146493
+              ],
+              [
+                24.35769688,
+                42.35087514
+              ],
+              [
+                24.35729331,
+                42.35067136
+              ],
+              [
+                24.35674374,
+                42.35126107
+              ],
+              [
+                24.35698833,
+                42.35138511
+              ],
+              [
+                24.35655825,
+                42.35184778
+              ],
+              [
+                24.35694544,
+                42.35258288
+              ],
+              [
+                24.35622461,
+                42.35308394
+              ],
+              [
+                24.355671,
+                42.35422285
+              ],
+              [
+                24.35472288,
+                42.35495083
+              ],
+              [
+                24.35467057,
+                42.35142204
+              ],
+              [
+                24.35272877,
+                42.35143785
+              ],
+              [
+                24.3482011,
+                42.35306816
+              ],
+              [
+                24.34873692,
+                42.35236157
+              ],
+              [
+                24.34841938,
+                42.3522291
+              ],
+              [
+                24.34788371,
+                42.35294468
+              ],
+              [
+                24.34773149,
+                42.35332404
+              ],
+              [
+                24.34783313,
+                42.35445761
+              ],
+              [
+                24.34716905,
+                42.35469707
+              ],
+              [
+                24.34401464,
+                42.35480356
+              ],
+              [
+                24.34346571,
+                42.35379064
+              ],
+              [
+                24.34278949,
+                42.35320188
+              ],
+              [
+                24.34188467,
+                42.35275
+              ],
+              [
+                24.34015918,
+                42.35261982
+              ],
+              [
+                24.33987865,
+                42.35169475
+              ],
+              [
+                24.33899073,
+                42.35156683
+              ],
+              [
+                24.33876408,
+                42.35017315
+              ],
+              [
+                24.33800709,
+                42.34819854
+              ],
+              [
+                24.33679244,
+                42.34729895
+              ],
+              [
+                24.33569423,
+                42.34689358
+              ],
+              [
+                24.3353059,
+                42.34689668
+              ],
+              [
+                24.33473005,
+                42.34736044
+              ],
+              [
+                24.33440866,
+                42.34779516
+              ],
+              [
+                24.33436326,
+                42.34801159
+              ],
+              [
+                24.33404589,
+                42.34872537
+              ],
+              [
+                24.33401327,
+                42.34898671
+              ],
+              [
+                24.33403884,
+                42.34991383
+              ],
+              [
+                24.33452142,
+                42.35054921
+              ],
+              [
+                24.33361733,
+                42.35097956
+              ],
+              [
+                24.33388655,
+                42.35113046
+              ],
+              [
+                24.33426369,
+                42.35119048
+              ],
+              [
+                24.33445447,
+                42.35095487
+              ],
+              [
+                24.33458601,
+                42.35081878
+              ],
+              [
+                24.33510343,
+                42.35050854
+              ],
+              [
+                24.33557007,
+                42.35004566
+              ],
+              [
+                24.33588326,
+                42.3498811
+              ],
+              [
+                24.33624721,
+                42.34986919
+              ],
+              [
+                24.33700641,
+                42.35033128
+              ],
+              [
+                24.33706061,
+                42.35071798
+              ],
+              [
+                24.33686517,
+                42.3514668
+              ],
+              [
+                24.33553631,
+                42.35190057
+              ],
+              [
+                24.33615046,
+                42.35239984
+              ],
+              [
+                24.33699311,
+                42.35275322
+              ],
+              [
+                24.33784189,
+                42.35269241
+              ],
+              [
+                24.33869951,
+                42.35240645
+              ],
+              [
+                24.33895084,
+                42.35216135
+              ],
+              [
+                24.33901763,
+                42.35174667
+              ],
+              [
+                24.33901697,
+                42.35170165
+              ],
+              [
+                24.33972258,
+                42.35181304
+              ],
+              [
+                24.34001525,
+                42.35273801
+              ],
+              [
+                24.34182596,
+                42.35288552
+              ],
+              [
+                24.34266958,
+                42.35330188
+              ],
+              [
+                24.34330899,
+                42.35386392
+              ],
+              [
+                24.34382044,
+                42.35480513
+              ],
+              [
+                24.34322573,
+                42.35480992
+              ],
+              [
+                24.34285043,
+                42.35404768
+              ],
+              [
+                24.34207777,
+                42.35350471
+              ],
+              [
+                24.34134537,
+                42.3532225
+              ],
+              [
+                24.34061599,
+                42.35314733
+              ],
+              [
+                24.33991337,
+                42.353243
+              ],
+              [
+                24.3387535,
+                42.35361243
+              ],
+              [
+                24.33783129,
+                42.35446611
+              ],
+              [
+                24.33718938,
+                42.35539856
+              ],
+              [
+                24.33705133,
+                42.35592185
+              ],
+              [
+                24.33733053,
+                42.35675691
+              ],
+              [
+                24.3381037,
+                42.35733591
+              ],
+              [
+                24.33943233,
+                42.3577124
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "216-223",
+          "name": "216-223",
+          "official_area_dka": 246.3,
+          "transformed_area_dka": 246.312,
+          "area_qa_error_pct": 0.0047,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 14,
+          "source_url": "https://nkr.government.bg/File/Download/63231b75-fb47-475e-847b-b70af7f8c65b",
+          "source_attachment_sha256": "22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.doc",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                23.88795965,
+                43.17736804
+              ],
+              [
+                23.89231464,
+                43.17688855
+              ],
+              [
+                23.89253537,
+                43.17606334
+              ],
+              [
+                23.89360792,
+                43.17313155
+              ],
+              [
+                23.89387606,
+                43.17209002
+              ],
+              [
+                23.8942832,
+                43.17024194
+              ],
+              [
+                23.89399274,
+                43.16986968
+              ],
+              [
+                23.89262227,
+                43.17058797
+              ],
+              [
+                23.8918279,
+                43.17147812
+              ],
+              [
+                23.89119787,
+                43.17200773
+              ],
+              [
+                23.8903954,
+                43.17202536
+              ],
+              [
+                23.8887201,
+                43.17348751
+              ],
+              [
+                23.88955313,
+                43.17385565
+              ],
+              [
+                23.88693946,
+                43.17577825
+              ],
+              [
+                23.88795965,
+                43.17736804
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "216-261",
+          "name": "216-261",
+          "official_area_dka": 130.2,
+          "transformed_area_dka": 130.248,
+          "area_qa_error_pct": 0.037,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 14,
+          "source_url": "https://nkr.government.bg/File/Download/1814d064-15d3-4662-87d2-ce4f3b852931",
+          "source_attachment_sha256": "fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae.doc",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                25.53733883,
+                42.00509936
+              ],
+              [
+                25.53917076,
+                42.00441091
+              ],
+              [
+                25.54177175,
+                42.00402555
+              ],
+              [
+                25.54329267,
+                42.00404569
+              ],
+              [
+                25.54316859,
+                42.00617856
+              ],
+              [
+                25.54501427,
+                42.00619225
+              ],
+              [
+                25.54503027,
+                42.00494081
+              ],
+              [
+                25.54504063,
+                42.00422957
+              ],
+              [
+                25.54385746,
+                42.00387801
+              ],
+              [
+                25.54097081,
+                42.0030184
+              ],
+              [
+                25.5382943,
+                42.00222256
+              ],
+              [
+                25.53660054,
+                42.00171805
+              ],
+              [
+                25.53680992,
+                42.00267771
+              ],
+              [
+                25.53707255,
+                42.00387863
+              ],
+              [
+                25.53733883,
+                42.00509936
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "216-379",
+          "name": "216-379",
+          "official_area_dka": 174.9,
+          "transformed_area_dka": 174.892,
+          "area_qa_error_pct": 0.0045,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 16,
+          "source_url": "https://nkr.government.bg/File/Download/4a563805-fa49-4446-b5ec-900af15e3509",
+          "source_attachment_sha256": "6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea.docx",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                26.68468368,
+                43.17247712
+              ],
+              [
+                26.68528088,
+                43.1725115
+              ],
+              [
+                26.68555805,
+                43.17176326
+              ],
+              [
+                26.68598566,
+                43.17135646
+              ],
+              [
+                26.68557543,
+                43.17080883
+              ],
+              [
+                26.6866817,
+                43.17077316
+              ],
+              [
+                26.68760904,
+                43.170643
+              ],
+              [
+                26.69228292,
+                43.16988185
+              ],
+              [
+                26.69406727,
+                43.16846535
+              ],
+              [
+                26.69415691,
+                43.1683942
+              ],
+              [
+                26.69193222,
+                43.16776631
+              ],
+              [
+                26.68953138,
+                43.16801703
+              ],
+              [
+                26.68658756,
+                43.16849383
+              ],
+              [
+                26.68520298,
+                43.16850895
+              ],
+              [
+                26.68532692,
+                43.16965007
+              ],
+              [
+                26.68478792,
+                43.17149749
+              ],
+              [
+                26.68468368,
+                43.17247712
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "concession_id": "216-406",
+          "name": "216-406",
+          "official_area_dka": 212.1,
+          "transformed_area_dka": 212.129,
+          "area_qa_error_pct": 0.0138,
+          "source_coordinate_system": "BGS2005",
+          "source_zone": null,
+          "source_point_count": 30,
+          "source_url": "https://nkr.government.bg/File/Download/225b2c5a-fafc-45a8-877d-e9200b718969",
+          "source_attachment_sha256": "3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae",
+          "source_archive_path": "source-archive/concessions/nkr-attachments/3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae.docx",
+          "source_kind": "official-coordinate-register",
+          "geometry_status": "repository-baseline-official-register-transformed",
+          "transformation": "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+          "transformation_note": "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register."
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                24.0750511,
+                43.18624303
+              ],
+              [
+                24.0754982,
+                43.18611441
+              ],
+              [
+                24.07708908,
+                43.18835678
+              ],
+              [
+                24.07985198,
+                43.18730505
+              ],
+              [
+                24.0775382,
+                43.18412834
+              ],
+              [
+                24.07740665,
+                43.18417803
+              ],
+              [
+                24.07586299,
+                43.18170577
+              ],
+              [
+                24.07539562,
+                43.18089967
+              ],
+              [
+                24.07456573,
+                43.18098486
+              ],
+              [
+                24.07438495,
+                43.18103574
+              ],
+              [
+                24.07423035,
+                43.18107165
+              ],
+              [
+                24.07397899,
+                43.18119548
+              ],
+              [
+                24.07387767,
+                43.18121494
+              ],
+              [
+                24.07320958,
+                43.18137864
+              ],
+              [
+                24.07316501,
+                43.18139069
+              ],
+              [
+                24.07311789,
+                43.18140721
+              ],
+              [
+                24.07305948,
+                43.1814326
+              ],
+              [
+                24.07299472,
+                43.18146691
+              ],
+              [
+                24.07293098,
+                43.18151024
+              ],
+              [
+                24.07231186,
+                43.18200404
+              ],
+              [
+                24.07233652,
+                43.18205476
+              ],
+              [
+                24.07235047,
+                43.18209004
+              ],
+              [
+                24.07238889,
+                43.18213103
+              ],
+              [
+                24.07242368,
+                43.18216927
+              ],
+              [
+                24.07256647,
+                43.18232588
+              ],
+              [
+                24.07268284,
+                43.18250737
+              ],
+              [
+                24.07313788,
+                43.18256701
+              ],
+              [
+                24.0730877,
+                43.18298232
+              ],
+              [
+                24.07352525,
+                43.18332082
+              ],
+              [
+                24.07454133,
+                43.1850871
+              ],
+              [
+                24.0750511,
+                43.18624303
+              ]
+            ]
+          ]
+        }
+      },
       {
         "type": "Feature",
         "properties": {
@@ -697,6 +1599,62 @@
         "priority": 1
       },
       {
+        "id": "NKR-216-123",
+        "concessionId": "216-123",
+        "name": "216-123",
+        "officialAreaDka": 239,
+        "sourceCrs": "BGS2005",
+        "sourcePoints": 56,
+        "status": "area_QA_failed_13.374pct",
+        "sourceUrl": "https://nkr.government.bg/File/Download/5abd1f6a-2a2d-4302-9bbe-73c1e0af2015",
+        "queueSource": "curated-official-register",
+        "inventoryId": "216-123",
+        "inventoryStatus": "active",
+        "concessionaire": "\"Дес-М\" ООД, с. Крушево",
+        "resource": "Скално-облицовъчни материали",
+        "municipality": "Гърмен",
+        "province": "Благоевград",
+        "inventoryAreaDka": null,
+        "concessionIdCollision": false,
+        "nkrParties": [
+          {
+            "guid": "4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
+            "concessionId": "216-123",
+            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
+            "searchText": "216-123/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - гнайси, представляващи изключителна държавна собственост, съгласно Акт за изключителна държавна собственост № 1703/23.06.2020г. от находище „Раденка“, участъци „Урвата“, „Лозята“ и „Кавака“, разположено в землището на с. Крушево, община Гърмен, област Благоевград, описано в Акт за изключителна държавна собственост № 1703 от 23 юни 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+          }
+        ],
+        "priority": 2
+      },
+      {
+        "id": "NKR-216-124",
+        "concessionId": "216-124",
+        "name": "216-124",
+        "officialAreaDka": 225,
+        "sourceCrs": "BGS2005",
+        "sourcePoints": 22,
+        "status": "area_QA_failed_696527.832pct",
+        "sourceUrl": "https://nkr.government.bg/File/Download/c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
+        "queueSource": "curated-official-register",
+        "inventoryId": "216-124",
+        "inventoryStatus": "active",
+        "concessionaire": "\"Пътища М\" ЕООД, гр. Монтана",
+        "resource": "Строителни материали",
+        "municipality": "Бойчиновци",
+        "province": "Монтана",
+        "inventoryAreaDka": null,
+        "concessionIdCollision": false,
+        "nkrParties": [
+          {
+            "guid": "25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
+            "concessionId": "216-124",
+            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
+            "searchText": "216-124/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясъци и чакъли, от находище “Лемище“, участък „Лемище - изток“ и участък „Лемище - запад“, разположено в землището на с. Владимирово, община Бойчиновци, област Монтана, описано в Акт за изключителна държавна собственост № 1695/13.02.2020г., утвърден от министъра на регионалното развитие и благоустройството | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+          }
+        ],
+        "priority": 2
+      },
+      {
         "id": "NKR-216-225",
         "concessionId": "216-225",
         "name": "216-225",
@@ -720,6 +1678,34 @@
             "concessionId": "216-225",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f63cf7be-bfd2-46ba-872f-00109a4c9904",
             "searchText": "216-225/06.03.2023 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболити и гнайси, от находище „Бистрица“, разположено в землището на с. Плетена, община Сатовча, област Благоевгра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+          }
+        ],
+        "priority": 2
+      },
+      {
+        "id": "NKR-216-306",
+        "concessionId": "216-306",
+        "name": "216-306",
+        "officialAreaDka": 65.2,
+        "sourceCrs": "BGS2005",
+        "sourcePoints": 18,
+        "status": "area_QA_failed_2.226pct",
+        "sourceUrl": "https://nkr.government.bg/File/Download/be5f75f1-c008-490a-a242-40ccf0c230e0",
+        "queueSource": "curated-official-register",
+        "inventoryId": "216-306",
+        "inventoryStatus": "active",
+        "concessionaire": "\"Запрянови - 03\" ООД, гр. Асеновград",
+        "resource": "Неметални полезни изкопаеми - индустриални минерали",
+        "municipality": "Асеновград",
+        "province": "Пловдив",
+        "inventoryAreaDka": null,
+        "concessionIdCollision": false,
+        "nkrParties": [
+          {
+            "guid": "aece63a8-212e-4be0-801f-cb95eb5d0a30",
+            "concessionId": "216-306",
+            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/aece63a8-212e-4be0-801f-cb95eb5d0a30",
+            "searchText": "216-306/28.03.2024 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) - неметални полезни изкопаеми - индустриални минерали - мрамори, от находище “Делчевото - 2“, участък „Делчевото - 2 юг“, разположено в землището на с. Горнослав, община Асеновград, област Пловдив | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 2
@@ -1618,33 +2604,6 @@
             "concessionId": "216-131",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/8b28ba37-e54c-4daa-a672-f7644100b836",
             "searchText": "216-131/21.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболови гнайси, представляващи изключителна държавна собственост, от находище „Беслен”, разположено в землището на с. Беслен, община Хаджидимово, област Благоевград, описано в Акт за изключителна държавна собственост № 1711 от 17 декември 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
-        "id": "216-223",
-        "concessionId": "216-223",
-        "name": "Бешовица",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "25",
-        "inventoryStatus": "active",
-        "concessionaire": "\"ФНС\" ООД, гр. Мездра",
-        "resource": "Скално-облицовъчни материали",
-        "municipality": "Роман",
-        "province": "Враца",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "dbcd969b-99f8-428e-abc6-914797a13d86",
-            "concessionId": "216-223",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/dbcd969b-99f8-428e-abc6-914797a13d86",
-            "searchText": "216-223/06.03.2023 | Открита | Отворена | Предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства - скалнооблицовъчни материали - пясъчници, от находище „Бешовица“, разположено в землището на с. Долна Бешовица, община Роман, област Враца, на „ФНС“ ООД, гр. Мездра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -4122,33 +5081,6 @@
             "concessionId": "D-000122",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a476b954-a150-4c32-afde-7d9dcae8a5ba",
             "searchText": "D-000122 | Открита | Отворена | Концесия за добив от находище \"Девня\" - участък \"Люляката\" и участък \"Снежно поле югоизток\", област Варна, община Девня, Суворово, населено място Девня, Чернево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
-        "id": "216-306",
-        "concessionId": "216-306",
-        "name": "Делчевото - 2, у-к \"Делчевото - 2 юг\"",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "14",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Запрянови - 03\" ООД, гр. Асеновград",
-        "resource": "Неметални полезни изкопаеми - индустриални минерали",
-        "municipality": "Асеновград",
-        "province": "Пловдив",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "aece63a8-212e-4be0-801f-cb95eb5d0a30",
-            "concessionId": "216-306",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/aece63a8-212e-4be0-801f-cb95eb5d0a30",
-            "searchText": "216-306/28.03.2024 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) - неметални полезни изкопаеми - индустриални минерали - мрамори, от находище “Делчевото - 2“, участък „Делчевото - 2 юг“, разположено в землището на с. Горнослав, община Асеновград, област Пловдив | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -6962,33 +7894,6 @@
         "priority": 4
       },
       {
-        "id": "216-406",
-        "concessionId": "216-406",
-        "name": "Карлуково",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "5",
-        "inventoryStatus": "active",
-        "concessionaire": "Държавно предприятие \"Национална компания \"Железопътна инфраструктура\"",
-        "resource": "Строителни материали",
-        "municipality": "Луковит",
-        "province": "Ловеч",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "fe86ea15-234e-472a-aca1-eef081b4e4dd",
-            "concessionId": "216-406",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/fe86ea15-234e-472a-aca1-eef081b4e4dd",
-            "searchText": "216-406/18.02.2026 | Открита | Отворена | Концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - варовици, представляващи изключителна държавна собственост, от находище „Карлуково“, разположено в землището на с. Карлуково, община Луковит, област Ловеч | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "D-000736",
         "concessionId": "D-000736",
         "name": "Карнобат (Средния Кайряк)",
@@ -7961,33 +8866,6 @@
         "priority": 4
       },
       {
-        "id": "216-379",
-        "concessionId": "216-379",
-        "name": "Кралево-2",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "7",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Автомагистрали - Черно море\" АД, гр. Шумен",
-        "resource": "Строителни материали",
-        "municipality": "Търговище",
-        "province": "Търговище",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "1035efec-4c1d-4ab5-bd22-6c21e6b617a9",
-            "concessionId": "216-379",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/1035efec-4c1d-4ab5-bd22-6c21e6b617a9",
-            "searchText": "216-379/31.07.2025 | Открита | Отворена | КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 5 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА - СТРОИТЕЛНИ МАТЕРИАЛИ - ВАРОВИЦИ, ОТ НАХОДИЩЕ „КРАЛЕВО-2“, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. КРАЛЕВО, ОБЩИНА ТЪРГОВИЩЕ, ОБЛАСТ ТЪРГОВИЩЕ | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "D-000622",
         "concessionId": "D-000622",
         "name": "Крачола, у-к \"Централен\"",
@@ -8577,33 +9455,6 @@
             "concessionId": "D-000438",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/dac90a87-68af-4783-8450-7f59c20f9863",
             "searchText": "D-000438 | Открита | Отворена | Концесия за добив от находище \"Лахъма\", област Сливен, община Котел, населено място Котел | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
-        "id": "216-124",
-        "concessionId": "216-124",
-        "name": "Лемище, у-к \"Лемище - изток\" и у-к \"Лемище - запад\"",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "36",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Пътища М\" ЕООД, гр. Монтана",
-        "resource": "Строителни материали",
-        "municipality": "Бойчиновци",
-        "province": "Монтана",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
-            "concessionId": "216-124",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
-            "searchText": "216-124/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясъци и чакъли, от находище “Лемище“, участък „Лемище - изток“ и участък „Лемище - запад“, разположено в землището на с. Владимирово, община Бойчиновци, област Монтана, описано в Акт за изключителна държавна собственост № 1695/13.02.2020г., утвърден от министъра на регионалното развитие и благоустройството | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -11047,33 +11898,6 @@
             "concessionId": "D-000753",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b192be77-72b0-43ac-bcd6-0f3dc021fe7d",
             "searchText": "D-000753 | Открита | Отворена | Концесия за добив от находище \"Равнище - 2\", участъци \"Централен\" и \"Източен\", област Враца, община Мездра, населено място Върбешница | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
-        "id": "216-123",
-        "concessionId": "216-123",
-        "name": "Раденка, у-ци \"Урвата\", \"Лозята\" и \"Кавака\"",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "35",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Дес-М\" ООД, с. Крушево",
-        "resource": "Скално-облицовъчни материали",
-        "municipality": "Гърмен",
-        "province": "Благоевград",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
-            "concessionId": "216-123",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
-            "searchText": "216-123/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - гнайси, представляващи изключителна държавна собственост, съгласно Акт за изключителна държавна собственост № 1703/23.06.2020г. от находище „Раденка“, участъци „Урвата“, „Лозята“ и „Кавака“, разположено в землището на с. Крушево, община Гърмен, област Благоевград, описано в Акт за изключителна държавна собственост № 1703 от 23 юни 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -13542,33 +14366,6 @@
         "priority": 4
       },
       {
-        "id": "216-125",
-        "concessionId": "216-125",
-        "name": "Хитрино - 3",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "34",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Автомагистрали - Черно море\" АД, гр. Шумен",
-        "resource": "Строителни материали",
-        "municipality": "Хитрино",
-        "province": "Шумен",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "a8385e76-7680-4d0e-9fcd-1a193496c9c4",
-            "concessionId": "216-125",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a8385e76-7680-4d0e-9fcd-1a193496c9c4",
-            "searchText": "216-125/21.10.2021 | Открита | Отворена | Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - варовици, представляващи изключителна държавна собственост, от находище “Хитрино - 3“, разположено в землището на с. Сливак, община Хитрино, област Шумен, описано в Акт за изключителна държавна собственост № 1700 от 24 април 2020 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск. | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "D-000826",
         "concessionId": "D-000826",
         "name": "Хитрино-4",
@@ -13645,33 +14442,6 @@
             "concessionId": "D-000573",
             "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a00c0745-221d-4799-865a-204c65941250",
             "searchText": "D-000573 | Открита | Отворена | Концесия за добив от НАХОДИЩЕ \"ХУМНИ ДОЛ\", УЧАСТЪК \"СЕВЕР\" И УЧАСТЪК \"ЮЖЕН\", област Хасково, община Тополовград, населено място Доброселец | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
-        "id": "216-128",
-        "concessionId": "216-128",
-        "name": "Цар Асен - 2",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "32",
-        "inventoryStatus": "active",
-        "concessionaire": "\"ХОЛДИНГ КЦМ 2000\" АД",
-        "resource": "Метални полезни изкопаеми",
-        "municipality": "Пазарджик",
-        "province": "Пазарджик",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "25758e4f-abd5-4f0e-a62d-c51b268eeaea",
-            "concessionId": "216-128",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25758e4f-abd5-4f0e-a62d-c51b268eeaea",
-            "searchText": "216-128/21.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 1 от ЗПБ - метални полезни изкопаеми - медни руди, представляващи изключителна държавна собственост, от находище „Цар Асен - 2“, разположено в землището на с. Цар Асен, община Пазарджик, област Пазарджик, описано в Акт за изключителна държавна собственост № 1331 от 29 ноември 2012 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
           }
         ],
         "priority": 4
@@ -14777,33 +15547,6 @@
         "priority": 4
       },
       {
-        "id": "216-261",
-        "concessionId": "216-261",
-        "name": "Янаклъка",
-        "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "queueSource": "national-inventory",
-        "sourceRowNo": "17",
-        "inventoryStatus": "active",
-        "concessionaire": "\"Европът 2005\" ООД, гр. Хасково",
-        "resource": "Строителни материали",
-        "municipality": "Димитровград",
-        "province": "Хасково",
-        "concessionIdCollision": false,
-        "nkrParties": [
-          {
-            "guid": "438f7022-208e-49d9-8e18-caf95c2b4aa8",
-            "concessionId": "216-261",
-            "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/438f7022-208e-49d9-8e18-caf95c2b4aa8",
-            "searchText": "216-261/04.08.2023 | Открита | Отворена | Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - доломитни мрамори, представляващи изключителна държавна собственост, от находище “Янаклъка“, разположено в землището на с. Добрич, община Димитровград, област Хасково | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-          }
-        ],
-        "priority": 4
-      },
-      {
         "id": "216-259",
         "concessionId": "216-259",
         "name": "Ясака",
@@ -14906,13 +15649,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-05T08:32:28Z",
+    "sourceHealthCheckedAt": "2026-10-05T08:44:06Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-05T08:32:01Z",
+        "checkedAt": "2026-10-05T08:43:38Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -14920,7 +15663,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:32:12Z",
+        "checkedAt": "2026-10-05T08:43:50Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
@@ -14931,19 +15674,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:32:26Z",
+        "checkedAt": "2026-10-05T08:44:04Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 46023,
-        "digest": "a1c306220359c7c3021f58cd8eb13ea99366d2453f676270f9dd402c22f634c7"
+        "digest": "1299d2825cea75b8ea96964f0d4058e12bd4c500511bc01f1435ce3684fb1d7f"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-05T08:32:27Z",
+        "checkedAt": "2026-10-05T08:44:05Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51607,
-        "digest": "da5d8a80af497c9747276af280a5ecc9825864a4498183167ead999db9b5fabe"
+        "digest": "2b9ecd23fdfd8bca7184ba5fc10032bcc31c7951d813747474ef36095471402c"
       }
     ],
     "coverage": {
@@ -14953,10 +15696,10 @@
       "includesClosedOrExpiredConcessionsWhenLegacyImpactRemains": true,
       "includesAbandonedMiningWasteFacilities": true,
       "note": "Legal concession boundary and developed/disturbed footprint are separate geometries.",
-      "publishedOfficialRegisterPolygons": 2,
-      "pendingOfficialRecords": 528,
+      "publishedOfficialRegisterPolygons": 8,
+      "pendingOfficialRecords": 522,
       "inventoryRecordCount": 530,
-      "pendingWithNkrParty": 518
+      "pendingWithNkrParty": 512
     },
     "baselineBuilder": {
       "id": "official-coordinate-registers-v1",
@@ -14972,14 +15715,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-05T08:32:27Z",
+      "checkedAt": "2026-10-05T08:44:05Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51607,
-      "digest": "da5d8a80af497c9747276af280a5ecc9825864a4498183167ead999db9b5fabe"
+      "digest": "2b9ecd23fdfd8bca7184ba5fc10032bcc31c7951d813747474ef36095471402c"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-05T08:31:59Z"
+    "concessionsBaseline": "2026-10-05T08:43:35Z"
   }
 }

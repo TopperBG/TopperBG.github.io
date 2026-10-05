@@ -1,11 +1,11 @@
 {
   "schema": "bgwf-nkr-attachment-index-v1",
-  "generatedAt": "2026-10-05T08:31:59Z",
+  "generatedAt": "2026-10-05T08:43:34Z",
   "runtimeDependency": false,
   "knownLinkCount": 455,
-  "archivedOkCount": 55,
-  "downloadedThisRun": 21,
-  "downloadedBytesThisRun": 64191002,
+  "archivedOkCount": 107,
+  "downloadedThisRun": 60,
+  "downloadedBytesThisRun": 24133899,
   "errors": [],
   "files": {
     "7cff2f84-1391-4609-8f60-cc5309647fa9": {
@@ -2624,6 +2624,9 @@
       "fileId": "400fc1c4-f31b-49c2-ad36-f02eb5a2fd52",
       "url": "https://nkr.government.bg/File/Download/400fc1c4-f31b-49c2-ad36-f02eb5a2fd52",
       "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 1007 на Министерския съвет от 14 декември 2022г. за отказ от предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали – пясъци и чакъли от находище „Марудниците“, участък „Марудниците-изток“, разположено в землищата на с. Чепинци и с. Негован, Столична община, област София, и за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – пясъци и чакъли от находище „Марудниците“, участък „Марудниците-запад“, разположено в землищата на с. Чепинци и с. Негован, Столична община, област София на „Холсим България“ АД, с. Бели извор, община Враца",
+      "publishedAt": "30.06.2023 г.",
       "partyGuids": [
         "c2a920d2-82a4-47fd-9ff6-a3ff49811210"
       ],
@@ -2635,7 +2638,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:45Z",
+      "checkedAt": "2026-10-05T08:42:14Z",
       "filename": "%D0%A0%D0%9C%D0%A1%201007-2022.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2646,9 +2649,98 @@
       "extractor": "pypdf",
       "textChars": 22808,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 29,
+      "coordinateClassCounts": {
+        "BGS1970": 7,
+        "BGS2005": 22
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 483,
+          "a": 4610207.8,
+          "b": 8505920.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 2,
+          "line": 487,
+          "a": 4610219.5,
+          "b": 8505925.5,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 3,
+          "line": 488,
+          "a": 4610335.2,
+          "b": 8506000.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 4,
+          "line": 489,
+          "a": 4610335.5,
+          "b": 8506000.3,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 5,
+          "line": 490,
+          "a": 4610495.9,
+          "b": 8506045.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 491,
+          "a": 4609967.6,
+          "b": 8506511.9,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 7,
+          "line": 492,
+          "a": 4609803.2,
+          "b": 8506338.3,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 1,
+          "line": 512,
+          "a": 4738454.3,
+          "b": 328105.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 516,
+          "a": 4738448.0,
+          "b": 328199.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 517,
+          "a": 4738440.0,
+          "b": 328218.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 518,
+          "a": 4738399.8,
+          "b": 328247.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 519,
+          "a": 4738388.5,
+          "b": 328263.8,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "105a0d36-a1e6-4faa-90e7-8315c28958bc": {
       "fileId": "105a0d36-a1e6-4faa-90e7-8315c28958bc",
@@ -2684,6 +2776,9 @@
       "fileId": "33c862d4-1667-4052-abd9-5e89c30503e1",
       "url": "https://nkr.government.bg/File/Download/33c862d4-1667-4052-abd9-5e89c30503e1",
       "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № СЗ-40-ПР/2024г., издадено от директора на РИОСВ-Стара Загора, за инвестиционно предложение \"Кариера за добив на скалнооблицовъчни материали \"Градец-2\" в землището на с. Градец, община Котел и възложител \"Ескана\" АД, гр. Варна\".",
+      "publishedAt": "18.09.2024 г.",
       "partyGuids": [
         "3bcb22a2-ae09-4883-8da2-6633e5276f3b"
       ],
@@ -2695,7 +2790,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:52Z",
+      "checkedAt": "2026-10-05T08:42:16Z",
       "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%E2%84%96%D0%A1%D0%97-40-%D0%9F%D0%A0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2706,6 +2801,7 @@
       "extractor": "pypdf",
       "textChars": 35319,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -2714,6 +2810,9 @@
       "fileId": "40f65bce-ec89-4ef2-b97d-2300198c3a03",
       "url": "https://nkr.government.bg/File/Download/40f65bce-ec89-4ef2-b97d-2300198c3a03",
       "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с вх. № Е-92-00-913/05.09.2024г. на МЕ, с което директорът на РИОСВ-Стара Загора уведомява за датата на влизане в сила на Решение № СЗ-40-ПР/2024г.",
+      "publishedAt": "18.09.2024 г.",
       "partyGuids": [
         "3bcb22a2-ae09-4883-8da2-6633e5276f3b"
       ],
@@ -2725,7 +2824,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:53Z",
+      "checkedAt": "2026-10-05T08:42:17Z",
       "filename": "%D0%9F%D0%B8%D1%81%D0%BC%D0%BE%20%D0%A0%D0%98%D0%9E%D0%A1%D0%92-%D0%A1%D1%82%D0%B0%D1%80%D0%B0%20%D0%97%D0%B0%D0%B3%D0%BE%D1%80%D0%B0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2736,6 +2835,7 @@
       "extractor": "pypdf",
       "textChars": 1425,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -2774,6 +2874,9 @@
       "fileId": "e3c69665-f042-40b4-9193-4c304e0f7e86",
       "url": "https://nkr.government.bg/File/Download/e3c69665-f042-40b4-9193-4c304e0f7e86",
       "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "",
+      "publishedAt": "13.07.2023 г.",
       "partyGuids": [
         "3bcb22a2-ae09-4883-8da2-6633e5276f3b"
       ],
@@ -2785,7 +2888,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:55Z",
+      "checkedAt": "2026-10-05T08:42:18Z",
       "filename": "23RH059_Gradec-2.doc",
       "extension": ".doc",
       "contentType": "application/octet-stream",
@@ -2796,9 +2899,83 @@
       "extractor": "antiword",
       "textChars": 23896,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 10,
+      "coordinateClassCounts": {
+        "BGS2005": 10
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 504,
+          "a": 4740891.9,
+          "b": 585943.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 504,
+          "a": 4740886.5,
+          "b": 586014.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 504,
+          "a": 4740609.8,
+          "b": 586498.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 505,
+          "a": 4740511.0,
+          "b": 586667.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 511,
+          "a": 4740370.4,
+          "b": 586557.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 512,
+          "a": 4740477.1,
+          "b": 586429.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 513,
+          "a": 4740436.1,
+          "b": 586378.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 514,
+          "a": 4740329.1,
+          "b": 586324.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 515,
+          "a": 4740324.0,
+          "b": 586161.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 516,
+          "a": 4740571.8,
+          "b": 585948.4,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "bc4d6cf1-a2b6-494b-bf29-869c4e49fb1c": {
       "fileId": "bc4d6cf1-a2b6-494b-bf29-869c4e49fb1c",
@@ -2834,6 +3011,9 @@
       "fileId": "f7fd9d73-16b0-47db-8769-4d9c45852a82",
       "url": "https://nkr.government.bg/File/Download/f7fd9d73-16b0-47db-8769-4d9c45852a82",
       "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 50 на Министерския съвет от 23 януари 2023г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – пясъци и чакъли, от находище „Вела“, участък „Север“ и участък „Юг“, разположено в землището на гр. Вълчедръм, община Вълчедръм, област Монтана, на „Катерина - Г и М“ ЕООД, гр. Вълчедръм",
+      "publishedAt": "12.09.2023 г.",
       "partyGuids": [
         "587ec46f-549c-42a3-821a-e229fa73ff6d"
       ],
@@ -2845,7 +3025,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:32:02Z",
+      "checkedAt": "2026-10-05T08:42:24Z",
       "filename": "%D0%A0%D0%9C%D0%A1%2050-2023.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2856,14 +3036,105 @@
       "extractor": "pypdf",
       "textChars": 23457,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 23,
+      "coordinateClassCounts": {
+        "BGS2005": 23
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 509,
+          "a": 4844785.2,
+          "b": 336132.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 509,
+          "a": 4844789.2,
+          "b": 336184.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 510,
+          "a": 4844746.6,
+          "b": 336253.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 511,
+          "a": 4844699.8,
+          "b": 336329.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 512,
+          "a": 4844720.2,
+          "b": 336499.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 513,
+          "a": 4844720.0,
+          "b": 336507.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 514,
+          "a": 4844419.9,
+          "b": 336294.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 515,
+          "a": 4844081.8,
+          "b": 336222.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 516,
+          "a": 4844082.1,
+          "b": 336212.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 517,
+          "a": 4844173.7,
+          "b": 336164.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 518,
+          "a": 4844326.0,
+          "b": 336143.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 519,
+          "a": 4844506.4,
+          "b": 336054.2,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "2fe6f59f-30f9-4e6e-b84d-b1aebadc7359": {
       "fileId": "2fe6f59f-30f9-4e6e-b84d-b1aebadc7359",
       "url": "https://nkr.government.bg/File/Download/2fe6f59f-30f9-4e6e-b84d-b1aebadc7359",
       "title": "Свали",
+      "documentType": "Електронен образ на приложение към концесионния договор",
+      "description": "Съвместна схема на концесионната площ и на находище „Коларци“; Координатен регистър на граничните точки на концесионната площ в координатна система „БГС 2005“, тип на координатите: кадастрални; Специализирана карта на находище „Коларци”; Отчетна форма по чл. 8, ал. 2, т. 6, б. ”а”; Акт № 1681/10.09.2019г. за изключителна държавна собственост",
+      "publishedAt": "10.10.2023 г.",
       "partyGuids": [
         "23b168e4-8877-4cda-8a4a-a91303336c6b"
       ],
@@ -2875,7 +3146,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:32:03Z",
+      "checkedAt": "2026-10-05T08:42:00Z",
       "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9A%D0%BE%D0%BB%D0%B0%D1%80%D1%86%D0%B8.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2886,6 +3157,7 @@
       "extractor": "pypdf",
       "textChars": 30,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -2894,6 +3166,9 @@
       "fileId": "6954ab6a-42d5-46ae-a5c0-d422020ad053",
       "url": "https://nkr.government.bg/File/Download/6954ab6a-42d5-46ae-a5c0-d422020ad053",
       "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 425 на Министерския съвет от 5 юни 2023г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства – скалнооблицовъчни материали – варовици, от находище „Коларци“, разположено в землището на с. Брестница, община Тервел, област Добрич",
+      "publishedAt": "10.10.2023 г.",
       "partyGuids": [
         "23b168e4-8877-4cda-8a4a-a91303336c6b"
       ],
@@ -2905,7 +3180,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:32:04Z",
+      "checkedAt": "2026-10-05T08:42:25Z",
       "filename": "%D0%A0%D0%9C%D0%A1%20425-2023-.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2916,9 +3191,97 @@
       "extractor": "pypdf",
       "textChars": 21420,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 29,
+      "coordinateClassCounts": {
+        "BGS2005": 29
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 458,
+          "a": 4862141.6,
+          "b": 665997.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 458,
+          "a": 4862145.7,
+          "b": 666170.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 459,
+          "a": 4862097.7,
+          "b": 666273.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 460,
+          "a": 4862077.1,
+          "b": 666339.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 461,
+          "a": 4862091.5,
+          "b": 666468.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 462,
+          "a": 4862138.0,
+          "b": 666502.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 463,
+          "a": 4862068.9,
+          "b": 666579.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 464,
+          "a": 4862097.2,
+          "b": 666602.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 465,
+          "a": 4862085.9,
+          "b": 666629.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 466,
+          "a": 4862033.2,
+          "b": 666689.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 467,
+          "a": 4862010.6,
+          "b": 666723.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 468,
+          "a": 4862002.9,
+          "b": 666743.7,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "9703b5af-b6f7-452c-9496-005db4db20ac": {
       "fileId": "9703b5af-b6f7-452c-9496-005db4db20ac",
@@ -2964,6 +3327,9 @@
       "fileId": "be5f75f1-c008-490a-a242-40ccf0c230e0",
       "url": "https://nkr.government.bg/File/Download/be5f75f1-c008-490a-a242-40ccf0c230e0",
       "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 863 на Министерския съвет от 2022 г. за предоставяне на концесия за добив на подземни богатства чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) – неметални полезни изкопаеми – индустриални минерали - мрамори, от находище “Делчевото - 2“, участък „Делчевото – 2 юг“, разположено в землището на с. Горнослав, община Асеновград, област Пловдив",
+      "publishedAt": "28.03.2024 г.",
       "partyGuids": [
         "aece63a8-212e-4be0-801f-cb95eb5d0a30"
       ],
@@ -2975,7 +3341,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:32:10Z",
+      "checkedAt": "2026-10-05T08:42:27Z",
       "filename": "%D0%A0%D0%9C%D0%A1%20863-2022.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2986,9 +3352,98 @@
       "extractor": "pypdf",
       "textChars": 21508,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 36,
+      "coordinateClassCounts": {
+        "BGS1970": 18,
+        "BGS2005": 18
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 448,
+          "a": 4519068.6,
+          "b": 8632500.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 2,
+          "line": 449,
+          "a": 4519081.0,
+          "b": 8632533.8,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 3,
+          "line": 450,
+          "a": 4519101.0,
+          "b": 8632565.6,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 4,
+          "line": 451,
+          "a": 4519073.0,
+          "b": 8632643.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 5,
+          "line": 452,
+          "a": 4519085.0,
+          "b": 8632724.4,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 453,
+          "a": 4519099.7,
+          "b": 8632760.5,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 7,
+          "line": 454,
+          "a": 4519120.4,
+          "b": 8632808.1,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 8,
+          "line": 455,
+          "a": 4519150.2,
+          "b": 8632854.3,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 9,
+          "line": 456,
+          "a": 4519154.7,
+          "b": 8632882.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 10,
+          "line": 457,
+          "a": 4519169.2,
+          "b": 8632910.9,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 11,
+          "line": 458,
+          "a": 4519179.5,
+          "b": 8632928.6,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 12,
+          "line": 459,
+          "a": 4519197.5,
+          "b": 8632985.4,
+          "crsClass": "BGS1970"
+        }
+      ]
     },
     "f3769841-b69c-4edc-bccb-9e6c95ac85ad": {
       "fileId": "f3769841-b69c-4edc-bccb-9e6c95ac85ad",
@@ -3676,6 +4131,2960 @@
           "crsClass": "BGS2005"
         }
       ]
+    },
+    "5c03fc37-4685-4876-86b2-312a08d83de0": {
+      "fileId": "5c03fc37-4685-4876-86b2-312a08d83de0",
+      "url": "https://nkr.government.bg/File/Download/5c03fc37-4685-4876-86b2-312a08d83de0",
+      "title": "Свали",
+      "documentType": "Електронен образ на приложение към концесионния договор",
+      "description": "Приложения към концесионния договор: - Схема на концесионната площ; - Специализирана карта на находището; - Отчетна форма за дължимо концесионно плащане; - АИДС № 1174/30.07.2010г.",
+      "publishedAt": "09.09.2024 г.",
+      "partyGuids": [
+        "5818d14f-35b9-4e9a-9e06-8a7f9ab8a6fb"
+      ],
+      "inventoryIds": [
+        "216-328"
+      ],
+      "concessionIds": [
+        "216-328"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:05Z",
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1168275,
+      "sha256": "cb3a5147acc95206a90d2a49d525282931ec0067e103944b805d69474e181764",
+      "archivePath": "source-archive/concessions/nkr-attachments/cb3a5147acc95206a90d2a49d525282931ec0067e103944b805d69474e181764.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cb3a5147acc95206a90d2a49d525282931ec0067e103944b805d69474e181764.txt",
+      "extractor": "pypdf",
+      "textChars": 11655,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 1,
+      "coordinateClassCounts": {
+        "BGS1970": 1
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 5,
+          "line": 50,
+          "a": 4618461.0,
+          "b": 8467422.0,
+          "crsClass": "BGS1970"
+        }
+      ]
+    },
+    "ef59791e-8b66-4c75-9a0c-f59449b13ffe": {
+      "fileId": "ef59791e-8b66-4c75-9a0c-f59449b13ffe",
+      "url": "https://nkr.government.bg/File/Download/ef59791e-8b66-4c75-9a0c-f59449b13ffe",
+      "title": "Свали",
+      "documentType": "Електронен образ на приложение към допълнително споразумение",
+      "description": "Приложения към допълнително споразумение № 2 от 27 октомври 2023г.: Приложение № 1 - „Координатен регистър на граничните точки на концесионната площ на находище „Студена – участък ІІІ“, в координатна система „1970г.“ , в координатна система „БГС 2005“, тип на координатите: кадастрални“ Приложение № 2 - Схема на концесионната площ и Специализирана карта на находище „Студена-участък III“. Приложение № 3 – Отчет за дължимото концесионно плащане за добив на подземни богатства.",
+      "publishedAt": "30.10.2023 г.",
+      "partyGuids": [
+        "b9bdbd1e-5793-4a6e-8448-1b43322df881"
+      ],
+      "inventoryIds": [
+        "D-000282"
+      ],
+      "concessionIds": [
+        "D-000282"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:09Z",
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BA%D1%8A%D0%BC%20%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202-27-10-23.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1764835,
+      "sha256": "95103aa9baf053366835381e336115d4a9185870ba1bf54d99969029212a0468",
+      "archivePath": "source-archive/concessions/nkr-attachments/95103aa9baf053366835381e336115d4a9185870ba1bf54d99969029212a0468.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/95103aa9baf053366835381e336115d4a9185870ba1bf54d99969029212a0468.txt",
+      "extractor": "pypdf",
+      "textChars": 7324,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "ac479b8e-66e2-4b67-b8a4-78783bdcc6cd": {
+      "fileId": "ac479b8e-66e2-4b67-b8a4-78783bdcc6cd",
+      "url": "https://nkr.government.bg/File/Download/ac479b8e-66e2-4b67-b8a4-78783bdcc6cd",
+      "title": "Свали",
+      "documentType": "Електронен образ на приложение към допълнително споразумение",
+      "description": "Приложение № 1 – Акт за изключителна държавна собственост № 1772/07.02.2023г. Приложение № 2 Схема на концесионната площ на находище „Каменец“; Координатен регистър на граничните точки на концесионната площ в координатна система „БГС 2005“, тип на координатите: кадастрални; Специализирана карта на находище „Каменец“; Приложение № 3 – Образец – отчет за дължимото концесионно плащане;",
+      "publishedAt": "25.09.2023 г.",
+      "partyGuids": [
+        "7ba38774-24fa-4f84-8a46-76b8a3603b93"
+      ],
+      "inventoryIds": [
+        "O-000794"
+      ],
+      "concessionIds": [
+        "O-000794"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:12Z",
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BA%D1%8A%D0%BC%20%D0%94%D0%A1%203-19-09-23.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1096056,
+      "sha256": "9b85b12b53d687704af15c7d6f2de438447e38942dac1d3cd596204086b4fb32",
+      "archivePath": "source-archive/concessions/nkr-attachments/9b85b12b53d687704af15c7d6f2de438447e38942dac1d3cd596204086b4fb32.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9b85b12b53d687704af15c7d6f2de438447e38942dac1d3cd596204086b4fb32.txt",
+      "extractor": "pypdf",
+      "textChars": 13192,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "51561055-a071-40ac-8095-7cd7c2bd29bc": {
+      "fileId": "51561055-a071-40ac-8095-7cd7c2bd29bc",
+      "url": "https://nkr.government.bg/File/Download/51561055-a071-40ac-8095-7cd7c2bd29bc",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 1003 на Министерския съвет от 14 декември 2022г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства – скалнооблицовъчни материали – варовици от находище „Царевец“, участъци „Запад- 2007 (Искър), „Централен-2007“ и „Царевец 2-2007“, разположено в землището на с. Царевец, община Мездра, област Враца, на „Хемус-М“ АД",
+      "publishedAt": "19.07.2023 г.",
+      "partyGuids": [
+        "4bb29997-ec53-4b6a-9044-6845d881524b"
+      ],
+      "inventoryIds": [
+        "216-258"
+      ],
+      "concessionIds": [
+        "216-258"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:20Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%201003-2022.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 551226,
+      "sha256": "ff20fb21f50c90146e585d138c91cab388b15e23b20ab328425325fbfa3b17e5",
+      "archivePath": "source-archive/concessions/nkr-attachments/ff20fb21f50c90146e585d138c91cab388b15e23b20ab328425325fbfa3b17e5.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ff20fb21f50c90146e585d138c91cab388b15e23b20ab328425325fbfa3b17e5.txt",
+      "extractor": "pypdf",
+      "textChars": 23097,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 32,
+      "coordinateClassCounts": {
+        "BGS2005": 32
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 512,
+          "a": 4779584.9,
+          "b": 361599.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 512,
+          "a": 4779618.8,
+          "b": 361720.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 513,
+          "a": 4779549.6,
+          "b": 361733.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 514,
+          "a": 4779526.1,
+          "b": 361543.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 1,
+          "line": 517,
+          "a": 4779676.8,
+          "b": 361797.2,
+          "crsClass": "BGS2005",
+          "duplicateConflict": true
+        },
+        {
+          "pointNo": 2,
+          "line": 518,
+          "a": 4779761.5,
+          "b": 361801.4,
+          "crsClass": "BGS2005",
+          "duplicateConflict": true
+        },
+        {
+          "pointNo": 3,
+          "line": 519,
+          "a": 4779830.1,
+          "b": 361790.2,
+          "crsClass": "BGS2005",
+          "duplicateConflict": true
+        },
+        {
+          "pointNo": 4,
+          "line": 520,
+          "a": 4779890.1,
+          "b": 361857.5,
+          "crsClass": "BGS2005",
+          "duplicateConflict": true
+        },
+        {
+          "pointNo": 5,
+          "line": 521,
+          "a": 4779858.2,
+          "b": 361926.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 522,
+          "a": 4779808.3,
+          "b": 361925.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 523,
+          "a": 4779666.7,
+          "b": 362161.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 524,
+          "a": 4779538.5,
+          "b": 362277.0,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "46e090ba-90a5-48e0-a32b-12bfbaa1e75b": {
+      "fileId": "46e090ba-90a5-48e0-a32b-12bfbaa1e75b",
+      "url": "https://nkr.government.bg/File/Download/46e090ba-90a5-48e0-a32b-12bfbaa1e75b",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 1005 на Министерския съвет от 14 декември 2022г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от ЗПБ – строителни материали - варовици, от находище „Ясака“, разположено в землището на с. Орляне, община Угърчин, област Ловеч, на „Геоцвет“ ЕООД, гр. Ловеч",
+      "publishedAt": "20.07.2023 г.",
+      "partyGuids": [
+        "03d5bcd4-1666-45a0-a477-bd46ec85d0fe"
+      ],
+      "inventoryIds": [
+        "216-259"
+      ],
+      "concessionIds": [
+        "216-259"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:21Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%201005-2022.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 185192,
+      "sha256": "833e1a0160b5652401bcdd5d6245b7f3fad4aa5766b5bba4bdf3b7c815228f6b",
+      "archivePath": "source-archive/concessions/nkr-attachments/833e1a0160b5652401bcdd5d6245b7f3fad4aa5766b5bba4bdf3b7c815228f6b.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/833e1a0160b5652401bcdd5d6245b7f3fad4aa5766b5bba4bdf3b7c815228f6b.txt",
+      "extractor": "pypdf",
+      "textChars": 36,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "1814d064-15d3-4662-87d2-ce4f3b852931": {
+      "fileId": "1814d064-15d3-4662-87d2-ce4f3b852931",
+      "url": "https://nkr.government.bg/File/Download/1814d064-15d3-4662-87d2-ce4f3b852931",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "РЕШЕНИЕ № 426 ОТ 5 ЮНИ 2023 ГОДИНА ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 5 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – ДОЛОМИТНИ МРАМОРИ, ОТ НАХОДИЩЕ „ЯНАКЛЪКА”, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. ДОБРИЧ, ОБЩИНА ДИМИТРОВГРАД, ОБЛАСТ ХАСКОВО, НА „ЕВРОПЪТ 2005” ООД - ГР. ХАСКОВО",
+      "publishedAt": "04.08.2023 г.",
+      "partyGuids": [
+        "438f7022-208e-49d9-8e18-caf95c2b4aa8"
+      ],
+      "inventoryIds": [
+        "216-261"
+      ],
+      "concessionIds": [
+        "216-261"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:22Z",
+      "filename": "23RH426%20%D0%AF%D0%BD%D0%B0%D0%BA%D0%BB%D1%8A%D0%BA%D0%B0.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 108032,
+      "sha256": "fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae",
+      "archivePath": "source-archive/concessions/nkr-attachments/fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/fa476b17c92e84b6bbe0f48e392d5b5bb45251c436f3da3317c9844f640c2aae.txt",
+      "extractor": "antiword",
+      "textChars": 21565,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 14,
+      "coordinateClassCounts": {
+        "BGS2005": 14
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 460,
+          "a": 4652207.3,
+          "b": 503093.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 460,
+          "a": 4652130.9,
+          "b": 503245.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 463,
+          "a": 4652088.2,
+          "b": 503460.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 464,
+          "a": 4652090.5,
+          "b": 503586.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 465,
+          "a": 4652327.4,
+          "b": 503576.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 466,
+          "a": 4652329.0,
+          "b": 503729.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 467,
+          "a": 4652190.0,
+          "b": 503730.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 468,
+          "a": 4652111.0,
+          "b": 503731.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 469,
+          "a": 4652071.9,
+          "b": 503633.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 470,
+          "a": 4651976.3,
+          "b": 503394.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 471,
+          "a": 4651887.8,
+          "b": 503172.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 472,
+          "a": 4651831.7,
+          "b": 503032.3,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "a942b881-480b-48a3-8408-35dfa03b3747": {
+      "fileId": "a942b881-480b-48a3-8408-35dfa03b3747",
+      "url": "https://nkr.government.bg/File/Download/a942b881-480b-48a3-8408-35dfa03b3747",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо относно изпълнение на т. 9.6 от Решение № 42 на Министерския съвет от 23 януари 2024 г. (обн. ДВ, бр. 8 от 2024 г.)",
+      "publishedAt": "04.08.2026 г.",
+      "partyGuids": [
+        "ca4e57a8-6083-420e-956a-bba52e44a828"
+      ],
+      "inventoryIds": [
+        "216-308"
+      ],
+      "concessionIds": [
+        "216-308"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:28Z",
+      "filename": "Pismo Dervent-jug Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 349493,
+      "sha256": "ca4c6b22081e27f8a840f615f0cf4665a60eea336f4c46393a4d6157ea2f761e",
+      "archivePath": "source-archive/concessions/nkr-attachments/ca4c6b22081e27f8a840f615f0cf4665a60eea336f4c46393a4d6157ea2f761e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ca4c6b22081e27f8a840f615f0cf4665a60eea336f4c46393a4d6157ea2f761e.txt",
+      "extractor": "pypdf",
+      "textChars": 8149,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 1,
+      "coordinateClassCounts": {
+        "WGS84": 1
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 2024,
+          "line": 15,
+          "a": 42.0,
+          "b": 23.0,
+          "crsClass": "WGS84"
+        }
+      ]
+    },
+    "b3c7a25f-5cff-4a63-afa9-fa531fc5748e": {
+      "fileId": "b3c7a25f-5cff-4a63-afa9-fa531fc5748e",
+      "url": "https://nkr.government.bg/File/Download/b3c7a25f-5cff-4a63-afa9-fa531fc5748e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо за изменение, относно изпълнение на т. 9.6 от Решение № 42 на Министерския съвет от 23 януари 2024 г. (обн. ДВ, бр. 8 от 2024 г.)",
+      "publishedAt": "04.08.2026 г.",
+      "partyGuids": [
+        "ca4e57a8-6083-420e-956a-bba52e44a828"
+      ],
+      "inventoryIds": [
+        "216-308"
+      ],
+      "concessionIds": [
+        "216-308"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:30Z",
+      "filename": "Pismo Dervent-jug Naredba KP(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 351135,
+      "sha256": "68119fb45a025f2a29a982311057087da3de5fe77c14d14201caaad4c2d761dd",
+      "archivePath": "source-archive/concessions/nkr-attachments/68119fb45a025f2a29a982311057087da3de5fe77c14d14201caaad4c2d761dd.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/68119fb45a025f2a29a982311057087da3de5fe77c14d14201caaad4c2d761dd.txt",
+      "extractor": "pypdf",
+      "textChars": 5460,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e4bd792d-06fc-4ed5-9481-deb6ad8f8c68": {
+      "fileId": "e4bd792d-06fc-4ed5-9481-deb6ad8f8c68",
+      "url": "https://nkr.government.bg/File/Download/e4bd792d-06fc-4ed5-9481-deb6ad8f8c68",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 42 от 23 януари 2024 година за предосатвяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) – неметални полезни изкопаеми – индустриални минерали – кварцови пясъци, от находище “Дервент“, участък „Юг“, разположено в землищата на с. Юнак и с. Дъбравино, община Аврен, област Варна на \"Темос-ГМ\" ЕООД, гр. Сеново",
+      "publishedAt": "29.03.2024 г.",
+      "partyGuids": [
+        "ca4e57a8-6083-420e-956a-bba52e44a828"
+      ],
+      "inventoryIds": [
+        "216-308"
+      ],
+      "concessionIds": [
+        "216-308"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:31Z",
+      "filename": "042_2024%20%D0%94%D0%95%D0%A0%D0%92%D0%95%D0%9D%2C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D1%8A%D0%BA%20%D0%AE%D0%93.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 141824,
+      "sha256": "cb49ff2b01a7264132709551282f0a2a79ff3e11d1d6fdfd9056c635b997c7ef",
+      "archivePath": "source-archive/concessions/nkr-attachments/cb49ff2b01a7264132709551282f0a2a79ff3e11d1d6fdfd9056c635b997c7ef.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cb49ff2b01a7264132709551282f0a2a79ff3e11d1d6fdfd9056c635b997c7ef.txt",
+      "extractor": "antiword",
+      "textChars": 24205,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 22,
+      "coordinateClassCounts": {
+        "BGS2005": 22
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 409,
+          "a": 4772622.5,
+          "b": 672004.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 410,
+          "a": 4772634.1,
+          "b": 672334.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 411,
+          "a": 4772616.6,
+          "b": 672908.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 412,
+          "a": 4772019.7,
+          "b": 673128.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 413,
+          "a": 4771929.8,
+          "b": 673214.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 414,
+          "a": 4771911.5,
+          "b": 673150.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 415,
+          "a": 4771902.2,
+          "b": 672902.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 416,
+          "a": 4771983.3,
+          "b": 672836.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 417,
+          "a": 4771969.8,
+          "b": 672835.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 418,
+          "a": 4771809.0,
+          "b": 672583.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 419,
+          "a": 4771809.0,
+          "b": 672580.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 420,
+          "a": 4771756.6,
+          "b": 672672.5,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "2f3bcab6-81eb-44e4-aa7f-a5ef37809415": {
+      "fileId": "2f3bcab6-81eb-44e4-aa7f-a5ef37809415",
+      "url": "https://nkr.government.bg/File/Download/2f3bcab6-81eb-44e4-aa7f-a5ef37809415",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 593 от 3 октомври 2013г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства - неметални полезни изкопаеми - индустриални минерали - каолинова суровина от находище \"Саръгьол\", участък \"Саръгьол, гнезда 15 и 16\", разположено в землището на с. Дойранци, община Каолиново, област Шумен, чрез провеждане на търг с тайно наддаване",
+      "publishedAt": "03.04.2024 г.",
+      "partyGuids": [
+        "cc05ca2c-c86b-45c2-b104-2c62b7652f94"
+      ],
+      "inventoryIds": [
+        "216-309"
+      ],
+      "concessionIds": [
+        "216-309"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:33Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20593-2013.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 526518,
+      "sha256": "6acd6c6314824b804de1fc7f7a5a0c6ab55b031fec996a9c5a92d68ac70013af",
+      "archivePath": "source-archive/concessions/nkr-attachments/6acd6c6314824b804de1fc7f7a5a0c6ab55b031fec996a9c5a92d68ac70013af.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6acd6c6314824b804de1fc7f7a5a0c6ab55b031fec996a9c5a92d68ac70013af.txt",
+      "extractor": "pypdf",
+      "textChars": 33499,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 307,
+      "coordinateClassCounts": {
+        "BGS1970": 307
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 559,
+          "a": 4728970.2,
+          "b": 9577862.9,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 73,
+          "line": 560,
+          "a": 4728629.7,
+          "b": 9578365.1,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 2,
+          "line": 560,
+          "a": 4729033.9,
+          "b": 9577805.8,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 74,
+          "line": 561,
+          "a": 4728640.3,
+          "b": 9578354.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 3,
+          "line": 561,
+          "a": 4729046.9,
+          "b": 9577821.6,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 75,
+          "line": 562,
+          "a": 4728680.5,
+          "b": 9578364.8,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 4,
+          "line": 562,
+          "a": 4729044.6,
+          "b": 9577868.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 76,
+          "line": 563,
+          "a": 4728758.0,
+          "b": 9578448.1,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 5,
+          "line": 563,
+          "a": 4729135.1,
+          "b": 9577976.8,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 77,
+          "line": 564,
+          "a": 4728799.0,
+          "b": 9578432.3,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 564,
+          "a": 4729085.6,
+          "b": 9578036.5,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 78,
+          "line": 565,
+          "a": 4728801.1,
+          "b": 9578400.0,
+          "crsClass": "BGS1970"
+        }
+      ]
+    },
+    "d28ed44e-321d-49aa-ae91-69cc944da1a5": {
+      "fileId": "d28ed44e-321d-49aa-ae91-69cc944da1a5",
+      "url": "https://nkr.government.bg/File/Download/d28ed44e-321d-49aa-ae91-69cc944da1a5",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 43 от 23 януари 2024г. за определяне на участник в търга с тайно наддаване за концесионер за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства - неметални полезни изкопаеми - индустриални минерали – каолинова суровина, от находище „Саръгьол”, участък „Саръгьол, гнезда 15 и 16”, разположено в землището на с. Дойранци, община Каолиново, област Шумен",
+      "publishedAt": "03.04.2024 г.",
+      "partyGuids": [
+        "cc05ca2c-c86b-45c2-b104-2c62b7652f94"
+      ],
+      "inventoryIds": [
+        "216-309"
+      ],
+      "concessionIds": [
+        "216-309"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:34Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%2043-2024.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 712517,
+      "sha256": "4b29e2268d415acb3da3522697387058894b8786eb02a54004c8932c0e7ce409",
+      "archivePath": "source-archive/concessions/nkr-attachments/4b29e2268d415acb3da3522697387058894b8786eb02a54004c8932c0e7ce409.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/4b29e2268d415acb3da3522697387058894b8786eb02a54004c8932c0e7ce409.txt",
+      "extractor": "pypdf",
+      "textChars": 8638,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 14,
+      "coordinateClassCounts": {
+        "BGS2005": 14
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 197,
+          "a": 4830510.3,
+          "b": 633813.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 200,
+          "a": 4829523.7,
+          "b": 633254.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 201,
+          "a": 4829462.2,
+          "b": 632367.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 202,
+          "a": 4830403.0,
+          "b": 632279.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 203,
+          "a": 4830452.2,
+          "b": 632340.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 204,
+          "a": 4830604.9,
+          "b": 632347.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 205,
+          "a": 4830601.2,
+          "b": 632261.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 206,
+          "a": 4830947.6,
+          "b": 632226.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 207,
+          "a": 4831755.9,
+          "b": 633402.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 208,
+          "a": 4831330.8,
+          "b": 633970.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 209,
+          "a": 4831422.3,
+          "b": 634252.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 210,
+          "a": 4831359.2,
+          "b": 634350.3,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "d3f8e54e-d561-4680-ad43-afc424b7bae4": {
+      "fileId": "d3f8e54e-d561-4680-ad43-afc424b7bae4",
+      "url": "https://nkr.government.bg/File/Download/d3f8e54e-d561-4680-ad43-afc424b7bae4",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 541 на Министерския съвет от 6 август 2018г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 4 от Закона за подземните богатства - твърди горива - лигнитни въглища от находище \"Алдомировски въглищен басейн\", участък \"Радуловци\", община Сливница, Софийска област",
+      "publishedAt": "09.09.2024 г.",
+      "partyGuids": [
+        "5818d14f-35b9-4e9a-9e06-8a7f9ab8a6fb"
+      ],
+      "inventoryIds": [
+        "216-328"
+      ],
+      "concessionIds": [
+        "216-328"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:36Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20541-2018.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 342551,
+      "sha256": "9efc1cd8221e646a2d4a098e78fea5063c98766fecb89e8e3bb3423719e0e50b",
+      "archivePath": "source-archive/concessions/nkr-attachments/9efc1cd8221e646a2d4a098e78fea5063c98766fecb89e8e3bb3423719e0e50b.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9efc1cd8221e646a2d4a098e78fea5063c98766fecb89e8e3bb3423719e0e50b.txt",
+      "extractor": "pypdf",
+      "textChars": 20469,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 12,
+      "coordinateClassCounts": {
+        "BGS1970": 12
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 492,
+          "a": 4619220.0,
+          "b": 8467080.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 2,
+          "line": 495,
+          "a": 4619225.0,
+          "b": 8467400.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 3,
+          "line": 496,
+          "a": 4618955.0,
+          "b": 8468580.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 4,
+          "line": 497,
+          "a": 4618395.0,
+          "b": 8469345.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 5,
+          "line": 498,
+          "a": 4618080.0,
+          "b": 8469070.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 499,
+          "a": 4618090.0,
+          "b": 8467965.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 7,
+          "line": 500,
+          "a": 4618000.0,
+          "b": 8467540.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 8,
+          "line": 501,
+          "a": 4618075.0,
+          "b": 8467245.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 9,
+          "line": 502,
+          "a": 4618375.0,
+          "b": 8467120.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 10,
+          "line": 503,
+          "a": 4618740.0,
+          "b": 8467270.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 11,
+          "line": 504,
+          "a": 4618885.0,
+          "b": 8467265.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 12,
+          "line": 505,
+          "a": 4618900.0,
+          "b": 8467080.0,
+          "crsClass": "BGS1970"
+        }
+      ]
+    },
+    "026e3c86-c044-44d3-bebc-70dffc94c631": {
+      "fileId": "026e3c86-c044-44d3-bebc-70dffc94c631",
+      "url": "https://nkr.government.bg/File/Download/026e3c86-c044-44d3-bebc-70dffc94c631",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 865 на Министерския съвет от 13 декември 2024 г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 4 от Закона за подземните богатства (ЗПБ) – твърди горива – кафяви въглища от участък „Стара Тева“ на находище „Пернишки въглищен басейн“, разположен на територията на община Перник, област Перник",
+      "publishedAt": "17.01.2025 г.",
+      "partyGuids": [
+        "92d07c5f-5352-4cb5-a374-54060c7f349e"
+      ],
+      "inventoryIds": [
+        "216-343"
+      ],
+      "concessionIds": [
+        "216-343"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:38Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20865-2024.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 644241,
+      "sha256": "eb6464ebbc90f7e1853ce0f47e324063e1be262130577ee692193d7b63b300c2",
+      "archivePath": "source-archive/concessions/nkr-attachments/eb6464ebbc90f7e1853ce0f47e324063e1be262130577ee692193d7b63b300c2.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/eb6464ebbc90f7e1853ce0f47e324063e1be262130577ee692193d7b63b300c2.txt",
+      "extractor": "pypdf",
+      "textChars": 22116,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 4,
+      "coordinateClassCounts": {
+        "BGS2005": 4
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 475,
+          "a": 4722761.4,
+          "b": 299168.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 483,
+          "a": 4723722.4,
+          "b": 299541.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 484,
+          "a": 4723618.0,
+          "b": 300044.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 485,
+          "a": 4722761.0,
+          "b": 299588.1,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "7727738e-b7f8-4303-a64a-01ff523f9c27": {
+      "fileId": "7727738e-b7f8-4303-a64a-01ff523f9c27",
+      "url": "https://nkr.government.bg/File/Download/7727738e-b7f8-4303-a64a-01ff523f9c27",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 239 от 22 април 2025 г. на Министерския съвет за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства – скалнооблицовъчни материали – варовици, от находище „Големия връх“, разположено в землищата на с. Върбешница и с. Горна Кремена, община Мездра, област Враца, на „ЙОТОВ СТОУН“ ЕАД, гр. Мездра",
+      "publishedAt": "29.07.2025 г.",
+      "partyGuids": [
+        "81ade4e6-f86b-4c71-aa7b-4e28b5e084ca"
+      ],
+      "inventoryIds": [
+        "216-378"
+      ],
+      "concessionIds": [
+        "216-378"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:39Z",
+      "filename": "25RH239.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 118784,
+      "sha256": "2b7eb129ba3bcffc0b7d9188d6c0f48c6e69d92c2836152622d72e2aa5745637",
+      "archivePath": "source-archive/concessions/nkr-attachments/2b7eb129ba3bcffc0b7d9188d6c0f48c6e69d92c2836152622d72e2aa5745637.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2b7eb129ba3bcffc0b7d9188d6c0f48c6e69d92c2836152622d72e2aa5745637.txt",
+      "extractor": "antiword",
+      "textChars": 23223,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 30,
+      "coordinateClassCounts": {
+        "BGS2005": 30
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 570,
+          "a": 4788361.4,
+          "b": 353797.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 570,
+          "a": 4788354.7,
+          "b": 353846.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 571,
+          "a": 4788349.5,
+          "b": 354249.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 574,
+          "a": 4788311.5,
+          "b": 354348.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 574,
+          "a": 4788283.9,
+          "b": 354368.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 575,
+          "a": 4788286.6,
+          "b": 354382.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 576,
+          "a": 4788211.9,
+          "b": 354403.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 577,
+          "a": 4788213.6,
+          "b": 354340.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 578,
+          "a": 4788224.9,
+          "b": 353929.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 579,
+          "a": 4787989.0,
+          "b": 354015.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 580,
+          "a": 4787980.1,
+          "b": 354209.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 581,
+          "a": 4787947.7,
+          "b": 354385.8,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "fea0bd3a-3974-4fab-8b7b-b1a7f774486b": {
+      "fileId": "fea0bd3a-3974-4fab-8b7b-b1a7f774486b",
+      "url": "https://nkr.government.bg/File/Download/fea0bd3a-3974-4fab-8b7b-b1a7f774486b",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Писмо с изх. № Е-26-Й-14/13.02.2026г. на министъра на енергетиката до концесионера (получено на 20.02.2026 г. според получена обратна разписка)",
+      "publishedAt": "25.02.2026 г.",
+      "partyGuids": [
+        "81ade4e6-f86b-4c71-aa7b-4e28b5e084ca"
+      ],
+      "inventoryIds": [
+        "216-378"
+      ],
+      "concessionIds": [
+        "216-378"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:41Z",
+      "filename": "Pismo_Naredba KP_Golemia_vrah-clean(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 420994,
+      "sha256": "cc8934f3b04f070ab03d8ebc68fa30701fd4ca330e475aeed957a8cbaed10446",
+      "archivePath": "source-archive/concessions/nkr-attachments/cc8934f3b04f070ab03d8ebc68fa30701fd4ca330e475aeed957a8cbaed10446.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cc8934f3b04f070ab03d8ebc68fa30701fd4ca330e475aeed957a8cbaed10446.txt",
+      "extractor": "pypdf",
+      "textChars": 9429,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "4a563805-fa49-4446-b5ec-900af15e3509": {
+      "fileId": "4a563805-fa49-4446-b5ec-900af15e3509",
+      "url": "https://nkr.government.bg/File/Download/4a563805-fa49-4446-b5ec-900af15e3509",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "",
+      "publishedAt": "31.07.2025 г.",
+      "partyGuids": [
+        "1035efec-4c1d-4ab5-bd22-6c21e6b617a9"
+      ],
+      "inventoryIds": [
+        "216-379"
+      ],
+      "concessionIds": [
+        "216-379"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:42Z",
+      "filename": "Reshenie 371_06_06_2025.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 37679,
+      "sha256": "6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea",
+      "archivePath": "source-archive/concessions/nkr-attachments/6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6dc13a0f208e7cb8571c494490277f909351909385ddad95d57c240e0fa755ea.txt",
+      "extractor": "python-docx",
+      "textChars": 19554,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 16,
+      "coordinateClassCounts": {
+        "BGS2005": 16
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 139,
+          "a": 4782553.0,
+          "b": 596323.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 139,
+          "a": 4782557.5,
+          "b": 596372.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 140,
+          "a": 4782474.7,
+          "b": 596395.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 141,
+          "a": 4782430.0,
+          "b": 596431.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 142,
+          "a": 4782368.7,
+          "b": 596398.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 143,
+          "a": 4782366.0,
+          "b": 596488.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 144,
+          "a": 4782352.6,
+          "b": 596564.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 145,
+          "a": 4782273.4,
+          "b": 596945.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 146,
+          "a": 4782118.1,
+          "b": 597092.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 147,
+          "a": 4782110.3,
+          "b": 597100.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 148,
+          "a": 4782038.0,
+          "b": 596920.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 149,
+          "a": 4782063.1,
+          "b": 596724.8,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "d2521705-b672-405b-a619-4f04270239a4": {
+      "fileId": "d2521705-b672-405b-a619-4f04270239a4",
+      "url": "https://nkr.government.bg/File/Download/d2521705-b672-405b-a619-4f04270239a4",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо относно изпълнение на т. 9.6. от Решение № 371 на Министерския съвет от 6 юни 2025 г.",
+      "publishedAt": "24.02.2026 г.",
+      "partyGuids": [
+        "1035efec-4c1d-4ab5-bd22-6c21e6b617a9"
+      ],
+      "inventoryIds": [
+        "216-379"
+      ],
+      "concessionIds": [
+        "216-379"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:43Z",
+      "filename": "Kralevo-2_Pismo_nova naredba(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 352389,
+      "sha256": "4e310e22031568efdda8acdd70c6915187f415197f9e332651588796eadacce1",
+      "archivePath": "source-archive/concessions/nkr-attachments/4e310e22031568efdda8acdd70c6915187f415197f9e332651588796eadacce1.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/4e310e22031568efdda8acdd70c6915187f415197f9e332651588796eadacce1.txt",
+      "extractor": "pypdf",
+      "textChars": 7850,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "5b3b3a31-e9ab-45c8-b2c6-eb21bf03afb5": {
+      "fileId": "5b3b3a31-e9ab-45c8-b2c6-eb21bf03afb5",
+      "url": "https://nkr.government.bg/File/Download/5b3b3a31-e9ab-45c8-b2c6-eb21bf03afb5",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 483 на Министерския съвет от 21 юли 2025 г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от ЗПБ - строителни матерали - варовици, от находище \"Петров дол\", разположено в землището на с. Петров дол, община Провадия, област Варна",
+      "publishedAt": "22.12.2025 г.",
+      "partyGuids": [
+        "2558e03c-efcb-4b2a-89fe-818e81938d46"
+      ],
+      "inventoryIds": [
+        "216-392"
+      ],
+      "concessionIds": [
+        "216-392"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:45Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20483-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 615125,
+      "sha256": "df044d6ccc0efc35baca51132c72c97fc8daff218feeba75cfa0614f0e0a42f6",
+      "archivePath": "source-archive/concessions/nkr-attachments/df044d6ccc0efc35baca51132c72c97fc8daff218feeba75cfa0614f0e0a42f6.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/df044d6ccc0efc35baca51132c72c97fc8daff218feeba75cfa0614f0e0a42f6.txt",
+      "extractor": "pypdf",
+      "textChars": 20133,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 18,
+      "coordinateClassCounts": {
+        "BGS2005": 18
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 464,
+          "a": 4794905.6,
+          "b": 658542.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 464,
+          "a": 4794899.7,
+          "b": 658562.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 465,
+          "a": 4794872.1,
+          "b": 658665.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 466,
+          "a": 4794877.4,
+          "b": 658758.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 467,
+          "a": 4794879.7,
+          "b": 658798.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 468,
+          "a": 4794827.3,
+          "b": 658861.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 469,
+          "a": 4794737.7,
+          "b": 658672.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 470,
+          "a": 4794697.4,
+          "b": 658646.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 471,
+          "a": 4794598.0,
+          "b": 658639.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 472,
+          "a": 4794521.0,
+          "b": 658625.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 473,
+          "a": 4794287.0,
+          "b": 658537.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 474,
+          "a": 4794279.0,
+          "b": 658493.0,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "bf05b66f-a58b-42f3-8c0b-9d1b8df979db": {
+      "fileId": "bf05b66f-a58b-42f3-8c0b-9d1b8df979db",
+      "url": "https://nkr.government.bg/File/Download/bf05b66f-a58b-42f3-8c0b-9d1b8df979db",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 149 на Министерския съвет от 2025 г. за предоставяне на концесия за добив на подземни богатства - скалнооблицовъчни материали от находище \"Парапански камък\", област Враца",
+      "publishedAt": "05.02.2026 г.",
+      "partyGuids": [
+        "55ba1880-a059-450d-b0d4-2ef08b0fafde"
+      ],
+      "inventoryIds": [
+        "216-404"
+      ],
+      "concessionIds": [
+        "216-404"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:48Z",
+      "filename": "%D0%A0%D0%9C%D0%A1-149-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 796017,
+      "sha256": "993bf7cc0a24d0b9ac30e34b8e66edeb2c69be95056c898954e347eeca8f4475",
+      "archivePath": "source-archive/concessions/nkr-attachments/993bf7cc0a24d0b9ac30e34b8e66edeb2c69be95056c898954e347eeca8f4475.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/993bf7cc0a24d0b9ac30e34b8e66edeb2c69be95056c898954e347eeca8f4475.txt",
+      "extractor": "pypdf",
+      "textChars": 20995,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 12,
+      "coordinateClassCounts": {
+        "BGS2005": 12
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 460,
+          "a": 4779750.2,
+          "b": 363314.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 464,
+          "a": 4779852.7,
+          "b": 363460.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 465,
+          "a": 4779856.2,
+          "b": 363568.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 466,
+          "a": 4779789.0,
+          "b": 363751.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 467,
+          "a": 4779610.4,
+          "b": 363834.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 468,
+          "a": 4779558.2,
+          "b": 363834.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 469,
+          "a": 4779553.2,
+          "b": 363728.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 470,
+          "a": 4779535.4,
+          "b": 363677.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 471,
+          "a": 4779550.5,
+          "b": 363633.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 472,
+          "a": 4779530.3,
+          "b": 363575.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 473,
+          "a": 4779577.5,
+          "b": 363560.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 474,
+          "a": 4779492.0,
+          "b": 363307.1,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "225b2c5a-fafc-45a8-877d-e9200b718969": {
+      "fileId": "225b2c5a-fafc-45a8-877d-e9200b718969",
+      "url": "https://nkr.government.bg/File/Download/225b2c5a-fafc-45a8-877d-e9200b718969",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 933 от 29 декември 2025 г. за предосатвяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от ЗПБ строителни матерали - варовици от находище \"Карлуково\", разположено в землището на с. Карлуковов, община Луковит, област Ловеч, на Държавно предприятие \"Национална компания \"Железопътна инфраструктура\", гр .София",
+      "publishedAt": "18.02.2026 г.",
+      "partyGuids": [
+        "fe86ea15-234e-472a-aca1-eef081b4e4dd"
+      ],
+      "inventoryIds": [
+        "216-406"
+      ],
+      "concessionIds": [
+        "216-406"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:49Z",
+      "filename": "25RH933_Karlukovo_NKJI(1).docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 44019,
+      "sha256": "3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae",
+      "archivePath": "source-archive/concessions/nkr-attachments/3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3090d9dace9edbdff143d03c271c27cc4e2a79bf8671487c190add3437111eae.txt",
+      "extractor": "python-docx",
+      "textChars": 18875,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 30,
+      "coordinateClassCounts": {
+        "BGS2005": 30
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 136,
+          "a": 4784383.6,
+          "b": 384168.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 136,
+          "a": 4784368.7,
+          "b": 384204.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 137,
+          "a": 4784615.6,
+          "b": 384338.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 138,
+          "a": 4784495.0,
+          "b": 384560.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 139,
+          "a": 4784145.3,
+          "b": 384366.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 140,
+          "a": 4784151.0,
+          "b": 384356.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 141,
+          "a": 4783878.5,
+          "b": 384225.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 142,
+          "a": 4783789.6,
+          "b": 384186.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 143,
+          "a": 4783800.2,
+          "b": 384119.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 144,
+          "a": 4783806.1,
+          "b": 384104.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 145,
+          "a": 4783810.3,
+          "b": 384092.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 146,
+          "a": 4783824.4,
+          "b": 384071.8,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "f0242591-e1f3-4282-bbd5-60258bac14d1": {
+      "fileId": "f0242591-e1f3-4282-bbd5-60258bac14d1",
+      "url": "https://nkr.government.bg/File/Download/f0242591-e1f3-4282-bbd5-60258bac14d1",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 553 от 25 юли 2014 г. за предоставяне на концесия за добив на подземни богатства – строителни материали – доломити, от находище „Дядово“, разположено в землищата на с. Дядово и с. Езеро, община Нова Загора, област Сливен, на Инмат ООД, гр. София",
+      "publishedAt": "19.02.2026 г.",
+      "partyGuids": [
+        "61fb1870-d89c-48e5-b485-e433f73df928"
+      ],
+      "inventoryIds": [
+        "216-407"
+      ],
+      "concessionIds": [
+        "216-407"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:50Z",
+      "filename": "14RH553.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 115200,
+      "sha256": "af621fa6f36ddbffa2eabf6325331e057afcdf77311e1bf6950b6ce91a05ec06",
+      "archivePath": "source-archive/concessions/nkr-attachments/af621fa6f36ddbffa2eabf6325331e057afcdf77311e1bf6950b6ce91a05ec06.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/af621fa6f36ddbffa2eabf6325331e057afcdf77311e1bf6950b6ce91a05ec06.txt",
+      "extractor": "antiword",
+      "textChars": 22846,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 30,
+      "coordinateClassCounts": {
+        "BGS1970": 30
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 499,
+          "a": 4635312.3,
+          "b": 9468847.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 2,
+          "line": 500,
+          "a": 4634925.8,
+          "b": 9468739.4,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 3,
+          "line": 500,
+          "a": 4634475.0,
+          "b": 9468776.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 4,
+          "line": 501,
+          "a": 4634433.2,
+          "b": 9468780.1,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 5,
+          "line": 501,
+          "a": 4634395.4,
+          "b": 9468778.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 503,
+          "a": 4634376.4,
+          "b": 9468771.6,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 7,
+          "line": 504,
+          "a": 4634342.1,
+          "b": 9468757.3,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 8,
+          "line": 505,
+          "a": 4634210.5,
+          "b": 9468720.6,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 9,
+          "line": 506,
+          "a": 4634037.7,
+          "b": 9468478.5,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 10,
+          "line": 507,
+          "a": 4633968.5,
+          "b": 9468194.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 11,
+          "line": 508,
+          "a": 4633985.7,
+          "b": 9468193.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 12,
+          "line": 509,
+          "a": 4634447.8,
+          "b": 9468041.0,
+          "crsClass": "BGS1970"
+        }
+      ]
+    },
+    "1f792c93-db71-40ad-b538-97f648d92f33": {
+      "fileId": "1f792c93-db71-40ad-b538-97f648d92f33",
+      "url": "https://nkr.government.bg/File/Download/1f792c93-db71-40ad-b538-97f648d92f33",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 81 от 23 януари 2026 г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземни богатства – неметални полезни изкопаеми – индустриални минерали – клиноптилолитови зеолити, представляващи изключителна държавна собственост, от находище „Хриси“, разположено в землището на село Мост, община Кърджали, област Кърджали, на „ЕКО-ТЕХ“ ЕООД, гр. София",
+      "publishedAt": "30.03.2026 г.",
+      "partyGuids": [
+        "36237792-deef-4da5-82c3-9e2bb6d32276"
+      ],
+      "inventoryIds": [
+        "216-419"
+      ],
+      "concessionIds": [
+        "216-419"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:51Z",
+      "filename": "Reshenie MS_26RH081.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 41452,
+      "sha256": "97d086bc625b73b075c4d25aa1ed4b79e8f554b949bba3836e89ed48b428f3ec",
+      "archivePath": "source-archive/concessions/nkr-attachments/97d086bc625b73b075c4d25aa1ed4b79e8f554b949bba3836e89ed48b428f3ec.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/97d086bc625b73b075c4d25aa1ed4b79e8f554b949bba3836e89ed48b428f3ec.txt",
+      "extractor": "python-docx",
+      "textChars": 20668,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "754e9887-1d4e-4bad-bb3e-8a8a91036724": {
+      "fileId": "754e9887-1d4e-4bad-bb3e-8a8a91036724",
+      "url": "https://nkr.government.bg/File/Download/754e9887-1d4e-4bad-bb3e-8a8a91036724",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 412 от 23 юни 2025 г. за предоставяне на концесия за добив на подземни богатства по чл.2, ал. 1, т. 2 от ЗПБ – неметални полезни изкопаеми - индустриални минерали - каолин-кварцова суровина, представляващи изключителна държавна собственост, от находище „Голямата нива“, разположено в землищата на с. Изгрев, община Венец, с. Климент и с. Наум, община Каолиново, област Шумен, на „БОТЕРА ИНДЪСТРИ“ ООД, гр. София",
+      "publishedAt": "23.04.2026 г.",
+      "partyGuids": [
+        "762a2a5d-6fb5-4d9a-92d8-2999a5f29f3a"
+      ],
+      "inventoryIds": [
+        "216-422"
+      ],
+      "concessionIds": [
+        "216-422"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:52Z",
+      "filename": "25RH412_Golyamata niva.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 115200,
+      "sha256": "981ef3e874b63708aa7c8b83b11b8432cf856c313a59966e5fbc4c6acb5ab259",
+      "archivePath": "source-archive/concessions/nkr-attachments/981ef3e874b63708aa7c8b83b11b8432cf856c313a59966e5fbc4c6acb5ab259.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/981ef3e874b63708aa7c8b83b11b8432cf856c313a59966e5fbc4c6acb5ab259.txt",
+      "extractor": "antiword",
+      "textChars": 24336,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 14,
+      "coordinateClassCounts": {
+        "BGS2005": 14
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 504,
+          "a": 4831992.8,
+          "b": 621101.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 505,
+          "a": 4832007.7,
+          "b": 621896.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 508,
+          "a": 4831824.4,
+          "b": 622026.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 509,
+          "a": 4831383.0,
+          "b": 622016.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 510,
+          "a": 4831292.0,
+          "b": 622224.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 511,
+          "a": 4830871.6,
+          "b": 622283.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 512,
+          "a": 4829708.7,
+          "b": 621957.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 513,
+          "a": 4829989.3,
+          "b": 620861.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 514,
+          "a": 4830109.5,
+          "b": 620893.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 515,
+          "a": 4830184.9,
+          "b": 620338.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 516,
+          "a": 4830230.3,
+          "b": 620357.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 517,
+          "a": 4830597.2,
+          "b": 620792.1,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "18d994fa-a81b-4baa-92ea-5c110c26be9e": {
+      "fileId": "18d994fa-a81b-4baa-92ea-5c110c26be9e",
+      "url": "https://nkr.government.bg/File/Download/18d994fa-a81b-4baa-92ea-5c110c26be9e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 68 от 25 януари 2021 година ЗА ДАВАНЕ НА СЪГЛАСИЕ ЗА ИЗМЕНЕНИЕ НА ДОГОВОРА ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ПОДЗЕМНИ ПРИРОДНИ БОГАТСТВА – ОЛОВНО-ЦИНКОВИ РУДИ ЧРЕЗ ДОБИВ ОТ НАХОДИЩЕ „ГОВЕДАРНИКА“ („ДРУЖБА“), ОБЛАСТ ПЛОВДИВ, СКЛЮЧЕН НА 4 ЯНУАРИ 2000 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ ЗАМЕСТНИК МИНИСТЪР-ПРЕДСЕДАТЕЛЯ И МИНИСТЪР НА ИКОНОМИКАТА, И „ГОРУБСО-ЛЪКИ“ АД - ГР. ПЛОВДИВ, ИЗМЕНЕН И ДОПЪЛНЕН С ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 ОТ 25 ЮЛИ 2005 Г., ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 2 ОТ 15 ЮНИ 2006 Г., ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 3 ОТ 31 ЯНУАРИ 2007 Г., ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 4 ОТ 15 НОЕМВРИ 2010 Г., ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 5 ОТ 17 ЮНИ 2015 Г. И ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 6 ОТ 17 МАРТ 2016 Г., И ЗА ОТПРАВЯНЕ НА ПРЕДЛОЖЕНИЕ ДО КОНЦЕСИОНЕРА ЗА ИЗМЕНЕНИЕ И ДОПЪЛНЕНИЕ НА КОНЦЕСИОННИЯ ДОГОВОР",
+      "publishedAt": "02.09.2022 г.",
+      "partyGuids": [
+        "21309591-609a-447f-85ea-d0c6cbe06637"
+      ],
+      "inventoryIds": [
+        "D-000085"
+      ],
+      "concessionIds": [
+        "D-000085"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:53Z",
+      "filename": "21RH068 Govedarnika.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 78336,
+      "sha256": "0109c3356807f5a624bba8490a44e4a2c51cc10b30ddd1f487589cfe11d8aee7",
+      "archivePath": "source-archive/concessions/nkr-attachments/0109c3356807f5a624bba8490a44e4a2c51cc10b30ddd1f487589cfe11d8aee7.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0109c3356807f5a624bba8490a44e4a2c51cc10b30ddd1f487589cfe11d8aee7.txt",
+      "extractor": "antiword",
+      "textChars": 9356,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "87367174-57a6-4f3c-bf01-47c9b5e48b1c": {
+      "fileId": "87367174-57a6-4f3c-bf01-47c9b5e48b1c",
+      "url": "https://nkr.government.bg/File/Download/87367174-57a6-4f3c-bf01-47c9b5e48b1c",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 148 на Министерския съвет от 14 март 2025 г. за даване на разрешение за прехвърляне изцяло на правата и задълженията по предоставена концесия за добив на подземни богатства – скалнооблицовъчни материали – варовици, от находище „Върбешница“, област Враца, и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "31.07.2025 г.",
+      "partyGuids": [
+        "8ac8e8a5-1bc9-4d30-a801-1128be7df26b"
+      ],
+      "inventoryIds": [
+        "D-000112"
+      ],
+      "concessionIds": [
+        "D-000112"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:54Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20148-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 424721,
+      "sha256": "ad185da57ca8ca0164e89b38f5d3fd9f468d94e214fec0ffb9dd1e6e55a33e0f",
+      "archivePath": "source-archive/concessions/nkr-attachments/ad185da57ca8ca0164e89b38f5d3fd9f468d94e214fec0ffb9dd1e6e55a33e0f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ad185da57ca8ca0164e89b38f5d3fd9f468d94e214fec0ffb9dd1e6e55a33e0f.txt",
+      "extractor": "pypdf",
+      "textChars": 4797,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "722f0511-8442-4cac-a6f8-19729a552af1": {
+      "fileId": "722f0511-8442-4cac-a6f8-19729a552af1",
+      "url": "https://nkr.government.bg/File/Download/722f0511-8442-4cac-a6f8-19729a552af1",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 149 от 22 февруари 2021 г. за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства - строителни материали - пясъци от находище \"Ахматово\", област Пловдив, и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "24.10.2025 г.",
+      "partyGuids": [
+        "84452142-93ec-482d-98d6-bf948f6b5eb9"
+      ],
+      "inventoryIds": [
+        "D-000134"
+      ],
+      "concessionIds": [
+        "D-000134"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:55Z",
+      "filename": "21RH149 Ahmatovo.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 80384,
+      "sha256": "58ff08b9556a1cba57f542a396df7423d453d6c7d31eeb576f46be7e8d4e774c",
+      "archivePath": "source-archive/concessions/nkr-attachments/58ff08b9556a1cba57f542a396df7423d453d6c7d31eeb576f46be7e8d4e774c.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/58ff08b9556a1cba57f542a396df7423d453d6c7d31eeb576f46be7e8d4e774c.txt",
+      "extractor": "antiword",
+      "textChars": 7074,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "0de6e468-772d-4724-bee1-b3c6cb569e1e": {
+      "fileId": "0de6e468-772d-4724-bee1-b3c6cb569e1e",
+      "url": "https://nkr.government.bg/File/Download/0de6e468-772d-4724-bee1-b3c6cb569e1e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 81 на Министерския съвет от 30 януари 2023г. за даване на съгласие за даване на съгласие за изменение на Договора за предоставяне на концесия за подземни богатства – метални полезни изкопаеми – оловно-цинкови руди, във връзка с техния добив от находище „Петровица“, област Смолян, сключен на 20 април 2001г. между Министерския съвет на Република България, представляван от заместник министър-председателя и министър на икономиката и „Горубсо-Мадан“ АД, гр. Мадан, изменен и допълнен с Допълнително споразумение № 1 от 12 март 2007г., Допълнително споразумение № 2 от 15 април 2008г., Допълнително споразумение № 3 от 10 февруари 2014г. и Допълнително споразумение № 4 от 17 юни 2015г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "17.03.2023 г.",
+      "partyGuids": [
+        "7b69804c-6c25-4a94-997d-cc1ea0d5a0a3"
+      ],
+      "inventoryIds": [
+        "D-000141"
+      ],
+      "concessionIds": [
+        "D-000141"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:57Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%2081-2023.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 71168,
+      "sha256": "67eada4f8801e314892b7924aa6df4c07a243ad2b777bde98935f9890d2b7fdf",
+      "archivePath": "source-archive/concessions/nkr-attachments/67eada4f8801e314892b7924aa6df4c07a243ad2b777bde98935f9890d2b7fdf.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/67eada4f8801e314892b7924aa6df4c07a243ad2b777bde98935f9890d2b7fdf.txt",
+      "extractor": "antiword",
+      "textChars": 9677,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "644d12ef-bbe5-4c82-a67d-dee8b4048149": {
+      "fileId": "644d12ef-bbe5-4c82-a67d-dee8b4048149",
+      "url": "https://nkr.government.bg/File/Download/644d12ef-bbe5-4c82-a67d-dee8b4048149",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 324 на Министерския съвет от 27.04.2023г. за даване на съгласие за продължаване на договор за предоставяне на концесия за добив на подземни богатства – строителни материали – мрамори, мраморизирани варовици и доломити, от находище „Тополовград“, област Хасково, сключен на 4 май 2001г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Пътстройинженеринг“ АД, гр. Стара Загора, изменен и допълнен с допълнително споразумение № 1 от 8 февруари 2008г. и допълнително споразумение № 2 от 7 юли 2021г., с правоприемника на концесионера, и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "18.07.2023 г.",
+      "partyGuids": [
+        "d1c8a1ef-4973-40c3-b821-d35c7bc70f48"
+      ],
+      "inventoryIds": [
+        "D-000149"
+      ],
+      "concessionIds": [
+        "D-000149"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:42:59Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20324-2023.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 536261,
+      "sha256": "5718cd8d7fc0644383692da8ecd091d363d4e88efb8c09a2253e98025406b0ec",
+      "archivePath": "source-archive/concessions/nkr-attachments/5718cd8d7fc0644383692da8ecd091d363d4e88efb8c09a2253e98025406b0ec.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/5718cd8d7fc0644383692da8ecd091d363d4e88efb8c09a2253e98025406b0ec.txt",
+      "extractor": "pypdf",
+      "textChars": 4099,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "70c64d9f-a044-4ad5-a0bc-c559f69b0249": {
+      "fileId": "70c64d9f-a044-4ad5-a0bc-c559f69b0249",
+      "url": "https://nkr.government.bg/File/Download/70c64d9f-a044-4ad5-a0bc-c559f69b0249",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 359 на Министерския съвет от 15 април 2021г. за даване на съгласие за продължаване на договор за предоставяне на концесия за добив на подземни богатства – строителни материали – мрамори, мраморизирани варовици и доломити, от находище „Тополовград, област Хасково, сключен на 4 май 2001г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Пътстройинженеринг“ АД, гр. Стара Загора, изменен и допълнен с допълнително споразумение № 1 от 8 февруари 2008г., с правоприемника на концесионера",
+      "publishedAt": "21.10.2021 г.",
+      "partyGuids": [
+        "d1c8a1ef-4973-40c3-b821-d35c7bc70f48"
+      ],
+      "inventoryIds": [
+        "D-000149"
+      ],
+      "concessionIds": [
+        "D-000149"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:00Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20%D0%A2%D0%BE%D0%BF%D0%BE%D0%BB%D0%BE%D0%B2%D0%B3%D1%80%D0%B0%D0%B4.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 315273,
+      "sha256": "aaffff118b0b8e86fa450f1fd8ab0272374d946243341862308a8711ba98fe68",
+      "archivePath": "source-archive/concessions/nkr-attachments/aaffff118b0b8e86fa450f1fd8ab0272374d946243341862308a8711ba98fe68.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/aaffff118b0b8e86fa450f1fd8ab0272374d946243341862308a8711ba98fe68.txt",
+      "extractor": "pypdf",
+      "textChars": 2400,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "4cde54c0-637f-4ad8-869b-1540e855cbd8": {
+      "fileId": "4cde54c0-637f-4ad8-869b-1540e855cbd8",
+      "url": "https://nkr.government.bg/File/Download/4cde54c0-637f-4ad8-869b-1540e855cbd8",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 325 на Министерския съвет от 27.04.2023г. за даване на съгласие за продължаване на договор за предоставяне на концесия за добив на подземни богатства – строителни материали – варовици и доломити, от находище „Змеево“, област Стара Загора, сключен на 4 май 2001г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Пътстройинженеринг“ АД, гр. Стара Загора, изменен и допълнен с допълнително споразумение № 1 от 8 февруари 2008г. и допълнително споразумение № 2 от 7 юли 2021г., с правоприемника на концесионера, и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "19.07.2023 г.",
+      "partyGuids": [
+        "ede1931d-30b3-46d1-b451-4d476cfa842c"
+      ],
+      "inventoryIds": [
+        "D-000150"
+      ],
+      "concessionIds": [
+        "D-000150"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:01Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20325-2023.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 81408,
+      "sha256": "ab573fd2708696848a16833d9628b2c619522a53646bdf1ed99f5089cff4c7f1",
+      "archivePath": "source-archive/concessions/nkr-attachments/ab573fd2708696848a16833d9628b2c619522a53646bdf1ed99f5089cff4c7f1.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ab573fd2708696848a16833d9628b2c619522a53646bdf1ed99f5089cff4c7f1.txt",
+      "extractor": "antiword",
+      "textChars": 4533,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "50d33298-ca60-4194-be50-546d381c7a85": {
+      "fileId": "50d33298-ca60-4194-be50-546d381c7a85",
+      "url": "https://nkr.government.bg/File/Download/50d33298-ca60-4194-be50-546d381c7a85",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 345 на МС от 14 април 2021г. за даване на даване на съгласие за продължаване на договор за предоставяне на концесия за добив на подземни богатства – строителни материали – варовици и доломити, от находище „Змеево“, област Стара Загора, сключен на 4 май 2001г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Пътстройинженеринг“ АД, гр. Стара Загора, изменен и допълнен с допълнително споразумение № 1 от 8 февруари 2008г., с правоприемника на концесионера",
+      "publishedAt": "21.10.2021 г.",
+      "partyGuids": [
+        "ede1931d-30b3-46d1-b451-4d476cfa842c"
+      ],
+      "inventoryIds": [
+        "D-000150"
+      ],
+      "concessionIds": [
+        "D-000150"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:03Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20%D0%97%D0%BC%D0%B5%D0%B5%D0%B2%D0%BE.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 295610,
+      "sha256": "59f90e841c186fadb9d50822e93080cdc507468c000cabb78a855cb2793bf4d6",
+      "archivePath": "source-archive/concessions/nkr-attachments/59f90e841c186fadb9d50822e93080cdc507468c000cabb78a855cb2793bf4d6.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/59f90e841c186fadb9d50822e93080cdc507468c000cabb78a855cb2793bf4d6.txt",
+      "extractor": "pypdf",
+      "textChars": 2304,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "27095f08-c785-469c-af98-4826e16693b6": {
+      "fileId": "27095f08-c785-469c-af98-4826e16693b6",
+      "url": "https://nkr.government.bg/File/Download/27095f08-c785-469c-af98-4826e16693b6",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 534 от 7 август 2025 година за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства - строителни материали – варовици, от находище „Хитрино“, област Шумен, сключен на 27 юни 2001 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „АВТОМАГИСТРАЛИ–ЧЕРНО МОРЕ“ АД, гр. Шумен, изменен и допълнен с допълнително споразумение № 1 от 7 февруари 2008 г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "28.01.2026 г.",
+      "partyGuids": [
+        "15e3fb65-009e-4607-b26f-ffcf4f895939"
+      ],
+      "inventoryIds": [
+        "D-000163"
+      ],
+      "concessionIds": [
+        "D-000163"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:04Z",
+      "filename": "%D0%A0%D0%9C%D0%A1-%E2%84%96-534-%D0%94%D0%BE-%D0%9C%D0%95%289%29.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 344679,
+      "sha256": "bcec03d5546d3f15438fd2af3adb976e0ae58dfffd5064cebc773d908d8f3b01",
+      "archivePath": "source-archive/concessions/nkr-attachments/bcec03d5546d3f15438fd2af3adb976e0ae58dfffd5064cebc773d908d8f3b01.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/bcec03d5546d3f15438fd2af3adb976e0ae58dfffd5064cebc773d908d8f3b01.txt",
+      "extractor": "python-docx",
+      "textChars": 522,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e472ddda-1bbb-441f-953e-55257bbad79f": {
+      "fileId": "e472ddda-1bbb-441f-953e-55257bbad79f",
+      "url": "https://nkr.government.bg/File/Download/e472ddda-1bbb-441f-953e-55257bbad79f",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 411 от 23 юни 2025 г. за даване на съгласие за изменение на договора за предоставяне на концесия за подземни богатства – неметални полезни изкопаеми - индустриални минерали - креда, във връзка с техния добив от находище „Бяла вода“, Плевенска област, сключен на 18 юли 2001 г. между Министерския съвет на Република България, представляван от министъра на икономиката, и „Огнеупорни глини“ АД - гр. Плевен, и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "14.10.2025 г.",
+      "partyGuids": [
+        "ba09bc41-62a5-4e8a-a43c-794a6d4f0cb9"
+      ],
+      "inventoryIds": [
+        "D-000170"
+      ],
+      "concessionIds": [
+        "D-000170"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:05Z",
+      "filename": "Byala voda_Reshenie_411.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 27693,
+      "sha256": "559f6d23f2c1f862c346bd95f7c2c1db73d2cd83c5340e4d806660b19f8a4e48",
+      "archivePath": "source-archive/concessions/nkr-attachments/559f6d23f2c1f862c346bd95f7c2c1db73d2cd83c5340e4d806660b19f8a4e48.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/559f6d23f2c1f862c346bd95f7c2c1db73d2cd83c5340e4d806660b19f8a4e48.txt",
+      "extractor": "python-docx",
+      "textChars": 7646,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "47d96721-86ee-4c65-9019-773f593ddc65": {
+      "fileId": "47d96721-86ee-4c65-9019-773f593ddc65",
+      "url": "https://nkr.government.bg/File/Download/47d96721-86ee-4c65-9019-773f593ddc65",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 409 от 23 юни 2025 г. за даване на съгласие за изменение на договора за предоставяне на концесия за подземни богатства – неметални полезни изкопаеми - индустриални минерали - огнеупорна пръст, във връзка с техния добив в част от находище „Бръшляница“, Плевенска област, сключен на 18 юли 2001 г. между Министерския съвет на Република България, представляван от министъра на икономиката, и „Огнеупорни глини“ АД - гр. Плевен, и за отправяне на предложение до конецсионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "14.10.2025 г.",
+      "partyGuids": [
+        "798eb4a9-bb5a-46c8-b765-c49c632c20ec"
+      ],
+      "inventoryIds": [
+        "D-000172"
+      ],
+      "concessionIds": [
+        "D-000172"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:06Z",
+      "filename": "Brashlyanaitza_Reshenie_409.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 27744,
+      "sha256": "ae168eb45e934e0b9d759d96d96939e27e26d97d36118726805b12e29ca273a5",
+      "archivePath": "source-archive/concessions/nkr-attachments/ae168eb45e934e0b9d759d96d96939e27e26d97d36118726805b12e29ca273a5.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ae168eb45e934e0b9d759d96d96939e27e26d97d36118726805b12e29ca273a5.txt",
+      "extractor": "python-docx",
+      "textChars": 7688,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b2402fea-ad25-4e07-8f2e-c2ee447495a1": {
+      "fileId": "b2402fea-ad25-4e07-8f2e-c2ee447495a1",
+      "url": "https://nkr.government.bg/File/Download/b2402fea-ad25-4e07-8f2e-c2ee447495a1",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "Решение № 373 от 6 юни 2025 година за даване на съгласие за изменение на договора за предосатвяне на концесия за подземни богатсва - неметални полезни изкопаеми - индустриални минерали - кварц-фелдшпатови пясъци, във връзка с техния добив от находище „Искър“, Плевенска област, сключен на 18 юли 2001 г. между Министерския съвет на Република България, представляван от министъра на икономиката, и „Огнеупорни глини“ АД - гр. Плевен и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "13.10.2025 г.",
+      "partyGuids": [
+        "1f69ca76-dcc4-41f8-918b-b3883b45884d"
+      ],
+      "inventoryIds": [
+        "D-000174"
+      ],
+      "concessionIds": [
+        "D-000174"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:07Z",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20373_%D0%98%D1%81%D0%BA%D1%8A%D1%80.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 62976,
+      "sha256": "be59d8a35ccd4b042ab0da5fca0cfe4d797289b7f34e38ad5d05c72d2fcf74f8",
+      "archivePath": "source-archive/concessions/nkr-attachments/be59d8a35ccd4b042ab0da5fca0cfe4d797289b7f34e38ad5d05c72d2fcf74f8.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/be59d8a35ccd4b042ab0da5fca0cfe4d797289b7f34e38ad5d05c72d2fcf74f8.txt",
+      "extractor": "antiword",
+      "textChars": 8684,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "fa87d19d-f587-4157-8f4d-8e1a3c58c632": {
+      "fileId": "fa87d19d-f587-4157-8f4d-8e1a3c58c632",
+      "url": "https://nkr.government.bg/File/Download/fa87d19d-f587-4157-8f4d-8e1a3c58c632",
+      "title": "Свали",
+      "documentType": "Решение за предоставяне на концесията",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ПОДЗЕМНИ БОГАТСТВА – НЕМЕТАЛНИ ПОЛЕЗНИ ИЗКОПАЕМИ – ИНДУСТРИАЛНИ МИНЕРАЛИ – КВАРЦ-ФЕЛДШПАТОВИ ПЯСЪЦИ, ВЪВ ВРЪЗКА С ТЕХНИЯ ДОБИВ ОТ НАХОДИЩЕ „ИСКЪР”, ПЛЕВЕНСКА ОБЛАСТ, СКЛЮЧЕН НА 18 ЮЛИ 2001 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА ИКОНОМИКАТА И „ОГНЕУПОРНИ ГЛИНИ“ АД, ГР. ПЛЕВЕН",
+      "publishedAt": "13.10.2025 г.",
+      "partyGuids": [
+        "1f69ca76-dcc4-41f8-918b-b3883b45884d"
+      ],
+      "inventoryIds": [
+        "D-000174"
+      ],
+      "concessionIds": [
+        "D-000174"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:10Z",
+      "filename": "ANEKS_1.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1892462,
+      "sha256": "6db24600f2bfb213766be6cff4b45fa21afc2ae4796e25a1d31541e8a52b83c3",
+      "archivePath": "source-archive/concessions/nkr-attachments/6db24600f2bfb213766be6cff4b45fa21afc2ae4796e25a1d31541e8a52b83c3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6db24600f2bfb213766be6cff4b45fa21afc2ae4796e25a1d31541e8a52b83c3.txt",
+      "extractor": "pypdf",
+      "textChars": 81,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "6fe1a8da-353e-4919-8524-d64240419ac4": {
+      "fileId": "6fe1a8da-353e-4919-8524-d64240419ac4",
+      "url": "https://nkr.government.bg/File/Download/6fe1a8da-353e-4919-8524-d64240419ac4",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 533 на Министерския съвет от 7 август 2025 г. за даване на съгласие за изменение на договор за предоставяне на концесия за подземни богатства – неметални полезни изкопаеми – индустриални минерали – каменинови глини, във връзка с техния добив от находище „Славяново“, Плевенска област, сключен на 18 юли 2001г. между Министерския съвет на Република България, представляван от министъра на икономиката и „Огнеупорни глини“ АД, гр. Плевен, и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "15.12.2025 г.",
+      "partyGuids": [
+        "cb5a0a78-e337-4365-8095-e0cc01d76285"
+      ],
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:12Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20533-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 444770,
+      "sha256": "e16d2941fcc763716553e9781bcdd81b2279e9cdc93dd7d38440a22d43ba888b",
+      "archivePath": "source-archive/concessions/nkr-attachments/e16d2941fcc763716553e9781bcdd81b2279e9cdc93dd7d38440a22d43ba888b.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e16d2941fcc763716553e9781bcdd81b2279e9cdc93dd7d38440a22d43ba888b.txt",
+      "extractor": "pypdf",
+      "textChars": 8126,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "4f5e8642-33aa-41d3-9cf4-551de9089af7": {
+      "fileId": "4f5e8642-33aa-41d3-9cf4-551de9089af7",
+      "url": "https://nkr.government.bg/File/Download/4f5e8642-33aa-41d3-9cf4-551de9089af7",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 151 от 22 февруари 2021 г. за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства – строителни материали – пясъци и чакъли, от находище „Пет могили - изток”, област София, сключен на 7 юни 2002 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Кариерни материали“ АД, гр. София, изменен и допълнен с допълнително споразумение № 1 от 13 юни 2008 г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "24.10.2025 г.",
+      "partyGuids": [
+        "1fe53637-773d-4a0b-a6a6-dbaa83a4c9cc"
+      ],
+      "inventoryIds": [
+        "D-000195"
+      ],
+      "concessionIds": [
+        "D-000195"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:13Z",
+      "filename": "21RH151 Pet mogili iztok.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 80896,
+      "sha256": "0d2162b47a6fd3f9047fa193a393607fcc79d50e03996b525230d588a0cdec4a",
+      "archivePath": "source-archive/concessions/nkr-attachments/0d2162b47a6fd3f9047fa193a393607fcc79d50e03996b525230d588a0cdec4a.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0d2162b47a6fd3f9047fa193a393607fcc79d50e03996b525230d588a0cdec4a.txt",
+      "extractor": "antiword",
+      "textChars": 6773,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "652253fd-a022-490a-b7e5-c44b54da4634": {
+      "fileId": "652253fd-a022-490a-b7e5-c44b54da4634",
+      "url": "https://nkr.government.bg/File/Download/652253fd-a022-490a-b7e5-c44b54da4634",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № № 197 на Министерския съвет от 17 март 2023г. за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства – строителни материали – пясъци и чакъли, от находище „Селимица“, район Нови Искър, Столична община, област София, сключен на 9 юли 2004г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „МСЕ – 2001“ ООД, гр. София, изменен и допълнен с допълнително споразумение № 1 от 4 март 2008г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "13.07.2023 г.",
+      "partyGuids": [
+        "7617b058-74fd-4a65-9e73-2d6e42045edf"
+      ],
+      "inventoryIds": [
+        "D-000251"
+      ],
+      "concessionIds": [
+        "D-000251"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:15Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20197-2023.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 571402,
+      "sha256": "48bbe4f04011c1cab1c3701b3daa23e2b84fea5d593365a5f9b961a71f206060",
+      "archivePath": "source-archive/concessions/nkr-attachments/48bbe4f04011c1cab1c3701b3daa23e2b84fea5d593365a5f9b961a71f206060.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/48bbe4f04011c1cab1c3701b3daa23e2b84fea5d593365a5f9b961a71f206060.txt",
+      "extractor": "pypdf",
+      "textChars": 6195,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "2b67f40a-9ec0-4cca-8388-b774dde6ff5d": {
+      "fileId": "2b67f40a-9ec0-4cca-8388-b774dde6ff5d",
+      "url": "https://nkr.government.bg/File/Download/2b67f40a-9ec0-4cca-8388-b774dde6ff5d",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 387 на МС от 11 юни 2025 г. за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства - строителни материали – варовици от находище „Чирен“, община Враца, област Враца, сключен на 25 октомври 2004г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „ПЪТСТРОЙИНЖЕНЕРИНГ“ АД, гр. Враца, изменен и допълнен с допълнително споразумение № 1 от 11 февруари 2008г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "01.09.2025 г.",
+      "partyGuids": [
+        "69dc25e4-0390-47e6-9bd2-009b59673f6f"
+      ],
+      "inventoryIds": [
+        "D-000264"
+      ],
+      "concessionIds": [
+        "D-000264"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:17Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20387-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 370218,
+      "sha256": "eb2ca454a57eb836d37a48c957c8d2ae82401c6ef105eb251a5628ce8547746b",
+      "archivePath": "source-archive/concessions/nkr-attachments/eb2ca454a57eb836d37a48c957c8d2ae82401c6ef105eb251a5628ce8547746b.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/eb2ca454a57eb836d37a48c957c8d2ae82401c6ef105eb251a5628ce8547746b.txt",
+      "extractor": "pypdf",
+      "textChars": 6656,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "7fd595f1-3698-481f-bece-82716c48aa33": {
+      "fileId": "7fd595f1-3698-481f-bece-82716c48aa33",
+      "url": "https://nkr.government.bg/File/Download/7fd595f1-3698-481f-bece-82716c48aa33",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "РЕШЕНИЕ № 386 НА МИНИСТЕРСКИЯ СЪВЕТ ОТ 11 ЮНИ 2025 Г. ЗА ДАВАНЕ НА СЪГЛАСИЕ ЗА ИЗМЕНЕНИЕ НА ДОГОВОРА ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – ВАРОВИЦИ, ОТ НАХОДИЩЕ „ТРОИЦА”, ОБЩИНА ВЕЛИКИ ПРЕСЛАВ, ОБЛАСТ ШУМЕН, СКЛЮЧЕН НА 1 НОЕМВРИ 2004 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА РЕГИОНАЛНОТО РАЗВИТИЕ И БЛАГОУСТРОЙСТВОТО, И „ВАРОДОБИВ“ ЕООД - ГР. ШУМЕН, ИЗМЕНЕН И ДОПЪЛНЕН С АНЕКС № 1 ОТ 29 ДЕКЕМВРИ 2005 Г., ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 ОТ 14 ФЕВРУАРИ 2008 Г., ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 2 ОТ 28 ДЕКЕМВРИ 2009 Г. И ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 4 ОТ 11 ЮНИ 2012 Г., И ЗА ОТПРАВЯНЕ НА ПРЕДЛОЖЕНИЕ ДО КОНЦЕСИОНЕРА ЗА ИЗМЕНЕНИЕ И ДОПЪЛНЕНИЕ НА КОНЦЕСИОННИЯ ДОГОВОР",
+      "publishedAt": "23.10.2025 г.",
+      "partyGuids": [
+        "a768a9d6-fa6a-4d57-9be5-17d3f8c73015"
+      ],
+      "inventoryIds": [
+        "D-000269"
+      ],
+      "concessionIds": [
+        "D-000269"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:18Z",
+      "filename": "25RH386.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 60416,
+      "sha256": "20f44970f9ef70d0a553032e52ad56a8ca0fdec7a37e200a907d752a0eaa89b4",
+      "archivePath": "source-archive/concessions/nkr-attachments/20f44970f9ef70d0a553032e52ad56a8ca0fdec7a37e200a907d752a0eaa89b4.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/20f44970f9ef70d0a553032e52ad56a8ca0fdec7a37e200a907d752a0eaa89b4.txt",
+      "extractor": "antiword",
+      "textChars": 7016,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "66b3372a-e631-48a7-a4a1-d809cd0eb231": {
+      "fileId": "66b3372a-e631-48a7-a4a1-d809cd0eb231",
+      "url": "https://nkr.government.bg/File/Download/66b3372a-e631-48a7-a4a1-d809cd0eb231",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 410 от 23 юни 2025 г. на Министерския съвет за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства – строителни материали – варовици, от находище „Гранитово”, община Белоградчик, област Видин, сключен на 4 ноември 2004 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „ВИДАПЪТСТРОЙ“ ЕАД, гр. Видин, изменен и допълнен с допълнително споразумение № 1 от 28 февруари 2008 г. и допълнително споразумение № 2 от 6 януари 2016 г. и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "22.10.2025 г.",
+      "partyGuids": [
+        "1fa14aa9-437a-4cc2-93b6-41b9adf82039"
+      ],
+      "inventoryIds": [
+        "D-000270"
+      ],
+      "concessionIds": [
+        "D-000270"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:19Z",
+      "filename": "25RH410.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 67584,
+      "sha256": "8272a8bddc2d03c8906b1fa1a328a0d13fadc862ee3992faf620eacc25a2bc3e",
+      "archivePath": "source-archive/concessions/nkr-attachments/8272a8bddc2d03c8906b1fa1a328a0d13fadc862ee3992faf620eacc25a2bc3e.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/8272a8bddc2d03c8906b1fa1a328a0d13fadc862ee3992faf620eacc25a2bc3e.txt",
+      "extractor": "antiword",
+      "textChars": 6873,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "13b0d204-83c9-431b-968d-d1addb240296": {
+      "fileId": "13b0d204-83c9-431b-968d-d1addb240296",
+      "url": "https://nkr.government.bg/File/Download/13b0d204-83c9-431b-968d-d1addb240296",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 485 на Министерския съвет от 21 юли 2025 г. за даване на разрешение за прехвърляне изцяло на правата и задълженията по предоставена концесия за добив на подземни богатства – строителни материали – варовици, от находище „Скравена“, община Ботевград, област София",
+      "publishedAt": "05.11.2025 г.",
+      "partyGuids": [
+        "ca059416-dc8e-4c97-af16-58803a8eb1c4"
+      ],
+      "inventoryIds": [
+        "D-000278"
+      ],
+      "concessionIds": [
+        "D-000278"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:21Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20485-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 410375,
+      "sha256": "9cd46ab0947be7a49f2754a866c2151bc78c21718a39aab0fd145fd1c44f4dee",
+      "archivePath": "source-archive/concessions/nkr-attachments/9cd46ab0947be7a49f2754a866c2151bc78c21718a39aab0fd145fd1c44f4dee.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9cd46ab0947be7a49f2754a866c2151bc78c21718a39aab0fd145fd1c44f4dee.txt",
+      "extractor": "pypdf",
+      "textChars": 3804,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "36fb6729-37ec-484a-9ee5-b78a72ed22fa": {
+      "fileId": "36fb6729-37ec-484a-9ee5-b78a72ed22fa",
+      "url": "https://nkr.government.bg/File/Download/36fb6729-37ec-484a-9ee5-b78a72ed22fa",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 626 от 03.09.2024г. на Министерския съвет за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства – строителни материали – варовици, от находище „Скравена”, община Ботевград, област София, сключен на 8 декември 2004 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Автомагистрали Хемус“ АД, гр. София, изменен и допълнен с допълнително споразумение № 1 от 6 февруари 2008г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "04.12.2024 г.",
+      "partyGuids": [
+        "ca059416-dc8e-4c97-af16-58803a8eb1c4"
+      ],
+      "inventoryIds": [
+        "D-000278"
+      ],
+      "concessionIds": [
+        "D-000278"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:22Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20626-2024.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 352271,
+      "sha256": "f3722a5e29c6c5294be5c52adf681b24bf47831a08f77ee608dd67d2f5128f5e",
+      "archivePath": "source-archive/concessions/nkr-attachments/f3722a5e29c6c5294be5c52adf681b24bf47831a08f77ee608dd67d2f5128f5e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f3722a5e29c6c5294be5c52adf681b24bf47831a08f77ee608dd67d2f5128f5e.txt",
+      "extractor": "pypdf",
+      "textChars": 5766,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a7f981b9-e213-47f6-95ab-8e4a4b852b9a": {
+      "fileId": "a7f981b9-e213-47f6-95ab-8e4a4b852b9a",
+      "url": "https://nkr.government.bg/File/Download/a7f981b9-e213-47f6-95ab-8e4a4b852b9a",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 84 на Министерския съвет от 31 януари 2023г. за даване на съгласие за изменение на Договора за предоставяне на концесия за добив на подземни богатства – строителни материали – доломитизирани варовици и доломити, от находище „Смолско“, община Мирково, Софийска област, сключен на 21 декември 2004г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Автомагистрали Хемус“ АД, гр. София, изменен и допълнен с допълнително споразумение № 1 от 6 февруари 2008г., за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор и за даване на разрешение за прехвърляне изцяло на правата и задълженията по концесията",
+      "publishedAt": "24.04.2023 г.",
+      "partyGuids": [
+        "4055ab5e-c597-4873-b826-580df4ec3794"
+      ],
+      "inventoryIds": [
+        "D-000281"
+      ],
+      "concessionIds": [
+        "D-000281"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:24Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%2084-2023.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 487173,
+      "sha256": "0c6faca2eef97b24190b389a3f16937be01a6dace90208eaa5f22856b2bb6f37",
+      "archivePath": "source-archive/concessions/nkr-attachments/0c6faca2eef97b24190b389a3f16937be01a6dace90208eaa5f22856b2bb6f37.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0c6faca2eef97b24190b389a3f16937be01a6dace90208eaa5f22856b2bb6f37.txt",
+      "extractor": "pypdf",
+      "textChars": 6264,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3a11162a-05fa-47d4-a98f-6f3a795610e9": {
+      "fileId": "3a11162a-05fa-47d4-a98f-6f3a795610e9",
+      "url": "https://nkr.government.bg/File/Download/3a11162a-05fa-47d4-a98f-6f3a795610e9",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 427 на Министерския съвет от 5 юни 2023г. за даване на съгласие за изменение на договора за предоставяне на концесия за добив на подземни богатства – строителни материали – доломити, от находище „Студена – участък ІІІ“, община Перник, област Перник, сключен на 21 декември 2004г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Автомагистрали Хемус“ АД, гр. София, изменен и допълнен с допълнително споразумение № 1 от 6 февруари 2008г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "30.10.2023 г.",
+      "partyGuids": [
+        "b9bdbd1e-5793-4a6e-8448-1b43322df881"
+      ],
+      "inventoryIds": [
+        "D-000282"
+      ],
+      "concessionIds": [
+        "D-000282"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:26Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20427-2023.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 473652,
+      "sha256": "53024db27b3bd49a03cf1453baa29c1a2bf4d39606788040ae9aef2a0bebb37d",
+      "archivePath": "source-archive/concessions/nkr-attachments/53024db27b3bd49a03cf1453baa29c1a2bf4d39606788040ae9aef2a0bebb37d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/53024db27b3bd49a03cf1453baa29c1a2bf4d39606788040ae9aef2a0bebb37d.txt",
+      "extractor": "pypdf",
+      "textChars": 5498,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3dce5156-d804-4a0a-a23e-ff7b24c102db": {
+      "fileId": "3dce5156-d804-4a0a-a23e-ff7b24c102db",
+      "url": "https://nkr.government.bg/File/Download/3dce5156-d804-4a0a-a23e-ff7b24c102db",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо относно изпълнение на т. 5 от Решение № 503 на Министерския съвет от 25 юли 2025 г.",
+      "publishedAt": "23.02.2026 г.",
+      "partyGuids": [
+        "b9bdbd1e-5793-4a6e-8448-1b43322df881"
+      ],
+      "inventoryIds": [
+        "D-000282"
+      ],
+      "concessionIds": [
+        "D-000282"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:27Z",
+      "filename": "Pismo Studena-u-k III_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 356321,
+      "sha256": "aa59b9c266b74dc1a4263c54b6c46fe6a6d570c25c9f1e2b8a8f805a9289e6c4",
+      "archivePath": "source-archive/concessions/nkr-attachments/aa59b9c266b74dc1a4263c54b6c46fe6a6d570c25c9f1e2b8a8f805a9289e6c4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/aa59b9c266b74dc1a4263c54b6c46fe6a6d570c25c9f1e2b8a8f805a9289e6c4.txt",
+      "extractor": "pypdf",
+      "textChars": 9165,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a0fcb961-8533-42c0-925b-73eb791c5f66": {
+      "fileId": "a0fcb961-8533-42c0-925b-73eb791c5f66",
+      "url": "https://nkr.government.bg/File/Download/a0fcb961-8533-42c0-925b-73eb791c5f66",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 503 от 25 юли 2025 г. за даване на разрешение зa прехвърляне изцяло на правата и задълженията по предоставена концесия за добив на подземни богатства – строителни материали – доломити, от находище „Студена – участък ІІІ“, община Перник, област Перник",
+      "publishedAt": "08.10.2025 г.",
+      "partyGuids": [
+        "b9bdbd1e-5793-4a6e-8448-1b43322df881"
+      ],
+      "inventoryIds": [
+        "D-000282"
+      ],
+      "concessionIds": [
+        "D-000282"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:29Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20503-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 379032,
+      "sha256": "1f107e4826d6568cae65e2cf3157e9b51024a59318f8144797465e4ee367c0d4",
+      "archivePath": "source-archive/concessions/nkr-attachments/1f107e4826d6568cae65e2cf3157e9b51024a59318f8144797465e4ee367c0d4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/1f107e4826d6568cae65e2cf3157e9b51024a59318f8144797465e4ee367c0d4.txt",
+      "extractor": "pypdf",
+      "textChars": 4056,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "2e161004-5288-4bf5-a23f-0fbedb97b20e": {
+      "fileId": "2e161004-5288-4bf5-a23f-0fbedb97b20e",
+      "url": "https://nkr.government.bg/File/Download/2e161004-5288-4bf5-a23f-0fbedb97b20e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 82 от 23 януари 2026г. за даване на съгласие за изменение на концесионен договор за добив на суров нефт от находище „Долни Луковит“, сключен на 12 септември 2003 г. между Министерския съвет на Република България, представляван от министъра на енергетиката и енергийните ресурси и „Проучване и добив на нефт и газ“ ЕАД, гр. Плевен, изменен и допълнен с Анекс № 1 от 1 юли 2004 г., Анекс № 2 от 6 октомври 2010 г., Анекс № 3 от 20 юли 2018 г. и Анекс № 4 от 5 май 2020 г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "11.02.2026 г.",
+      "partyGuids": [
+        "7953ec1a-113f-48d6-ab57-b73c1febd824"
+      ],
+      "inventoryIds": [
+        "D-000306"
+      ],
+      "concessionIds": [
+        "D-000306"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:30Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%2082-2026.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 367630,
+      "sha256": "3b88273d0ed79fb04bf23cd49ccbe9fda1f825d9ae9ea1a00c38722669d66296",
+      "archivePath": "source-archive/concessions/nkr-attachments/3b88273d0ed79fb04bf23cd49ccbe9fda1f825d9ae9ea1a00c38722669d66296.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3b88273d0ed79fb04bf23cd49ccbe9fda1f825d9ae9ea1a00c38722669d66296.txt",
+      "extractor": "pypdf",
+      "textChars": 4363,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "f4ad9f2d-39e0-4e38-813a-bde3a58ab709": {
+      "fileId": "f4ad9f2d-39e0-4e38-813a-bde3a58ab709",
+      "url": "https://nkr.government.bg/File/Download/f4ad9f2d-39e0-4e38-813a-bde3a58ab709",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 504 на Министерския съвет от 25 юли 2025 г. за даване на съгласие за изменение на концесионен договор за добив на суров нефт и природен газ от находище „Маринов геран“, сключен на 30 април 2004 г. между Министерския съвет на Република България, представляван от министъра на енергетиката и енергийните ресурси и „Проучване и добив на нефт и газ“ АД, гр. Плевен, изменен и допълнен с Анекс № 1 от 21 октомври 2004 г., Допълнително споразумение № 2 от 7 декември 2010 г., Анекс № 3 от 3 февруари 2014г., и Анекс № 4 от 28 февруари 2025 г. и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "15.10.2025 г.",
+      "partyGuids": [
+        "dd3b25d4-842b-4d2a-9410-2ef9ffd9d02a"
+      ],
+      "inventoryIds": [
+        "D-000307"
+      ],
+      "concessionIds": [
+        "D-000307"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:31Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20504-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 386945,
+      "sha256": "f22f955a347f433357a2c45f4f640b849ecac7f468dc1f6d41fc8afc6ca468be",
+      "archivePath": "source-archive/concessions/nkr-attachments/f22f955a347f433357a2c45f4f640b849ecac7f468dc1f6d41fc8afc6ca468be.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f22f955a347f433357a2c45f4f640b849ecac7f468dc1f6d41fc8afc6ca468be.txt",
+      "extractor": "pypdf",
+      "textChars": 5323,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "6d5ef1d3-910f-41ee-bd2a-cb2170e05194": {
+      "fileId": "6d5ef1d3-910f-41ee-bd2a-cb2170e05194",
+      "url": "https://nkr.government.bg/File/Download/6d5ef1d3-910f-41ee-bd2a-cb2170e05194",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 473 на Министерския съвет от 6 октомври 2022 г. за даване на съгласие за изменение на концесионен договор за добив на суров нефт от находище „Долни Луковит-запад“, сключен на 12 септември 2003 г., изменен и допълнен с Анекс № 1 от 1 юли 2004 г., Анекс № 2 от 6 октомври 2010 г., Анекс № 3 от 19 декември 2012 г., Анекс № 4 от 3 февруари 2014 г. и Анекс № 5 от 20 юли 2018 г. и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "18.10.2022 г.",
+      "partyGuids": [
+        "5b24cdc4-3c09-4f8f-93d4-f9f4336c655f"
+      ],
+      "inventoryIds": [
+        "D-000308"
+      ],
+      "concessionIds": [
+        "D-000308"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:32Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20743.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 62464,
+      "sha256": "61a44001f13e7cf11b4e1e8c51adf6408426e2665c7514fa30064d02084100a3",
+      "archivePath": "source-archive/concessions/nkr-attachments/61a44001f13e7cf11b4e1e8c51adf6408426e2665c7514fa30064d02084100a3.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/61a44001f13e7cf11b4e1e8c51adf6408426e2665c7514fa30064d02084100a3.txt",
+      "extractor": "antiword",
+      "textChars": 5698,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "263ee367-2fb2-421a-a03e-8fa3d5b23fbd": {
+      "fileId": "263ee367-2fb2-421a-a03e-8fa3d5b23fbd",
+      "url": "https://nkr.government.bg/File/Download/263ee367-2fb2-421a-a03e-8fa3d5b23fbd",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Решение № 83 от 23 януари 2026 година на Министерския съвет за даване на съгласие за изменение на концесионен договор за добив на суров нефт от находище „Долни Луковит“, сключен на 12 септември 2003 г. между Министерския съвет на Република България, представляван от министъра на енергетиката и енергийните ресурси и „Проучване и добив на нефт и газ“ ЕАД, гр. Плевен, изменен и допълнен с Анекс № 1 от 1 юли 2004 г., Анекс № 2 от 6 октомври 2010 г., Анекс № 3 от 20 юли 2018 г. и Анекс № 4 от 5 май 2020 г., и за отправяне на предложение до концесионера за изменение и допълнение на концесионния договор",
+      "publishedAt": "13.02.2026 г.",
+      "partyGuids": [
+        "b9755037-ad01-49ea-9291-af52fa502ea8"
+      ],
+      "inventoryIds": [
+        "D-000312"
+      ],
+      "concessionIds": [
+        "D-000312"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:43:34Z",
+      "filename": "RMS_83_2026.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 373624,
+      "sha256": "e965f59d9c56acf26416c33f86bf22f8c6d00a95970a7afe158899cea48b3323",
+      "archivePath": "source-archive/concessions/nkr-attachments/e965f59d9c56acf26416c33f86bf22f8c6d00a95970a7afe158899cea48b3323.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e965f59d9c56acf26416c33f86bf22f8c6d00a95970a7afe158899cea48b3323.txt",
+      "extractor": "pypdf",
+      "textChars": 6394,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-concession-inventory-v1",
-  "generatedAt": "2026-10-05T08:28:25Z",
+  "generatedAt": "2026-10-05T08:39:32Z",
   "mode": "refreshed",
   "scope": "Bulgaria; mining/extraction concessions plus curated historical official records",
   "recordCount": 530,
@@ -91,18 +91,18 @@
       "ok": true,
       "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
       "bytes": 46023,
-      "sha256": "1f868e4e18c2916c647dd9eedbcca69e1248d4db69faa85b6aadfe6f7a2e4645",
+      "sha256": "4a2c3667ee593d2614fa2c90b39b01bd8bb12e6d89fe7d6111553a6ddbfc102b",
       "archiveCurrent": "source-archive/concessions/me-concessions-page.html",
-      "archiveSnapshot": "source-archive/concessions/snapshots/me-concessions-page/1f868e4e18c2916c647dd9eedbcca69e1248d4db69faa85b6aadfe6f7a2e4645.html"
+      "archiveSnapshot": "source-archive/concessions/snapshots/me-concessions-page/4a2c3667ee593d2614fa2c90b39b01bd8bb12e6d89fe7d6111553a6ddbfc102b.html"
     },
     {
       "id": "ME-ABANDONED-MINING-WASTE",
       "ok": true,
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51607,
-      "sha256": "b6ffe9463db311166f036d8e34778f9efa1301778d4b199629b2d1aa26b1c05d",
+      "sha256": "fbcbc0a4318af32fec91936f8bd65ced36d43a5d008f3ae8b082a73625f475a4",
       "archiveCurrent": "source-archive/concessions/me-abandoned-mining-waste.html",
-      "archiveSnapshot": "source-archive/concessions/snapshots/me-abandoned-mining-waste/b6ffe9463db311166f036d8e34778f9efa1301778d4b199629b2d1aa26b1c05d.html"
+      "archiveSnapshot": "source-archive/concessions/snapshots/me-abandoned-mining-waste/fbcbc0a4318af32fec91936f8bd65ced36d43a5d008f3ae8b082a73625f475a4.html"
     },
     {
       "id": "ME-ABANDONED-MINING-WASTE-XLS",

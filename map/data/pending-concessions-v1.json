@@ -1,10 +1,10 @@
 {
   "schema": "bgwf-pending-concessions-v1",
-  "generatedAt": "2026-10-05T08:31:59Z",
+  "generatedAt": "2026-10-05T08:43:35Z",
   "inventoryRecordCount": 530,
-  "publishedGeometryCount": 2,
-  "pendingCount": 528,
-  "withNkrPartyCount": 518,
+  "publishedGeometryCount": 8,
+  "pendingCount": 522,
+  "withNkrPartyCount": 512,
   "curatedGroupPendingCount": 1,
   "curatedGroupsPending": [
     {
@@ -55,6 +55,62 @@
       "priority": 1
     },
     {
+      "id": "NKR-216-123",
+      "concessionId": "216-123",
+      "name": "216-123",
+      "officialAreaDka": 239,
+      "sourceCrs": "BGS2005",
+      "sourcePoints": 56,
+      "status": "area_QA_failed_13.374pct",
+      "sourceUrl": "https://nkr.government.bg/File/Download/5abd1f6a-2a2d-4302-9bbe-73c1e0af2015",
+      "queueSource": "curated-official-register",
+      "inventoryId": "216-123",
+      "inventoryStatus": "active",
+      "concessionaire": "\"Дес-М\" ООД, с. Крушево",
+      "resource": "Скално-облицовъчни материали",
+      "municipality": "Гърмен",
+      "province": "Благоевград",
+      "inventoryAreaDka": null,
+      "concessionIdCollision": false,
+      "nkrParties": [
+        {
+          "guid": "4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
+          "concessionId": "216-123",
+          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
+          "searchText": "216-123/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - гнайси, представляващи изключителна държавна собственост, съгласно Акт за изключителна държавна собственост № 1703/23.06.2020г. от находище „Раденка“, участъци „Урвата“, „Лозята“ и „Кавака“, разположено в землището на с. Крушево, община Гърмен, област Благоевград, описано в Акт за изключителна държавна собственост № 1703 от 23 юни 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+        }
+      ],
+      "priority": 2
+    },
+    {
+      "id": "NKR-216-124",
+      "concessionId": "216-124",
+      "name": "216-124",
+      "officialAreaDka": 225,
+      "sourceCrs": "BGS2005",
+      "sourcePoints": 22,
+      "status": "area_QA_failed_696527.832pct",
+      "sourceUrl": "https://nkr.government.bg/File/Download/c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
+      "queueSource": "curated-official-register",
+      "inventoryId": "216-124",
+      "inventoryStatus": "active",
+      "concessionaire": "\"Пътища М\" ЕООД, гр. Монтана",
+      "resource": "Строителни материали",
+      "municipality": "Бойчиновци",
+      "province": "Монтана",
+      "inventoryAreaDka": null,
+      "concessionIdCollision": false,
+      "nkrParties": [
+        {
+          "guid": "25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
+          "concessionId": "216-124",
+          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
+          "searchText": "216-124/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясъци и чакъли, от находище “Лемище“, участък „Лемище - изток“ и участък „Лемище - запад“, разположено в землището на с. Владимирово, община Бойчиновци, област Монтана, описано в Акт за изключителна държавна собственост № 1695/13.02.2020г., утвърден от министъра на регионалното развитие и благоустройството | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+        }
+      ],
+      "priority": 2
+    },
+    {
       "id": "NKR-216-225",
       "concessionId": "216-225",
       "name": "216-225",
@@ -78,6 +134,34 @@
           "concessionId": "216-225",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f63cf7be-bfd2-46ba-872f-00109a4c9904",
           "searchText": "216-225/06.03.2023 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболити и гнайси, от находище „Бистрица“, разположено в землището на с. Плетена, община Сатовча, област Благоевгра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+        }
+      ],
+      "priority": 2
+    },
+    {
+      "id": "NKR-216-306",
+      "concessionId": "216-306",
+      "name": "216-306",
+      "officialAreaDka": 65.2,
+      "sourceCrs": "BGS2005",
+      "sourcePoints": 18,
+      "status": "area_QA_failed_2.226pct",
+      "sourceUrl": "https://nkr.government.bg/File/Download/be5f75f1-c008-490a-a242-40ccf0c230e0",
+      "queueSource": "curated-official-register",
+      "inventoryId": "216-306",
+      "inventoryStatus": "active",
+      "concessionaire": "\"Запрянови - 03\" ООД, гр. Асеновград",
+      "resource": "Неметални полезни изкопаеми - индустриални минерали",
+      "municipality": "Асеновград",
+      "province": "Пловдив",
+      "inventoryAreaDka": null,
+      "concessionIdCollision": false,
+      "nkrParties": [
+        {
+          "guid": "aece63a8-212e-4be0-801f-cb95eb5d0a30",
+          "concessionId": "216-306",
+          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/aece63a8-212e-4be0-801f-cb95eb5d0a30",
+          "searchText": "216-306/28.03.2024 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) - неметални полезни изкопаеми - индустриални минерали - мрамори, от находище “Делчевото - 2“, участък „Делчевото - 2 юг“, разположено в землището на с. Горнослав, община Асеновград, област Пловдив | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 2
@@ -976,33 +1060,6 @@
           "concessionId": "216-131",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/8b28ba37-e54c-4daa-a672-f7644100b836",
           "searchText": "216-131/21.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболови гнайси, представляващи изключителна държавна собственост, от находище „Беслен”, разположено в землището на с. Беслен, община Хаджидимово, област Благоевград, описано в Акт за изключителна държавна собственост № 1711 от 17 декември 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-223",
-      "concessionId": "216-223",
-      "name": "Бешовица",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "25",
-      "inventoryStatus": "active",
-      "concessionaire": "\"ФНС\" ООД, гр. Мездра",
-      "resource": "Скално-облицовъчни материали",
-      "municipality": "Роман",
-      "province": "Враца",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "dbcd969b-99f8-428e-abc6-914797a13d86",
-          "concessionId": "216-223",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/dbcd969b-99f8-428e-abc6-914797a13d86",
-          "searchText": "216-223/06.03.2023 | Открита | Отворена | Предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства - скалнооблицовъчни материали - пясъчници, от находище „Бешовица“, разположено в землището на с. Долна Бешовица, община Роман, област Враца, на „ФНС“ ООД, гр. Мездра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4
@@ -3480,33 +3537,6 @@
           "concessionId": "D-000122",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a476b954-a150-4c32-afde-7d9dcae8a5ba",
           "searchText": "D-000122 | Открита | Отворена | Концесия за добив от находище \"Девня\" - участък \"Люляката\" и участък \"Снежно поле югоизток\", област Варна, община Девня, Суворово, населено място Девня, Чернево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-306",
-      "concessionId": "216-306",
-      "name": "Делчевото - 2, у-к \"Делчевото - 2 юг\"",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "14",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Запрянови - 03\" ООД, гр. Асеновград",
-      "resource": "Неметални полезни изкопаеми - индустриални минерали",
-      "municipality": "Асеновград",
-      "province": "Пловдив",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "aece63a8-212e-4be0-801f-cb95eb5d0a30",
-          "concessionId": "216-306",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/aece63a8-212e-4be0-801f-cb95eb5d0a30",
-          "searchText": "216-306/28.03.2024 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства (ЗПБ) - неметални полезни изкопаеми - индустриални минерали - мрамори, от находище “Делчевото - 2“, участък „Делчевото - 2 юг“, разположено в землището на с. Горнослав, община Асеновград, област Пловдив | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4
@@ -6320,33 +6350,6 @@
       "priority": 4
     },
     {
-      "id": "216-406",
-      "concessionId": "216-406",
-      "name": "Карлуково",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "5",
-      "inventoryStatus": "active",
-      "concessionaire": "Държавно предприятие \"Национална компания \"Железопътна инфраструктура\"",
-      "resource": "Строителни материали",
-      "municipality": "Луковит",
-      "province": "Ловеч",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "fe86ea15-234e-472a-aca1-eef081b4e4dd",
-          "concessionId": "216-406",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/fe86ea15-234e-472a-aca1-eef081b4e4dd",
-          "searchText": "216-406/18.02.2026 | Открита | Отворена | Концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - варовици, представляващи изключителна държавна собственост, от находище „Карлуково“, разположено в землището на с. Карлуково, община Луковит, област Ловеч | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
       "id": "D-000736",
       "concessionId": "D-000736",
       "name": "Карнобат (Средния Кайряк)",
@@ -7319,33 +7322,6 @@
       "priority": 4
     },
     {
-      "id": "216-379",
-      "concessionId": "216-379",
-      "name": "Кралево-2",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "7",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Автомагистрали - Черно море\" АД, гр. Шумен",
-      "resource": "Строителни материали",
-      "municipality": "Търговище",
-      "province": "Търговище",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "1035efec-4c1d-4ab5-bd22-6c21e6b617a9",
-          "concessionId": "216-379",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/1035efec-4c1d-4ab5-bd22-6c21e6b617a9",
-          "searchText": "216-379/31.07.2025 | Открита | Отворена | КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 5 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА - СТРОИТЕЛНИ МАТЕРИАЛИ - ВАРОВИЦИ, ОТ НАХОДИЩЕ „КРАЛЕВО-2“, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. КРАЛЕВО, ОБЩИНА ТЪРГОВИЩЕ, ОБЛАСТ ТЪРГОВИЩЕ | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
       "id": "D-000622",
       "concessionId": "D-000622",
       "name": "Крачола, у-к \"Централен\"",
@@ -7935,33 +7911,6 @@
           "concessionId": "D-000438",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/dac90a87-68af-4783-8450-7f59c20f9863",
           "searchText": "D-000438 | Открита | Отворена | Концесия за добив от находище \"Лахъма\", област Сливен, община Котел, населено място Котел | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-124",
-      "concessionId": "216-124",
-      "name": "Лемище, у-к \"Лемище - изток\" и у-к \"Лемище - запад\"",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "36",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Пътища М\" ЕООД, гр. Монтана",
-      "resource": "Строителни материали",
-      "municipality": "Бойчиновци",
-      "province": "Монтана",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
-          "concessionId": "216-124",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25aa24e5-3a74-48f8-9a1c-462eb5b5a314",
-          "searchText": "216-124/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясъци и чакъли, от находище “Лемище“, участък „Лемище - изток“ и участък „Лемище - запад“, разположено в землището на с. Владимирово, община Бойчиновци, област Монтана, описано в Акт за изключителна държавна собственост № 1695/13.02.2020г., утвърден от министъра на регионалното развитие и благоустройството | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4
@@ -10405,33 +10354,6 @@
           "concessionId": "D-000753",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b192be77-72b0-43ac-bcd6-0f3dc021fe7d",
           "searchText": "D-000753 | Открита | Отворена | Концесия за добив от находище \"Равнище - 2\", участъци \"Централен\" и \"Източен\", област Враца, община Мездра, населено място Върбешница | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-123",
-      "concessionId": "216-123",
-      "name": "Раденка, у-ци \"Урвата\", \"Лозята\" и \"Кавака\"",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "35",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Дес-М\" ООД, с. Крушево",
-      "resource": "Скално-облицовъчни материали",
-      "municipality": "Гърмен",
-      "province": "Благоевград",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
-          "concessionId": "216-123",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4dcb1b00-ddc5-4c7a-a552-9e3ce6f825d2",
-          "searchText": "216-123/20.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - гнайси, представляващи изключителна държавна собственост, съгласно Акт за изключителна държавна собственост № 1703/23.06.2020г. от находище „Раденка“, участъци „Урвата“, „Лозята“ и „Кавака“, разположено в землището на с. Крушево, община Гърмен, област Благоевград, описано в Акт за изключителна държавна собственост № 1703 от 23 юни 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4
@@ -12900,33 +12822,6 @@
       "priority": 4
     },
     {
-      "id": "216-125",
-      "concessionId": "216-125",
-      "name": "Хитрино - 3",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "34",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Автомагистрали - Черно море\" АД, гр. Шумен",
-      "resource": "Строителни материали",
-      "municipality": "Хитрино",
-      "province": "Шумен",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "a8385e76-7680-4d0e-9fcd-1a193496c9c4",
-          "concessionId": "216-125",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a8385e76-7680-4d0e-9fcd-1a193496c9c4",
-          "searchText": "216-125/21.10.2021 | Открита | Отворена | Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - варовици, представляващи изключителна държавна собственост, от находище “Хитрино - 3“, разположено в землището на с. Сливак, община Хитрино, област Шумен, описано в Акт за изключителна държавна собственост № 1700 от 24 април 2020 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск. | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
       "id": "D-000826",
       "concessionId": "D-000826",
       "name": "Хитрино-4",
@@ -13003,33 +12898,6 @@
           "concessionId": "D-000573",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a00c0745-221d-4799-865a-204c65941250",
           "searchText": "D-000573 | Открита | Отворена | Концесия за добив от НАХОДИЩЕ \"ХУМНИ ДОЛ\", УЧАСТЪК \"СЕВЕР\" И УЧАСТЪК \"ЮЖЕН\", област Хасково, община Тополовград, населено място Доброселец | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-128",
-      "concessionId": "216-128",
-      "name": "Цар Асен - 2",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "32",
-      "inventoryStatus": "active",
-      "concessionaire": "\"ХОЛДИНГ КЦМ 2000\" АД",
-      "resource": "Метални полезни изкопаеми",
-      "municipality": "Пазарджик",
-      "province": "Пазарджик",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "25758e4f-abd5-4f0e-a62d-c51b268eeaea",
-          "concessionId": "216-128",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25758e4f-abd5-4f0e-a62d-c51b268eeaea",
-          "searchText": "216-128/21.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 1 от ЗПБ - метални полезни изкопаеми - медни руди, представляващи изключителна държавна собственост, от находище „Цар Асен - 2“, разположено в землището на с. Цар Асен, община Пазарджик, област Пазарджик, описано в Акт за изключителна държавна собственост № 1331 от 29 ноември 2012 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4
@@ -14130,33 +13998,6 @@
           "concessionId": "D-000518",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/86dddcfe-7b4f-4b13-b67b-e2c260ccf17e",
           "searchText": "D-000518 | Открита | Отворена | Концесия за добив от находище \"Яна\", област Разград, община Завет, населено място Брестовене | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-261",
-      "concessionId": "216-261",
-      "name": "Янаклъка",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "17",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Европът 2005\" ООД, гр. Хасково",
-      "resource": "Строителни материали",
-      "municipality": "Димитровград",
-      "province": "Хасково",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "438f7022-208e-49d9-8e18-caf95c2b4aa8",
-          "concessionId": "216-261",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/438f7022-208e-49d9-8e18-caf95c2b4aa8",
-          "searchText": "216-261/04.08.2023 | Открита | Отворена | Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - доломитни мрамори, представляващи изключителна държавна собственост, от находище “Янаклъка“, разположено в землището на с. Добрич, община Димитровград, област Хасково | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4

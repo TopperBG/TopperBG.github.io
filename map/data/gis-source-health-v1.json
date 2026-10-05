@@ -1,12 +1,12 @@
 {
   "schema": "bgwf-gis-source-health-v1",
-  "checkedAt": "2026-10-05T08:32:28Z",
+  "checkedAt": "2026-10-05T08:44:06Z",
   "concessions": {
     "activeRegistrySource": "NKR",
-    "cacheFeatureCount": 2,
+    "cacheFeatureCount": 8,
     "inventoryRecordCount": 530,
-    "baselineFeatureCount": 2,
-    "pendingGeometryCount": 528,
+    "baselineFeatureCount": 8,
+    "pendingGeometryCount": 522,
     "disturbedMiningFeatureCount": 19,
     "abandonedMiningWasteInventoryCount": 480,
     "cacheMode": "normal",
@@ -15,7 +15,7 @@
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-05T08:32:01Z",
+        "checkedAt": "2026-10-05T08:43:38Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -23,7 +23,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:32:12Z",
+        "checkedAt": "2026-10-05T08:43:50Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
@@ -34,19 +34,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-05T08:32:26Z",
+        "checkedAt": "2026-10-05T08:44:04Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 46023,
-        "digest": "a1c306220359c7c3021f58cd8eb13ea99366d2453f676270f9dd402c22f634c7"
+        "digest": "1299d2825cea75b8ea96964f0d4058e12bd4c500511bc01f1435ce3684fb1d7f"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-05T08:32:27Z",
+        "checkedAt": "2026-10-05T08:44:05Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51607,
-        "digest": "da5d8a80af497c9747276af280a5ecc9825864a4498183167ead999db9b5fabe"
+        "digest": "2b9ecd23fdfd8bca7184ba5fc10032bcc31c7951d813747474ef36095471402c"
       }
     ]
   },
