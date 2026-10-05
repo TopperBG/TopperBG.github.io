@@ -94,7 +94,7 @@
     "NKR party pages for pending concession geometries are archived incrementally; extracted File/Preview links form the offline document-harvest queue.",
     "Coordinate registers extracted from archived NKR attachments enter a staging gate first; map publication requires complete numbered points, verified CRS/order/zone where applicable, official area and independent <=2% area QA.",
     "MGU Pernik concession polygons are copied into a repository-owned GeoJSON snapshot; browser rendering never depends on live MGU availability.",
-    "On a user's first visit after seven days, the browser performs best-effort reachability probes for MGU, NKR and data.egov; authoritative change detection and repository refresh remain server-side because NKR/data.egov may block browser CORS."
+    "The browser renders concession geometry only from repository-owned snapshots: the national official baseline merged with the cached MGU Pernik snapshot. Source reachability checks and refreshes run server-side in the workflow; the map has no runtime concession GIS fallback."
   ],
   "localBaselines": {
     "concessionInventory": "./concession-inventory-v1.json",
