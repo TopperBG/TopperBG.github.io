@@ -28,12 +28,14 @@ BASELINE_PATH = ROOT / "map" / "data" / "official-concessions-baseline.geojson"
 PENDING_PATH = ROOT / "map" / "data" / "pending-concessions-v1.json"
 DISTURBED_PATH = ROOT / "map" / "data" / "disturbed-mining-sites-v1.geojson"
 ABANDONED_INVENTORY_PATH = ROOT / "map" / "data" / "abandoned-mining-waste-inventory-v1.json"
+MGU_CACHE_PATH = ROOT / "map" / "data" / "mgu-pernik-concessions-v1.geojson"
 
 EGOV_API = "https://data.egov.bg/api"
 NKR_EXPORT = "https://nkr.government.bg/Concessions/Export?file=csv"
 NKR_PAGE = "https://nkr.government.bg/Concessions"
 ME_CONCESSIONS = "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html"
 ME_ABANDONED = "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html"
+MGU_SERVICE = "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0"
 USER_AGENT = "EnergoKarta-Bulgaria-concessions/2.0 (+https://topperbg.github.io/map/)"
 
 def now_iso() -> str:
@@ -129,6 +131,24 @@ def check_nkr() -> dict:
             "error": f"export: {export_error}; html: {html_exc}",
         }
 
+def check_mgu() -> dict:
+    checked = now_iso()
+    url = MGU_SERVICE + "/query?" + urllib.parse.urlencode({
+        "where": "1=1", "outFields": "*", "returnGeometry": "false", "f": "json"
+    })
+    try:
+        raw = request_bytes(url)
+        data = json.loads(raw.decode("utf-8"))
+        features = data.get("features") or []
+        if not features:
+            raise RuntimeError("MGU query returned no concession records")
+        digest = hashlib.sha256(json.dumps(features, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+        return {"id":"MGU-PERNIK-CONCESSIONS","role":"geometry-cross-check","ok":True,
+                "checkedAt":checked,"url":MGU_SERVICE,"records":len(features),"digest":digest}
+    except Exception as exc:
+        return {"id":"MGU-PERNIK-CONCESSIONS","role":"geometry-cross-check","ok":False,
+                "checkedAt":checked,"url":MGU_SERVICE,"error":str(exc)}
+
 def check_page(source_id: str, role: str, url: str, marker: str) -> dict:
     checked = now_iso()
     try:
@@ -151,6 +171,7 @@ def main() -> None:
     sources = [
         check_egov(),
         check_nkr(),
+        check_mgu(),
         check_page("ME-CONCESSIONS", "tertiary", ME_CONCESSIONS, "Концесии за добив"),
         check_page("ME-ABANDONED-MINING-WASTE", "historical-disturbed", ME_ABANDONED, "изоставените"),
     ]
@@ -174,6 +195,7 @@ def main() -> None:
     pending = json.loads(PENDING_PATH.read_text(encoding="utf-8")) if PENDING_PATH.exists() else {"pending": section.get("pending") or []}
     disturbed = json.loads(DISTURBED_PATH.read_text(encoding="utf-8")) if DISTURBED_PATH.exists() else {"features": []}
     abandoned = json.loads(ABANDONED_INVENTORY_PATH.read_text(encoding="utf-8")) if ABANDONED_INVENTORY_PATH.exists() else {"records": []}
+    mgu_cache = json.loads(MGU_CACHE_PATH.read_text(encoding="utf-8")) if MGU_CACHE_PATH.exists() else {"features": []}
     inventory_count = len(inventory.get("records") or [])
     baseline_count = len(baseline.get("features") or [])
     pending_count = len(pending.get("pending") or [])
@@ -207,6 +229,7 @@ def main() -> None:
             "cacheFeatureCount": len(features),
             "inventoryRecordCount": inventory_count,
             "baselineFeatureCount": baseline_count,
+            "mguPernikFeatureCount": len(mgu_cache.get("features") or []),
             "pendingGeometryCount": pending_count,
             "disturbedMiningFeatureCount": disturbed_count,
             "abandonedMiningWasteInventoryCount": abandoned_count,
@@ -216,6 +239,7 @@ def main() -> None:
         "policy": {
             "primary": "data.egov.bg",
             "secondary": "National Concession Register",
+            "geometryCrossCheck": "MGU Pernik",
             "tertiary": "Ministry of Energy",
             "browserUsesRepositoryBaseline": True,
             "preserveLastKnownGoodOnSourceFailure": True,
