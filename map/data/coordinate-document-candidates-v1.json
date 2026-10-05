@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-coordinate-document-candidates-v1",
-  "generatedAt": "2026-10-05T07:09:28Z",
-  "candidateCount": 10,
+  "generatedAt": "2026-10-05T07:32:15Z",
+  "candidateCount": 34,
   "readyForCoordinateParserCount": 0,
   "rules": [
     "Attachment extraction alone never publishes geometry.",
@@ -120,6 +120,53 @@
       ]
     },
     {
+      "fileId": "3cc8a4cc-a2d4-4fc1-8fd5-f54e91a5b39f",
+      "sha256": "22fe0cea41d5ae827c9e40710cda6e1fb7100810241d2343f2f0fac366db73a3",
+      "archivePath": "source-archive/concessions/nkr-attachments/22fe0cea41d5ae827c9e40710cda6e1fb7100810241d2343f2f0fac366db73a3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/22fe0cea41d5ae827c9e40710cda6e1fb7100810241d2343f2f0fac366db73a3.txt",
+      "inventoryIds": [
+        "216-127"
+      ],
+      "concessionIds": [
+        "216-127"
+      ],
+      "filename": "%D0%9F%D0%B5%D1%80%D0%B8-2.pdf",
+      "extension": ".pdf",
+      "textChars": 91560,
+      "keywordHit": true,
+      "coordinateRowCount": 3,
+      "coordinateClassCounts": {
+        "BGS1970": 3
+      },
+      "dominantCrsClass": "BGS1970",
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": [
+        {
+          "line": 1387,
+          "a": 8480982.4,
+          "b": 4583926.5,
+          "crsClass": "BGS1970",
+          "text": "8 480 982,4 4 583 926,5"
+        },
+        {
+          "line": 1388,
+          "a": 8481004.7,
+          "b": 4583991.8,
+          "crsClass": "BGS1970",
+          "text": "8 481 004,7 4 583 991,8"
+        },
+        {
+          "line": 1389,
+          "a": 8481168.7,
+          "b": 4584099.4,
+          "crsClass": "BGS1970",
+          "text": "8 481 168,7 4 584 099,4"
+        }
+      ]
+    },
+    {
       "fileId": "3d1307cb-f28a-48c4-92b4-790fa6e1e9e5",
       "sha256": "15c14b70ad3aee32620cbcc148e75f7bf3ae50f40b6519f959fbbf4212c21671",
       "archivePath": "source-archive/concessions/nkr-attachments/15c14b70ad3aee32620cbcc148e75f7bf3ae50f40b6519f959fbbf4212c21671.pdf",
@@ -160,6 +207,72 @@
       ]
     },
     {
+      "fileId": "0d958b18-883d-4f5c-a212-37ee9f0df917",
+      "sha256": "e2a52042f60d98a4d5c042b5632d51b94631be0e179440fec00d7fd981e39344",
+      "archivePath": "source-archive/concessions/nkr-attachments/e2a52042f60d98a4d5c042b5632d51b94631be0e179440fec00d7fd981e39344.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e2a52042f60d98a4d5c042b5632d51b94631be0e179440fec00d7fd981e39344.txt",
+      "inventoryIds": [
+        "216-251"
+      ],
+      "concessionIds": [
+        "216-251"
+      ],
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9C%D0%B0%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%86%D0%B8%D1%82%D0%B5.pdf",
+      "extension": ".pdf",
+      "textChars": 84666,
+      "keywordHit": true,
+      "coordinateRowCount": 1,
+      "coordinateClassCounts": {
+        "BGS1970": 1
+      },
+      "dominantCrsClass": "BGS1970",
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": [
+        {
+          "line": 1477,
+          "a": 4610335.2,
+          "b": 8506000.2,
+          "crsClass": "BGS1970",
+          "text": ". 4 610 335,2 8 506 000,2 513,7"
+        }
+      ]
+    },
+    {
+      "fileId": "9703b5af-b6f7-452c-9496-005db4db20ac",
+      "sha256": "331d0c005dd74cb0b530f93db91426c4e3bb330bf10acff7df50f3469bd35df2",
+      "archivePath": "source-archive/concessions/nkr-attachments/331d0c005dd74cb0b530f93db91426c4e3bb330bf10acff7df50f3469bd35df2.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/331d0c005dd74cb0b530f93db91426c4e3bb330bf10acff7df50f3469bd35df2.txt",
+      "inventoryIds": [
+        "216-280"
+      ],
+      "concessionIds": [
+        "216-280"
+      ],
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9A%D0%BE%D0%BB%D0%B0%D1%80%D1%86%D0%B8.pdf",
+      "extension": ".pdf",
+      "textChars": 71880,
+      "keywordHit": true,
+      "coordinateRowCount": 1,
+      "coordinateClassCounts": {
+        "WGS84": 1
+      },
+      "dominantCrsClass": "WGS84",
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": [
+        {
+          "line": 73,
+          "a": 29.0,
+          "b": 42.0,
+          "crsClass": "WGS84",
+          "text": "във връзка с чл. 29 от Закона за подземните богатства и съгласно Решение № 425 на"
+        }
+      ]
+    },
+    {
       "fileId": "b30a92c3-1294-490e-8c8c-924d89879b07",
       "sha256": "75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513",
       "archivePath": "source-archive/concessions/nkr-attachments/75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513.pdf",
@@ -173,6 +286,29 @@
       "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9A%D0%B0%D0%B9%D0%BC%D0%B5%D1%82%D0%BB%D0%B8%D0%B9.pdf",
       "extension": ".pdf",
       "textChars": 19695,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "5abd1f6a-2a2d-4302-9bbe-73c1e0af2015",
+      "sha256": "d97f84084fb3563f03930b23bd34cf2bc18193ec4a5ae1ce302811955dd4b8dc",
+      "archivePath": "source-archive/concessions/nkr-attachments/d97f84084fb3563f03930b23bd34cf2bc18193ec4a5ae1ce302811955dd4b8dc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/d97f84084fb3563f03930b23bd34cf2bc18193ec4a5ae1ce302811955dd4b8dc.txt",
+      "inventoryIds": [
+        "216-123"
+      ],
+      "concessionIds": [
+        "216-123"
+      ],
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%A0%D0%B0%D0%B4%D0%B5%D0%BD%D0%BA%D0%B0.pdf",
+      "extension": ".pdf",
+      "textChars": 24289,
       "keywordHit": true,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
@@ -206,6 +342,98 @@
       "sample": []
     },
     {
+      "fileId": "e992c0ba-1375-451c-aa0a-99b497f93497",
+      "sha256": "188d7fbf6ebdc7f495c4f54be1ecc3770812f4fdb62c57f74a97d9e5df08f9a3",
+      "archivePath": "source-archive/concessions/nkr-attachments/188d7fbf6ebdc7f495c4f54be1ecc3770812f4fdb62c57f74a97d9e5df08f9a3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/188d7fbf6ebdc7f495c4f54be1ecc3770812f4fdb62c57f74a97d9e5df08f9a3.txt",
+      "inventoryIds": [
+        "216-126"
+      ],
+      "concessionIds": [
+        "216-126"
+      ],
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9E%D1%80%D0%B5%D1%88%D0%B0%D0%BA%D0%B0.pdf",
+      "extension": ".pdf",
+      "textChars": 21946,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "f8ebe328-a183-405e-9d65-0a735bc9d5c6",
+      "sha256": "e418b296ff29ad7d6cad6418bf150f6665779fa8a89ca512593fb999c526f982",
+      "archivePath": "source-archive/concessions/nkr-attachments/e418b296ff29ad7d6cad6418bf150f6665779fa8a89ca512593fb999c526f982.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e418b296ff29ad7d6cad6418bf150f6665779fa8a89ca512593fb999c526f982.txt",
+      "inventoryIds": [
+        "216-126"
+      ],
+      "concessionIds": [
+        "216-126"
+      ],
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9E%D1%80%D0%B5%D1%88%D0%B0%D0%BA%D0%B0.pdf",
+      "extension": ".pdf",
+      "textChars": 77202,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "71ca1221-0873-4cc0-9032-9fb2d65668d0",
+      "sha256": "0fb4a144e0948bad94f85c4288466162121f3ef4c6d5b708ee6a8dbef4d7635b",
+      "archivePath": "source-archive/concessions/nkr-attachments/0fb4a144e0948bad94f85c4288466162121f3ef4c6d5b708ee6a8dbef4d7635b.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0fb4a144e0948bad94f85c4288466162121f3ef4c6d5b708ee6a8dbef4d7635b.txt",
+      "inventoryIds": [
+        "216-127"
+      ],
+      "concessionIds": [
+        "216-127"
+      ],
+      "filename": "21RH114%20%D0%9F%D0%B5%D1%80%D0%B8-2.doc",
+      "extension": ".doc",
+      "textChars": 23937,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "66cc6a10-8db4-40d8-aa85-b1f0aee4e54c",
+      "sha256": "81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda",
+      "archivePath": "source-archive/concessions/nkr-attachments/81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda.txt",
+      "inventoryIds": [
+        "216-129"
+      ],
+      "concessionIds": [
+        "216-129"
+      ],
+      "filename": "17RH816%20%D0%90%D0%B9%D1%82%D0%BE%D1%81.doc",
+      "extension": ".doc",
+      "textChars": 23447,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
       "fileId": "9dc1b8eb-0375-4896-9f26-ecec21500bb3",
       "sha256": "0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd",
       "archivePath": "source-archive/concessions/nkr-attachments/0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd.pdf",
@@ -219,6 +447,29 @@
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%90%D0%B9%D1%82%D0%BE%D1%81.pdf",
       "extension": ".pdf",
       "textChars": 86363,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "167c856d-34f3-43e0-8747-db97b5a16bc9",
+      "sha256": "aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080",
+      "archivePath": "source-archive/concessions/nkr-attachments/aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080.txt",
+      "inventoryIds": [
+        "216-130"
+      ],
+      "concessionIds": [
+        "216-130"
+      ],
+      "filename": "20RH953%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.doc",
+      "extension": ".doc",
+      "textChars": 25864,
       "keywordHit": true,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
@@ -275,6 +526,52 @@
       "sample": []
     },
     {
+      "fileId": "63231b75-fb47-475e-847b-b70af7f8c65b",
+      "sha256": "22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1",
+      "archivePath": "source-archive/concessions/nkr-attachments/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.txt",
+      "inventoryIds": [
+        "216-223"
+      ],
+      "concessionIds": [
+        "216-223"
+      ],
+      "filename": "22RH1001_BESHOVITSA.doc",
+      "extension": ".doc",
+      "textChars": 23390,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "a27e2231-4ab3-4c46-bc1c-0d5f49150046",
+      "sha256": "de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d",
+      "archivePath": "source-archive/concessions/nkr-attachments/de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d.txt",
+      "inventoryIds": [
+        "216-224"
+      ],
+      "concessionIds": [
+        "216-224"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%201004-2022.doc",
+      "extension": ".doc",
+      "textChars": 23233,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
       "fileId": "ca19fd1e-975f-4ae8-a6be-45aee8694655",
       "sha256": "3f6c4022a586b37cd50541a91655c85e1ee5d71f06ded1276e8dc2920b5c4aee",
       "archivePath": "source-archive/concessions/nkr-attachments/3f6c4022a586b37cd50541a91655c85e1ee5d71f06ded1276e8dc2920b5c4aee.pdf",
@@ -288,6 +585,259 @@
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%94%D0%B6%D1%83%D0%BB%D0%B8%D0%BD%D0%B8%D1%86%D0%B0.pdf",
       "extension": ".pdf",
       "textChars": 81618,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "4e49e94a-7980-477f-af56-821073072adc",
+      "sha256": "74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914",
+      "archivePath": "source-archive/concessions/nkr-attachments/74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914.txt",
+      "inventoryIds": [
+        "216-225"
+      ],
+      "concessionIds": [
+        "216-225"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%201002-2022.doc",
+      "extension": ".doc",
+      "textChars": 24875,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "80f6dcbd-3182-4909-b40a-ff713bcb1b31",
+      "sha256": "b50b74c810ffe918d5331ae223ea486006a09f218658cf9943df173b8657c4c3",
+      "archivePath": "source-archive/concessions/nkr-attachments/b50b74c810ffe918d5331ae223ea486006a09f218658cf9943df173b8657c4c3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/b50b74c810ffe918d5331ae223ea486006a09f218658cf9943df173b8657c4c3.txt",
+      "inventoryIds": [
+        "216-229"
+      ],
+      "concessionIds": [
+        "216-229"
+      ],
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9A%D0%BE%D0%BD%D0%B0%D0%B3%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%20%D1%87%D0%B0%D0%BB.pdf",
+      "extension": ".pdf",
+      "textChars": 72498,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "86133401-c32f-46de-b5d3-c8ac1b1827fa",
+      "sha256": "3932a451d44ba4fc406ae99410b8f0d09038f7096c19a1f8440d4792c14e300d",
+      "archivePath": "source-archive/concessions/nkr-attachments/3932a451d44ba4fc406ae99410b8f0d09038f7096c19a1f8440d4792c14e300d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3932a451d44ba4fc406ae99410b8f0d09038f7096c19a1f8440d4792c14e300d.txt",
+      "inventoryIds": [
+        "216-229"
+      ],
+      "concessionIds": [
+        "216-229"
+      ],
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D1%85%D0%B5%D0%BC%D0%B0%20%D0%B8%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%B0%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0.pdf",
+      "extension": ".pdf",
+      "textChars": 7942,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "972bea32-5b27-4df2-8fd3-686fba760a51",
+      "sha256": "cc90dd9bce0828155a88e82bb1cc215cd320208ea6ddb502b55935ff62c2e1af",
+      "archivePath": "source-archive/concessions/nkr-attachments/cc90dd9bce0828155a88e82bb1cc215cd320208ea6ddb502b55935ff62c2e1af.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cc90dd9bce0828155a88e82bb1cc215cd320208ea6ddb502b55935ff62c2e1af.txt",
+      "inventoryIds": [
+        "216-229"
+      ],
+      "concessionIds": [
+        "216-229"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%2058-2023.pdf",
+      "extension": ".pdf",
+      "textChars": 22440,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "e3446e91-302c-4222-86ca-0ff7958b8678",
+      "sha256": "fc5f4176c7cebe38a9da7354371f4302287f2e188e16fb1eb3fafed8a4b6090e",
+      "archivePath": "source-archive/concessions/nkr-attachments/fc5f4176c7cebe38a9da7354371f4302287f2e188e16fb1eb3fafed8a4b6090e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/fc5f4176c7cebe38a9da7354371f4302287f2e188e16fb1eb3fafed8a4b6090e.txt",
+      "inventoryIds": [
+        "216-229"
+      ],
+      "concessionIds": [
+        "216-229"
+      ],
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%90%D0%98%D0%94%D0%A1.pdf",
+      "extension": ".pdf",
+      "textChars": 1668,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "400fc1c4-f31b-49c2-ad36-f02eb5a2fd52",
+      "sha256": "2e06137e55faac22c41d06eb81488b9399863e4ff67aaac98a40c277a528baa4",
+      "archivePath": "source-archive/concessions/nkr-attachments/2e06137e55faac22c41d06eb81488b9399863e4ff67aaac98a40c277a528baa4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2e06137e55faac22c41d06eb81488b9399863e4ff67aaac98a40c277a528baa4.txt",
+      "inventoryIds": [
+        "216-251"
+      ],
+      "concessionIds": [
+        "216-251"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%201007-2022.pdf",
+      "extension": ".pdf",
+      "textChars": 22808,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "e3c69665-f042-40b4-9193-4c304e0f7e86",
+      "sha256": "fe73a12ef13d3784a23bcd6b287e19d27b5c8fd9e6bc38ec7f730fbc2e7388c2",
+      "archivePath": "source-archive/concessions/nkr-attachments/fe73a12ef13d3784a23bcd6b287e19d27b5c8fd9e6bc38ec7f730fbc2e7388c2.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/fe73a12ef13d3784a23bcd6b287e19d27b5c8fd9e6bc38ec7f730fbc2e7388c2.txt",
+      "inventoryIds": [
+        "216-256"
+      ],
+      "concessionIds": [
+        "216-256"
+      ],
+      "filename": "23RH059_Gradec-2.doc",
+      "extension": ".doc",
+      "textChars": 23896,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "bc4d6cf1-a2b6-494b-bf29-869c4e49fb1c",
+      "sha256": "c6d9ae8860a16b6ccdf4141c755308e6d930627ccdec41fe1abc19a7f0007fd7",
+      "archivePath": "source-archive/concessions/nkr-attachments/c6d9ae8860a16b6ccdf4141c755308e6d930627ccdec41fe1abc19a7f0007fd7.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c6d9ae8860a16b6ccdf4141c755308e6d930627ccdec41fe1abc19a7f0007fd7.txt",
+      "inventoryIds": [
+        "216-275"
+      ],
+      "concessionIds": [
+        "216-275"
+      ],
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%92%D0%B5%D0%BB%D0%B0.pdf",
+      "extension": ".pdf",
+      "textChars": 88261,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "f7fd9d73-16b0-47db-8769-4d9c45852a82",
+      "sha256": "bfb2b7333caf7d937e96326e9038f84de6af3bfd13213e7a1a2eb71f456daac3",
+      "archivePath": "source-archive/concessions/nkr-attachments/bfb2b7333caf7d937e96326e9038f84de6af3bfd13213e7a1a2eb71f456daac3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/bfb2b7333caf7d937e96326e9038f84de6af3bfd13213e7a1a2eb71f456daac3.txt",
+      "inventoryIds": [
+        "216-275"
+      ],
+      "concessionIds": [
+        "216-275"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%2050-2023.pdf",
+      "extension": ".pdf",
+      "textChars": 23457,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "6954ab6a-42d5-46ae-a5c0-d422020ad053",
+      "sha256": "0230aa015e8fa6b8037e992c7385218c6bec9601b3065dcf6e565fc41ddb58f0",
+      "archivePath": "source-archive/concessions/nkr-attachments/0230aa015e8fa6b8037e992c7385218c6bec9601b3065dcf6e565fc41ddb58f0.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0230aa015e8fa6b8037e992c7385218c6bec9601b3065dcf6e565fc41ddb58f0.txt",
+      "inventoryIds": [
+        "216-280"
+      ],
+      "concessionIds": [
+        "216-280"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%20425-2023-.pdf",
+      "extension": ".pdf",
+      "textChars": 21420,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "be5f75f1-c008-490a-a242-40ccf0c230e0",
+      "sha256": "881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d",
+      "archivePath": "source-archive/concessions/nkr-attachments/881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d.txt",
+      "inventoryIds": [
+        "216-306"
+      ],
+      "concessionIds": [
+        "216-306"
+      ],
+      "filename": "%D0%A0%D0%9C%D0%A1%20863-2022.pdf",
+      "extension": ".pdf",
+      "textChars": 21508,
       "keywordHit": true,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
@@ -354,6 +904,68 @@
         "sourceCrs": "КС 1970",
         "officialAreaDka": null,
         "status": "register_structure_confirmed__15_plus_62_points__numeric_attachment_not_extracted"
+      },
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "92e8889d-4785-45de-8ca4-70267f0d0bec",
+      "sha256": "92c2bba968118ff2fd67143b88ca53e437de5f5bb0120994e67559a8ac6198bc",
+      "archivePath": "source-archive/concessions/nkr-attachments/92c2bba968118ff2fd67143b88ca53e437de5f5bb0120994e67559a8ac6198bc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/92c2bba968118ff2fd67143b88ca53e437de5f5bb0120994e67559a8ac6198bc.txt",
+      "inventoryIds": [
+        "D-000074"
+      ],
+      "concessionIds": [
+        "D-000074"
+      ],
+      "filename": "Elacite-aneks 8-NKR.pdf",
+      "extension": ".pdf",
+      "textChars": 47570,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": {
+        "concessionId": "D-000074",
+        "id": "MINE-ELATSITE",
+        "name": "Елаците",
+        "expectedPointCount": 395,
+        "sourceCrs": "БГС2005, кадастрални координати",
+        "officialAreaDka": 21821.8,
+        "status": "official_BGS2005_register_confirmed__395_points__attachment_download_required"
+      },
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "f270e358-bf3b-463c-a752-d45d5c51e3eb",
+      "sha256": "c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e",
+      "archivePath": "source-archive/concessions/nkr-attachments/c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e.txt",
+      "inventoryIds": [
+        "D-000074"
+      ],
+      "concessionIds": [
+        "D-000074"
+      ],
+      "filename": "25RH147(1).doc",
+      "extension": ".doc",
+      "textChars": 15508,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": {
+        "concessionId": "D-000074",
+        "id": "MINE-ELATSITE",
+        "name": "Елаците",
+        "expectedPointCount": 395,
+        "sourceCrs": "БГС2005, кадастрални координати",
+        "officialAreaDka": 21821.8,
+        "status": "official_BGS2005_register_confirmed__395_points__attachment_download_required"
       },
       "exactExpectedPointCount": false,
       "qaStatus": "candidate-review",
