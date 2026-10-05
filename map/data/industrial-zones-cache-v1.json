@@ -385,7 +385,7 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-05T06:40:59Z",
+    "generatedAt": "2026-10-05T08:23:57Z",
     "featureCount": 2,
     "features": [
       {
@@ -400,6 +400,8 @@
           "source_zone": "K9",
           "source_point_count": 40,
           "source_url": "https://dv.parliament.bg/DVWeb/materiali.faces?idObj=2766",
+          "source_attachment_sha256": null,
+          "source_archive_path": null,
           "source_kind": "official-coordinate-register",
           "geometry_status": "repository-baseline-official-register-transformed",
           "transformation": "bojko108/transformations@2.0.0 BGS1970 grid -> BGS2005/CCS2005 -> WGS84",
@@ -589,6 +591,8 @@
           "source_zone": "K5",
           "source_point_count": 14,
           "source_url": "https://www.ciela.net/svobodna-zona-darjaven-vestnik/document/2135718405/issue/1531/reshenie-%E2%84%96-87-ot-11-fevruari-2011-g-za-predostavyane-na-kontsesiya-za-dobiv-na-podzemni-bogatstva-po-chl-2-al-1-t-1-ot-zakona-za-podzemnite-bogatstva---metalni-polezni-izkopaemi---zlatosadarzhashti-rudi-ot-nahodishte-",
+          "source_attachment_sha256": null,
+          "source_archive_path": null,
           "source_kind": "official-coordinate-register",
           "geometry_status": "repository-baseline-official-register-transformed",
           "transformation": "bojko108/transformations@2.0.0 BGS1970 grid -> BGS2005/CCS2005 -> WGS84",
@@ -14901,13 +14905,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-05T07:32:43Z",
+    "sourceHealthCheckedAt": "2026-10-05T08:24:25Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-05T07:32:17Z",
+        "checkedAt": "2026-10-05T08:23:59Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -14915,7 +14919,7 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-05T07:32:29Z",
+        "checkedAt": "2026-10-05T08:24:10Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
@@ -14926,19 +14930,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-05T07:32:41Z",
+        "checkedAt": "2026-10-05T08:24:23Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
         "bytes": 46023,
-        "digest": "8512fbb377d2782aa0cc8bf89de6521a3b84712b5cffc7629e00f19f61b2ce27"
+        "digest": "f50f2d0d8d1ee1b2de32ead574ca9d471d45b43cd0d05c128df181b298d05883"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-05T07:32:42Z",
+        "checkedAt": "2026-10-05T08:24:24Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
         "bytes": 51607,
-        "digest": "a69f4e55350f8d0883f26504adac6d33ed7ff60840a704cccd72d6ca4a2effa3"
+        "digest": "660e055b98336a5d20d75d437d47cb3a76e8f198aa1063cadf8f12e45d5c74a9"
       }
     ],
     "coverage": {
@@ -14967,14 +14971,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-05T07:32:42Z",
+      "checkedAt": "2026-10-05T08:24:24Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
       "bytes": 51607,
-      "digest": "a69f4e55350f8d0883f26504adac6d33ed7ff60840a704cccd72d6ca4a2effa3"
+      "digest": "660e055b98336a5d20d75d437d47cb3a76e8f198aa1063cadf8f12e45d5c74a9"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-05T06:40:59Z"
+    "concessionsBaseline": "2026-10-05T08:23:57Z"
   }
 }

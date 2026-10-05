@@ -1,0 +1,9390 @@
+{
+  "schema": "bgwf-coordinate-registers-staging-v1",
+  "generatedFrom": {
+    "attachments": "./nkr-attachment-index-v1.json",
+    "candidates": "./coordinate-document-candidates-v1.json",
+    "curated": "./concession-boundaries-official-source-v2.json"
+  },
+  "runtimeDependency": false,
+  "registerCount": 27,
+  "publicationReadyCount": 0,
+  "rules": [
+    "Extraction is evidence staging, not legal geometry publication.",
+    "Exact expected numbered register and official area are mandatory.",
+    "BGS1970 also requires verified zone and coordinate order.",
+    "Baseline builder independently checks transformed area and Bulgaria bounds."
+  ],
+  "registers": [
+    {
+      "concessionId": "216-122",
+      "curatedId": null,
+      "name": null,
+      "fileId": "b30a92c3-1294-490e-8c8c-924d89879b07",
+      "sha256": "75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513",
+      "archivePath": "source-archive/concessions/nkr-attachments/75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/b30a92c3-1294-490e-8c8c-924d89879b07",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9A%D0%B0%D0%B9%D0%BC%D0%B5%D1%82%D0%BB%D0%B8%D0%B9.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 4,
+      "pointNumberRanges": [
+        "1-4"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4677731.9,
+          271434.2
+        ],
+        [
+          4677738.7,
+          272505.5
+        ],
+        [
+          4677528.8,
+          272508.7
+        ],
+        [
+          4677528.4,
+          271437.5
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4677731.9,
+          "b": 271434.2
+        },
+        {
+          "pointNo": 2,
+          "a": 4677738.7,
+          "b": 272505.5
+        },
+        {
+          "pointNo": 3,
+          "a": 4677528.8,
+          "b": 272508.7
+        },
+        {
+          "pointNo": 4,
+          "a": 4677528.4,
+          "b": 271437.5
+        }
+      ]
+    },
+    {
+      "concessionId": "216-123",
+      "curatedId": null,
+      "name": null,
+      "fileId": "5abd1f6a-2a2d-4302-9bbe-73c1e0af2015",
+      "sha256": "d97f84084fb3563f03930b23bd34cf2bc18193ec4a5ae1ce302811955dd4b8dc",
+      "archivePath": "source-archive/concessions/nkr-attachments/d97f84084fb3563f03930b23bd34cf2bc18193ec4a5ae1ce302811955dd4b8dc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/d97f84084fb3563f03930b23bd34cf2bc18193ec4a5ae1ce302811955dd4b8dc.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/5abd1f6a-2a2d-4302-9bbe-73c1e0af2015",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%A0%D0%B0%D0%B4%D0%B5%D0%BD%D0%BA%D0%B0.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 56,
+      "pointNumberRanges": [
+        "1-56"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4607615.2,
+          364704.7
+        ],
+        [
+          4607652.2,
+          364745.6
+        ],
+        [
+          4607748.0,
+          365000.0
+        ],
+        [
+          4607705.6,
+          365015.0
+        ],
+        [
+          4607597.7,
+          365010.3
+        ],
+        [
+          4607604.0,
+          364957.5
+        ],
+        [
+          4607655.3,
+          364902.7
+        ],
+        [
+          4607609.9,
+          364839.6
+        ],
+        [
+          4607534.4,
+          364736.7
+        ],
+        [
+          4607484.6,
+          364726.5
+        ],
+        [
+          4607490.0,
+          364670.6
+        ],
+        [
+          4607470.0,
+          364792.1
+        ],
+        [
+          4607477.5,
+          364852.3
+        ],
+        [
+          4607542.7,
+          364925.0
+        ],
+        [
+          4607505.1,
+          364952.0
+        ],
+        [
+          4607391.7,
+          365047.3
+        ],
+        [
+          4607353.7,
+          365044.3
+        ],
+        [
+          4607383.1,
+          364869.0
+        ],
+        [
+          4607378.3,
+          364735.8
+        ],
+        [
+          4608090.8,
+          365540.6
+        ],
+        [
+          4608127.8,
+          365701.6
+        ],
+        [
+          4608005.9,
+          365738.6
+        ],
+        [
+          4607871.9,
+          365575.3
+        ],
+        [
+          4607815.2,
+          365629.0
+        ],
+        [
+          4607827.4,
+          365758.8
+        ],
+        [
+          4607785.5,
+          365832.2
+        ],
+        [
+          4607737.2,
+          365680.0
+        ],
+        [
+          4607804.6,
+          365542.6
+        ],
+        [
+          4607848.9,
+          365534.7
+        ],
+        [
+          4607894.0,
+          365527.1
+        ],
+        [
+          4607987.6,
+          365506.1
+        ],
+        [
+          4608403.3,
+          366012.5
+        ],
+        [
+          4608841.9,
+          366483.4
+        ],
+        [
+          4608829.0,
+          366517.1
+        ],
+        [
+          4608788.5,
+          366618.1
+        ],
+        [
+          4608705.9,
+          366805.2
+        ],
+        [
+          4608620.4,
+          366702.0
+        ],
+        [
+          4608682.3,
+          366667.6
+        ],
+        [
+          4608626.0,
+          366638.2
+        ],
+        [
+          4608536.0,
+          366515.9
+        ],
+        [
+          4608572.4,
+          366456.8
+        ],
+        [
+          4608750.7,
+          366531.2
+        ],
+        [
+          4608806.5,
+          366497.5
+        ],
+        [
+          4608522.5,
+          366250.5
+        ],
+        [
+          4608407.9,
+          366232.7
+        ],
+        [
+          4608337.6,
+          366040.9
+        ],
+        [
+          4608266.6,
+          366078.1
+        ],
+        [
+          4608304.2,
+          366179.1
+        ],
+        [
+          4608307.5,
+          366245.2
+        ],
+        [
+          4608349.4,
+          366291.2
+        ],
+        [
+          4608405.9,
+          366315.6
+        ],
+        [
+          4608445.0,
+          366309.6
+        ],
+        [
+          4608438.8,
+          366357.5
+        ],
+        [
+          4608437.6,
+          366367.4
+        ],
+        [
+          4608316.7,
+          366360.5
+        ],
+        [
+          4608207.1,
+          366138.7
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4607615.2,
+          "b": 364704.7
+        },
+        {
+          "pointNo": 2,
+          "a": 4607652.2,
+          "b": 364745.6
+        },
+        {
+          "pointNo": 3,
+          "a": 4607748.0,
+          "b": 365000.0
+        },
+        {
+          "pointNo": 4,
+          "a": 4607705.6,
+          "b": 365015.0
+        },
+        {
+          "pointNo": 5,
+          "a": 4607597.7,
+          "b": 365010.3
+        },
+        {
+          "pointNo": 6,
+          "a": 4607604.0,
+          "b": 364957.5
+        },
+        {
+          "pointNo": 7,
+          "a": 4607655.3,
+          "b": 364902.7
+        },
+        {
+          "pointNo": 8,
+          "a": 4607609.9,
+          "b": 364839.6
+        },
+        {
+          "pointNo": 9,
+          "a": 4607534.4,
+          "b": 364736.7
+        },
+        {
+          "pointNo": 10,
+          "a": 4607484.6,
+          "b": 364726.5
+        },
+        {
+          "pointNo": 11,
+          "a": 4607490.0,
+          "b": 364670.6
+        },
+        {
+          "pointNo": 12,
+          "a": 4607470.0,
+          "b": 364792.1
+        },
+        {
+          "pointNo": 13,
+          "a": 4607477.5,
+          "b": 364852.3
+        },
+        {
+          "pointNo": 14,
+          "a": 4607542.7,
+          "b": 364925.0
+        },
+        {
+          "pointNo": 15,
+          "a": 4607505.1,
+          "b": 364952.0
+        },
+        {
+          "pointNo": 16,
+          "a": 4607391.7,
+          "b": 365047.3
+        },
+        {
+          "pointNo": 17,
+          "a": 4607353.7,
+          "b": 365044.3
+        },
+        {
+          "pointNo": 18,
+          "a": 4607383.1,
+          "b": 364869.0
+        },
+        {
+          "pointNo": 19,
+          "a": 4607378.3,
+          "b": 364735.8
+        },
+        {
+          "pointNo": 20,
+          "a": 4608090.8,
+          "b": 365540.6
+        },
+        {
+          "pointNo": 21,
+          "a": 4608127.8,
+          "b": 365701.6
+        },
+        {
+          "pointNo": 22,
+          "a": 4608005.9,
+          "b": 365738.6
+        },
+        {
+          "pointNo": 23,
+          "a": 4607871.9,
+          "b": 365575.3
+        },
+        {
+          "pointNo": 24,
+          "a": 4607815.2,
+          "b": 365629.0
+        },
+        {
+          "pointNo": 25,
+          "a": 4607827.4,
+          "b": 365758.8
+        },
+        {
+          "pointNo": 26,
+          "a": 4607785.5,
+          "b": 365832.2
+        },
+        {
+          "pointNo": 27,
+          "a": 4607737.2,
+          "b": 365680.0
+        },
+        {
+          "pointNo": 28,
+          "a": 4607804.6,
+          "b": 365542.6
+        },
+        {
+          "pointNo": 29,
+          "a": 4607848.9,
+          "b": 365534.7
+        },
+        {
+          "pointNo": 30,
+          "a": 4607894.0,
+          "b": 365527.1
+        },
+        {
+          "pointNo": 31,
+          "a": 4607987.6,
+          "b": 365506.1
+        },
+        {
+          "pointNo": 32,
+          "a": 4608403.3,
+          "b": 366012.5
+        },
+        {
+          "pointNo": 33,
+          "a": 4608841.9,
+          "b": 366483.4
+        },
+        {
+          "pointNo": 34,
+          "a": 4608829.0,
+          "b": 366517.1
+        },
+        {
+          "pointNo": 35,
+          "a": 4608788.5,
+          "b": 366618.1
+        },
+        {
+          "pointNo": 36,
+          "a": 4608705.9,
+          "b": 366805.2
+        },
+        {
+          "pointNo": 37,
+          "a": 4608620.4,
+          "b": 366702.0
+        },
+        {
+          "pointNo": 38,
+          "a": 4608682.3,
+          "b": 366667.6
+        },
+        {
+          "pointNo": 39,
+          "a": 4608626.0,
+          "b": 366638.2
+        },
+        {
+          "pointNo": 40,
+          "a": 4608536.0,
+          "b": 366515.9
+        },
+        {
+          "pointNo": 41,
+          "a": 4608572.4,
+          "b": 366456.8
+        },
+        {
+          "pointNo": 42,
+          "a": 4608750.7,
+          "b": 366531.2
+        },
+        {
+          "pointNo": 43,
+          "a": 4608806.5,
+          "b": 366497.5
+        },
+        {
+          "pointNo": 44,
+          "a": 4608522.5,
+          "b": 366250.5
+        },
+        {
+          "pointNo": 45,
+          "a": 4608407.9,
+          "b": 366232.7
+        },
+        {
+          "pointNo": 46,
+          "a": 4608337.6,
+          "b": 366040.9
+        },
+        {
+          "pointNo": 47,
+          "a": 4608266.6,
+          "b": 366078.1
+        },
+        {
+          "pointNo": 48,
+          "a": 4608304.2,
+          "b": 366179.1
+        },
+        {
+          "pointNo": 49,
+          "a": 4608307.5,
+          "b": 366245.2
+        },
+        {
+          "pointNo": 50,
+          "a": 4608349.4,
+          "b": 366291.2
+        },
+        {
+          "pointNo": 51,
+          "a": 4608405.9,
+          "b": 366315.6
+        },
+        {
+          "pointNo": 52,
+          "a": 4608445.0,
+          "b": 366309.6
+        },
+        {
+          "pointNo": 53,
+          "a": 4608438.8,
+          "b": 366357.5
+        },
+        {
+          "pointNo": 54,
+          "a": 4608437.6,
+          "b": 366367.4
+        },
+        {
+          "pointNo": 55,
+          "a": 4608316.7,
+          "b": 366360.5
+        },
+        {
+          "pointNo": 56,
+          "a": 4608207.1,
+          "b": 366138.7
+        }
+      ]
+    },
+    {
+      "concessionId": "216-124",
+      "curatedId": null,
+      "name": null,
+      "fileId": "c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
+      "sha256": "5af8e02d367820cb8c182531b873f3f0d453d7f0a8777cf2cc8e0a602abc0c92",
+      "archivePath": "source-archive/concessions/nkr-attachments/5af8e02d367820cb8c182531b873f3f0d453d7f0a8777cf2cc8e0a602abc0c92.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/5af8e02d367820cb8c182531b873f3f0d453d7f0a8777cf2cc8e0a602abc0c92.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9B%D0%B5%D0%BC%D0%B8%D1%89%D0%B5.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 22,
+      "pointNumberRanges": [
+        "1-22"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4732443.5,
+          8515854.9
+        ],
+        [
+          4732442.7,
+          8515917.6
+        ],
+        [
+          4732429.6,
+          8516042.6
+        ],
+        [
+          4732386.3,
+          8516105.3
+        ],
+        [
+          4732262.1,
+          8515995.3
+        ],
+        [
+          4732206.2,
+          8515948.4
+        ],
+        [
+          4732197.4,
+          8515941.0
+        ],
+        [
+          4732123.7,
+          8516077.6
+        ],
+        [
+          4732058.6,
+          8516017.0
+        ],
+        [
+          4732135.2,
+          8515884.8
+        ],
+        [
+          4732073.0,
+          8515828.5
+        ],
+        [
+          4731939.3,
+          8515710.9
+        ],
+        [
+          4731958.6,
+          8515610.1
+        ],
+        [
+          4731959.0,
+          8515608.1
+        ],
+        [
+          4731963.4,
+          8515585.4
+        ],
+        [
+          4731966.6,
+          8515568.7
+        ],
+        [
+          4731966.9,
+          8515566.7
+        ],
+        [
+          4731982.0,
+          8515488.5
+        ],
+        [
+          4732084.1,
+          8515589.6
+        ],
+        [
+          4732233.8,
+          8515634.4
+        ],
+        [
+          4732328.0,
+          8515708.9
+        ],
+        [
+          4732398.2,
+          8515790.7
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4732443.5,
+          "b": 8515854.9
+        },
+        {
+          "pointNo": 2,
+          "a": 4732442.7,
+          "b": 8515917.6
+        },
+        {
+          "pointNo": 3,
+          "a": 4732429.6,
+          "b": 8516042.6
+        },
+        {
+          "pointNo": 4,
+          "a": 4732386.3,
+          "b": 8516105.3
+        },
+        {
+          "pointNo": 5,
+          "a": 4732262.1,
+          "b": 8515995.3
+        },
+        {
+          "pointNo": 6,
+          "a": 4732206.2,
+          "b": 8515948.4
+        },
+        {
+          "pointNo": 7,
+          "a": 4732197.4,
+          "b": 8515941.0
+        },
+        {
+          "pointNo": 8,
+          "a": 4732123.7,
+          "b": 8516077.6
+        },
+        {
+          "pointNo": 9,
+          "a": 4732058.6,
+          "b": 8516017.0
+        },
+        {
+          "pointNo": 10,
+          "a": 4732135.2,
+          "b": 8515884.8
+        },
+        {
+          "pointNo": 11,
+          "a": 4732073.0,
+          "b": 8515828.5
+        },
+        {
+          "pointNo": 12,
+          "a": 4731939.3,
+          "b": 8515710.9
+        },
+        {
+          "pointNo": 13,
+          "a": 4731958.6,
+          "b": 8515610.1
+        },
+        {
+          "pointNo": 14,
+          "a": 4731959.0,
+          "b": 8515608.1
+        },
+        {
+          "pointNo": 15,
+          "a": 4731963.4,
+          "b": 8515585.4
+        },
+        {
+          "pointNo": 16,
+          "a": 4731966.6,
+          "b": 8515568.7
+        },
+        {
+          "pointNo": 17,
+          "a": 4731966.9,
+          "b": 8515566.7
+        },
+        {
+          "pointNo": 18,
+          "a": 4731982.0,
+          "b": 8515488.5
+        },
+        {
+          "pointNo": 19,
+          "a": 4732084.1,
+          "b": 8515589.6
+        },
+        {
+          "pointNo": 20,
+          "a": 4732233.8,
+          "b": 8515634.4
+        },
+        {
+          "pointNo": 21,
+          "a": 4732328.0,
+          "b": 8515708.9
+        },
+        {
+          "pointNo": 22,
+          "a": 4732398.2,
+          "b": 8515790.7
+        }
+      ]
+    },
+    {
+      "concessionId": "216-125",
+      "curatedId": null,
+      "name": null,
+      "fileId": "39240137-01b4-4bb7-8aec-fd528d725454",
+      "sha256": "22ba298944a568e4d5306d4343171ce883afa8fb54e6acfd08edc2707e226dbf",
+      "archivePath": "source-archive/concessions/nkr-attachments/22ba298944a568e4d5306d4343171ce883afa8fb54e6acfd08edc2707e226dbf.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/22ba298944a568e4d5306d4343171ce883afa8fb54e6acfd08edc2707e226dbf.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/39240137-01b4-4bb7-8aec-fd528d725454",
+      "filename": "%D0%A5%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D0%BE-3.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 6,
+      "pointNumberRanges": [
+        "1-6"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4811554.6,
+          617227.5
+        ],
+        [
+          4811371.1,
+          617425.5
+        ],
+        [
+          4811087.6,
+          617358.7
+        ],
+        [
+          4811074.6,
+          617413.5
+        ],
+        [
+          4810844.9,
+          617370.7
+        ],
+        [
+          4811203.8,
+          617119.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4811554.6,
+          "b": 617227.5
+        },
+        {
+          "pointNo": 2,
+          "a": 4811371.1,
+          "b": 617425.5
+        },
+        {
+          "pointNo": 3,
+          "a": 4811087.6,
+          "b": 617358.7
+        },
+        {
+          "pointNo": 4,
+          "a": 4811074.6,
+          "b": 617413.5
+        },
+        {
+          "pointNo": 5,
+          "a": 4810844.9,
+          "b": 617370.7
+        },
+        {
+          "pointNo": 6,
+          "a": 4811203.8,
+          "b": 617119.0
+        }
+      ]
+    },
+    {
+      "concessionId": "216-125",
+      "curatedId": null,
+      "name": null,
+      "fileId": "f5a3513c-71a1-4212-921b-c06b134fe927",
+      "sha256": "83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6",
+      "archivePath": "source-archive/concessions/nkr-attachments/83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/83b321214cab885432a95cb3e03477882d521c822499383bcfa745e0e4197fd6.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/f5a3513c-71a1-4212-921b-c06b134fe927",
+      "filename": "21RH148%20%D0%A5%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D0%BE%20-%203%20.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 6,
+      "pointNumberRanges": [
+        "1-6"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4811554.6,
+          617227.5
+        ],
+        [
+          4811371.1,
+          617425.5
+        ],
+        [
+          4811087.6,
+          617358.7
+        ],
+        [
+          4811074.6,
+          617413.5
+        ],
+        [
+          4810844.9,
+          617370.7
+        ],
+        [
+          4811203.8,
+          617119.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4811554.6,
+          "b": 617227.5
+        },
+        {
+          "pointNo": 2,
+          "a": 4811371.1,
+          "b": 617425.5
+        },
+        {
+          "pointNo": 3,
+          "a": 4811087.6,
+          "b": 617358.7
+        },
+        {
+          "pointNo": 4,
+          "a": 4811074.6,
+          "b": 617413.5
+        },
+        {
+          "pointNo": 5,
+          "a": 4810844.9,
+          "b": 617370.7
+        },
+        {
+          "pointNo": 6,
+          "a": 4811203.8,
+          "b": 617119.0
+        }
+      ]
+    },
+    {
+      "concessionId": "216-126",
+      "curatedId": null,
+      "name": null,
+      "fileId": "e992c0ba-1375-451c-aa0a-99b497f93497",
+      "sha256": "188d7fbf6ebdc7f495c4f54be1ecc3770812f4fdb62c57f74a97d9e5df08f9a3",
+      "archivePath": "source-archive/concessions/nkr-attachments/188d7fbf6ebdc7f495c4f54be1ecc3770812f4fdb62c57f74a97d9e5df08f9a3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/188d7fbf6ebdc7f495c4f54be1ecc3770812f4fdb62c57f74a97d9e5df08f9a3.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/e992c0ba-1375-451c-aa0a-99b497f93497",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9E%D1%80%D0%B5%D1%88%D0%B0%D0%BA%D0%B0.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 16,
+      "pointNumberRanges": [
+        "1-16"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4543810.6,
+          8586655.3
+        ],
+        [
+          4543810.8,
+          8586889.9
+        ],
+        [
+          4543775.0,
+          8586897.6
+        ],
+        [
+          4543746.9,
+          8586969.2
+        ],
+        [
+          4543453.8,
+          8587297.7
+        ],
+        [
+          4543257.7,
+          8587354.6
+        ],
+        [
+          4542928.9,
+          8587233.8
+        ],
+        [
+          4542767.4,
+          8586858.1
+        ],
+        [
+          4542796.3,
+          8586785.3
+        ],
+        [
+          4542973.9,
+          8586682.4
+        ],
+        [
+          4543172.4,
+          8586635.5
+        ],
+        [
+          4543395.8,
+          8586644.5
+        ],
+        [
+          4543622.4,
+          8586678.5
+        ],
+        [
+          4543693.0,
+          8586702.7
+        ],
+        [
+          4543692.7,
+          8586665.6
+        ],
+        [
+          4543699.5,
+          8586655.3
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4543810.6,
+          "b": 8586655.3
+        },
+        {
+          "pointNo": 2,
+          "a": 4543810.8,
+          "b": 8586889.9
+        },
+        {
+          "pointNo": 3,
+          "a": 4543775.0,
+          "b": 8586897.6
+        },
+        {
+          "pointNo": 4,
+          "a": 4543746.9,
+          "b": 8586969.2
+        },
+        {
+          "pointNo": 5,
+          "a": 4543453.8,
+          "b": 8587297.7
+        },
+        {
+          "pointNo": 6,
+          "a": 4543257.7,
+          "b": 8587354.6
+        },
+        {
+          "pointNo": 7,
+          "a": 4542928.9,
+          "b": 8587233.8
+        },
+        {
+          "pointNo": 8,
+          "a": 4542767.4,
+          "b": 8586858.1
+        },
+        {
+          "pointNo": 9,
+          "a": 4542796.3,
+          "b": 8586785.3
+        },
+        {
+          "pointNo": 10,
+          "a": 4542973.9,
+          "b": 8586682.4
+        },
+        {
+          "pointNo": 11,
+          "a": 4543172.4,
+          "b": 8586635.5
+        },
+        {
+          "pointNo": 12,
+          "a": 4543395.8,
+          "b": 8586644.5
+        },
+        {
+          "pointNo": 13,
+          "a": 4543622.4,
+          "b": 8586678.5
+        },
+        {
+          "pointNo": 14,
+          "a": 4543693.0,
+          "b": 8586702.7
+        },
+        {
+          "pointNo": 15,
+          "a": 4543692.7,
+          "b": 8586665.6
+        },
+        {
+          "pointNo": 16,
+          "a": 4543699.5,
+          "b": 8586655.3
+        }
+      ]
+    },
+    {
+      "concessionId": "216-126",
+      "curatedId": null,
+      "name": null,
+      "fileId": "f8ebe328-a183-405e-9d65-0a735bc9d5c6",
+      "sha256": "e418b296ff29ad7d6cad6418bf150f6665779fa8a89ca512593fb999c526f982",
+      "archivePath": "source-archive/concessions/nkr-attachments/e418b296ff29ad7d6cad6418bf150f6665779fa8a89ca512593fb999c526f982.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e418b296ff29ad7d6cad6418bf150f6665779fa8a89ca512593fb999c526f982.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/f8ebe328-a183-405e-9d65-0a735bc9d5c6",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9E%D1%80%D0%B5%D1%88%D0%B0%D0%BA%D0%B0.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "WGS84",
+      "sourceCoordinateSystem": "WGS84",
+      "sourceCoordinateOrder": "lat/lon-or-lon/lat_needs_bounds_resolution",
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 1,
+      "pointNumberRanges": [
+        "43"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "WGS84_axis_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          44.0,
+          23.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 43,
+          "a": 44.0,
+          "b": 23.0
+        }
+      ]
+    },
+    {
+      "concessionId": "216-127",
+      "curatedId": null,
+      "name": null,
+      "fileId": "3cc8a4cc-a2d4-4fc1-8fd5-f54e91a5b39f",
+      "sha256": "22fe0cea41d5ae827c9e40710cda6e1fb7100810241d2343f2f0fac366db73a3",
+      "archivePath": "source-archive/concessions/nkr-attachments/22fe0cea41d5ae827c9e40710cda6e1fb7100810241d2343f2f0fac366db73a3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/22fe0cea41d5ae827c9e40710cda6e1fb7100810241d2343f2f0fac366db73a3.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/3cc8a4cc-a2d4-4fc1-8fd5-f54e91a5b39f",
+      "filename": "%D0%9F%D0%B5%D1%80%D0%B8-2.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 18,
+      "pointNumberRanges": [
+        "1-2",
+        "4-5",
+        "7-20"
+      ],
+      "conflictCount": 3,
+      "conflicts": [
+        {
+          "pointNo": 1,
+          "first": {
+            "pointNo": 1,
+            "a": 8480982.4,
+            "b": 4583926.5,
+            "crsClass": "BGS1970"
+          },
+          "other": {
+            "pointNo": 1,
+            "a": 8481362.0,
+            "b": 4584092.8,
+            "crsClass": "BGS1970"
+          }
+        },
+        {
+          "pointNo": 7,
+          "first": {
+            "pointNo": 7,
+            "a": 8481004.7,
+            "b": 4583991.8,
+            "crsClass": "BGS1970"
+          },
+          "other": {
+            "pointNo": 7,
+            "a": 8481293.0,
+            "b": 4583784.3,
+            "crsClass": "BGS1970"
+          }
+        },
+        {
+          "pointNo": 8,
+          "first": {
+            "pointNo": 8,
+            "a": 8481168.7,
+            "b": 4584099.4,
+            "crsClass": "BGS1970"
+          },
+          "other": {
+            "pointNo": 8,
+            "a": 8481221.1,
+            "b": 4583746.3,
+            "crsClass": "BGS1970"
+          }
+        }
+      ],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "conflicting_duplicate_point_numbers",
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          8480982.4,
+          4583926.5
+        ],
+        [
+          8481315.7,
+          4583795.5
+        ],
+        [
+          8481140.3,
+          4583734.0
+        ],
+        [
+          8481072.3,
+          4583755.1
+        ],
+        [
+          8481004.7,
+          4583991.8
+        ],
+        [
+          8481168.7,
+          4584099.4
+        ],
+        [
+          8481313.8,
+          4584161.9
+        ],
+        [
+          8480780.7,
+          4584068.9
+        ],
+        [
+          8480812.9,
+          4584223.0
+        ],
+        [
+          8480847.6,
+          4584268.0
+        ],
+        [
+          8480929.1,
+          4584259.1
+        ],
+        [
+          8481005.3,
+          4584214.1
+        ],
+        [
+          8481054.7,
+          4584178.1
+        ],
+        [
+          8481036.7,
+          4584127.9
+        ],
+        [
+          8480999.2,
+          4584069.8
+        ],
+        [
+          8480915.5,
+          4583988.3
+        ],
+        [
+          8480855.8,
+          4583967.1
+        ],
+        [
+          8480829.1,
+          4583985.6
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 8480982.4,
+          "b": 4583926.5
+        },
+        {
+          "pointNo": 2,
+          "a": 8481315.7,
+          "b": 4583795.5
+        },
+        {
+          "pointNo": 4,
+          "a": 8481140.3,
+          "b": 4583734.0
+        },
+        {
+          "pointNo": 5,
+          "a": 8481072.3,
+          "b": 4583755.1
+        },
+        {
+          "pointNo": 7,
+          "a": 8481004.7,
+          "b": 4583991.8
+        },
+        {
+          "pointNo": 8,
+          "a": 8481168.7,
+          "b": 4584099.4
+        },
+        {
+          "pointNo": 9,
+          "a": 8481313.8,
+          "b": 4584161.9
+        },
+        {
+          "pointNo": 10,
+          "a": 8480780.7,
+          "b": 4584068.9
+        },
+        {
+          "pointNo": 11,
+          "a": 8480812.9,
+          "b": 4584223.0
+        },
+        {
+          "pointNo": 12,
+          "a": 8480847.6,
+          "b": 4584268.0
+        },
+        {
+          "pointNo": 13,
+          "a": 8480929.1,
+          "b": 4584259.1
+        },
+        {
+          "pointNo": 14,
+          "a": 8481005.3,
+          "b": 4584214.1
+        },
+        {
+          "pointNo": 15,
+          "a": 8481054.7,
+          "b": 4584178.1
+        },
+        {
+          "pointNo": 16,
+          "a": 8481036.7,
+          "b": 4584127.9
+        },
+        {
+          "pointNo": 17,
+          "a": 8480999.2,
+          "b": 4584069.8
+        },
+        {
+          "pointNo": 18,
+          "a": 8480915.5,
+          "b": 4583988.3
+        },
+        {
+          "pointNo": 19,
+          "a": 8480855.8,
+          "b": 4583967.1
+        },
+        {
+          "pointNo": 20,
+          "a": 8480829.1,
+          "b": 4583985.6
+        }
+      ]
+    },
+    {
+      "concessionId": "216-127",
+      "curatedId": null,
+      "name": null,
+      "fileId": "71ca1221-0873-4cc0-9032-9fb2d65668d0",
+      "sha256": "0fb4a144e0948bad94f85c4288466162121f3ef4c6d5b708ee6a8dbef4d7635b",
+      "archivePath": "source-archive/concessions/nkr-attachments/0fb4a144e0948bad94f85c4288466162121f3ef4c6d5b708ee6a8dbef4d7635b.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0fb4a144e0948bad94f85c4288466162121f3ef4c6d5b708ee6a8dbef4d7635b.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/71ca1221-0873-4cc0-9032-9fb2d65668d0",
+      "filename": "21RH114%20%D0%9F%D0%B5%D1%80%D0%B8-2.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 16,
+      "pointNumberRanges": [
+        "1-16"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4712567.7,
+          303454.1
+        ],
+        [
+          4712554.2,
+          303554.6
+        ],
+        [
+          4712503.8,
+          303635.2
+        ],
+        [
+          4712465.9,
+          303684.7
+        ],
+        [
+          4712387.8,
+          303772.2
+        ],
+        [
+          4712446.7,
+          303918.7
+        ],
+        [
+          4712449.8,
+          303986.1
+        ],
+        [
+          4712357.3,
+          304052.5
+        ],
+        [
+          4712353.2,
+          303974.6
+        ],
+        [
+          4711922.2,
+          303896.3
+        ],
+        [
+          4712002.4,
+          303658.8
+        ],
+        [
+          4712185.3,
+          303568.6
+        ],
+        [
+          4712219.9,
+          303450.7
+        ],
+        [
+          4712242.3,
+          303420.0
+        ],
+        [
+          4712340.0,
+          303366.4
+        ],
+        [
+          4712508.2,
+          303405.8
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4712567.7,
+          "b": 303454.1
+        },
+        {
+          "pointNo": 2,
+          "a": 4712554.2,
+          "b": 303554.6
+        },
+        {
+          "pointNo": 3,
+          "a": 4712503.8,
+          "b": 303635.2
+        },
+        {
+          "pointNo": 4,
+          "a": 4712465.9,
+          "b": 303684.7
+        },
+        {
+          "pointNo": 5,
+          "a": 4712387.8,
+          "b": 303772.2
+        },
+        {
+          "pointNo": 6,
+          "a": 4712446.7,
+          "b": 303918.7
+        },
+        {
+          "pointNo": 7,
+          "a": 4712449.8,
+          "b": 303986.1
+        },
+        {
+          "pointNo": 8,
+          "a": 4712357.3,
+          "b": 304052.5
+        },
+        {
+          "pointNo": 9,
+          "a": 4712353.2,
+          "b": 303974.6
+        },
+        {
+          "pointNo": 10,
+          "a": 4711922.2,
+          "b": 303896.3
+        },
+        {
+          "pointNo": 11,
+          "a": 4712002.4,
+          "b": 303658.8
+        },
+        {
+          "pointNo": 12,
+          "a": 4712185.3,
+          "b": 303568.6
+        },
+        {
+          "pointNo": 13,
+          "a": 4712219.9,
+          "b": 303450.7
+        },
+        {
+          "pointNo": 14,
+          "a": 4712242.3,
+          "b": 303420.0
+        },
+        {
+          "pointNo": 15,
+          "a": 4712340.0,
+          "b": 303366.4
+        },
+        {
+          "pointNo": 16,
+          "a": 4712508.2,
+          "b": 303405.8
+        }
+      ]
+    },
+    {
+      "concessionId": "216-128",
+      "curatedId": null,
+      "name": null,
+      "fileId": "48064150-ccbe-44ea-b862-c302ba8f56d4",
+      "sha256": "f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0",
+      "archivePath": "source-archive/concessions/nkr-attachments/f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f1711c1746dac2bb54203debcd22ace90096b1d6f98397298c66d2ed890653d0.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/48064150-ccbe-44ea-b862-c302ba8f56d4",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%A6%D0%B0%D1%80%20%D0%90%D1%81%D0%B5%D0%BD-2.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 99,
+      "pointNumberRanges": [
+        "1-99"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4692028.829,
+          404394.544
+        ],
+        [
+          4692026.841,
+          404475.516
+        ],
+        [
+          4691992.767,
+          404559.701
+        ],
+        [
+          4691964.408,
+          404574.009
+        ],
+        [
+          4691916.805,
+          404638.857
+        ],
+        [
+          4691828.994,
+          404711.721
+        ],
+        [
+          4691717.155,
+          404703.975
+        ],
+        [
+          4691715.855,
+          404756.956
+        ],
+        [
+          4691700.135,
+          405030.641
+        ],
+        [
+          4691670.697,
+          405088.934
+        ],
+        [
+          4691666.502,
+          405096.833
+        ],
+        [
+          4691723.966,
+          405119.249
+        ],
+        [
+          4691787.779,
+          405086.806
+        ],
+        [
+          4691963.527,
+          405221.154
+        ],
+        [
+          4691878.194,
+          405356.094
+        ],
+        [
+          4691833.982,
+          405405.022
+        ],
+        [
+          4691833.706,
+          405457.029
+        ],
+        [
+          4691817.116,
+          405521.638
+        ],
+        [
+          4691715.666,
+          405661.185
+        ],
+        [
+          4691631.706,
+          405740.145
+        ],
+        [
+          4691503.597,
+          405784.012
+        ],
+        [
+          4691443.023,
+          405847.542
+        ],
+        [
+          4691359.837,
+          405813.492
+        ],
+        [
+          4691315.091,
+          405843.402
+        ],
+        [
+          4691248.961,
+          405888.791
+        ],
+        [
+          4691226.778,
+          405855.238
+        ],
+        [
+          4691292.885,
+          405810.849
+        ],
+        [
+          4691306.389,
+          405831.185
+        ],
+        [
+          4691358.255,
+          405796.449
+        ],
+        [
+          4691439.466,
+          405829.45
+        ],
+        [
+          4691495.919,
+          405770.821
+        ],
+        [
+          4691623.029,
+          405726.928
+        ],
+        [
+          4691704.939,
+          405649.919
+        ],
+        [
+          4691313.075,
+          405640.3
+        ],
+        [
+          4691317.001,
+          405480.355
+        ],
+        [
+          4691503.141,
+          405109.827
+        ],
+        [
+          4691424.064,
+          405152.898
+        ],
+        [
+          4691409.707,
+          405126.539
+        ],
+        [
+          4691489.784,
+          405083.493
+        ],
+        [
+          4691532.088,
+          405071.528
+        ],
+        [
+          4691657.873,
+          405081.617
+        ],
+        [
+          4691685.214,
+          405027.274
+        ],
+        [
+          4691700.59,
+          404767.585
+        ],
+        [
+          4691588.709,
+          404720.827
+        ],
+        [
+          4691524.081,
+          404664.226
+        ],
+        [
+          4691474.915,
+          404589.0
+        ],
+        [
+          4691462.405,
+          404446.657
+        ],
+        [
+          4691359.98,
+          404422.137
+        ],
+        [
+          4691346.777,
+          404348.794
+        ],
+        [
+          4691192.247,
+          404327.996
+        ],
+        [
+          4690973.796,
+          404262.618
+        ],
+        [
+          4690875.26,
+          404161.174
+        ],
+        [
+          4690831.484,
+          404070.076
+        ],
+        [
+          4690832.269,
+          404038.087
+        ],
+        [
+          4690884.43,
+          403991.355
+        ],
+        [
+          4690933.076,
+          403965.542
+        ],
+        [
+          4690957.165,
+          403962.133
+        ],
+        [
+          4691036.801,
+          403937.08
+        ],
+        [
+          4691065.864,
+          403934.793
+        ],
+        [
+          4691168.804,
+          403938.32
+        ],
+        [
+          4691238.823,
+          403979.049
+        ],
+        [
+          4691287.647,
+          403905.228
+        ],
+        [
+          4691304.101,
+          403927.638
+        ],
+        [
+          4691310.338,
+          403958.799
+        ],
+        [
+          4691283.954,
+          403974.155
+        ],
+        [
+          4691268.69,
+          403984.783
+        ],
+        [
+          4691233.646,
+          404026.934
+        ],
+        [
+          4691181.707,
+          404064.669
+        ],
+        [
+          4691163.075,
+          404090.219
+        ],
+        [
+          4691161.339,
+          404120.184
+        ],
+        [
+          4691211.8,
+          404183.436
+        ],
+        [
+          4691254.687,
+          404188.492
+        ],
+        [
+          4691338.075,
+          404173.535
+        ],
+        [
+          4691387.758,
+          404064.726
+        ],
+        [
+          4691442.512,
+          404116.083
+        ],
+        [
+          4691480.805,
+          404186.041
+        ],
+        [
+          4691473.089,
+          404255.87
+        ],
+        [
+          4691440.358,
+          404326.084
+        ],
+        [
+          4691412.852,
+          404346.415
+        ],
+        [
+          4691366.721,
+          404351.284
+        ],
+        [
+          4691361.722,
+          404351.161
+        ],
+        [
+          4691373.295,
+          404409.46
+        ],
+        [
+          4691475.695,
+          404434.98
+        ],
+        [
+          4691490.032,
+          404584.37
+        ],
+        [
+          4691535.323,
+          404654.5
+        ],
+        [
+          4691597.025,
+          404708.028
+        ],
+        [
+          4691700.983,
+          404751.59
+        ],
+        [
+          4691702.185,
+          404702.607
+        ],
+        [
+          4691617.951,
+          404670.532
+        ],
+        [
+          4691558.518,
+          404606.056
+        ],
+        [
+          4691528.001,
+          404545.292
+        ],
+        [
+          4691520.476,
+          404485.092
+        ],
+        [
+          4691531.896,
+          404427.357
+        ],
+        [
+          4691574.238,
+          404332.372
+        ],
+        [
+          4691670.095,
+          404257.705
+        ],
+        [
+          4691774.384,
+          404206.251
+        ],
+        [
+          4691832.659,
+          404195.678
+        ],
+        [
+          4691925.087,
+          404219.953
+        ],
+        [
+          4691988.518,
+          404284.526
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4692028.829,
+          "b": 404394.544
+        },
+        {
+          "pointNo": 2,
+          "a": 4692026.841,
+          "b": 404475.516
+        },
+        {
+          "pointNo": 3,
+          "a": 4691992.767,
+          "b": 404559.701
+        },
+        {
+          "pointNo": 4,
+          "a": 4691964.408,
+          "b": 404574.009
+        },
+        {
+          "pointNo": 5,
+          "a": 4691916.805,
+          "b": 404638.857
+        },
+        {
+          "pointNo": 6,
+          "a": 4691828.994,
+          "b": 404711.721
+        },
+        {
+          "pointNo": 7,
+          "a": 4691717.155,
+          "b": 404703.975
+        },
+        {
+          "pointNo": 8,
+          "a": 4691715.855,
+          "b": 404756.956
+        },
+        {
+          "pointNo": 9,
+          "a": 4691700.135,
+          "b": 405030.641
+        },
+        {
+          "pointNo": 10,
+          "a": 4691670.697,
+          "b": 405088.934
+        },
+        {
+          "pointNo": 11,
+          "a": 4691666.502,
+          "b": 405096.833
+        },
+        {
+          "pointNo": 12,
+          "a": 4691723.966,
+          "b": 405119.249
+        },
+        {
+          "pointNo": 13,
+          "a": 4691787.779,
+          "b": 405086.806
+        },
+        {
+          "pointNo": 14,
+          "a": 4691963.527,
+          "b": 405221.154
+        },
+        {
+          "pointNo": 15,
+          "a": 4691878.194,
+          "b": 405356.094
+        },
+        {
+          "pointNo": 16,
+          "a": 4691833.982,
+          "b": 405405.022
+        },
+        {
+          "pointNo": 17,
+          "a": 4691833.706,
+          "b": 405457.029
+        },
+        {
+          "pointNo": 18,
+          "a": 4691817.116,
+          "b": 405521.638
+        },
+        {
+          "pointNo": 19,
+          "a": 4691715.666,
+          "b": 405661.185
+        },
+        {
+          "pointNo": 20,
+          "a": 4691631.706,
+          "b": 405740.145
+        },
+        {
+          "pointNo": 21,
+          "a": 4691503.597,
+          "b": 405784.012
+        },
+        {
+          "pointNo": 22,
+          "a": 4691443.023,
+          "b": 405847.542
+        },
+        {
+          "pointNo": 23,
+          "a": 4691359.837,
+          "b": 405813.492
+        },
+        {
+          "pointNo": 24,
+          "a": 4691315.091,
+          "b": 405843.402
+        },
+        {
+          "pointNo": 25,
+          "a": 4691248.961,
+          "b": 405888.791
+        },
+        {
+          "pointNo": 26,
+          "a": 4691226.778,
+          "b": 405855.238
+        },
+        {
+          "pointNo": 27,
+          "a": 4691292.885,
+          "b": 405810.849
+        },
+        {
+          "pointNo": 28,
+          "a": 4691306.389,
+          "b": 405831.185
+        },
+        {
+          "pointNo": 29,
+          "a": 4691358.255,
+          "b": 405796.449
+        },
+        {
+          "pointNo": 30,
+          "a": 4691439.466,
+          "b": 405829.45
+        },
+        {
+          "pointNo": 31,
+          "a": 4691495.919,
+          "b": 405770.821
+        },
+        {
+          "pointNo": 32,
+          "a": 4691623.029,
+          "b": 405726.928
+        },
+        {
+          "pointNo": 33,
+          "a": 4691704.939,
+          "b": 405649.919
+        },
+        {
+          "pointNo": 34,
+          "a": 4691313.075,
+          "b": 405640.3
+        },
+        {
+          "pointNo": 35,
+          "a": 4691317.001,
+          "b": 405480.355
+        },
+        {
+          "pointNo": 36,
+          "a": 4691503.141,
+          "b": 405109.827
+        },
+        {
+          "pointNo": 37,
+          "a": 4691424.064,
+          "b": 405152.898
+        },
+        {
+          "pointNo": 38,
+          "a": 4691409.707,
+          "b": 405126.539
+        },
+        {
+          "pointNo": 39,
+          "a": 4691489.784,
+          "b": 405083.493
+        },
+        {
+          "pointNo": 40,
+          "a": 4691532.088,
+          "b": 405071.528
+        },
+        {
+          "pointNo": 41,
+          "a": 4691657.873,
+          "b": 405081.617
+        },
+        {
+          "pointNo": 42,
+          "a": 4691685.214,
+          "b": 405027.274
+        },
+        {
+          "pointNo": 43,
+          "a": 4691700.59,
+          "b": 404767.585
+        },
+        {
+          "pointNo": 44,
+          "a": 4691588.709,
+          "b": 404720.827
+        },
+        {
+          "pointNo": 45,
+          "a": 4691524.081,
+          "b": 404664.226
+        },
+        {
+          "pointNo": 46,
+          "a": 4691474.915,
+          "b": 404589.0
+        },
+        {
+          "pointNo": 47,
+          "a": 4691462.405,
+          "b": 404446.657
+        },
+        {
+          "pointNo": 48,
+          "a": 4691359.98,
+          "b": 404422.137
+        },
+        {
+          "pointNo": 49,
+          "a": 4691346.777,
+          "b": 404348.794
+        },
+        {
+          "pointNo": 50,
+          "a": 4691192.247,
+          "b": 404327.996
+        },
+        {
+          "pointNo": 51,
+          "a": 4690973.796,
+          "b": 404262.618
+        },
+        {
+          "pointNo": 52,
+          "a": 4690875.26,
+          "b": 404161.174
+        },
+        {
+          "pointNo": 53,
+          "a": 4690831.484,
+          "b": 404070.076
+        },
+        {
+          "pointNo": 54,
+          "a": 4690832.269,
+          "b": 404038.087
+        },
+        {
+          "pointNo": 55,
+          "a": 4690884.43,
+          "b": 403991.355
+        },
+        {
+          "pointNo": 56,
+          "a": 4690933.076,
+          "b": 403965.542
+        },
+        {
+          "pointNo": 57,
+          "a": 4690957.165,
+          "b": 403962.133
+        },
+        {
+          "pointNo": 58,
+          "a": 4691036.801,
+          "b": 403937.08
+        },
+        {
+          "pointNo": 59,
+          "a": 4691065.864,
+          "b": 403934.793
+        },
+        {
+          "pointNo": 60,
+          "a": 4691168.804,
+          "b": 403938.32
+        },
+        {
+          "pointNo": 61,
+          "a": 4691238.823,
+          "b": 403979.049
+        },
+        {
+          "pointNo": 62,
+          "a": 4691287.647,
+          "b": 403905.228
+        },
+        {
+          "pointNo": 63,
+          "a": 4691304.101,
+          "b": 403927.638
+        },
+        {
+          "pointNo": 64,
+          "a": 4691310.338,
+          "b": 403958.799
+        },
+        {
+          "pointNo": 65,
+          "a": 4691283.954,
+          "b": 403974.155
+        },
+        {
+          "pointNo": 66,
+          "a": 4691268.69,
+          "b": 403984.783
+        },
+        {
+          "pointNo": 67,
+          "a": 4691233.646,
+          "b": 404026.934
+        },
+        {
+          "pointNo": 68,
+          "a": 4691181.707,
+          "b": 404064.669
+        },
+        {
+          "pointNo": 69,
+          "a": 4691163.075,
+          "b": 404090.219
+        },
+        {
+          "pointNo": 70,
+          "a": 4691161.339,
+          "b": 404120.184
+        },
+        {
+          "pointNo": 71,
+          "a": 4691211.8,
+          "b": 404183.436
+        },
+        {
+          "pointNo": 72,
+          "a": 4691254.687,
+          "b": 404188.492
+        },
+        {
+          "pointNo": 73,
+          "a": 4691338.075,
+          "b": 404173.535
+        },
+        {
+          "pointNo": 74,
+          "a": 4691387.758,
+          "b": 404064.726
+        },
+        {
+          "pointNo": 75,
+          "a": 4691442.512,
+          "b": 404116.083
+        },
+        {
+          "pointNo": 76,
+          "a": 4691480.805,
+          "b": 404186.041
+        },
+        {
+          "pointNo": 77,
+          "a": 4691473.089,
+          "b": 404255.87
+        },
+        {
+          "pointNo": 78,
+          "a": 4691440.358,
+          "b": 404326.084
+        },
+        {
+          "pointNo": 79,
+          "a": 4691412.852,
+          "b": 404346.415
+        },
+        {
+          "pointNo": 80,
+          "a": 4691366.721,
+          "b": 404351.284
+        },
+        {
+          "pointNo": 81,
+          "a": 4691361.722,
+          "b": 404351.161
+        },
+        {
+          "pointNo": 82,
+          "a": 4691373.295,
+          "b": 404409.46
+        },
+        {
+          "pointNo": 83,
+          "a": 4691475.695,
+          "b": 404434.98
+        },
+        {
+          "pointNo": 84,
+          "a": 4691490.032,
+          "b": 404584.37
+        },
+        {
+          "pointNo": 85,
+          "a": 4691535.323,
+          "b": 404654.5
+        },
+        {
+          "pointNo": 86,
+          "a": 4691597.025,
+          "b": 404708.028
+        },
+        {
+          "pointNo": 87,
+          "a": 4691700.983,
+          "b": 404751.59
+        },
+        {
+          "pointNo": 88,
+          "a": 4691702.185,
+          "b": 404702.607
+        },
+        {
+          "pointNo": 89,
+          "a": 4691617.951,
+          "b": 404670.532
+        },
+        {
+          "pointNo": 90,
+          "a": 4691558.518,
+          "b": 404606.056
+        },
+        {
+          "pointNo": 91,
+          "a": 4691528.001,
+          "b": 404545.292
+        },
+        {
+          "pointNo": 92,
+          "a": 4691520.476,
+          "b": 404485.092
+        },
+        {
+          "pointNo": 93,
+          "a": 4691531.896,
+          "b": 404427.357
+        },
+        {
+          "pointNo": 94,
+          "a": 4691574.238,
+          "b": 404332.372
+        },
+        {
+          "pointNo": 95,
+          "a": 4691670.095,
+          "b": 404257.705
+        },
+        {
+          "pointNo": 96,
+          "a": 4691774.384,
+          "b": 404206.251
+        },
+        {
+          "pointNo": 97,
+          "a": 4691832.659,
+          "b": 404195.678
+        },
+        {
+          "pointNo": 98,
+          "a": 4691925.087,
+          "b": 404219.953
+        },
+        {
+          "pointNo": 99,
+          "a": 4691988.518,
+          "b": 404284.526
+        }
+      ]
+    },
+    {
+      "concessionId": "216-128",
+      "curatedId": null,
+      "name": null,
+      "fileId": "5acbca12-2704-46ac-8fbb-c203f40fe64a",
+      "sha256": "03e4c4affa0829414e751b3a63ec43b5a18f33f83a0550e750d57fdea9ab7bdf",
+      "archivePath": "source-archive/concessions/nkr-attachments/03e4c4affa0829414e751b3a63ec43b5a18f33f83a0550e750d57fdea9ab7bdf.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/03e4c4affa0829414e751b3a63ec43b5a18f33f83a0550e750d57fdea9ab7bdf.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/5acbca12-2704-46ac-8fbb-c203f40fe64a",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%A6%D0%B0%D1%80_%D0%90%D1%81%D0%B5%D0%BD2.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 99,
+      "pointNumberRanges": [
+        "1-99"
+      ],
+      "conflictCount": 26,
+      "conflicts": [
+        {
+          "pointNo": 55,
+          "first": {
+            "pointNo": 55,
+            "a": 4690884.43,
+            "b": 403991.355,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 55,
+            "a": 4691774.334,
+            "b": 404206.251,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 93,
+          "first": {
+            "pointNo": 93,
+            "a": 4691531.896,
+            "b": 404427.357,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 93,
+            "a": 4691925.087,
+            "b": 404219.953,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 33,
+          "first": {
+            "pointNo": 33,
+            "a": 4691409.707,
+            "b": 405126.539,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 33,
+            "a": 4691704.939,
+            "b": 405649.919,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 1,
+          "first": {
+            "pointNo": 1,
+            "a": 4692023.829,
+            "b": 404394.544,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 1,
+            "a": 4691689.036,
+            "b": 405529.523,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 2,
+          "first": {
+            "pointNo": 2,
+            "a": 4692025.841,
+            "b": 404475.516,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 2,
+            "a": 4691321.563,
+            "b": 405620.503,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 3,
+          "first": {
+            "pointNo": 3,
+            "a": 4691992.767,
+            "b": 404559.701,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 3,
+            "a": 4691324.998,
+            "b": 405480.551,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 4,
+          "first": {
+            "pointNo": 4,
+            "a": 4691964.408,
+            "b": 404574.009,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 4,
+            "a": 4691505.772,
+            "b": 405124.896,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 5,
+          "first": {
+            "pointNo": 5,
+            "a": 4691916.805,
+            "b": 404638.857,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 5,
+            "a": 4691726.696,
+            "b": 405130.319,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 6,
+          "first": {
+            "pointNo": 6,
+            "a": 4691828.994,
+            "b": 404711.721,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 6,
+            "a": 4691875.717,
+            "b": 405212.497,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 8,
+          "first": {
+            "pointNo": 8,
+            "a": 4691715.855,
+            "b": 404756.956,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 8,
+            "a": 4691786.929,
+            "b": 405455.581,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 10,
+          "first": {
+            "pointNo": 10,
+            "a": 4691670.697,
+            "b": 405038.934,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 10,
+            "a": 4691679.954,
+            "b": 405547.179,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 1,
+          "first": {
+            "pointNo": 1,
+            "a": 4692023.829,
+            "b": 404394.544,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 1,
+            "a": 4692028.829,
+            "b": 404394.544,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 2,
+          "first": {
+            "pointNo": 2,
+            "a": 4692025.841,
+            "b": 404475.516,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 2,
+            "a": 4692026.841,
+            "b": 404475.516,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 9,
+          "first": {
+            "pointNo": 9,
+            "a": 4691713.201,
+            "b": 405484.479,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 9,
+            "a": 4691700.135,
+            "b": 405030.641,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 10,
+          "first": {
+            "pointNo": 10,
+            "a": 4691670.697,
+            "b": 405038.934,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 10,
+            "a": 4691670.697,
+            "b": 405088.934,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 11,
+          "first": {
+            "pointNo": 11,
+            "a": 4691702.803,
+            "b": 405606.555,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 11,
+            "a": 4691666.502,
+            "b": 405096.833,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 17,
+          "first": {
+            "pointNo": 17,
+            "a": 4691333.706,
+            "b": 405457.029,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 17,
+            "a": 4691833.706,
+            "b": 405457.029,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 33,
+          "first": {
+            "pointNo": 33,
+            "a": 4691409.707,
+            "b": 405126.539,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 33,
+            "a": 4691704.939,
+            "b": 405649.919,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 41,
+          "first": {
+            "pointNo": 41,
+            "a": 4691657.873,
+            "b": 405031.617,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 41,
+            "a": 4691657.873,
+            "b": 405081.617,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 44,
+          "first": {
+            "pointNo": 44,
+            "a": 4691588.709,
+            "b": 404720.327,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 44,
+            "a": 4691588.709,
+            "b": 404720.827,
+            "crsClass": "BGS2005"
+          }
+        }
+      ],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "conflicting_duplicate_point_numbers",
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4692023.829,
+          404394.544
+        ],
+        [
+          4692025.841,
+          404475.516
+        ],
+        [
+          4691992.767,
+          404559.701
+        ],
+        [
+          4691964.408,
+          404574.009
+        ],
+        [
+          4691916.805,
+          404638.857
+        ],
+        [
+          4691828.994,
+          404711.721
+        ],
+        [
+          4691717.155,
+          404703.975
+        ],
+        [
+          4691715.855,
+          404756.956
+        ],
+        [
+          4691713.201,
+          405484.479
+        ],
+        [
+          4691670.697,
+          405038.934
+        ],
+        [
+          4691702.803,
+          405606.555
+        ],
+        [
+          4691723.966,
+          405119.249
+        ],
+        [
+          4691787.779,
+          405086.806
+        ],
+        [
+          4691963.527,
+          405221.154
+        ],
+        [
+          4691878.194,
+          405356.094
+        ],
+        [
+          4691833.982,
+          405405.022
+        ],
+        [
+          4691333.706,
+          405457.029
+        ],
+        [
+          4691817.116,
+          405521.638
+        ],
+        [
+          4691715.666,
+          405661.185
+        ],
+        [
+          4691631.706,
+          405740.145
+        ],
+        [
+          4691503.597,
+          405784.012
+        ],
+        [
+          4691443.023,
+          405847.542
+        ],
+        [
+          4691359.837,
+          405813.492
+        ],
+        [
+          4691315.091,
+          405843.402
+        ],
+        [
+          4691248.961,
+          405888.791
+        ],
+        [
+          4691226.778,
+          405855.238
+        ],
+        [
+          4691292.885,
+          405810.849
+        ],
+        [
+          4691306.389,
+          405831.185
+        ],
+        [
+          4691358.255,
+          405796.449
+        ],
+        [
+          4691439.466,
+          405829.45
+        ],
+        [
+          4691495.919,
+          405770.821
+        ],
+        [
+          4691623.029,
+          405726.928
+        ],
+        [
+          4691409.707,
+          405126.539
+        ],
+        [
+          4691313.075,
+          405640.3
+        ],
+        [
+          4691317.001,
+          405480.355
+        ],
+        [
+          4691503.141,
+          405109.827
+        ],
+        [
+          4691424.064,
+          405152.898
+        ],
+        [
+          4691409.707,
+          405126.539
+        ],
+        [
+          4691489.784,
+          405083.493
+        ],
+        [
+          4691532.088,
+          405071.528
+        ],
+        [
+          4691657.873,
+          405031.617
+        ],
+        [
+          4691685.214,
+          405027.274
+        ],
+        [
+          4691700.59,
+          404767.585
+        ],
+        [
+          4691588.709,
+          404720.327
+        ],
+        [
+          4691524.081,
+          404664.226
+        ],
+        [
+          4691474.915,
+          404589.0
+        ],
+        [
+          4691462.405,
+          404446.657
+        ],
+        [
+          4691359.98,
+          404422.137
+        ],
+        [
+          4691346.777,
+          404348.794
+        ],
+        [
+          4691192.247,
+          404327.996
+        ],
+        [
+          4690973.796,
+          404262.618
+        ],
+        [
+          4690875.26,
+          404161.174
+        ],
+        [
+          4690831.484,
+          404070.076
+        ],
+        [
+          4690332.269,
+          404038.037
+        ],
+        [
+          4690884.43,
+          403991.355
+        ],
+        [
+          4690933.076,
+          403965.542
+        ],
+        [
+          4690957.165,
+          403962.133
+        ],
+        [
+          4691036.801,
+          403937.08
+        ],
+        [
+          4691065.864,
+          403934.793
+        ],
+        [
+          4691168.804,
+          403938.32
+        ],
+        [
+          4691238.823,
+          403979.049
+        ],
+        [
+          4691287.647,
+          403905.228
+        ],
+        [
+          4691304.101,
+          403927.638
+        ],
+        [
+          4691310.338,
+          403958.799
+        ],
+        [
+          4691283.954,
+          403974.155
+        ],
+        [
+          4691268.69,
+          403984.783
+        ],
+        [
+          4691233.546,
+          404026.934
+        ],
+        [
+          4691181.707,
+          404064.669
+        ],
+        [
+          4691163.075,
+          404090.219
+        ],
+        [
+          4691161.339,
+          404120.184
+        ],
+        [
+          4691211.8,
+          404183.439
+        ],
+        [
+          4691254.687,
+          404188.492
+        ],
+        [
+          4691333.075,
+          404173.0
+        ],
+        [
+          4691387.758,
+          404064.728
+        ],
+        [
+          4691442.512,
+          404116.083
+        ],
+        [
+          4691480.805,
+          404186.041
+        ],
+        [
+          4691473.039,
+          404255.87
+        ],
+        [
+          4691440.358,
+          404326.084
+        ],
+        [
+          4691412.852,
+          404346.415
+        ],
+        [
+          4691366.721,
+          404351.28
+        ],
+        [
+          4691361.722,
+          404351.161
+        ],
+        [
+          4691373.295,
+          404409.46
+        ],
+        [
+          4691475.695,
+          404434.98
+        ],
+        [
+          4691490.032,
+          404584.37
+        ],
+        [
+          4691535.323,
+          404654.5
+        ],
+        [
+          4691597.025,
+          404708.028
+        ],
+        [
+          4691700.983,
+          404751.59
+        ],
+        [
+          4691702.185,
+          404702.607
+        ],
+        [
+          4691617.951,
+          404670.532
+        ],
+        [
+          4691558.518,
+          404606.056
+        ],
+        [
+          4591528.001,
+          404545.292
+        ],
+        [
+          4691520.476,
+          404485.092
+        ],
+        [
+          4691531.896,
+          404427.357
+        ],
+        [
+          4691574.238,
+          404332.372
+        ],
+        [
+          4691670.095,
+          404257.705
+        ],
+        [
+          4691774.384,
+          404206.251
+        ],
+        [
+          4691832.659,
+          404195.678
+        ],
+        [
+          4691925.087,
+          404219.953
+        ],
+        [
+          4691938.518,
+          404284.526
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4692023.829,
+          "b": 404394.544
+        },
+        {
+          "pointNo": 2,
+          "a": 4692025.841,
+          "b": 404475.516
+        },
+        {
+          "pointNo": 3,
+          "a": 4691992.767,
+          "b": 404559.701
+        },
+        {
+          "pointNo": 4,
+          "a": 4691964.408,
+          "b": 404574.009
+        },
+        {
+          "pointNo": 5,
+          "a": 4691916.805,
+          "b": 404638.857
+        },
+        {
+          "pointNo": 6,
+          "a": 4691828.994,
+          "b": 404711.721
+        },
+        {
+          "pointNo": 7,
+          "a": 4691717.155,
+          "b": 404703.975
+        },
+        {
+          "pointNo": 8,
+          "a": 4691715.855,
+          "b": 404756.956
+        },
+        {
+          "pointNo": 9,
+          "a": 4691713.201,
+          "b": 405484.479
+        },
+        {
+          "pointNo": 10,
+          "a": 4691670.697,
+          "b": 405038.934
+        },
+        {
+          "pointNo": 11,
+          "a": 4691702.803,
+          "b": 405606.555
+        },
+        {
+          "pointNo": 12,
+          "a": 4691723.966,
+          "b": 405119.249
+        },
+        {
+          "pointNo": 13,
+          "a": 4691787.779,
+          "b": 405086.806
+        },
+        {
+          "pointNo": 14,
+          "a": 4691963.527,
+          "b": 405221.154
+        },
+        {
+          "pointNo": 15,
+          "a": 4691878.194,
+          "b": 405356.094
+        },
+        {
+          "pointNo": 16,
+          "a": 4691833.982,
+          "b": 405405.022
+        },
+        {
+          "pointNo": 17,
+          "a": 4691333.706,
+          "b": 405457.029
+        },
+        {
+          "pointNo": 18,
+          "a": 4691817.116,
+          "b": 405521.638
+        },
+        {
+          "pointNo": 19,
+          "a": 4691715.666,
+          "b": 405661.185
+        },
+        {
+          "pointNo": 20,
+          "a": 4691631.706,
+          "b": 405740.145
+        },
+        {
+          "pointNo": 21,
+          "a": 4691503.597,
+          "b": 405784.012
+        },
+        {
+          "pointNo": 22,
+          "a": 4691443.023,
+          "b": 405847.542
+        },
+        {
+          "pointNo": 23,
+          "a": 4691359.837,
+          "b": 405813.492
+        },
+        {
+          "pointNo": 24,
+          "a": 4691315.091,
+          "b": 405843.402
+        },
+        {
+          "pointNo": 25,
+          "a": 4691248.961,
+          "b": 405888.791
+        },
+        {
+          "pointNo": 26,
+          "a": 4691226.778,
+          "b": 405855.238
+        },
+        {
+          "pointNo": 27,
+          "a": 4691292.885,
+          "b": 405810.849
+        },
+        {
+          "pointNo": 28,
+          "a": 4691306.389,
+          "b": 405831.185
+        },
+        {
+          "pointNo": 29,
+          "a": 4691358.255,
+          "b": 405796.449
+        },
+        {
+          "pointNo": 30,
+          "a": 4691439.466,
+          "b": 405829.45
+        },
+        {
+          "pointNo": 31,
+          "a": 4691495.919,
+          "b": 405770.821
+        },
+        {
+          "pointNo": 32,
+          "a": 4691623.029,
+          "b": 405726.928
+        },
+        {
+          "pointNo": 33,
+          "a": 4691409.707,
+          "b": 405126.539
+        },
+        {
+          "pointNo": 34,
+          "a": 4691313.075,
+          "b": 405640.3
+        },
+        {
+          "pointNo": 35,
+          "a": 4691317.001,
+          "b": 405480.355
+        },
+        {
+          "pointNo": 36,
+          "a": 4691503.141,
+          "b": 405109.827
+        },
+        {
+          "pointNo": 37,
+          "a": 4691424.064,
+          "b": 405152.898
+        },
+        {
+          "pointNo": 38,
+          "a": 4691409.707,
+          "b": 405126.539
+        },
+        {
+          "pointNo": 39,
+          "a": 4691489.784,
+          "b": 405083.493
+        },
+        {
+          "pointNo": 40,
+          "a": 4691532.088,
+          "b": 405071.528
+        },
+        {
+          "pointNo": 41,
+          "a": 4691657.873,
+          "b": 405031.617
+        },
+        {
+          "pointNo": 42,
+          "a": 4691685.214,
+          "b": 405027.274
+        },
+        {
+          "pointNo": 43,
+          "a": 4691700.59,
+          "b": 404767.585
+        },
+        {
+          "pointNo": 44,
+          "a": 4691588.709,
+          "b": 404720.327
+        },
+        {
+          "pointNo": 45,
+          "a": 4691524.081,
+          "b": 404664.226
+        },
+        {
+          "pointNo": 46,
+          "a": 4691474.915,
+          "b": 404589.0
+        },
+        {
+          "pointNo": 47,
+          "a": 4691462.405,
+          "b": 404446.657
+        },
+        {
+          "pointNo": 48,
+          "a": 4691359.98,
+          "b": 404422.137
+        },
+        {
+          "pointNo": 49,
+          "a": 4691346.777,
+          "b": 404348.794
+        },
+        {
+          "pointNo": 50,
+          "a": 4691192.247,
+          "b": 404327.996
+        },
+        {
+          "pointNo": 51,
+          "a": 4690973.796,
+          "b": 404262.618
+        },
+        {
+          "pointNo": 52,
+          "a": 4690875.26,
+          "b": 404161.174
+        },
+        {
+          "pointNo": 53,
+          "a": 4690831.484,
+          "b": 404070.076
+        },
+        {
+          "pointNo": 54,
+          "a": 4690332.269,
+          "b": 404038.037
+        },
+        {
+          "pointNo": 55,
+          "a": 4690884.43,
+          "b": 403991.355
+        },
+        {
+          "pointNo": 56,
+          "a": 4690933.076,
+          "b": 403965.542
+        },
+        {
+          "pointNo": 57,
+          "a": 4690957.165,
+          "b": 403962.133
+        },
+        {
+          "pointNo": 58,
+          "a": 4691036.801,
+          "b": 403937.08
+        },
+        {
+          "pointNo": 59,
+          "a": 4691065.864,
+          "b": 403934.793
+        },
+        {
+          "pointNo": 60,
+          "a": 4691168.804,
+          "b": 403938.32
+        },
+        {
+          "pointNo": 61,
+          "a": 4691238.823,
+          "b": 403979.049
+        },
+        {
+          "pointNo": 62,
+          "a": 4691287.647,
+          "b": 403905.228
+        },
+        {
+          "pointNo": 63,
+          "a": 4691304.101,
+          "b": 403927.638
+        },
+        {
+          "pointNo": 64,
+          "a": 4691310.338,
+          "b": 403958.799
+        },
+        {
+          "pointNo": 65,
+          "a": 4691283.954,
+          "b": 403974.155
+        },
+        {
+          "pointNo": 66,
+          "a": 4691268.69,
+          "b": 403984.783
+        },
+        {
+          "pointNo": 67,
+          "a": 4691233.546,
+          "b": 404026.934
+        },
+        {
+          "pointNo": 68,
+          "a": 4691181.707,
+          "b": 404064.669
+        },
+        {
+          "pointNo": 69,
+          "a": 4691163.075,
+          "b": 404090.219
+        },
+        {
+          "pointNo": 70,
+          "a": 4691161.339,
+          "b": 404120.184
+        },
+        {
+          "pointNo": 71,
+          "a": 4691211.8,
+          "b": 404183.439
+        },
+        {
+          "pointNo": 72,
+          "a": 4691254.687,
+          "b": 404188.492
+        },
+        {
+          "pointNo": 73,
+          "a": 4691333.075,
+          "b": 404173.0
+        },
+        {
+          "pointNo": 74,
+          "a": 4691387.758,
+          "b": 404064.728
+        },
+        {
+          "pointNo": 75,
+          "a": 4691442.512,
+          "b": 404116.083
+        },
+        {
+          "pointNo": 76,
+          "a": 4691480.805,
+          "b": 404186.041
+        },
+        {
+          "pointNo": 77,
+          "a": 4691473.039,
+          "b": 404255.87
+        },
+        {
+          "pointNo": 78,
+          "a": 4691440.358,
+          "b": 404326.084
+        },
+        {
+          "pointNo": 79,
+          "a": 4691412.852,
+          "b": 404346.415
+        },
+        {
+          "pointNo": 80,
+          "a": 4691366.721,
+          "b": 404351.28
+        },
+        {
+          "pointNo": 81,
+          "a": 4691361.722,
+          "b": 404351.161
+        },
+        {
+          "pointNo": 82,
+          "a": 4691373.295,
+          "b": 404409.46
+        },
+        {
+          "pointNo": 83,
+          "a": 4691475.695,
+          "b": 404434.98
+        },
+        {
+          "pointNo": 84,
+          "a": 4691490.032,
+          "b": 404584.37
+        },
+        {
+          "pointNo": 85,
+          "a": 4691535.323,
+          "b": 404654.5
+        },
+        {
+          "pointNo": 86,
+          "a": 4691597.025,
+          "b": 404708.028
+        },
+        {
+          "pointNo": 87,
+          "a": 4691700.983,
+          "b": 404751.59
+        },
+        {
+          "pointNo": 88,
+          "a": 4691702.185,
+          "b": 404702.607
+        },
+        {
+          "pointNo": 89,
+          "a": 4691617.951,
+          "b": 404670.532
+        },
+        {
+          "pointNo": 90,
+          "a": 4691558.518,
+          "b": 404606.056
+        },
+        {
+          "pointNo": 91,
+          "a": 4591528.001,
+          "b": 404545.292
+        },
+        {
+          "pointNo": 92,
+          "a": 4691520.476,
+          "b": 404485.092
+        },
+        {
+          "pointNo": 93,
+          "a": 4691531.896,
+          "b": 404427.357
+        },
+        {
+          "pointNo": 94,
+          "a": 4691574.238,
+          "b": 404332.372
+        },
+        {
+          "pointNo": 95,
+          "a": 4691670.095,
+          "b": 404257.705
+        },
+        {
+          "pointNo": 96,
+          "a": 4691774.384,
+          "b": 404206.251
+        },
+        {
+          "pointNo": 97,
+          "a": 4691832.659,
+          "b": 404195.678
+        },
+        {
+          "pointNo": 98,
+          "a": 4691925.087,
+          "b": 404219.953
+        },
+        {
+          "pointNo": 99,
+          "a": 4691938.518,
+          "b": 404284.526
+        }
+      ]
+    },
+    {
+      "concessionId": "216-129",
+      "curatedId": null,
+      "name": null,
+      "fileId": "66cc6a10-8db4-40d8-aa85-b1f0aee4e54c",
+      "sha256": "81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda",
+      "archivePath": "source-archive/concessions/nkr-attachments/81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/66cc6a10-8db4-40d8-aa85-b1f0aee4e54c",
+      "filename": "17RH816%20%D0%90%D0%B9%D1%82%D0%BE%D1%81.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 13,
+      "pointNumberRanges": [
+        "1-13"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4666677.9,
+          9566718.2
+        ],
+        [
+          4666679.0,
+          9566825.9
+        ],
+        [
+          4666548.5,
+          9566788.9
+        ],
+        [
+          4666527.3,
+          9566775.0
+        ],
+        [
+          4666393.8,
+          9566645.5
+        ],
+        [
+          4666351.5,
+          9566570.7
+        ],
+        [
+          4666316.2,
+          9566526.0
+        ],
+        [
+          4666289.1,
+          9566464.1
+        ],
+        [
+          4666347.7,
+          9566392.5
+        ],
+        [
+          4666487.4,
+          9566483.9
+        ],
+        [
+          4666500.2,
+          9566533.8
+        ],
+        [
+          4666605.4,
+          9566630.6
+        ],
+        [
+          4666632.6,
+          9566677.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4666677.9,
+          "b": 9566718.2
+        },
+        {
+          "pointNo": 2,
+          "a": 4666679.0,
+          "b": 9566825.9
+        },
+        {
+          "pointNo": 3,
+          "a": 4666548.5,
+          "b": 9566788.9
+        },
+        {
+          "pointNo": 4,
+          "a": 4666527.3,
+          "b": 9566775.0
+        },
+        {
+          "pointNo": 5,
+          "a": 4666393.8,
+          "b": 9566645.5
+        },
+        {
+          "pointNo": 6,
+          "a": 4666351.5,
+          "b": 9566570.7
+        },
+        {
+          "pointNo": 7,
+          "a": 4666316.2,
+          "b": 9566526.0
+        },
+        {
+          "pointNo": 8,
+          "a": 4666289.1,
+          "b": 9566464.1
+        },
+        {
+          "pointNo": 9,
+          "a": 4666347.7,
+          "b": 9566392.5
+        },
+        {
+          "pointNo": 10,
+          "a": 4666487.4,
+          "b": 9566483.9
+        },
+        {
+          "pointNo": 11,
+          "a": 4666500.2,
+          "b": 9566533.8
+        },
+        {
+          "pointNo": 12,
+          "a": 4666605.4,
+          "b": 9566630.6
+        },
+        {
+          "pointNo": 13,
+          "a": 4666632.6,
+          "b": 9566677.0
+        }
+      ]
+    },
+    {
+      "concessionId": "216-129",
+      "curatedId": null,
+      "name": null,
+      "fileId": "9dc1b8eb-0375-4896-9f26-ecec21500bb3",
+      "sha256": "0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd",
+      "archivePath": "source-archive/concessions/nkr-attachments/0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/9dc1b8eb-0375-4896-9f26-ecec21500bb3",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%90%D0%B9%D1%82%D0%BE%D1%81.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 13,
+      "pointNumberRanges": [
+        "1-13"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4666677.9,
+          9566712.8
+        ],
+        [
+          4666679.0,
+          9566825.8
+        ],
+        [
+          4666548.5,
+          9566788.9
+        ],
+        [
+          4666527.3,
+          9567775.0
+        ],
+        [
+          4666393.8,
+          9566645.5
+        ],
+        [
+          4666351.5,
+          9566570.7
+        ],
+        [
+          4666316.2,
+          9566526.0
+        ],
+        [
+          4666289.1,
+          9566464.1
+        ],
+        [
+          4666347.7,
+          9566392.5
+        ],
+        [
+          4666487.4,
+          9566483.9
+        ],
+        [
+          4666500.2,
+          9566533.8
+        ],
+        [
+          4666605.4,
+          9566630.6
+        ],
+        [
+          4666632.6,
+          9566677.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4666677.9,
+          "b": 9566712.8
+        },
+        {
+          "pointNo": 2,
+          "a": 4666679.0,
+          "b": 9566825.8
+        },
+        {
+          "pointNo": 3,
+          "a": 4666548.5,
+          "b": 9566788.9
+        },
+        {
+          "pointNo": 4,
+          "a": 4666527.3,
+          "b": 9567775.0
+        },
+        {
+          "pointNo": 5,
+          "a": 4666393.8,
+          "b": 9566645.5
+        },
+        {
+          "pointNo": 6,
+          "a": 4666351.5,
+          "b": 9566570.7
+        },
+        {
+          "pointNo": 7,
+          "a": 4666316.2,
+          "b": 9566526.0
+        },
+        {
+          "pointNo": 8,
+          "a": 4666289.1,
+          "b": 9566464.1
+        },
+        {
+          "pointNo": 9,
+          "a": 4666347.7,
+          "b": 9566392.5
+        },
+        {
+          "pointNo": 10,
+          "a": 4666487.4,
+          "b": 9566483.9
+        },
+        {
+          "pointNo": 11,
+          "a": 4666500.2,
+          "b": 9566533.8
+        },
+        {
+          "pointNo": 12,
+          "a": 4666605.4,
+          "b": 9566630.6
+        },
+        {
+          "pointNo": 13,
+          "a": 4666632.6,
+          "b": 9566677.0
+        }
+      ]
+    },
+    {
+      "concessionId": "216-130",
+      "curatedId": null,
+      "name": null,
+      "fileId": "167c856d-34f3-43e0-8747-db97b5a16bc9",
+      "sha256": "aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080",
+      "archivePath": "source-archive/concessions/nkr-attachments/aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/167c856d-34f3-43e0-8747-db97b5a16bc9",
+      "filename": "20RH953%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 13,
+      "pointNumberRanges": [
+        "1-13"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4682372.4,
+          8666071.7
+        ],
+        [
+          4682338.1,
+          8666214.9
+        ],
+        [
+          4682301.1,
+          8666243.0
+        ],
+        [
+          4682247.7,
+          8666246.1
+        ],
+        [
+          4682217.7,
+          8666212.2
+        ],
+        [
+          4682159.7,
+          8666106.8
+        ],
+        [
+          4682171.2,
+          8666063.7
+        ],
+        [
+          4682141.1,
+          8666020.8
+        ],
+        [
+          4682165.9,
+          8665927.7
+        ],
+        [
+          4682169.1,
+          8665857.4
+        ],
+        [
+          4682178.8,
+          8665818.2
+        ],
+        [
+          4682251.6,
+          8665792.7
+        ],
+        [
+          4682324.1,
+          8665835.9
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4682372.4,
+          "b": 8666071.7
+        },
+        {
+          "pointNo": 2,
+          "a": 4682338.1,
+          "b": 8666214.9
+        },
+        {
+          "pointNo": 3,
+          "a": 4682301.1,
+          "b": 8666243.0
+        },
+        {
+          "pointNo": 4,
+          "a": 4682247.7,
+          "b": 8666246.1
+        },
+        {
+          "pointNo": 5,
+          "a": 4682217.7,
+          "b": 8666212.2
+        },
+        {
+          "pointNo": 6,
+          "a": 4682159.7,
+          "b": 8666106.8
+        },
+        {
+          "pointNo": 7,
+          "a": 4682171.2,
+          "b": 8666063.7
+        },
+        {
+          "pointNo": 8,
+          "a": 4682141.1,
+          "b": 8666020.8
+        },
+        {
+          "pointNo": 9,
+          "a": 4682165.9,
+          "b": 8665927.7
+        },
+        {
+          "pointNo": 10,
+          "a": 4682169.1,
+          "b": 8665857.4
+        },
+        {
+          "pointNo": 11,
+          "a": 4682178.8,
+          "b": 8665818.2
+        },
+        {
+          "pointNo": 12,
+          "a": 4682251.6,
+          "b": 8665792.7
+        },
+        {
+          "pointNo": 13,
+          "a": 4682324.1,
+          "b": 8665835.9
+        }
+      ]
+    },
+    {
+      "concessionId": "216-130",
+      "curatedId": null,
+      "name": null,
+      "fileId": "172cb161-702c-456f-bcd9-795830d20a6b",
+      "sha256": "160e21243732da9b3afaa42d4246dd019031ece46c6c3237a2cedcf06c49bab4",
+      "archivePath": "source-archive/concessions/nkr-attachments/160e21243732da9b3afaa42d4246dd019031ece46c6c3237a2cedcf06c49bab4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/160e21243732da9b3afaa42d4246dd019031ece46c6c3237a2cedcf06c49bab4.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/172cb161-702c-456f-bcd9-795830d20a6b",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 13,
+      "pointNumberRanges": [
+        "1-13"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4682372.4,
+          8666071.7
+        ],
+        [
+          4682338.1,
+          8666214.9
+        ],
+        [
+          4682301.1,
+          8666243.0
+        ],
+        [
+          4682247.7,
+          8666246.1
+        ],
+        [
+          4682217.7,
+          8666212.2
+        ],
+        [
+          4682159.7,
+          8666106.8
+        ],
+        [
+          4682171.2,
+          8666063.7
+        ],
+        [
+          4682141.1,
+          8666020.8
+        ],
+        [
+          4682165.9,
+          8665927.7
+        ],
+        [
+          4682169.1,
+          8665857.4
+        ],
+        [
+          4682178.8,
+          8665818.2
+        ],
+        [
+          4682251.6,
+          8665792.7
+        ],
+        [
+          4682324.1,
+          8665835.9
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4682372.4,
+          "b": 8666071.7
+        },
+        {
+          "pointNo": 2,
+          "a": 4682338.1,
+          "b": 8666214.9
+        },
+        {
+          "pointNo": 3,
+          "a": 4682301.1,
+          "b": 8666243.0
+        },
+        {
+          "pointNo": 4,
+          "a": 4682247.7,
+          "b": 8666246.1
+        },
+        {
+          "pointNo": 5,
+          "a": 4682217.7,
+          "b": 8666212.2
+        },
+        {
+          "pointNo": 6,
+          "a": 4682159.7,
+          "b": 8666106.8
+        },
+        {
+          "pointNo": 7,
+          "a": 4682171.2,
+          "b": 8666063.7
+        },
+        {
+          "pointNo": 8,
+          "a": 4682141.1,
+          "b": 8666020.8
+        },
+        {
+          "pointNo": 9,
+          "a": 4682165.9,
+          "b": 8665927.7
+        },
+        {
+          "pointNo": 10,
+          "a": 4682169.1,
+          "b": 8665857.4
+        },
+        {
+          "pointNo": 11,
+          "a": 4682178.8,
+          "b": 8665818.2
+        },
+        {
+          "pointNo": 12,
+          "a": 4682251.6,
+          "b": 8665792.7
+        },
+        {
+          "pointNo": 13,
+          "a": 4682324.1,
+          "b": 8665835.9
+        }
+      ]
+    },
+    {
+      "concessionId": "216-131",
+      "curatedId": null,
+      "name": null,
+      "fileId": "b64f6490-068b-4ec4-846a-d78466ea2fad",
+      "sha256": "dbf1dab366468b5418a7ae10b53e75da86022db213f33d5c68b5ac2d85283906",
+      "archivePath": "source-archive/concessions/nkr-attachments/dbf1dab366468b5418a7ae10b53e75da86022db213f33d5c68b5ac2d85283906.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/dbf1dab366468b5418a7ae10b53e75da86022db213f33d5c68b5ac2d85283906.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/b64f6490-068b-4ec4-846a-d78466ea2fad",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91%D0%B5%D1%81%D0%BB%D0%B5%D0%BD.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 23,
+      "pointNumberRanges": [
+        "1-18",
+        "20-24"
+      ],
+      "conflictCount": 12,
+      "conflicts": [
+        {
+          "pointNo": 1,
+          "first": {
+            "pointNo": 1,
+            "a": 4595536.2,
+            "b": 372130.5,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 1,
+            "a": 4595534.9,
+            "b": 372180.4,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 2,
+          "first": {
+            "pointNo": 2,
+            "a": 4595534.9,
+            "b": 372180.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 2,
+            "a": 4595484.1,
+            "b": 372213.4,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 3,
+          "first": {
+            "pointNo": 3,
+            "a": 4595484.1,
+            "b": 372213.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 3,
+            "a": 4595436.5,
+            "b": 372178.0,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 12,
+          "first": {
+            "pointNo": 12,
+            "a": 4595149.2,
+            "b": 372095.0,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 12,
+            "a": 4595210.0,
+            "b": 372172.5,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 15,
+          "first": {
+            "pointNo": 15,
+            "a": 4595292.4,
+            "b": 371874.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 15,
+            "a": 4595214.9,
+            "b": 371972.5,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 16,
+          "first": {
+            "pointNo": 16,
+            "a": 4595389.9,
+            "b": 371976.8,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 16,
+            "a": 4595192.4,
+            "b": 371871.9,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 1,
+          "first": {
+            "pointNo": 1,
+            "a": 4595536.2,
+            "b": 372130.5,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 1,
+            "a": 4595534.9,
+            "b": 372180.4,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 2,
+          "first": {
+            "pointNo": 2,
+            "a": 4595534.9,
+            "b": 372180.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 2,
+            "a": 4595484.1,
+            "b": 372213.4,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 3,
+          "first": {
+            "pointNo": 3,
+            "a": 4595484.1,
+            "b": 372213.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 3,
+            "a": 4595436.5,
+            "b": 372178.0,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 12,
+          "first": {
+            "pointNo": 12,
+            "a": 4595149.2,
+            "b": 372095.0,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 12,
+            "a": 4595210.0,
+            "b": 372172.5,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 15,
+          "first": {
+            "pointNo": 15,
+            "a": 4595292.4,
+            "b": 371874.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 15,
+            "a": 4595214.9,
+            "b": 371972.5,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 16,
+          "first": {
+            "pointNo": 16,
+            "a": 4595389.9,
+            "b": 371976.8,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 16,
+            "a": 4595192.4,
+            "b": 371871.9,
+            "crsClass": "BGS2005"
+          }
+        }
+      ],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "conflicting_duplicate_point_numbers",
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4595536.2,
+          372130.5
+        ],
+        [
+          4595534.9,
+          372180.4
+        ],
+        [
+          4595484.1,
+          372213.4
+        ],
+        [
+          4595451.4,
+          372213.5
+        ],
+        [
+          4595408.3,
+          372177.5
+        ],
+        [
+          4595210.0,
+          372172.5
+        ],
+        [
+          4595209.4,
+          372198.7
+        ],
+        [
+          4595165.5,
+          372197.7
+        ],
+        [
+          4595167.3,
+          372129.4
+        ],
+        [
+          4595211.0,
+          372129.8
+        ],
+        [
+          4595211.8,
+          372095.5
+        ],
+        [
+          4595149.2,
+          372095.0
+        ],
+        [
+          4595129.1,
+          371870.5
+        ],
+        [
+          4595192.4,
+          371871.9
+        ],
+        [
+          4595292.4,
+          371874.4
+        ],
+        [
+          4595389.9,
+          371976.8
+        ],
+        [
+          4595487.5,
+          372075.8
+        ],
+        [
+          4595493.3,
+          372079.3
+        ],
+        [
+          4595292.4,
+          371874.4
+        ],
+        [
+          4595389.9,
+          371976.8
+        ],
+        [
+          4595487.5,
+          372075.8
+        ],
+        [
+          4595493.3,
+          372079.4
+        ],
+        [
+          4595536.2,
+          372130.5
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4595536.2,
+          "b": 372130.5
+        },
+        {
+          "pointNo": 2,
+          "a": 4595534.9,
+          "b": 372180.4
+        },
+        {
+          "pointNo": 3,
+          "a": 4595484.1,
+          "b": 372213.4
+        },
+        {
+          "pointNo": 4,
+          "a": 4595451.4,
+          "b": 372213.5
+        },
+        {
+          "pointNo": 5,
+          "a": 4595408.3,
+          "b": 372177.5
+        },
+        {
+          "pointNo": 6,
+          "a": 4595210.0,
+          "b": 372172.5
+        },
+        {
+          "pointNo": 7,
+          "a": 4595209.4,
+          "b": 372198.7
+        },
+        {
+          "pointNo": 8,
+          "a": 4595165.5,
+          "b": 372197.7
+        },
+        {
+          "pointNo": 9,
+          "a": 4595167.3,
+          "b": 372129.4
+        },
+        {
+          "pointNo": 10,
+          "a": 4595211.0,
+          "b": 372129.8
+        },
+        {
+          "pointNo": 11,
+          "a": 4595211.8,
+          "b": 372095.5
+        },
+        {
+          "pointNo": 12,
+          "a": 4595149.2,
+          "b": 372095.0
+        },
+        {
+          "pointNo": 13,
+          "a": 4595129.1,
+          "b": 371870.5
+        },
+        {
+          "pointNo": 14,
+          "a": 4595192.4,
+          "b": 371871.9
+        },
+        {
+          "pointNo": 15,
+          "a": 4595292.4,
+          "b": 371874.4
+        },
+        {
+          "pointNo": 16,
+          "a": 4595389.9,
+          "b": 371976.8
+        },
+        {
+          "pointNo": 17,
+          "a": 4595487.5,
+          "b": 372075.8
+        },
+        {
+          "pointNo": 18,
+          "a": 4595493.3,
+          "b": 372079.3
+        },
+        {
+          "pointNo": 20,
+          "a": 4595292.4,
+          "b": 371874.4
+        },
+        {
+          "pointNo": 21,
+          "a": 4595389.9,
+          "b": 371976.8
+        },
+        {
+          "pointNo": 22,
+          "a": 4595487.5,
+          "b": 372075.8
+        },
+        {
+          "pointNo": 23,
+          "a": 4595493.3,
+          "b": 372079.4
+        },
+        {
+          "pointNo": 24,
+          "a": 4595536.2,
+          "b": 372130.5
+        }
+      ]
+    },
+    {
+      "concessionId": "216-131",
+      "curatedId": null,
+      "name": null,
+      "fileId": "d0fee515-9aad-447c-aff9-230a2c53fbb7",
+      "sha256": "e76bc262a4cb3cf20ebe75f3c83d45d822ab8cfcd45c2b5b87f6d917a0acbb03",
+      "archivePath": "source-archive/concessions/nkr-attachments/e76bc262a4cb3cf20ebe75f3c83d45d822ab8cfcd45c2b5b87f6d917a0acbb03.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e76bc262a4cb3cf20ebe75f3c83d45d822ab8cfcd45c2b5b87f6d917a0acbb03.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/d0fee515-9aad-447c-aff9-230a2c53fbb7",
+      "filename": "%D0%A0%D0%9C%D0%A1%20%D0%91%D0%B5%D1%81%D0%BB%D0%B5%D0%BD.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 18,
+      "pointNumberRanges": [
+        "1-18"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4595536.2,
+          372130.5
+        ],
+        [
+          4595534.9,
+          372180.4
+        ],
+        [
+          4595484.1,
+          372213.4
+        ],
+        [
+          4595451.4,
+          372213.5
+        ],
+        [
+          4595408.3,
+          372177.5
+        ],
+        [
+          4595210.0,
+          372172.5
+        ],
+        [
+          4595209.4,
+          372198.7
+        ],
+        [
+          4595165.5,
+          372197.7
+        ],
+        [
+          4595167.3,
+          372129.4
+        ],
+        [
+          4595211.0,
+          372129.8
+        ],
+        [
+          4595211.8,
+          372095.5
+        ],
+        [
+          4595149.2,
+          372095.0
+        ],
+        [
+          4595129.1,
+          371870.5
+        ],
+        [
+          4595192.4,
+          371871.9
+        ],
+        [
+          4595292.4,
+          371874.4
+        ],
+        [
+          4595389.9,
+          371976.8
+        ],
+        [
+          4595487.5,
+          372075.8
+        ],
+        [
+          4595493.3,
+          372079.3
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4595536.2,
+          "b": 372130.5
+        },
+        {
+          "pointNo": 2,
+          "a": 4595534.9,
+          "b": 372180.4
+        },
+        {
+          "pointNo": 3,
+          "a": 4595484.1,
+          "b": 372213.4
+        },
+        {
+          "pointNo": 4,
+          "a": 4595451.4,
+          "b": 372213.5
+        },
+        {
+          "pointNo": 5,
+          "a": 4595408.3,
+          "b": 372177.5
+        },
+        {
+          "pointNo": 6,
+          "a": 4595210.0,
+          "b": 372172.5
+        },
+        {
+          "pointNo": 7,
+          "a": 4595209.4,
+          "b": 372198.7
+        },
+        {
+          "pointNo": 8,
+          "a": 4595165.5,
+          "b": 372197.7
+        },
+        {
+          "pointNo": 9,
+          "a": 4595167.3,
+          "b": 372129.4
+        },
+        {
+          "pointNo": 10,
+          "a": 4595211.0,
+          "b": 372129.8
+        },
+        {
+          "pointNo": 11,
+          "a": 4595211.8,
+          "b": 372095.5
+        },
+        {
+          "pointNo": 12,
+          "a": 4595149.2,
+          "b": 372095.0
+        },
+        {
+          "pointNo": 13,
+          "a": 4595129.1,
+          "b": 371870.5
+        },
+        {
+          "pointNo": 14,
+          "a": 4595192.4,
+          "b": 371871.9
+        },
+        {
+          "pointNo": 15,
+          "a": 4595292.4,
+          "b": 371874.4
+        },
+        {
+          "pointNo": 16,
+          "a": 4595389.9,
+          "b": 371976.8
+        },
+        {
+          "pointNo": 17,
+          "a": 4595487.5,
+          "b": 372075.8
+        },
+        {
+          "pointNo": 18,
+          "a": 4595493.3,
+          "b": 372079.3
+        }
+      ]
+    },
+    {
+      "concessionId": "216-223",
+      "curatedId": null,
+      "name": null,
+      "fileId": "63231b75-fb47-475e-847b-b70af7f8c65b",
+      "sha256": "22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1",
+      "archivePath": "source-archive/concessions/nkr-attachments/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/63231b75-fb47-475e-847b-b70af7f8c65b",
+      "filename": "22RH1001_BESHOVITSA.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 14,
+      "pointNumberRanges": [
+        "1-14"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4783671.0,
+          368943.0
+        ],
+        [
+          4783611.0,
+          369296.0
+        ],
+        [
+          4783519.0,
+          369312.2
+        ],
+        [
+          4783191.7,
+          369393.2
+        ],
+        [
+          4783075.6,
+          369412.8
+        ],
+        [
+          4782869.7,
+          369442.0
+        ],
+        [
+          4782828.8,
+          369417.6
+        ],
+        [
+          4782910.7,
+          369307.7
+        ],
+        [
+          4783010.8,
+          369245.0
+        ],
+        [
+          4783070.6,
+          369194.9
+        ],
+        [
+          4783073.8,
+          369129.7
+        ],
+        [
+          4783238.8,
+          368996.6
+        ],
+        [
+          4783278.4,
+          369065.1
+        ],
+        [
+          4783496.0,
+          368856.7
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4783671.0,
+          "b": 368943.0
+        },
+        {
+          "pointNo": 2,
+          "a": 4783611.0,
+          "b": 369296.0
+        },
+        {
+          "pointNo": 3,
+          "a": 4783519.0,
+          "b": 369312.2
+        },
+        {
+          "pointNo": 4,
+          "a": 4783191.7,
+          "b": 369393.2
+        },
+        {
+          "pointNo": 5,
+          "a": 4783075.6,
+          "b": 369412.8
+        },
+        {
+          "pointNo": 6,
+          "a": 4782869.7,
+          "b": 369442.0
+        },
+        {
+          "pointNo": 7,
+          "a": 4782828.8,
+          "b": 369417.6
+        },
+        {
+          "pointNo": 8,
+          "a": 4782910.7,
+          "b": 369307.7
+        },
+        {
+          "pointNo": 9,
+          "a": 4783010.8,
+          "b": 369245.0
+        },
+        {
+          "pointNo": 10,
+          "a": 4783070.6,
+          "b": 369194.9
+        },
+        {
+          "pointNo": 11,
+          "a": 4783073.8,
+          "b": 369129.7
+        },
+        {
+          "pointNo": 12,
+          "a": 4783238.8,
+          "b": 368996.6
+        },
+        {
+          "pointNo": 13,
+          "a": 4783278.4,
+          "b": 369065.1
+        },
+        {
+          "pointNo": 14,
+          "a": 4783496.0,
+          "b": 368856.7
+        }
+      ]
+    },
+    {
+      "concessionId": "216-224",
+      "curatedId": null,
+      "name": null,
+      "fileId": "a27e2231-4ab3-4c46-bc1c-0d5f49150046",
+      "sha256": "de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d",
+      "archivePath": "source-archive/concessions/nkr-attachments/de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/a27e2231-4ab3-4c46-bc1c-0d5f49150046",
+      "filename": "%D0%A0%D0%9C%D0%A1%201004-2022.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 13,
+      "pointNumberRanges": [
+        "1-13"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4837498.6,
+          362166.4
+        ],
+        [
+          4837493.9,
+          362325.6
+        ],
+        [
+          4837391.7,
+          362449.4
+        ],
+        [
+          4837345.5,
+          362586.6
+        ],
+        [
+          4837185.4,
+          362528.2
+        ],
+        [
+          4837128.1,
+          362506.4
+        ],
+        [
+          4837044.6,
+          362430.9
+        ],
+        [
+          4836983.6,
+          362331.5
+        ],
+        [
+          4837028.8,
+          362201.0
+        ],
+        [
+          4836996.4,
+          361989.3
+        ],
+        [
+          4837098.2,
+          361911.6
+        ],
+        [
+          4837223.5,
+          361875.8
+        ],
+        [
+          4837361.0,
+          362021.1
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4837498.6,
+          "b": 362166.4
+        },
+        {
+          "pointNo": 2,
+          "a": 4837493.9,
+          "b": 362325.6
+        },
+        {
+          "pointNo": 3,
+          "a": 4837391.7,
+          "b": 362449.4
+        },
+        {
+          "pointNo": 4,
+          "a": 4837345.5,
+          "b": 362586.6
+        },
+        {
+          "pointNo": 5,
+          "a": 4837185.4,
+          "b": 362528.2
+        },
+        {
+          "pointNo": 6,
+          "a": 4837128.1,
+          "b": 362506.4
+        },
+        {
+          "pointNo": 7,
+          "a": 4837044.6,
+          "b": 362430.9
+        },
+        {
+          "pointNo": 8,
+          "a": 4836983.6,
+          "b": 362331.5
+        },
+        {
+          "pointNo": 9,
+          "a": 4837028.8,
+          "b": 362201.0
+        },
+        {
+          "pointNo": 10,
+          "a": 4836996.4,
+          "b": 361989.3
+        },
+        {
+          "pointNo": 11,
+          "a": 4837098.2,
+          "b": 361911.6
+        },
+        {
+          "pointNo": 12,
+          "a": 4837223.5,
+          "b": 361875.8
+        },
+        {
+          "pointNo": 13,
+          "a": 4837361.0,
+          "b": 362021.1
+        }
+      ]
+    },
+    {
+      "concessionId": "216-225",
+      "curatedId": null,
+      "name": null,
+      "fileId": "4e49e94a-7980-477f-af56-821073072adc",
+      "sha256": "74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914",
+      "archivePath": "source-archive/concessions/nkr-attachments/74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/4e49e94a-7980-477f-af56-821073072adc",
+      "filename": "%D0%A0%D0%9C%D0%A1%201002-2022.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 50,
+      "pointNumberRanges": [
+        "1-50"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4614210.9,
+          372940.8
+        ],
+        [
+          4614208.7,
+          372962.7
+        ],
+        [
+          4614194.3,
+          372969.9
+        ],
+        [
+          4614155.8,
+          372989.7
+        ],
+        [
+          4614092.6,
+          373011.0
+        ],
+        [
+          4614036.9,
+          373019.5
+        ],
+        [
+          4613936.5,
+          373097.2
+        ],
+        [
+          4613860.2,
+          373190.5
+        ],
+        [
+          4613816.4,
+          373262.4
+        ],
+        [
+          4613731.7,
+          373317.9
+        ],
+        [
+          4613711.1,
+          373268.7
+        ],
+        [
+          4613971.2,
+          373021.6
+        ],
+        [
+          4614064.5,
+          372971.7
+        ],
+        [
+          4614208.4,
+          372974.9
+        ],
+        [
+          4614206.6,
+          373000.7
+        ],
+        [
+          4614165.2,
+          373025.3
+        ],
+        [
+          4614118.7,
+          373046.5
+        ],
+        [
+          4614051.2,
+          373121.7
+        ],
+        [
+          4613751.1,
+          373367.2
+        ],
+        [
+          4613734.2,
+          373327.2
+        ],
+        [
+          4613822.5,
+          373266.9
+        ],
+        [
+          4613922.7,
+          373143.3
+        ],
+        [
+          4614038.2,
+          373028.0
+        ],
+        [
+          4614136.6,
+          373005.8
+        ],
+        [
+          4614164.5,
+          373001.3
+        ],
+        [
+          4613722.0,
+          373438.2
+        ],
+        [
+          4613716.2,
+          373450.7
+        ],
+        [
+          4613698.4,
+          373505.4
+        ],
+        [
+          4613686.3,
+          373628.1
+        ],
+        [
+          4613647.8,
+          373693.0
+        ],
+        [
+          4613666.2,
+          373761.6
+        ],
+        [
+          4613599.1,
+          373710.9
+        ],
+        [
+          4613607.7,
+          373673.5
+        ],
+        [
+          4613645.4,
+          373604.1
+        ],
+        [
+          4613664.8,
+          373549.8
+        ],
+        [
+          4613644.4,
+          373481.3
+        ],
+        [
+          4613672.2,
+          373452.0
+        ],
+        [
+          4613700.8,
+          373433.0
+        ],
+        [
+          4614102.6,
+          373976.6
+        ],
+        [
+          4614100.3,
+          374008.0
+        ],
+        [
+          4614032.8,
+          374013.0
+        ],
+        [
+          4614006.3,
+          374011.5
+        ],
+        [
+          4613978.9,
+          373991.0
+        ],
+        [
+          4613919.7,
+          373889.2
+        ],
+        [
+          4613959.2,
+          373865.5
+        ],
+        [
+          4614024.8,
+          373956.8
+        ],
+        [
+          4612686.8,
+          372657.2
+        ],
+        [
+          4612700.1,
+          372718.7
+        ],
+        [
+          4612497.9,
+          372756.8
+        ],
+        [
+          4612465.4,
+          372674.6
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4614210.9,
+          "b": 372940.8
+        },
+        {
+          "pointNo": 2,
+          "a": 4614208.7,
+          "b": 372962.7
+        },
+        {
+          "pointNo": 3,
+          "a": 4614194.3,
+          "b": 372969.9
+        },
+        {
+          "pointNo": 4,
+          "a": 4614155.8,
+          "b": 372989.7
+        },
+        {
+          "pointNo": 5,
+          "a": 4614092.6,
+          "b": 373011.0
+        },
+        {
+          "pointNo": 6,
+          "a": 4614036.9,
+          "b": 373019.5
+        },
+        {
+          "pointNo": 7,
+          "a": 4613936.5,
+          "b": 373097.2
+        },
+        {
+          "pointNo": 8,
+          "a": 4613860.2,
+          "b": 373190.5
+        },
+        {
+          "pointNo": 9,
+          "a": 4613816.4,
+          "b": 373262.4
+        },
+        {
+          "pointNo": 10,
+          "a": 4613731.7,
+          "b": 373317.9
+        },
+        {
+          "pointNo": 11,
+          "a": 4613711.1,
+          "b": 373268.7
+        },
+        {
+          "pointNo": 12,
+          "a": 4613971.2,
+          "b": 373021.6
+        },
+        {
+          "pointNo": 13,
+          "a": 4614064.5,
+          "b": 372971.7
+        },
+        {
+          "pointNo": 14,
+          "a": 4614208.4,
+          "b": 372974.9
+        },
+        {
+          "pointNo": 15,
+          "a": 4614206.6,
+          "b": 373000.7
+        },
+        {
+          "pointNo": 16,
+          "a": 4614165.2,
+          "b": 373025.3
+        },
+        {
+          "pointNo": 17,
+          "a": 4614118.7,
+          "b": 373046.5
+        },
+        {
+          "pointNo": 18,
+          "a": 4614051.2,
+          "b": 373121.7
+        },
+        {
+          "pointNo": 19,
+          "a": 4613751.1,
+          "b": 373367.2
+        },
+        {
+          "pointNo": 20,
+          "a": 4613734.2,
+          "b": 373327.2
+        },
+        {
+          "pointNo": 21,
+          "a": 4613822.5,
+          "b": 373266.9
+        },
+        {
+          "pointNo": 22,
+          "a": 4613922.7,
+          "b": 373143.3
+        },
+        {
+          "pointNo": 23,
+          "a": 4614038.2,
+          "b": 373028.0
+        },
+        {
+          "pointNo": 24,
+          "a": 4614136.6,
+          "b": 373005.8
+        },
+        {
+          "pointNo": 25,
+          "a": 4614164.5,
+          "b": 373001.3
+        },
+        {
+          "pointNo": 26,
+          "a": 4613722.0,
+          "b": 373438.2
+        },
+        {
+          "pointNo": 27,
+          "a": 4613716.2,
+          "b": 373450.7
+        },
+        {
+          "pointNo": 28,
+          "a": 4613698.4,
+          "b": 373505.4
+        },
+        {
+          "pointNo": 29,
+          "a": 4613686.3,
+          "b": 373628.1
+        },
+        {
+          "pointNo": 30,
+          "a": 4613647.8,
+          "b": 373693.0
+        },
+        {
+          "pointNo": 31,
+          "a": 4613666.2,
+          "b": 373761.6
+        },
+        {
+          "pointNo": 32,
+          "a": 4613599.1,
+          "b": 373710.9
+        },
+        {
+          "pointNo": 33,
+          "a": 4613607.7,
+          "b": 373673.5
+        },
+        {
+          "pointNo": 34,
+          "a": 4613645.4,
+          "b": 373604.1
+        },
+        {
+          "pointNo": 35,
+          "a": 4613664.8,
+          "b": 373549.8
+        },
+        {
+          "pointNo": 36,
+          "a": 4613644.4,
+          "b": 373481.3
+        },
+        {
+          "pointNo": 37,
+          "a": 4613672.2,
+          "b": 373452.0
+        },
+        {
+          "pointNo": 38,
+          "a": 4613700.8,
+          "b": 373433.0
+        },
+        {
+          "pointNo": 39,
+          "a": 4614102.6,
+          "b": 373976.6
+        },
+        {
+          "pointNo": 40,
+          "a": 4614100.3,
+          "b": 374008.0
+        },
+        {
+          "pointNo": 41,
+          "a": 4614032.8,
+          "b": 374013.0
+        },
+        {
+          "pointNo": 42,
+          "a": 4614006.3,
+          "b": 374011.5
+        },
+        {
+          "pointNo": 43,
+          "a": 4613978.9,
+          "b": 373991.0
+        },
+        {
+          "pointNo": 44,
+          "a": 4613919.7,
+          "b": 373889.2
+        },
+        {
+          "pointNo": 45,
+          "a": 4613959.2,
+          "b": 373865.5
+        },
+        {
+          "pointNo": 46,
+          "a": 4614024.8,
+          "b": 373956.8
+        },
+        {
+          "pointNo": 47,
+          "a": 4612686.8,
+          "b": 372657.2
+        },
+        {
+          "pointNo": 48,
+          "a": 4612700.1,
+          "b": 372718.7
+        },
+        {
+          "pointNo": 49,
+          "a": 4612497.9,
+          "b": 372756.8
+        },
+        {
+          "pointNo": 50,
+          "a": 4612465.4,
+          "b": 372674.6
+        }
+      ]
+    },
+    {
+      "concessionId": "216-229",
+      "curatedId": null,
+      "name": null,
+      "fileId": "972bea32-5b27-4df2-8fd3-686fba760a51",
+      "sha256": "cc90dd9bce0828155a88e82bb1cc215cd320208ea6ddb502b55935ff62c2e1af",
+      "archivePath": "source-archive/concessions/nkr-attachments/cc90dd9bce0828155a88e82bb1cc215cd320208ea6ddb502b55935ff62c2e1af.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cc90dd9bce0828155a88e82bb1cc215cd320208ea6ddb502b55935ff62c2e1af.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/972bea32-5b27-4df2-8fd3-686fba760a51",
+      "filename": "%D0%A0%D0%9C%D0%A1%2058-2023.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 20,
+      "pointNumberRanges": [
+        "1-20"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4665908.3,
+          399208.4
+        ],
+        [
+          4666023.6,
+          399217.7
+        ],
+        [
+          4666021.0,
+          399227.5
+        ],
+        [
+          4665996.5,
+          399274.3
+        ],
+        [
+          4666044.6,
+          399355.5
+        ],
+        [
+          4666047.3,
+          399347.1
+        ],
+        [
+          4666053.0,
+          399341.9
+        ],
+        [
+          4666062.3,
+          399331.4
+        ],
+        [
+          4666076.8,
+          399329.0
+        ],
+        [
+          4666084.9,
+          399323.4
+        ],
+        [
+          4666088.2,
+          399318.2
+        ],
+        [
+          4666119.0,
+          399295.5
+        ],
+        [
+          4666139.7,
+          399280.2
+        ],
+        [
+          4666149.8,
+          399273.6
+        ],
+        [
+          4666147.9,
+          399415.1
+        ],
+        [
+          4665997.5,
+          399426.7
+        ],
+        [
+          4665906.7,
+          399433.7
+        ],
+        [
+          4665800.6,
+          399441.8
+        ],
+        [
+          4665765.0,
+          399419.0
+        ],
+        [
+          4665812.7,
+          399247.7
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4665908.3,
+          "b": 399208.4
+        },
+        {
+          "pointNo": 2,
+          "a": 4666023.6,
+          "b": 399217.7
+        },
+        {
+          "pointNo": 3,
+          "a": 4666021.0,
+          "b": 399227.5
+        },
+        {
+          "pointNo": 4,
+          "a": 4665996.5,
+          "b": 399274.3
+        },
+        {
+          "pointNo": 5,
+          "a": 4666044.6,
+          "b": 399355.5
+        },
+        {
+          "pointNo": 6,
+          "a": 4666047.3,
+          "b": 399347.1
+        },
+        {
+          "pointNo": 7,
+          "a": 4666053.0,
+          "b": 399341.9
+        },
+        {
+          "pointNo": 8,
+          "a": 4666062.3,
+          "b": 399331.4
+        },
+        {
+          "pointNo": 9,
+          "a": 4666076.8,
+          "b": 399329.0
+        },
+        {
+          "pointNo": 10,
+          "a": 4666084.9,
+          "b": 399323.4
+        },
+        {
+          "pointNo": 11,
+          "a": 4666088.2,
+          "b": 399318.2
+        },
+        {
+          "pointNo": 12,
+          "a": 4666119.0,
+          "b": 399295.5
+        },
+        {
+          "pointNo": 13,
+          "a": 4666139.7,
+          "b": 399280.2
+        },
+        {
+          "pointNo": 14,
+          "a": 4666149.8,
+          "b": 399273.6
+        },
+        {
+          "pointNo": 15,
+          "a": 4666147.9,
+          "b": 399415.1
+        },
+        {
+          "pointNo": 16,
+          "a": 4665997.5,
+          "b": 399426.7
+        },
+        {
+          "pointNo": 17,
+          "a": 4665906.7,
+          "b": 399433.7
+        },
+        {
+          "pointNo": 18,
+          "a": 4665800.6,
+          "b": 399441.8
+        },
+        {
+          "pointNo": 19,
+          "a": 4665765.0,
+          "b": 399419.0
+        },
+        {
+          "pointNo": 20,
+          "a": 4665812.7,
+          "b": 399247.7
+        }
+      ]
+    },
+    {
+      "concessionId": "216-251",
+      "curatedId": null,
+      "name": null,
+      "fileId": "400fc1c4-f31b-49c2-ad36-f02eb5a2fd52",
+      "sha256": "2e06137e55faac22c41d06eb81488b9399863e4ff67aaac98a40c277a528baa4",
+      "archivePath": "source-archive/concessions/nkr-attachments/2e06137e55faac22c41d06eb81488b9399863e4ff67aaac98a40c277a528baa4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2e06137e55faac22c41d06eb81488b9399863e4ff67aaac98a40c277a528baa4.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/400fc1c4-f31b-49c2-ad36-f02eb5a2fd52",
+      "filename": "%D0%A0%D0%9C%D0%A1%201007-2022.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 22,
+      "pointNumberRanges": [
+        "1-22"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4738454.3,
+          328105.4
+        ],
+        [
+          4738448.0,
+          328199.8
+        ],
+        [
+          4738440.0,
+          328218.8
+        ],
+        [
+          4738399.8,
+          328247.1
+        ],
+        [
+          4738388.5,
+          328263.8
+        ],
+        [
+          4738381.5,
+          328261.8
+        ],
+        [
+          4738279.6,
+          328209.4
+        ],
+        [
+          4738227.1,
+          328262.2
+        ],
+        [
+          4738051.0,
+          328465.3
+        ],
+        [
+          4737943.2,
+          328577.6
+        ],
+        [
+          4737811.9,
+          328748.9
+        ],
+        [
+          4737811.7,
+          328749.2
+        ],
+        [
+          4737740.6,
+          328857.6
+        ],
+        [
+          4737714.2,
+          329036.2
+        ],
+        [
+          4737648.2,
+          329066.5
+        ],
+        [
+          4737648.2,
+          329066.6
+        ],
+        [
+          4737853.5,
+          329166.6
+        ],
+        [
+          4737438.7,
+          329574.6
+        ],
+        [
+          4736926.1,
+          329005.9
+        ],
+        [
+          4737429.3,
+          328238.4
+        ],
+        [
+          4738049.6,
+          328250.7
+        ],
+        [
+          4738244.5,
+          328121.8
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4738454.3,
+          "b": 328105.4
+        },
+        {
+          "pointNo": 2,
+          "a": 4738448.0,
+          "b": 328199.8
+        },
+        {
+          "pointNo": 3,
+          "a": 4738440.0,
+          "b": 328218.8
+        },
+        {
+          "pointNo": 4,
+          "a": 4738399.8,
+          "b": 328247.1
+        },
+        {
+          "pointNo": 5,
+          "a": 4738388.5,
+          "b": 328263.8
+        },
+        {
+          "pointNo": 6,
+          "a": 4738381.5,
+          "b": 328261.8
+        },
+        {
+          "pointNo": 7,
+          "a": 4738279.6,
+          "b": 328209.4
+        },
+        {
+          "pointNo": 8,
+          "a": 4738227.1,
+          "b": 328262.2
+        },
+        {
+          "pointNo": 9,
+          "a": 4738051.0,
+          "b": 328465.3
+        },
+        {
+          "pointNo": 10,
+          "a": 4737943.2,
+          "b": 328577.6
+        },
+        {
+          "pointNo": 11,
+          "a": 4737811.9,
+          "b": 328748.9
+        },
+        {
+          "pointNo": 12,
+          "a": 4737811.7,
+          "b": 328749.2
+        },
+        {
+          "pointNo": 13,
+          "a": 4737740.6,
+          "b": 328857.6
+        },
+        {
+          "pointNo": 14,
+          "a": 4737714.2,
+          "b": 329036.2
+        },
+        {
+          "pointNo": 15,
+          "a": 4737648.2,
+          "b": 329066.5
+        },
+        {
+          "pointNo": 16,
+          "a": 4737648.2,
+          "b": 329066.6
+        },
+        {
+          "pointNo": 17,
+          "a": 4737853.5,
+          "b": 329166.6
+        },
+        {
+          "pointNo": 18,
+          "a": 4737438.7,
+          "b": 329574.6
+        },
+        {
+          "pointNo": 19,
+          "a": 4736926.1,
+          "b": 329005.9
+        },
+        {
+          "pointNo": 20,
+          "a": 4737429.3,
+          "b": 328238.4
+        },
+        {
+          "pointNo": 21,
+          "a": 4738049.6,
+          "b": 328250.7
+        },
+        {
+          "pointNo": 22,
+          "a": 4738244.5,
+          "b": 328121.8
+        }
+      ]
+    },
+    {
+      "concessionId": "216-256",
+      "curatedId": null,
+      "name": null,
+      "fileId": "e3c69665-f042-40b4-9193-4c304e0f7e86",
+      "sha256": "fe73a12ef13d3784a23bcd6b287e19d27b5c8fd9e6bc38ec7f730fbc2e7388c2",
+      "archivePath": "source-archive/concessions/nkr-attachments/fe73a12ef13d3784a23bcd6b287e19d27b5c8fd9e6bc38ec7f730fbc2e7388c2.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/fe73a12ef13d3784a23bcd6b287e19d27b5c8fd9e6bc38ec7f730fbc2e7388c2.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/e3c69665-f042-40b4-9193-4c304e0f7e86",
+      "filename": "23RH059_Gradec-2.doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 10,
+      "pointNumberRanges": [
+        "1-10"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4740891.9,
+          585943.9
+        ],
+        [
+          4740886.5,
+          586014.1
+        ],
+        [
+          4740609.8,
+          586498.1
+        ],
+        [
+          4740511.0,
+          586667.7
+        ],
+        [
+          4740370.4,
+          586557.7
+        ],
+        [
+          4740477.1,
+          586429.1
+        ],
+        [
+          4740436.1,
+          586378.2
+        ],
+        [
+          4740329.1,
+          586324.3
+        ],
+        [
+          4740324.0,
+          586161.1
+        ],
+        [
+          4740571.8,
+          585948.4
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4740891.9,
+          "b": 585943.9
+        },
+        {
+          "pointNo": 2,
+          "a": 4740886.5,
+          "b": 586014.1
+        },
+        {
+          "pointNo": 3,
+          "a": 4740609.8,
+          "b": 586498.1
+        },
+        {
+          "pointNo": 4,
+          "a": 4740511.0,
+          "b": 586667.7
+        },
+        {
+          "pointNo": 5,
+          "a": 4740370.4,
+          "b": 586557.7
+        },
+        {
+          "pointNo": 6,
+          "a": 4740477.1,
+          "b": 586429.1
+        },
+        {
+          "pointNo": 7,
+          "a": 4740436.1,
+          "b": 586378.2
+        },
+        {
+          "pointNo": 8,
+          "a": 4740329.1,
+          "b": 586324.3
+        },
+        {
+          "pointNo": 9,
+          "a": 4740324.0,
+          "b": 586161.1
+        },
+        {
+          "pointNo": 10,
+          "a": 4740571.8,
+          "b": 585948.4
+        }
+      ]
+    },
+    {
+      "concessionId": "216-275",
+      "curatedId": null,
+      "name": null,
+      "fileId": "f7fd9d73-16b0-47db-8769-4d9c45852a82",
+      "sha256": "bfb2b7333caf7d937e96326e9038f84de6af3bfd13213e7a1a2eb71f456daac3",
+      "archivePath": "source-archive/concessions/nkr-attachments/bfb2b7333caf7d937e96326e9038f84de6af3bfd13213e7a1a2eb71f456daac3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/bfb2b7333caf7d937e96326e9038f84de6af3bfd13213e7a1a2eb71f456daac3.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/f7fd9d73-16b0-47db-8769-4d9c45852a82",
+      "filename": "%D0%A0%D0%9C%D0%A1%2050-2023.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 14,
+      "pointNumberRanges": [
+        "1-14"
+      ],
+      "conflictCount": 9,
+      "conflicts": [
+        {
+          "pointNo": 1,
+          "first": {
+            "pointNo": 1,
+            "a": 4844785.2,
+            "b": 336132.7,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 1,
+            "a": 4843620.2,
+            "b": 336194.3,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 2,
+          "first": {
+            "pointNo": 2,
+            "a": 4844789.2,
+            "b": 336184.2,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 2,
+            "a": 4843512.5,
+            "b": 336235.7,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 3,
+          "first": {
+            "pointNo": 3,
+            "a": 4844746.6,
+            "b": 336253.3,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 3,
+            "a": 4843467.9,
+            "b": 336143.0,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 4,
+          "first": {
+            "pointNo": 4,
+            "a": 4844699.8,
+            "b": 336329.2,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 4,
+            "a": 4843312.7,
+            "b": 336039.1,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 5,
+          "first": {
+            "pointNo": 5,
+            "a": 4844720.2,
+            "b": 336499.4,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 5,
+            "a": 4843335.1,
+            "b": 335895.0,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 6,
+          "first": {
+            "pointNo": 6,
+            "a": 4844720.0,
+            "b": 336507.9,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 6,
+            "a": 4843343.0,
+            "b": 335901.0,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 7,
+          "first": {
+            "pointNo": 7,
+            "a": 4844419.9,
+            "b": 336294.0,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 7,
+            "a": 4843447.8,
+            "b": 335992.8,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 8,
+          "first": {
+            "pointNo": 8,
+            "a": 4844081.8,
+            "b": 336222.7,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 8,
+            "a": 4843528.1,
+            "b": 336024.3,
+            "crsClass": "BGS2005"
+          }
+        },
+        {
+          "pointNo": 9,
+          "first": {
+            "pointNo": 9,
+            "a": 4844082.1,
+            "b": 336212.6,
+            "crsClass": "BGS2005"
+          },
+          "other": {
+            "pointNo": 9,
+            "a": 4843616.7,
+            "b": 336188.0,
+            "crsClass": "BGS2005"
+          }
+        }
+      ],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "conflicting_duplicate_point_numbers",
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4844785.2,
+          336132.7
+        ],
+        [
+          4844789.2,
+          336184.2
+        ],
+        [
+          4844746.6,
+          336253.3
+        ],
+        [
+          4844699.8,
+          336329.2
+        ],
+        [
+          4844720.2,
+          336499.4
+        ],
+        [
+          4844720.0,
+          336507.9
+        ],
+        [
+          4844419.9,
+          336294.0
+        ],
+        [
+          4844081.8,
+          336222.7
+        ],
+        [
+          4844082.1,
+          336212.6
+        ],
+        [
+          4844173.7,
+          336164.2
+        ],
+        [
+          4844326.0,
+          336143.9
+        ],
+        [
+          4844506.4,
+          336054.2
+        ],
+        [
+          4844627.1,
+          336058.9
+        ],
+        [
+          4844724.5,
+          336102.4
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4844785.2,
+          "b": 336132.7
+        },
+        {
+          "pointNo": 2,
+          "a": 4844789.2,
+          "b": 336184.2
+        },
+        {
+          "pointNo": 3,
+          "a": 4844746.6,
+          "b": 336253.3
+        },
+        {
+          "pointNo": 4,
+          "a": 4844699.8,
+          "b": 336329.2
+        },
+        {
+          "pointNo": 5,
+          "a": 4844720.2,
+          "b": 336499.4
+        },
+        {
+          "pointNo": 6,
+          "a": 4844720.0,
+          "b": 336507.9
+        },
+        {
+          "pointNo": 7,
+          "a": 4844419.9,
+          "b": 336294.0
+        },
+        {
+          "pointNo": 8,
+          "a": 4844081.8,
+          "b": 336222.7
+        },
+        {
+          "pointNo": 9,
+          "a": 4844082.1,
+          "b": 336212.6
+        },
+        {
+          "pointNo": 10,
+          "a": 4844173.7,
+          "b": 336164.2
+        },
+        {
+          "pointNo": 11,
+          "a": 4844326.0,
+          "b": 336143.9
+        },
+        {
+          "pointNo": 12,
+          "a": 4844506.4,
+          "b": 336054.2
+        },
+        {
+          "pointNo": 13,
+          "a": 4844627.1,
+          "b": 336058.9
+        },
+        {
+          "pointNo": 14,
+          "a": 4844724.5,
+          "b": 336102.4
+        }
+      ]
+    },
+    {
+      "concessionId": "216-280",
+      "curatedId": null,
+      "name": null,
+      "fileId": "6954ab6a-42d5-46ae-a5c0-d422020ad053",
+      "sha256": "0230aa015e8fa6b8037e992c7385218c6bec9601b3065dcf6e565fc41ddb58f0",
+      "archivePath": "source-archive/concessions/nkr-attachments/0230aa015e8fa6b8037e992c7385218c6bec9601b3065dcf6e565fc41ddb58f0.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0230aa015e8fa6b8037e992c7385218c6bec9601b3065dcf6e565fc41ddb58f0.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/6954ab6a-42d5-46ae-a5c0-d422020ad053",
+      "filename": "%D0%A0%D0%9C%D0%A1%20425-2023-.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "BGS2005",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 29,
+      "pointNumberRanges": [
+        "1-29"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4862141.6,
+          665997.3
+        ],
+        [
+          4862145.7,
+          666170.2
+        ],
+        [
+          4862097.7,
+          666273.1
+        ],
+        [
+          4862077.1,
+          666339.3
+        ],
+        [
+          4862091.5,
+          666468.9
+        ],
+        [
+          4862138.0,
+          666502.8
+        ],
+        [
+          4862068.9,
+          666579.1
+        ],
+        [
+          4862097.2,
+          666602.5
+        ],
+        [
+          4862085.9,
+          666629.6
+        ],
+        [
+          4862033.2,
+          666689.7
+        ],
+        [
+          4862010.6,
+          666723.8
+        ],
+        [
+          4862002.9,
+          666743.7
+        ],
+        [
+          4861999.5,
+          666762.4
+        ],
+        [
+          4861998.6,
+          666785.5
+        ],
+        [
+          4861972.3,
+          666809.4
+        ],
+        [
+          4861957.5,
+          666839.3
+        ],
+        [
+          4861934.6,
+          666852.5
+        ],
+        [
+          4861948.1,
+          666763.3
+        ],
+        [
+          4861929.5,
+          666555.8
+        ],
+        [
+          4862015.8,
+          666518.9
+        ],
+        [
+          4861995.9,
+          666411.9
+        ],
+        [
+          4862010.9,
+          666316.2
+        ],
+        [
+          4861995.4,
+          666257.1
+        ],
+        [
+          4861996.6,
+          666218.8
+        ],
+        [
+          4862012.6,
+          666195.3
+        ],
+        [
+          4862020.9,
+          666170.3
+        ],
+        [
+          4862019.2,
+          666127.8
+        ],
+        [
+          4862004.0,
+          666071.4
+        ],
+        [
+          4862007.8,
+          666000.1
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4862141.6,
+          "b": 665997.3
+        },
+        {
+          "pointNo": 2,
+          "a": 4862145.7,
+          "b": 666170.2
+        },
+        {
+          "pointNo": 3,
+          "a": 4862097.7,
+          "b": 666273.1
+        },
+        {
+          "pointNo": 4,
+          "a": 4862077.1,
+          "b": 666339.3
+        },
+        {
+          "pointNo": 5,
+          "a": 4862091.5,
+          "b": 666468.9
+        },
+        {
+          "pointNo": 6,
+          "a": 4862138.0,
+          "b": 666502.8
+        },
+        {
+          "pointNo": 7,
+          "a": 4862068.9,
+          "b": 666579.1
+        },
+        {
+          "pointNo": 8,
+          "a": 4862097.2,
+          "b": 666602.5
+        },
+        {
+          "pointNo": 9,
+          "a": 4862085.9,
+          "b": 666629.6
+        },
+        {
+          "pointNo": 10,
+          "a": 4862033.2,
+          "b": 666689.7
+        },
+        {
+          "pointNo": 11,
+          "a": 4862010.6,
+          "b": 666723.8
+        },
+        {
+          "pointNo": 12,
+          "a": 4862002.9,
+          "b": 666743.7
+        },
+        {
+          "pointNo": 13,
+          "a": 4861999.5,
+          "b": 666762.4
+        },
+        {
+          "pointNo": 14,
+          "a": 4861998.6,
+          "b": 666785.5
+        },
+        {
+          "pointNo": 15,
+          "a": 4861972.3,
+          "b": 666809.4
+        },
+        {
+          "pointNo": 16,
+          "a": 4861957.5,
+          "b": 666839.3
+        },
+        {
+          "pointNo": 17,
+          "a": 4861934.6,
+          "b": 666852.5
+        },
+        {
+          "pointNo": 18,
+          "a": 4861948.1,
+          "b": 666763.3
+        },
+        {
+          "pointNo": 19,
+          "a": 4861929.5,
+          "b": 666555.8
+        },
+        {
+          "pointNo": 20,
+          "a": 4862015.8,
+          "b": 666518.9
+        },
+        {
+          "pointNo": 21,
+          "a": 4861995.9,
+          "b": 666411.9
+        },
+        {
+          "pointNo": 22,
+          "a": 4862010.9,
+          "b": 666316.2
+        },
+        {
+          "pointNo": 23,
+          "a": 4861995.4,
+          "b": 666257.1
+        },
+        {
+          "pointNo": 24,
+          "a": 4861996.6,
+          "b": 666218.8
+        },
+        {
+          "pointNo": 25,
+          "a": 4862012.6,
+          "b": 666195.3
+        },
+        {
+          "pointNo": 26,
+          "a": 4862020.9,
+          "b": 666170.3
+        },
+        {
+          "pointNo": 27,
+          "a": 4862019.2,
+          "b": 666127.8
+        },
+        {
+          "pointNo": 28,
+          "a": 4862004.0,
+          "b": 666071.4
+        },
+        {
+          "pointNo": 29,
+          "a": 4862007.8,
+          "b": 666000.1
+        }
+      ]
+    },
+    {
+      "concessionId": "216-306",
+      "curatedId": null,
+      "name": null,
+      "fileId": "be5f75f1-c008-490a-a242-40ccf0c230e0",
+      "sha256": "881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d",
+      "archivePath": "source-archive/concessions/nkr-attachments/881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/881984c6da3afd062f749f41ac673f2e11e4f076422c13ad92dc0e6041c1bf1d.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/be5f75f1-c008-490a-a242-40ccf0c230e0",
+      "filename": "%D0%A0%D0%9C%D0%A1%20863-2022.pdf",
+      "extractor": "pypdf",
+      "coordinateParserVersion": null,
+      "dominantCrsClass": "BGS1970",
+      "sourceCoordinateSystem": "BGS1970",
+      "sourceCoordinateOrder": null,
+      "sourceZone": null,
+      "officialAreaDka": null,
+      "expectedPointCount": null,
+      "extractedPointCount": 18,
+      "pointNumberRanges": [
+        "1-18"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_point_count_unknown",
+        "official_area_missing",
+        "BGS1970_zone_unverified",
+        "coordinate_order_unverified"
+      ],
+      "coordinatesRaw": [
+        [
+          4519068.6,
+          8632500.0
+        ],
+        [
+          4519081.0,
+          8632533.8
+        ],
+        [
+          4519101.0,
+          8632565.6
+        ],
+        [
+          4519073.0,
+          8632643.2
+        ],
+        [
+          4519085.0,
+          8632724.4
+        ],
+        [
+          4519099.7,
+          8632760.5
+        ],
+        [
+          4519120.4,
+          8632808.1
+        ],
+        [
+          4519150.2,
+          8632854.3
+        ],
+        [
+          4519154.7,
+          8632882.7
+        ],
+        [
+          4519169.2,
+          8632910.9
+        ],
+        [
+          4519179.5,
+          8632928.6
+        ],
+        [
+          4519197.5,
+          8632985.4
+        ],
+        [
+          4519204.1,
+          8633018.8
+        ],
+        [
+          4519162.8,
+          8633021.4
+        ],
+        [
+          4519188.4,
+          8633146.0
+        ],
+        [
+          4519000.0,
+          8632933.7
+        ],
+        [
+          4519000.0,
+          8632617.0
+        ],
+        [
+          4519000.0,
+          8632500.0
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 1,
+          "a": 4519068.6,
+          "b": 8632500.0
+        },
+        {
+          "pointNo": 2,
+          "a": 4519081.0,
+          "b": 8632533.8
+        },
+        {
+          "pointNo": 3,
+          "a": 4519101.0,
+          "b": 8632565.6
+        },
+        {
+          "pointNo": 4,
+          "a": 4519073.0,
+          "b": 8632643.2
+        },
+        {
+          "pointNo": 5,
+          "a": 4519085.0,
+          "b": 8632724.4
+        },
+        {
+          "pointNo": 6,
+          "a": 4519099.7,
+          "b": 8632760.5
+        },
+        {
+          "pointNo": 7,
+          "a": 4519120.4,
+          "b": 8632808.1
+        },
+        {
+          "pointNo": 8,
+          "a": 4519150.2,
+          "b": 8632854.3
+        },
+        {
+          "pointNo": 9,
+          "a": 4519154.7,
+          "b": 8632882.7
+        },
+        {
+          "pointNo": 10,
+          "a": 4519169.2,
+          "b": 8632910.9
+        },
+        {
+          "pointNo": 11,
+          "a": 4519179.5,
+          "b": 8632928.6
+        },
+        {
+          "pointNo": 12,
+          "a": 4519197.5,
+          "b": 8632985.4
+        },
+        {
+          "pointNo": 13,
+          "a": 4519204.1,
+          "b": 8633018.8
+        },
+        {
+          "pointNo": 14,
+          "a": 4519162.8,
+          "b": 8633021.4
+        },
+        {
+          "pointNo": 15,
+          "a": 4519188.4,
+          "b": 8633146.0
+        },
+        {
+          "pointNo": 16,
+          "a": 4519000.0,
+          "b": 8632933.7
+        },
+        {
+          "pointNo": 17,
+          "a": 4519000.0,
+          "b": 8632617.0
+        },
+        {
+          "pointNo": 18,
+          "a": 4519000.0,
+          "b": 8632500.0
+        }
+      ]
+    },
+    {
+      "concessionId": "D-000074",
+      "curatedId": "MINE-ELATSITE",
+      "name": "Елаците",
+      "fileId": "f270e358-bf3b-463c-a752-d45d5c51e3eb",
+      "sha256": "c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e",
+      "archivePath": "source-archive/concessions/nkr-attachments/c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e.txt",
+      "sourceUrl": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
+      "filename": "25RH147(1).doc",
+      "extractor": "antiword",
+      "coordinateParserVersion": 2,
+      "dominantCrsClass": "BGS2005",
+      "sourceCoordinateSystem": "БГС2005, кадастрални координати",
+      "sourceCoordinateOrder": "X(N), Y(E)",
+      "sourceZone": null,
+      "officialAreaDka": 21821.8,
+      "expectedPointCount": 395,
+      "extractedPointCount": 235,
+      "pointNumberRanges": [
+        "161-395"
+      ],
+      "conflictCount": 0,
+      "conflicts": [],
+      "publicationReady": false,
+      "publicationBlockers": [
+        "expected_395_got_235"
+      ],
+      "coordinatesRaw": [
+        [
+          4725899.0,
+          378331.3
+        ],
+        [
+          4726053.4,
+          378355.6
+        ],
+        [
+          4726277.9,
+          378474.8
+        ],
+        [
+          4726579.3,
+          378620.0
+        ],
+        [
+          4726893.6,
+          378771.5
+        ],
+        [
+          4727012.9,
+          378829.0
+        ],
+        [
+          4727069.0,
+          378856.0
+        ],
+        [
+          4727129.8,
+          378837.6
+        ],
+        [
+          4727220.9,
+          378818.9
+        ],
+        [
+          4727705.4,
+          378701.6
+        ],
+        [
+          4727934.2,
+          378711.9
+        ],
+        [
+          4728105.1,
+          378725.7
+        ],
+        [
+          4728115.4,
+          378727.5
+        ],
+        [
+          4728332.5,
+          378807.9
+        ],
+        [
+          4728350.2,
+          378813.5
+        ],
+        [
+          4728622.7,
+          378830.4
+        ],
+        [
+          4728667.1,
+          378804.5
+        ],
+        [
+          4728762.9,
+          378809.0
+        ],
+        [
+          4728806.8,
+          378806.8
+        ],
+        [
+          4728905.8,
+          378783.7
+        ],
+        [
+          4729005.4,
+          378838.2
+        ],
+        [
+          4729157.1,
+          378799.7
+        ],
+        [
+          4729222.1,
+          378839.1
+        ],
+        [
+          4729242.7,
+          378882.8
+        ],
+        [
+          4729312.6,
+          378899.3
+        ],
+        [
+          4729567.0,
+          378850.4
+        ],
+        [
+          4729658.1,
+          378780.3
+        ],
+        [
+          4729669.4,
+          378698.2
+        ],
+        [
+          4729253.7,
+          378718.3
+        ],
+        [
+          4729252.7,
+          378698.4
+        ],
+        [
+          4729672.2,
+          378678.0
+        ],
+        [
+          4729693.3,
+          378653.7
+        ],
+        [
+          4729808.6,
+          378666.5
+        ],
+        [
+          4729958.0,
+          378692.5
+        ],
+        [
+          4730163.0,
+          378502.6
+        ],
+        [
+          4730113.8,
+          378501.7
+        ],
+        [
+          4730114.6,
+          378451.6
+        ],
+        [
+          4730183.2,
+          378453.1
+        ],
+        [
+          4730189.5,
+          378427.8
+        ],
+        [
+          4730163.8,
+          378401.0
+        ],
+        [
+          4730164.3,
+          378388.2
+        ],
+        [
+          4730161.8,
+          378380.5
+        ],
+        [
+          4730159.0,
+          378374.8
+        ],
+        [
+          4730165.8,
+          378375.9
+        ],
+        [
+          4730184.0,
+          378365.9
+        ],
+        [
+          4730209.1,
+          378341.6
+        ],
+        [
+          4730221.7,
+          378337.3
+        ],
+        [
+          4730243.9,
+          378322.3
+        ],
+        [
+          4730260.3,
+          378315.2
+        ],
+        [
+          4730288.0,
+          378300.4
+        ],
+        [
+          4730292.4,
+          378286.1
+        ],
+        [
+          4730296.4,
+          378277.1
+        ],
+        [
+          4730299.3,
+          378272.3
+        ],
+        [
+          4730316.1,
+          378248.5
+        ],
+        [
+          4730336.3,
+          378249.3
+        ],
+        [
+          4730361.7,
+          378244.3
+        ],
+        [
+          4730485.6,
+          378232.1
+        ],
+        [
+          4730514.7,
+          378228.3
+        ],
+        [
+          4730524.6,
+          378239.6
+        ],
+        [
+          4730546.0,
+          378078.4
+        ],
+        [
+          4730618.6,
+          378157.7
+        ],
+        [
+          4730640.8,
+          378142.9
+        ],
+        [
+          4730683.2,
+          378087.0
+        ],
+        [
+          4730685.9,
+          378084.1
+        ],
+        [
+          4730699.1,
+          378104.5
+        ],
+        [
+          4730706.2,
+          378107.1
+        ],
+        [
+          4730722.9,
+          378108.9
+        ],
+        [
+          4730767.5,
+          378121.3
+        ],
+        [
+          4730888.7,
+          378141.5
+        ],
+        [
+          4730900.1,
+          378114.3
+        ],
+        [
+          4730941.3,
+          378141.7
+        ],
+        [
+          4731091.5,
+          378117.7
+        ],
+        [
+          4731120.1,
+          378228.1
+        ],
+        [
+          4731168.6,
+          378226.8
+        ],
+        [
+          4731246.8,
+          378207.3
+        ],
+        [
+          4731251.0,
+          378225.5
+        ],
+        [
+          4731167.9,
+          378330.7
+        ],
+        [
+          4731102.5,
+          378338.1
+        ],
+        [
+          4731024.3,
+          378405.5
+        ],
+        [
+          4730863.0,
+          378312.7
+        ],
+        [
+          4730792.9,
+          378234.1
+        ],
+        [
+          4730702.5,
+          378332.9
+        ],
+        [
+          4730639.5,
+          378382.1
+        ],
+        [
+          4730631.4,
+          378493.6
+        ],
+        [
+          4730663.5,
+          378495.9
+        ],
+        [
+          4730701.4,
+          378554.6
+        ],
+        [
+          4730843.7,
+          378573.3
+        ],
+        [
+          4730899.5,
+          378544.0
+        ],
+        [
+          4730957.5,
+          378586.0
+        ],
+        [
+          4730939.1,
+          378641.5
+        ],
+        [
+          4730954.2,
+          378689.1
+        ],
+        [
+          4730925.9,
+          378735.1
+        ],
+        [
+          4730897.7,
+          378734.4
+        ],
+        [
+          4730871.3,
+          378643.8
+        ],
+        [
+          4730844.9,
+          378633.9
+        ],
+        [
+          4730717.3,
+          378642.0
+        ],
+        [
+          4730678.7,
+          378717.9
+        ],
+        [
+          4730643.9,
+          378756.1
+        ],
+        [
+          4730622.4,
+          378736.4
+        ],
+        [
+          4730532.9,
+          378875.9
+        ],
+        [
+          4730465.2,
+          378983.4
+        ],
+        [
+          4730455.8,
+          379039.5
+        ],
+        [
+          4730452.8,
+          379056.9
+        ],
+        [
+          4730451.0,
+          379087.1
+        ],
+        [
+          4730453.5,
+          379099.7
+        ],
+        [
+          4730459.7,
+          379130.6
+        ],
+        [
+          4730462.6,
+          379140.3
+        ],
+        [
+          4730190.4,
+          379133.6
+        ],
+        [
+          4730172.7,
+          379121.8
+        ],
+        [
+          4729849.1,
+          378766.5
+        ],
+        [
+          4729811.8,
+          378728.4
+        ],
+        [
+          4729716.5,
+          378712.9
+        ],
+        [
+          4729704.0,
+          378806.8
+        ],
+        [
+          4729587.6,
+          378896.3
+        ],
+        [
+          4729311.5,
+          378949.4
+        ],
+        [
+          4729208.5,
+          378925.1
+        ],
+        [
+          4729184.1,
+          378873.4
+        ],
+        [
+          4729149.2,
+          378852.2
+        ],
+        [
+          4728998.4,
+          378890.5
+        ],
+        [
+          4728899.1,
+          378835.0
+        ],
+        [
+          4728815.1,
+          378855.1
+        ],
+        [
+          4728762.8,
+          378858.1
+        ],
+        [
+          4728621.9,
+          378851.4
+        ],
+        [
+          4728346.6,
+          378834.4
+        ],
+        [
+          4728325.7,
+          378827.8
+        ],
+        [
+          4728107.7,
+          378747.0
+        ],
+        [
+          4727932.9,
+          378732.9
+        ],
+        [
+          4727707.4,
+          378722.7
+        ],
+        [
+          4727225.6,
+          378839.4
+        ],
+        [
+          4727139.4,
+          378858.3
+        ],
+        [
+          4727703.6,
+          378915.2
+        ],
+        [
+          4728165.0,
+          379203.7
+        ],
+        [
+          4728134.2,
+          379219.9
+        ],
+        [
+          4727674.5,
+          378932.3
+        ],
+        [
+          4727085.8,
+          378873.0
+        ],
+        [
+          4727077.2,
+          378875.4
+        ],
+        [
+          4726986.1,
+          378916.6
+        ],
+        [
+          4726805.9,
+          378961.0
+        ],
+        [
+          4726756.9,
+          378964.0
+        ],
+        [
+          4726715.5,
+          378958.1
+        ],
+        [
+          4726640.2,
+          378985.6
+        ],
+        [
+          4726611.8,
+          379014.1
+        ],
+        [
+          4726598.7,
+          379039.4
+        ],
+        [
+          4726549.7,
+          379201.6
+        ],
+        [
+          4726528.7,
+          379238.9
+        ],
+        [
+          4726493.6,
+          379259.1
+        ],
+        [
+          4726408.1,
+          379292.4
+        ],
+        [
+          4726405.1,
+          379293.8
+        ],
+        [
+          4726384.6,
+          379329.8
+        ],
+        [
+          4726336.4,
+          379511.0
+        ],
+        [
+          4726323.3,
+          379542.4
+        ],
+        [
+          4726299.8,
+          379584.2
+        ],
+        [
+          4726271.6,
+          379606.7
+        ],
+        [
+          4726222.3,
+          379632.9
+        ],
+        [
+          4726133.5,
+          379751.4
+        ],
+        [
+          4726097.2,
+          379776.7
+        ],
+        [
+          4726059.5,
+          379789.1
+        ],
+        [
+          4725905.9,
+          379807.9
+        ],
+        [
+          4725745.9,
+          379883.8
+        ],
+        [
+          4725475.8,
+          379896.4
+        ],
+        [
+          4725183.9,
+          380171.0
+        ],
+        [
+          4725191.1,
+          380464.0
+        ],
+        [
+          4725159.7,
+          380531.0
+        ],
+        [
+          4724701.1,
+          380798.1
+        ],
+        [
+          4724615.8,
+          381065.2
+        ],
+        [
+          4724589.1,
+          381079.2
+        ],
+        [
+          4724437.1,
+          380902.3
+        ],
+        [
+          4724113.4,
+          381029.7
+        ],
+        [
+          4723977.1,
+          381370.1
+        ],
+        [
+          4723728.6,
+          381530.5
+        ],
+        [
+          4723212.3,
+          381743.0
+        ],
+        [
+          4722798.3,
+          381734.2
+        ],
+        [
+          4722667.9,
+          381648.4
+        ],
+        [
+          4722475.4,
+          381570.3
+        ],
+        [
+          4722346.9,
+          381502.5
+        ],
+        [
+          4722256.1,
+          381457.3
+        ],
+        [
+          4722215.9,
+          381370.7
+        ],
+        [
+          4722202.6,
+          381237.4
+        ],
+        [
+          4722228.9,
+          381178.0
+        ],
+        [
+          4722213.3,
+          381034.8
+        ],
+        [
+          4722114.9,
+          380899.3
+        ],
+        [
+          4721918.0,
+          380793.5
+        ],
+        [
+          4721890.5,
+          380743.4
+        ],
+        [
+          4721910.1,
+          380710.8
+        ],
+        [
+          4721983.2,
+          380670.1
+        ],
+        [
+          4722046.8,
+          380658.2
+        ],
+        [
+          4722100.6,
+          380669.9
+        ],
+        [
+          4722235.1,
+          380729.5
+        ],
+        [
+          4722262.0,
+          380728.5
+        ],
+        [
+          4722323.8,
+          380695.3
+        ],
+        [
+          4722364.1,
+          380652.7
+        ],
+        [
+          4722356.6,
+          380530.7
+        ],
+        [
+          4722328.3,
+          380393.8
+        ],
+        [
+          4722295.9,
+          380341.0
+        ],
+        [
+          4722166.3,
+          380237.0
+        ],
+        [
+          4722082.4,
+          380103.1
+        ],
+        [
+          4722074.3,
+          379969.6
+        ],
+        [
+          4722069.8,
+          379894.8
+        ],
+        [
+          4722178.4,
+          379764.4
+        ],
+        [
+          4722146.6,
+          379533.2
+        ],
+        [
+          4722040.4,
+          379339.3
+        ],
+        [
+          4722077.6,
+          379095.3
+        ],
+        [
+          4722242.4,
+          379016.8
+        ],
+        [
+          4722515.2,
+          378887.0
+        ],
+        [
+          4722602.6,
+          378892.4
+        ],
+        [
+          4722604.5,
+          378891.5
+        ],
+        [
+          4722961.6,
+          378729.3
+        ],
+        [
+          4722991.3,
+          378715.8
+        ],
+        [
+          4722996.3,
+          378718.8
+        ],
+        [
+          4723080.4,
+          378770.1
+        ],
+        [
+          4723189.0,
+          378609.4
+        ],
+        [
+          4723238.9,
+          378566.0
+        ],
+        [
+          4723386.6,
+          378637.5
+        ],
+        [
+          4723549.4,
+          378490.3
+        ],
+        [
+          4723771.9,
+          378685.5
+        ],
+        [
+          4724007.4,
+          378722.7
+        ],
+        [
+          4724127.6,
+          378696.7
+        ],
+        [
+          4724217.7,
+          378604.1
+        ],
+        [
+          4724408.1,
+          378362.9
+        ],
+        [
+          4724611.4,
+          378206.7
+        ],
+        [
+          4724607.2,
+          378171.3
+        ],
+        [
+          4724647.0,
+          378166.6
+        ],
+        [
+          4724649.6,
+          378200.0
+        ],
+        [
+          4724652.6,
+          378199.3
+        ],
+        [
+          4724659.1,
+          378198.4
+        ],
+        [
+          4724661.8,
+          378198.0
+        ],
+        [
+          4724661.8,
+          378199.0
+        ],
+        [
+          4724664.6,
+          378201.1
+        ],
+        [
+          4724665.2,
+          378204.3
+        ],
+        [
+          4724675.1,
+          378203.8
+        ],
+        [
+          4724683.0,
+          378284.1
+        ],
+        [
+          4724710.3,
+          378345.4
+        ],
+        [
+          4724876.1,
+          378335.3
+        ],
+        [
+          4725175.3,
+          378236.5
+        ],
+        [
+          4725273.3,
+          378214.1
+        ]
+      ],
+      "points": [
+        {
+          "pointNo": 161,
+          "a": 4725899.0,
+          "b": 378331.3
+        },
+        {
+          "pointNo": 162,
+          "a": 4726053.4,
+          "b": 378355.6
+        },
+        {
+          "pointNo": 163,
+          "a": 4726277.9,
+          "b": 378474.8
+        },
+        {
+          "pointNo": 164,
+          "a": 4726579.3,
+          "b": 378620.0
+        },
+        {
+          "pointNo": 165,
+          "a": 4726893.6,
+          "b": 378771.5
+        },
+        {
+          "pointNo": 166,
+          "a": 4727012.9,
+          "b": 378829.0
+        },
+        {
+          "pointNo": 167,
+          "a": 4727069.0,
+          "b": 378856.0
+        },
+        {
+          "pointNo": 168,
+          "a": 4727129.8,
+          "b": 378837.6
+        },
+        {
+          "pointNo": 169,
+          "a": 4727220.9,
+          "b": 378818.9
+        },
+        {
+          "pointNo": 170,
+          "a": 4727705.4,
+          "b": 378701.6
+        },
+        {
+          "pointNo": 171,
+          "a": 4727934.2,
+          "b": 378711.9
+        },
+        {
+          "pointNo": 172,
+          "a": 4728105.1,
+          "b": 378725.7
+        },
+        {
+          "pointNo": 173,
+          "a": 4728115.4,
+          "b": 378727.5
+        },
+        {
+          "pointNo": 174,
+          "a": 4728332.5,
+          "b": 378807.9
+        },
+        {
+          "pointNo": 175,
+          "a": 4728350.2,
+          "b": 378813.5
+        },
+        {
+          "pointNo": 176,
+          "a": 4728622.7,
+          "b": 378830.4
+        },
+        {
+          "pointNo": 177,
+          "a": 4728667.1,
+          "b": 378804.5
+        },
+        {
+          "pointNo": 178,
+          "a": 4728762.9,
+          "b": 378809.0
+        },
+        {
+          "pointNo": 179,
+          "a": 4728806.8,
+          "b": 378806.8
+        },
+        {
+          "pointNo": 180,
+          "a": 4728905.8,
+          "b": 378783.7
+        },
+        {
+          "pointNo": 181,
+          "a": 4729005.4,
+          "b": 378838.2
+        },
+        {
+          "pointNo": 182,
+          "a": 4729157.1,
+          "b": 378799.7
+        },
+        {
+          "pointNo": 183,
+          "a": 4729222.1,
+          "b": 378839.1
+        },
+        {
+          "pointNo": 184,
+          "a": 4729242.7,
+          "b": 378882.8
+        },
+        {
+          "pointNo": 185,
+          "a": 4729312.6,
+          "b": 378899.3
+        },
+        {
+          "pointNo": 186,
+          "a": 4729567.0,
+          "b": 378850.4
+        },
+        {
+          "pointNo": 187,
+          "a": 4729658.1,
+          "b": 378780.3
+        },
+        {
+          "pointNo": 188,
+          "a": 4729669.4,
+          "b": 378698.2
+        },
+        {
+          "pointNo": 189,
+          "a": 4729253.7,
+          "b": 378718.3
+        },
+        {
+          "pointNo": 190,
+          "a": 4729252.7,
+          "b": 378698.4
+        },
+        {
+          "pointNo": 191,
+          "a": 4729672.2,
+          "b": 378678.0
+        },
+        {
+          "pointNo": 192,
+          "a": 4729693.3,
+          "b": 378653.7
+        },
+        {
+          "pointNo": 193,
+          "a": 4729808.6,
+          "b": 378666.5
+        },
+        {
+          "pointNo": 194,
+          "a": 4729958.0,
+          "b": 378692.5
+        },
+        {
+          "pointNo": 195,
+          "a": 4730163.0,
+          "b": 378502.6
+        },
+        {
+          "pointNo": 196,
+          "a": 4730113.8,
+          "b": 378501.7
+        },
+        {
+          "pointNo": 197,
+          "a": 4730114.6,
+          "b": 378451.6
+        },
+        {
+          "pointNo": 198,
+          "a": 4730183.2,
+          "b": 378453.1
+        },
+        {
+          "pointNo": 199,
+          "a": 4730189.5,
+          "b": 378427.8
+        },
+        {
+          "pointNo": 200,
+          "a": 4730163.8,
+          "b": 378401.0
+        },
+        {
+          "pointNo": 201,
+          "a": 4730164.3,
+          "b": 378388.2
+        },
+        {
+          "pointNo": 202,
+          "a": 4730161.8,
+          "b": 378380.5
+        },
+        {
+          "pointNo": 203,
+          "a": 4730159.0,
+          "b": 378374.8
+        },
+        {
+          "pointNo": 204,
+          "a": 4730165.8,
+          "b": 378375.9
+        },
+        {
+          "pointNo": 205,
+          "a": 4730184.0,
+          "b": 378365.9
+        },
+        {
+          "pointNo": 206,
+          "a": 4730209.1,
+          "b": 378341.6
+        },
+        {
+          "pointNo": 207,
+          "a": 4730221.7,
+          "b": 378337.3
+        },
+        {
+          "pointNo": 208,
+          "a": 4730243.9,
+          "b": 378322.3
+        },
+        {
+          "pointNo": 209,
+          "a": 4730260.3,
+          "b": 378315.2
+        },
+        {
+          "pointNo": 210,
+          "a": 4730288.0,
+          "b": 378300.4
+        },
+        {
+          "pointNo": 211,
+          "a": 4730292.4,
+          "b": 378286.1
+        },
+        {
+          "pointNo": 212,
+          "a": 4730296.4,
+          "b": 378277.1
+        },
+        {
+          "pointNo": 213,
+          "a": 4730299.3,
+          "b": 378272.3
+        },
+        {
+          "pointNo": 214,
+          "a": 4730316.1,
+          "b": 378248.5
+        },
+        {
+          "pointNo": 215,
+          "a": 4730336.3,
+          "b": 378249.3
+        },
+        {
+          "pointNo": 216,
+          "a": 4730361.7,
+          "b": 378244.3
+        },
+        {
+          "pointNo": 217,
+          "a": 4730485.6,
+          "b": 378232.1
+        },
+        {
+          "pointNo": 218,
+          "a": 4730514.7,
+          "b": 378228.3
+        },
+        {
+          "pointNo": 219,
+          "a": 4730524.6,
+          "b": 378239.6
+        },
+        {
+          "pointNo": 220,
+          "a": 4730546.0,
+          "b": 378078.4
+        },
+        {
+          "pointNo": 221,
+          "a": 4730618.6,
+          "b": 378157.7
+        },
+        {
+          "pointNo": 222,
+          "a": 4730640.8,
+          "b": 378142.9
+        },
+        {
+          "pointNo": 223,
+          "a": 4730683.2,
+          "b": 378087.0
+        },
+        {
+          "pointNo": 224,
+          "a": 4730685.9,
+          "b": 378084.1
+        },
+        {
+          "pointNo": 225,
+          "a": 4730699.1,
+          "b": 378104.5
+        },
+        {
+          "pointNo": 226,
+          "a": 4730706.2,
+          "b": 378107.1
+        },
+        {
+          "pointNo": 227,
+          "a": 4730722.9,
+          "b": 378108.9
+        },
+        {
+          "pointNo": 228,
+          "a": 4730767.5,
+          "b": 378121.3
+        },
+        {
+          "pointNo": 229,
+          "a": 4730888.7,
+          "b": 378141.5
+        },
+        {
+          "pointNo": 230,
+          "a": 4730900.1,
+          "b": 378114.3
+        },
+        {
+          "pointNo": 231,
+          "a": 4730941.3,
+          "b": 378141.7
+        },
+        {
+          "pointNo": 232,
+          "a": 4731091.5,
+          "b": 378117.7
+        },
+        {
+          "pointNo": 233,
+          "a": 4731120.1,
+          "b": 378228.1
+        },
+        {
+          "pointNo": 234,
+          "a": 4731168.6,
+          "b": 378226.8
+        },
+        {
+          "pointNo": 235,
+          "a": 4731246.8,
+          "b": 378207.3
+        },
+        {
+          "pointNo": 236,
+          "a": 4731251.0,
+          "b": 378225.5
+        },
+        {
+          "pointNo": 237,
+          "a": 4731167.9,
+          "b": 378330.7
+        },
+        {
+          "pointNo": 238,
+          "a": 4731102.5,
+          "b": 378338.1
+        },
+        {
+          "pointNo": 239,
+          "a": 4731024.3,
+          "b": 378405.5
+        },
+        {
+          "pointNo": 240,
+          "a": 4730863.0,
+          "b": 378312.7
+        },
+        {
+          "pointNo": 241,
+          "a": 4730792.9,
+          "b": 378234.1
+        },
+        {
+          "pointNo": 242,
+          "a": 4730702.5,
+          "b": 378332.9
+        },
+        {
+          "pointNo": 243,
+          "a": 4730639.5,
+          "b": 378382.1
+        },
+        {
+          "pointNo": 244,
+          "a": 4730631.4,
+          "b": 378493.6
+        },
+        {
+          "pointNo": 245,
+          "a": 4730663.5,
+          "b": 378495.9
+        },
+        {
+          "pointNo": 246,
+          "a": 4730701.4,
+          "b": 378554.6
+        },
+        {
+          "pointNo": 247,
+          "a": 4730843.7,
+          "b": 378573.3
+        },
+        {
+          "pointNo": 248,
+          "a": 4730899.5,
+          "b": 378544.0
+        },
+        {
+          "pointNo": 249,
+          "a": 4730957.5,
+          "b": 378586.0
+        },
+        {
+          "pointNo": 250,
+          "a": 4730939.1,
+          "b": 378641.5
+        },
+        {
+          "pointNo": 251,
+          "a": 4730954.2,
+          "b": 378689.1
+        },
+        {
+          "pointNo": 252,
+          "a": 4730925.9,
+          "b": 378735.1
+        },
+        {
+          "pointNo": 253,
+          "a": 4730897.7,
+          "b": 378734.4
+        },
+        {
+          "pointNo": 254,
+          "a": 4730871.3,
+          "b": 378643.8
+        },
+        {
+          "pointNo": 255,
+          "a": 4730844.9,
+          "b": 378633.9
+        },
+        {
+          "pointNo": 256,
+          "a": 4730717.3,
+          "b": 378642.0
+        },
+        {
+          "pointNo": 257,
+          "a": 4730678.7,
+          "b": 378717.9
+        },
+        {
+          "pointNo": 258,
+          "a": 4730643.9,
+          "b": 378756.1
+        },
+        {
+          "pointNo": 259,
+          "a": 4730622.4,
+          "b": 378736.4
+        },
+        {
+          "pointNo": 260,
+          "a": 4730532.9,
+          "b": 378875.9
+        },
+        {
+          "pointNo": 261,
+          "a": 4730465.2,
+          "b": 378983.4
+        },
+        {
+          "pointNo": 262,
+          "a": 4730455.8,
+          "b": 379039.5
+        },
+        {
+          "pointNo": 263,
+          "a": 4730452.8,
+          "b": 379056.9
+        },
+        {
+          "pointNo": 264,
+          "a": 4730451.0,
+          "b": 379087.1
+        },
+        {
+          "pointNo": 265,
+          "a": 4730453.5,
+          "b": 379099.7
+        },
+        {
+          "pointNo": 266,
+          "a": 4730459.7,
+          "b": 379130.6
+        },
+        {
+          "pointNo": 267,
+          "a": 4730462.6,
+          "b": 379140.3
+        },
+        {
+          "pointNo": 268,
+          "a": 4730190.4,
+          "b": 379133.6
+        },
+        {
+          "pointNo": 269,
+          "a": 4730172.7,
+          "b": 379121.8
+        },
+        {
+          "pointNo": 270,
+          "a": 4729849.1,
+          "b": 378766.5
+        },
+        {
+          "pointNo": 271,
+          "a": 4729811.8,
+          "b": 378728.4
+        },
+        {
+          "pointNo": 272,
+          "a": 4729716.5,
+          "b": 378712.9
+        },
+        {
+          "pointNo": 273,
+          "a": 4729704.0,
+          "b": 378806.8
+        },
+        {
+          "pointNo": 274,
+          "a": 4729587.6,
+          "b": 378896.3
+        },
+        {
+          "pointNo": 275,
+          "a": 4729311.5,
+          "b": 378949.4
+        },
+        {
+          "pointNo": 276,
+          "a": 4729208.5,
+          "b": 378925.1
+        },
+        {
+          "pointNo": 277,
+          "a": 4729184.1,
+          "b": 378873.4
+        },
+        {
+          "pointNo": 278,
+          "a": 4729149.2,
+          "b": 378852.2
+        },
+        {
+          "pointNo": 279,
+          "a": 4728998.4,
+          "b": 378890.5
+        },
+        {
+          "pointNo": 280,
+          "a": 4728899.1,
+          "b": 378835.0
+        },
+        {
+          "pointNo": 281,
+          "a": 4728815.1,
+          "b": 378855.1
+        },
+        {
+          "pointNo": 282,
+          "a": 4728762.8,
+          "b": 378858.1
+        },
+        {
+          "pointNo": 283,
+          "a": 4728621.9,
+          "b": 378851.4
+        },
+        {
+          "pointNo": 284,
+          "a": 4728346.6,
+          "b": 378834.4
+        },
+        {
+          "pointNo": 285,
+          "a": 4728325.7,
+          "b": 378827.8
+        },
+        {
+          "pointNo": 286,
+          "a": 4728107.7,
+          "b": 378747.0
+        },
+        {
+          "pointNo": 287,
+          "a": 4727932.9,
+          "b": 378732.9
+        },
+        {
+          "pointNo": 288,
+          "a": 4727707.4,
+          "b": 378722.7
+        },
+        {
+          "pointNo": 289,
+          "a": 4727225.6,
+          "b": 378839.4
+        },
+        {
+          "pointNo": 290,
+          "a": 4727139.4,
+          "b": 378858.3
+        },
+        {
+          "pointNo": 291,
+          "a": 4727703.6,
+          "b": 378915.2
+        },
+        {
+          "pointNo": 292,
+          "a": 4728165.0,
+          "b": 379203.7
+        },
+        {
+          "pointNo": 293,
+          "a": 4728134.2,
+          "b": 379219.9
+        },
+        {
+          "pointNo": 294,
+          "a": 4727674.5,
+          "b": 378932.3
+        },
+        {
+          "pointNo": 295,
+          "a": 4727085.8,
+          "b": 378873.0
+        },
+        {
+          "pointNo": 296,
+          "a": 4727077.2,
+          "b": 378875.4
+        },
+        {
+          "pointNo": 297,
+          "a": 4726986.1,
+          "b": 378916.6
+        },
+        {
+          "pointNo": 298,
+          "a": 4726805.9,
+          "b": 378961.0
+        },
+        {
+          "pointNo": 299,
+          "a": 4726756.9,
+          "b": 378964.0
+        },
+        {
+          "pointNo": 300,
+          "a": 4726715.5,
+          "b": 378958.1
+        },
+        {
+          "pointNo": 301,
+          "a": 4726640.2,
+          "b": 378985.6
+        },
+        {
+          "pointNo": 302,
+          "a": 4726611.8,
+          "b": 379014.1
+        },
+        {
+          "pointNo": 303,
+          "a": 4726598.7,
+          "b": 379039.4
+        },
+        {
+          "pointNo": 304,
+          "a": 4726549.7,
+          "b": 379201.6
+        },
+        {
+          "pointNo": 305,
+          "a": 4726528.7,
+          "b": 379238.9
+        },
+        {
+          "pointNo": 306,
+          "a": 4726493.6,
+          "b": 379259.1
+        },
+        {
+          "pointNo": 307,
+          "a": 4726408.1,
+          "b": 379292.4
+        },
+        {
+          "pointNo": 308,
+          "a": 4726405.1,
+          "b": 379293.8
+        },
+        {
+          "pointNo": 309,
+          "a": 4726384.6,
+          "b": 379329.8
+        },
+        {
+          "pointNo": 310,
+          "a": 4726336.4,
+          "b": 379511.0
+        },
+        {
+          "pointNo": 311,
+          "a": 4726323.3,
+          "b": 379542.4
+        },
+        {
+          "pointNo": 312,
+          "a": 4726299.8,
+          "b": 379584.2
+        },
+        {
+          "pointNo": 313,
+          "a": 4726271.6,
+          "b": 379606.7
+        },
+        {
+          "pointNo": 314,
+          "a": 4726222.3,
+          "b": 379632.9
+        },
+        {
+          "pointNo": 315,
+          "a": 4726133.5,
+          "b": 379751.4
+        },
+        {
+          "pointNo": 316,
+          "a": 4726097.2,
+          "b": 379776.7
+        },
+        {
+          "pointNo": 317,
+          "a": 4726059.5,
+          "b": 379789.1
+        },
+        {
+          "pointNo": 318,
+          "a": 4725905.9,
+          "b": 379807.9
+        },
+        {
+          "pointNo": 319,
+          "a": 4725745.9,
+          "b": 379883.8
+        },
+        {
+          "pointNo": 320,
+          "a": 4725475.8,
+          "b": 379896.4
+        },
+        {
+          "pointNo": 321,
+          "a": 4725183.9,
+          "b": 380171.0
+        },
+        {
+          "pointNo": 322,
+          "a": 4725191.1,
+          "b": 380464.0
+        },
+        {
+          "pointNo": 323,
+          "a": 4725159.7,
+          "b": 380531.0
+        },
+        {
+          "pointNo": 324,
+          "a": 4724701.1,
+          "b": 380798.1
+        },
+        {
+          "pointNo": 325,
+          "a": 4724615.8,
+          "b": 381065.2
+        },
+        {
+          "pointNo": 326,
+          "a": 4724589.1,
+          "b": 381079.2
+        },
+        {
+          "pointNo": 327,
+          "a": 4724437.1,
+          "b": 380902.3
+        },
+        {
+          "pointNo": 328,
+          "a": 4724113.4,
+          "b": 381029.7
+        },
+        {
+          "pointNo": 329,
+          "a": 4723977.1,
+          "b": 381370.1
+        },
+        {
+          "pointNo": 330,
+          "a": 4723728.6,
+          "b": 381530.5
+        },
+        {
+          "pointNo": 331,
+          "a": 4723212.3,
+          "b": 381743.0
+        },
+        {
+          "pointNo": 332,
+          "a": 4722798.3,
+          "b": 381734.2
+        },
+        {
+          "pointNo": 333,
+          "a": 4722667.9,
+          "b": 381648.4
+        },
+        {
+          "pointNo": 334,
+          "a": 4722475.4,
+          "b": 381570.3
+        },
+        {
+          "pointNo": 335,
+          "a": 4722346.9,
+          "b": 381502.5
+        },
+        {
+          "pointNo": 336,
+          "a": 4722256.1,
+          "b": 381457.3
+        },
+        {
+          "pointNo": 337,
+          "a": 4722215.9,
+          "b": 381370.7
+        },
+        {
+          "pointNo": 338,
+          "a": 4722202.6,
+          "b": 381237.4
+        },
+        {
+          "pointNo": 339,
+          "a": 4722228.9,
+          "b": 381178.0
+        },
+        {
+          "pointNo": 340,
+          "a": 4722213.3,
+          "b": 381034.8
+        },
+        {
+          "pointNo": 341,
+          "a": 4722114.9,
+          "b": 380899.3
+        },
+        {
+          "pointNo": 342,
+          "a": 4721918.0,
+          "b": 380793.5
+        },
+        {
+          "pointNo": 343,
+          "a": 4721890.5,
+          "b": 380743.4
+        },
+        {
+          "pointNo": 344,
+          "a": 4721910.1,
+          "b": 380710.8
+        },
+        {
+          "pointNo": 345,
+          "a": 4721983.2,
+          "b": 380670.1
+        },
+        {
+          "pointNo": 346,
+          "a": 4722046.8,
+          "b": 380658.2
+        },
+        {
+          "pointNo": 347,
+          "a": 4722100.6,
+          "b": 380669.9
+        },
+        {
+          "pointNo": 348,
+          "a": 4722235.1,
+          "b": 380729.5
+        },
+        {
+          "pointNo": 349,
+          "a": 4722262.0,
+          "b": 380728.5
+        },
+        {
+          "pointNo": 350,
+          "a": 4722323.8,
+          "b": 380695.3
+        },
+        {
+          "pointNo": 351,
+          "a": 4722364.1,
+          "b": 380652.7
+        },
+        {
+          "pointNo": 352,
+          "a": 4722356.6,
+          "b": 380530.7
+        },
+        {
+          "pointNo": 353,
+          "a": 4722328.3,
+          "b": 380393.8
+        },
+        {
+          "pointNo": 354,
+          "a": 4722295.9,
+          "b": 380341.0
+        },
+        {
+          "pointNo": 355,
+          "a": 4722166.3,
+          "b": 380237.0
+        },
+        {
+          "pointNo": 356,
+          "a": 4722082.4,
+          "b": 380103.1
+        },
+        {
+          "pointNo": 357,
+          "a": 4722074.3,
+          "b": 379969.6
+        },
+        {
+          "pointNo": 358,
+          "a": 4722069.8,
+          "b": 379894.8
+        },
+        {
+          "pointNo": 359,
+          "a": 4722178.4,
+          "b": 379764.4
+        },
+        {
+          "pointNo": 360,
+          "a": 4722146.6,
+          "b": 379533.2
+        },
+        {
+          "pointNo": 361,
+          "a": 4722040.4,
+          "b": 379339.3
+        },
+        {
+          "pointNo": 362,
+          "a": 4722077.6,
+          "b": 379095.3
+        },
+        {
+          "pointNo": 363,
+          "a": 4722242.4,
+          "b": 379016.8
+        },
+        {
+          "pointNo": 364,
+          "a": 4722515.2,
+          "b": 378887.0
+        },
+        {
+          "pointNo": 365,
+          "a": 4722602.6,
+          "b": 378892.4
+        },
+        {
+          "pointNo": 366,
+          "a": 4722604.5,
+          "b": 378891.5
+        },
+        {
+          "pointNo": 367,
+          "a": 4722961.6,
+          "b": 378729.3
+        },
+        {
+          "pointNo": 368,
+          "a": 4722991.3,
+          "b": 378715.8
+        },
+        {
+          "pointNo": 369,
+          "a": 4722996.3,
+          "b": 378718.8
+        },
+        {
+          "pointNo": 370,
+          "a": 4723080.4,
+          "b": 378770.1
+        },
+        {
+          "pointNo": 371,
+          "a": 4723189.0,
+          "b": 378609.4
+        },
+        {
+          "pointNo": 372,
+          "a": 4723238.9,
+          "b": 378566.0
+        },
+        {
+          "pointNo": 373,
+          "a": 4723386.6,
+          "b": 378637.5
+        },
+        {
+          "pointNo": 374,
+          "a": 4723549.4,
+          "b": 378490.3
+        },
+        {
+          "pointNo": 375,
+          "a": 4723771.9,
+          "b": 378685.5
+        },
+        {
+          "pointNo": 376,
+          "a": 4724007.4,
+          "b": 378722.7
+        },
+        {
+          "pointNo": 377,
+          "a": 4724127.6,
+          "b": 378696.7
+        },
+        {
+          "pointNo": 378,
+          "a": 4724217.7,
+          "b": 378604.1
+        },
+        {
+          "pointNo": 379,
+          "a": 4724408.1,
+          "b": 378362.9
+        },
+        {
+          "pointNo": 380,
+          "a": 4724611.4,
+          "b": 378206.7
+        },
+        {
+          "pointNo": 381,
+          "a": 4724607.2,
+          "b": 378171.3
+        },
+        {
+          "pointNo": 382,
+          "a": 4724647.0,
+          "b": 378166.6
+        },
+        {
+          "pointNo": 383,
+          "a": 4724649.6,
+          "b": 378200.0
+        },
+        {
+          "pointNo": 384,
+          "a": 4724652.6,
+          "b": 378199.3
+        },
+        {
+          "pointNo": 385,
+          "a": 4724659.1,
+          "b": 378198.4
+        },
+        {
+          "pointNo": 386,
+          "a": 4724661.8,
+          "b": 378198.0
+        },
+        {
+          "pointNo": 387,
+          "a": 4724661.8,
+          "b": 378199.0
+        },
+        {
+          "pointNo": 388,
+          "a": 4724664.6,
+          "b": 378201.1
+        },
+        {
+          "pointNo": 389,
+          "a": 4724665.2,
+          "b": 378204.3
+        },
+        {
+          "pointNo": 390,
+          "a": 4724675.1,
+          "b": 378203.8
+        },
+        {
+          "pointNo": 391,
+          "a": 4724683.0,
+          "b": 378284.1
+        },
+        {
+          "pointNo": 392,
+          "a": 4724710.3,
+          "b": 378345.4
+        },
+        {
+          "pointNo": 393,
+          "a": 4724876.1,
+          "b": 378335.3
+        },
+        {
+          "pointNo": 394,
+          "a": 4725175.3,
+          "b": 378236.5
+        },
+        {
+          "pointNo": 395,
+          "a": 4725273.3,
+          "b": 378214.1
+        }
+      ]
+    }
+  ]
+}

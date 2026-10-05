@@ -1,14 +1,14 @@
 {
   "schema": "bgwf-nkr-party-documents-v1",
-  "generatedAt": "2026-10-05T07:27:05Z",
+  "generatedAt": "2026-10-05T08:20:52Z",
   "mode": "bootstrap-new",
   "runtimeDependency": false,
   "pendingWithNkrParty": 515,
-  "partyCount": 450,
-  "archivedOkCount": 450,
-  "totalFileLinks": 397,
+  "partyCount": 515,
+  "archivedOkCount": 515,
+  "totalFileLinks": 455,
   "coordinateCandidateLinkCount": 0,
-  "batchSelected": 150,
+  "batchSelected": 65,
   "errors": [],
   "coordinateCandidateLinks": [],
   "parties": {
@@ -22766,6 +22766,3336 @@
         "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f3bb6f3d-eef7-4315-bc6d-29841fafaeec",
         "inventoryMatches": [
           "O-000795"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "d1c8a1ef-4973-40c3-b821-d35c7bc70f48": {
+      "guid": "d1c8a1ef-4973-40c3-b821-d35c7bc70f48",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/d1c8a1ef-4973-40c3-b821-d35c7bc70f48",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000149"
+      ],
+      "names": [
+        "Тополовград"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:20:54Z",
+      "sha256": "dc9f12eababe06fbe44500e76203a020f8bf16259468484e8ede97973a3ed17b",
+      "bytes": 19766,
+      "archivePath": "source-archive/concessions/nkr-parties/d1c8a1ef-4973-40c3-b821-d35c7bc70f48/partida.html",
+      "fileLinkCount": 4,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/644d12ef-bbe5-4c82-a67d-dee8b4048149",
+          "url": "https://nkr.government.bg/File/Download/644d12ef-bbe5-4c82-a67d-dee8b4048149",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/a82125a8-5de8-4642-b9ae-abab0cabad53",
+          "url": "https://nkr.government.bg/File/Download/a82125a8-5de8-4642-b9ae-abab0cabad53",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/70c64d9f-a044-4ad5-a0bc-c559f69b0249",
+          "url": "https://nkr.government.bg/File/Download/70c64d9f-a044-4ad5-a0bc-c559f69b0249",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/4d01ba1d-26fb-4cf6-8989-4ba0149a1542",
+          "url": "https://nkr.government.bg/File/Download/4d01ba1d-26fb-4cf6-8989-4ba0149a1542",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/1f6f7be5-053d-41d6-b4c9-e18b38765f04",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/1f6f7be5-053d-41d6-b4c9-e18b38765f04",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/1f6f7be5-053d-41d6-b4c9-e18b38765f04",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/1f6f7be5-053d-41d6-b4c9-e18b38765f04",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/0b3d3954-1882-4d9f-8e07-231a17787929",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/0b3d3954-1882-4d9f-8e07-231a17787929",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/0b3d3954-1882-4d9f-8e07-231a17787929",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/0b3d3954-1882-4d9f-8e07-231a17787929",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "d1c8a1ef-4973-40c3-b821-d35c7bc70f48",
+        "concessionId": "D-000149",
+        "columns": {
+          "Номер": "D-000149",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Тополовград\", област Хасково , област Хасково, община Тополовград, населено място Тополовград",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000149 | Открита | Отворена | Концесия за добив от находище \"Тополовград\", област Хасково , област Хасково, община Тополовград, населено място Тополовград | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/d1c8a1ef-4973-40c3-b821-d35c7bc70f48",
+        "inventoryMatches": [
+          "D-000149"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "ae2d55c5-306e-4f59-890e-9a08c3c0df5b": {
+      "guid": "ae2d55c5-306e-4f59-890e-9a08c3c0df5b",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ae2d55c5-306e-4f59-890e-9a08c3c0df5b",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000797"
+      ],
+      "names": [
+        "Требежа"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:20:55Z",
+      "sha256": "9bd5aa38b7f92a559ab55a3ab238eaac92e9de79313cfc5f53ee9a535c31e010",
+      "bytes": 9276,
+      "archivePath": "source-archive/concessions/nkr-parties/ae2d55c5-306e-4f59-890e-9a08c3c0df5b/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "ae2d55c5-306e-4f59-890e-9a08c3c0df5b",
+        "concessionId": "D-000797",
+        "columns": {
+          "Номер": "D-000797",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"ТРЕБЕЖА\", област Враца, община Мездра, населено място Горна Кремена",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000797 | Открита | Отворена | Концесия за добив от находище \"ТРЕБЕЖА\", област Враца, община Мездра, населено място Горна Кремена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ae2d55c5-306e-4f59-890e-9a08c3c0df5b",
+        "inventoryMatches": [
+          "D-000797"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "7e75b249-db2e-4e6c-8215-d82daf747387": {
+      "guid": "7e75b249-db2e-4e6c-8215-d82daf747387",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/7e75b249-db2e-4e6c-8215-d82daf747387",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000657"
+      ],
+      "names": [
+        "Трите круши - запад"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:20:57Z",
+      "sha256": "c0af576a3e17e4186190f4d838e0675c17c785046660575b3a82539d70e0e077",
+      "bytes": 9293,
+      "archivePath": "source-archive/concessions/nkr-parties/7e75b249-db2e-4e6c-8215-d82daf747387/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "7e75b249-db2e-4e6c-8215-d82daf747387",
+        "concessionId": "D-000657",
+        "columns": {
+          "Номер": "D-000657",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Трите круши - запад\", област Бургас, община Карнобат, населено място Карнобат",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000657 | Открита | Отворена | Концесия за добив от находище \"Трите круши - запад\", област Бургас, община Карнобат, населено място Карнобат | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/7e75b249-db2e-4e6c-8215-d82daf747387",
+        "inventoryMatches": [
+          "D-000657"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "95c393e0-c07e-4ed6-a469-f441833396d2": {
+      "guid": "95c393e0-c07e-4ed6-a469-f441833396d2",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/95c393e0-c07e-4ed6-a469-f441833396d2",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000623"
+      ],
+      "names": [
+        "Трите чешми"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:20:58Z",
+      "sha256": "896367587f08c7567c813a3769f8ec8dcb1d75dd711d429413b58c3f9a9fed78",
+      "bytes": 9289,
+      "archivePath": "source-archive/concessions/nkr-parties/95c393e0-c07e-4ed6-a469-f441833396d2/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "95c393e0-c07e-4ed6-a469-f441833396d2",
+        "concessionId": "D-000623",
+        "columns": {
+          "Номер": "D-000623",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от НАХОДИЩЕ \"ТРИТЕ ЧЕШМИ\", област Пловдив, община Първомай, населено място Дълбок извор",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000623 | Открита | Отворена | Концесия за добив от НАХОДИЩЕ \"ТРИТЕ ЧЕШМИ\", област Пловдив, община Първомай, населено място Дълбок извор | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/95c393e0-c07e-4ed6-a469-f441833396d2",
+        "inventoryMatches": [
+          "D-000623"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "a768a9d6-fa6a-4d57-9be5-17d3f8c73015": {
+      "guid": "a768a9d6-fa6a-4d57-9be5-17d3f8c73015",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a768a9d6-fa6a-4d57-9be5-17d3f8c73015",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000269"
+      ],
+      "names": [
+        "Троица"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:20:59Z",
+      "sha256": "e0ebc379539791acb06666442979aa711ac27e45f660ba5a3e50ffbc6e91d4ad",
+      "bytes": 17352,
+      "archivePath": "source-archive/concessions/nkr-parties/a768a9d6-fa6a-4d57-9be5-17d3f8c73015/partida.html",
+      "fileLinkCount": 3,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/dfdf0ebc-b16c-4d0b-be2a-ba0bab0b2f3c",
+          "url": "https://nkr.government.bg/File/Download/dfdf0ebc-b16c-4d0b-be2a-ba0bab0b2f3c",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/7fd595f1-3698-481f-bece-82716c48aa33",
+          "url": "https://nkr.government.bg/File/Download/7fd595f1-3698-481f-bece-82716c48aa33",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/dee9e520-1948-4f4d-b27e-a8efd96f6682",
+          "url": "https://nkr.government.bg/File/Download/dee9e520-1948-4f4d-b27e-a8efd96f6682",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/a636bc67-cb08-4aa3-ba37-4ebe6417c512",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/a636bc67-cb08-4aa3-ba37-4ebe6417c512",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/a636bc67-cb08-4aa3-ba37-4ebe6417c512",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/a636bc67-cb08-4aa3-ba37-4ebe6417c512",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/52b199be-949d-4b29-a9e5-45f4d6958732",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/52b199be-949d-4b29-a9e5-45f4d6958732",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/52b199be-949d-4b29-a9e5-45f4d6958732",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/52b199be-949d-4b29-a9e5-45f4d6958732",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "a768a9d6-fa6a-4d57-9be5-17d3f8c73015",
+        "concessionId": "D-000269",
+        "columns": {
+          "Номер": "D-000269",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Троица\", област Шумен, община Велики Преслав, населено място Осмар, Троица",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000269 | Открита | Отворена | Концесия за добив от находище \"Троица\", област Шумен, община Велики Преслав, населено място Осмар, Троица | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a768a9d6-fa6a-4d57-9be5-17d3f8c73015",
+        "inventoryMatches": [
+          "D-000269"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "f359ceb0-fe99-482b-953c-19400d50fc9c": {
+      "guid": "f359ceb0-fe99-482b-953c-19400d50fc9c",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f359ceb0-fe99-482b-953c-19400d50fc9c",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000461"
+      ],
+      "names": [
+        "Тюленово"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:00Z",
+      "sha256": "1aa0aff9127d43f1c1c82e1a8d9fed9b3250ef7dab40e1536c481aeab19db5f0",
+      "bytes": 12562,
+      "archivePath": "source-archive/concessions/nkr-parties/f359ceb0-fe99-482b-953c-19400d50fc9c/partida.html",
+      "fileLinkCount": 1,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/9e0357a5-83b2-4a52-adf1-0e8c255992cb",
+          "url": "https://nkr.government.bg/File/Download/9e0357a5-83b2-4a52-adf1-0e8c255992cb",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/1248097d-da91-4fd5-b614-f666b8ea609f",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/1248097d-da91-4fd5-b614-f666b8ea609f",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/1248097d-da91-4fd5-b614-f666b8ea609f",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/1248097d-da91-4fd5-b614-f666b8ea609f",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "f359ceb0-fe99-482b-953c-19400d50fc9c",
+        "concessionId": "D-000461",
+        "columns": {
+          "Номер": "D-000461",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Тюленово\", област Добрич, община Шабла, населено място Тюленово",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000461 | Открита | Отворена | Концесия за добив от находище \"Тюленово\", област Добрич, община Шабла, населено място Тюленово | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f359ceb0-fe99-482b-953c-19400d50fc9c",
+        "inventoryMatches": [
+          "D-000461"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "544b1521-9eab-46e2-8c9d-980c587f35d0": {
+      "guid": "544b1521-9eab-46e2-8c9d-980c587f35d0",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/544b1521-9eab-46e2-8c9d-980c587f35d0",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000390"
+      ],
+      "names": [
+        "Узунпара"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:02Z",
+      "sha256": "6413b11fe393982b04671757de28b026ba1a01809b6a03f14e81389da5f0ed83",
+      "bytes": 14837,
+      "archivePath": "source-archive/concessions/nkr-parties/544b1521-9eab-46e2-8c9d-980c587f35d0/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/d0930695-440f-4fed-8797-09b243603792",
+          "url": "https://nkr.government.bg/File/Download/d0930695-440f-4fed-8797-09b243603792",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/9fc47bdf-6768-413a-b457-a175161781cc",
+          "url": "https://nkr.government.bg/File/Download/9fc47bdf-6768-413a-b457-a175161781cc",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/8d2ded56-fe51-483a-9134-55b1f302749f",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/8d2ded56-fe51-483a-9134-55b1f302749f",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/8d2ded56-fe51-483a-9134-55b1f302749f",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/8d2ded56-fe51-483a-9134-55b1f302749f",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "544b1521-9eab-46e2-8c9d-980c587f35d0",
+        "concessionId": "D-000390",
+        "columns": {
+          "Номер": "D-000390",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Узунпара\", област Пловдив, община Родопи, Стамболийски, населено място Йоаким Груево, Цалапица",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000390 | Открита | Отворена | Концесия за добив от находище \"Узунпара\", област Пловдив, община Родопи, Стамболийски, населено място Йоаким Груево, Цалапица | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/544b1521-9eab-46e2-8c9d-980c587f35d0",
+        "inventoryMatches": [
+          "D-000390"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed": {
+      "guid": "fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000833"
+      ],
+      "names": [
+        "Умата"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:03Z",
+      "sha256": "46bede72dccad2ab22722866ab92b3c678cca4ae07c139af50c8ca135e4965ee",
+      "bytes": 9273,
+      "archivePath": "source-archive/concessions/nkr-parties/fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed",
+        "concessionId": "D-000833",
+        "columns": {
+          "Номер": "D-000833",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Умата\", област Благоевград, община Гърмен, населено място Крушево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000833 | Открита | Отворена | Концесия за добив от находище \"Умата\", област Благоевград, община Гърмен, населено място Крушево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed",
+        "inventoryMatches": [
+          "D-000833"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "ccb51e4d-0324-480a-a0cb-62a01cf13ece": {
+      "guid": "ccb51e4d-0324-480a-a0cb-62a01cf13ece",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ccb51e4d-0324-480a-a0cb-62a01cf13ece",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000234"
+      ],
+      "names": [
+        "Устрем"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:04Z",
+      "sha256": "53c3eb31478dc526edc2bc46173775eb57b72bc4cc20db5a32409d3dd5501f75",
+      "bytes": 9275,
+      "archivePath": "source-archive/concessions/nkr-parties/ccb51e4d-0324-480a-a0cb-62a01cf13ece/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "ccb51e4d-0324-480a-a0cb-62a01cf13ece",
+        "concessionId": "D-000234",
+        "columns": {
+          "Номер": "D-000234",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Устрем\", област Хасково, община Тополовград, населено място Устрем",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000234 | Открита | Отворена | Концесия за добив от находище \"Устрем\", област Хасково, община Тополовград, населено място Устрем | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ccb51e4d-0324-480a-a0cb-62a01cf13ece",
+        "inventoryMatches": [
+          "D-000234"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "5cc9d9fa-58d3-4ead-a929-893af8695ec4": {
+      "guid": "5cc9d9fa-58d3-4ead-a929-893af8695ec4",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/5cc9d9fa-58d3-4ead-a929-893af8695ec4",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000597"
+      ],
+      "names": [
+        "Фабриката - 1"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:05Z",
+      "sha256": "02470b949c9e0ec4ae3d8ddcb8790850879d8fcded94e019bee4f76a35de7049",
+      "bytes": 9287,
+      "archivePath": "source-archive/concessions/nkr-parties/5cc9d9fa-58d3-4ead-a929-893af8695ec4/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "5cc9d9fa-58d3-4ead-a929-893af8695ec4",
+        "concessionId": "D-000597",
+        "columns": {
+          "Номер": "D-000597",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Фабриката-1\", област Хасково, община Ивайловград, населено място Кобилино",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000597 | Открита | Отворена | Концесия за добив от находище \"Фабриката-1\", област Хасково, община Ивайловград, населено място Кобилино | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/5cc9d9fa-58d3-4ead-a929-893af8695ec4",
+        "inventoryMatches": [
+          "D-000597"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "9c381021-ab50-445c-8126-79e95ce4e017": {
+      "guid": "9c381021-ab50-445c-8126-79e95ce4e017",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/9c381021-ab50-445c-8126-79e95ce4e017",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000524"
+      ],
+      "names": [
+        "Фабриката 2"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:06Z",
+      "sha256": "72508407c8298acb12e029ea7f782f12ae52c439533655a180e7869edcf1c069",
+      "bytes": 9287,
+      "archivePath": "source-archive/concessions/nkr-parties/9c381021-ab50-445c-8126-79e95ce4e017/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "9c381021-ab50-445c-8126-79e95ce4e017",
+        "concessionId": "D-000524",
+        "columns": {
+          "Номер": "D-000524",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Фабриката 2\", област Хасково, община Ивайловград, населено място Кобилино",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000524 | Открита | Отворена | Концесия за добив от находище \"Фабриката 2\", област Хасково, община Ивайловград, населено място Кобилино | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/9c381021-ab50-445c-8126-79e95ce4e017",
+        "inventoryMatches": [
+          "D-000524"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "9cd49036-2ab9-4c9f-b4d6-5192d3d864bc": {
+      "guid": "9cd49036-2ab9-4c9f-b4d6-5192d3d864bc",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/9cd49036-2ab9-4c9f-b4d6-5192d3d864bc",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000525"
+      ],
+      "names": [
+        "Фабриката 4"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:08Z",
+      "sha256": "a593273890c4a5f6c450d5b37d3cad959df15ab9f40c4df67200ccd8d7e98a60",
+      "bytes": 9287,
+      "archivePath": "source-archive/concessions/nkr-parties/9cd49036-2ab9-4c9f-b4d6-5192d3d864bc/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "9cd49036-2ab9-4c9f-b4d6-5192d3d864bc",
+        "concessionId": "D-000525",
+        "columns": {
+          "Номер": "D-000525",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Фабриката 4\", област Хасково, община Ивайловград, населено място Кобилино",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000525 | Открита | Отворена | Концесия за добив от находище \"Фабриката 4\", област Хасково, община Ивайловград, населено място Кобилино | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/9cd49036-2ab9-4c9f-b4d6-5192d3d864bc",
+        "inventoryMatches": [
+          "D-000525"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "929e41f9-1ed0-4f3e-81a4-de146f65ced9": {
+      "guid": "929e41f9-1ed0-4f3e-81a4-de146f65ced9",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/929e41f9-1ed0-4f3e-81a4-de146f65ced9",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-132"
+      ],
+      "names": [
+        "Феникс"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:09Z",
+      "sha256": "e40d6324725eef48582c793312be7ff0eedd7da7333590768e4f10ee7833a62a",
+      "bytes": 14433,
+      "archivePath": "source-archive/concessions/nkr-parties/929e41f9-1ed0-4f3e-81a4-de146f65ced9/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/d76b0fd8-b160-435f-ad06-06a99a237a4e",
+          "url": "https://nkr.government.bg/File/Download/d76b0fd8-b160-435f-ad06-06a99a237a4e",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/e4cfc7cf-67dd-4a49-a854-7cb7473445bd",
+          "url": "https://nkr.government.bg/File/Download/e4cfc7cf-67dd-4a49-a854-7cb7473445bd",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/929b92f2-f1aa-43d4-be04-29fb936102a5",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/929b92f2-f1aa-43d4-be04-29fb936102a5",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "929e41f9-1ed0-4f3e-81a4-de146f65ced9",
+        "concessionId": "216-132",
+        "columns": {
+          "Номер": "216-132/21.10.2021",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясък и чакъл, представляващи изключителна държавна собственост, от находище „Феникс“, разположено в землището на гр. Искър, община Искър, област Плевен, съгласно Акт за изключителна държавна собственост № 1710 от 19 октомври 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-132/21.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - пясък и чакъл, представляващи изключителна държавна собственост, от находище „Феникс“, разположено в землището на гр. Искър, община Искър, област Плевен, съгласно Акт за изключителна държавна собственост № 1710 от 19 октомври 2020г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/929e41f9-1ed0-4f3e-81a4-de146f65ced9",
+        "inventoryMatches": [
+          "216-132"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "c9cdd652-76b4-48c2-9e78-015af091aa15": {
+      "guid": "c9cdd652-76b4-48c2-9e78-015af091aa15",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/c9cdd652-76b4-48c2-9e78-015af091aa15",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000649"
+      ],
+      "names": [
+        "Футула"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:10Z",
+      "sha256": "8dc3f27e7825893a4edb14db60016a590561905c49f499d884dc3f5330ddba63",
+      "bytes": 17653,
+      "archivePath": "source-archive/concessions/nkr-parties/c9cdd652-76b4-48c2-9e78-015af091aa15/partida.html",
+      "fileLinkCount": 3,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/7ea6f363-c4b4-472f-aafd-6f720213839a",
+          "url": "https://nkr.government.bg/File/Download/7ea6f363-c4b4-472f-aafd-6f720213839a",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/d24a8d56-c7ea-4712-a405-ec74be76e633",
+          "url": "https://nkr.government.bg/File/Download/d24a8d56-c7ea-4712-a405-ec74be76e633",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/fbb90088-b64a-4238-884e-a85b0f5a3ee5",
+          "url": "https://nkr.government.bg/File/Download/fbb90088-b64a-4238-884e-a85b0f5a3ee5",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/24346f84-5b1d-4315-a369-6629db68ee69",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/24346f84-5b1d-4315-a369-6629db68ee69",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/24346f84-5b1d-4315-a369-6629db68ee69",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/24346f84-5b1d-4315-a369-6629db68ee69",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/4eb88196-6397-436d-975f-40e9322430e9",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/4eb88196-6397-436d-975f-40e9322430e9",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/4eb88196-6397-436d-975f-40e9322430e9",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/4eb88196-6397-436d-975f-40e9322430e9",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "c9cdd652-76b4-48c2-9e78-015af091aa15",
+        "concessionId": "D-000649",
+        "columns": {
+          "Номер": "D-000649",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Футула\", област Бургас, община Карнобат, населено място Железник",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000649 | Открита | Отворена | Концесия за добив от находище \"Футула\", област Бургас, община Карнобат, населено място Железник | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/c9cdd652-76b4-48c2-9e78-015af091aa15",
+        "inventoryMatches": [
+          "D-000649"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "4b2c0d37-7f76-49e9-878a-3733ee8d23f8": {
+      "guid": "4b2c0d37-7f76-49e9-878a-3733ee8d23f8",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4b2c0d37-7f76-49e9-878a-3733ee8d23f8",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000615"
+      ],
+      "names": [
+        "Ханово"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:11Z",
+      "sha256": "5a80250f91f0c869c50976c946475aac4595e099051e2e581c03d7a89f02e707",
+      "bytes": 9261,
+      "archivePath": "source-archive/concessions/nkr-parties/4b2c0d37-7f76-49e9-878a-3733ee8d23f8/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "4b2c0d37-7f76-49e9-878a-3733ee8d23f8",
+        "concessionId": "D-000615",
+        "columns": {
+          "Номер": "D-000615",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Ханово\", област Ямбол, община Тунджа, населено място Тенево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000615 | Открита | Отворена | Концесия за добив от находище \"Ханово\", област Ямбол, община Тунджа, населено място Тенево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4b2c0d37-7f76-49e9-878a-3733ee8d23f8",
+        "inventoryMatches": [
+          "D-000615"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "b5707771-c755-4607-b74d-d3d9df9cf8b5": {
+      "guid": "b5707771-c755-4607-b74d-d3d9df9cf8b5",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b5707771-c755-4607-b74d-d3d9df9cf8b5",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000215"
+      ],
+      "names": [
+        "Хвостохранилище Медет"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:12Z",
+      "sha256": "b607cc299f45d3a8058a42a6f7e22272210c0093450bfcc02775a398960e6383",
+      "bytes": 9322,
+      "archivePath": "source-archive/concessions/nkr-parties/b5707771-c755-4607-b74d-d3d9df9cf8b5/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "b5707771-c755-4607-b74d-d3d9df9cf8b5",
+        "concessionId": "D-000215",
+        "columns": {
+          "Номер": "D-000215",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Хвостохранилище Медет\", област София, община Златица, Пирдоп, населено място Златица, Пирдоп",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000215 | Открита | Отворена | Концесия за добив от находище \"Хвостохранилище Медет\", област София, община Златица, Пирдоп, населено място Златица, Пирдоп | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b5707771-c755-4607-b74d-d3d9df9cf8b5",
+        "inventoryMatches": [
+          "D-000215"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "8494303b-bd5b-44b5-a477-c62265246cac": {
+      "guid": "8494303b-bd5b-44b5-a477-c62265246cac",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/8494303b-bd5b-44b5-a477-c62265246cac",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000345"
+      ],
+      "names": [
+        "Хидроекопим - 1"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:14Z",
+      "sha256": "7f813137ebdd6837ecea327a91a992dd6313dfed2a380434466e0da4591c835b",
+      "bytes": 9302,
+      "archivePath": "source-archive/concessions/nkr-parties/8494303b-bd5b-44b5-a477-c62265246cac/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "8494303b-bd5b-44b5-a477-c62265246cac",
+        "concessionId": "D-000345",
+        "columns": {
+          "Номер": "D-000345",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Хидроекопим -1\", област София (столица), община Столична, населено място Нови Искър",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000345 | Открита | Отворена | Концесия за добив от находище \"Хидроекопим -1\", област София (столица), община Столична, населено място Нови Искър | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/8494303b-bd5b-44b5-a477-c62265246cac",
+        "inventoryMatches": [
+          "D-000345"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "15e3fb65-009e-4607-b26f-ffcf4f895939": {
+      "guid": "15e3fb65-009e-4607-b26f-ffcf4f895939",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/15e3fb65-009e-4607-b26f-ffcf4f895939",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000163"
+      ],
+      "names": [
+        "Хитрино"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:15Z",
+      "sha256": "d64f6ff98ae2d3d104cc1cc50a255cb434ddb017bb0c02d4993c3af0a771730e",
+      "bytes": 17459,
+      "archivePath": "source-archive/concessions/nkr-parties/15e3fb65-009e-4607-b26f-ffcf4f895939/partida.html",
+      "fileLinkCount": 3,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/852efd52-50d8-4c36-9600-62d7897a1c9a",
+          "url": "https://nkr.government.bg/File/Download/852efd52-50d8-4c36-9600-62d7897a1c9a",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/27095f08-c785-469c-af98-4826e16693b6",
+          "url": "https://nkr.government.bg/File/Download/27095f08-c785-469c-af98-4826e16693b6",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/93e39dc4-0dbc-4485-bf0f-e0b163a3eb35",
+          "url": "https://nkr.government.bg/File/Download/93e39dc4-0dbc-4485-bf0f-e0b163a3eb35",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/a50dbae4-f957-49a4-bc11-3ef43c02c01f",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/a50dbae4-f957-49a4-bc11-3ef43c02c01f",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/a50dbae4-f957-49a4-bc11-3ef43c02c01f",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/a50dbae4-f957-49a4-bc11-3ef43c02c01f",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/1df22f82-9104-4752-bca8-f4153cfcdca8",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/1df22f82-9104-4752-bca8-f4153cfcdca8",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/1df22f82-9104-4752-bca8-f4153cfcdca8",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/1df22f82-9104-4752-bca8-f4153cfcdca8",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "15e3fb65-009e-4607-b26f-ffcf4f895939",
+        "concessionId": "D-000163",
+        "columns": {
+          "Номер": "D-000163",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "концесия за добив от находище \"Хитрино\", с. Сливак, област Шумен , област Шумен, община Хитрино, населено място Сливак",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000163 | Открита | Отворена | концесия за добив от находище \"Хитрино\", с. Сливак, област Шумен , област Шумен, община Хитрино, населено място Сливак | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/15e3fb65-009e-4607-b26f-ffcf4f895939",
+        "inventoryMatches": [
+          "D-000163"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "a8385e76-7680-4d0e-9fcd-1a193496c9c4": {
+      "guid": "a8385e76-7680-4d0e-9fcd-1a193496c9c4",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a8385e76-7680-4d0e-9fcd-1a193496c9c4",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-125"
+      ],
+      "names": [
+        "Хитрино - 3"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:16Z",
+      "sha256": "18aa3514efd99bbfb1434326fc7826541a2a8919aa2863c3f29d2f641f1d789d",
+      "bytes": 14351,
+      "archivePath": "source-archive/concessions/nkr-parties/a8385e76-7680-4d0e-9fcd-1a193496c9c4/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/39240137-01b4-4bb7-8aec-fd528d725454",
+          "url": "https://nkr.government.bg/File/Download/39240137-01b4-4bb7-8aec-fd528d725454",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/f5a3513c-71a1-4212-921b-c06b134fe927",
+          "url": "https://nkr.government.bg/File/Download/f5a3513c-71a1-4212-921b-c06b134fe927",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/c835d618-8caa-4eb3-9393-14a08ff0c211",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/c835d618-8caa-4eb3-9393-14a08ff0c211",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "a8385e76-7680-4d0e-9fcd-1a193496c9c4",
+        "concessionId": "216-125",
+        "columns": {
+          "Номер": "216-125/21.10.2021",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - варовици, представляващи изключителна държавна собственост, от находище “Хитрино - 3“, разположено в землището на с. Сливак, община Хитрино, област Шумен, описано в Акт за изключителна държавна собственост № 1700 от 24 април 2020 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск.",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-125/21.10.2021 | Открита | Отворена | Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - варовици, представляващи изключителна държавна собственост, от находище “Хитрино - 3“, разположено в землището на с. Сливак, община Хитрино, област Шумен, описано в Акт за изключителна държавна собственост № 1700 от 24 април 2020 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск. | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a8385e76-7680-4d0e-9fcd-1a193496c9c4",
+        "inventoryMatches": [
+          "216-125"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "93a66322-f5d4-4707-b9a9-654f59144f44": {
+      "guid": "93a66322-f5d4-4707-b9a9-654f59144f44",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/93a66322-f5d4-4707-b9a9-654f59144f44",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000826"
+      ],
+      "names": [
+        "Хитрино-4"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:17Z",
+      "sha256": "d992e0f9e7cd003b4f9fa276376806840fc70a3ee9138b52696d0dca48abb678",
+      "bytes": 9267,
+      "archivePath": "source-archive/concessions/nkr-parties/93a66322-f5d4-4707-b9a9-654f59144f44/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "93a66322-f5d4-4707-b9a9-654f59144f44",
+        "concessionId": "D-000826",
+        "columns": {
+          "Номер": "D-000826",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Хитрино-4\", област Шумен, община Хитрино, населено място Сливак",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000826 | Открита | Отворена | Концесия за добив от находище \"Хитрино-4\", област Шумен, община Хитрино, населено място Сливак | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/93a66322-f5d4-4707-b9a9-654f59144f44",
+        "inventoryMatches": [
+          "D-000826"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "36237792-deef-4da5-82c3-9e2bb6d32276": {
+      "guid": "36237792-deef-4da5-82c3-9e2bb6d32276",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/36237792-deef-4da5-82c3-9e2bb6d32276",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-419"
+      ],
+      "names": [
+        "Хриси"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:19Z",
+      "sha256": "7a4f70b5258bf18e491187ae5ab38cc72c521d17d3b1194e9915adf016edbec7",
+      "bytes": 14205,
+      "archivePath": "source-archive/concessions/nkr-parties/36237792-deef-4da5-82c3-9e2bb6d32276/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/81aaf2e0-83aa-45f7-a343-904cf8142793",
+          "url": "https://nkr.government.bg/File/Download/81aaf2e0-83aa-45f7-a343-904cf8142793",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/1f792c93-db71-40ad-b538-97f648d92f33",
+          "url": "https://nkr.government.bg/File/Download/1f792c93-db71-40ad-b538-97f648d92f33",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/bab4faa3-8932-42e3-981b-f6973a034432",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/bab4faa3-8932-42e3-981b-f6973a034432",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "36237792-deef-4da5-82c3-9e2bb6d32276",
+        "concessionId": "216-419",
+        "columns": {
+          "Номер": "216-419/30.03.2026",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 2 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА - НЕМЕТАЛНИ ПОЛЕЗНИ ИЗКОПАЕМИ - ИНДУСТРИАЛНИ МИНЕРАЛИ - КЛИНОПТИЛОЛИТОВИ ЗЕОЛИТИ, ОТ НАХОДИЩЕ „ХРИСИ“, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. МОСТ, ОБЩИНА КЪРДЖАЛИ, ОБЛАСТ КЪРДЖАЛИ",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-419/30.03.2026 | Открита | Отворена | КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 2 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА - НЕМЕТАЛНИ ПОЛЕЗНИ ИЗКОПАЕМИ - ИНДУСТРИАЛНИ МИНЕРАЛИ - КЛИНОПТИЛОЛИТОВИ ЗЕОЛИТИ, ОТ НАХОДИЩЕ „ХРИСИ“, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. МОСТ, ОБЩИНА КЪРДЖАЛИ, ОБЛАСТ КЪРДЖАЛИ | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/36237792-deef-4da5-82c3-9e2bb6d32276",
+        "inventoryMatches": [
+          "216-419"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "a00c0745-221d-4799-865a-204c65941250": {
+      "guid": "a00c0745-221d-4799-865a-204c65941250",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a00c0745-221d-4799-865a-204c65941250",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000573"
+      ],
+      "names": [
+        "Хумни дол\", у-к „Северен\" и у-к „Южен\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:20Z",
+      "sha256": "9d642a516b3f58e6d425e7c514dc3b9e907999aa10629fe3dbd3f4b9114fb54f",
+      "bytes": 9366,
+      "archivePath": "source-archive/concessions/nkr-parties/a00c0745-221d-4799-865a-204c65941250/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "a00c0745-221d-4799-865a-204c65941250",
+        "concessionId": "D-000573",
+        "columns": {
+          "Номер": "D-000573",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от НАХОДИЩЕ \"ХУМНИ ДОЛ\", УЧАСТЪК \"СЕВЕР\" И УЧАСТЪК \"ЮЖЕН\", област Хасково, община Тополовград, населено място Доброселец",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000573 | Открита | Отворена | Концесия за добив от НАХОДИЩЕ \"ХУМНИ ДОЛ\", УЧАСТЪК \"СЕВЕР\" И УЧАСТЪК \"ЮЖЕН\", област Хасково, община Тополовград, населено място Доброселец | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/a00c0745-221d-4799-865a-204c65941250",
+        "inventoryMatches": [
+          "D-000573"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "25758e4f-abd5-4f0e-a62d-c51b268eeaea": {
+      "guid": "25758e4f-abd5-4f0e-a62d-c51b268eeaea",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25758e4f-abd5-4f0e-a62d-c51b268eeaea",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-128"
+      ],
+      "names": [
+        "Цар Асен - 2"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:21Z",
+      "sha256": "c1adad628b5117c22f97c80f5458eabbaff3d748a6cecfee36d144c325f621c5",
+      "bytes": 14520,
+      "archivePath": "source-archive/concessions/nkr-parties/25758e4f-abd5-4f0e-a62d-c51b268eeaea/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/5acbca12-2704-46ac-8fbb-c203f40fe64a",
+          "url": "https://nkr.government.bg/File/Download/5acbca12-2704-46ac-8fbb-c203f40fe64a",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/48064150-ccbe-44ea-b862-c302ba8f56d4",
+          "url": "https://nkr.government.bg/File/Download/48064150-ccbe-44ea-b862-c302ba8f56d4",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/42837067-3555-4c70-bbb5-3eb1b6a894a1",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/42837067-3555-4c70-bbb5-3eb1b6a894a1",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "25758e4f-abd5-4f0e-a62d-c51b268eeaea",
+        "concessionId": "216-128",
+        "columns": {
+          "Номер": "216-128/21.10.2021",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 1 от ЗПБ - метални полезни изкопаеми - медни руди, представляващи изключителна държавна собственост, от находище „Цар Асен - 2“, разположено в землището на с. Цар Асен, община Пазарджик, област Пазарджик, описано в Акт за изключителна държавна собственост № 1331 от 29 ноември 2012 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-128/21.10.2021 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 1 от ЗПБ - метални полезни изкопаеми - медни руди, представляващи изключителна държавна собственост, от находище „Цар Асен - 2“, разположено в землището на с. Цар Асен, община Пазарджик, област Пазарджик, описано в Акт за изключителна държавна собственост № 1331 от 29 ноември 2012 г., утвърден от министъра на регионалното развитие и благоустройството, която се извършва със средства на концесионера и на негов риск | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/25758e4f-abd5-4f0e-a62d-c51b268eeaea",
+        "inventoryMatches": [
+          "216-128"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "decff2a4-42dc-4377-8be1-2249764f96bc": {
+      "guid": "decff2a4-42dc-4377-8be1-2249764f96bc",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/decff2a4-42dc-4377-8be1-2249764f96bc",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000036"
+      ],
+      "names": [
+        "Царевец"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:22Z",
+      "sha256": "3d03472c126992d8adf42f088c03f28b375537ac73a99f1b95e94df1aa491582",
+      "bytes": 18850,
+      "archivePath": "source-archive/concessions/nkr-parties/decff2a4-42dc-4377-8be1-2249764f96bc/partida.html",
+      "fileLinkCount": 6,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/f7321739-4ae2-4d4a-8306-d2fec2a893be",
+          "url": "https://nkr.government.bg/File/Download/f7321739-4ae2-4d4a-8306-d2fec2a893be",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/64a3ec6b-ff3a-432b-ab65-109d80d2606b",
+          "url": "https://nkr.government.bg/File/Download/64a3ec6b-ff3a-432b-ab65-109d80d2606b",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/11172a0f-956a-4022-a9cc-ad0930ca3db7",
+          "url": "https://nkr.government.bg/File/Download/11172a0f-956a-4022-a9cc-ad0930ca3db7",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/3ebf7241-5cee-402e-a858-8dbe5823781d",
+          "url": "https://nkr.government.bg/File/Download/3ebf7241-5cee-402e-a858-8dbe5823781d",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/ec52a7a7-fda4-4948-b3bd-c744d054d8f9",
+          "url": "https://nkr.government.bg/File/Download/ec52a7a7-fda4-4948-b3bd-c744d054d8f9",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/a9054066-44b0-4ec4-8a3e-96bf40c7c9f4",
+          "url": "https://nkr.government.bg/File/Download/a9054066-44b0-4ec4-8a3e-96bf40c7c9f4",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/71a29f8c-1ca9-4034-b748-c8ee30741b5a",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/71a29f8c-1ca9-4034-b748-c8ee30741b5a",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/71a29f8c-1ca9-4034-b748-c8ee30741b5a",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/71a29f8c-1ca9-4034-b748-c8ee30741b5a",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "decff2a4-42dc-4377-8be1-2249764f96bc",
+        "concessionId": "D-000036",
+        "columns": {
+          "Номер": "D-000036",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "концесия за добив от находище \"Царевец\", област Враца, община Мездра, населено място Царевец",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000036 | Открита | Отворена | концесия за добив от находище \"Царевец\", област Враца, община Мездра, населено място Царевец | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/decff2a4-42dc-4377-8be1-2249764f96bc",
+        "inventoryMatches": [
+          "D-000036"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "4bb29997-ec53-4b6a-9044-6845d881524b": {
+      "guid": "4bb29997-ec53-4b6a-9044-6845d881524b",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4bb29997-ec53-4b6a-9044-6845d881524b",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-258"
+      ],
+      "names": [
+        "Царевец, у-ци \"Запад-2007 (Искър)\", \"Централен-2007\" и \"Царевец 2-2007\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:23Z",
+      "sha256": "50d451ac23699ed9a7ad0541742d8d4c4601d904116238def9a22fe9424cbc47",
+      "bytes": 14328,
+      "archivePath": "source-archive/concessions/nkr-parties/4bb29997-ec53-4b6a-9044-6845d881524b/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/5548809b-7ee5-445f-b938-89e56c4ab1ef",
+          "url": "https://nkr.government.bg/File/Download/5548809b-7ee5-445f-b938-89e56c4ab1ef",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/51561055-a071-40ac-8095-7cd7c2bd29bc",
+          "url": "https://nkr.government.bg/File/Download/51561055-a071-40ac-8095-7cd7c2bd29bc",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/56d87e0b-8635-4b13-b29e-5fa47c11fd68",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/56d87e0b-8635-4b13-b29e-5fa47c11fd68",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "4bb29997-ec53-4b6a-9044-6845d881524b",
+        "concessionId": "216-258",
+        "columns": {
+          "Номер": "216-258/19.07.2023",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - варовици, от находище „Царевец“, участъци „Запад-2007 (Искър)“, „Централен-2007“ и „Царевец 2-2007“, разположено в землището на с. Царевец, община Мездра, област Враца",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-258/19.07.2023 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - варовици, от находище „Царевец“, участъци „Запад-2007 (Искър)“, „Централен-2007“ и „Царевец 2-2007“, разположено в землището на с. Царевец, община Мездра, област Враца | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4bb29997-ec53-4b6a-9044-6845d881524b",
+        "inventoryMatches": [
+          "216-258"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "590e004b-7225-4e69-80f9-6c28dfd9c2ae": {
+      "guid": "590e004b-7225-4e69-80f9-6c28dfd9c2ae",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/590e004b-7225-4e69-80f9-6c28dfd9c2ae",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000396"
+      ],
+      "names": [
+        "Цареви ливади"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:25Z",
+      "sha256": "951676f4dcf8755e8c9214f9bd1d65c74a919c76bf736ff478ae6cc2f00b8be4",
+      "bytes": 9282,
+      "archivePath": "source-archive/concessions/nkr-parties/590e004b-7225-4e69-80f9-6c28dfd9c2ae/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "590e004b-7225-4e69-80f9-6c28dfd9c2ae",
+        "concessionId": "D-000396",
+        "columns": {
+          "Номер": "D-000396",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Цареви ливади\", област Варна, община Суворово, населено място Суворово",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000396 | Открита | Отворена | Концесия за добив от находище \"Цареви ливади\", област Варна, община Суворово, населено място Суворово | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/590e004b-7225-4e69-80f9-6c28dfd9c2ae",
+        "inventoryMatches": [
+          "D-000396"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "ae27ad1c-4a80-473d-87a6-ee2070ecad68": {
+      "guid": "ae27ad1c-4a80-473d-87a6-ee2070ecad68",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ae27ad1c-4a80-473d-87a6-ee2070ecad68",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000530"
+      ],
+      "names": [
+        "Цареви ливади-изток"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:26Z",
+      "sha256": "6cecbd121c256e1dd60dd85d344a69f27df0a0daffb24ec9d039ef500452992b",
+      "bytes": 9309,
+      "archivePath": "source-archive/concessions/nkr-parties/ae27ad1c-4a80-473d-87a6-ee2070ecad68/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "ae27ad1c-4a80-473d-87a6-ee2070ecad68",
+        "concessionId": "D-000530",
+        "columns": {
+          "Номер": "D-000530",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Цареви ливади-изток\", област Варна, община Суворово, населено място Суворово, Чернево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000530 | Открита | Отворена | Концесия за добив от находище \"Цареви ливади-изток\", област Варна, община Суворово, населено място Суворово, Чернево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ae27ad1c-4a80-473d-87a6-ee2070ecad68",
+        "inventoryMatches": [
+          "D-000530"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "d9aed436-7dbd-4486-bba9-45b07eef2739": {
+      "guid": "d9aed436-7dbd-4486-bba9-45b07eef2739",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/d9aed436-7dbd-4486-bba9-45b07eef2739",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000470"
+      ],
+      "names": [
+        "Целовижда"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:27Z",
+      "sha256": "9537e0e691902210fb1cb37a7fe6a2878f3e764dab83f93766e33652f5f4b989",
+      "bytes": 9277,
+      "archivePath": "source-archive/concessions/nkr-parties/d9aed436-7dbd-4486-bba9-45b07eef2739/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "d9aed436-7dbd-4486-bba9-45b07eef2739",
+        "concessionId": "D-000470",
+        "columns": {
+          "Номер": "D-000470",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Целовижда\", област София, община Костинброд, населено място Опицвет",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000470 | Открита | Отворена | Концесия за добив от находище \"Целовижда\", област София, община Костинброд, населено място Опицвет | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/d9aed436-7dbd-4486-bba9-45b07eef2739",
+        "inventoryMatches": [
+          "D-000470"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "2ff8dcb3-7c3c-4790-83df-9af9232639c4": {
+      "guid": "2ff8dcb3-7c3c-4790-83df-9af9232639c4",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/2ff8dcb3-7c3c-4790-83df-9af9232639c4",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000738"
+      ],
+      "names": [
+        "Чаирите, участък \"Северен 2008\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:28Z",
+      "sha256": "978b7f45d4d41678d1e565a434317e1dd45288c0bac0d3734ebcd0f76d48f589",
+      "bytes": 9307,
+      "archivePath": "source-archive/concessions/nkr-parties/2ff8dcb3-7c3c-4790-83df-9af9232639c4/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "2ff8dcb3-7c3c-4790-83df-9af9232639c4",
+        "concessionId": "D-000738",
+        "columns": {
+          "Номер": "D-000738",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чаирите\", участък \"Северен 2008\", област Варна, община Аврен, населено място Китка",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000738 | Открита | Отворена | Концесия за добив от находище \"Чаирите\", участък \"Северен 2008\", област Варна, община Аврен, населено място Китка | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/2ff8dcb3-7c3c-4790-83df-9af9232639c4",
+        "inventoryMatches": [
+          "D-000738"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "b9cb48b2-e8fb-4fa6-841d-df83e7b51741": {
+      "guid": "b9cb48b2-e8fb-4fa6-841d-df83e7b51741",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b9cb48b2-e8fb-4fa6-841d-df83e7b51741",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000674"
+      ],
+      "names": [
+        "Чаирите, участъци \"Северен\" и \"Южен\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:29Z",
+      "sha256": "4af169bfd34fa174480be3f6387b4022c236fb501aa00dfa886a1fc2677b975c",
+      "bytes": 9328,
+      "archivePath": "source-archive/concessions/nkr-parties/b9cb48b2-e8fb-4fa6-841d-df83e7b51741/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "b9cb48b2-e8fb-4fa6-841d-df83e7b51741",
+        "concessionId": "D-000674",
+        "columns": {
+          "Номер": "D-000674",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чаирите\", участъци \"Северен\" и \"Южен\", област Варна, община Аврен, населено място Китка",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000674 | Открита | Отворена | Концесия за добив от находище \"Чаирите\", участъци \"Северен\" и \"Южен\", област Варна, община Аврен, населено място Китка | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/b9cb48b2-e8fb-4fa6-841d-df83e7b51741",
+        "inventoryMatches": [
+          "D-000674"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "4ffcbd35-40a6-4dfb-be09-db5702edba35": {
+      "guid": "4ffcbd35-40a6-4dfb-be09-db5702edba35",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4ffcbd35-40a6-4dfb-be09-db5702edba35",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000619"
+      ],
+      "names": [
+        "Чакъров дрян"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:31Z",
+      "sha256": "92991d85677f16c3a1a4a83f7cda96e5bd1d20fc23ee44a5a4626d44e8213d5e",
+      "bytes": 9285,
+      "archivePath": "source-archive/concessions/nkr-parties/4ffcbd35-40a6-4dfb-be09-db5702edba35/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "4ffcbd35-40a6-4dfb-be09-db5702edba35",
+        "concessionId": "D-000619",
+        "columns": {
+          "Номер": "D-000619",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище Чакъров дрян, област Хасково, община Ивайловград, населено място Камилски дол",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000619 | Открита | Отворена | Концесия за добив от находище Чакъров дрян, област Хасково, община Ивайловград, населено място Камилски дол | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4ffcbd35-40a6-4dfb-be09-db5702edba35",
+        "inventoryMatches": [
+          "D-000619"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "90716d7d-a0b3-4647-8860-745964b933be": {
+      "guid": "90716d7d-a0b3-4647-8860-745964b933be",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/90716d7d-a0b3-4647-8860-745964b933be",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000075"
+      ],
+      "names": [
+        "Чала"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:32Z",
+      "sha256": "410ee817285d701ccccd5c98274410b76eb01b16fce46c38aa64fd3c30503941",
+      "bytes": 19184,
+      "archivePath": "source-archive/concessions/nkr-parties/90716d7d-a0b3-4647-8860-745964b933be/partida.html",
+      "fileLinkCount": 5,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/e0cb0e94-3a9e-4845-9ca8-f8f5cc7ca5cd",
+          "url": "https://nkr.government.bg/File/Download/e0cb0e94-3a9e-4845-9ca8-f8f5cc7ca5cd",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/9ea04542-f9ba-4d4f-9987-1838ab207753",
+          "url": "https://nkr.government.bg/File/Download/9ea04542-f9ba-4d4f-9987-1838ab207753",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/7da47c1b-3735-41a4-b6da-4824d2d72066",
+          "url": "https://nkr.government.bg/File/Download/7da47c1b-3735-41a4-b6da-4824d2d72066",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/f3a07526-cfe3-473f-b07e-781280fcbcd6",
+          "url": "https://nkr.government.bg/File/Download/f3a07526-cfe3-473f-b07e-781280fcbcd6",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/ff63abde-5428-4527-83e6-4e21c6246223",
+          "url": "https://nkr.government.bg/File/Download/ff63abde-5428-4527-83e6-4e21c6246223",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/213a0db0-62fc-4bc0-9eaa-20814383c116",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/213a0db0-62fc-4bc0-9eaa-20814383c116",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/213a0db0-62fc-4bc0-9eaa-20814383c116",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/213a0db0-62fc-4bc0-9eaa-20814383c116",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/24a21a7a-46f6-4f96-a1d6-4c495ba13210",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/24a21a7a-46f6-4f96-a1d6-4c495ba13210",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/24a21a7a-46f6-4f96-a1d6-4c495ba13210",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/24a21a7a-46f6-4f96-a1d6-4c495ba13210",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "90716d7d-a0b3-4647-8860-745964b933be",
+        "concessionId": "D-000075",
+        "columns": {
+          "Номер": "D-000075",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чала\", област Хасково, община Минерални бани, населено място Спахиево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000075 | Открита | Отворена | Концесия за добив от находище \"Чала\", област Хасково, община Минерални бани, населено място Спахиево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/90716d7d-a0b3-4647-8860-745964b933be",
+        "inventoryMatches": [
+          "D-000075"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "af89a3a3-1aeb-44f8-abbd-b3b75349ff07": {
+      "guid": "af89a3a3-1aeb-44f8-abbd-b3b75349ff07",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/af89a3a3-1aeb-44f8-abbd-b3b75349ff07",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000191"
+      ],
+      "names": [
+        "Чепинци"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:33Z",
+      "sha256": "5d5a1cafbe9bdce3332b5db625cb4199476d7c2a079157bc961a0b34a5ce95e0",
+      "bytes": 9286,
+      "archivePath": "source-archive/concessions/nkr-parties/af89a3a3-1aeb-44f8-abbd-b3b75349ff07/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "af89a3a3-1aeb-44f8-abbd-b3b75349ff07",
+        "concessionId": "D-000191",
+        "columns": {
+          "Номер": "D-000191",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чепинци\", област София (столица), община Столична, населено място Чепинци",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000191 | Открита | Отворена | Концесия за добив от находище \"Чепинци\", област София (столица), община Столична, населено място Чепинци | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/af89a3a3-1aeb-44f8-abbd-b3b75349ff07",
+        "inventoryMatches": [
+          "D-000191"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "53111b8d-fd13-4f4b-b8f9-d018d7f0f360": {
+      "guid": "53111b8d-fd13-4f4b-b8f9-d018d7f0f360",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/53111b8d-fd13-4f4b-b8f9-d018d7f0f360",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000216"
+      ],
+      "names": [
+        "Черешата"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:34Z",
+      "sha256": "d151a07076d5bf5dc39de8d0f6efcd611a0ba743572e131099cec69151d7f194",
+      "bytes": 13901,
+      "archivePath": "source-archive/concessions/nkr-parties/53111b8d-fd13-4f4b-b8f9-d018d7f0f360/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/e49b25ff-708e-4cf0-b213-278a7aa80c99",
+          "url": "https://nkr.government.bg/File/Download/e49b25ff-708e-4cf0-b213-278a7aa80c99",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/4dba47b4-8325-4d11-a843-256130481f9f",
+          "url": "https://nkr.government.bg/File/Download/4dba47b4-8325-4d11-a843-256130481f9f",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/2e417163-dd9c-4700-bbff-c196df1ac549",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/2e417163-dd9c-4700-bbff-c196df1ac549",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/2e417163-dd9c-4700-bbff-c196df1ac549",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/2e417163-dd9c-4700-bbff-c196df1ac549",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "53111b8d-fd13-4f4b-b8f9-d018d7f0f360",
+        "concessionId": "D-000216",
+        "columns": {
+          "Номер": "D-000216",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Черешата\", област Враца, община Враца, населено място Враца",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000216 | Открита | Отворена | Концесия за добив от находище \"Черешата\", област Враца, община Враца, населено място Враца | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/53111b8d-fd13-4f4b-b8f9-d018d7f0f360",
+        "inventoryMatches": [
+          "D-000216"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "883bec07-d590-4e4d-8841-c298a7779b7a": {
+      "guid": "883bec07-d590-4e4d-8841-c298a7779b7a",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/883bec07-d590-4e4d-8841-c298a7779b7a",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000272"
+      ],
+      "names": [
+        "Чернево"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:36Z",
+      "sha256": "69a9ed44c5de11a6ec38de59b3c5f8d9f3352dd1b54de0ccfdf6d92d260024b7",
+      "bytes": 9293,
+      "archivePath": "source-archive/concessions/nkr-parties/883bec07-d590-4e4d-8841-c298a7779b7a/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "883bec07-d590-4e4d-8841-c298a7779b7a",
+        "concessionId": "D-000272",
+        "columns": {
+          "Номер": "D-000272",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чернево\", област Варна, община Девня, Суворово, населено място Кипра, Чернево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000272 | Открита | Отворена | Концесия за добив от находище \"Чернево\", област Варна, община Девня, Суворово, населено място Кипра, Чернево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/883bec07-d590-4e4d-8841-c298a7779b7a",
+        "inventoryMatches": [
+          "D-000272"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "cf5b8e57-4f2a-4423-87af-5712b8400689": {
+      "guid": "cf5b8e57-4f2a-4423-87af-5712b8400689",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/cf5b8e57-4f2a-4423-87af-5712b8400689",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000432"
+      ],
+      "names": [
+        "Чернево - варовици"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:37Z",
+      "sha256": "2dff8fb17c5d095dc9d5d1088d154d6329c130dbb40c36549c4c3371516c5bac",
+      "bytes": 9269,
+      "archivePath": "source-archive/concessions/nkr-parties/cf5b8e57-4f2a-4423-87af-5712b8400689/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "cf5b8e57-4f2a-4423-87af-5712b8400689",
+        "concessionId": "D-000432",
+        "columns": {
+          "Номер": "D-000432",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чернево\", област Варна, община Суворово, населено място Чернево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000432 | Открита | Отворена | Концесия за добив от находище \"Чернево\", област Варна, община Суворово, населено място Чернево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/cf5b8e57-4f2a-4423-87af-5712b8400689",
+        "inventoryMatches": [
+          "D-000432"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "28b5f5f1-ac7d-4ae9-a876-d70968506756": {
+      "guid": "28b5f5f1-ac7d-4ae9-a876-d70968506756",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/28b5f5f1-ac7d-4ae9-a876-d70968506756",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000427"
+      ],
+      "names": [
+        "Черничево"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:38Z",
+      "sha256": "43dd89802e102d9ad4252350de13372aeff015877e03acd1e61de643f1310c5f",
+      "bytes": 9283,
+      "archivePath": "source-archive/concessions/nkr-parties/28b5f5f1-ac7d-4ae9-a876-d70968506756/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "28b5f5f1-ac7d-4ae9-a876-d70968506756",
+        "concessionId": "D-000427",
+        "columns": {
+          "Номер": "D-000427",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Черничево\", област Благоевград, община Симитли, населено място Черниче",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000427 | Открита | Отворена | Концесия за добив от находище \"Черничево\", област Благоевград, община Симитли, населено място Черниче | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/28b5f5f1-ac7d-4ae9-a876-d70968506756",
+        "inventoryMatches": [
+          "D-000427"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "da0dd5bf-ab17-49b6-b556-60a97fb5735b": {
+      "guid": "da0dd5bf-ab17-49b6-b556-60a97fb5735b",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/da0dd5bf-ab17-49b6-b556-60a97fb5735b",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000315"
+      ],
+      "names": [
+        "Черноморски въглищен басейн"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:39Z",
+      "sha256": "5dc9cadd9438881597da53f87f2ea3ae4e88b3c4623b773849133f3ff9c83a7c",
+      "bytes": 9277,
+      "archivePath": "source-archive/concessions/nkr-parties/da0dd5bf-ab17-49b6-b556-60a97fb5735b/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "da0dd5bf-ab17-49b6-b556-60a97fb5735b",
+        "concessionId": "D-000315",
+        "columns": {
+          "Номер": "D-000315",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от Находище \"Черноморски въглищен басейн\", област Бургас, община Бургас, Поморие",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000315 | Открита | Отворена | Концесия за добив от Находище \"Черноморски въглищен басейн\", област Бургас, община Бургас, Поморие | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/da0dd5bf-ab17-49b6-b556-60a97fb5735b",
+        "inventoryMatches": [
+          "D-000315"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "e4fb8020-6673-454e-bbd3-8c3da02c6543": {
+      "guid": "e4fb8020-6673-454e-bbd3-8c3da02c6543",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/e4fb8020-6673-454e-bbd3-8c3da02c6543",
+      "inventoryIds": [],
+      "concessionIds": [
+        "O-000689"
+      ],
+      "names": [
+        "Четалеч"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:40Z",
+      "sha256": "4717dd365a2e73b32e5843ddc1e84bd201b3127ebacd08614667421feccc6cef",
+      "bytes": 9281,
+      "archivePath": "source-archive/concessions/nkr-parties/e4fb8020-6673-454e-bbd3-8c3da02c6543/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "e4fb8020-6673-454e-bbd3-8c3da02c6543",
+        "concessionId": "O-000689",
+        "columns": {
+          "Номер": "O-000689",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище Четалеч - село Мирково, област София, община Мирково, населено място Мирково",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "O-000689 | Открита | Отворена | Концесия за добив от находище Четалеч - село Мирково, област София, община Мирково, населено място Мирково | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/e4fb8020-6673-454e-bbd3-8c3da02c6543",
+        "inventoryMatches": [
+          "O-000689"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "f45b3321-caf1-46e6-b6b6-42f30e8cb8df": {
+      "guid": "f45b3321-caf1-46e6-b6b6-42f30e8cb8df",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f45b3321-caf1-46e6-b6b6-42f30e8cb8df",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000742"
+      ],
+      "names": [
+        "Чешлия"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:42Z",
+      "sha256": "f91f7ca7572f0664493d2bdf1218dad943735d5a888e5bd86a743483f02e28de",
+      "bytes": 9276,
+      "archivePath": "source-archive/concessions/nkr-parties/f45b3321-caf1-46e6-b6b6-42f30e8cb8df/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "f45b3321-caf1-46e6-b6b6-42f30e8cb8df",
+        "concessionId": "D-000742",
+        "columns": {
+          "Номер": "D-000742",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чешлия\", област Кърджали, община Момчилград, населено място Груево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000742 | Открита | Отворена | Концесия за добив от находище \"Чешлия\", област Кърджали, община Момчилград, населено място Груево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f45b3321-caf1-46e6-b6b6-42f30e8cb8df",
+        "inventoryMatches": [
+          "D-000742"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "c9bc4ccb-53c0-4107-9d2f-8d9bf1e632af": {
+      "guid": "c9bc4ccb-53c0-4107-9d2f-8d9bf1e632af",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/c9bc4ccb-53c0-4107-9d2f-8d9bf1e632af",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000592"
+      ],
+      "names": [
+        "Чешмата"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:43Z",
+      "sha256": "3e8d294a522494d3932ffccf1cba35e72c85fc00fe7af85b20a09b70b12d9e49",
+      "bytes": 11620,
+      "archivePath": "source-archive/concessions/nkr-parties/c9bc4ccb-53c0-4107-9d2f-8d9bf1e632af/partida.html",
+      "fileLinkCount": 1,
+      "previewLinkCount": 0,
+      "fileLinks": [
+        {
+          "href": "/File/Download/ffdf6820-a150-4fb4-b6fd-47d3fb0aa5f1",
+          "url": "https://nkr.government.bg/File/Download/ffdf6820-a150-4fb4-b6fd-47d3fb0aa5f1",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "c9bc4ccb-53c0-4107-9d2f-8d9bf1e632af",
+        "concessionId": "D-000592",
+        "columns": {
+          "Номер": "D-000592",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чешмата\", област Хасково, община Ивайловград, населено място Кобилино, Черни рид",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000592 | Открита | Отворена | Концесия за добив от находище \"Чешмата\", област Хасково, община Ивайловград, населено място Кобилино, Черни рид | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/c9bc4ccb-53c0-4107-9d2f-8d9bf1e632af",
+        "inventoryMatches": [
+          "D-000592"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "65948c6f-fc73-43ad-989b-5dbb70c919de": {
+      "guid": "65948c6f-fc73-43ad-989b-5dbb70c919de",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/65948c6f-fc73-43ad-989b-5dbb70c919de",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000706"
+      ],
+      "names": [
+        "Чешмата"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:44Z",
+      "sha256": "3a47d730b1fe9dcd66088b7b5156b9881a52aab9c57751434a918b4a340c5176",
+      "bytes": 9275,
+      "archivePath": "source-archive/concessions/nkr-parties/65948c6f-fc73-43ad-989b-5dbb70c919de/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "65948c6f-fc73-43ad-989b-5dbb70c919de",
+        "concessionId": "D-000706",
+        "columns": {
+          "Номер": "D-000706",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чешмата\", област Хасково, община Хасково, населено място Въгларово",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000706 | Открита | Отворена | Концесия за добив от находище \"Чешмата\", област Хасково, община Хасково, населено място Въгларово | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/65948c6f-fc73-43ad-989b-5dbb70c919de",
+        "inventoryMatches": [
+          "D-000706"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "0c58f09b-e7dc-4e96-a5b5-1bc84915c407": {
+      "guid": "0c58f09b-e7dc-4e96-a5b5-1bc84915c407",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/0c58f09b-e7dc-4e96-a5b5-1bc84915c407",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000842"
+      ],
+      "names": [
+        "Чинка - 2, у-ци \"Чинка - 2 запад\" и \"Чинка - 2 изток\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:45Z",
+      "sha256": "55ff108d343b11ecf45f433e3345dc99e9f247575eef639ec4ab8b2c8cf14b81",
+      "bytes": 9530,
+      "archivePath": "source-archive/concessions/nkr-parties/0c58f09b-e7dc-4e96-a5b5-1bc84915c407/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "0c58f09b-e7dc-4e96-a5b5-1bc84915c407",
+        "concessionId": "D-000842",
+        "columns": {
+          "Номер": "D-000842",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чинка - 2\", участъци \"Чинка - 2 запад\" и \"Чинка - 2 изток\", разположено в землището на с. Голяма Чинка, Община Крумовград, област Кърджали, област Кърджали, община Крумовград, населено място Голяма чинка",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000842 | Открита | Отворена | Концесия за добив от находище \"Чинка - 2\", участъци \"Чинка - 2 запад\" и \"Чинка - 2 изток\", разположено в землището на с. Голяма Чинка, Община Крумовград, област Кърджали, област Кърджали, община Крумовград, населено място Голяма чинка | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/0c58f09b-e7dc-4e96-a5b5-1bc84915c407",
+        "inventoryMatches": [
+          "D-000842"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "69dc25e4-0390-47e6-9bd2-009b59673f6f": {
+      "guid": "69dc25e4-0390-47e6-9bd2-009b59673f6f",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/69dc25e4-0390-47e6-9bd2-009b59673f6f",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000264"
+      ],
+      "names": [
+        "Чирен"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:46Z",
+      "sha256": "359d1bcf57e99c3226ba4b1325c2396c38643a45329cdd3fe0368c2310976382",
+      "bytes": 17467,
+      "archivePath": "source-archive/concessions/nkr-parties/69dc25e4-0390-47e6-9bd2-009b59673f6f/partida.html",
+      "fileLinkCount": 3,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/57deb4b3-995f-4f39-ab5f-7573789a45e6",
+          "url": "https://nkr.government.bg/File/Download/57deb4b3-995f-4f39-ab5f-7573789a45e6",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/2b67f40a-9ec0-4cca-8388-b774dde6ff5d",
+          "url": "https://nkr.government.bg/File/Download/2b67f40a-9ec0-4cca-8388-b774dde6ff5d",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/24a0c63c-41f6-4ccd-9fd1-0f63f56353a4",
+          "url": "https://nkr.government.bg/File/Download/24a0c63c-41f6-4ccd-9fd1-0f63f56353a4",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/cbb2ae23-f850-4ab9-88de-3abffa0a51b0",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/cbb2ae23-f850-4ab9-88de-3abffa0a51b0",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/cbb2ae23-f850-4ab9-88de-3abffa0a51b0",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/cbb2ae23-f850-4ab9-88de-3abffa0a51b0",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/ac80727d-97ee-4f69-b25a-d5d6f3b5296d",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/ac80727d-97ee-4f69-b25a-d5d6f3b5296d",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/ac80727d-97ee-4f69-b25a-d5d6f3b5296d",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/ac80727d-97ee-4f69-b25a-d5d6f3b5296d",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "69dc25e4-0390-47e6-9bd2-009b59673f6f",
+        "concessionId": "D-000264",
+        "columns": {
+          "Номер": "D-000264",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чирен\", област Враца, община Враца, населено място Чирен",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000264 | Открита | Отворена | Концесия за добив от находище \"Чирен\", област Враца, община Враца, населено място Чирен | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/69dc25e4-0390-47e6-9bd2-009b59673f6f",
+        "inventoryMatches": [
+          "D-000264"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "780a5847-df81-47f0-8a6a-38595f89516a": {
+      "guid": "780a5847-df81-47f0-8a6a-38595f89516a",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/780a5847-df81-47f0-8a6a-38595f89516a",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000423"
+      ],
+      "names": [
+        "Чириковец"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:48Z",
+      "sha256": "87bd5ea2f68ab0fae058c2c589c0125502945e0dd1b045c670eab6e8fe8966b9",
+      "bytes": 15041,
+      "archivePath": "source-archive/concessions/nkr-parties/780a5847-df81-47f0-8a6a-38595f89516a/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/2f8c2ae0-988f-453e-a435-91d001ab6b89",
+          "url": "https://nkr.government.bg/File/Download/2f8c2ae0-988f-453e-a435-91d001ab6b89",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/bfd877cf-6180-4472-8853-fba7651c1351",
+          "url": "https://nkr.government.bg/File/Download/bfd877cf-6180-4472-8853-fba7651c1351",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/32709fc8-cea2-4d55-bd31-f0af4cb35374",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/32709fc8-cea2-4d55-bd31-f0af4cb35374",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/32709fc8-cea2-4d55-bd31-f0af4cb35374",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/32709fc8-cea2-4d55-bd31-f0af4cb35374",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "780a5847-df81-47f0-8a6a-38595f89516a",
+        "concessionId": "D-000423",
+        "columns": {
+          "Номер": "D-000423",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чириковец\", област Габрово, община Дряново, населено място Скалско",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000423 | Открита | Отворена | Концесия за добив от находище \"Чириковец\", област Габрово, община Дряново, населено място Скалско | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/780a5847-df81-47f0-8a6a-38595f89516a",
+        "inventoryMatches": [
+          "D-000423"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "031b84f6-1ff2-40b9-8a0f-a919bc545067": {
+      "guid": "031b84f6-1ff2-40b9-8a0f-a919bc545067",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/031b84f6-1ff2-40b9-8a0f-a919bc545067",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000393"
+      ],
+      "names": [
+        "Чифлика"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:49Z",
+      "sha256": "86285cc6eaef0d59ffdcf687bb42a0cde02f15ff594da6221e66337dfe1227fd",
+      "bytes": 9283,
+      "archivePath": "source-archive/concessions/nkr-parties/031b84f6-1ff2-40b9-8a0f-a919bc545067/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "031b84f6-1ff2-40b9-8a0f-a919bc545067",
+        "concessionId": "D-000393",
+        "columns": {
+          "Номер": "D-000393",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чифлика\", област Пловдив, община Асеновград, населено място Асеновград",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000393 | Открита | Отворена | Концесия за добив от находище \"Чифлика\", област Пловдив, община Асеновград, населено място Асеновград | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/031b84f6-1ff2-40b9-8a0f-a919bc545067",
+        "inventoryMatches": [
+          "D-000393"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "3581d0d0-21e4-4eef-88e2-a6ed29adc956": {
+      "guid": "3581d0d0-21e4-4eef-88e2-a6ed29adc956",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/3581d0d0-21e4-4eef-88e2-a6ed29adc956",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000152"
+      ],
+      "names": [
+        "Чуките"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:50Z",
+      "sha256": "9c88d201adced9917c23575fa0e8efa8e85531e7e19b84864f26240045d8d1fd",
+      "bytes": 13908,
+      "archivePath": "source-archive/concessions/nkr-parties/3581d0d0-21e4-4eef-88e2-a6ed29adc956/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/641e9253-380b-4e9d-a9ac-8b3e041796b5",
+          "url": "https://nkr.government.bg/File/Download/641e9253-380b-4e9d-a9ac-8b3e041796b5",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/33aa3303-4e61-4ef1-8c09-b54534a7c068",
+          "url": "https://nkr.government.bg/File/Download/33aa3303-4e61-4ef1-8c09-b54534a7c068",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/e4b2f1f6-ec6f-4670-a172-98aa235b932b",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/e4b2f1f6-ec6f-4670-a172-98aa235b932b",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/e4b2f1f6-ec6f-4670-a172-98aa235b932b",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/e4b2f1f6-ec6f-4670-a172-98aa235b932b",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "3581d0d0-21e4-4eef-88e2-a6ed29adc956",
+        "concessionId": "D-000152",
+        "columns": {
+          "Номер": "D-000152",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чуките\", област Хасково, община Хасково, населено място Гарваново",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000152 | Открита | Отворена | Концесия за добив от находище \"Чуките\", област Хасково, община Хасково, населено място Гарваново | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/3581d0d0-21e4-4eef-88e2-a6ed29adc956",
+        "inventoryMatches": [
+          "D-000152"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "6de743e1-5faa-4502-a14e-8360da9875d8": {
+      "guid": "6de743e1-5faa-4502-a14e-8360da9875d8",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/6de743e1-5faa-4502-a14e-8360da9875d8",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000173"
+      ],
+      "names": [
+        "Чучура"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:51Z",
+      "sha256": "c4f4fd899210c98455a495a9fd018a597b4e99454e397a5726c932c907cd428c",
+      "bytes": 12717,
+      "archivePath": "source-archive/concessions/nkr-parties/6de743e1-5faa-4502-a14e-8360da9875d8/partida.html",
+      "fileLinkCount": 1,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/2f4da905-22ab-4806-b1c7-69f71124af72",
+          "url": "https://nkr.government.bg/File/Download/2f4da905-22ab-4806-b1c7-69f71124af72",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/6d156e94-aab6-4d16-b56b-dae9cf22e685",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/6d156e94-aab6-4d16-b56b-dae9cf22e685",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/6d156e94-aab6-4d16-b56b-dae9cf22e685",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/6d156e94-aab6-4d16-b56b-dae9cf22e685",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "6de743e1-5faa-4502-a14e-8360da9875d8",
+        "concessionId": "D-000173",
+        "columns": {
+          "Номер": "D-000173",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Чучура\", област Плевен, община Плевен, населено място Върбица",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000173 | Открита | Отворена | Концесия за добив от находище \"Чучура\", област Плевен, община Плевен, населено място Върбица | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/6de743e1-5faa-4502-a14e-8360da9875d8",
+        "inventoryMatches": [
+          "D-000173"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "94777abb-2c2f-4f42-8fbb-94c6e46cdb41": {
+      "guid": "94777abb-2c2f-4f42-8fbb-94c6e46cdb41",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/94777abb-2c2f-4f42-8fbb-94c6e46cdb41",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000795"
+      ],
+      "names": [
+        "Шафкаалан"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:52Z",
+      "sha256": "d54a2ff02569f9564b93c754922b796fdb27478c984674c5d29e8b86010c2a97",
+      "bytes": 9267,
+      "archivePath": "source-archive/concessions/nkr-parties/94777abb-2c2f-4f42-8fbb-94c6e46cdb41/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "94777abb-2c2f-4f42-8fbb-94c6e46cdb41",
+        "concessionId": "D-000795",
+        "columns": {
+          "Номер": "D-000795",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Шафкаалан\", област Варна, община Аврен, населено място Здравец",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000795 | Открита | Отворена | Концесия за добив от находище \"Шафкаалан\", област Варна, община Аврен, населено място Здравец | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/94777abb-2c2f-4f42-8fbb-94c6e46cdb41",
+        "inventoryMatches": [
+          "D-000795"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "eec73b0d-b3a8-45a1-a7a0-f592bf7e8829": {
+      "guid": "eec73b0d-b3a8-45a1-a7a0-f592bf7e8829",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/eec73b0d-b3a8-45a1-a7a0-f592bf7e8829",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000204"
+      ],
+      "names": [
+        "Шереметя –у-к Запад"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:54Z",
+      "sha256": "9e085d0da28016fa8e166cae16d3f8dde1d6332821928791737e76074e4b5ade",
+      "bytes": 9378,
+      "archivePath": "source-archive/concessions/nkr-parties/eec73b0d-b3a8-45a1-a7a0-f592bf7e8829/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "eec73b0d-b3a8-45a1-a7a0-f592bf7e8829",
+        "concessionId": "D-000204",
+        "columns": {
+          "Номер": "D-000204",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Шереметя\", участък \"Запад\", област Велико Търново, община Велико Търново, Лясковец, населено място Драгижево, Шереметя",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000204 | Открита | Отворена | Концесия за добив от находище \"Шереметя\", участък \"Запад\", област Велико Търново, община Велико Търново, Лясковец, населено място Драгижево, Шереметя | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/eec73b0d-b3a8-45a1-a7a0-f592bf7e8829",
+        "inventoryMatches": [
+          "D-000204"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "619091c6-4481-47a1-ae44-1c905bb09258": {
+      "guid": "619091c6-4481-47a1-ae44-1c905bb09258",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/619091c6-4481-47a1-ae44-1c905bb09258",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000613"
+      ],
+      "names": [
+        "Шереметя, у-к \"Изток\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:55Z",
+      "sha256": "a0fff478cde2e31871270344c1ae7aeccba5a49f199df4334a67b2cbf933736b",
+      "bytes": 17614,
+      "archivePath": "source-archive/concessions/nkr-parties/619091c6-4481-47a1-ae44-1c905bb09258/partida.html",
+      "fileLinkCount": 3,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/8741d044-3b0b-48e2-9e98-1a7c436cb228",
+          "url": "https://nkr.government.bg/File/Download/8741d044-3b0b-48e2-9e98-1a7c436cb228",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/a2b68128-2cf3-4f2d-85e9-abbb09794bad",
+          "url": "https://nkr.government.bg/File/Download/a2b68128-2cf3-4f2d-85e9-abbb09794bad",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/1924b18b-7131-4af6-af8d-4f38d0c9ba67",
+          "url": "https://nkr.government.bg/File/Download/1924b18b-7131-4af6-af8d-4f38d0c9ba67",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/94afd8e6-53a4-4ab7-8931-f8e2f68d320e",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/94afd8e6-53a4-4ab7-8931-f8e2f68d320e",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/94afd8e6-53a4-4ab7-8931-f8e2f68d320e",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/94afd8e6-53a4-4ab7-8931-f8e2f68d320e",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/442131cf-6141-42ee-ab46-99a73c8b4335",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/442131cf-6141-42ee-ab46-99a73c8b4335",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/442131cf-6141-42ee-ab46-99a73c8b4335",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/442131cf-6141-42ee-ab46-99a73c8b4335",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "619091c6-4481-47a1-ae44-1c905bb09258",
+        "concessionId": "D-000613",
+        "columns": {
+          "Номер": "D-000613",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от Находище \"Шереметя\", участък \"Изток\", област Велико Търново, община Велико Търново, Лясковец, населено място Драгижево",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000613 | Открита | Отворена | Концесия за добив от Находище \"Шереметя\", участък \"Изток\", област Велико Търново, община Велико Търново, Лясковец, населено място Драгижево | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/619091c6-4481-47a1-ae44-1c905bb09258",
+        "inventoryMatches": [
+          "D-000613"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "51fd456e-4800-4e22-a6cf-f5e1ab3cedf2": {
+      "guid": "51fd456e-4800-4e22-a6cf-f5e1ab3cedf2",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/51fd456e-4800-4e22-a6cf-f5e1ab3cedf2",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000600"
+      ],
+      "names": [
+        "Шишманци, у-к \"2\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:56Z",
+      "sha256": "5ce79d4aa6b44f28bc1b01efb8764157ae4fe310800f6f800977de2ff26a3f9f",
+      "bytes": 9296,
+      "archivePath": "source-archive/concessions/nkr-parties/51fd456e-4800-4e22-a6cf-f5e1ab3cedf2/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "51fd456e-4800-4e22-a6cf-f5e1ab3cedf2",
+        "concessionId": "D-000600",
+        "columns": {
+          "Номер": "D-000600",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от НАХОДИЩЕ \"ШИШМАНЦИ - УЧАСТЪК 2\", област Пловдив, община Раковски, населено място Шишманци",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000600 | Открита | Отворена | Концесия за добив от НАХОДИЩЕ \"ШИШМАНЦИ - УЧАСТЪК 2\", област Пловдив, община Раковски, населено място Шишманци | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/51fd456e-4800-4e22-a6cf-f5e1ab3cedf2",
+        "inventoryMatches": [
+          "D-000600"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "ba3a7f55-ce7b-4b26-969d-3ff4d602422b": {
+      "guid": "ba3a7f55-ce7b-4b26-969d-3ff4d602422b",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ba3a7f55-ce7b-4b26-969d-3ff4d602422b",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000572"
+      ],
+      "names": [
+        "Шугла, участъци „Север\" и „Юг\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:57Z",
+      "sha256": "08320b181c3de30be375ce5279203d4dc524565de562560b4d7b1f6618450cc8",
+      "bytes": 9343,
+      "archivePath": "source-archive/concessions/nkr-parties/ba3a7f55-ce7b-4b26-969d-3ff4d602422b/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "ba3a7f55-ce7b-4b26-969d-3ff4d602422b",
+        "concessionId": "D-000572",
+        "columns": {
+          "Номер": "D-000572",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Шугла\", участъци \"Север\" и \"Юг\", област Монтана, община Монтана, населено място Долно Белотинци",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000572 | Открита | Отворена | Концесия за добив от находище \"Шугла\", участъци \"Север\" и \"Юг\", област Монтана, община Монтана, населено място Долно Белотинци | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ba3a7f55-ce7b-4b26-969d-3ff4d602422b",
+        "inventoryMatches": [
+          "D-000572"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "ed317212-78fc-48a0-a22b-f30b8b9b1675": {
+      "guid": "ed317212-78fc-48a0-a22b-f30b8b9b1675",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ed317212-78fc-48a0-a22b-f30b8b9b1675",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000280"
+      ],
+      "names": [
+        "Шумачевски дол - Андроу"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:21:59Z",
+      "sha256": "8e2b3025ff1818f51548e4fb241376638716d25bafa92032bb4ef39619f8bf62",
+      "bytes": 9348,
+      "archivePath": "source-archive/concessions/nkr-parties/ed317212-78fc-48a0-a22b-f30b8b9b1675/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "ed317212-78fc-48a0-a22b-f30b8b9b1675",
+        "concessionId": "D-000280",
+        "columns": {
+          "Номер": "D-000280",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Шумачевски дол - Андроу\" област Смолян, област Смолян, община Златоград, населено място Аламовци, Ерма река",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000280 | Открита | Отворена | Концесия за добив от находище \"Шумачевски дол - Андроу\" област Смолян, област Смолян, община Златоград, населено място Аламовци, Ерма река | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/ed317212-78fc-48a0-a22b-f30b8b9b1675",
+        "inventoryMatches": [
+          "D-000280"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "8b2967f4-a6f0-4ec8-a1a6-4f39ce272850": {
+      "guid": "8b2967f4-a6f0-4ec8-a1a6-4f39ce272850",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/8b2967f4-a6f0-4ec8-a1a6-4f39ce272850",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000454"
+      ],
+      "names": [
+        "Шумнатица"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:00Z",
+      "sha256": "acaae90806c828c43e931bd5a949a9943f0f2550ac7ec94c932ef02114e397ad",
+      "bytes": 9270,
+      "archivePath": "source-archive/concessions/nkr-parties/8b2967f4-a6f0-4ec8-a1a6-4f39ce272850/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "8b2967f4-a6f0-4ec8-a1a6-4f39ce272850",
+        "concessionId": "D-000454",
+        "columns": {
+          "Номер": "D-000454",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище\"Шумнатица\", област Перник, община Перник, населено място Студена",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000454 | Открита | Отворена | Концесия за добив от находище\"Шумнатица\", област Перник, община Перник, населено място Студена | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/8b2967f4-a6f0-4ec8-a1a6-4f39ce272850",
+        "inventoryMatches": [
+          "D-000454"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "6bbd123c-00a9-4525-ad58-504ef1daebe8": {
+      "guid": "6bbd123c-00a9-4525-ad58-504ef1daebe8",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/6bbd123c-00a9-4525-ad58-504ef1daebe8",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000092"
+      ],
+      "names": [
+        "Юрт дере, у-к \"Вулкан\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:01Z",
+      "sha256": "5103e20e651da4757213a4f80b5deb9c762a2916cc004ab68ea022295fff30ee",
+      "bytes": 9292,
+      "archivePath": "source-archive/concessions/nkr-parties/6bbd123c-00a9-4525-ad58-504ef1daebe8/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "6bbd123c-00a9-4525-ad58-504ef1daebe8",
+        "concessionId": "D-000092",
+        "columns": {
+          "Номер": "D-000092",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Юрт-дере\", област Хасково, община Димитровград, населено място Димитровград",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000092 | Открита | Отворена | Концесия за добив от находище \"Юрт-дере\", област Хасково, община Димитровград, населено място Димитровград | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/6bbd123c-00a9-4525-ad58-504ef1daebe8",
+        "inventoryMatches": [
+          "D-000092"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "4a5c25c7-581e-43b3-a3cc-b0d1f817c45f": {
+      "guid": "4a5c25c7-581e-43b3-a3cc-b0d1f817c45f",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4a5c25c7-581e-43b3-a3cc-b0d1f817c45f",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000679"
+      ],
+      "names": [
+        "Юрт дере, участък \"Калцит\""
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:02Z",
+      "sha256": "425e6a978b23abfdfd9ceed31c5a07de3deebbe65d47f8d405b98fbce71abc41",
+      "bytes": 9334,
+      "archivePath": "source-archive/concessions/nkr-parties/4a5c25c7-581e-43b3-a3cc-b0d1f817c45f/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "4a5c25c7-581e-43b3-a3cc-b0d1f817c45f",
+        "concessionId": "D-000679",
+        "columns": {
+          "Номер": "D-000679",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от Находище \"Юрт дере\", участък \"Калцит\", област Хасково, община Димитровград, населено място Димитровград",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000679 | Открита | Отворена | Концесия за добив от Находище \"Юрт дере\", участък \"Калцит\", област Хасково, община Димитровград, населено място Димитровград | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/4a5c25c7-581e-43b3-a3cc-b0d1f817c45f",
+        "inventoryMatches": [
+          "D-000679"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "793c49a7-09f7-4953-8da2-0a7b60e81345": {
+      "guid": "793c49a7-09f7-4953-8da2-0a7b60e81345",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/793c49a7-09f7-4953-8da2-0a7b60e81345",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000421"
+      ],
+      "names": [
+        "Ябланица"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:03Z",
+      "sha256": "1bc37a4f3a5e3fc94e6cc85b48022c7cc14b0ceb582fffaeab09b28560881c4c",
+      "bytes": 17722,
+      "archivePath": "source-archive/concessions/nkr-parties/793c49a7-09f7-4953-8da2-0a7b60e81345/partida.html",
+      "fileLinkCount": 3,
+      "previewLinkCount": 4,
+      "fileLinks": [
+        {
+          "href": "/File/Download/770affe3-db79-4a27-86e0-19d5e6c662f2",
+          "url": "https://nkr.government.bg/File/Download/770affe3-db79-4a27-86e0-19d5e6c662f2",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/b5c03a8a-49a1-4298-8433-c550938d97e5",
+          "url": "https://nkr.government.bg/File/Download/b5c03a8a-49a1-4298-8433-c550938d97e5",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/9fd58c63-0f1a-423a-9331-842a3d84e7ae",
+          "url": "https://nkr.government.bg/File/Download/9fd58c63-0f1a-423a-9331-842a3d84e7ae",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/d3677174-a544-4d1b-bc1f-6b246c9d7146",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/d3677174-a544-4d1b-bc1f-6b246c9d7146",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/d3677174-a544-4d1b-bc1f-6b246c9d7146",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/d3677174-a544-4d1b-bc1f-6b246c9d7146",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        },
+        {
+          "href": "/Preview/AssignedConcession/a3a927bf-a2f4-4bee-a915-cd549cad6066",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/a3a927bf-a2f4-4bee-a915-cd549cad6066",
+          "title": "Отвори актуална информация за концесията"
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/a3a927bf-a2f4-4bee-a915-cd549cad6066",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/a3a927bf-a2f4-4bee-a915-cd549cad6066",
+          "title": "Отвори Формуляр за изменение на вписани данни"
+        }
+      ],
+      "indexRecord": {
+        "guid": "793c49a7-09f7-4953-8da2-0a7b60e81345",
+        "concessionId": "D-000421",
+        "columns": {
+          "Номер": "D-000421",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Ябланица\", област Ловеч, община Ябланица, населено място Ябланица",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000421 | Открита | Отворена | Концесия за добив от находище \"Ябланица\", област Ловеч, община Ябланица, населено място Ябланица | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/793c49a7-09f7-4953-8da2-0a7b60e81345",
+        "inventoryMatches": [
+          "D-000421"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "c82434bb-f1fd-45a6-a71f-7378ae93b97c": {
+      "guid": "c82434bb-f1fd-45a6-a71f-7378ae93b97c",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/c82434bb-f1fd-45a6-a71f-7378ae93b97c",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000148"
+      ],
+      "names": [
+        "Ябълково"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:05Z",
+      "sha256": "d4c072f71ee7b72e4247be74973c91338efdea110f32f213a81ad0f8a256847f",
+      "bytes": 9314,
+      "archivePath": "source-archive/concessions/nkr-parties/c82434bb-f1fd-45a6-a71f-7378ae93b97c/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "c82434bb-f1fd-45a6-a71f-7378ae93b97c",
+        "concessionId": "D-000148",
+        "columns": {
+          "Номер": "D-000148",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Ябълково\", област Хасково, област Хасково, община Димитровград, населено място Ябълково",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000148 | Открита | Отворена | Концесия за добив от находище \"Ябълково\", област Хасково, област Хасково, община Димитровград, населено място Ябълково | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/c82434bb-f1fd-45a6-a71f-7378ae93b97c",
+        "inventoryMatches": [
+          "D-000148"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "04f8274f-e87f-4157-ab77-2a49973f3411": {
+      "guid": "04f8274f-e87f-4157-ab77-2a49973f3411",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/04f8274f-e87f-4157-ab77-2a49973f3411",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000492"
+      ],
+      "names": [
+        "Ягода - запад"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:06Z",
+      "sha256": "322b046d7f8db8ec88bb0d53bab8fd96ee6f375a39e9986652e70c03c57a9401",
+      "bytes": 9329,
+      "archivePath": "source-archive/concessions/nkr-parties/04f8274f-e87f-4157-ab77-2a49973f3411/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "04f8274f-e87f-4157-ab77-2a49973f3411",
+        "concessionId": "D-000492",
+        "columns": {
+          "Номер": "D-000492",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Ягода - Запад\", област Стара Загора, община Казанлък, Мъглиж, населено място Ръжена, Тулово, Ягода",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000492 | Открита | Отворена | Концесия за добив от находище \"Ягода - Запад\", област Стара Загора, община Казанлък, Мъглиж, населено място Ръжена, Тулово, Ягода | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/04f8274f-e87f-4157-ab77-2a49973f3411",
+        "inventoryMatches": [
+          "D-000492"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "2402274b-fa51-4c65-a702-27afceef0ca9": {
+      "guid": "2402274b-fa51-4c65-a702-27afceef0ca9",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/2402274b-fa51-4c65-a702-27afceef0ca9",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000334"
+      ],
+      "names": [
+        "Яковия чифлик"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:07Z",
+      "sha256": "945114255944a175b58c59377c5624202fef2a8c9ebe2d3744f79b1fd5b7af36",
+      "bytes": 9227,
+      "archivePath": "source-archive/concessions/nkr-parties/2402274b-fa51-4c65-a702-27afceef0ca9/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "2402274b-fa51-4c65-a702-27afceef0ca9",
+        "concessionId": "D-000334",
+        "columns": {
+          "Номер": "D-000334",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от \"Яковия чифлик\", област Пловдив, община Асеновград",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000334 | Открита | Отворена | Концесия за добив от \"Яковия чифлик\", област Пловдив, община Асеновград | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/2402274b-fa51-4c65-a702-27afceef0ca9",
+        "inventoryMatches": [
+          "D-000334"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "86dddcfe-7b4f-4b13-b67b-e2c260ccf17e": {
+      "guid": "86dddcfe-7b4f-4b13-b67b-e2c260ccf17e",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/86dddcfe-7b4f-4b13-b67b-e2c260ccf17e",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000518"
+      ],
+      "names": [
+        "Яна"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:08Z",
+      "sha256": "8d38b183e0ac23619fbe23fac7b121a4ad4df4c336a98cf31d343af35a00c3d6",
+      "bytes": 9265,
+      "archivePath": "source-archive/concessions/nkr-parties/86dddcfe-7b4f-4b13-b67b-e2c260ccf17e/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "86dddcfe-7b4f-4b13-b67b-e2c260ccf17e",
+        "concessionId": "D-000518",
+        "columns": {
+          "Номер": "D-000518",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Яна\", област Разград, община Завет, населено място Брестовене",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000518 | Открита | Отворена | Концесия за добив от находище \"Яна\", област Разград, община Завет, населено място Брестовене | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/86dddcfe-7b4f-4b13-b67b-e2c260ccf17e",
+        "inventoryMatches": [
+          "D-000518"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "438f7022-208e-49d9-8e18-caf95c2b4aa8": {
+      "guid": "438f7022-208e-49d9-8e18-caf95c2b4aa8",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/438f7022-208e-49d9-8e18-caf95c2b4aa8",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-261"
+      ],
+      "names": [
+        "Янаклъка"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:09Z",
+      "sha256": "834c3b37fcdcf7a4328bf190d86936970285735c96a8e249e331b949e6d2a88f",
+      "bytes": 14094,
+      "archivePath": "source-archive/concessions/nkr-parties/438f7022-208e-49d9-8e18-caf95c2b4aa8/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/ef09b619-bf04-4c66-a206-894fda6b0029",
+          "url": "https://nkr.government.bg/File/Download/ef09b619-bf04-4c66-a206-894fda6b0029",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/1814d064-15d3-4662-87d2-ce4f3b852931",
+          "url": "https://nkr.government.bg/File/Download/1814d064-15d3-4662-87d2-ce4f3b852931",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/a4da1640-303a-4105-a178-bfc5218a46a0",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/a4da1640-303a-4105-a178-bfc5218a46a0",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "438f7022-208e-49d9-8e18-caf95c2b4aa8",
+        "concessionId": "216-261",
+        "columns": {
+          "Номер": "216-261/04.08.2023",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - доломитни мрамори, представляващи изключителна държавна собственост, от находище “Янаклъка“, разположено в землището на с. Добрич, община Димитровград, област Хасково",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-261/04.08.2023 | Открита | Отворена | Kонцесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - доломитни мрамори, представляващи изключителна държавна собственост, от находище “Янаклъка“, разположено в землището на с. Добрич, община Димитровград, област Хасково | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/438f7022-208e-49d9-8e18-caf95c2b4aa8",
+        "inventoryMatches": [
+          "216-261"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "03d5bcd4-1666-45a0-a477-bd46ec85d0fe": {
+      "guid": "03d5bcd4-1666-45a0-a477-bd46ec85d0fe",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/03d5bcd4-1666-45a0-a477-bd46ec85d0fe",
+      "inventoryIds": [],
+      "concessionIds": [
+        "216-259"
+      ],
+      "names": [
+        "Ясака"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:11Z",
+      "sha256": "9caeced24e253efcb47efcd3ddef7fff59f30753c63cd263c6f5e75375c5114d",
+      "bytes": 13796,
+      "archivePath": "source-archive/concessions/nkr-parties/03d5bcd4-1666-45a0-a477-bd46ec85d0fe/partida.html",
+      "fileLinkCount": 2,
+      "previewLinkCount": 1,
+      "fileLinks": [
+        {
+          "href": "/File/Download/103b460f-34b0-4f53-8b3e-78b8cdc05c47",
+          "url": "https://nkr.government.bg/File/Download/103b460f-34b0-4f53-8b3e-78b8cdc05c47",
+          "title": "Свали"
+        },
+        {
+          "href": "/File/Download/46e090ba-90a5-48e0-a32b-12bfbaa1e75b",
+          "url": "https://nkr.government.bg/File/Download/46e090ba-90a5-48e0-a32b-12bfbaa1e75b",
+          "title": "Свали"
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/cd2c9209-97f3-487e-8e6d-99518d751243",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/cd2c9209-97f3-487e-8e6d-99518d751243",
+          "title": "Отвори Формуляр за откриване на партида"
+        }
+      ],
+      "indexRecord": {
+        "guid": "03d5bcd4-1666-45a0-a477-bd46ec85d0fe",
+        "concessionId": "216-259",
+        "columns": {
+          "Номер": "216-259/20.07.2023",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - варовици, от находище „Ясака“, разположено в землището на с. Орляне, община Угърчин, област Ловеч",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "216-259/20.07.2023 | Открита | Отворена | Концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства (ЗПБ) - строителни материали - варовици, от находище „Ясака“, разположено в землището на с. Орляне, община Угърчин, област Ловеч | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/03d5bcd4-1666-45a0-a477-bd46ec85d0fe",
+        "inventoryMatches": [
+          "216-259"
+        ],
+        "inventoryMatchCount": 1
+      }
+    },
+    "37630b14-63d6-46de-b43b-24351b8773de": {
+      "guid": "37630b14-63d6-46de-b43b-24351b8773de",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/37630b14-63d6-46de-b43b-24351b8773de",
+      "inventoryIds": [],
+      "concessionIds": [
+        "D-000252"
+      ],
+      "names": [
+        "Ястребна"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:22:12Z",
+      "sha256": "9be4515cc2226faa76de4e841f96547b12531253158281541e2ff47c7438e52f",
+      "bytes": 9292,
+      "archivePath": "source-archive/concessions/nkr-parties/37630b14-63d6-46de-b43b-24351b8773de/partida.html",
+      "fileLinkCount": 0,
+      "previewLinkCount": 0,
+      "fileLinks": [],
+      "previewLinks": [],
+      "indexRecord": {
+        "guid": "37630b14-63d6-46de-b43b-24351b8773de",
+        "concessionId": "D-000252",
+        "columns": {
+          "Номер": "D-000252",
+          "Статус на партида": "Открита",
+          "Статус на процедура": "Отворена",
+          "Име на концесия": "Концесия за добив от находище \"Ястребна\", област Силистра, община Ситово, населено място Слатина, Ястребна",
+          "Вид на концесия": "Държавна",
+          "Предмет на концесия": "Концесия за добив на подземни богатства",
+          "С/без трансграничен интерес": "Не е приложимо",
+          "Концедент": "Министерски съвет",
+          "№ на свързана процедура/концесия": "Не е приложимо"
+        },
+        "searchText": "D-000252 | Открита | Отворена | Концесия за добив от находище \"Ястребна\", област Силистра, община Ситово, населено място Слатина, Ястребна | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо",
+        "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/37630b14-63d6-46de-b43b-24351b8773de",
+        "inventoryMatches": [
+          "D-000252"
         ],
         "inventoryMatchCount": 1
       }
