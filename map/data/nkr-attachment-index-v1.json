@@ -1,11 +1,11 @@
 {
   "schema": "bgwf-nkr-attachment-index-v1",
-  "generatedAt": "2026-10-05T08:23:57Z",
+  "generatedAt": "2026-10-05T08:31:59Z",
   "runtimeDependency": false,
   "knownLinkCount": 455,
-  "archivedOkCount": 53,
-  "downloadedThisRun": 20,
-  "downloadedBytesThisRun": 72257870,
+  "archivedOkCount": 55,
+  "downloadedThisRun": 21,
+  "downloadedBytesThisRun": 64191002,
   "errors": [],
   "files": {
     "7cff2f84-1391-4609-8f60-cc5309647fa9": {
@@ -802,7 +802,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:23Z",
+      "checkedAt": "2026-10-05T08:30:47Z",
       "filename": "20RH953%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.doc",
       "extension": ".doc",
       "contentType": "application/octet-stream",
@@ -813,9 +813,98 @@
       "extractor": "antiword",
       "textChars": 25864,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 26,
+      "coordinateClassCounts": {
+        "BGS1970": 13,
+        "BGS2005": 13
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 495,
+          "a": 4682372.4,
+          "b": 8666071.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 2,
+          "line": 496,
+          "a": 4682338.1,
+          "b": 8666214.9,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 3,
+          "line": 496,
+          "a": 4682301.1,
+          "b": 8666243.0,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 4,
+          "line": 498,
+          "a": 4682247.7,
+          "b": 8666246.1,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 5,
+          "line": 499,
+          "a": 4682217.7,
+          "b": 8666212.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 500,
+          "a": 4682159.7,
+          "b": 8666106.8,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 7,
+          "line": 501,
+          "a": 4682171.2,
+          "b": 8666063.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 8,
+          "line": 502,
+          "a": 4682141.1,
+          "b": 8666020.8,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 9,
+          "line": 503,
+          "a": 4682165.9,
+          "b": 8665927.7,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 10,
+          "line": 504,
+          "a": 4682169.1,
+          "b": 8665857.4,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 11,
+          "line": 505,
+          "a": 4682178.8,
+          "b": 8665818.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 12,
+          "line": 506,
+          "a": 4682251.6,
+          "b": 8665792.7,
+          "crsClass": "BGS1970"
+        }
+      ]
     },
     "172cb161-702c-456f-bcd9-795830d20a6b": {
       "fileId": "172cb161-702c-456f-bcd9-795830d20a6b",
@@ -832,7 +921,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:08:57Z",
+      "checkedAt": "2026-10-05T08:30:52Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -843,94 +932,96 @@
       "extractor": "pypdf",
       "textChars": 92288,
       "keywordHit": true,
-      "coordinateRowCount": 12,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 26,
       "coordinateClassCounts": {
-        "BGS1970": 12
+        "BGS1970": 13,
+        "BGS2005": 13
       },
       "coordinateSample": [
         {
-          "line": 1631,
+          "pointNo": 1,
+          "line": 1368,
           "a": 4682372.4,
           "b": 8666071.7,
-          "crsClass": "BGS1970",
-          "text": "1 ет-3 4 682 372,4 8 666 071,7"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1632,
+          "pointNo": 2,
+          "line": 1368,
           "a": 4682338.1,
           "b": 8666214.9,
-          "crsClass": "BGS1970",
-          "text": "2 ет-5 4 682 338,1 8 666 214,9"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1651,
+          "pointNo": 3,
+          "line": 1369,
           "a": 4682301.1,
           "b": 8666243.0,
-          "crsClass": "BGS1970",
-          "text": "3 ет-1 4 682 301,1 8 666 243,0"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1652,
+          "pointNo": 4,
+          "line": 1369,
           "a": 4682247.7,
           "b": 8666246.1,
-          "crsClass": "BGS1970",
-          "text": "4 ет-6 4 682 247,7 8 666 246,1"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1654,
+          "pointNo": 5,
+          "line": 1370,
+          "a": 4682217.7,
+          "b": 8666212.2,
+          "crsClass": "BGS1970"
+        },
+        {
+          "pointNo": 6,
+          "line": 1371,
           "a": 4682159.7,
           "b": 8666106.8,
-          "crsClass": "BGS1970",
-          "text": "6 пт-6 4 682 159,7 8 666 106,8"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1655,
+          "pointNo": 7,
+          "line": 1372,
           "a": 4682171.2,
           "b": 8666063.7,
-          "crsClass": "BGS1970",
-          "text": "1 - 4 682 171,2 8 666 063,7"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1656,
+          "pointNo": 8,
+          "line": 1373,
           "a": 4682141.1,
           "b": 8666020.8,
-          "crsClass": "BGS1970",
-          "text": "8 - 4 682 141,1 8 666 020,8"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1657,
+          "pointNo": 9,
+          "line": 1374,
           "a": 4682165.9,
           "b": 8665927.7,
-          "crsClass": "BGS1970",
-          "text": "9 - 4 682 165,9 8 665 927,7"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1658,
+          "pointNo": 10,
+          "line": 1375,
           "a": 4682169.1,
           "b": 8665857.4,
-          "crsClass": "BGS1970",
-          "text": "- 4 682 169,1 8 665 857,4"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1659,
+          "pointNo": 11,
+          "line": 1377,
           "a": 4682178.8,
           "b": 8665818.2,
-          "crsClass": "BGS1970",
-          "text": "11 пт-5 4 682 178,8 8 665 818,2"
+          "crsClass": "BGS1970"
         },
         {
-          "line": 1660,
+          "pointNo": 12,
+          "line": 1378,
           "a": 4682251.6,
           "b": 8665792.7,
-          "crsClass": "BGS1970",
-          "text": "12 пт-4 4 682 251,6 8 665 792,7"
-        },
-        {
-          "line": 1661,
-          "a": 4682324.1,
-          "b": 8665835.9,
-          "crsClass": "BGS1970",
-          "text": "13 ет-2 4 682 324,1 8 665 835,9"
+          "crsClass": "BGS1970"
         }
       ]
     },
@@ -949,7 +1040,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:03Z",
+      "checkedAt": "2026-10-05T08:30:57Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91%D0%B5%D1%81%D0%BB%D0%B5%D0%BD.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -960,9 +1051,97 @@
       "extractor": "pypdf",
       "textChars": 88184,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 29,
+      "coordinateClassCounts": {
+        "BGS2005": 29
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 1131,
+          "a": 4595536.2,
+          "b": 372130.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 1131,
+          "a": 4595534.9,
+          "b": 372180.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 1131,
+          "a": 4595484.1,
+          "b": 372213.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 1132,
+          "a": 4595451.4,
+          "b": 372213.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 1133,
+          "a": 4595408.3,
+          "b": 372177.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 1134,
+          "a": 4595210.0,
+          "b": 372172.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 1135,
+          "a": 4595209.4,
+          "b": 372198.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 1136,
+          "a": 4595165.5,
+          "b": 372197.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 1137,
+          "a": 4595167.3,
+          "b": 372129.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 1138,
+          "a": 4595211.0,
+          "b": 372129.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 1139,
+          "a": 4595211.8,
+          "b": 372095.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 1140,
+          "a": 4595149.2,
+          "b": 372095.0,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "d0fee515-9aad-447c-aff9-230a2c53fbb7": {
       "fileId": "d0fee515-9aad-447c-aff9-230a2c53fbb7",
@@ -979,7 +1158,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:05Z",
+      "checkedAt": "2026-10-05T08:30:59Z",
       "filename": "%D0%A0%D0%9C%D0%A1%20%D0%91%D0%B5%D1%81%D0%BB%D0%B5%D0%BD.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -990,9 +1169,97 @@
       "extractor": "pypdf",
       "textChars": 21508,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 18,
+      "coordinateClassCounts": {
+        "BGS2005": 18
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 457,
+          "a": 4595536.2,
+          "b": 372130.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 461,
+          "a": 4595534.9,
+          "b": 372180.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 462,
+          "a": 4595484.1,
+          "b": 372213.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 463,
+          "a": 4595451.4,
+          "b": 372213.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 464,
+          "a": 4595408.3,
+          "b": 372177.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 465,
+          "a": 4595210.0,
+          "b": 372172.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 466,
+          "a": 4595209.4,
+          "b": 372198.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 467,
+          "a": 4595165.5,
+          "b": 372197.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 468,
+          "a": 4595167.3,
+          "b": 372129.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 469,
+          "a": 4595211.0,
+          "b": 372129.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 470,
+          "a": 4595211.8,
+          "b": 372095.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 471,
+          "a": 4595149.2,
+          "b": 372095.0,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "949e40e1-3229-494d-973c-a7b647e4f8e4": {
       "fileId": "949e40e1-3229-494d-973c-a7b647e4f8e4",
@@ -1009,7 +1276,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:07Z",
+      "checkedAt": "2026-10-05T08:31:20Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91.%20%D0%BA%D1%80%D1%83%D1%88%D0%B0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1020,6 +1287,7 @@
       "extractor": "pypdf",
       "textChars": 84,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1039,7 +1307,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:08Z",
+      "checkedAt": "2026-10-05T08:31:21Z",
       "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1050,6 +1318,7 @@
       "extractor": "pypdf",
       "textChars": 42,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1069,7 +1338,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:09Z",
+      "checkedAt": "2026-10-05T08:31:22Z",
       "filename": "%D0%A0%D0%9C%D0%A1%2060.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1080,6 +1349,7 @@
       "extractor": "pypdf",
       "textChars": 30,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1099,7 +1369,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:10Z",
+      "checkedAt": "2026-10-05T08:31:23Z",
       "filename": "%D0%A0%D0%9C%D0%A1%201006.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1110,6 +1380,7 @@
       "extractor": "pypdf",
       "textChars": 9,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1129,7 +1400,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:12Z",
+      "checkedAt": "2026-10-05T08:31:26Z",
       "filename": "DOGOVOR_Beshovica.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1140,6 +1411,7 @@
       "extractor": "pypdf",
       "textChars": 117,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1159,7 +1431,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:24Z",
+      "checkedAt": "2026-10-05T08:31:27Z",
       "filename": "22RH1001_BESHOVITSA.doc",
       "extension": ".doc",
       "contentType": "application/octet-stream",
@@ -1170,9 +1442,97 @@
       "extractor": "antiword",
       "textChars": 23390,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 14,
+      "coordinateClassCounts": {
+        "BGS2005": 14
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 496,
+          "a": 4783671.0,
+          "b": 368943.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 496,
+          "a": 4783611.0,
+          "b": 369296.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 500,
+          "a": 4783519.0,
+          "b": 369312.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 501,
+          "a": 4783191.7,
+          "b": 369393.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 502,
+          "a": 4783075.6,
+          "b": 369412.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 503,
+          "a": 4782869.7,
+          "b": 369442.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 504,
+          "a": 4782828.8,
+          "b": 369417.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 505,
+          "a": 4782910.7,
+          "b": 369307.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 506,
+          "a": 4783010.8,
+          "b": 369245.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 507,
+          "a": 4783070.6,
+          "b": 369194.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 508,
+          "a": 4783073.8,
+          "b": 369129.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 509,
+          "a": 4783238.8,
+          "b": 368996.6,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "a27e2231-4ab3-4c46-bc1c-0d5f49150046": {
       "fileId": "a27e2231-4ab3-4c46-bc1c-0d5f49150046",
@@ -1189,7 +1549,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:25Z",
+      "checkedAt": "2026-10-05T08:31:28Z",
       "filename": "%D0%A0%D0%9C%D0%A1%201004-2022.doc",
       "extension": ".doc",
       "contentType": "application/octet-stream",
@@ -1200,9 +1560,97 @@
       "extractor": "antiword",
       "textChars": 23233,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 13,
+      "coordinateClassCounts": {
+        "BGS2005": 13
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 578,
+          "a": 4837498.6,
+          "b": 362166.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 585,
+          "a": 4837493.9,
+          "b": 362325.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 586,
+          "a": 4837391.7,
+          "b": 362449.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 586,
+          "a": 4837345.5,
+          "b": 362586.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 587,
+          "a": 4837185.4,
+          "b": 362528.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 587,
+          "a": 4837128.1,
+          "b": 362506.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 593,
+          "a": 4837044.6,
+          "b": 362430.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 594,
+          "a": 4836983.6,
+          "b": 362331.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 595,
+          "a": 4837028.8,
+          "b": 362201.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 596,
+          "a": 4836996.4,
+          "b": 361989.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 597,
+          "a": 4837098.2,
+          "b": 361911.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 598,
+          "a": 4837223.5,
+          "b": 361875.8,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "ca19fd1e-975f-4ae8-a6be-45aee8694655": {
       "fileId": "ca19fd1e-975f-4ae8-a6be-45aee8694655",
@@ -1219,7 +1667,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:21Z",
+      "checkedAt": "2026-10-05T08:31:36Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%94%D0%B6%D1%83%D0%BB%D0%B8%D0%BD%D0%B8%D1%86%D0%B0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1230,6 +1678,7 @@
       "extractor": "pypdf",
       "textChars": 81618,
       "keywordHit": true,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1249,7 +1698,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:09:26Z",
+      "checkedAt": "2026-10-05T08:31:42Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%86%D0%B0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1260,26 +1709,10 @@
       "extractor": "pypdf",
       "textChars": 91690,
       "keywordHit": true,
-      "coordinateRowCount": 2,
-      "coordinateClassCounts": {
-        "WGS84": 2
-      },
-      "coordinateSample": [
-        {
-          "line": 1215,
-          "a": 28.0,
-          "b": 43.0,
-          "crsClass": "WGS84",
-          "text": "284613698.4373505.4"
-        },
-        {
-          "line": 1329,
-          "a": 28.0,
-          "b": 43.0,
-          "crsClass": "WGS84",
-          "text": "2834613698.4373505.41063.5"
-        }
-      ]
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
     },
     "4e49e94a-7980-477f-af56-821073072adc": {
       "fileId": "4e49e94a-7980-477f-af56-821073072adc",
@@ -1296,7 +1729,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:26Z",
+      "checkedAt": "2026-10-05T08:31:43Z",
       "filename": "%D0%A0%D0%9C%D0%A1%201002-2022.doc",
       "extension": ".doc",
       "contentType": "application/octet-stream",
@@ -1307,9 +1740,97 @@
       "extractor": "antiword",
       "textChars": 24875,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 50,
+      "coordinateClassCounts": {
+        "BGS2005": 50
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 583,
+          "a": 4614210.9,
+          "b": 372940.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 583,
+          "a": 4614208.7,
+          "b": 372962.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 584,
+          "a": 4614194.3,
+          "b": 372969.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 585,
+          "a": 4614155.8,
+          "b": 372989.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 589,
+          "a": 4614092.6,
+          "b": 373011.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 590,
+          "a": 4614036.9,
+          "b": 373019.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 591,
+          "a": 4613936.5,
+          "b": 373097.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 592,
+          "a": 4613860.2,
+          "b": 373190.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 593,
+          "a": 4613816.4,
+          "b": 373262.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 594,
+          "a": 4613731.7,
+          "b": 373317.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 595,
+          "a": 4613711.1,
+          "b": 373268.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 596,
+          "a": 4613971.2,
+          "b": 373021.6,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "012e94fc-a370-4d28-a528-c8f54b548e26": {
       "fileId": "012e94fc-a370-4d28-a528-c8f54b548e26",
@@ -1872,7 +2393,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:32Z",
+      "checkedAt": "2026-10-05T08:31:47Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9A%D0%BE%D0%BD%D0%B0%D0%B3%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%20%D1%87%D0%B0%D0%BB.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1883,6 +2404,7 @@
       "extractor": "pypdf",
       "textChars": 72498,
       "keywordHit": true,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1902,7 +2424,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:34Z",
+      "checkedAt": "2026-10-05T08:31:49Z",
       "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D1%85%D0%B5%D0%BC%D0%B0%20%D0%B8%20%D0%BE%D1%82%D1%87%D0%B5%D1%82%D0%BD%D0%B0%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1913,6 +2435,7 @@
       "extractor": "pypdf",
       "textChars": 7942,
       "keywordHit": true,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1932,7 +2455,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:36Z",
+      "checkedAt": "2026-10-05T08:31:50Z",
       "filename": "%D0%A0%D0%9C%D0%A1%2058-2023.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1943,9 +2466,97 @@
       "extractor": "pypdf",
       "textChars": 22440,
       "keywordHit": true,
-      "coordinateRowCount": 0,
-      "coordinateClassCounts": {},
-      "coordinateSample": []
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 20,
+      "coordinateClassCounts": {
+        "BGS2005": 20
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 480,
+          "a": 4665908.3,
+          "b": 399208.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 481,
+          "a": 4666023.6,
+          "b": 399217.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 482,
+          "a": 4666021.0,
+          "b": 399227.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 483,
+          "a": 4665996.5,
+          "b": 399274.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 484,
+          "a": 4666044.6,
+          "b": 399355.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 485,
+          "a": 4666047.3,
+          "b": 399347.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 486,
+          "a": 4666053.0,
+          "b": 399341.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 487,
+          "a": 4666062.3,
+          "b": 399331.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 488,
+          "a": 4666076.8,
+          "b": 399329.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 489,
+          "a": 4666084.9,
+          "b": 399323.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 490,
+          "a": 4666088.2,
+          "b": 399318.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 491,
+          "a": 4666119.0,
+          "b": 399295.5,
+          "crsClass": "BGS2005"
+        }
+      ]
     },
     "e3446e91-302c-4222-86ca-0ff7958b8678": {
       "fileId": "e3446e91-302c-4222-86ca-0ff7958b8678",
@@ -1962,7 +2573,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:38Z",
+      "checkedAt": "2026-10-05T08:31:51Z",
       "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%90%D0%98%D0%94%D0%A1.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -1973,6 +2584,7 @@
       "extractor": "pypdf",
       "textChars": 1668,
       "keywordHit": true,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -1992,7 +2604,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:44Z",
+      "checkedAt": "2026-10-05T08:31:58Z",
       "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9C%D0%B0%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%86%D0%B8%D1%82%D0%B5.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2003,19 +2615,10 @@
       "extractor": "pypdf",
       "textChars": 84666,
       "keywordHit": true,
-      "coordinateRowCount": 1,
-      "coordinateClassCounts": {
-        "BGS1970": 1
-      },
-      "coordinateSample": [
-        {
-          "line": 1477,
-          "a": 4610335.2,
-          "b": 8506000.2,
-          "crsClass": "BGS1970",
-          "text": ". 4 610 335,2 8 506 000,2 513,7"
-        }
-      ]
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
     },
     "400fc1c4-f31b-49c2-ad36-f02eb5a2fd52": {
       "fileId": "400fc1c4-f31b-49c2-ad36-f02eb5a2fd52",
@@ -2833,6 +3436,243 @@
           "line": 1193,
           "a": 4691424.064,
           "b": 405152.898,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "d76b0fd8-b160-435f-ad06-06a99a237a4e": {
+      "fileId": "d76b0fd8-b160-435f-ad06-06a99a237a4e",
+      "url": "https://nkr.government.bg/File/Download/d76b0fd8-b160-435f-ad06-06a99a237a4e",
+      "title": "Свали",
+      "partyGuids": [
+        "929e41f9-1ed0-4f3e-81a4-de146f65ced9"
+      ],
+      "inventoryIds": [
+        "216-132"
+      ],
+      "concessionIds": [
+        "216-132"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:31:15Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%A4%D0%B5%D0%BD%D0%B8%D0%BA%D1%81.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 11433386,
+      "sha256": "f7bdd6998b808463286cf7cdf2c5494032b908bbda68c4a8de0f76535b7ad9c3",
+      "archivePath": "source-archive/concessions/nkr-attachments/f7bdd6998b808463286cf7cdf2c5494032b908bbda68c4a8de0f76535b7ad9c3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f7bdd6998b808463286cf7cdf2c5494032b908bbda68c4a8de0f76535b7ad9c3.txt",
+      "extractor": "pypdf",
+      "textChars": 86433,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 18,
+      "coordinateClassCounts": {
+        "BGS2005": 18
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 2,
+          "line": 1138,
+          "a": 4812711.2,
+          "b": 397184.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 1140,
+          "a": 4812815.1,
+          "b": 397547.7,
+          "crsClass": "BGS2005",
+          "duplicateConflict": true
+        },
+        {
+          "pointNo": 3,
+          "line": 1141,
+          "a": 4812626.0,
+          "b": 397635.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 1144,
+          "a": 4812480.6,
+          "b": 397717.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 1147,
+          "a": 4812394.3,
+          "b": 397787.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 1148,
+          "a": 4812197.8,
+          "b": 397833.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 1149,
+          "a": 4811911.6,
+          "b": 398083.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 1150,
+          "a": 4811742.6,
+          "b": 398009.8,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 1151,
+          "a": 4811534.8,
+          "b": 397968.2,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 1152,
+          "a": 4811536.1,
+          "b": 397759.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 1153,
+          "a": 4811561.6,
+          "b": 397548.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 1155,
+          "a": 4812275.8,
+          "b": 397655.4,
+          "crsClass": "BGS2005"
+        }
+      ]
+    },
+    "e4cfc7cf-67dd-4a49-a854-7cb7473445bd": {
+      "fileId": "e4cfc7cf-67dd-4a49-a854-7cb7473445bd",
+      "url": "https://nkr.government.bg/File/Download/e4cfc7cf-67dd-4a49-a854-7cb7473445bd",
+      "title": "Свали",
+      "partyGuids": [
+        "929e41f9-1ed0-4f3e-81a4-de146f65ced9"
+      ],
+      "inventoryIds": [
+        "216-132"
+      ],
+      "concessionIds": [
+        "216-132"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T08:31:16Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20%D0%A4%D0%B5%D0%BD%D0%B8%D0%BA%D1%81.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 373617,
+      "sha256": "146c71d174060621377132c23056070343aa700025b66f441d95e74328d151bc",
+      "archivePath": "source-archive/concessions/nkr-attachments/146c71d174060621377132c23056070343aa700025b66f441d95e74328d151bc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/146c71d174060621377132c23056070343aa700025b66f441d95e74328d151bc.txt",
+      "extractor": "pypdf",
+      "textChars": 20565,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 21,
+      "coordinateClassCounts": {
+        "BGS2005": 21
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 1,
+          "line": 486,
+          "a": 4812702.6,
+          "b": 397200.5,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 2,
+          "line": 489,
+          "a": 4812748.6,
+          "b": 397367.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 3,
+          "line": 490,
+          "a": 4812798.1,
+          "b": 397540.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 4,
+          "line": 491,
+          "a": 4812621.3,
+          "b": 397622.4,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 5,
+          "line": 492,
+          "a": 4812472.0,
+          "b": 397707.1,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 6,
+          "line": 493,
+          "a": 4812386.2,
+          "b": 397776.6,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 7,
+          "line": 494,
+          "a": 4812191.3,
+          "b": 397819.7,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 8,
+          "line": 495,
+          "a": 4812053.3,
+          "b": 397941.3,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 9,
+          "line": 496,
+          "a": 4811905.7,
+          "b": 398065.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 10,
+          "line": 497,
+          "a": 4811742.5,
+          "b": 397992.0,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 11,
+          "line": 498,
+          "a": 4811552.5,
+          "b": 397952.9,
+          "crsClass": "BGS2005"
+        },
+        {
+          "pointNo": 12,
+          "line": 499,
+          "a": 4811554.4,
+          "b": 397758.5,
           "crsClass": "BGS2005"
         }
       ]

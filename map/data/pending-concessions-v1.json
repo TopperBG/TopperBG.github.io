@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-pending-concessions-v1",
-  "generatedAt": "2026-10-05T08:23:57Z",
+  "generatedAt": "2026-10-05T08:31:59Z",
   "inventoryRecordCount": 530,
   "publishedGeometryCount": 2,
   "pendingCount": 528,
@@ -53,6 +53,34 @@
         }
       ],
       "priority": 1
+    },
+    {
+      "id": "NKR-216-225",
+      "concessionId": "216-225",
+      "name": "216-225",
+      "officialAreaDka": 95.5,
+      "sourceCrs": "BGS2005",
+      "sourcePoints": 50,
+      "status": "area_QA_failed_594.578pct",
+      "sourceUrl": "https://nkr.government.bg/File/Download/4e49e94a-7980-477f-af56-821073072adc",
+      "queueSource": "curated-official-register",
+      "inventoryId": "216-225",
+      "inventoryStatus": "active",
+      "concessionaire": "\"Бистрица-2025\" ЕООД, с. Плетена (заличен ЕТ \"Кафадарци-Елхан Кафадаров\", с. Плетена)",
+      "resource": "Скално-облицовъчни материали",
+      "municipality": "Сатовча",
+      "province": "Благоевград",
+      "inventoryAreaDka": null,
+      "concessionIdCollision": false,
+      "nkrParties": [
+        {
+          "guid": "f63cf7be-bfd2-46ba-872f-00109a4c9904",
+          "concessionId": "216-225",
+          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f63cf7be-bfd2-46ba-872f-00109a4c9904",
+          "searchText": "216-225/06.03.2023 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболити и гнайси, от находище „Бистрица“, разположено в землището на с. Плетена, община Сатовча, област Благоевгра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
+        }
+      ],
+      "priority": 2
     },
     {
       "id": "MINE-CHELOPECH",
@@ -1029,33 +1057,6 @@
           "concessionId": "D-000620",
           "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/dd2b6ee4-d004-475a-9135-9e64e57e9c4f",
           "searchText": "D-000620 | Открита | Отворена | Концесия за добив от находище \"БИНКОС\", област Сливен, община Сливен, населено място Бинкос | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
-        }
-      ],
-      "priority": 4
-    },
-    {
-      "id": "216-225",
-      "concessionId": "216-225",
-      "name": "Бистрица",
-      "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "queueSource": "national-inventory",
-      "sourceRowNo": "23",
-      "inventoryStatus": "active",
-      "concessionaire": "\"Бистрица-2025\" ЕООД, с. Плетена (заличен ЕТ \"Кафадарци-Елхан Кафадаров\", с. Плетена)",
-      "resource": "Скално-облицовъчни материали",
-      "municipality": "Сатовча",
-      "province": "Благоевград",
-      "concessionIdCollision": false,
-      "nkrParties": [
-        {
-          "guid": "f63cf7be-bfd2-46ba-872f-00109a4c9904",
-          "concessionId": "216-225",
-          "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/f63cf7be-bfd2-46ba-872f-00109a4c9904",
-          "searchText": "216-225/06.03.2023 | Открита | Отворена | Концесия за добив с предмет експлоатация на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства (ЗПБ) - скалнооблицовъчни материали - амфиболити и гнайси, от находище „Бистрица“, разположено в землището на с. Плетена, община Сатовча, област Благоевгра | Държавна | Концесия за добив на подземни богатства | Не е приложимо | Министерски съвет | Не е приложимо"
         }
       ],
       "priority": 4
