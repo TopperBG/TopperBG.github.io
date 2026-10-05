@@ -122,38 +122,65 @@ def classify_pair(a: float, b: float) -> str | None:
 
 
 def coordinate_rows(text: str) -> list[dict]:
+    """Extract coordinate triples robustly from tables flattened by Office/PDF tools.
+
+    NKR attachments often contain Word tables where antiword separates cells
+    with ASCII BEL (0x07), or PDF extraction collapses several table columns
+    onto a single physical line. Therefore we scan the numeric token stream for
+    pointNo + X + Y triples instead of assuming one point per line.
+
+    This is candidate extraction only. Publication still requires CRS/point
+    count/area QA in the baseline builder.
+    """
+    normalized = re.sub(r"[\x00-\x1f]+", " ", text)
+    tokens = []
+    for match in re.finditer(r"[-+]?\d+(?:[.,]\d+)?", normalized):
+        value = safe_number(match.group(0))
+        if value is not None:
+            tokens.append((value, match.start()))
+
     rows = []
     seen = set()
-    for line_no, raw in enumerate(text.splitlines(), 1):
-        line = re.sub(r"\s+", " ", raw).strip()
-        if not line:
+    i = 0
+    while i + 2 < len(tokens):
+        n, npos = tokens[i]
+        a, _ = tokens[i + 1]
+        b, _ = tokens[i + 2]
+        crs = classify_pair(a, b)
+        if float(n).is_integer() and 1 <= n <= 10000 and crs:
+            point_no = int(n)
+            key = (point_no, round(a, 4), round(b, 4), crs)
+            if key not in seen:
+                seen.add(key)
+                line_no = text.count("\n", 0, min(npos, len(text))) + 1
+                rows.append({
+                    "pointNo": point_no,
+                    "line": line_no,
+                    "a": a,
+                    "b": b,
+                    "crsClass": crs,
+                })
+            i += 3
             continue
-        nums = [safe_number(x) for x in NUM_RE.findall(line)]
-        nums = [x for x in nums if x is not None]
-        candidates = []
-        # tables commonly look like: pointNo X Y, or X Y.
-        if len(nums) >= 3:
-            candidates.append((nums[-2], nums[-1]))
-        if len(nums) >= 2:
-            candidates.append((nums[0], nums[1]))
-            candidates.append((nums[-2], nums[-1]))
-        for a, b in candidates:
-            crs = classify_pair(a, b)
-            if not crs:
-                continue
-            key = (round(a, 4), round(b, 4), line_no)
-            if key in seen:
-                continue
-            seen.add(key)
-            rows.append({
-                "line": line_no,
-                "a": a,
-                "b": b,
-                "crsClass": crs,
-                "text": line[:280],
-            })
-            break
-    return rows
+        i += 1
+
+    # Preserve source order, but deduplicate repeated copies of the same point
+    # that may occur in headers/appendices.
+    by_point = {}
+    ordered = []
+    for row in rows:
+        k = (row["pointNo"], row["crsClass"])
+        previous = by_point.get(k)
+        if previous is None:
+            by_point[k] = row
+            ordered.append(row)
+        elif abs(previous["a"] - row["a"]) > 0.01 or abs(previous["b"] - row["b"]) > 0.01:
+            # Conflicting duplicate point number: retain it explicitly for QA.
+            conflict = dict(row)
+            conflict["duplicateConflict"] = True
+            ordered.append(conflict)
+    return ordered
+
 
 
 def infer_extension(headers: dict, data: bytes) -> tuple[str, str | None]:
