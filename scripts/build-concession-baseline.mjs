@@ -30,6 +30,7 @@ const INVENTORY_PATH = path.join(ROOT, "map", "data", "concession-inventory-v1.j
 const BASELINE_PATH = path.join(ROOT, "map", "data", "official-concessions-baseline.geojson");
 const PENDING_PATH = path.join(ROOT, "map", "data", "pending-concessions-v1.json");
 const NKR_PARTY_INDEX_PATH = path.join(ROOT, "map", "data", "nkr-party-index-v1.json");
+const EXTRACTED_REGISTERS_PATH = path.join(ROOT, "map", "data", "coordinate-registers-staging-v1.json");
 
 const source = JSON.parse(fs.readFileSync(SOURCE_PATH, "utf8"));
 const cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
@@ -40,6 +41,9 @@ const nkrPartyIndex = fs.existsSync(NKR_PARTY_INDEX_PATH)
   ? JSON.parse(fs.readFileSync(NKR_PARTY_INDEX_PATH, "utf8"))
   : { inventoryLookup: {} };
 const nkrInventoryLookup = nkrPartyIndex.inventoryLookup || {};
+const extractedRegisters = fs.existsSync(EXTRACTED_REGISTERS_PATH)
+  ? JSON.parse(fs.readFileSync(EXTRACTED_REGISTERS_PATH, "utf8"))
+  : { registers: [] };
 
 // transformations@2.0.0 resolves its binary grids from process.cwd() rather
 // than from the package directory. Run the transformation phase from the
@@ -55,6 +59,26 @@ function projectionFor(record) {
   const zone = String(record.zone_inference || "").toUpperCase();
   if (!/^K[3579]$/.test(zone)) return null;
   return projections[`BGS_1970_${zone}`] || null;
+}
+
+function coordinateMode(record) {
+  const sourceCrs = String(record.source_coordinate_system || record.sourceCoordinateSystem || "").toUpperCase();
+  if (sourceCrs.includes("2005")) return "BGS2005";
+  if (sourceCrs.includes("1970")) return "BGS1970";
+  return null;
+}
+
+function normalizedPointsFromRecord(record) {
+  if (Array.isArray(record.coordinates_normalized_xy)) return record.coordinates_normalized_xy;
+  if (!Array.isArray(record.coordinatesRaw)) return null;
+  const order = String(record.sourceCoordinateOrder || record.normalized_coordinate_order || "");
+  if (/X\s*\(N\).*Y\s*\(E\)/i.test(order) || /X.*Y/i.test(order)) {
+    return record.coordinatesRaw;
+  }
+  if (/Y\s*\(E\).*X\s*\(N\)/i.test(order) || /Y.*X/i.test(order)) {
+    return record.coordinatesRaw.map(([a,b])=>[b,a]);
+  }
+  return null;
 }
 
 function polygonAreaSqM(points) {
@@ -93,15 +117,47 @@ function shortPending(record, reason) {
 const features = [];
 const pending = [];
 
-for (const record of source.records || []) {
-  const points = record.coordinates_normalized_xy;
-  const projection = projectionFor(record);
+const sourceRecords = [...(source.records || [])];
+const curatedIds = new Set(sourceRecords.map(r=>String(r.concession_registry||"")).filter(Boolean));
+for (const reg of extractedRegisters.registers || []) {
+  if (!reg?.publicationReady) continue;
+  const cid=String(reg.concessionId||"");
+  const existing=sourceRecords.find(r=>String(r.concession_registry||"")===cid && Array.isArray(r.coordinates_normalized_xy) && r.coordinates_normalized_xy.length>=3);
+  if (existing) continue;
+  sourceRecords.push({
+    id: reg.curatedId || `NKR-${cid}`,
+    concession_registry: cid,
+    name: reg.name || cid,
+    source_coordinate_system: reg.sourceCoordinateSystem || reg.dominantCrsClass,
+    zone_inference: reg.sourceZone || null,
+    sourceCoordinateOrder: reg.sourceCoordinateOrder || null,
+    coordinatesRaw: reg.coordinatesRaw,
+    point_count: reg.extractedPointCount,
+    official_area_dka: reg.officialAreaDka,
+    official_source: {
+      publisher: "Национален концесионен регистър",
+      url: reg.sourceUrl,
+      attachment_sha256: reg.sha256,
+      archive_path: reg.archivePath,
+    },
+    status: "extracted_official_attachment__publication_gate_passed",
+  });
+}
+
+for (const record of sourceRecords) {
+  const points = normalizedPointsFromRecord(record);
+  const mode = coordinateMode(record);
+  const projection = mode==="BGS1970" ? projectionFor(record) : null;
 
   if (!Array.isArray(points) || points.length < 3) {
     pending.push(shortPending(record, record.status || "coordinate_register_not_extracted"));
     continue;
   }
-  if (!projection) {
+  if (!mode) {
+    pending.push(shortPending(record, "coordinate_system_not_verified"));
+    continue;
+  }
+  if (mode==="BGS1970" && !projection) {
     pending.push(shortPending(record, "coordinate_zone_not_verified"));
     continue;
   }
@@ -112,8 +168,13 @@ for (const record of source.records || []) {
 
   let bgs2005;
   try {
-    // TPS is preferred by the library for the BGS1970 grid transformation.
-    bgs2005 = bgs.transformArray(points, projection, projections.BGS_2005_KK, true);
+    if (mode==="BGS1970") {
+      // TPS is preferred by the library for the BGS1970 grid transformation.
+      bgs2005 = bgs.transformArray(points, projection, projections.BGS_2005_KK, true);
+    } else {
+      // Official BGS2005 cadastral coordinates are already in CCS2005.
+      bgs2005 = points.map(([x,y])=>[Number(x),Number(y)]);
+    }
   } catch (error) {
     pending.push(shortPending(record, `transformation_failed: ${error.message}`));
     continue;
@@ -156,13 +217,19 @@ for (const record of source.records || []) {
       transformed_area_dka: Number(transformedAreaDka.toFixed(3)),
       area_qa_error_pct: Number(areaErrorPct.toFixed(4)),
       source_coordinate_system: record.source_coordinate_system,
-      source_zone: record.zone_inference,
+      source_zone: record.zone_inference || null,
       source_point_count: points.length,
       source_url: sourceUrl(record),
+      source_attachment_sha256: record.official_source?.attachment_sha256 || null,
+      source_archive_path: record.official_source?.archive_path || null,
       source_kind: "official-coordinate-register",
       geometry_status: "repository-baseline-official-register-transformed",
-      transformation: "bojko108/transformations@2.0.0 BGS1970 grid -> BGS2005/CCS2005 -> WGS84",
-      transformation_note: "Grid model derived from AGCC official-engine control points; informational map geometry. Verify with official BGSTrans for legal/cadastral use.",
+      transformation: mode==="BGS1970"
+        ? "bojko108/transformations@2.0.0 BGS1970 grid -> BGS2005/CCS2005 -> WGS84"
+        : "official BGS2005/CCS2005 cadastral coordinates -> WGS84",
+      transformation_note: mode==="BGS1970"
+        ? "Grid model derived from AGCC official-engine control points; informational map geometry. Verify with official BGSTrans for legal/cadastral use."
+        : "Official BGS2005 source coordinates; map conversion to WGS84 is informational and does not replace the legal coordinate register.",
     },
     geometry: {
       type: "Polygon",
@@ -263,6 +330,8 @@ const baselinePayload = {
   runtimeDependency: false,
   featureCount: features.length,
   inventoryRecordCount: (inventory.records||[]).length,
+  extractedRegisterCount: (extractedRegisters.registers||[]).length,
+  extractedPublicationReadyCount: (extractedRegisters.registers||[]).filter(x=>x.publicationReady).length,
   publicationGate: {
     officialCoordinateRegisterRequired: true,
     areaTolerancePct: 2.0,
