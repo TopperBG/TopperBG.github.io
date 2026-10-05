@@ -6383,7 +6383,21 @@ async function loadOfficialConcessionStaticCache(){
       }catch(e){debugState.network.mguPernikCache={ok:false,error:e.message};}
     }
     debugState.network.mguPernikCache={ok:mguResponse.ok,features:mguCount,status:mguResponse.status};
-    debugState.network.concessionCache={status:200,ok:true,features:merged.length,officialRegisterFeatures:Array.isArray(base.features)?base.features.length:0,mguPernikAdded:mguCount,inventory:Number(base.inventoryRecordCount)||0,pending:officialConcessionPending.length,source:OFFICIAL_CONCESSION_BASELINE_URL};
+    let schemeCount=0;
+    if(schemeResponse.ok){
+      try{
+        const schemes=await schemeResponse.json();
+        if(schemes?.schema==='bgwf-georeferenced-concession-schemes-v1'){
+          for(const raw of schemes.features??[]){
+            const id=String(raw?.properties?.concession_id??'');
+            if(!merged.some(x=>String(x?.properties?.concession_id??'')===id)){merged.push(raw);schemeCount++;}
+          }
+          officialConcessionCacheMeta.georeferencedSchemes={generatedAt:schemes.generatedAt,featureCount:schemes.features?.length??0};
+        }
+      }catch(e){dbgWarn('georeferenced-concession-scheme',{error:e.message});}
+    }
+    debugState.network.georeferencedConcessionSchemes={ok:schemeResponse.ok,features:schemeCount,status:schemeResponse.status};
+    debugState.network.concessionCache={status:200,ok:true,features:merged.length,officialRegisterFeatures:Array.isArray(base.features)?base.features.length:0,mguPernikAdded:mguCount,georeferencedSchemesAdded:schemeCount,inventory:Number(base.inventoryRecordCount)||0,pending:officialConcessionPending.length,source:OFFICIAL_CONCESSION_BASELINE_URL};
     return merged.map(x=>concessionFeatureFromGeoJSON(x,x?.properties?.source_kind==='MGU-concession-contract-geometry'?'MGU-PERNIK-CACHE':'REPOSITORY-BASELINE',x?.properties?.source_kind==='MGU-concession-contract-geometry'?MGU_PERNIK_CONCESSION_CACHE_URL:OFFICIAL_CONCESSION_BASELINE_URL)).filter(Boolean);
   }catch(e){standaloneError=e;}
 
