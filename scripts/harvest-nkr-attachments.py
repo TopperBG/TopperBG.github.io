@@ -27,6 +27,9 @@ import json
 import mimetypes
 import pathlib
 import re
+import shutil
+import subprocess
+import tempfile
 import time
 import zipfile
 from urllib.parse import urljoin
@@ -194,7 +197,49 @@ def extract_text(data: bytes, ext: str) -> tuple[str, str]:
         if ext == ".pdf":
             reader = PdfReader(io.BytesIO(data))
             text = "\n\f\n".join((page.extract_text() or "") for page in reader.pages)
-            return text, "pypdf"
+            method = "pypdf"
+            if len(text.strip()) < 500 and shutil.which("pdftotext"):
+                with tempfile.TemporaryDirectory() as td:
+                    src = pathlib.Path(td) / "source.pdf"
+                    out = pathlib.Path(td) / "source.txt"
+                    src.write_bytes(data)
+                    subprocess.run(["pdftotext", "-layout", str(src), str(out)], check=False, timeout=90)
+                    alt = out.read_text(encoding="utf-8", errors="replace") if out.exists() else ""
+                    if len(alt.strip()) > len(text.strip()):
+                        text, method = alt, "pdftotext"
+            if len(text.strip()) < 500 and shutil.which("pdftoppm") and shutil.which("tesseract"):
+                with tempfile.TemporaryDirectory() as td:
+                    src = pathlib.Path(td) / "source.pdf"
+                    src.write_bytes(data)
+                    prefix = pathlib.Path(td) / "page"
+                    subprocess.run(
+                        ["pdftoppm", "-jpeg", "-r", "140", "-f", "1", "-l", "30", str(src), str(prefix)],
+                        check=False, timeout=180, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+                    )
+                    parts = []
+                    for image in sorted(pathlib.Path(td).glob("page-*.jpg")):
+                        try:
+                            p = subprocess.run(
+                                ["tesseract", str(image), "stdout", "-l", "bul+eng", "--psm", "6"],
+                                check=False, timeout=60, capture_output=True
+                            )
+                            parts.append(p.stdout.decode("utf-8", errors="replace"))
+                        except Exception:
+                            continue
+                    ocr = "\n\f\n".join(parts)
+                    if len(ocr.strip()) > len(text.strip()):
+                        text, method = ocr, "tesseract-bul+eng"
+            return text, method
+        if ext == ".doc":
+            if shutil.which("antiword"):
+                with tempfile.TemporaryDirectory() as td:
+                    src = pathlib.Path(td) / "source.doc"
+                    src.write_bytes(data)
+                    p = subprocess.run(["antiword", str(src)], check=False, timeout=90, capture_output=True)
+                    text = p.stdout.decode("utf-8", errors="replace")
+                    if text.strip():
+                        return text, "antiword"
+            return "", "unsupported-doc"
         if ext == ".docx":
             doc = Document(io.BytesIO(data))
             parts = [p.text for p in doc.paragraphs]
@@ -310,7 +355,18 @@ def main() -> None:
                 if x and x not in rec["concessionIds"]:
                     rec["concessionIds"].append(x)
 
-    todo = [x for x in links.values() if x["fileId"] not in files or files[x["fileId"]].get("status") != "ok"]
+    def needs_processing(link: dict) -> bool:
+        old = files.get(link["fileId"])
+        if not old or old.get("status") != "ok":
+            return True
+        extractor = str(old.get("extractor") or "")
+        if extractor.startswith("unsupported") or extractor.startswith("extract-error"):
+            return True
+        if old.get("extension") == ".pdf" and int(old.get("textChars") or 0) < 500:
+            return True
+        return False
+
+    todo = [x for x in links.values() if needs_processing(x)]
     todo.sort(key=lambda x: (x["priority"], x["concessionIds"][0] if x["concessionIds"] else "", x["fileId"]))
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
