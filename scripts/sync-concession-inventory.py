@@ -38,6 +38,7 @@ except ImportError as exc:
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "map" / "data"
 ARCHIVE = DATA / "source-archive" / "concessions"
+ARCHIVE_INDEX_PATH = ARCHIVE / "index-v1.json"
 INVENTORY_PATH = DATA / "concession-inventory-v1.json"
 ABANDONED_INVENTORY_PATH = DATA / "abandoned-mining-waste-inventory-v1.json"
 CURATED_SOURCE_PATH = DATA / "concession-boundaries-official-source-v2.json"
@@ -93,6 +94,63 @@ def atomic_write(path: pathlib.Path, data: bytes) -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_bytes(data)
     tmp.replace(path)
+
+
+def load_archive_index() -> dict:
+    if not ARCHIVE_INDEX_PATH.exists():
+        return {"schema": "bgwf-concession-source-archive-v1", "sources": {}}
+    try:
+        data = json.loads(ARCHIVE_INDEX_PATH.read_text(encoding="utf-8"))
+        if data.get("schema") == "bgwf-concession-source-archive-v1":
+            return data
+    except Exception:
+        pass
+    return {"schema": "bgwf-concession-source-archive-v1", "sources": {}}
+
+
+def archive_snapshot(source_id: str, url: str, raw: bytes, extension: str, current_name: str) -> dict:
+    """Keep both a stable current copy and an immutable content-addressed copy."""
+    digest = sha256(raw)
+    checked = now_iso()
+    atomic_write(ARCHIVE / current_name, raw)
+
+    safe_id = re.sub(r"[^A-Za-z0-9._-]+", "-", source_id).strip("-").lower()
+    snapshot_dir = ARCHIVE / "snapshots" / safe_id
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    snapshot_rel = pathlib.Path("snapshots") / safe_id / f"{digest}.{extension.lstrip('.')}"
+    snapshot_abs = ARCHIVE / snapshot_rel
+    if not snapshot_abs.exists():
+        atomic_write(snapshot_abs, raw)
+
+    index = load_archive_index()
+    sources = index.setdefault("sources", {})
+    entry = sources.setdefault(source_id, {
+        "id": source_id,
+        "url": url,
+        "current": current_name,
+        "snapshots": [],
+    })
+    entry["url"] = url
+    entry["current"] = current_name
+    entry["latestSha256"] = digest
+    entry["latestBytes"] = len(raw)
+    entry["lastCheckedAt"] = checked
+    known = {item.get("sha256") for item in entry.get("snapshots") or []}
+    if digest not in known:
+        entry.setdefault("snapshots", []).append({
+            "sha256": digest,
+            "bytes": len(raw),
+            "firstSeenAt": checked,
+            "path": str(snapshot_rel).replace("\\", "/"),
+        })
+    index["generatedAt"] = checked
+    ARCHIVE_INDEX_PATH.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {
+        "sha256": digest,
+        "bytes": len(raw),
+        "archiveCurrent": f"source-archive/concessions/{current_name}",
+        "archiveSnapshot": f"source-archive/concessions/{str(snapshot_rel).replace(chr(92), '/')}",
+    }
 
 
 def text_key(s: str) -> str:
@@ -384,51 +442,123 @@ def merge_records(base: list[dict], additions: list[dict]) -> list[dict]:
 
 
 def parse_abandoned_xls(raw: bytes) -> tuple[list[dict], dict]:
+    """Parse the ME closed/abandoned mining-waste workbook.
+
+    The published workbook uses a multi-row visual heading rather than one
+    conventional machine-readable header row. When semantic header detection
+    is weak, use the stable eight-column layout visible in the official file:
+    operator/owner, facility name, facility type, start year, closure year,
+    area, volume, location.
+    """
     book = xlrd.open_workbook(file_contents=raw)
     result = []
     sheet_meta = []
     hints = ("съоръж", "обект", "наимен", "община", "област", "местонах", "отпад", "оператор", "собствен", "рудник", "мина")
+
+    def looks_like_data_row(values: list[str]) -> bool:
+        if len(values) < 8:
+            return False
+        if not (values[0] and values[1] and values[2]):
+            return False
+        return bool(re.fullmatch(r"(?:18|19|20)\d{2}", values[3] or "")) and bool(
+            re.fullmatch(r"(?:18|19|20)\d{2}", values[4] or "")
+        )
+
+    positional_headers = [
+        "operator_or_owner",
+        "facility_name",
+        "facility_type",
+        "operation_start_year",
+        "closure_year",
+        "area_m2",
+        "volume_m3",
+        "location",
+    ]
+
     for sheet in book.sheets():
         rows = [[norm(sheet.cell_value(r, col)) for col in range(sheet.ncols)] for r in range(sheet.nrows)]
         if not rows:
             continue
+
         def score(row):
             blob = " | ".join(text_key(v) for v in row)
             return sum(1 for h in hints if h in blob)
-        candidates = [(score(row), i, row) for i, row in enumerate(rows[:50])]
+
+        candidates = [(score(row), i, row) for i, row in enumerate(rows[:60])]
         sc, header_i, header = max(candidates, default=(0, 0, []))
-        if sc < 1:
-            nonempty = [(sum(bool(v) for v in row), i, row) for i, row in enumerate(rows[:50])]
-            _, header_i, header = max(nonempty, default=(0,0,[]))
-        seen = {}
-        headers = []
-        for i, value in enumerate(header):
-            base = slug_header(value, i)
-            seen[base] = seen.get(base, 0) + 1
-            headers.append(base if seen[base] == 1 else f"{base} [{seen[base]}]")
+        positional_start = next((i for i, row in enumerate(rows[:100]) if looks_like_data_row(row)), None)
+        use_positional = positional_start is not None and sc < 2
+
+        if use_positional:
+            headers = positional_headers + [f"column_{i+1}" for i in range(len(positional_headers), sheet.ncols)]
+            data_start = positional_start
+            header_row_report = None
+        else:
+            seen = {}
+            headers = []
+            for i, value in enumerate(header):
+                base = slug_header(value, i)
+                seen[base] = seen.get(base, 0) + 1
+                headers.append(base if seen[base] == 1 else f"{base} [{seen[base]}]")
+            data_start = header_i + 1
+            header_row_report = header_i + 1
+
         count = 0
-        for row_index, values in enumerate(rows[header_i+1:], start=header_i+2):
+        for zero_index, values in enumerate(rows[data_start:], start=data_start):
             if not any(values):
                 continue
+            row_index = zero_index + 1
             row = {headers[i]: values[i] for i in range(min(len(headers), len(values))) if values[i]}
             if not row:
                 continue
-            name = find_any(row, [["наимен"], ["съоръж"], ["обект"], ["рудник"], ["мина"]])
-            municipality = find_any(row, [["община"]])
-            province = find_any(row, [["област"]])
-            location = find_any(row, [["местонах"], ["населен"]])
-            operator = find_any(row, [["оператор"], ["собствен"]])
+
+            if use_positional:
+                name = norm(row.get("facility_name"))
+                location = norm(row.get("location")) or None
+                operator = norm(row.get("operator_or_owner")) or None
+                facility_type = norm(row.get("facility_type")) or None
+                operation_start = norm(row.get("operation_start_year")) or None
+                closure_year = norm(row.get("closure_year")) or None
+                area_m2 = parse_number(norm(row.get("area_m2")))
+                volume_m3 = parse_number(norm(row.get("volume_m3")))
+                municipality = None
+                province = None
+            else:
+                name = find_any(row, [["наимен"], ["съоръж"], ["обект"], ["рудник"], ["мина"]])
+                municipality = find_any(row, [["община"]])
+                province = find_any(row, [["област"]])
+                location = find_any(row, [["местонах"], ["населен"]])
+                operator = find_any(row, [["оператор"], ["собствен"]])
+                facility_type = find_any(row, [["вид"], ["тип"], ["съоръж"]])
+                operation_start = find_any(row, [["начало"], ["въвежд"]])
+                closure_year = find_any(row, [["закрив"], ["прекрат"]])
+                area_m2 = None
+                volume_m3 = None
+
             blob = " ".join(row.values()).strip()
             if not (name or municipality or province or location) and len(blob) < 20:
                 continue
-            rid = hashlib.sha1(f"{sheet.name}|{row_index}|{json.dumps(row, ensure_ascii=False, sort_keys=True)}".encode("utf-8")).hexdigest()[:16]
+
+            stable_basis = "|".join([
+                norm(name), norm(location), norm(facility_type), norm(operator),
+                norm(operation_start), norm(closure_year),
+            ])
+            if not stable_basis.strip("|"):
+                stable_basis = f"{sheet.name}|{row_index}|{json.dumps(row, ensure_ascii=False, sort_keys=True)}"
+            rid = hashlib.sha1(stable_basis.encode("utf-8")).hexdigest()[:16]
+
             result.append({
                 "id": f"ME-ABANDONED-{rid}",
-                "name": name,
+                "name": name or None,
+                "facilityType": facility_type,
                 "municipality": municipality,
                 "province": province,
                 "location": location,
                 "operatorOrOwner": operator,
+                "operationStartYear": operation_start,
+                "closureYear": closure_year,
+                "areaM2": area_m2,
+                "volumeM3": volume_m3,
                 "status": "official-closed-or-abandoned-mining-waste",
                 "sourceSheet": sheet.name,
                 "sourceRowNo": row_index,
@@ -436,8 +566,19 @@ def parse_abandoned_xls(raw: bytes) -> tuple[list[dict], dict]:
                 "raw": row,
             })
             count += 1
-        sheet_meta.append({"name": sheet.name, "rows": sheet.nrows, "headerRow": header_i+1, "headerScore": sc, "records": count, "headers": headers})
+
+        sheet_meta.append({
+            "name": sheet.name,
+            "rows": sheet.nrows,
+            "headerRow": header_row_report,
+            "headerScore": sc,
+            "parserMode": "official-positional-8-column" if use_positional else "semantic-header",
+            "dataStartRow": data_start + 1,
+            "records": count,
+            "headers": headers,
+        })
     return result, {"sheets": sheet_meta}
+
 
 
 def existing_abandoned_inventory() -> dict:
@@ -474,12 +615,12 @@ def main() -> None:
         records, meta = parse_me_xls(raw)
         if len(records) < 50:
             raise RuntimeError(f"XLS parse produced only {len(records)} records")
-        atomic_write(ARCHIVE / "koncesii_public.xls", raw)
+        archive_meta = archive_snapshot("ME-CONCESSIONS-XLS", ME_XLS, raw, "xls", "koncesii_public.xls")
         candidate_records = records
         official_refresh_records = records
         source_runs.append({
             "id": "ME-CONCESSIONS-XLS", "ok": True, "url": ME_XLS,
-            "bytes": len(raw), "sha256": sha256(raw), "records": len(records), **meta,
+            "bytes": len(raw), "sha256": sha256(raw), "records": len(records), **archive_meta, **meta,
         })
     except Exception as exc:
         source_runs.append({"id": "ME-CONCESSIONS-XLS", "ok": False, "url": ME_XLS, "error": str(exc)})
@@ -491,10 +632,10 @@ def main() -> None:
         nkr_records = parse_delimited(text, "NKR")
         if len(text.splitlines()) < 50:
             raise RuntimeError("NKR export unexpectedly small")
-        atomic_write(ARCHIVE / "nkr-concessions-export.tsv", raw)
+        archive_meta = archive_snapshot("NKR-EXPORT", NKR_EXPORT, raw, "tsv", "nkr-concessions-export.tsv")
         source_runs.append({
             "id": "NKR", "ok": True, "url": NKR_EXPORT,
-            "bytes": len(raw), "sha256": sha256(raw), "records": len(nkr_records),
+            "bytes": len(raw), "sha256": sha256(raw), "records": len(nkr_records), **archive_meta,
         })
         if nkr_records:
             official_refresh_records = enrich_preserve_rows(official_refresh_records, nkr_records)
@@ -509,9 +650,9 @@ def main() -> None:
     ]:
         try:
             raw = fetch(url)
-            atomic_write(ARCHIVE / filename, raw)
+            archive_meta = archive_snapshot(sid, url, raw, "html", filename)
             source_runs.append({
-                "id": sid, "ok": True, "url": url, "bytes": len(raw), "sha256": sha256(raw),
+                "id": sid, "ok": True, "url": url, "bytes": len(raw), "sha256": sha256(raw), **archive_meta,
             })
         except Exception as exc:
             source_runs.append({"id": sid, "ok": False, "url": url, "error": str(exc)})
@@ -528,12 +669,12 @@ def main() -> None:
         parsed, meta = parse_abandoned_xls(raw)
         if not parsed:
             raise RuntimeError("abandoned-sites XLS produced no records")
-        atomic_write(ARCHIVE / "old_mining_sites_2020.xls", raw)
+        archive_meta = archive_snapshot("ME-ABANDONED-MINING-WASTE-XLS", ME_ABANDONED_XLS, raw, "xls", "old_mining_sites_2020.xls")
         abandoned_records = parsed
         abandoned_mode = "refreshed"
         abandoned_source = {
             "id": "ME-ABANDONED-MINING-WASTE-XLS", "ok": True, "url": ME_ABANDONED_XLS,
-            "bytes": len(raw), "sha256": sha256(raw), "records": len(parsed), **meta,
+            "bytes": len(raw), "sha256": sha256(raw), "records": len(parsed), **archive_meta, **meta,
         }
     except Exception as exc:
         abandoned_records = abandoned_existing.get("records") or []
