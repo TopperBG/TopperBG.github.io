@@ -1,0 +1,836 @@
+{
+  "schema": "bgwf-nkr-attachment-index-v1",
+  "generatedAt": "2026-10-05T07:09:28Z",
+  "runtimeDependency": false,
+  "knownLinkCount": 263,
+  "archivedOkCount": 24,
+  "downloadedThisRun": 24,
+  "downloadedBytesThisRun": 62962727,
+  "errors": [],
+  "files": {
+    "7cff2f84-1391-4609-8f60-cc5309647fa9": {
+      "fileId": "7cff2f84-1391-4609-8f60-cc5309647fa9",
+      "url": "https://nkr.government.bg/File/Download/7cff2f84-1391-4609-8f60-cc5309647fa9",
+      "title": "Свали",
+      "partyGuids": [
+        "912f6df6-44b6-4bcc-be6a-1479cd2bee19"
+      ],
+      "inventoryIds": [
+        "D-000034"
+      ],
+      "concessionIds": [
+        "D-000034"
+      ],
+      "priority": 0,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:27Z",
+      "filename": "D%20-%20000034_%D0%A7%D0%B5%D0%BB%D0%BE%D0%BF%D0%B5%D1%87_2021.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 73021,
+      "sha256": "d934775dbd1ef9cd47b3d4f935cee17078f077fd3ec2bd76ba203cabf66736a5",
+      "archivePath": "source-archive/concessions/nkr-attachments/d934775dbd1ef9cd47b3d4f935cee17078f077fd3ec2bd76ba203cabf66736a5.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/d934775dbd1ef9cd47b3d4f935cee17078f077fd3ec2bd76ba203cabf66736a5.txt",
+      "extractor": "python-docx",
+      "textChars": 25592,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "bcd60e1b-b4b6-40bf-b7c3-df3d585fbc63": {
+      "fileId": "bcd60e1b-b4b6-40bf-b7c3-df3d585fbc63",
+      "url": "https://nkr.government.bg/File/Download/bcd60e1b-b4b6-40bf-b7c3-df3d585fbc63",
+      "title": "Свали",
+      "partyGuids": [
+        "912f6df6-44b6-4bcc-be6a-1479cd2bee19"
+      ],
+      "inventoryIds": [
+        "D-000034"
+      ],
+      "concessionIds": [
+        "D-000034"
+      ],
+      "priority": 0,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:28Z",
+      "filename": "D%20-%20000034_%D0%A7%D0%B5%D0%BB%D0%BE%D0%BF%D0%B5%D1%87_2020.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 73195,
+      "sha256": "280e832ba12f872b4ad89120545ba4ad5663f704bff1ca1b36cb28c9314ecef1",
+      "archivePath": "source-archive/concessions/nkr-attachments/280e832ba12f872b4ad89120545ba4ad5663f704bff1ca1b36cb28c9314ecef1.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/280e832ba12f872b4ad89120545ba4ad5663f704bff1ca1b36cb28c9314ecef1.txt",
+      "extractor": "python-docx",
+      "textChars": 25599,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "92e8889d-4785-45de-8ca4-70267f0d0bec": {
+      "fileId": "92e8889d-4785-45de-8ca4-70267f0d0bec",
+      "url": "https://nkr.government.bg/File/Download/92e8889d-4785-45de-8ca4-70267f0d0bec",
+      "title": "Свали",
+      "partyGuids": [
+        "7869ab1d-867a-4d1f-99e6-7c19cfabcd4b"
+      ],
+      "inventoryIds": [
+        "D-000074"
+      ],
+      "concessionIds": [
+        "D-000074"
+      ],
+      "priority": 0,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:30Z",
+      "filename": "Elacite-aneks 8-NKR.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2225447,
+      "sha256": "92c2bba968118ff2fd67143b88ca53e437de5f5bb0120994e67559a8ac6198bc",
+      "archivePath": "source-archive/concessions/nkr-attachments/92c2bba968118ff2fd67143b88ca53e437de5f5bb0120994e67559a8ac6198bc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/92c2bba968118ff2fd67143b88ca53e437de5f5bb0120994e67559a8ac6198bc.txt",
+      "extractor": "pypdf",
+      "textChars": 126,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "f270e358-bf3b-463c-a752-d45d5c51e3eb": {
+      "fileId": "f270e358-bf3b-463c-a752-d45d5c51e3eb",
+      "url": "https://nkr.government.bg/File/Download/f270e358-bf3b-463c-a752-d45d5c51e3eb",
+      "title": "Свали",
+      "partyGuids": [
+        "7869ab1d-867a-4d1f-99e6-7c19cfabcd4b"
+      ],
+      "inventoryIds": [
+        "D-000074"
+      ],
+      "concessionIds": [
+        "D-000074"
+      ],
+      "priority": 0,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:32Z",
+      "filename": "25RH147(1).doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 262656,
+      "sha256": "c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e",
+      "archivePath": "source-archive/concessions/nkr-attachments/c0e4316e91e283e6de872b7b52394c1e9d0c68af2dfda2ab9347d32f5a20e96e.doc",
+      "textPath": null,
+      "extractor": "unsupported",
+      "textChars": 0,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "389e996f-71c6-4712-bd23-7405de1c33ad": {
+      "fileId": "389e996f-71c6-4712-bd23-7405de1c33ad",
+      "url": "https://nkr.government.bg/File/Download/389e996f-71c6-4712-bd23-7405de1c33ad",
+      "title": "Свали",
+      "partyGuids": [
+        "b5a2dd4d-1813-4aa2-94e3-079942743d2e"
+      ],
+      "inventoryIds": [
+        "216-122"
+      ],
+      "concessionIds": [
+        "216-122"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:33Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9A%D0%B0%D0%B9%D0%BC%D0%B5%D1%82%D0%BB%D0%B8%D0%B9.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1418336,
+      "sha256": "bbaace7fb03c852dd259b42293d61fbaf94a6c2967b79af259dbed5cfcbe567c",
+      "archivePath": "source-archive/concessions/nkr-attachments/bbaace7fb03c852dd259b42293d61fbaf94a6c2967b79af259dbed5cfcbe567c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/bbaace7fb03c852dd259b42293d61fbaf94a6c2967b79af259dbed5cfcbe567c.txt",
+      "extractor": "pypdf",
+      "textChars": 6647,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b30a92c3-1294-490e-8c8c-924d89879b07": {
+      "fileId": "b30a92c3-1294-490e-8c8c-924d89879b07",
+      "url": "https://nkr.government.bg/File/Download/b30a92c3-1294-490e-8c8c-924d89879b07",
+      "title": "Свали",
+      "partyGuids": [
+        "b5a2dd4d-1813-4aa2-94e3-079942743d2e"
+      ],
+      "inventoryIds": [
+        "216-122"
+      ],
+      "concessionIds": [
+        "216-122"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:35Z",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9A%D0%B0%D0%B9%D0%BC%D0%B5%D1%82%D0%BB%D0%B8%D0%B9.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 585013,
+      "sha256": "75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513",
+      "archivePath": "source-archive/concessions/nkr-attachments/75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/75d974865e6fd986dd7a0134c60c5084e6f82f69d3bc60661306b35e046ea513.txt",
+      "extractor": "pypdf",
+      "textChars": 19695,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "bb846ba4-90db-4022-93e3-d2a7996bbbeb": {
+      "fileId": "bb846ba4-90db-4022-93e3-d2a7996bbbeb",
+      "url": "https://nkr.government.bg/File/Download/bb846ba4-90db-4022-93e3-d2a7996bbbeb",
+      "title": "Свали",
+      "partyGuids": [
+        "25aa24e5-3a74-48f8-9a1c-462eb5b5a314"
+      ],
+      "inventoryIds": [
+        "216-124"
+      ],
+      "concessionIds": [
+        "216-124"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:37Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%9B%D0%B5%D0%BC%D0%B8%D1%89%D0%B5.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 3028345,
+      "sha256": "0f1a8ba473dd4fc06353b855749db538d7f1f0f531fb618582315614b40ac8cc",
+      "archivePath": "source-archive/concessions/nkr-attachments/0f1a8ba473dd4fc06353b855749db538d7f1f0f531fb618582315614b40ac8cc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0f1a8ba473dd4fc06353b855749db538d7f1f0f531fb618582315614b40ac8cc.txt",
+      "extractor": "pypdf",
+      "textChars": 181,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0": {
+      "fileId": "c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
+      "url": "https://nkr.government.bg/File/Download/c3a32a5e-d4e3-4b6f-b3d2-5c991be64eb0",
+      "title": "Свали",
+      "partyGuids": [
+        "25aa24e5-3a74-48f8-9a1c-462eb5b5a314"
+      ],
+      "inventoryIds": [
+        "216-124"
+      ],
+      "concessionIds": [
+        "216-124"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:39Z",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%9B%D0%B5%D0%BC%D0%B8%D1%89%D0%B5.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 473023,
+      "sha256": "5af8e02d367820cb8c182531b873f3f0d453d7f0a8777cf2cc8e0a602abc0c92",
+      "archivePath": "source-archive/concessions/nkr-attachments/5af8e02d367820cb8c182531b873f3f0d453d7f0a8777cf2cc8e0a602abc0c92.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/5af8e02d367820cb8c182531b873f3f0d453d7f0a8777cf2cc8e0a602abc0c92.txt",
+      "extractor": "pypdf",
+      "textChars": 22822,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "66cc6a10-8db4-40d8-aa85-b1f0aee4e54c": {
+      "fileId": "66cc6a10-8db4-40d8-aa85-b1f0aee4e54c",
+      "url": "https://nkr.government.bg/File/Download/66cc6a10-8db4-40d8-aa85-b1f0aee4e54c",
+      "title": "Свали",
+      "partyGuids": [
+        "fcb5f74e-5f6f-4b08-aa94-cbcef3c1b6a2"
+      ],
+      "inventoryIds": [
+        "216-129"
+      ],
+      "concessionIds": [
+        "216-129"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:40Z",
+      "filename": "17RH816%20%D0%90%D0%B9%D1%82%D0%BE%D1%81.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 111616,
+      "sha256": "81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda",
+      "archivePath": "source-archive/concessions/nkr-attachments/81f4fd309612b32761f60189e9ed454ba081bdfde85903e2c8e3d86d29ad1bda.doc",
+      "textPath": null,
+      "extractor": "unsupported",
+      "textChars": 0,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "9dc1b8eb-0375-4896-9f26-ecec21500bb3": {
+      "fileId": "9dc1b8eb-0375-4896-9f26-ecec21500bb3",
+      "url": "https://nkr.government.bg/File/Download/9dc1b8eb-0375-4896-9f26-ecec21500bb3",
+      "title": "Свали",
+      "partyGuids": [
+        "fcb5f74e-5f6f-4b08-aa94-cbcef3c1b6a2"
+      ],
+      "inventoryIds": [
+        "216-129"
+      ],
+      "concessionIds": [
+        "216-129"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:49Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%90%D0%B9%D1%82%D0%BE%D1%81.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 11807254,
+      "sha256": "0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd",
+      "archivePath": "source-archive/concessions/nkr-attachments/0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0e76215604925d54ab0a42ad453e23874dd62db84f6b112410a135adf53430cd.txt",
+      "extractor": "pypdf",
+      "textChars": 86363,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "167c856d-34f3-43e0-8747-db97b5a16bc9": {
+      "fileId": "167c856d-34f3-43e0-8747-db97b5a16bc9",
+      "url": "https://nkr.government.bg/File/Download/167c856d-34f3-43e0-8747-db97b5a16bc9",
+      "title": "Свали",
+      "partyGuids": [
+        "9e89a5e9-b080-4ee1-b4a5-7b1833c803d9"
+      ],
+      "inventoryIds": [
+        "216-130"
+      ],
+      "concessionIds": [
+        "216-130"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:50Z",
+      "filename": "20RH953%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 126976,
+      "sha256": "aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080",
+      "archivePath": "source-archive/concessions/nkr-attachments/aee16ad32fa4c4140104dab3c6e290a3cec4138e1388f00a7e7ca9f9d05ef080.doc",
+      "textPath": null,
+      "extractor": "unsupported",
+      "textChars": 0,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "172cb161-702c-456f-bcd9-795830d20a6b": {
+      "fileId": "172cb161-702c-456f-bcd9-795830d20a6b",
+      "url": "https://nkr.government.bg/File/Download/172cb161-702c-456f-bcd9-795830d20a6b",
+      "title": "Свали",
+      "partyGuids": [
+        "9e89a5e9-b080-4ee1-b4a5-7b1833c803d9"
+      ],
+      "inventoryIds": [
+        "216-130"
+      ],
+      "concessionIds": [
+        "216-130"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:08:57Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%98%D0%B4%D0%B8%D0%BB%D0%B5%D0%B2%D0%BE.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 11436034,
+      "sha256": "160e21243732da9b3afaa42d4246dd019031ece46c6c3237a2cedcf06c49bab4",
+      "archivePath": "source-archive/concessions/nkr-attachments/160e21243732da9b3afaa42d4246dd019031ece46c6c3237a2cedcf06c49bab4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/160e21243732da9b3afaa42d4246dd019031ece46c6c3237a2cedcf06c49bab4.txt",
+      "extractor": "pypdf",
+      "textChars": 92288,
+      "keywordHit": true,
+      "coordinateRowCount": 12,
+      "coordinateClassCounts": {
+        "BGS1970": 12
+      },
+      "coordinateSample": [
+        {
+          "line": 1631,
+          "a": 4682372.4,
+          "b": 8666071.7,
+          "crsClass": "BGS1970",
+          "text": "1 ет-3 4 682 372,4 8 666 071,7"
+        },
+        {
+          "line": 1632,
+          "a": 4682338.1,
+          "b": 8666214.9,
+          "crsClass": "BGS1970",
+          "text": "2 ет-5 4 682 338,1 8 666 214,9"
+        },
+        {
+          "line": 1651,
+          "a": 4682301.1,
+          "b": 8666243.0,
+          "crsClass": "BGS1970",
+          "text": "3 ет-1 4 682 301,1 8 666 243,0"
+        },
+        {
+          "line": 1652,
+          "a": 4682247.7,
+          "b": 8666246.1,
+          "crsClass": "BGS1970",
+          "text": "4 ет-6 4 682 247,7 8 666 246,1"
+        },
+        {
+          "line": 1654,
+          "a": 4682159.7,
+          "b": 8666106.8,
+          "crsClass": "BGS1970",
+          "text": "6 пт-6 4 682 159,7 8 666 106,8"
+        },
+        {
+          "line": 1655,
+          "a": 4682171.2,
+          "b": 8666063.7,
+          "crsClass": "BGS1970",
+          "text": "1 - 4 682 171,2 8 666 063,7"
+        },
+        {
+          "line": 1656,
+          "a": 4682141.1,
+          "b": 8666020.8,
+          "crsClass": "BGS1970",
+          "text": "8 - 4 682 141,1 8 666 020,8"
+        },
+        {
+          "line": 1657,
+          "a": 4682165.9,
+          "b": 8665927.7,
+          "crsClass": "BGS1970",
+          "text": "9 - 4 682 165,9 8 665 927,7"
+        },
+        {
+          "line": 1658,
+          "a": 4682169.1,
+          "b": 8665857.4,
+          "crsClass": "BGS1970",
+          "text": "- 4 682 169,1 8 665 857,4"
+        },
+        {
+          "line": 1659,
+          "a": 4682178.8,
+          "b": 8665818.2,
+          "crsClass": "BGS1970",
+          "text": "11 пт-5 4 682 178,8 8 665 818,2"
+        },
+        {
+          "line": 1660,
+          "a": 4682251.6,
+          "b": 8665792.7,
+          "crsClass": "BGS1970",
+          "text": "12 пт-4 4 682 251,6 8 665 792,7"
+        },
+        {
+          "line": 1661,
+          "a": 4682324.1,
+          "b": 8665835.9,
+          "crsClass": "BGS1970",
+          "text": "13 ет-2 4 682 324,1 8 665 835,9"
+        }
+      ]
+    },
+    "b64f6490-068b-4ec4-846a-d78466ea2fad": {
+      "fileId": "b64f6490-068b-4ec4-846a-d78466ea2fad",
+      "url": "https://nkr.government.bg/File/Download/b64f6490-068b-4ec4-846a-d78466ea2fad",
+      "title": "Свали",
+      "partyGuids": [
+        "8b28ba37-e54c-4daa-a672-f7644100b836"
+      ],
+      "inventoryIds": [
+        "216-131"
+      ],
+      "concessionIds": [
+        "216-131"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:03Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91%D0%B5%D1%81%D0%BB%D0%B5%D0%BD.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 11066874,
+      "sha256": "dbf1dab366468b5418a7ae10b53e75da86022db213f33d5c68b5ac2d85283906",
+      "archivePath": "source-archive/concessions/nkr-attachments/dbf1dab366468b5418a7ae10b53e75da86022db213f33d5c68b5ac2d85283906.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/dbf1dab366468b5418a7ae10b53e75da86022db213f33d5c68b5ac2d85283906.txt",
+      "extractor": "pypdf",
+      "textChars": 88184,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d0fee515-9aad-447c-aff9-230a2c53fbb7": {
+      "fileId": "d0fee515-9aad-447c-aff9-230a2c53fbb7",
+      "url": "https://nkr.government.bg/File/Download/d0fee515-9aad-447c-aff9-230a2c53fbb7",
+      "title": "Свали",
+      "partyGuids": [
+        "8b28ba37-e54c-4daa-a672-f7644100b836"
+      ],
+      "inventoryIds": [
+        "216-131"
+      ],
+      "concessionIds": [
+        "216-131"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:05Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%20%D0%91%D0%B5%D1%81%D0%BB%D0%B5%D0%BD.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 633969,
+      "sha256": "e76bc262a4cb3cf20ebe75f3c83d45d822ab8cfcd45c2b5b87f6d917a0acbb03",
+      "archivePath": "source-archive/concessions/nkr-attachments/e76bc262a4cb3cf20ebe75f3c83d45d822ab8cfcd45c2b5b87f6d917a0acbb03.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e76bc262a4cb3cf20ebe75f3c83d45d822ab8cfcd45c2b5b87f6d917a0acbb03.txt",
+      "extractor": "pypdf",
+      "textChars": 21508,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "949e40e1-3229-494d-973c-a7b647e4f8e4": {
+      "fileId": "949e40e1-3229-494d-973c-a7b647e4f8e4",
+      "url": "https://nkr.government.bg/File/Download/949e40e1-3229-494d-973c-a7b647e4f8e4",
+      "title": "Свали",
+      "partyGuids": [
+        "6336afac-e82e-48e9-bd4c-d3ea41ba2755"
+      ],
+      "inventoryIds": [
+        "216-206"
+      ],
+      "concessionIds": [
+        "216-206"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:07Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91.%20%D0%BA%D1%80%D1%83%D1%88%D0%B0.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2140576,
+      "sha256": "5a51ebea4796c1dd9e01c59d70a643fd1114f93595d83eafd5a8d6dd1fb0edf6",
+      "archivePath": "source-archive/concessions/nkr-attachments/5a51ebea4796c1dd9e01c59d70a643fd1114f93595d83eafd5a8d6dd1fb0edf6.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/5a51ebea4796c1dd9e01c59d70a643fd1114f93595d83eafd5a8d6dd1fb0edf6.txt",
+      "extractor": "pypdf",
+      "textChars": 84,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "95b6a866-bc6d-4d61-84ef-6d3bfa8da784": {
+      "fileId": "95b6a866-bc6d-4d61-84ef-6d3bfa8da784",
+      "url": "https://nkr.government.bg/File/Download/95b6a866-bc6d-4d61-84ef-6d3bfa8da784",
+      "title": "Свали",
+      "partyGuids": [
+        "6336afac-e82e-48e9-bd4c-d3ea41ba2755"
+      ],
+      "inventoryIds": [
+        "216-206"
+      ],
+      "concessionIds": [
+        "216-206"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:08Z",
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 668963,
+      "sha256": "0d5ec574bff2c890c41d9fd9885af6e4a50f5a1b61fd3468bebe39fa1bbe4481",
+      "archivePath": "source-archive/concessions/nkr-attachments/0d5ec574bff2c890c41d9fd9885af6e4a50f5a1b61fd3468bebe39fa1bbe4481.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0d5ec574bff2c890c41d9fd9885af6e4a50f5a1b61fd3468bebe39fa1bbe4481.txt",
+      "extractor": "pypdf",
+      "textChars": 42,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a236c385-e6a5-46ee-8e18-85b5dcffcdbf": {
+      "fileId": "a236c385-e6a5-46ee-8e18-85b5dcffcdbf",
+      "url": "https://nkr.government.bg/File/Download/a236c385-e6a5-46ee-8e18-85b5dcffcdbf",
+      "title": "Свали",
+      "partyGuids": [
+        "6336afac-e82e-48e9-bd4c-d3ea41ba2755"
+      ],
+      "inventoryIds": [
+        "216-206"
+      ],
+      "concessionIds": [
+        "216-206"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:09Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%2060.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 179892,
+      "sha256": "809c86831afe0bad77121acdfed7ca668851a310d83cd898fe33fd9da06c26b7",
+      "archivePath": "source-archive/concessions/nkr-attachments/809c86831afe0bad77121acdfed7ca668851a310d83cd898fe33fd9da06c26b7.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/809c86831afe0bad77121acdfed7ca668851a310d83cd898fe33fd9da06c26b7.txt",
+      "extractor": "pypdf",
+      "textChars": 30,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "f1230a32-8a85-434c-be60-a4eefef42804": {
+      "fileId": "f1230a32-8a85-434c-be60-a4eefef42804",
+      "url": "https://nkr.government.bg/File/Download/f1230a32-8a85-434c-be60-a4eefef42804",
+      "title": "Свали",
+      "partyGuids": [
+        "6336afac-e82e-48e9-bd4c-d3ea41ba2755"
+      ],
+      "inventoryIds": [
+        "216-206"
+      ],
+      "concessionIds": [
+        "216-206"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:10Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%201006.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 41949,
+      "sha256": "b6784c0166c604546df6684cf7df2100ee3053aff16557ca530b65c25897ccf1",
+      "archivePath": "source-archive/concessions/nkr-attachments/b6784c0166c604546df6684cf7df2100ee3053aff16557ca530b65c25897ccf1.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/b6784c0166c604546df6684cf7df2100ee3053aff16557ca530b65c25897ccf1.txt",
+      "extractor": "pypdf",
+      "textChars": 9,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3a3fe641-bfdf-44e2-ab6e-84080a67fe8e": {
+      "fileId": "3a3fe641-bfdf-44e2-ab6e-84080a67fe8e",
+      "url": "https://nkr.government.bg/File/Download/3a3fe641-bfdf-44e2-ab6e-84080a67fe8e",
+      "title": "Свали",
+      "partyGuids": [
+        "dbcd969b-99f8-428e-abc6-914797a13d86"
+      ],
+      "inventoryIds": [
+        "216-223"
+      ],
+      "concessionIds": [
+        "216-223"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:12Z",
+      "filename": "DOGOVOR_Beshovica.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2834736,
+      "sha256": "ecdf55b4a43f8e1012314fc3cb765b06b5ff7c59a7036fea21c64a167ee7b332",
+      "archivePath": "source-archive/concessions/nkr-attachments/ecdf55b4a43f8e1012314fc3cb765b06b5ff7c59a7036fea21c64a167ee7b332.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ecdf55b4a43f8e1012314fc3cb765b06b5ff7c59a7036fea21c64a167ee7b332.txt",
+      "extractor": "pypdf",
+      "textChars": 117,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "63231b75-fb47-475e-847b-b70af7f8c65b": {
+      "fileId": "63231b75-fb47-475e-847b-b70af7f8c65b",
+      "url": "https://nkr.government.bg/File/Download/63231b75-fb47-475e-847b-b70af7f8c65b",
+      "title": "Свали",
+      "partyGuids": [
+        "dbcd969b-99f8-428e-abc6-914797a13d86"
+      ],
+      "inventoryIds": [
+        "216-223"
+      ],
+      "concessionIds": [
+        "216-223"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:13Z",
+      "filename": "22RH1001_BESHOVITSA.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 123392,
+      "sha256": "22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1",
+      "archivePath": "source-archive/concessions/nkr-attachments/22d03262fbd78c67c83f87bfb48070e5fb8efd9f2274f5d58bb31121fc6ceec1.doc",
+      "textPath": null,
+      "extractor": "unsupported",
+      "textChars": 0,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a27e2231-4ab3-4c46-bc1c-0d5f49150046": {
+      "fileId": "a27e2231-4ab3-4c46-bc1c-0d5f49150046",
+      "url": "https://nkr.government.bg/File/Download/a27e2231-4ab3-4c46-bc1c-0d5f49150046",
+      "title": "Свали",
+      "partyGuids": [
+        "b269a503-4086-4727-86df-bc33ff525798"
+      ],
+      "inventoryIds": [
+        "216-224"
+      ],
+      "concessionIds": [
+        "216-224"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:14Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%201004-2022.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 131584,
+      "sha256": "de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d",
+      "archivePath": "source-archive/concessions/nkr-attachments/de4e62d909795838da3c65fe9c423bbf3602e880ced49f1f71c280dc105e8a0d.doc",
+      "textPath": null,
+      "extractor": "unsupported",
+      "textChars": 0,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "ca19fd1e-975f-4ae8-a6be-45aee8694655": {
+      "fileId": "ca19fd1e-975f-4ae8-a6be-45aee8694655",
+      "url": "https://nkr.government.bg/File/Download/ca19fd1e-975f-4ae8-a6be-45aee8694655",
+      "title": "Свали",
+      "partyGuids": [
+        "b269a503-4086-4727-86df-bc33ff525798"
+      ],
+      "inventoryIds": [
+        "216-224"
+      ],
+      "concessionIds": [
+        "216-224"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:21Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%94%D0%B6%D1%83%D0%BB%D0%B8%D0%BD%D0%B8%D1%86%D0%B0.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 8605307,
+      "sha256": "3f6c4022a586b37cd50541a91655c85e1ee5d71f06ded1276e8dc2920b5c4aee",
+      "archivePath": "source-archive/concessions/nkr-attachments/3f6c4022a586b37cd50541a91655c85e1ee5d71f06ded1276e8dc2920b5c4aee.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3f6c4022a586b37cd50541a91655c85e1ee5d71f06ded1276e8dc2920b5c4aee.txt",
+      "extractor": "pypdf",
+      "textChars": 81618,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3d1307cb-f28a-48c4-92b4-790fa6e1e9e5": {
+      "fileId": "3d1307cb-f28a-48c4-92b4-790fa6e1e9e5",
+      "url": "https://nkr.government.bg/File/Download/3d1307cb-f28a-48c4-92b4-790fa6e1e9e5",
+      "title": "Свали",
+      "partyGuids": [
+        "f63cf7be-bfd2-46ba-872f-00109a4c9904"
+      ],
+      "inventoryIds": [
+        "216-225"
+      ],
+      "concessionIds": [
+        "216-225"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:26Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%91%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%86%D0%B0.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 4753801,
+      "sha256": "15c14b70ad3aee32620cbcc148e75f7bf3ae50f40b6519f959fbbf4212c21671",
+      "archivePath": "source-archive/concessions/nkr-attachments/15c14b70ad3aee32620cbcc148e75f7bf3ae50f40b6519f959fbbf4212c21671.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/15c14b70ad3aee32620cbcc148e75f7bf3ae50f40b6519f959fbbf4212c21671.txt",
+      "extractor": "pypdf",
+      "textChars": 91690,
+      "keywordHit": true,
+      "coordinateRowCount": 2,
+      "coordinateClassCounts": {
+        "WGS84": 2
+      },
+      "coordinateSample": [
+        {
+          "line": 1215,
+          "a": 28.0,
+          "b": 43.0,
+          "crsClass": "WGS84",
+          "text": "284613698.4373505.4"
+        },
+        {
+          "line": 1329,
+          "a": 28.0,
+          "b": 43.0,
+          "crsClass": "WGS84",
+          "text": "2834613698.4373505.41063.5"
+        }
+      ]
+    },
+    "4e49e94a-7980-477f-af56-821073072adc": {
+      "fileId": "4e49e94a-7980-477f-af56-821073072adc",
+      "url": "https://nkr.government.bg/File/Download/4e49e94a-7980-477f-af56-821073072adc",
+      "title": "Свали",
+      "partyGuids": [
+        "f63cf7be-bfd2-46ba-872f-00109a4c9904"
+      ],
+      "inventoryIds": [
+        "216-225"
+      ],
+      "concessionIds": [
+        "216-225"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-05T07:09:27Z",
+      "filename": "%D0%A0%D0%9C%D0%A1%201002-2022.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 160768,
+      "sha256": "74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914",
+      "archivePath": "source-archive/concessions/nkr-attachments/74d4a1e0bb6f82a891f9c321bfac7253cd9a0e37c2390e2b3794a5141ddab914.doc",
+      "textPath": null,
+      "extractor": "unsupported",
+      "textChars": 0,
+      "keywordHit": false,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    }
+  }
+}
