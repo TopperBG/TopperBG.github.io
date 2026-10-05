@@ -153,6 +153,59 @@ def coordinate_order(rec: dict | None, crs: str) -> str | None:
     return None
 
 
+def parse_bg_number(value: str) -> float | None:
+    s = value.replace("\u00a0", "").replace(" ", "").replace(",", ".")
+    try:
+        return float(s)
+    except ValueError:
+        return None
+
+
+def document_metadata(text: str) -> dict:
+    """Extract only explicit concession-geometry metadata from the same official document."""
+    compact = re.sub(r"\s+", " ", text)
+    declared_crs = None
+    if re.search(r"БГС\s*2005", compact, re.I):
+        declared_crs = "BGS2005"
+    elif re.search(r"Координатна\s+система[^.\n]{0,50}1970|КС\s*1970", compact, re.I):
+        declared_crs = "BGS1970"
+
+    axis_order = None
+    if re.search(r"X\s*\(\s*север\s*\).*?Y\s*\(\s*изток\s*\)", compact, re.I):
+        axis_order = "X(N), Y(E)"
+    elif re.search(r"Y\s*\(\s*изток\s*\).*?X\s*\(\s*север\s*\)", compact, re.I):
+        axis_order = "Y(E), X(N)"
+
+    area = None
+    area_patterns = [
+        r"Определя\s+концесионна\s+площ(?:\s+с\s+(?:общ\s+)?размер|\s+с\s+площ|\s+в\s+размер)?\s*[:\-]?\s*([0-9][0-9\s\u00a0.,]*)\s*дка",
+        r"концесионна\s+площ\s+(?:с\s+)?(?:общ\s+)?размер\s*([0-9][0-9\s\u00a0.,]*)\s*дка",
+    ]
+    for pattern in area_patterns:
+        m = re.search(pattern, compact, re.I)
+        if m:
+            area = parse_bg_number(m.group(1))
+            if area and area > 0:
+                break
+
+    ranges = []
+    for m in re.finditer(r"от\s*№?\s*1\s*до\s*№?\s*(\d{1,4})", compact, re.I):
+        n = int(m.group(1))
+        if n >= 3:
+            ranges.append(n)
+    # A single 1..N range is safe for one-ring automatic publication. Multiple
+    # ranges normally mean multiple contours and require explicit ring splitting.
+    expected = ranges[0] if len(set(ranges)) == 1 else None
+
+    return {
+        "declaredCrs": declared_crs,
+        "axisOrder": axis_order,
+        "officialAreaDka": area,
+        "singleRangeExpectedPointCount": expected,
+        "rangeEndsFound": sorted(set(ranges)),
+    }
+
+
 def main() -> None:
     attachments = load(ATTACHMENTS, {"files": {}})
     candidates = load(CANDIDATES, {"candidates": []})
@@ -172,22 +225,27 @@ def main() -> None:
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
+        doc_meta = document_metadata(text)
         raw_rows = parse_numbered_triples(text)
         rows, conflicts = dedupe(raw_rows)
         if not rows:
             continue
 
         by_class = Counter(r["crsClass"] for r in rows)
-        dominant = by_class.most_common(1)[0][0]
-        dominant_rows = [r for r in rows if r["crsClass"] == dominant]
+        numeric_dominant = by_class.most_common(1)[0][0]
+        dominant = doc_meta.get("declaredCrs") or numeric_dominant
+        if doc_meta.get("declaredCrs") in ("BGS1970", "BGS2005"):
+            dominant_rows = [r for r in rows if r["crsClass"] in ("BGS1970", "BGS2005")]
+        else:
+            dominant_rows = [r for r in rows if r["crsClass"] == dominant]
         point_numbers = [r["pointNo"] for r in dominant_rows]
 
         for cid in meta.get("concessionIds") or []:
             rec = curated.get(cid)
-            expected = expected_point_count(rec)
-            area = rec.get("official_area_dka") if rec else None
+            expected = expected_point_count(rec) or doc_meta.get("singleRangeExpectedPointCount")
+            area = (rec.get("official_area_dka") if rec else None) or doc_meta.get("officialAreaDka")
             zone = rec.get("zone_inference") if rec else None
-            order = coordinate_order(rec, dominant)
+            order = coordinate_order(rec, dominant) or doc_meta.get("axisOrder")
             unique_count = len({r["pointNo"] for r in dominant_rows})
             exact = expected is not None and unique_count == expected
             full_range = expected is not None and set(point_numbers) == set(range(1, expected + 1))
@@ -234,7 +292,12 @@ def main() -> None:
                 "extractor": meta.get("extractor"),
                 "coordinateParserVersion": meta.get("coordinateParserVersion"),
                 "dominantCrsClass": dominant,
-                "sourceCoordinateSystem": source_crs or dominant,
+                "numericDominantCrsClass": numeric_dominant,
+                "declaredCrsFromDocument": doc_meta.get("declaredCrs"),
+                "axisOrderFromDocument": doc_meta.get("axisOrder"),
+                "officialAreaDkaFromDocument": doc_meta.get("officialAreaDka"),
+                "rangeEndsFoundInDocument": doc_meta.get("rangeEndsFound"),
+                "sourceCoordinateSystem": source_crs or doc_meta.get("declaredCrs") or dominant,
                 "sourceCoordinateOrder": order,
                 "sourceZone": zone,
                 "officialAreaDka": area,
