@@ -15,7 +15,7 @@
       ],
       "latestSha256": "6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b",
       "latestBytes": 243200,
-      "lastCheckedAt": "2026-10-05T06:36:24Z"
+      "lastCheckedAt": "2026-10-05T06:39:23Z"
     },
     "ME-CONCESSIONS-PAGE": {
       "id": "ME-CONCESSIONS-PAGE",
@@ -33,11 +33,17 @@
           "bytes": 46023,
           "firstSeenAt": "2026-10-05T06:36:26Z",
           "path": "snapshots/me-concessions-page/b789a3ca208b9cbf49841a44453af3f5134ccb2144a2bdd617b8d806745341d2.html"
+        },
+        {
+          "sha256": "0b4ad52f5d26de59c4c1743a7179992fc4ba2098ef1929650504a12a119fe6d2",
+          "bytes": 46023,
+          "firstSeenAt": "2026-10-05T06:39:26Z",
+          "path": "snapshots/me-concessions-page/0b4ad52f5d26de59c4c1743a7179992fc4ba2098ef1929650504a12a119fe6d2.html"
         }
       ],
-      "latestSha256": "b789a3ca208b9cbf49841a44453af3f5134ccb2144a2bdd617b8d806745341d2",
+      "latestSha256": "0b4ad52f5d26de59c4c1743a7179992fc4ba2098ef1929650504a12a119fe6d2",
       "latestBytes": 46023,
-      "lastCheckedAt": "2026-10-05T06:36:26Z"
+      "lastCheckedAt": "2026-10-05T06:39:26Z"
     },
     "ME-ABANDONED-MINING-WASTE": {
       "id": "ME-ABANDONED-MINING-WASTE",
@@ -55,11 +61,17 @@
           "bytes": 51607,
           "firstSeenAt": "2026-10-05T06:36:27Z",
           "path": "snapshots/me-abandoned-mining-waste/b02929d167c0599e54a7c938d4cd829bb0328b6480504229e4fa0bd85bdc4aca.html"
+        },
+        {
+          "sha256": "fefdc445f0b8d6b41d8aaa3c7be19e8fb6468ab89fe86cbb0e3532df0241bca1",
+          "bytes": 51607,
+          "firstSeenAt": "2026-10-05T06:39:27Z",
+          "path": "snapshots/me-abandoned-mining-waste/fefdc445f0b8d6b41d8aaa3c7be19e8fb6468ab89fe86cbb0e3532df0241bca1.html"
         }
       ],
-      "latestSha256": "b02929d167c0599e54a7c938d4cd829bb0328b6480504229e4fa0bd85bdc4aca",
+      "latestSha256": "fefdc445f0b8d6b41d8aaa3c7be19e8fb6468ab89fe86cbb0e3532df0241bca1",
       "latestBytes": 51607,
-      "lastCheckedAt": "2026-10-05T06:36:27Z"
+      "lastCheckedAt": "2026-10-05T06:39:27Z"
     },
     "ME-ABANDONED-MINING-WASTE-XLS": {
       "id": "ME-ABANDONED-MINING-WASTE-XLS",
@@ -75,8 +87,8 @@
       ],
       "latestSha256": "15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7",
       "latestBytes": 126464,
-      "lastCheckedAt": "2026-10-05T06:36:28Z"
+      "lastCheckedAt": "2026-10-05T06:39:29Z"
     }
   },
-  "generatedAt": "2026-10-05T06:36:28Z"
+  "generatedAt": "2026-10-05T06:39:29Z"
 }

@@ -1,0 +1,421 @@
+
+
+
+
+
+    <script type="text/javascript">
+        if (typeof (Callbacks) === 'undefined') {
+            Callbacks = {};
+        }
+
+        Callbacks['ConcessionsFilterRow'] = function () {
+            return "<tr id='FilterForms' class='searches filterRow'><td id='FilterId' class='hiddenColumn'><input type='text' name='Id' class='filterField form-control' /></td><td id='FilterRegNumber' class=''><input type='text' name='RegNumber' class='filterField form-control' /></td><td id='FilterStatus' class=''><input type='text' name='Status' class='filterField form-control' /></td><td id='FilterProcedureStatus' class=''><input type='text' name='ProcedureStatus' class='filterField form-control' /></td><td id='FilterConcessionName' class=''><input type='text' name='ConcessionName' class='filterField form-control' /></td><td id='FilterConcessionType' class=''><input type='text' name='ConcessionType' class='filterField form-control' /></td><td id='FilterConcessionSubject' class=''><input type='text' name='ConcessionSubject' class='filterField form-control' /></td><td id='FilterAreaExtent' class=''><input type='text' name='AreaExtent' class='filterField form-control' /></td><td id='FilterConceder' class=''><input type='text' name='Conceder' class='filterField form-control' /></td><td id='FilterTypeId' class='hiddenColumn'><input type='text' name='TypeId' class='filterField form-control' /></td><td id='FilterRelatedLotId' class='hiddenColumn'><input type='text' name='RelatedLotId' class='filterField form-control' /></td><td id='FilterRelatedLotRegNumber' class=''><input type='text' name='RelatedLotRegNumber' class='filterField form-control' /></td></tr>";
+        };
+
+        Callbacks['ConcessionsTotalRow'] = function () {
+            return "<tr class='sumRow'><td class='hiddenColumn'><b></b></td><td><b>Общо:</b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td><b></b></td><td class='hiddenColumn'><b></b></td><td class='hiddenColumn'><b></b></td><td><b></b></td></tr>";
+        };
+    </script>
+    <div id="ConcessionsResultsTable">
+<form action="/Concessions/FilterResults" class="ResultsTable" data-ajax="true" data-ajax-begin="Callbacks.ConcessionsOnBeginCallback" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-success="Callbacks.ConcessionsTableCallback" data-ajax-update="#ConcessionsResultsTable" id="filterFormConcessions" method="post">            <div class="col-lg-12">
+                <div class="group-icons">
+                    <div class="pull-left btn-group">
+
+                    </div>
+
+
+                    <div class="pull-right  btn-group">
+                        <a class='btneq dl-link'title='Експорт в pdf' href='/Concessions/Export?file=pdf'><i class='fa fa-file-pdf-o'></i></a><a class='btneq dl-link'title='Експорт в xls' href='/Concessions/Export?file=xls'><i class='fa fa-file-xls-o'></i></a><a class='btneq dl-link'title='Експорт в csv' href='/Concessions/Export?file=csv'><i class='fa fa-file-csv-o'></i></a>
+
+                    </div>
+                </div>
+                <div class="group-icons">
+                    <div class="pagination pull-left">
+                        <span data-swhgajax="true" data-swhgcallback="Callbacks.ConcessionsTableCallback" data-swhgcontainer="ConcessionsResultsTable"><ul class="pagination"><li><a data-swhglnk="true" href="/Concessions/Search?page=1&amp;rowsPerPage=100">&lt;&lt;</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=71&amp;rowsPerPage=100">&lt;</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=69&amp;rowsPerPage=100">69</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=70&amp;rowsPerPage=100">70</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=71&amp;rowsPerPage=100">71</a></li><li class="active"><a data-swhglnk="true" href="/Concessions/Search?page=72&amp;rowsPerPage=100">72</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=73&amp;rowsPerPage=100">73</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=73&amp;rowsPerPage=100">&gt;</a></li><li><a data-swhglnk="true" href="/Concessions/Search?page=73&amp;rowsPerPage=100">&gt;&gt;</a></li></ul></span>
+                    </div>
+                    <div class="pagination nopadding pull-right">
+                        <label>Общо: 1442</label>
+                    </div>
+                    <div class="top-buttons in-head pagination pull-none">
+                            <div class="nopadding">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Резултати</label>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <select class="form-control rowsPerPageDropDown" data-val="true" data-val-number="The field Int32 must be a number." data-val-required="The Int32 field is required." id="rowsPerPage" name="rowsPerPage"><option selected="selected" value="20">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</select>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+<div class="clearfix"></div>            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                                <script type="text/javascript">
+        (function($) {
+            $.fn.swhgLoad = function(url, containerId, callback) {
+                url = url + (url.indexOf('?') == -1 ? '?' : '&') + '__swhg=' + new Date().getTime();
+
+                $('<div/>').load(url + ' ' + containerId, function(data, status, xhr) {
+                    $(containerId).replaceWith($(this).html());
+                    if (typeof(callback) === 'function') {
+                        callback.apply(this, arguments);
+                    }
+                });
+                return this;
+            }
+
+            $(function() {
+                $('table[data-swhgajax="true"],span[data-swhgajax="true"]').each(function() {
+                    var self = $(this);
+                    var containerId = '#' + self.data('swhgcontainer');
+                    var callback = getFunction(self.data('swhgcallback'));
+
+                    $(containerId).parent().delegate(containerId + ' a[data-swhglnk="true"]', 'click', function() {
+                        $(containerId).swhgLoad($(this).attr('href'), containerId, callback);
+                        return false;
+                    });
+                })
+            });
+
+            function getFunction(code, argNames) {
+                argNames = argNames || [];
+                var fn = window, parts = (code || "").split(".");
+                while (fn && parts.length) {
+                    fn = fn[parts.shift()];
+                }
+                if (typeof (fn) === "function") {
+                    return fn;
+                }
+                argNames.push(code);
+                return Function.constructor.apply(null, argNames);
+            }
+        })(jQuery);
+        </script>
+    <table class="table table-striped table-bordered table-hover table-bordered tableResults queryTable" id="ConcessionsTable" data-swhgajax="true" data-swhgcontainer="ConcessionsResultsTable" data-swhgcallback="Callbacks.ConcessionsTableCallback">
+    <thead>
+        <tr>
+            <th scope="col">
+             </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=RegNumber&amp;sortdir=ASC">Номер </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=Status&amp;sortdir=ASC">Статус на партида </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ProcedureStatus&amp;sortdir=ASC">Статус на процедура </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ConcessionName&amp;sortdir=ASC">Име на концесия </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ConcessionType&amp;sortdir=ASC">Вид на концесия </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=ConcessionSubject&amp;sortdir=ASC">Предмет на концесия </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=AreaExtent&amp;sortdir=ASC">С/без трансграничен интерес </a>            </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=Conceder&amp;sortdir=ASC">Концедент </a>            </th>
+            <th scope="col">
+             </th>
+            <th scope="col">
+             </th>
+            <th scope="col">
+<a data-swhglnk="true" href="/Concessions/Search?rowsPerPage=100&amp;sort=RelatedLotRegNumber&amp;sortdir=ASC">№ на свързана процедура/концесия </a>            </th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr  class="hide-footer-paging">
+            <td colspan="12"><a data-swhglnk="true" href="/Concessions/Search?page=71&amp;rowsPerPage=100">&lt;</a> <a data-swhglnk="true" href="/Concessions/Search?page=69&amp;rowsPerPage=100">69</a> <a data-swhglnk="true" href="/Concessions/Search?page=70&amp;rowsPerPage=100">70</a> <a data-swhglnk="true" href="/Concessions/Search?page=71&amp;rowsPerPage=100">71</a> 72 <a data-swhglnk="true" href="/Concessions/Search?page=73&amp;rowsPerPage=100">73</a> <a data-swhglnk="true" href="/Concessions/Search?page=73&amp;rowsPerPage=100">&gt;</a> </td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">c3b3c369-0990-4171-8066-d41e3428f760</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-82/23.12.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на рибарник в землището на с. Алтимир с идентификатор 00401.24.6</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Бяла Слатина</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span></span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">0848e620-6401-4bd1-9797-1578de062861</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>221-80/15.12.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Възлагане на концесия за строителство на обект &quot;Спортен комплекс за професионален и масов спорт село Марикостиново, община Петрич, област Благоевград&quot;</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Над европейския праг</td>
+            <td>Кмет на община Петрич</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">a1f75451-a2cf-4274-953e-5790706ef0cf</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>121-29/16.07.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">93966368-cb5e-4bea-9b2b-f9ee25c9455f</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>221-78/03.12.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за строителство и управление на Комеплекс за масов спорт, рекреация и отдих &quot;Лесопарк с градски плаж&quot; в гр. Симитли, община Симитли, област Благоевград</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Над европейския праг</td>
+            <td>Кмет на община Симитли</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">75abce4d-5a38-4832-85a7-859023065ac9</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>121-68/15.09.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">5afc4499-031f-4f5d-8dc1-46a831490ad0</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-77/27.11.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>&quot;Концесия за ползване на язовир &quot;Иник дере&quot;, находящ се в землището на с. Брястово, община Минерални бани&quot;</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Минерални бани</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">66090e3a-4314-4bb3-b262-9ab71da87c53</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-65/18.08.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">e5f68dfd-4171-4f66-bafb-66b4bdb68e69</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-73/15.10.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на язовир &quot;Островче&quot;</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Разград</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">a806226b-dc29-4d3c-858b-6da7117ff150</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-63/12.06.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">d34f30e3-9e73-4170-af10-e80e7c3678e1</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>221-72/07.10.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Kонцесия за строителство и управление на паркинг в УПИ I, кв. 516, ЦГЧ, съгласно ПУП-ПРЗ, с идентификатор 67338.516.349 по КККР на гр. Сливен, област Сливен, с площ 1 057 м2, начин на трайно ползване: ПАРКИНГ и съседи – ПИ с идентификатор 67338.514.183, 67338.516.350, 67338.516.331, 67338.516.332, 67338.516.333 и 67338.516.348.</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Сливен</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn"></td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span></span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">e2c3e2fa-2102-46d9-ae8d-bf14716a6d69</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>222-70/28.09.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>&quot;Концесия за услуга на обект язовир &quot;Липена&quot;- публична общинска собственост&quot;</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Брусарци</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">ecefcdb1-1a43-4e34-8f1d-a61295f7273e</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>122-64/17.06.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">468738a6-1b3f-48cd-809f-e14214b16292</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>211-66/19.08.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>възлагане на концесия за строителство на обект „Гражданско летище за обществено ползване София“ – публична държавна собственост </td>
+            <td>Държавна</td>
+            <td>Концесия за строителство</td>
+            <td>Над европейския праг</td>
+            <td>Министър на транспорта и съобщенията</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">11660036-3b31-47b0-b2d6-af1c721ef7b1</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>111-2/05.07.2018</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">c522ca21-900e-48be-9bc7-8ea52d81dac0</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-59/22.04.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на язовир и прилежащите към него съоръжения в с. Спахиево, община Минерални бани, местност &quot;Годжа чаир&quot;</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Минерални бани</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">563a8028-f15f-4917-9fa0-e3f93500835a</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-51/14.01.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">8fffc485-a829-4e78-8bce-33c8655f3f76</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-57/26.03.2020</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на язовир „Горен чифлик” – публична общинска собственост, имот с идентификатор  № 16050.58.331, по кадастралната карта на землището на с. Горен чифлик, за извършване на стопанска дейност - рибовъдство, стопански и любителски риболов, развъждане на раци, жаби и други аквакултури, както и дейности, свързани с тях.</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Долни чифлик</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">0212c675-a06f-498e-afd1-bc956cd1f245</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-17/15.04.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">72b8d633-d9ca-4a73-a7ef-6b6b0ea09629</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>221-49/31.12.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Приключена</td>
+            <td>Отворена</td>
+            <td>Възлагане на концесия за строителство по чл. 7, ал. 2, т. 1 и 2 от Закона за концесиите и за предоставяне и управление на услуги на стадион &quot;Тодор Диев&quot;, град Пловдив</td>
+            <td>Общинска</td>
+            <td>Концесия за строителство</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Пловдив</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">e86fe5a5-7d33-471d-8250-0dfbda9a94d8</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>121-31/14.08.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">3d3938f6-e25b-45b7-83c9-0a26362961ed</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>222-48/12.12.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>КОНЦЕСИЯ за УСЛУГА върху обект - публична общинска собственост, представляващ: Поземлен имот с идентификатор 55467.5.75 (петдесет и пет хиляди четиристотин шестдесет и седем точка пет точка седемдесет и пет) село Парил, община Хаджидимово, област Благоевград по кадастралната карта и кадастралните регистри, одобрени със Заповед № РД-18-1160/23.05.2018 год. на Изпълнителен директор на АГКК с адрес местност „КОЙНАРСКИ ПЪТ“ с площ от 1180 (хиляда сто и осемдесет) квадратни метра, трайно предназначение на територията – територия заета от води и водни обекти, начин на трайно ползване: водоем, стар идентификатор няма, номер по предходен план: 000064, при съседи: 55467.5.52 (петдесет и пет хиляди четиристотин шестдесет и седем точка пет точка петдесет и две), 55467.5.76 (петдесет и пет хиляди четиристотин шестдесет и седем точка пет точка седемдесет и шест), 55467.7.102 (петдесет и пет хиляди четиристотин шестдесет и седем точка пет точка сто и две) и 55467.5.74(петдесет и пет хиляди четиристотин шестдесет и седем точка пет точка седемдесет и четири), актуван с Акт за публична общинска собственост № 437/04.09.2019г., вписан в Служба по вписванията Гоце Делчев към Агенция по вписванията София с дв.вх.рег.№ 2808, вх.рег.№ 2810, акт № 174, том ХⅠ, дело № 676, партида № 50483 от 05.09.2019г.</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Хаджидимово</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">289d40f0-1fcd-42fa-a2ae-f2ff67c28808</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>122-39/13.09.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">d23eafab-fa35-46cb-a7e4-218a06a8df03</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>222-47/12.12.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>КОНЦЕСИЯ ЗА УСЛУГА върху обект - публична общинска собственост, представляваща водоем с площ от 19.193 дка, находящ се в област Благоевград, община Хаджидимово, село Парил, ЕКАТТЕ 55467, в местността „Малката ливада”, съставляващ имот с № 000037 по картата на възстановената собственост на землището, представляващ поземлен имот с идентификатор № 55467.12.89 по КККР на село Парил, община Хаджидимово, област Благоевград, одобрени със Заповед № РД-18-1160/23.05.2018г. на Изпълнителния директор на АГКК.</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Хаджидимово</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">b2bd0b03-c30d-408d-bf9d-f99069a33189</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>122-40/13.09.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">51902dac-e962-4065-8f32-9a3f4c3d9a18</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-43/14.10.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Приключена</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на поземлен имот – публична общинска собственост, с площ 127367 кв.м.,  с идентификатор 47483.48.147,  гр.Меричлeри,   НТП Язовир, номер по предходен план: 000147 и поземлен имот 21258.6.160 с. Длъгнево,  НТП За водостопанско, хидромелиоративно съоръжение, площ 9621 кв.м., стар номер 999160
+</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Димитровград</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">79bc18c2-edff-4ada-9e80-bfcc9baddad2</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-20/15.05.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">63fc7abf-f587-473d-9a6f-190ed2646099</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-42/14.10.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на поземлен имот – публична общинска собственост, с площ 32560 кв.м. , с идентификатор 06762.18.85 , адрес на поземления имот: с.Бряст, начин на трайно ползване: Язовир,  номер по предходен план: 000164, актуван с Акт за публична общинска собственост №399/12.11.2018 г.
+</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Димитровград</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">e265df55-aa06-457c-acf6-ea8da5639f79</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-24/15.05.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">b6ea9b35-12c9-4647-a757-f0cb58de1435</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-41/14.10.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на имот – публична общинска собственост, с идентификатор 17141.25.11 , с площ 311587 кв.м. с.Горски извор,  Язовир &quot;Прогрес&quot;,  номер по предходен план: 000193,, актуван с Акт за публична общинска собственост №770/12.11.2018 г.</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Димитровград</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">65ef1f4e-e0e8-40f2-9d5f-03bacd9c0cf8</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-25/15.05.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">33e7986e-cea1-4275-a285-4b0305b8f47b</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-26/13.06.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за ползване на язовир и прилежащите към него имоти и съоръжения, находящ се в с. Янтра, община Дряново.</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Дряново</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">d0f8f618-4d4d-4fd5-832c-ca4320f94005</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-11/07.02.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">2110e492-944a-455f-aa02-7b97924107b5</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>223-19/14.05.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>1.1.	Обектът на концесия е поземлен имот: язовир(водоем)” Студена вода”, в поземлен имот 63029.139.186, с площ 58,020 дка., общ завирен обем 222 000 куб.м. намиращ се в землището на с.Росен, ЕКАТТЕ 63029, при съседи:63029.139.13; 63029.139.14; 63029.139.127; 63029.139.187; 63029.139.127……..63029.139.2; 63029.139.3; 63029.139.4; 63029.139.5, трайно предназначение на територията: територия, заета от води и водни обекти, с начин на трайно ползване: водоем;</td>
+            <td>Общинска</td>
+            <td>Концесия за ползване</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Созопол</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">94ce811a-c013-4304-97cc-118933103e68</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>123-7/04.09.2018</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">1f8a89dd-022c-4553-9770-1c501f6db192</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>222-12/19.02.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>„Техническа експлоатация, поддържане и ремонт на обект рибарник, разположен в: поземлен имот с идентификатор 24102.37.182; поземлен имот с идентификатор 24102.38.182; поземлен имот с идентификатор 24102.37.101, в землището на с.Дуранкулак и предоставяне на условия за индивидуален и спортен риболов, туристически и спортни мероприятия”</td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Шабла</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">09f0d8eb-dfa5-41e2-b8d9-216374228822</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>122-5/15.08.2018</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+        <tr>
+            <td class="idColumn IdColumn hiddenColumn">de2540d6-135b-496a-af54-8a79a91792c6</td>
+            <td class="clickableColumn"><label class='Clickable RegNumberClickable'><span>222-10/06.02.2019</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+            <td>Открита</td>
+            <td>Отворена</td>
+            <td>Концесия за предоставяне и управление на услуги: рибовъдство, индивидуален и спортен риболов, туристическа, почивна и спортна дейност, напояване и други свързани с обекта на концесия. </td>
+            <td>Общинска</td>
+            <td>Концесия за услуги</td>
+            <td>Под европейския праг</td>
+            <td>Кмет на община Пазарджик</td>
+            <td class="hiddenColumn TypeIdColumn">ee06c6fb-93c2-468b-802e-137c5e5436e0</td>
+            <td class="hiddenColumn RelatedLotIdColumn">d94a0d00-3e0c-45b3-973c-2921f0db2248</td>
+            <td class="clickableColumn"><label class='Clickable RelatedLotRegNumberClickable'><span>122-4/06.08.2018</span> <i title="Информация" class="glyphicon glyphicon-info-sign"></i></label ></td>
+        </tr>
+    </tbody>
+    </table>
+
+                    </div>
+                </div>
+            </div>            
+</form>    </div>
