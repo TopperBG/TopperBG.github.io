@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93g-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93g</title>
+<meta name="bgwf-build" content="v0.93h-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93h</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -5458,7 +5458,7 @@ if(kind==='industry'){
   }
   const geometryText=f.getGeometry()?.getType()==='Point'?'само местоположение':`разработена/индустриална площ ${formatAreaDka(f.get('areaDka'))}`;
   return `${industrialTypeLabel(d.type)} · ${d.name} · ${geometryText}${d.area?` · ${d.area}`:''}${official} · ${d.fuel}`;
-}if(kind==='concession')return `Официална концесионна граница · ${f.get('concessionId')||'—'} · ${f.get('name')||'Концесия'} · ${formatAreaDka(f.get('areaDka'))}`;if(kind==='live')return liveFireLabel(d);if(kind==='effis')return 'EFFIS/Copernicus реален опожарен периметър';return '';}
+}if(kind==='concession')return `${f.get('sourceId')==='OFFICIAL-MAP-GEOREFERENCED'?'Концесионна граница · геореферирана по официална карта':'Официална концесионна граница'} · ${f.get('concessionId')||'—'} · ${f.get('name')||'Концесия'} · ${formatAreaDka(f.get('areaDka'))}`;if(kind==='live')return liveFireLabel(d);if(kind==='effis')return 'EFFIS/Copernicus реален опожарен периметър';return '';}
 const HIT_ORDER={'natura-renewables-overlap':110,'natura-industry-overlap':110,live:100,fire:90,effis:80,concession:70,foreign:68,industry:65,wind:60,solar:55,project:50,epm:45,red:40,natura:35,province:1};
 function topFeatureAtPixel(pixel){const found=[];map.forEachFeatureAtPixel(pixel,(f,l)=>{if(f&&l!==densityLayer)found.push(f);},{hitTolerance:5});found.sort((a,b)=>(HIT_ORDER[b.get('kind')]||0)-(HIT_ORDER[a.get('kind')]||0));return found[0]||null;}
 let bgwfHoverFrame=0,bgwfHoverLastAt=0;
@@ -5491,7 +5491,7 @@ map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url
   else if(kind==='natura'){const area=Number(f.get('SiteArea'));detail.innerHTML=`<strong>${f.get('SiteNameBG')||'Защитена зона'}</strong> · ${f.get('SiteCode')||'—'} · ${f.get('naturaClass')==='spa'?'защитена зона за птици (SPA)':'защитена зона за местообитания (pSCI/SCI/SAC)'}${Number.isFinite(area)?` · ${area.toLocaleString('bg-BG',{maximumFractionDigits:1})} ha`:''} · ${safeLink('https://natura2000.egov.bg/','официален източник МОСВ ↗')}`;}
   else if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap'){const zones=f.get('zoneLabels')||[];detail.innerHTML=`<strong>${kind==='natura-renewables-overlap'?'Пресичане Натура 2000 ∩ ВЕИ':'Пресичане Натура 2000 ∩ ТЕЦ/мини'}</strong> · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)} · зони: ${zones.join(', ')}. <strong>Не е автоматично доказателство за нарушение:</strong> провери решението за преценка/оценка за съвместимост по чл. 31 ЗБР и приложимата ОВОС/ЕО на РИОСВ или МОСВ.`;}
   else if(kind==='industry'){const meta=industrialConcessionMeta[d.id];const geometryText=f.getGeometry()?.getType()==='Point'?'само надеждно местоположение; без заявен контур':`разработена площ ${formatAreaDka(f.get('areaDka'))}`;detail.innerHTML=`<strong>${d.name}</strong> · ${d.fuel} · ${geometryText}${d.area?` · ${d.area}`:''}${d.info?` · ${d.info}`:''}${Number.isFinite(meta?.officialAreaDka)?` · официална концесионна площ ${formatAreaDka(meta.officialAreaDka)}`:''} · ${safeLink(d.source,'източник ↗')}${meta?.nkrUrl?` · ${safeLink(meta.nkrUrl,`НКР ${meta.concessionId} ↗`)}`:''}`;}
-  else if(kind==='concession'){const nkr=f.get('nkrUrl');const src=f.get('sourceUrl');detail.innerHTML=`<strong>${f.get('name')||'Концесионна площ'}</strong> · официална концесионна граница · ${f.get('concessionId')||'—'} · ${formatAreaDka(f.get('areaDka'))}${nkr?` · ${safeLink(nkr,'НКР ↗')}`:''}${src?` · ${safeLink(src,'GIS източник ↗')}`:''}`;}
+  else if(kind==='concession'){const nkr=f.get('nkrUrl');const src=f.get('sourceUrl');detail.innerHTML=`<strong>${f.get('name')||'Концесионна площ'}</strong> · ${f.get('sourceId')==='OFFICIAL-MAP-GEOREFERENCED'?'геореферирана по официална карта':'официална концесионна граница'} · ${f.get('concessionId')||'—'} · ${formatAreaDka(f.get('areaDka'))}${nkr?` · ${safeLink(nkr,'НКР ↗')}`:''}${src?` · ${safeLink(src,f.get('sourceId')==='OFFICIAL-MAP-GEOREFERENCED'?'официална схема ↗':'GIS източник ↗')}`:''}`;}
   else if(kind==='live'){detail.innerHTML=`${liveFireLabel(d)} · ${safeLink(ISKRA_MAP_URL,'провери текущия статус в ИСКРА ↗')}`;}
   else if(kind==='effis'){detail.textContent='EFFIS/Copernicus · реален опожарен периметър за избрания пожар.';}
 });
@@ -6343,7 +6343,7 @@ const MGU_PERNIK_CONCESSION_CACHE_URL='./data/mgu-pernik-concessions-v1.geojson'
 const GEOREFERENCED_CONCESSION_SCHEMES_URL='./data/georeferenced-concession-schemes-v1.geojson';
 const PENDING_CONCESSIONS_URL='./data/pending-concessions-v1.json';
 const OFFICIAL_CONCESSION_CACHE_URL=INDUSTRIAL_ZONE_CACHE_URL;
-function concessionFeatureFromGeoJSON(raw,sourceId='STATIC-CACHE',sourceUrl=OFFICIAL_CONCESSION_CACHE_URL){try{const f=cloneGeoFeature(raw);const p=raw.properties||{};const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'})/1000;if(!Number.isFinite(area)||area<=0||area>1500000)return null;f.set('kind','concession');f.set('concessionId',p.concession_id??p['идентификационен_____партиден__']??'—');f.set('name',p.name??p['находище']??'Концесионна площ');f.set('concessionaire',p.concessionaire??p['концесионер']??'');f.set('nkrUrl',p.ncr_url??'');f.set('sourceUrl',p.source_url??sourceUrl);f.set('sourceId',sourceId);f.set('areaDka',area);return f;}catch(e){dbgWarn('concession-feature-reject',{error:e.message});return null;}}
+function concessionFeatureFromGeoJSON(raw,sourceId='STATIC-CACHE',sourceUrl=OFFICIAL_CONCESSION_CACHE_URL){try{const f=cloneGeoFeature(raw);const p=raw.properties||{};const area=getGeodesicArea(f.getGeometry(),{projection:'EPSG:3857'})/1000;if(!Number.isFinite(area)||area<=0||area>1500000)return null;f.set('kind','concession');f.set('concessionId',p.concession_id??p['идентификационен_____партиден__']??'—');f.set('name',p.name??p['находище']??'Концесионна площ');f.set('concessionaire',p.concessionaire??p['концесионер']??'');f.set('nkrUrl',p.nkr_url??p.ncr_url??'');f.set('sourceUrl',p.source_url??sourceUrl);f.set('sourceId',sourceId);f.set('geometryLabel',p.geometry_label??'');f.set('areaDka',area);return f;}catch(e){dbgWarn('concession-feature-reject',{error:e.message});return null;}}
 async function loadOfficialConcessionStaticCache(){
   let standaloneError=null;
   try{
