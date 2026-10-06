@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93i-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93i</title>
+<meta name="bgwf-build" content="v0.93j-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93j</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -3267,7 +3267,11 @@ function normalizeProvinceName(value) {
           "mw": 68,
           "bessMw": 40,
           "bessMwh": 80,
-          "statusLabel": "ПУП-ПЗ/ПП + Решение ШУ-44-ПР/30.09.2026 · 68 MW AC · BESS 40 MW / 80 MWh · ПИ 83510.45.22 (стар 83510.45.17) · геометрия от КККР",
+          "lon": 26.94041,
+          "lat": 43.28647,
+          "fallbackAreaM2": 647300,
+          "fallbackGeometryLabel": "ориентировъчен площов контур на площадката; заменя се автоматично при налична КККР геометрия",
+          "statusLabel": "ПУП-ПЗ/ПП + Решение ШУ-44-ПР/30.09.2026 · 68 MW AC · BESS 40 MW / 80 MWh · ПИ 83510.45.22 (стар 83510.45.17) · точна КККР геометрия при наличност; иначе площов fallback 647,3 дка",
           "source": "https://riosv-shumen.eu/index.php?act=164&homepage=7&subnavy=3",
           "secondarySource": "https://www.shumen.bg/uploads/council/23092830.pdf",
           "parcels": ["83510.45.22"]
@@ -6055,7 +6059,19 @@ function renderParcelRows(loaded){
       pointSolarRows.push(row);
     }catch(e){rejected++;dbgWarn('solar-location-rejected',{id:project.id,message:e.message});}
   }
-  window.__bgwfProjectParcels=loaded.filter(d=>d.layerType==='projects');
+  const loadedProjectIds=new Set(loaded.filter(d=>d.layerType==='projects').map(d=>d.project?.id).filter(Boolean));
+  const fallbackProjectRows=[];
+  for(const project of cadastralProjects.filter(p=>!loadedProjectIds.has(p.id)&&Number.isFinite(Number(p.lon))&&Number.isFinite(Number(p.lat))&&Number(p.fallbackAreaM2)>0)){
+    try{
+      const groundRadiusM=Math.sqrt(Number(project.fallbackAreaM2)/Math.PI);
+      const mercatorRadiusM=groundRadiusM/Math.cos(Number(project.lat)*Math.PI/180);
+      const row={layerType:'projects',project,parcelRef:project.parcels?.[0]||'',feature:null,fallback:true};
+      const f=new Feature({geometry:new CircleGeom(fromLonLat([Number(project.lon),Number(project.lat)]),mercatorRadiusM)});
+      f.set('kind','project'); f.set('data',row); f.set('status',project.status); f.set('assetType',project.assetType||null);
+      projectSource.addFeature(f); fallbackProjectRows.push(row);
+    }catch(e){rejected++;dbgWarn('project-fallback-rejected',{id:project.id,message:e.message});}
+  }
+  window.__bgwfProjectParcels=[...loaded.filter(d=>d.layerType==='projects'),...fallbackProjectRows];
   window.__bgwfSolarParcels=[...loaded.filter(d=>d.layerType==='solar'),...curatedSolarRows,...pointSolarRows];
   debugState.layerCounts.solar=solarSource.getFeatures().length;
   debugState.layerCounts.projects=projectSource.getFeatures().length;
