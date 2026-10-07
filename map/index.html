@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93k-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93k</title>
+<meta name="bgwf-build" content="v0.93l-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93l</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -5080,7 +5080,6 @@ kkkrLayer.set('kind','kkkr');
 function cadastralIdentifier(value){const v=String(value||'').trim();return /^\d{5}\.\d{1,5}\.\d{1,5}$/.test(v)?v:null;}
 function enableKkkrLayer(){
   layerVisibility.kkkr=true;kkkrLayer.setVisible(true);
-  root.querySelector('.bgwf-layer-toggle[data-layer="kkkr"]')?.setAttribute('aria-pressed','true');
 }
 async function findKkkrParcel(ref){
   ref=cadastralIdentifier(ref);if(!ref)return null;
@@ -6946,19 +6945,17 @@ const configs=[
   ['future','RED III','#2f9e44','RED III — приоритетни зони по Директивата за възобновяема енергия. Приоритетна зона ≠ одобрен проект ≠ засегнат имот ≠ отчуждена земя.'],
   ['foreign','Foreign','#db2777','Foreign — големи ВЕИ проекти в съседни държави, основно над 50 MW; използват се реални полигони, когато са налични.'],
   ['natura','Натура 2000','#0f766e','Натура 2000 — официални защитени зони за птици и местообитания по данни на МОСВ.'],
-  ['kkkr','КККР','#3b82f6','КККР — търсене и визуализация на поземлени имоти по кадастрален идентификатор чрез публичната АГКК INSPIRE услуга.'],
   ['epm','HV','#e11d48','HV — High Voltage / високоволтова електропреносна мрежа. Показва индикативни OSM трасета 110/220/400 kV; свободният капацитет се потвърждава отделно.'],
   ['industry','ТЕЦ/мини','#4b5563',`ТЕЦ/мини — топлоелектрически централи, мини, кариери, хвостохранилища, разработени площи и налични концесионни граници. НСИ: нарушена територия ${NSI_DISTURBED_LAND_2025.dka.toLocaleString('bg-BG')} дка към ${NSI_DISTURBED_LAND_2025.asOf}.`]
 ];
 configs.forEach(([key,label,color,help])=>{
-  const parent=['foreign','natura','kkkr','epm','industry'].includes(key)?layerRow2:layerRow1;
+  const parent=['foreign','natura','epm','industry'].includes(key)?layerRow2:layerRow1;
   createButton(parent,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],help,onClick:async function(){
     layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));
     if(key==='solar')solarLayer.setVisible(layerVisibility.solar);
     if(key==='wind')windLayer.setVisible(layerVisibility.wind);
     if(key==='projects')projectLayer.setVisible(layerVisibility.projects);
     if(key==='future')redLayer.setVisible(layerVisibility.future);
-    if(key==='kkkr')kkkrLayer.setVisible(layerVisibility.kkkr);
     if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}
     if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}
     if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}
