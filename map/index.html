@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.94-foreign-status-colors-20261013">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94</title>
+<meta name="bgwf-build" content="v0.94a-regional-basemap-context-20261013">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94a</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4672,6 +4672,35 @@ function featureExtentInBulgaria(feature){const e=feature.getGeometry()?.getExte
 
 // ---------- OpenLayers sources/layers ----------
 
+// Lightweight regional orientation base: neutral land/water, country boundaries and
+// geographic labels. The reference overlay remains visible over satellite imagery.
+const regionalBaseSource=new XYZ({
+  url:'https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  crossOrigin:'anonymous',
+  attributions:'Tiles © Esri — Light Gray Canvas'
+});
+const regionalBaseLayer=new TileLayer({
+  source:regionalBaseSource,
+  visible:true,
+  preload:0,
+  zIndex:-120
+});
+regionalBaseLayer.set('kind','basemap-regional-context');
+
+const regionalReferenceSource=new XYZ({
+  url:'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+  crossOrigin:'anonymous',
+  attributions:'Reference © Esri'
+});
+const regionalReferenceLayer=new TileLayer({
+  source:regionalReferenceSource,
+  visible:true,
+  opacity:.82,
+  preload:0,
+  zIndex:35
+});
+regionalReferenceLayer.set('kind','basemap-country-sea-reference');
+
 const satelliteSource=new XYZ({
   url:'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   crossOrigin:'anonymous',
@@ -4891,7 +4920,9 @@ function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba
 }
 function refreshSatelliteOverlayStyles(){
   root.classList.toggle('is-satellite-mode',satelliteMode());
-  [placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
+  regionalBaseLayer?.setVisible?.(!satelliteMode());
+  regionalReferenceLayer?.setOpacity?.(satelliteMode()?.96:.78);
+  [regionalReferenceLayer,placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
   industrialAuxLayer?.changed?.();
 }
@@ -5289,7 +5320,7 @@ map=new MapOL({
   target:mapTarget,
   view,
   interactions:mapInteractions,
-  layers:[satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,epmLayer,kkkrLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,provinceLayer]
+  layers:[regionalBaseLayer,satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,epmLayer,kkkrLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,regionalReferenceLayer,provinceLayer]
 });
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
@@ -7000,7 +7031,7 @@ if(controls){
   layerRow2=document.createElement('div');layerRow2.className='bgwf-layer-row bgwf-layer-row-b';layerRow2.setAttribute('aria-label','Тематични слоеве — ред 2');
   controls.append(layerRow1,layerRow2);
   createButton(layerRow1,{className:'bgwf-layer-toggle',text:'SAT',layer:'satellite',color:'#64748b',pressed:urlParams.get('map')==='sat',
-    help:'SAT — сателитна базова карта (World Imagery), върху която се наслагват тематичните слоеве.',
+    help:'SAT — сателитна базова карта (World Imagery). Държавните граници и основните географски имена остават като ориентационен слой.',
     onClick:function(){const next=!satelliteLayer.getVisible();satelliteLayer.setVisible(next);this.setAttribute('aria-pressed',String(next));refreshSatelliteOverlayStyles();updateLayerStatus();scheduleUrlSync();}
   });
   satelliteLayer.setVisible(urlParams.get('map')==='sat');requestAnimationFrame(refreshSatelliteOverlayStyles);
