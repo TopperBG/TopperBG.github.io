@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93o-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93o</title>
+<meta name="bgwf-build" content="v0.93p-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93p</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4795,7 +4795,8 @@ async function ensureForeignRenewableCache(){
         if(row?.geometry?.type!=='Point'||!Array.isArray(coords)||coords.length<2)continue;
         const lon=Number(coords[0]),lat=Number(coords[1]),mw=Number(p.mw);
         if(!Number.isFinite(lon)||!Number.isFinite(lat)||!Number.isFinite(mw)||mw<=1)continue;
-        const project={...p,lon,lat,major:mw>50,status:'operating',statusLabel:p.statusLabel||'действащ'};
+        const status=p.status||'operating';
+        const project={...p,lon,lat,major:mw>50,status,statusLabel:p.statusLabel||(status==='construction'?'в строеж':status==='planned'?'планиран':'действащ')};
         const area=foreignProjectArea(project);
         const groundRadiusM=Math.sqrt(area.areaHa*10000/Math.PI);
         const mercatorRadiusM=groundRadiusM/Math.max(.25,Math.cos(lat*Math.PI/180));
@@ -4991,17 +4992,17 @@ const foreignLayer=new VectorLayer({
   style:(f,resolution)=>{
     if(f.get('hasOsmGeometry'))return null;
     const project=f.get('data')||{},selected=f.get('selected');
-    const operating=project.status==='operating',large=Number(project.mw)>50;
+    const operating=project.status==='operating',planned=project.status==='planned',construction=project.status==='construction',large=Number(project.mw)>50;
     const circle=f.getGeometry(),center=new Point(circle.getCenter());
     const radiusPx=circle.getRadius()/Math.max(1,resolution||1);
     const styles=[new Style({
-      fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.30)':'rgba(219,39,119,.22)'):(satelliteMode()?'rgba(219,39,119,.18)':'rgba(219,39,119,.13)')}),
-      stroke:new Stroke({color:selected?'#111827':large?(satelliteMode()?'#facc15':'#b45309'):(satelliteMode()?'#ff4da6':'#be185d'),width:selected?4:(large?3.6:1.7),lineDash:project.areaBasis==='estimated'?[8,5]:null})
+      fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.30)':'rgba(219,39,119,.22)'):(construction?(satelliteMode()?'rgba(168,85,247,.22)':'rgba(168,85,247,.16)'):(satelliteMode()?'rgba(96,165,250,.18)':'rgba(59,130,246,.12)'))}),
+      stroke:new Stroke({color:selected?'#111827':large?(satelliteMode()?'#facc15':'#b45309'):(satelliteMode()?'#ff4da6':'#be185d'),width:selected?4:(large?3.6:1.7),lineDash:planned?[3,4]:construction?[9,4]:project.areaBasis==='estimated'?[8,5]:null})
     })];
     // At country/region scale the true area can be smaller than one pixel. Keep a
     // clearly outlined minimum-size locator ring without replacing the real circle.
     if(radiusPx<11)styles.push(new Style({geometry:center,image:new CircleStyle({radius:large?13:7,fill:new Fill({color:'rgba(219,39,119,.08)'}),stroke:new Stroke({color:satelliteMode()?'#ff4da6':'#be185d',width:large?3:1.5,lineDash:project.areaBasis==='estimated'?[4,3]:null})})}));
-    styles.push(new Style({geometry:center,text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 12px sans-serif':large?'900 11px sans-serif':'700 8px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:large?'#b45309':(operating?'#db2777':'#9d174d')}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    styles.push(new Style({geometry:center,text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 12px sans-serif':large?'900 11px sans-serif':'700 8px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:large?'#b45309':(operating?'#db2777':construction?'#7e22ce':'#2563eb')}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
     return styles;
   }
 });
