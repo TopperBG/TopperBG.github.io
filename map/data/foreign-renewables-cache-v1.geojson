@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-foreign-renewables-cache-v1",
-  "generatedAt": "2026-10-13T00:00:00Z",
+  "generatedAt": "2026-10-13T06:16:56Z",
   "scope": {
     "countries": [
       "RO",
@@ -16,11 +16,273 @@
     ],
     "statusPolicy": {
       "operatingMinimumMwExclusive": 1,
-      "constructionPlannedMinimumMwExclusive": 10
+      "constructionPlannedMinimumMwExclusive": 1
     },
     "majorThresholdMwExclusive": 50
   },
+  "refresh": {
+    "source": "OpenStreetMap / Overpass plus curated seed",
+    "lastKnownGoodPreservedOnFailure": true,
+    "perCountryLastKnownGood": true,
+    "countryErrors": {
+      "RS": "All Overpass endpoints failed: The read operation timed out",
+      "TR": "All Overpass endpoints failed: The read operation timed out",
+      "MK": "All Overpass endpoints failed: The read operation timed out",
+      "RO": "All Overpass endpoints failed: The read operation timed out",
+      "GR": "All Overpass endpoints failed: The read operation timed out"
+    },
+    "sourceHealth": {
+      "RS": {
+        "country": "Сърбия",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 6,
+        "curated": 6
+      },
+      "TR": {
+        "country": "Турция",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 6,
+        "curated": 6
+      },
+      "MK": {
+        "country": "Северна Македония",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 3,
+        "curated": 3
+      },
+      "RO": {
+        "country": "Румъния",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 6,
+        "curated": 6
+      },
+      "GR": {
+        "country": "Гърция",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 5,
+        "curated": 5
+      }
+    }
+  },
+  "featureCount": 26,
+  "majorCount": 26,
   "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-GR-AMYNTAIO",
+        "name": "Amyntaio Solar Park",
+        "country": "Гърция",
+        "countryCode": "GR",
+        "technology": "solar",
+        "status": "construction",
+        "statusLabel": "в строеж",
+        "mw": 550,
+        "major": true,
+        "source": "https://www.ppcgroup.com/media/press-releases/2024/ppc-group-construction-of-a-550-mw-photovoltaic-plant-in-ptolemaida-is-underway/",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.67,
+          40.61
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-GR-KAFIREAS",
+        "name": "Kafireas Wind Complex",
+        "country": "Гърция",
+        "countryCode": "GR",
+        "technology": "wind",
+        "status": "operating",
+        "statusLabel": "действащ",
+        "mw": 330,
+        "major": true,
+        "source": "https://www.enelgreenpower.com/our-projects/operating/kafireas-wind-farm",
+        "osm_id": "R15763363",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.47,
+          38.08
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-GR-KOZANI",
+        "name": "Kozani Solar Park",
+        "country": "Гърция",
+        "countryCode": "GR",
+        "technology": "solar",
+        "status": "operating",
+        "statusLabel": "действащ",
+        "mw": 204,
+        "major": true,
+        "source": "https://www.juwi.com/references/solar/kozani-greece",
+        "osm_id": "W1056457812",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.78,
+          40.38
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-GR-ASKIO",
+        "name": "Askio Wind Complex",
+        "country": "Гърция",
+        "countryCode": "GR",
+        "technology": "wind",
+        "status": "operating",
+        "statusLabel": "действащ",
+        "mw": 88.2,
+        "major": true,
+        "source": "https://www.iberdrola.com/about-us/iberdrola-greece",
+        "osm_id": "R16088467",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.55,
+          40.42
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-GR-AGIOS-GEORGIOS",
+        "name": "Agios Georgios Wind Farm",
+        "country": "Гърция",
+        "countryCode": "GR",
+        "technology": "wind",
+        "status": "operating",
+        "statusLabel": "действащ",
+        "mw": 73.2,
+        "major": true,
+        "source": "https://www.terna-energy.com/activities/wind-energy/agios-georgios/",
+        "osm_id": "R14075164",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.93,
+          37.47
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-MK-STIPION",
+        "name": "Štipion Wind Farm",
+        "country": "Северна Македония",
+        "countryCode": "MK",
+        "technology": "wind",
+        "status": "planned",
+        "statusLabel": "планиран",
+        "mw": 400,
+        "major": true,
+        "source": "https://www.alcazarenergy.com/alcazar-energy-partners-announces-the-largest-wind-farm-project-in-north-macedonia/",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.18,
+          41.73
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-MK-SOPOT",
+        "name": "Sopot Wind Farm",
+        "country": "Северна Македония",
+        "countryCode": "MK",
+        "technology": "wind",
+        "status": "construction",
+        "statusLabel": "в строеж",
+        "mw": 131,
+        "major": true,
+        "source": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-backs-landmark-wind-power-project-in-north-macedonia.html",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.94,
+          41.47
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-MK-PEHCEVO",
+        "name": "Pehčevo Solar Park",
+        "country": "Северна Македония",
+        "countryCode": "MK",
+        "technology": "solar",
+        "status": "planned",
+        "statusLabel": "планиран",
+        "mw": 70,
+        "major": true,
+        "source": "https://serbia-energy.eu/north-macedonia-to-ink-first-agreement-with-strategic-investor-for-70-mw-pehcevo-solar-plant/",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.88,
+          41.76
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-RO-DAMA",
+        "name": "Dama Solar",
+        "country": "Румъния",
+        "countryCode": "RO",
+        "technology": "solar",
+        "status": "planned",
+        "statusLabel": "планиран",
+        "mw": 1044,
+        "major": true,
+        "source": "https://rezolv.energy/projects/dama-solar/",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.31,
+          46.17
+        ]
+      }
+    },
     {
       "type": "Feature",
       "properties": {
@@ -42,6 +304,29 @@
         "coordinates": [
           28.58,
           44.61
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-RO-VIFOR",
+        "name": "VIFOR Wind Farm",
+        "country": "Румъния",
+        "countryCode": "RO",
+        "technology": "wind",
+        "status": "construction",
+        "statusLabel": "в строеж",
+        "mw": 461,
+        "major": true,
+        "source": "https://www.ifc.org/en/pressroom/2025/ifc-provides-financing-for-landmark-wind-plant-to-boost-romania-s-clean-energy-transition",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.73,
+          45.19
         ]
       }
     },
@@ -72,30 +357,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "FOREIGN-RO-RUGINOASA",
-        "name": "Ruginoasa Wind Farm",
-        "country": "Румъния",
-        "countryCode": "RO",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ",
-        "mw": 60,
-        "major": true,
-        "source": "https://www.dri-energy.com/projects/ruginoasa/",
-        "osm_id": "R17728489",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.8363,
-          47.2403
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "FOREIGN-RO-TEIUS",
         "name": "Teiuș Solar Park",
         "country": "Румъния",
@@ -114,6 +375,30 @@
         "coordinates": [
           23.68,
           46.2
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-RO-RUGINOASA",
+        "name": "Ruginoasa Wind Farm",
+        "country": "Румъния",
+        "countryCode": "RO",
+        "technology": "wind",
+        "status": "operating",
+        "statusLabel": "действащ",
+        "mw": 60,
+        "major": true,
+        "source": "https://www.dri-energy.com/projects/ruginoasa/",
+        "osm_id": "R17728489",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8363,
+          47.2403
         ]
       }
     },
@@ -167,23 +452,24 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "FOREIGN-RS-PUPIN",
-        "name": "Pupin Wind Farm",
+        "id": "FOREIGN-RS-KRIVACA",
+        "name": "Krivača Wind Farm",
         "country": "Сърбия",
         "countryCode": "RS",
         "technology": "wind",
         "status": "operating",
         "statusLabel": "действащ",
-        "mw": 94.5,
+        "mw": 105.6,
         "major": true,
-        "source": "https://enlightenergy.com/project/pupin/",
+        "source": "https://www.mkgroup.rs/en/our-business/energy/krivaca-wind-farm/",
+        "osm_id": "R18514479",
         "sourceMode": "curated-seed"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.7346,
-          45.064
+          21.64,
+          44.55
         ]
       }
     },
@@ -214,120 +500,46 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "FOREIGN-RS-KRIVACA",
-        "name": "Krivača Wind Farm",
+        "id": "FOREIGN-RS-KOSTOLAC",
+        "name": "Kostolac Wind Farm",
+        "country": "Сърбия",
+        "countryCode": "RS",
+        "technology": "wind",
+        "status": "construction",
+        "statusLabel": "в строеж",
+        "mw": 103,
+        "major": true,
+        "source": "https://www.kfw.de/stories/environment/renewable-energy/serbia-wind-farm/",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.2,
+          44.72
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FOREIGN-RS-PUPIN",
+        "name": "Pupin Wind Farm",
         "country": "Сърбия",
         "countryCode": "RS",
         "technology": "wind",
         "status": "operating",
         "statusLabel": "действащ",
-        "mw": 105.6,
+        "mw": 94.5,
         "major": true,
-        "source": "https://www.mkgroup.rs/en/our-business/energy/krivaca-wind-farm/",
-        "osm_id": "R18514479",
+        "source": "https://enlightenergy.com/project/pupin/",
         "sourceMode": "curated-seed"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.64,
-          44.55
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-GR-KOZANI",
-        "name": "Kozani Solar Park",
-        "country": "Гърция",
-        "countryCode": "GR",
-        "technology": "solar",
-        "status": "operating",
-        "statusLabel": "действащ",
-        "mw": 204,
-        "major": true,
-        "source": "https://www.juwi.com/references/solar/kozani-greece",
-        "osm_id": "W1056457812",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.78,
-          40.38
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-GR-KAFIREAS",
-        "name": "Kafireas Wind Complex",
-        "country": "Гърция",
-        "countryCode": "GR",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ",
-        "mw": 330,
-        "major": true,
-        "source": "https://www.enelgreenpower.com/our-projects/operating/kafireas-wind-farm",
-        "osm_id": "R15763363",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.47,
-          38.08
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-GR-AGIOS-GEORGIOS",
-        "name": "Agios Georgios Wind Farm",
-        "country": "Гърция",
-        "countryCode": "GR",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ",
-        "mw": 73.2,
-        "major": true,
-        "source": "https://www.terna-energy.com/activities/wind-energy/agios-georgios/",
-        "osm_id": "R14075164",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.93,
-          37.47
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-GR-ASKIO",
-        "name": "Askio Wind Complex",
-        "country": "Гърция",
-        "countryCode": "GR",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ",
-        "mw": 88.2,
-        "major": true,
-        "source": "https://www.iberdrola.com/about-us/iberdrola-greece",
-        "osm_id": "R16088467",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.55,
-          40.42
+          20.7346,
+          45.064
         ]
       }
     },
@@ -404,6 +616,29 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "FOREIGN-TR-R24-GURUN",
+        "name": "R24-Gürün Wind Farm",
+        "country": "Турция",
+        "countryCode": "TR",
+        "technology": "wind",
+        "status": "construction",
+        "statusLabel": "в строеж",
+        "mw": 90,
+        "major": true,
+        "source": "https://www.nordex-online.com/en/2025/10/nordex-group-receives-90-mw-order-from-turkiye/",
+        "sourceMode": "curated-seed"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.27,
+          38.72
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "FOREIGN-TR-ELMALI",
         "name": "Elmalı Solar Power Plant",
         "country": "Турция",
@@ -422,190 +657,6 @@
         "coordinates": [
           29.92,
           36.74
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-RO-VIFOR",
-        "name": "VIFOR Wind Farm",
-        "country": "Румъния",
-        "countryCode": "RO",
-        "technology": "wind",
-        "status": "construction",
-        "statusLabel": "в строеж",
-        "mw": 461,
-        "major": true,
-        "source": "https://www.ifc.org/en/pressroom/2025/ifc-provides-financing-for-landmark-wind-plant-to-boost-romania-s-clean-energy-transition",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.73,
-          45.19
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-RO-DAMA",
-        "name": "Dama Solar",
-        "country": "Румъния",
-        "countryCode": "RO",
-        "technology": "solar",
-        "status": "planned",
-        "statusLabel": "планиран",
-        "mw": 1044,
-        "major": true,
-        "source": "https://rezolv.energy/projects/dama-solar/",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.31,
-          46.17
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-RS-KOSTOLAC",
-        "name": "Kostolac Wind Farm",
-        "country": "Сърбия",
-        "countryCode": "RS",
-        "technology": "wind",
-        "status": "construction",
-        "statusLabel": "в строеж",
-        "mw": 103,
-        "major": true,
-        "source": "https://www.kfw.de/stories/environment/renewable-energy/serbia-wind-farm/",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.2,
-          44.72
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-MK-STIPION",
-        "name": "Štipion Wind Farm",
-        "country": "Северна Македония",
-        "countryCode": "MK",
-        "technology": "wind",
-        "status": "planned",
-        "statusLabel": "планиран",
-        "mw": 400,
-        "major": true,
-        "source": "https://www.alcazarenergy.com/alcazar-energy-partners-announces-the-largest-wind-farm-project-in-north-macedonia/",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.18,
-          41.73
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-MK-SOPOT",
-        "name": "Sopot Wind Farm",
-        "country": "Северна Македония",
-        "countryCode": "MK",
-        "technology": "wind",
-        "status": "construction",
-        "statusLabel": "в строеж",
-        "mw": 131,
-        "major": true,
-        "source": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-backs-landmark-wind-power-project-in-north-macedonia.html",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.94,
-          41.47
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-MK-PEHCEVO",
-        "name": "Pehčevo Solar Park",
-        "country": "Северна Македония",
-        "countryCode": "MK",
-        "technology": "solar",
-        "status": "planned",
-        "statusLabel": "планиран",
-        "mw": 70,
-        "major": true,
-        "source": "https://serbia-energy.eu/north-macedonia-to-ink-first-agreement-with-strategic-investor-for-70-mw-pehcevo-solar-plant/",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.88,
-          41.76
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-GR-AMYNTAIO",
-        "name": "Amyntaio Solar Park",
-        "country": "Гърция",
-        "countryCode": "GR",
-        "technology": "solar",
-        "status": "construction",
-        "statusLabel": "в строеж",
-        "mw": 550,
-        "major": true,
-        "source": "https://www.ppcgroup.com/media/press-releases/2024/ppc-group-construction-of-a-550-mw-photovoltaic-plant-in-ptolemaida-is-underway/",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          21.67,
-          40.61
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "FOREIGN-TR-R24-GURUN",
-        "name": "R24-Gürün Wind Farm",
-        "country": "Турция",
-        "countryCode": "TR",
-        "technology": "wind",
-        "status": "construction",
-        "statusLabel": "в строеж",
-        "mw": 90,
-        "major": true,
-        "source": "https://www.nordex-online.com/en/2025/10/nordex-group-receives-90-mw-order-from-turkiye/",
-        "sourceMode": "curated-seed"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.27,
-          38.72
         ]
       }
     },
@@ -632,12 +683,5 @@
         ]
       }
     }
-  ],
-  "featureCount": 26,
-  "majorCount": 26,
-  "statusCounts": {
-    "operating": 17,
-    "construction": 6,
-    "planned": 3
-  }
+  ]
 }
