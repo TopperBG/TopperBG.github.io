@@ -46,12 +46,18 @@ jobs:
               geom=f.get("geometry") or {}
               assert geom.get("type")=="Point"
               assert len(geom.get("coordinates") or [])==2
-              assert float(props.get("mw") or 0)>1
+              mw=float(props.get("mw") or 0)
+              status=props.get("status")
               assert props.get("technology") in {"solar","wind"}
-              assert props.get("status")=="operating"
-              assert props.get("major") == (float(props["mw"])>50)
+              assert status in {"operating","construction","planned"}
+              assert (status=="operating" and mw>1) or (status in {"construction","planned"} and mw>10)
+              assert props.get("major") == (mw>50)
+          counts={}
+          for f in fs:
+              s=(f.get("properties") or {}).get("status","unknown")
+              counts[s]=counts.get(s,0)+1
           print("Validated Foreign cache:",len(fs),"objects;",
-                sum(1 for f in fs if (f.get("properties") or {}).get("major")),"major >50 MW")
+                sum(1 for f in fs if (f.get("properties") or {}).get("major")),"major >50 MW;",counts)
           PY
 
       - name: Commit refreshed cache
