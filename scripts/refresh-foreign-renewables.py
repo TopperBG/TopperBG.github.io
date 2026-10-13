@@ -3,8 +3,8 @@
 
 Scope:
 - Bulgaria's five neighbouring countries: RO, RS, MK, GR, TR
-- operating wind/solar installations only
-- installed capacity > 1 MW
+- operating wind/solar installations > 1 MW
+- construction/planned wind/solar installations > 10 MW
 - OSM power=plant plus area-mapped power=generator objects
 - preserve curated seed entries and the previous valid cache on remote failure
 
@@ -125,11 +125,21 @@ def osm_id(el: dict) -> str:
 def normalized_name(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", value.casefold())
 
+def lifecycle_status(tags: dict) -> tuple[str, str]:
+    lifecycle = str(tags.get("lifecycle") or "").lower()
+    construction = str(tags.get("construction") or "").lower()
+    proposed = str(tags.get("proposed") or "").lower()
+    status = str(tags.get("status") or "").lower()
+    if construction or lifecycle == "construction" or status in {"construction", "under_construction"}:
+        return "construction", "в строеж"
+    if proposed or lifecycle in {"proposed", "planned"} or status in {"proposed", "planned"}:
+        return "planned", "планиран"
+    return "operating", "действащ"
+
 def query_country(code: str) -> list[dict]:
-    # Plant objects cover wind farms and utility solar sites. Area-mapped
-    # generators catch solar parks that OSM contributors mapped as one generator
-    # rather than a plant. Generator nodes are deliberately excluded so that a
-    # 3-8 MW wind turbine is not mistaken for a 3-8 MW wind farm.
+    # Operating plants/generator areas plus lifecycle-tagged planned/construction
+    # objects. Generator nodes are deliberately excluded to avoid counting each
+    # individual wind turbine as a separate wind farm.
     query = f"""
 [out:json][timeout:150];
 area["ISO3166-1"="{code}"][admin_level=2]->.a;
@@ -137,6 +147,9 @@ area["ISO3166-1"="{code}"][admin_level=2]->.a;
   nwr(area.a)["power"="plant"];
   way(area.a)["power"="generator"];
   relation(area.a)["power"="generator"];
+  nwr(area.a)["construction"="power"]["power"!="generator"];
+  nwr(area.a)["proposed"="power"]["power"!="generator"];
+  nwr(area.a)["lifecycle"~"^(construction|proposed|planned)$"];
 );
 out tags center;
 """
@@ -148,7 +161,11 @@ out tags center;
         if tech not in {"solar", "wind"}:
             continue
         mw = parse_capacity_mw(tags)
-        if mw is None or mw <= 1:
+        if mw is None:
+            continue
+        status, status_label = lifecycle_status(tags)
+        threshold = 1 if status == "operating" else 10
+        if mw <= threshold:
             continue
         point = element_point(el)
         if not point:
@@ -162,8 +179,8 @@ out tags center;
                 "country": COUNTRIES[code],
                 "countryCode": code,
                 "technology": tech,
-                "status": "operating",
-                "statusLabel": "действащ",
+                "status": status,
+                "statusLabel": status_label,
                 "mw": round(mw, 4),
                 "major": mw > 50,
                 "source": f"https://www.openstreetmap.org/{'node' if el.get('type')=='node' else 'way' if el.get('type')=='way' else 'relation'}/{el.get('id')}",
@@ -213,12 +230,15 @@ def dedupe(features: list[dict]) -> list[dict]:
 
 def main() -> None:
     existing = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {"features": []}
-    curated = [
-        f for f in existing.get("features") or []
-        if (f.get("properties") or {}).get("sourceMode") == "curated-seed"
-        and float((f.get("properties") or {}).get("mw") or 0) > 1
-        and (f.get("properties") or {}).get("status") == "operating"
-    ]
+    curated = []
+    for f in existing.get("features") or []:
+        p = f.get("properties") or {}
+        if p.get("sourceMode") != "curated-seed":
+            continue
+        mw = float(p.get("mw") or 0)
+        status = p.get("status")
+        if (status == "operating" and mw > 1) or (status in {"construction","planned"} and mw > 10):
+            curated.append(f)
 
     discovered: list[dict] = []
     errors: dict[str, str] = {}
@@ -240,12 +260,18 @@ def main() -> None:
         raise RuntimeError("No fresh data and no previous Foreign cache")
 
     merged = dedupe(curated + discovered)
-    merged = [
-        f for f in merged
-        if float((f.get("properties") or {}).get("mw") or 0) > 1
-        and (f.get("properties") or {}).get("technology") in {"solar", "wind"}
-        and (f.get("properties") or {}).get("status") == "operating"
-    ]
+    filtered = []
+    for f in merged:
+        p = f.get("properties") or {}
+        mw = float(p.get("mw") or 0)
+        status = p.get("status")
+        if p.get("technology") not in {"solar","wind"}:
+            continue
+        if status == "operating" and mw > 1:
+            filtered.append(f)
+        elif status in {"construction","planned"} and mw > 10:
+            filtered.append(f)
+    merged = filtered
     merged.sort(key=lambda f: (
         (f.get("properties") or {}).get("countryCode") or "",
         -float((f.get("properties") or {}).get("mw") or 0),
@@ -259,8 +285,10 @@ def main() -> None:
         "scope": {
             "countries": list(COUNTRIES),
             "technologies": ["solar", "wind"],
-            "status": "operating",
-            "minimumCapacityMwExclusive": 1,
+            "statusPolicy": {
+                "operatingMinimumMwExclusive": 1,
+                "constructionPlannedMinimumMwExclusive": 10,
+            },
             "majorThresholdMwExclusive": 50,
         },
         "refresh": {
@@ -273,7 +301,11 @@ def main() -> None:
         "features": merged,
     }
     CACHE.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Published {len(merged)} operating wind/solar objects >1 MW; >50 MW: {output['majorCount']}")
+    status_counts = {}
+    for f in merged:
+        s=(f.get("properties") or {}).get("status","unknown")
+        status_counts[s]=status_counts.get(s,0)+1
+    print(f"Published {len(merged)} Foreign wind/solar objects; >50 MW: {output['majorCount']}; statuses: {status_counts}")
 
 if __name__ == "__main__":
     main()
