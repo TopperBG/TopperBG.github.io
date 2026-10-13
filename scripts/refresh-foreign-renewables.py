@@ -19,6 +19,9 @@ import json
 import math
 import pathlib
 import re
+import tempfile
+import subprocess
+import shutil
 import time
 import urllib.error
 import urllib.parse
@@ -38,7 +41,14 @@ COUNTRIES = {
     "GR": "Гърция",
     "TR": "Турция",
 }
-USER_AGENT = "EnergoKarta-Bulgaria-foreign-renewables/1.1 (+https://topperbg.github.io/map/)"
+USER_AGENT = "EnergoKarta-Bulgaria-foreign-renewables/1.2 (+https://topperbg.github.io/map/)"
+GEOFABRIK = {
+    "RO": "https://download.geofabrik.de/europe/romania-latest.osm.pbf",
+    "RS": "https://download.geofabrik.de/europe/serbia-latest.osm.pbf",
+    "MK": "https://download.geofabrik.de/europe/macedonia-latest.osm.pbf",
+    "GR": "https://download.geofabrik.de/europe/greece-latest.osm.pbf",
+    "TR": "https://download.geofabrik.de/europe/turkey-latest.osm.pbf",
+}
 
 CAPACITY_KEYS = (
     "plant:output:electricity",
@@ -196,6 +206,109 @@ out tags center;
         })
     return result
 
+
+def geometry_point(geometry: dict) -> tuple[float, float] | None:
+    coords = geometry.get("coordinates")
+    points: list[tuple[float, float]] = []
+
+    def walk(value):
+        if isinstance(value, list):
+            if len(value) >= 2 and isinstance(value[0], (int, float)) and isinstance(value[1], (int, float)):
+                points.append((float(value[0]), float(value[1])))
+            else:
+                for item in value:
+                    walk(item)
+
+    walk(coords)
+    if not points:
+        return None
+    return (
+        sum(p[0] for p in points) / len(points),
+        sum(p[1] for p in points) / len(points),
+    )
+
+
+def download_file(url: str, path: pathlib.Path) -> None:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=120) as response, path.open("wb") as out:
+        shutil.copyfileobj(response, out, length=1024 * 1024)
+
+
+def geofabrik_country(code: str) -> list[dict]:
+    if shutil.which("osmium") is None:
+        raise RuntimeError("osmium-tool is unavailable for Geofabrik fallback")
+    url = GEOFABRIK[code]
+    with tempfile.TemporaryDirectory(prefix=f"foreign-{code.lower()}-") as tmp:
+        tmpdir = pathlib.Path(tmp)
+        source = tmpdir / f"{code}.osm.pbf"
+        filtered = tmpdir / f"{code}-plants.osm.pbf"
+        exported = tmpdir / f"{code}-plants.geojsonseq"
+        download_file(url, source)
+        subprocess.run([
+            "osmium", "tags-filter", str(source),
+            "nwr/power=plant",
+            "nwr/construction:power=plant",
+            "nwr/proposed:power=plant",
+            "nwr/planned:power=plant",
+            "-o", str(filtered), "--overwrite",
+        ], check=True, timeout=600)
+        subprocess.run([
+            "osmium", "export", str(filtered),
+            "-f", "geojsonseq",
+            "--add-unique-id=type_id",
+            "-x", "print_record_separator=false",
+            "-o", str(exported), "--overwrite",
+        ], check=True, timeout=600)
+
+        rows = []
+        with exported.open(encoding="utf-8") as handle:
+            for raw_line in handle:
+                line = raw_line.strip().lstrip("\x1e")
+                if not line:
+                    continue
+                try:
+                    feature = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                tags = feature.get("properties") or {}
+                tech = technology(tags)
+                mw = parse_capacity_mw(tags)
+                xy = geometry_point(feature.get("geometry") or {})
+                if tech not in {"solar", "wind"} or mw is None or mw <= 1 or not xy:
+                    continue
+                status, status_label = lifecycle_status(tags)
+                unique_id = str(feature.get("id") or tags.get("@id") or f"{code}-{len(rows)+1}")
+                name = str(tags.get("name") or tags.get("operator") or f"OSM {unique_id}").strip()
+                rows.append({
+                    "type": "Feature",
+                    "properties": {
+                        "id": f"GEOFABRIK-{code}-{unique_id}",
+                        "name": name,
+                        "country": COUNTRIES[code],
+                        "countryCode": code,
+                        "technology": tech,
+                        "status": status,
+                        "statusLabel": status_label,
+                        "mw": round(mw, 4),
+                        "major": mw > 50,
+                        "source": url,
+                        "osm_id": unique_id,
+                        "operator": tags.get("operator"),
+                        "start_date": tags.get("start_date"),
+                        "sourceMode": "geofabrik-osm-auto",
+                    },
+                    "geometry": {"type": "Point", "coordinates": [xy[0], xy[1]]},
+                })
+        return rows
+
+
+def discover_country(code: str) -> tuple[list[dict], str]:
+    try:
+        return query_country(code), "overpass"
+    except Exception as overpass_error:
+        print(f"WARNING {code}: Overpass failed ({overpass_error}); trying Geofabrik extract.")
+        return geofabrik_country(code), "geofabrik"
+
 def dedupe(features: list[dict]) -> list[dict]:
     by_osm: dict[str, dict] = {}
     no_osm: list[dict] = []
@@ -283,12 +396,12 @@ def main() -> None:
     errors: dict[str, str] = {}
     source_health: dict[str, dict] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=len(COUNTRIES)) as pool:
-        futures = {pool.submit(query_country, code): code for code in COUNTRIES}
+        futures = {pool.submit(discover_country, code): code for code in COUNTRIES}
         for future in concurrent.futures.as_completed(futures):
             code = futures[future]
             country = COUNTRIES[code]
             try:
-                discovered = future.result()
+                discovered, discovery_source = future.result()
                 merged = dedupe(curated_by_country[code] + discovered)
                 merged = [
                     f for f in merged
@@ -298,10 +411,10 @@ def main() -> None:
                 ]
                 merged_all.extend(merged)
                 source_health[code] = {
-                    "country": country, "ok": True, "discovered": len(discovered),
+                    "country": country, "ok": True, "source": discovery_source, "discovered": len(discovered),
                     "curated": len(curated_by_country[code]), "published": len(merged),
                 }
-                print(f"{code}: {len(discovered)} OSM >1 MW + {len(curated_by_country[code])} curated -> {len(merged)}")
+                print(f"{code}: {len(discovered)} {discovery_source} >1 MW + {len(curated_by_country[code])} curated -> {len(merged)}")
             except Exception as exc:
                 errors[code] = str(exc)
                 preserved = existing_by_country.get(code) or curated_by_country[code]
