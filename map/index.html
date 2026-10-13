@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93m-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93m</title>
+<meta name="bgwf-build" content="v0.93n-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93n</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4477,7 +4477,7 @@ function layerSourceWarnings(){
   if(layerVisibility.epm&&epmLoadState==='error'&&epmSource.getFeatures().length===0)
     warnings.push({severity:'error',text:'ЕПМ: локалният GIS cache не може да бъде зареден и няма налична геометрия за слоя.'});
   if(layerVisibility.foreign&&foreignOsmLoadState==='error'&&foreignOsmSource.getFeatures().length===0)
-    warnings.push({severity:'warning',text:'Foreign: онлайн OSM GIS геометрията е недостъпна; показват се само наличните локални/площови представяния.'});
+    warnings.push({severity:'warning',text:'Foreign: OSM геометрията е временно недостъпна; запазени са локалните площови представяния. При успешна заявка контурите се кешират за следващи посещения.'});
   if(layerVisibility.live&&liveFireLoadState==='error')
     warnings.push({severity:'warning',text:'Sentinel-3: оперативният онлайн източник е временно недостъпен; няма текущо опресняване на засичанията.'});
   return warnings;
@@ -4942,33 +4942,60 @@ const foreignLayer=new VectorLayer({
   style:(f,resolution)=>{
     if(f.get('hasOsmGeometry'))return null;
     const project=f.get('data')||{},selected=f.get('selected');
-    const operating=project.status==='operating';
+    const operating=project.status==='operating',large=Number(project.mw)>50;
     const circle=f.getGeometry(),center=new Point(circle.getCenter());
     const radiusPx=circle.getRadius()/Math.max(1,resolution||1);
     const styles=[new Style({
       fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.30)':'rgba(219,39,119,.22)'):(satelliteMode()?'rgba(219,39,119,.18)':'rgba(219,39,119,.13)')}),
-      stroke:new Stroke({color:selected?'#111827':satelliteMode()?'#ff4da6':'#be185d',width:selected?4:2.8,lineDash:project.areaBasis==='estimated'?[8,5]:null})
+      stroke:new Stroke({color:selected?'#111827':large?(satelliteMode()?'#facc15':'#b45309'):(satelliteMode()?'#ff4da6':'#be185d'),width:selected?4:(large?3.6:1.7),lineDash:project.areaBasis==='estimated'?[8,5]:null})
     })];
     // At country/region scale the true area can be smaller than one pixel. Keep a
     // clearly outlined minimum-size locator ring without replacing the real circle.
-    if(radiusPx<11)styles.push(new Style({geometry:center,image:new CircleStyle({radius:11,fill:new Fill({color:'rgba(219,39,119,.08)'}),stroke:new Stroke({color:satelliteMode()?'#ff4da6':'#be185d',width:2.5,lineDash:project.areaBasis==='estimated'?[4,3]:null})})}));
-    styles.push(new Style({geometry:center,text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 11px sans-serif':'800 9px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:operating?'#db2777':'#9d174d'}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    if(radiusPx<11)styles.push(new Style({geometry:center,image:new CircleStyle({radius:large?13:7,fill:new Fill({color:'rgba(219,39,119,.08)'}),stroke:new Stroke({color:satelliteMode()?'#ff4da6':'#be185d',width:large?3:1.5,lineDash:project.areaBasis==='estimated'?[4,3]:null})})}));
+    styles.push(new Style({geometry:center,text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 12px sans-serif':large?'900 11px sans-serif':'700 8px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:large?'#b45309':(operating?'#db2777':'#9d174d')}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
     return styles;
   }
 });
 const foreignOsmLayer=new VectorLayer({
   source:foreignOsmSource,zIndex:9,visible:layerVisibility.foreign,
   style:f=>{
-    const project=f.get('data')||{},selected=f.get('selected');
+    const project=f.get('data')||{},selected=f.get('selected'),large=Number(project.mw)>50;
     const styles=[new Style({
       fill:new Fill({color:project.areaBasis==='osm-hull'?(satelliteMode()?'rgba(219,39,119,.20)':'rgba(219,39,119,.15)'):(satelliteMode()?'rgba(219,39,119,.34)':'rgba(219,39,119,.25)')}),
-      stroke:new Stroke({color:selected?'#111827':satelliteMode()?'#ff4da6':'#be185d',width:selected?4:3,lineDash:project.areaBasis==='osm-hull'?[9,5]:null})
+      stroke:new Stroke({color:selected?'#111827':large?(satelliteMode()?'#facc15':'#b45309'):(satelliteMode()?'#ff4da6':'#be185d'),width:selected?4:(large?3:1.5),lineDash:project.areaBasis==='osm-hull'?[9,5]:null})
     })];
-    if(f.get('primaryOsmPart'))styles.push(new Style({text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 11px sans-serif':'800 9px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:'#db2777'}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    if(f.get('primaryOsmPart'))styles.push(new Style({text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 11px sans-serif':'800 9px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:large?'#b45309':'#db2777'}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
     return styles;
   }
 });
 let foreignOsmLoadState='idle',foreignOsmLoadPromise=null;
+const FOREIGN_OSM_CACHE_KEY='bgwf-foreign-osm-v1';
+function restoreForeignOsmCache(){
+  try{
+    const raw=localStorage.getItem(FOREIGN_OSM_CACHE_KEY);
+    if(!raw)return false;
+    const data=JSON.parse(raw);
+    if(!Array.isArray(data.features)||!data.features.length)return false;
+    const features=geojson.readFeatures({type:'FeatureCollection',features:data.features},{dataProjection:'EPSG:4326',featureProjection:'EPSG:3857'});
+    const validIds=new Set(foreignRenewableProjects.map(p=>p.id));
+    const kept=features.filter(f=>validIds.has(f.get('projectId')));
+    if(!kept.length)return false;
+    foreignOsmSource.addFeatures(kept);
+    const resolved=new Set(kept.map(f=>f.get('projectId')));
+    foreignSource.getFeatures().forEach(f=>f.set('hasOsmGeometry',resolved.has(f.getId())));
+    foreignOsmLoadState='ready';
+    debugState.network.foreignOsm={ok:true,source:'persistent-local-cache',polygons:kept.length,projects:resolved.size,savedAt:data.savedAt};
+    return true;
+  }catch(error){dbgWarn('foreign-cache-restore',{error:error.message});return false;}
+}
+function saveForeignOsmCache(features){
+  if(!features.length)return;
+  try{
+    const serialized=features.map(f=>geojson.writeFeatureObject(f,{featureProjection:'EPSG:3857',dataProjection:'EPSG:4326'}));
+    localStorage.setItem(FOREIGN_OSM_CACHE_KEY,JSON.stringify({savedAt:new Date().toISOString(),features:serialized}));
+  }catch(error){dbgWarn('foreign-cache-save',{error:error.message});}
+}
+
 function foreignConvexHullRing(points){
   const pts=points.filter(p=>Array.isArray(p)&&p.every(Number.isFinite)).sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
   if(pts.length<3)return null;const cross=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
@@ -4977,6 +5004,7 @@ function foreignConvexHullRing(points){
   const hull=[...lower.slice(0,-1),...upper.slice(0,-1)];if(hull.length<3)return null;hull.push([...hull[0]]);return hull;
 }
 async function ensureForeignOsmPolygons(){
+  if(foreignOsmLoadState==='idle')restoreForeignOsmCache();
   if(foreignOsmLoadState==='ready')return foreignOsmSource.getFeatures();
   if(foreignOsmLoadPromise)return foreignOsmLoadPromise;
   foreignOsmLoadPromise=(async()=>{
@@ -5010,10 +5038,10 @@ async function ensureForeignOsmPolygons(){
       }
       const groupBasis=new Map();features.forEach(feature=>{const id=feature.get('projectId'),basis=feature.get('data')?.areaBasis;if(basis==='osm-hull')groupBasis.set(id,'osm-hull');else if(!groupBasis.has(id))groupBasis.set(id,'osm');});
       const seen=new Set();features.forEach(feature=>{const id=feature.get('projectId'),d=feature.get('data');feature.set('primaryOsmPart',!seen.has(id));seen.add(id);feature.set('data',{...d,areaHa:areas.get(id),areaBasis:groupBasis.get(id),osmPartCount:counts.get(id)});});
-      foreignOsmSource.clear();foreignOsmSource.addFeatures(features);
+      if(features.length){foreignOsmSource.clear();foreignOsmSource.addFeatures(features);saveForeignOsmCache(features);}
       const resolved=new Set(features.map(f=>f.get('projectId')));foreignSource.getFeatures().forEach(f=>{f.set('hasOsmGeometry',resolved.has(f.getId()));f.changed();});
-      foreignOsmLoadState='ready';debugState.network.foreignOsm={ok:true,requested:keys.length,polygons:features.length,projects:resolved.size};
-    }catch(error){foreignOsmLoadState='error';debugState.network.foreignOsm={ok:false,error:error.message};dbgWarn('foreign-osm-load-failed',{error:error.message});}
+      foreignOsmLoadState='ready';debugState.network.foreignOsm={ok:true,requested:keys.length,polygons:features.length,projects:resolved.size,cache:features.length?'saved':'unchanged'};
+    }catch(error){const cached=restoreForeignOsmCache();foreignOsmLoadState=cached?'ready':'error';debugState.network.foreignOsm={ok:cached,source:cached?'persistent-local-cache':'area-fallback',error:error.message};dbgWarn('foreign-osm-load-failed',{error:error.message,cached});}
     foreignOsmLoadPromise=null;updateLayerStatus();updateDebugLayerCounts();return foreignOsmSource.getFeatures();
   })();
   return foreignOsmLoadPromise;
