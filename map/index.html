@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.94c-verified-operating-wind-20261013">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94c</title>
+<meta name="bgwf-build" content="v0.94d-confirmed-operating-wind-20261013">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94d</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -3662,20 +3662,41 @@ const CURATED_INDUSTRIAL_POINTS = [];
     const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;
     return 2*R*Math.asin(Math.min(1,Math.sqrt(h)));
   }
-  function verifiedOperatingWindMatch(turbine){
-    let best=null,bestKm=Infinity;
-    for(const project of operatingWindProjects){
-      const km=windDistanceKm(turbine,project);
-      if(km<bestKm){best=project;bestKm=km;}
+
+  // Strict atlas rule: an OSM turbine is shown only when it can be assigned to a
+  // separately verified operating wind farm whose published turbine count is known,
+  // and the full published count can be matched spatially. Partial/ambiguous parks
+  // are excluded from the individual-turbine layer.
+  function buildConfirmedOperatingWindTurbines(){
+    const used=new Set(),confirmed=[],projectAudit=[];
+    const countVerifiedProjects=operatingWindProjects.filter(project=>Number.isInteger(project.turbines)&&project.turbines>0);
+    for(const project of countVerifiedProjects){
+      const candidates=individualWindTurbines
+        .map((turbine,index)=>({turbine,index,distanceKm:windDistanceKm(turbine,project)}))
+        .filter(row=>row.distanceKm<=WIND_VERIFIED_PROJECT_RADIUS_KM&&!used.has(row.index))
+        .sort((a,b)=>a.distanceKm-b.distanceKm)
+        .slice(0,project.turbines);
+      const complete=candidates.length===project.turbines;
+      projectAudit.push({projectId:project.id,name:project.name,publishedCount:project.turbines,matchedCount:candidates.length,complete});
+      if(!complete)continue;
+      for(const row of candidates){
+        used.add(row.index);
+        confirmed.push({
+          ...row.turbine,
+          verification:'confirmed-operating-turbine',
+          verifiedProjectId:project.id,
+          verifiedProjectName:project.name,
+          verifiedProjectSource:project.source,
+          publishedProjectTurbineCount:project.turbines,
+          distanceToVerifiedProjectKm:Number(row.distanceKm.toFixed(2))
+        });
+      }
     }
-    return best&&bestKm<=WIND_VERIFIED_PROJECT_RADIUS_KM?{project:best,distanceKm:bestKm}:null;
+    return{confirmed,projectAudit};
   }
-  const verifiedOperatingWindTurbines=individualWindTurbines.flatMap(turbine=>{
-    const match=verifiedOperatingWindMatch(turbine);
-    if(!match)return[];
-    return[{...turbine,verification:'confirmed-operating-park',verifiedProjectId:match.project.id,verifiedProjectName:match.project.name,verifiedProjectSource:match.project.source,distanceToVerifiedProjectKm:Number(match.distanceKm.toFixed(2))}];
-  });
-  const excludedWindTurbines=individualWindTurbines.filter(turbine=>!verifiedOperatingWindMatch(turbine));
+  const confirmedWindBuild=buildConfirmedOperatingWindTurbines();
+  const verifiedOperatingWindTurbines=confirmedWindBuild.confirmed;
+  const excludedWindTurbines=individualWindTurbines.filter(turbine=>!verifiedOperatingWindTurbines.some(confirmed=>confirmed.id===turbine.id));
 
 
   // Национална проверена извадка на действащи големи наземни ФЕЦ (>10 MWp)
@@ -7178,7 +7199,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
 
 const configs=[
   ['solar','ФЕЦ','#f59e0b','ФЕЦ — фотоволтаична електрическа централа. Показва проверените изградени соларни електроцентрали.'],
-  ['wind','ВяЕЦ','#0891b2','ВяЕЦ — показва само турбини, съпоставени с проверени действащи ветропаркове. Непотвърдени, демонтирани или извън експлоатация OSM точки не се показват като действащи.'],
+  ['wind','ВяЕЦ','#0891b2','ВяЕЦ — показва само индивидуални турбини от проверени действащи ветропаркове с публикуван брой генератори и пълно пространствено съвпадение на този брой. Всички останали OSM точки са изключени от атласа.'],
   ['projects','Проектни ВЕИ','#2563eb','Проектни ВЕИ — планирани или процедирани възобновяеми енергийни проекти по налични ПУП/ПИ и официални документи.'],
   ['future','RED III','#2f9e44','RED III — приоритетни зони по Директивата за възобновяема енергия. Приоритетна зона ≠ одобрен проект ≠ засегнат имот ≠ отчуждена земя.'],
   ['foreign','Foreign','#db2777','Foreign — установими действащи, в строеж и планирани соларни/вятърни ВЕИ над 1 MW в съседните държави. Обектите над 50 MW са визуално подчертани; точен полигон не е задължителен.'],
@@ -7498,7 +7519,7 @@ function runSelfTests(){
   selfTest('density-parity',()=>{const represented=densitySource.getFeatures().reduce((sum,f)=>sum+(Number(f.get('count'))||0),0);return{ok:represented===fireSource.getFeatures().length,regions:densitySource.getFeatures().length,represented,fires:fireSource.getFeatures().length};});
   selfTest('red-extent',()=>({ok:redSource.getFeatures().every(featureExtentInBulgaria),count:redSource.getFeatures().length}));
   selfTest('red-components',()=>({ok:(priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length||0)===20,components:priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length||0,expected:20}));
-  selfTest('individual-wind-coordinates',()=>({ok:windSource.getFeatures().length===verifiedOperatingWindTurbines.length&&new Set(verifiedOperatingWindTurbines.map(d=>d.id)).size===verifiedOperatingWindTurbines.length&&verifiedOperatingWindTurbines.every(d=>Number.isFinite(d.lon)&&Number.isFinite(d.lat)&&d.lon>22&&d.lon<29&&d.lat>41&&d.lat<45),count:windSource.getFeatures().length,rawOsm:individualWindTurbines.length,excluded:excludedWindTurbines.length}));
+  selfTest('individual-wind-coordinates',()=>({ok:verifiedOperatingWindTurbines.length===183&&windSource.getFeatures().length===verifiedOperatingWindTurbines.length&&new Set(verifiedOperatingWindTurbines.map(d=>d.id)).size===verifiedOperatingWindTurbines.length&&verifiedOperatingWindTurbines.every(d=>Number.isFinite(d.lon)&&Number.isFinite(d.lat)&&d.lon>22&&d.lon<29&&d.lat>41&&d.lat<45),count:windSource.getFeatures().length,rawOsm:individualWindTurbines.length,excluded:excludedWindTurbines.length,projectAudit:confirmedWindBuild.projectAudit}));
   selfTest('wind-validity',()=>({ok:operatingWindProjects.filter(isValidWindProject).length===operatingWindProjects.length,valid:operatingWindProjects.filter(isValidWindProject).length,total:operatingWindProjects.length}));
   selfTest('wind-id-unique',()=>{const dup=duplicateValues(operatingWindProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup};});
   selfTest('wind-no-anonymous',()=>{const bad=operatingWindProjects.filter(d=>!String(d.name||'').trim()||!/https?:\/\//i.test(d.source||''));return{ok:bad.length===0,bad:bad.map(d=>d.id)};});
