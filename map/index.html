@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93p-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93p</title>
+<meta name="bgwf-build" content="v0.94-foreign-status-colors-20261013">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4987,34 +4987,72 @@ const windLayer=new VectorLayer({
     })
   })
 });
+function foreignStatusStyle(project){
+  const status=project?.status||'operating';
+  if(status==='construction')return{
+    fill:satelliteMode()?'rgba(249,115,22,.30)':'rgba(249,115,22,.20)',
+    stroke:satelliteMode()?'#ff9f43':'#ea580c',
+    badge:'#ea580c',
+    dash:[10,5]
+  };
+  if(status==='planned')return{
+    fill:satelliteMode()?'rgba(59,130,246,.27)':'rgba(37,99,235,.17)',
+    stroke:satelliteMode()?'#60a5fa':'#2563eb',
+    badge:'#2563eb',
+    dash:[3,4]
+  };
+  return{
+    fill:satelliteMode()?'rgba(219,39,119,.32)':'rgba(219,39,119,.23)',
+    stroke:satelliteMode()?'#ff4da6':'#be185d',
+    badge:'#db2777',
+    dash:null
+  };
+}
 const foreignLayer=new VectorLayer({
   source:foreignSource,zIndex:8,visible:layerVisibility.foreign,
   style:(f,resolution)=>{
     if(f.get('hasOsmGeometry'))return null;
     const project=f.get('data')||{},selected=f.get('selected');
-    const operating=project.status==='operating',planned=project.status==='planned',construction=project.status==='construction',large=Number(project.mw)>50;
+    const large=Number(project.mw)>50,statusStyle=foreignStatusStyle(project);
     const circle=f.getGeometry(),center=new Point(circle.getCenter());
     const radiusPx=circle.getRadius()/Math.max(1,resolution||1);
     const styles=[new Style({
-      fill:new Fill({color:operating?(satelliteMode()?'rgba(219,39,119,.30)':'rgba(219,39,119,.22)'):(construction?(satelliteMode()?'rgba(168,85,247,.22)':'rgba(168,85,247,.16)'):(satelliteMode()?'rgba(96,165,250,.18)':'rgba(59,130,246,.12)'))}),
-      stroke:new Stroke({color:selected?'#111827':large?(satelliteMode()?'#facc15':'#b45309'):(satelliteMode()?'#ff4da6':'#be185d'),width:selected?4:(large?3.6:1.7),lineDash:planned?[3,4]:construction?[9,4]:project.areaBasis==='estimated'?[8,5]:null})
+      fill:new Fill({color:statusStyle.fill}),
+      stroke:new Stroke({color:selected?'#111827':statusStyle.stroke,width:selected?4:(large?3.8:1.8),lineDash:statusStyle.dash||((project.areaBasis==='estimated')?[8,5]:null)})
     })];
-    // At country/region scale the true area can be smaller than one pixel. Keep a
-    // clearly outlined minimum-size locator ring without replacing the real circle.
-    if(radiusPx<11)styles.push(new Style({geometry:center,image:new CircleStyle({radius:large?13:7,fill:new Fill({color:'rgba(219,39,119,.08)'}),stroke:new Stroke({color:satelliteMode()?'#ff4da6':'#be185d',width:large?3:1.5,lineDash:project.areaBasis==='estimated'?[4,3]:null})})}));
-    styles.push(new Style({geometry:center,text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 12px sans-serif':large?'900 11px sans-serif':'700 8px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:large?'#b45309':(operating?'#db2777':construction?'#7e22ce':'#2563eb')}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    if(radiusPx<11)styles.push(new Style({geometry:center,image:new CircleStyle({
+      radius:large?13:7,
+      fill:new Fill({color:statusStyle.fill}),
+      stroke:new Stroke({color:statusStyle.stroke,width:large?3.2:1.6,lineDash:statusStyle.dash||((project.areaBasis==='estimated')?[4,3]:null)})
+    })}));
+    styles.push(new Style({geometry:center,text:new TextStyle({
+      text:project.technology==='solar'?'S':'W',
+      font:selected?'800 12px sans-serif':large?'900 11px sans-serif':'700 8px sans-serif',
+      fill:new Fill({color:'#fff'}),
+      backgroundFill:new Fill({color:statusStyle.badge}),
+      backgroundStroke:new Stroke({color:'#fff',width:1}),
+      padding:[2,3,2,3]
+    })}));
     return styles;
   }
 });
 const foreignOsmLayer=new VectorLayer({
   source:foreignOsmSource,zIndex:9,visible:layerVisibility.foreign,
   style:f=>{
-    const project=f.get('data')||{},selected=f.get('selected'),large=Number(project.mw)>50;
+    const project=f.get('data')||{},selected=f.get('selected'),large=Number(project.mw)>50,statusStyle=foreignStatusStyle(project);
+    const osmHull=project.areaBasis==='osm-hull';
     const styles=[new Style({
-      fill:new Fill({color:project.areaBasis==='osm-hull'?(satelliteMode()?'rgba(219,39,119,.20)':'rgba(219,39,119,.15)'):(satelliteMode()?'rgba(219,39,119,.34)':'rgba(219,39,119,.25)')}),
-      stroke:new Stroke({color:selected?'#111827':large?(satelliteMode()?'#facc15':'#b45309'):(satelliteMode()?'#ff4da6':'#be185d'),width:selected?4:(large?3:1.5),lineDash:project.areaBasis==='osm-hull'?[9,5]:null})
+      fill:new Fill({color:osmHull?(project.status==='operating'?(satelliteMode()?'rgba(219,39,119,.20)':'rgba(219,39,119,.15)'):project.status==='construction'?(satelliteMode()?'rgba(249,115,22,.20)':'rgba(249,115,22,.14)'):(satelliteMode()?'rgba(59,130,246,.20)':'rgba(37,99,235,.13)')):statusStyle.fill}),
+      stroke:new Stroke({color:selected?'#111827':statusStyle.stroke,width:selected?4:(large?3.4:1.7),lineDash:statusStyle.dash||(osmHull?[9,5]:null)})
     })];
-    if(f.get('primaryOsmPart'))styles.push(new Style({text:new TextStyle({text:project.technology==='solar'?'S':'W',font:selected?'800 11px sans-serif':'800 9px sans-serif',fill:new Fill({color:'#fff'}),backgroundFill:new Fill({color:large?'#b45309':'#db2777'}),backgroundStroke:new Stroke({color:'#fff',width:1}),padding:[2,3,2,3]})}));
+    if(f.get('primaryOsmPart'))styles.push(new Style({text:new TextStyle({
+      text:project.technology==='solar'?'S':'W',
+      font:selected?'800 11px sans-serif':'800 9px sans-serif',
+      fill:new Fill({color:'#fff'}),
+      backgroundFill:new Fill({color:statusStyle.badge}),
+      backgroundStroke:new Stroke({color:'#fff',width:1}),
+      padding:[2,3,2,3]
+    })}));
     return styles;
   }
 });
