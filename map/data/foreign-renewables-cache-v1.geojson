@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-foreign-renewables-cache-v1",
-  "generatedAt": "2026-10-13T06:16:56Z",
+  "generatedAt": "2026-10-13T06:20:49Z",
   "scope": {
     "countries": [
       "RO",
@@ -25,22 +25,29 @@
     "lastKnownGoodPreservedOnFailure": true,
     "perCountryLastKnownGood": true,
     "countryErrors": {
-      "RS": "All Overpass endpoints failed: The read operation timed out",
       "TR": "All Overpass endpoints failed: The read operation timed out",
-      "MK": "All Overpass endpoints failed: The read operation timed out",
       "RO": "All Overpass endpoints failed: The read operation timed out",
+      "RS": "All Overpass endpoints failed: The read operation timed out",
+      "MK": "All Overpass endpoints failed: The read operation timed out",
       "GR": "All Overpass endpoints failed: The read operation timed out"
     },
     "sourceHealth": {
-      "RS": {
-        "country": "Сърбия",
+      "TR": {
+        "country": "Турция",
         "ok": false,
         "error": "All Overpass endpoints failed: The read operation timed out",
         "preserved": 6,
         "curated": 6
       },
-      "TR": {
-        "country": "Турция",
+      "RO": {
+        "country": "Румъния",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 6,
+        "curated": 6
+      },
+      "RS": {
+        "country": "Сърбия",
         "ok": false,
         "error": "All Overpass endpoints failed: The read operation timed out",
         "preserved": 6,
@@ -52,13 +59,6 @@
         "error": "All Overpass endpoints failed: The read operation timed out",
         "preserved": 3,
         "curated": 3
-      },
-      "RO": {
-        "country": "Румъния",
-        "ok": false,
-        "error": "All Overpass endpoints failed: The read operation timed out",
-        "preserved": 6,
-        "curated": 6
       },
       "GR": {
         "country": "Гърция",
