@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.94b-progressive-place-labels-20261013">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94b</title>
+<meta name="bgwf-build" content="v0.94c-verified-operating-wind-20261013">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94c</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -3653,6 +3653,30 @@ const CURATED_INDUSTRIAL_POINTS = [];
     { id:"WIND-BALCHIK", name:"ВяЕЦ Балчик", lon:28.13, lat:43.42, mw:10, turbines:5,
       statusLabel:"действащ · общ. Балчик", source:"https://www.thewindpower.net/country_windfarms_en_37_bulgarie.php" }
   ];
+  const WIND_VERIFIED_PROJECT_RADIUS_KM=7;
+  function windDistanceKm(a,b){
+    const R=6371;
+    const dLat=(Number(b.lat)-Number(a.lat))*Math.PI/180;
+    const dLon=(Number(b.lon)-Number(a.lon))*Math.PI/180;
+    const lat1=Number(a.lat)*Math.PI/180,lat2=Number(b.lat)*Math.PI/180;
+    const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;
+    return 2*R*Math.asin(Math.min(1,Math.sqrt(h)));
+  }
+  function verifiedOperatingWindMatch(turbine){
+    let best=null,bestKm=Infinity;
+    for(const project of operatingWindProjects){
+      const km=windDistanceKm(turbine,project);
+      if(km<bestKm){best=project;bestKm=km;}
+    }
+    return best&&bestKm<=WIND_VERIFIED_PROJECT_RADIUS_KM?{project:best,distanceKm:bestKm}:null;
+  }
+  const verifiedOperatingWindTurbines=individualWindTurbines.flatMap(turbine=>{
+    const match=verifiedOperatingWindMatch(turbine);
+    if(!match)return[];
+    return[{...turbine,verification:'confirmed-operating-park',verifiedProjectId:match.project.id,verifiedProjectName:match.project.name,verifiedProjectSource:match.project.source,distanceToVerifiedProjectKm:Number(match.distanceKm.toFixed(2))}];
+  });
+  const excludedWindTurbines=individualWindTurbines.filter(turbine=>!verifiedOperatingWindMatch(turbine));
+
 
   // Национална проверена извадка на действащи големи наземни ФЕЦ (>10 MWp)
   // плюс отделни проверени етапи. MWp DC, MW AC и BESS никога не се смесват.
@@ -5985,7 +6009,7 @@ function scheduleNaturaOverlapUpdate(){
 function isValidWindProject(d){return !!(d&&String(d.name||'').trim()&&Number.isFinite(Number(d.lon))&&Number.isFinite(Number(d.lat))&&/^https?:\/\//i.test(String(d.source||'')));}
 function loadWind(){
   windSource.clear();
-  individualWindTurbines.forEach(d=>{
+  verifiedOperatingWindTurbines.forEach(d=>{
     const f=new Feature({geometry:new Point(fromLonLat([d.lon,d.lat]))});
     f.setId(d.id);f.set('kind','wind');f.set('data',d);windSource.addFeature(f);
   });
@@ -7093,7 +7117,7 @@ const NSI_DISTURBED_LAND_2025={
 };
 
 const BULGARIA_AREA_SQ_KM=111000;
-const WIND_TURBINE_COUNT=484;
+const WIND_TURBINE_COUNT=verifiedOperatingWindTurbines.length;
 const WIND_TURBINE_FOUNDATION_SQ_M=576;
 const WIND_TURBINE_FOUNDATION_AREA_SQ_KM=WIND_TURBINE_COUNT*WIND_TURBINE_FOUNDATION_SQ_M/1e6;
 const territoryScaleBars=root.querySelector('[data-territory-scale-bars]');
@@ -7154,7 +7178,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
 
 const configs=[
   ['solar','ФЕЦ','#f59e0b','ФЕЦ — фотоволтаична електрическа централа. Показва проверените изградени соларни електроцентрали.'],
-  ['wind','ВяЕЦ','#0891b2','ВяЕЦ — вятърна електрическа централа. Показва нанесените вятърни турбини и ветропаркове.'],
+  ['wind','ВяЕЦ','#0891b2','ВяЕЦ — показва само турбини, съпоставени с проверени действащи ветропаркове. Непотвърдени, демонтирани или извън експлоатация OSM точки не се показват като действащи.'],
   ['projects','Проектни ВЕИ','#2563eb','Проектни ВЕИ — планирани или процедирани възобновяеми енергийни проекти по налични ПУП/ПИ и официални документи.'],
   ['future','RED III','#2f9e44','RED III — приоритетни зони по Директивата за възобновяема енергия. Приоритетна зона ≠ одобрен проект ≠ засегнат имот ≠ отчуждена земя.'],
   ['foreign','Foreign','#db2777','Foreign — установими действащи, в строеж и планирани соларни/вятърни ВЕИ над 1 MW в съседните държави. Обектите над 50 MW са визуално подчертани; точен полигон не е задължителен.'],
@@ -7474,7 +7498,7 @@ function runSelfTests(){
   selfTest('density-parity',()=>{const represented=densitySource.getFeatures().reduce((sum,f)=>sum+(Number(f.get('count'))||0),0);return{ok:represented===fireSource.getFeatures().length,regions:densitySource.getFeatures().length,represented,fires:fireSource.getFeatures().length};});
   selfTest('red-extent',()=>({ok:redSource.getFeatures().every(featureExtentInBulgaria),count:redSource.getFeatures().length}));
   selfTest('red-components',()=>({ok:(priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length||0)===20,components:priorityZonesGeoJSON?.features?.[0]?.geometry?.coordinates?.length||0,expected:20}));
-  selfTest('individual-wind-coordinates',()=>({ok:individualWindTurbines.length===484&&windSource.getFeatures().length===484&&new Set(individualWindTurbines.map(d=>d.id)).size===484&&individualWindTurbines.every(d=>Number.isFinite(d.lon)&&Number.isFinite(d.lat)&&d.lon>22&&d.lon<29&&d.lat>41&&d.lat<45),count:windSource.getFeatures().length}));
+  selfTest('individual-wind-coordinates',()=>({ok:windSource.getFeatures().length===verifiedOperatingWindTurbines.length&&new Set(verifiedOperatingWindTurbines.map(d=>d.id)).size===verifiedOperatingWindTurbines.length&&verifiedOperatingWindTurbines.every(d=>Number.isFinite(d.lon)&&Number.isFinite(d.lat)&&d.lon>22&&d.lon<29&&d.lat>41&&d.lat<45),count:windSource.getFeatures().length,rawOsm:individualWindTurbines.length,excluded:excludedWindTurbines.length}));
   selfTest('wind-validity',()=>({ok:operatingWindProjects.filter(isValidWindProject).length===operatingWindProjects.length,valid:operatingWindProjects.filter(isValidWindProject).length,total:operatingWindProjects.length}));
   selfTest('wind-id-unique',()=>{const dup=duplicateValues(operatingWindProjects.map(d=>d.id));return{ok:dup.length===0,duplicates:dup};});
   selfTest('wind-no-anonymous',()=>{const bad=operatingWindProjects.filter(d=>!String(d.name||'').trim()||!/https?:\/\//i.test(d.source||''));return{ok:bad.length===0,bad:bad.map(d=>d.id)};});
@@ -7496,7 +7520,7 @@ function runSelfTests(){
   selfTest('map-css-height',()=>{const box=mapTarget.getBoundingClientRect();return{ok:box.height>=350&&box.width>200,width:Math.round(box.width),height:Math.round(box.height)};});
   selfTest('collapsible-filter-css-contract',()=>({ok:!!mobileFilterToggle&&!!filterPanel&&!!root.querySelector('.bgwf-mobile-filter-body')&&!!filterActionLabel&&!!filterSummary?.textContent&&!!mobileFooter&&!!root.querySelector('[data-filter-coach]'),isMobile:matchMedia(compactMobileQuery).matches,expanded:mobileFilterToggle?.getAttribute('aria-expanded'),action:filterActionLabel?.textContent,summary:filterSummary?.textContent,footerOpen:mobileFooter?.open}));
   selfTest('local-object-search-contract',()=>({ok:!!mapSearchInput&&!!mapSearchResults&&typeof collectSearchResults==='function'&&typeof focusSearchResult==='function',places:placeLabelsSource.getFeatures().length,fireRecords:fireFeaturesById.size}));
-  selfTest('wind-foundation-area',()=>({ok:WIND_TURBINE_COUNT===individualWindTurbines.length&&Math.abs(WIND_TURBINE_FOUNDATION_AREA_SQ_KM-.278784)<1e-12,count:WIND_TURBINE_COUNT,foundationSqM:WIND_TURBINE_FOUNDATION_SQ_M,totalSqKm:WIND_TURBINE_FOUNDATION_AREA_SQ_KM}));
+  selfTest('wind-foundation-area',()=>({ok:WIND_TURBINE_COUNT===verifiedOperatingWindTurbines.length&&Math.abs(WIND_TURBINE_FOUNDATION_AREA_SQ_KM-(WIND_TURBINE_COUNT*WIND_TURBINE_FOUNDATION_SQ_M/1e6))<1e-12,count:WIND_TURBINE_COUNT,foundationSqM:WIND_TURBINE_FOUNDATION_SQ_M,totalSqKm:WIND_TURBINE_FOUNDATION_AREA_SQ_KM,excluded:excludedWindTurbines.length}));
   selfTest('mobile-zoom-controls',()=>({ok:['zoom-in','zoom-out','zoom-reset'].every(name=>!!root.querySelector(`[data-${name}]`)),buttons:root.querySelectorAll('.bgwf-zoom-controls button').length,homeScaleTarget:1}));
   selfTest('zoom-status-and-url-sync',()=>({ok:!!zoomFactorEl&&typeof window.bgwfCurrentMapUrl==='function',zoomText:zoomFactorEl?.textContent,url:window.bgwfCurrentMapUrl?.()}));
   selfTest('ol-projection-roundtrip',()=>{const src=[25.25,42.75],back=toLonLat(fromLonLat(src)),err=Math.hypot(back[0]-src[0],back[1]-src[1]);return{ok:err<1e-9,errorDegrees:err};});
