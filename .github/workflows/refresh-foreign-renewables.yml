@@ -22,12 +22,17 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+
+      - name: Install osmium fallback parser
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends osmium-tool
 
       - name: Refresh operating/planned wind/solar >1 MW in neighbouring countries
         run: python scripts/refresh-foreign-renewables.py
