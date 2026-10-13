@@ -91,7 +91,7 @@ def request_overpass(query: str) -> dict:
     body = urllib.parse.urlencode({"data": query}).encode("utf-8")
     last = None
     for endpoint in ENDPOINTS:
-        for attempt in range(1, 3):
+        for attempt in range(1, 2):
             req = urllib.request.Request(
                 endpoint,
                 data=body,
@@ -103,7 +103,7 @@ def request_overpass(query: str) -> dict:
                 method="POST",
             )
             try:
-                with urllib.request.urlopen(req, timeout=180) as response:
+                with urllib.request.urlopen(req, timeout=75) as response:
                     return json.loads(response.read().decode("utf-8"))
             except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError) as exc:
                 last = exc
