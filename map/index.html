@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.94a-regional-basemap-context-20261013">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94a</title>
+<meta name="bgwf-build" content="v0.94b-progressive-place-labels-20261013">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94b</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4618,7 +4618,12 @@ function formatZoomFactor(scale){
   const value=Math.max(1,Number(scale)||1);
   return value<10?value.toFixed(1).replace(/\.0$/,''):String(Math.round(value));
 }
-function updateZoomFactor(){if(zoomFactorEl)zoomFactorEl.textContent=`×${formatZoomFactor(currentScale())}`;}
+function updateZoomFactor(){
+  if(zoomFactorEl)zoomFactorEl.textContent=`×${formatZoomFactor(currentScale())}`;
+  regionalReferenceLayer?.setVisible?.(currentScale()>=4);
+  regionalMajorLabelLayer?.setVisible?.(currentScale()<12);
+  placeLabelsLayer?.changed?.();
+}
 function currentMapCenterLonLat(){const c=view?.getCenter();return c?toLonLat(c):null;}
 
 function buildUrlParams(){
@@ -4701,6 +4706,40 @@ const regionalReferenceLayer=new TileLayer({
 });
 regionalReferenceLayer.set('kind','basemap-country-sea-reference');
 
+const regionalMajorLabelSource=new VectorSource();
+[
+  ['София',23.3217,42.6977,'city',5],
+  ['Пловдив',24.7499,42.1419,'city',4],
+  ['Варна',27.9167,43.2074,'city',4],
+  ['Бургас',27.4721,42.4937,'city',4],
+  ['Букурещ',26.1025,44.4268,'capital',5],
+  ['Белград',20.4489,44.7866,'capital',5],
+  ['Скопие',21.4316,41.9981,'capital',5],
+  ['Атина',23.7275,37.9838,'capital',5],
+  ['Истанбул',28.9784,41.0082,'city',5],
+  ['Черно море',29.3,43.1,'sea',5],
+  ['Егейско море',24.7,39.4,'sea',5]
+].forEach(([name,lon,lat,type,priority])=>{
+  const feature=new Feature({geometry:new Point(fromLonLat([lon,lat])),name,type,priority,kind:'regional-major-label'});
+  regionalMajorLabelSource.addFeature(feature);
+});
+const regionalMajorLabelLayer=new VectorLayer({
+  source:regionalMajorLabelSource,
+  zIndex:36,
+  declutter:true,
+  style:f=>{
+    const type=f.get('type'),isSea=type==='sea',isCapital=type==='capital';
+    return new Style({text:new TextStyle({
+      text:f.get('name'),
+      font:isSea?'italic 600 12px system-ui, sans-serif':isCapital?'700 12px system-ui, sans-serif':'600 11px system-ui, sans-serif',
+      fill:new Fill({color:isSea?(satelliteMode()?'rgba(191,219,254,.96)':'rgba(30,64,175,.72)'):(satelliteMode()?'rgba(255,255,255,.96)':'rgba(31,41,55,.88)')}),
+      stroke:new Stroke({color:satelliteMode()?'rgba(0,0,0,.72)':'rgba(255,255,255,.94)',width:isSea?2.5:3}),
+      padding:[2,3,2,3]
+    })});
+  }
+});
+regionalMajorLabelLayer.set('kind','basemap-major-orientation-labels');
+
 const satelliteSource=new XYZ({
   url:'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   crossOrigin:'anonymous',
@@ -4750,8 +4789,13 @@ const placeLabelsLayer=new VectorLayer({
   renderOrder:(a,b)=>(Number(b.get('priority'))||0)-(Number(a.get('priority'))||0),
   style:f=>{
     const scale=currentScale();
-    if(scale<PLACE_LABEL_MIN_SCALE)return null;
     const priority=Number(f.get('priority'))||1;
+    const pop=Number(f.get('pop'))||0;
+    if(scale<6)return null;
+    if(scale<12&&!(priority>=4&&pop>=70000))return null;
+    if(scale<22&&priority<4)return null;
+    if(scale<40&&priority<3)return null;
+    if(scale<PLACE_LABEL_MIN_SCALE&&priority<2)return null;
     return new Style({
       text:new TextStyle({
         text:f.get('name'),
@@ -4921,8 +4965,11 @@ function haloPolygonStyles({fill,stroke,innerWidth=1.5,selected=false,halo='rgba
 function refreshSatelliteOverlayStyles(){
   root.classList.toggle('is-satellite-mode',satelliteMode());
   regionalBaseLayer?.setVisible?.(!satelliteMode());
+  const overviewScale=currentScale();
+  regionalReferenceLayer?.setVisible?.(overviewScale>=4);
   regionalReferenceLayer?.setOpacity?.(satelliteMode()?.96:.78);
-  [regionalReferenceLayer,placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
+  regionalMajorLabelLayer?.setVisible?.(overviewScale<12);
+  [regionalReferenceLayer,regionalMajorLabelLayer,placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
   industrialAuxLayer?.changed?.();
 }
@@ -5320,7 +5367,7 @@ map=new MapOL({
   target:mapTarget,
   view,
   interactions:mapInteractions,
-  layers:[regionalBaseLayer,satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,epmLayer,kkkrLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,regionalReferenceLayer,provinceLayer]
+  layers:[regionalBaseLayer,satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,epmLayer,kkkrLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,liveLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,regionalReferenceLayer,regionalMajorLabelLayer,provinceLayer]
 });
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
