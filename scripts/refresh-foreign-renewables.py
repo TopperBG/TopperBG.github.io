@@ -4,7 +4,7 @@
 Scope:
 - Bulgaria's five neighbouring countries: RO, RS, MK, GR, TR
 - operating wind/solar installations > 1 MW
-- construction/planned wind/solar installations > 10 MW
+- construction/planned wind/solar installations > 1 MW
 - OSM power=plant plus area-mapped power=generator objects
 - preserve curated seed entries and the previous valid cache on remote failure
 
@@ -25,6 +25,7 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CACHE = ROOT / "map" / "data" / "foreign-renewables-cache-v1.geojson"
+SEED = ROOT / "map" / "data" / "foreign-renewables-seed-v1.json"
 ENDPOINTS = [
     "https://overpass-api.de/api/interpreter",
     "https://overpass.kumi.systems/api/interpreter",
@@ -130,9 +131,9 @@ def lifecycle_status(tags: dict) -> tuple[str, str]:
     construction = str(tags.get("construction") or "").lower()
     proposed = str(tags.get("proposed") or "").lower()
     status = str(tags.get("status") or "").lower()
-    if construction or lifecycle == "construction" or status in {"construction", "under_construction"}:
+    if tags.get("construction:power") == "plant" or construction or lifecycle == "construction" or status in {"construction", "under_construction"}:
         return "construction", "в строеж"
-    if proposed or lifecycle in {"proposed", "planned"} or status in {"proposed", "planned"}:
+    if tags.get("proposed:power") == "plant" or tags.get("planned:power") == "plant" or proposed or lifecycle in {"proposed", "planned"} or status in {"proposed", "planned"}:
         return "planned", "планиран"
     return "operating", "действащ"
 
@@ -147,8 +148,9 @@ area["ISO3166-1"="{code}"][admin_level=2]->.a;
   nwr(area.a)["power"="plant"];
   way(area.a)["power"="generator"];
   relation(area.a)["power"="generator"];
-  nwr(area.a)["construction"="power"]["power"!="generator"];
-  nwr(area.a)["proposed"="power"]["power"!="generator"];
+  nwr(area.a)["construction:power"="plant"];
+  nwr(area.a)["proposed:power"="plant"];
+  nwr(area.a)["planned:power"="plant"];
   nwr(area.a)["lifecycle"~"^(construction|proposed|planned)$"];
 );
 out tags center;
@@ -164,8 +166,7 @@ out tags center;
         if mw is None:
             continue
         status, status_label = lifecycle_status(tags)
-        threshold = 1 if status == "operating" else 10
-        if mw <= threshold:
+        if mw <= 1:
             continue
         point = element_point(el)
         if not point:
@@ -228,55 +229,97 @@ def dedupe(features: list[dict]) -> list[dict]:
             kept.append(f)
     return kept
 
+def seed_features() -> list[dict]:
+    payload = json.loads(SEED.read_text(encoding="utf-8")) if SEED.exists() else {"projects": []}
+    rows = []
+    reverse_country = {v: k for k, v in COUNTRIES.items()}
+    for project in payload.get("projects") or []:
+        try:
+            mw = float(project.get("mw") or 0)
+            lon = float(project.get("lon"))
+            lat = float(project.get("lat"))
+        except (TypeError, ValueError):
+            continue
+        if mw <= 1 or project.get("technology") not in {"solar", "wind"}:
+            continue
+        status = project.get("status") or "planned"
+        if status not in {"operating", "construction", "planned"}:
+            continue
+        props = dict(project)
+        props.update({
+            "countryCode": reverse_country.get(project.get("country")),
+            "major": mw > 50,
+            "sourceMode": "curated-seed",
+        })
+        osm_ids = project.get("osmIds") or []
+        if osm_ids and not props.get("osm_id"):
+            props["osm_id"] = osm_ids[0]
+        rows.append({
+            "type": "Feature",
+            "properties": props,
+            "geometry": {"type": "Point", "coordinates": [lon, lat]},
+        })
+    return rows
+
+
 def main() -> None:
     existing = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {"features": []}
-    curated = []
-    for f in existing.get("features") or []:
-        p = f.get("properties") or {}
-        if p.get("sourceMode") != "curated-seed":
-            continue
-        mw = float(p.get("mw") or 0)
-        status = p.get("status")
-        if (status == "operating" and mw > 1) or (status in {"construction","planned"} and mw > 10):
-            curated.append(f)
+    existing_by_country = {code: [] for code in COUNTRIES}
+    for feature in existing.get("features") or []:
+        code = (feature.get("properties") or {}).get("countryCode")
+        if code in existing_by_country:
+            existing_by_country[code].append(feature)
 
-    discovered: list[dict] = []
+    curated = seed_features()
+    curated_by_country = {code: [] for code in COUNTRIES}
+    for feature in curated:
+        code = (feature.get("properties") or {}).get("countryCode")
+        if code in curated_by_country:
+            curated_by_country[code].append(feature)
+
+    merged_all: list[dict] = []
     errors: dict[str, str] = {}
-    for code in COUNTRIES:
+    source_health: dict[str, dict] = {}
+    for code, country in COUNTRIES.items():
         try:
-            rows = query_country(code)
-            discovered.extend(rows)
-            print(f"{code}: {len(rows)} operating wind/solar objects >1 MW")
+            discovered = query_country(code)
+            merged = dedupe(curated_by_country[code] + discovered)
+            merged = [
+                f for f in merged
+                if (f.get("properties") or {}).get("technology") in {"solar", "wind"}
+                and (f.get("properties") or {}).get("status") in {"operating", "construction", "planned"}
+                and float((f.get("properties") or {}).get("mw") or 0) > 1
+            ]
+            merged_all.extend(merged)
+            source_health[code] = {
+                "country": country, "ok": True, "discovered": len(discovered),
+                "curated": len(curated_by_country[code]), "published": len(merged),
+            }
+            print(f"{code}: {len(discovered)} OSM >1 MW + {len(curated_by_country[code])} curated -> {len(merged)}")
         except Exception as exc:
             errors[code] = str(exc)
-            print(f"WARNING {code}: {exc}")
+            preserved = existing_by_country.get(code) or curated_by_country[code]
+            merged_all.extend(preserved)
+            source_health[code] = {
+                "country": country, "ok": False, "error": str(exc),
+                "preserved": len(preserved), "curated": len(curated_by_country[code]),
+            }
+            print(f"WARNING {code}: {exc}; preserving {len(preserved)} last-known-good record(s)")
 
-    if not discovered:
-        # Last-known-good rule: do not overwrite a valid cache if every remote
-        # query failed or produced no capacity-bearing operating objects.
-        if existing.get("features"):
-            print("No fresh OSM data; preserving existing repository cache.")
-            return
-        raise RuntimeError("No fresh data and no previous Foreign cache")
-
-    merged = dedupe(curated + discovered)
-    filtered = []
-    for f in merged:
-        p = f.get("properties") or {}
-        mw = float(p.get("mw") or 0)
-        status = p.get("status")
-        if p.get("technology") not in {"solar","wind"}:
-            continue
-        if status == "operating" and mw > 1:
-            filtered.append(f)
-        elif status in {"construction","planned"} and mw > 10:
-            filtered.append(f)
-    merged = filtered
+    merged = dedupe(merged_all)
+    merged = [
+        f for f in merged
+        if (f.get("properties") or {}).get("technology") in {"solar", "wind"}
+        and (f.get("properties") or {}).get("status") in {"operating", "construction", "planned"}
+        and float((f.get("properties") or {}).get("mw") or 0) > 1
+    ]
     merged.sort(key=lambda f: (
         (f.get("properties") or {}).get("countryCode") or "",
         -float((f.get("properties") or {}).get("mw") or 0),
         (f.get("properties") or {}).get("name") or "",
     ))
+    if not merged:
+        raise RuntimeError("Refusing to publish an empty Foreign renewable cache")
 
     output = {
         "type": "FeatureCollection",
@@ -287,14 +330,16 @@ def main() -> None:
             "technologies": ["solar", "wind"],
             "statusPolicy": {
                 "operatingMinimumMwExclusive": 1,
-                "constructionPlannedMinimumMwExclusive": 10,
+                "constructionPlannedMinimumMwExclusive": 1,
             },
             "majorThresholdMwExclusive": 50,
         },
         "refresh": {
             "source": "OpenStreetMap / Overpass plus curated seed",
             "lastKnownGoodPreservedOnFailure": True,
+            "perCountryLastKnownGood": True,
             "countryErrors": errors,
+            "sourceHealth": source_health,
         },
         "featureCount": len(merged),
         "majorCount": sum(1 for f in merged if float((f.get("properties") or {}).get("mw") or 0) > 50),
@@ -302,10 +347,10 @@ def main() -> None:
     }
     CACHE.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     status_counts = {}
-    for f in merged:
-        s=(f.get("properties") or {}).get("status","unknown")
-        status_counts[s]=status_counts.get(s,0)+1
-    print(f"Published {len(merged)} Foreign wind/solar objects; >50 MW: {output['majorCount']}; statuses: {status_counts}")
+    for feature in merged:
+        status = (feature.get("properties") or {}).get("status", "unknown")
+        status_counts[status] = status_counts.get(status, 0) + 1
+    print(f"Published {len(merged)} Foreign wind/solar objects >1 MW; >50 MW: {output['majorCount']}; statuses: {status_counts}")
 
 if __name__ == "__main__":
     main()
