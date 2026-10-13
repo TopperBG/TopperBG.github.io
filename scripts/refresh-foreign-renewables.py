@@ -304,10 +304,10 @@ def geofabrik_country(code: str) -> list[dict]:
 
 def discover_country(code: str) -> tuple[list[dict], str]:
     try:
-        return query_country(code), "overpass"
-    except Exception as overpass_error:
-        print(f"WARNING {code}: Overpass failed ({overpass_error}); trying Geofabrik extract.")
         return geofabrik_country(code), "geofabrik"
+    except Exception as geofabrik_error:
+        print(f"WARNING {code}: Geofabrik failed ({geofabrik_error}); trying Overpass fallback.")
+        return query_country(code), "overpass"
 
 def dedupe(features: list[dict]) -> list[dict]:
     by_osm: dict[str, dict] = {}
