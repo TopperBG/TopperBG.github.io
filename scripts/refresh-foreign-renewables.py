@@ -145,13 +145,16 @@ def query_country(code: str) -> list[dict]:
 [out:json][timeout:150];
 area["ISO3166-1"="{code}"][admin_level=2]->.a;
 (
-  nwr(area.a)["power"="plant"];
-  way(area.a)["power"="generator"];
-  relation(area.a)["power"="generator"];
-  nwr(area.a)["construction:power"="plant"];
-  nwr(area.a)["proposed:power"="plant"];
-  nwr(area.a)["planned:power"="plant"];
-  nwr(area.a)["lifecycle"~"^(construction|proposed|planned)$"];
+  nwr(area.a)["power"="plant"]["plant:source"~"solar|wind",i];
+  nwr(area.a)["power"="plant"]["source"~"solar|wind",i];
+  way(area.a)["power"="generator"]["generator:source"~"solar|wind",i];
+  relation(area.a)["power"="generator"]["generator:source"~"solar|wind",i];
+  nwr(area.a)["construction:power"="plant"]["plant:source"~"solar|wind",i];
+  nwr(area.a)["construction:power"="plant"]["source"~"solar|wind",i];
+  nwr(area.a)["proposed:power"="plant"]["plant:source"~"solar|wind",i];
+  nwr(area.a)["proposed:power"="plant"]["source"~"solar|wind",i];
+  nwr(area.a)["planned:power"="plant"]["plant:source"~"solar|wind",i];
+  nwr(area.a)["planned:power"="plant"]["source"~"solar|wind",i];
 );
 out tags center;
 """
