@@ -36,7 +36,7 @@ COUNTRIES = {
     "GR": "Гърция",
     "TR": "Турция",
 }
-USER_AGENT = "EnergoKarta-Bulgaria-foreign-renewables/1.0 (+https://topperbg.github.io/map/)"
+USER_AGENT = "EnergoKarta-Bulgaria-foreign-renewables/1.1 (+https://topperbg.github.io/map/)"
 
 CAPACITY_KEYS = (
     "plant:output:electricity",
