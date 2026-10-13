@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.93n-concession-repository-merge-20261005">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93n</title>
+<meta name="bgwf-build" content="v0.93o-concession-repository-merge-20261005">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.93o</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4476,8 +4476,8 @@ function layerSourceWarnings(){
     warnings.push({severity:'error',text:'Натура 2000: локалният GIS cache не може да бъде зареден и няма налична геометрия за слоя.'});
   if(layerVisibility.epm&&epmLoadState==='error'&&epmSource.getFeatures().length===0)
     warnings.push({severity:'error',text:'ЕПМ: локалният GIS cache не може да бъде зареден и няма налична геометрия за слоя.'});
-  if(layerVisibility.foreign&&foreignOsmLoadState==='error'&&foreignOsmSource.getFeatures().length===0)
-    warnings.push({severity:'warning',text:'Foreign: OSM геометрията е временно недостъпна; запазени са локалните площови представяния. При успешна заявка контурите се кешират за следващи посещения.'});
+  if(layerVisibility.foreign&&foreignCacheLoadState==='error'&&foreignSource.getFeatures().length===0)
+    warnings.push({severity:'error',text:'Foreign: централният GeoJSON cache не може да бъде зареден.'});
   if(layerVisibility.live&&liveFireLoadState==='error')
     warnings.push({severity:'warning',text:'Sentinel-3: оперативният онлайн източник е временно недостъпен; няма текущо опресняване на засичанията.'});
   return warnings;
@@ -4758,6 +4758,8 @@ const projectSource=new VectorSource();
 const windSource=new VectorSource();
 const foreignSource=new VectorSource();
 const foreignOsmSource=new VectorSource();
+const FOREIGN_RENEWABLE_CACHE_URL='./data/foreign-renewables-cache-v1.geojson';
+let foreignCacheLoadState='idle',foreignCacheLoadPromise=null;
 const redSource=new VectorSource();
 const naturaSource=new VectorSource();
 const naturaRenewablesOverlapSource=new VectorSource();
@@ -4775,6 +4777,53 @@ foreignSource.addFeatures(foreignRenewableProjects.map(project=>{
   const feature=new Feature({geometry:new CircleGeom(fromLonLat([project.lon,project.lat]),mercatorRadiusM)});
   feature.setId(project.id);feature.set('kind','foreign');feature.set('data',{...project,...area});return feature;
 }));
+
+async function ensureForeignRenewableCache(){
+  if(foreignCacheLoadState==='ready')return foreignSource.getFeatures();
+  if(foreignCacheLoadPromise)return foreignCacheLoadPromise;
+  foreignCacheLoadState='loading';
+  foreignCacheLoadPromise=(async()=>{
+    try{
+      const response=await fetch(FOREIGN_RENEWABLE_CACHE_URL,{cache:'no-cache'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const data=await response.json();
+      if(data?.type!=='FeatureCollection'||data?.schema!=='bgwf-foreign-renewables-cache-v1'||!Array.isArray(data.features)||!data.features.length)
+        throw new Error('невалиден Foreign cache');
+      const features=[];
+      for(const row of data.features){
+        const p=row?.properties||{},coords=row?.geometry?.coordinates;
+        if(row?.geometry?.type!=='Point'||!Array.isArray(coords)||coords.length<2)continue;
+        const lon=Number(coords[0]),lat=Number(coords[1]),mw=Number(p.mw);
+        if(!Number.isFinite(lon)||!Number.isFinite(lat)||!Number.isFinite(mw)||mw<=1)continue;
+        const project={...p,lon,lat,major:mw>50,status:'operating',statusLabel:p.statusLabel||'действащ'};
+        const area=foreignProjectArea(project);
+        const groundRadiusM=Math.sqrt(area.areaHa*10000/Math.PI);
+        const mercatorRadiusM=groundRadiusM/Math.max(.25,Math.cos(lat*Math.PI/180));
+        const feature=new Feature({geometry:new CircleGeom(fromLonLat([lon,lat]),mercatorRadiusM)});
+        feature.setId(project.id||`FOREIGN-CACHE-${features.length+1}`);
+        feature.set('kind','foreign');
+        feature.set('data',{...project,...area,cacheGeneratedAt:data.generatedAt||null,sourceMode:p.sourceMode||'repository-cache'});
+        features.push(feature);
+      }
+      if(!features.length)throw new Error('Foreign cache няма валидни >1 MW обекти');
+      foreignSource.clear();
+      foreignSource.addFeatures(features);
+      foreignCacheLoadState='ready';
+      debugState.network.foreignCache={ok:true,objects:features.length,major:features.filter(f=>Number(f.get('data')?.mw)>50).length,generatedAt:data.generatedAt||null,url:FOREIGN_RENEWABLE_CACHE_URL};
+      updateLayerStatus();updateDebugLayerCounts();
+      return features;
+    }catch(error){
+      foreignCacheLoadState='error';
+      debugState.network.foreignCache={ok:false,error:error.message,url:FOREIGN_RENEWABLE_CACHE_URL,fallbackObjects:foreignSource.getFeatures().length};
+      dbgWarn('foreign-cache-load-failed',{error:error.message});
+      updateLayerStatus();
+      return foreignSource.getFeatures();
+    }finally{
+      foreignCacheLoadPromise=null;
+    }
+  })();
+  return foreignCacheLoadPromise;
+}
 
 const provinceFeatures=readFeatures(provinces); provinceFeatures.forEach(f=>{f.set('kind','province');f.set('provinceCode',f.get('nuts3'));}); provinceSource.addFeatures(provinceFeatures);
 const provinceBackdropLayer=new VectorLayer({
@@ -7005,7 +7054,7 @@ configs.forEach(([key,label,color,help])=>{
     if(key==='projects')projectLayer.setVisible(layerVisibility.projects);
     if(key==='future')redLayer.setVisible(layerVisibility.future);
     if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}
-    if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(layerVisibility.foreign);if(layerVisibility.foreign&&(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error'))try{await ensureForeignOsmPolygons();}catch{}}
+    if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(false);if(layerVisibility.foreign&&(foreignCacheLoadState==='idle'||foreignCacheLoadState==='error'))try{await ensureForeignRenewableCache();}catch{}}
     if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}
     if(key==='industry'){
       industryLayer.setVisible(layerVisibility.industry);if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
@@ -7126,7 +7175,7 @@ function setSearchLayerVisible(kind){
   const [key,layer]=config;layerVisibility[key]=true;layer?.setVisible(true);
   root.querySelector(`.bgwf-layer-toggle[data-layer="${key}"]`)?.setAttribute('aria-pressed','true');
   if(key==='industry'){industrialAuxLayer?.setVisible(true);concessionLayer.setVisible(true);concessionEstimateLayer.setVisible(true);}
-  if(key==='foreign'){foreignOsmLayer.setVisible(true);if(foreignOsmLoadState==='idle'||foreignOsmLoadState==='error')void ensureForeignOsmPolygons();}
+  if(key==='foreign'){foreignOsmLayer.setVisible(false);if(foreignCacheLoadState==='idle'||foreignCacheLoadState==='error')void ensureForeignRenewableCache();}
 }
 async function focusKkkrSearch(ref){
   ref=cadastralIdentifier(ref);if(!ref)return;
@@ -7354,7 +7403,7 @@ void loadSourceHealth();
 updateFiresAndDensity();updateLayerStatus();updateFloatingUiPosition();void showGoatCounter();
 if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
 if(layerVisibility.natura)void ensureNatura2000().catch(()=>{});
-if(layerVisibility.foreign)void ensureForeignOsmPolygons().catch(()=>{});
+void ensureForeignRenewableCache().catch(()=>{});
 if(layerVisibility.epm)void ensureEpmLines();
 if(layerVisibility.live&&(allFireYearsSelected()||fireYearSelected(2026)||fireYearsHidden()))void loadLiveSentinelFires();
 setTimeout(()=>void loadProjectParcels(),100);
