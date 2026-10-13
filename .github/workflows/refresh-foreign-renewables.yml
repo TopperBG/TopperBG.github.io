@@ -1,0 +1,88 @@
+name: Refresh Foreign renewable cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "47 5 * * 1"
+      timezone: "Europe/Sofia"
+  push:
+    paths:
+      - "scripts/refresh-foreign-renewables.py"
+      - "map/data/foreign-renewables-cache-v1.geojson"
+      - ".github/workflows/refresh-foreign-renewables.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-foreign-renewables
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Refresh operating wind/solar >1 MW in neighbouring countries
+        run: python scripts/refresh-foreign-renewables.py
+
+      - name: Validate repository cache
+        run: |
+          python - <<'PY'
+          import json
+          p="map/data/foreign-renewables-cache-v1.geojson"
+          d=json.load(open(p,encoding="utf-8"))
+          assert d.get("type")=="FeatureCollection"
+          assert d.get("schema")=="bgwf-foreign-renewables-cache-v1"
+          fs=d.get("features") or []
+          assert fs, "Foreign cache must not be empty"
+          for f in fs:
+              props=f.get("properties") or {}
+              geom=f.get("geometry") or {}
+              assert geom.get("type")=="Point"
+              assert len(geom.get("coordinates") or [])==2
+              assert float(props.get("mw") or 0)>1
+              assert props.get("technology") in {"solar","wind"}
+              assert props.get("status")=="operating"
+              assert props.get("major") == (float(props["mw"])>50)
+          print("Validated Foreign cache:",len(fs),"objects;",
+                sum(1 for f in fs if (f.get("properties") or {}).get("major")),"major >50 MW")
+          PY
+
+      - name: Commit refreshed cache
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILE=map/data/foreign-renewables-cache-v1.geojson
+          if git diff --quiet -- "$FILE"; then
+            echo "No Foreign cache changes."
+            exit 0
+          fi
+          git add "$FILE"
+          git commit -m "Refresh Foreign renewable cache"
+          if git push origin HEAD:main; then
+            exit 0
+          fi
+          for attempt in 2 3; do
+            echo "::warning title=Concurrent main update::Rebuilding on latest main (attempt ${attempt}/3)."
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/refresh-foreign-renewables.py
+            if git diff --quiet -- "$FILE"; then
+              echo "Latest main already contains equivalent Foreign cache."
+              exit 0
+            fi
+            git add "$FILE"
+            git commit -m "Refresh Foreign renewable cache"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "::error title=Foreign cache publish failed::Could not publish after 3 attempts."
+          exit 1
