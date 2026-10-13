@@ -1,0 +1,383 @@
+{
+  "schema": "bgwf-foreign-renewables-seed-v1",
+  "updatedAt": "2026-10-13",
+  "description": "Curated renewable projects in countries neighbouring Bulgaria. The automated updater merges these records with discoverable OSM plants >1 MW.",
+  "projects": [
+    {
+      "id": "FOREIGN-RO-FANTANELE-COGEALAC",
+      "name": "Fântânele–Cogealac",
+      "country": "Румъния",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 600,
+      "lon": 28.58,
+      "lat": 44.61,
+      "osmIds": [
+        "R5745436"
+      ],
+      "source": "https://www.macquarie.com/au/en/about/company/macquarie-asset-management/infrastructure-and-real-assets/our-assets/fantanele-cogealac.html"
+    },
+    {
+      "id": "FOREIGN-RO-RATESTI",
+      "name": "Rătești Solar Park",
+      "country": "Румъния",
+      "technology": "solar",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 155,
+      "lon": 25.13,
+      "lat": 44.73,
+      "osmIds": [
+        "W1164021912"
+      ],
+      "source": "https://www.nofar-energy.com/project/ratesti/"
+    },
+    {
+      "id": "FOREIGN-RO-VIFOR",
+      "name": "VIFOR Wind Farm",
+      "country": "Румъния",
+      "technology": "wind",
+      "status": "construction",
+      "statusLabel": "в строеж",
+      "mw": 461,
+      "lon": 26.73,
+      "lat": 45.19,
+      "source": "https://www.ifc.org/en/pressroom/2025/ifc-provides-financing-for-landmark-wind-plant-to-boost-romania-s-clean-energy-transition"
+    },
+    {
+      "id": "FOREIGN-RO-DAMA",
+      "name": "Dama Solar",
+      "country": "Румъния",
+      "technology": "solar",
+      "status": "planned",
+      "statusLabel": "планиран",
+      "mw": 1044,
+      "lon": 21.31,
+      "lat": 46.17,
+      "source": "https://rezolv.energy/projects/dama-solar/"
+    },
+    {
+      "id": "FOREIGN-RO-RUGINOASA",
+      "name": "Ruginoasa Wind Farm",
+      "country": "Румъния",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 60,
+      "lon": 26.8363,
+      "lat": 47.2403,
+      "osmIds": [
+        "R17728489"
+      ],
+      "source": "https://www.dri-energy.com/projects/ruginoasa/"
+    },
+    {
+      "id": "FOREIGN-RO-TEIUS",
+      "name": "Teiuș Solar Park",
+      "country": "Румъния",
+      "technology": "solar",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 60.2,
+      "lon": 23.68,
+      "lat": 46.2,
+      "osmIds": [
+        "R19465002"
+      ],
+      "source": "https://eurowindenergy.com/insights/eurowind-energy-romania-officially-opens-teius-solar-park"
+    },
+    {
+      "id": "FOREIGN-RS-CIBUK-1",
+      "name": "Čibuk 1",
+      "country": "Сърбия",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 158,
+      "lon": 20.96,
+      "lat": 44.84,
+      "osmIds": [
+        "R11535244"
+      ],
+      "source": "https://masdar.ae/en/renewables/our-projects/cibuk-1"
+    },
+    {
+      "id": "FOREIGN-RS-CIBUK-2",
+      "name": "Čibuk 2",
+      "country": "Сърбия",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 154,
+      "lon": 20.91,
+      "lat": 44.78,
+      "source": "https://cibuk2.rs/en/"
+    },
+    {
+      "id": "FOREIGN-RS-KOSTOLAC",
+      "name": "Kostolac Wind Farm",
+      "country": "Сърбия",
+      "technology": "wind",
+      "status": "construction",
+      "statusLabel": "в строеж",
+      "mw": 103,
+      "lon": 21.2,
+      "lat": 44.72,
+      "source": "https://www.kfw.de/stories/environment/renewable-energy/serbia-wind-farm/"
+    },
+    {
+      "id": "FOREIGN-RS-PUPIN",
+      "name": "Pupin Wind Farm",
+      "country": "Сърбия",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 94.5,
+      "lon": 20.7346,
+      "lat": 45.064,
+      "source": "https://enlightenergy.com/project/pupin/"
+    },
+    {
+      "id": "FOREIGN-RS-KOVACICA",
+      "name": "Kovačica / Blacksmith Wind Farm",
+      "country": "Сърбия",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 104.5,
+      "lon": 20.77,
+      "lat": 45.05,
+      "osmIds": [
+        "R11535245"
+      ],
+      "source": "https://enlightenergy.com/project/blacksmith/"
+    },
+    {
+      "id": "FOREIGN-RS-KRIVACA",
+      "name": "Krivača Wind Farm",
+      "country": "Сърбия",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 105.6,
+      "lon": 21.64,
+      "lat": 44.55,
+      "osmIds": [
+        "R18514479"
+      ],
+      "source": "https://www.mkgroup.rs/en/our-business/energy/krivaca-wind-farm/"
+    },
+    {
+      "id": "FOREIGN-MK-STIPION",
+      "name": "Štipion Wind Farm",
+      "country": "Северна Македония",
+      "technology": "wind",
+      "status": "planned",
+      "statusLabel": "планиран",
+      "mw": 400,
+      "lon": 22.18,
+      "lat": 41.73,
+      "source": "https://www.alcazarenergy.com/alcazar-energy-partners-announces-the-largest-wind-farm-project-in-north-macedonia/"
+    },
+    {
+      "id": "FOREIGN-MK-SOPOT",
+      "name": "Sopot Wind Farm",
+      "country": "Северна Македония",
+      "technology": "wind",
+      "status": "construction",
+      "statusLabel": "в развитие / строеж",
+      "mw": 131,
+      "lon": 21.94,
+      "lat": 41.47,
+      "source": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-backs-landmark-wind-power-project-in-north-macedonia.html"
+    },
+    {
+      "id": "FOREIGN-MK-PEHCEVO",
+      "name": "Pehčevo Solar Park",
+      "country": "Северна Македония",
+      "technology": "solar",
+      "status": "planned",
+      "statusLabel": "планиран",
+      "mw": 70,
+      "lon": 22.88,
+      "lat": 41.76,
+      "osmIds": [
+        "W1364774962"
+      ],
+      "source": "https://serbia-energy.eu/north-macedonia-to-ink-first-agreement-with-strategic-investor-for-70-mw-pehcevo-solar-plant/"
+    },
+    {
+      "id": "FOREIGN-GR-KOZANI",
+      "name": "Kozani Solar Park",
+      "country": "Гърция",
+      "technology": "solar",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 204,
+      "lon": 21.78,
+      "lat": 40.38,
+      "osmIds": [
+        "W1056457812",
+        "W1056457813",
+        "W1112005303",
+        "W1312509999",
+        "W1312510000",
+        "W1312510001",
+        "W1369657171",
+        "W1369657172",
+        "W1452326332",
+        "W1452326333",
+        "W1452326334",
+        "W1483445983",
+        "W1483451274"
+      ],
+      "source": "https://www.juwi.com/references/solar/kozani-greece"
+    },
+    {
+      "id": "FOREIGN-GR-AMYNTAIO",
+      "name": "Amyntaio Solar Park",
+      "country": "Гърция",
+      "technology": "solar",
+      "status": "construction",
+      "statusLabel": "в строеж",
+      "mw": 550,
+      "lon": 21.67,
+      "lat": 40.61,
+      "source": "https://www.ppcgroup.com/media/press-releases/2024/ppc-group-construction-of-a-550-mw-photovoltaic-plant-in-ptolemaida-is-underway/"
+    },
+    {
+      "id": "FOREIGN-GR-KAFIREAS",
+      "name": "Kafireas Wind Complex",
+      "country": "Гърция",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 330,
+      "lon": 24.47,
+      "lat": 38.08,
+      "osmIds": [
+        "R15763363",
+        "R16100816"
+      ],
+      "osmScope": "partial",
+      "source": "https://www.enelgreenpower.com/our-projects/operating/kafireas-wind-farm"
+    },
+    {
+      "id": "FOREIGN-GR-AGIOS-GEORGIOS",
+      "name": "Agios Georgios Wind Farm",
+      "country": "Гърция",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 73.2,
+      "lon": 23.93,
+      "lat": 37.47,
+      "osmIds": [
+        "R14075164"
+      ],
+      "source": "https://www.terna-energy.com/activities/wind-energy/agios-georgios/"
+    },
+    {
+      "id": "FOREIGN-GR-ASKIO",
+      "name": "Askio Wind Complex",
+      "country": "Гърция",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 88.2,
+      "lon": 21.55,
+      "lat": 40.42,
+      "osmIds": [
+        "R16088467",
+        "R21268115"
+      ],
+      "source": "https://www.iberdrola.com/about-us/iberdrola-greece"
+    },
+    {
+      "id": "FOREIGN-TR-KARAPINAR",
+      "name": "Karapınar Solar Power Plant",
+      "country": "Турция",
+      "technology": "solar",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 1350,
+      "lon": 33.53,
+      "lat": 37.75,
+      "osmIds": [
+        "W777636971"
+      ],
+      "source": "https://www.kalyonenerji.com/en/projects/karapinar-solar-power-plant"
+    },
+    {
+      "id": "FOREIGN-TR-VIRANSEHIR",
+      "name": "Viranşehir Solar Power Plant",
+      "country": "Турция",
+      "technology": "solar",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 320,
+      "lon": 39.76,
+      "lat": 37.23,
+      "source": "https://www.kalyonenerji.com/en/projects/viransehir-solar-power-plant"
+    },
+    {
+      "id": "FOREIGN-TR-SOMA",
+      "name": "Soma Wind Farm",
+      "country": "Турция",
+      "technology": "wind",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 288,
+      "lon": 27.57,
+      "lat": 39.18,
+      "source": "https://www.polatenerji.com/en/power-plants/soma-wind-power-plant"
+    },
+    {
+      "id": "FOREIGN-TR-ELMALI",
+      "name": "Elmalı Solar Power Plant",
+      "country": "Турция",
+      "technology": "solar",
+      "status": "operating",
+      "statusLabel": "действащ",
+      "mw": 60,
+      "lon": 29.92,
+      "lat": 36.74,
+      "osmIds": [
+        "W703803089",
+        "W703803090",
+        "W703803091",
+        "W843130711",
+        "W843130712",
+        "W843130713",
+        "W843130714"
+      ],
+      "osmScope": "partial",
+      "source": "https://www.ozaltin.com/en/all-projects/guene%C5%9F-enerjisi-santrali/60-mw-elmal%C4%B1-guene%C5%9F-enerjisi-santrali/"
+    },
+    {
+      "id": "FOREIGN-TR-R24-GURUN",
+      "name": "R24-Gürün Wind Farm",
+      "country": "Турция",
+      "technology": "wind",
+      "status": "construction",
+      "statusLabel": "в строеж",
+      "mw": 90,
+      "lon": 37.27,
+      "lat": 38.72,
+      "source": "https://www.nordex-online.com/en/2025/10/nordex-group-receives-90-mw-order-from-turkiye/"
+    },
+    {
+      "id": "FOREIGN-TR-KARTAL-EXT",
+      "name": "Kartal Wind Farm Extension",
+      "country": "Турция",
+      "technology": "wind",
+      "status": "construction",
+      "statusLabel": "в строеж",
+      "mw": 56,
+      "lon": 30.52,
+      "lat": 39.72,
+      "source": "https://www.nordex-online.com/en/2023/07/nordex-group-receives-orders-for-101-mw-from-turkiye/"
+    }
+  ]
+}
