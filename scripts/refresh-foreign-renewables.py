@@ -5,7 +5,7 @@ Scope:
 - Bulgaria's five neighbouring countries: RO, RS, MK, GR, TR
 - operating wind/solar installations > 1 MW
 - construction/planned wind/solar installations > 1 MW
-- OSM power=plant plus area-mapped power=generator objects
+- OSM power=plant objects (generator members are intentionally excluded)
 - preserve curated seed entries and the previous valid cache on remote failure
 
 The browser never needs Overpass for this layer; it reads the committed GeoJSON.
@@ -148,8 +148,6 @@ area["ISO3166-1"="{code}"][admin_level=2]->.a;
 (
   nwr(area.a)["power"="plant"]["plant:source"~"solar|wind",i];
   nwr(area.a)["power"="plant"]["source"~"solar|wind",i];
-  way(area.a)["power"="generator"]["generator:source"~"solar|wind",i];
-  relation(area.a)["power"="generator"]["generator:source"~"solar|wind",i];
   nwr(area.a)["construction:power"="plant"]["plant:source"~"solar|wind",i];
   nwr(area.a)["construction:power"="plant"]["source"~"solar|wind",i];
   nwr(area.a)["proposed:power"="plant"]["plant:source"~"solar|wind",i];
