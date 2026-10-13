@@ -13,6 +13,7 @@ The browser never needs Overpass for this layer; it reads the committed GeoJSON.
 
 from __future__ import annotations
 
+import concurrent.futures
 import datetime as dt
 import json
 import math
@@ -283,31 +284,35 @@ def main() -> None:
     merged_all: list[dict] = []
     errors: dict[str, str] = {}
     source_health: dict[str, dict] = {}
-    for code, country in COUNTRIES.items():
-        try:
-            discovered = query_country(code)
-            merged = dedupe(curated_by_country[code] + discovered)
-            merged = [
-                f for f in merged
-                if (f.get("properties") or {}).get("technology") in {"solar", "wind"}
-                and (f.get("properties") or {}).get("status") in {"operating", "construction", "planned"}
-                and float((f.get("properties") or {}).get("mw") or 0) > 1
-            ]
-            merged_all.extend(merged)
-            source_health[code] = {
-                "country": country, "ok": True, "discovered": len(discovered),
-                "curated": len(curated_by_country[code]), "published": len(merged),
-            }
-            print(f"{code}: {len(discovered)} OSM >1 MW + {len(curated_by_country[code])} curated -> {len(merged)}")
-        except Exception as exc:
-            errors[code] = str(exc)
-            preserved = existing_by_country.get(code) or curated_by_country[code]
-            merged_all.extend(preserved)
-            source_health[code] = {
-                "country": country, "ok": False, "error": str(exc),
-                "preserved": len(preserved), "curated": len(curated_by_country[code]),
-            }
-            print(f"WARNING {code}: {exc}; preserving {len(preserved)} last-known-good record(s)")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(COUNTRIES)) as pool:
+        futures = {pool.submit(query_country, code): code for code in COUNTRIES}
+        for future in concurrent.futures.as_completed(futures):
+            code = futures[future]
+            country = COUNTRIES[code]
+            try:
+                discovered = future.result()
+                merged = dedupe(curated_by_country[code] + discovered)
+                merged = [
+                    f for f in merged
+                    if (f.get("properties") or {}).get("technology") in {"solar", "wind"}
+                    and (f.get("properties") or {}).get("status") in {"operating", "construction", "planned"}
+                    and float((f.get("properties") or {}).get("mw") or 0) > 1
+                ]
+                merged_all.extend(merged)
+                source_health[code] = {
+                    "country": country, "ok": True, "discovered": len(discovered),
+                    "curated": len(curated_by_country[code]), "published": len(merged),
+                }
+                print(f"{code}: {len(discovered)} OSM >1 MW + {len(curated_by_country[code])} curated -> {len(merged)}")
+            except Exception as exc:
+                errors[code] = str(exc)
+                preserved = existing_by_country.get(code) or curated_by_country[code]
+                merged_all.extend(preserved)
+                source_health[code] = {
+                    "country": country, "ok": False, "error": str(exc),
+                    "preserved": len(preserved), "curated": len(curated_by_country[code]),
+                }
+                print(f"WARNING {code}: {exc}; preserving {len(preserved)} last-known-good record(s)")
 
     merged = dedupe(merged_all)
     merged = [
