@@ -9,6 +9,7 @@ on:
     paths:
       - "scripts/refresh-foreign-renewables.py"
       - "map/data/foreign-renewables-cache-v1.geojson"
+      - "map/data/foreign-renewables-seed-v1.json"
       - ".github/workflows/refresh-foreign-renewables.yml"
 
 permissions:
@@ -28,7 +29,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Refresh operating wind/solar >1 MW in neighbouring countries
+      - name: Refresh operating/planned wind/solar >1 MW in neighbouring countries
         run: python scripts/refresh-foreign-renewables.py
 
       - name: Validate repository cache
@@ -50,7 +51,7 @@ jobs:
               status=props.get("status")
               assert props.get("technology") in {"solar","wind"}
               assert status in {"operating","construction","planned"}
-              assert (status=="operating" and mw>1) or (status in {"construction","planned"} and mw>10)
+              assert status in {"operating","construction","planned"} and mw>1
               assert props.get("major") == (mw>50)
           counts={}
           for f in fs:
