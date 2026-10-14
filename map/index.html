@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.94d-confirmed-operating-wind-20261013">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94d</title>
+<meta name="bgwf-build" content="v0.94e-fade-admin-boundaries-20261014">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94e</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -4665,8 +4665,11 @@ function formatZoomFactor(scale){
 }
 function updateZoomFactor(){
   if(zoomFactorEl)zoomFactorEl.textContent=`×${formatZoomFactor(currentScale())}`;
-  regionalReferenceLayer?.setVisible?.(currentScale()>=4);
-  regionalMajorLabelLayer?.setVisible?.(currentScale()<12);
+  const scale=currentScale();
+  regionalReferenceLayer?.setVisible?.(scale>=4);
+  const referenceOpacity=scale>=45?(satelliteMode()?.18:.10):scale>=20?(satelliteMode()?.30:.18):scale>=10?(satelliteMode()?.48:.34):(satelliteMode()?.82:.62);
+  regionalReferenceLayer?.setOpacity?.(referenceOpacity);
+  regionalMajorLabelLayer?.setVisible?.(scale<12);
   placeLabelsLayer?.changed?.();
 }
 function currentMapCenterLonLat(){const c=view?.getCenter();return c?toLonLat(c):null;}
@@ -5012,7 +5015,8 @@ function refreshSatelliteOverlayStyles(){
   regionalBaseLayer?.setVisible?.(!satelliteMode());
   const overviewScale=currentScale();
   regionalReferenceLayer?.setVisible?.(overviewScale>=4);
-  regionalReferenceLayer?.setOpacity?.(satelliteMode()?.96:.78);
+  const referenceOpacity=overviewScale>=45?(satelliteMode()?.18:.10):overviewScale>=20?(satelliteMode()?.30:.18):overviewScale>=10?(satelliteMode()?.48:.34):(satelliteMode()?.82:.62);
+  regionalReferenceLayer?.setOpacity?.(referenceOpacity);
   regionalMajorLabelLayer?.setVisible?.(overviewScale<12);
   [regionalReferenceLayer,regionalMajorLabelLayer,placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
