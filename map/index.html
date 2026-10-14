@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.94e-fade-admin-boundaries-20261014">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94e</title>
+<meta name="bgwf-build" content="v0.94f-silistra-region-wind-projects-20261014">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.94f</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -2520,6 +2520,51 @@ function normalizeProvinceName(value) {
               "39534.31.62",
               "39534.38.44"
           ]
+      },
+      {
+          "id": "RES-WIND-RUZHITSA",
+          "name": "Вятърен парк „Ружица“",
+          "year": 2026,
+          "status": "approved",
+          "statusLabel": "активен проект · 400 MW · до 50 ВГ · ОВОС одобрена 2025 · процедура за ПУП/присъединяване 2026 · само местоположение",
+          "source": "https://riosv-shumen.eu/index.php?act=256&homepage=7&subnavy=2",
+          "secondarySource": "https://ruzhitsawind.com/",
+          "lon": 27.145,
+          "lat": 43.545,
+          "technology": "wind",
+          "mw": 400,
+          "turbines": 50,
+          "locationOnly": true
+      },
+      {
+          "id": "RES-WIND-KAOLINOVO",
+          "name": "ВЕП „Каолиново“",
+          "year": 2025,
+          "status": "approved",
+          "statusLabel": "одобрено ИП/ОВОС · 9 ВГ · 54–72 MW · землища Лятно и Каолиново · само местоположение",
+          "source": "https://riosv-shumen.eu/index.php?act=156&homepage=7&subnavy=3",
+          "lon": 27.102,
+          "lat": 43.585,
+          "technology": "wind",
+          "mwMin": 54,
+          "mwMax": 72,
+          "turbines": 9,
+          "locationOnly": true
+      },
+      {
+          "id": "RES-WIND-LUDOGORIE",
+          "name": "Вятърен парк „Лудогорие“",
+          "year": 2025,
+          "status": "approved",
+          "statusLabel": "одобрено ИП/ОВОС · до 18 ВГ × 10 MW · активни ПУП/инфраструктурни действия през 2026 · само местоположение",
+          "source": "https://riosv-shumen.eu/index.php?act=156&homepage=7&subnavy=3",
+          "secondarySource": "https://kaolinovo.bg/?page_id=6726",
+          "lon": 27.055,
+          "lat": 43.655,
+          "technology": "wind",
+          "mw": 180,
+          "turbines": 18,
+          "locationOnly": true
       },
       {
           "id": "RES-004",
@@ -5067,6 +5112,23 @@ const projectLayer=new VectorLayer({
   source:projectSource,zIndex:5,visible:layerVisibility.projects,
   style:f=>{
     const selected=f.get('selected'),substation=f.get('assetType')==='substation';
+    if(f.getGeometry()?.getType()==='Point'){
+      const project=f.get('data')?.project||{};
+      const isWind=project.technology==='wind';
+      const capacity=Number(project.mw??project.mwMax??project.mwMin??10);
+      const radius=Math.max(8,Math.min(15,7+Math.log10(Math.max(10,capacity))*3));
+      const fill=satelliteMode()?'rgba(37,99,235,.92)':'rgba(37,99,235,.88)';
+      const stroke=selected?'#111827':(satelliteMode()?'#bfdbfe':'#1e40af');
+      return new Style({
+        image:new CircleStyle({radius,fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selected?3.2:2})}),
+        text:new TextStyle({
+          text:isWind?'W':'P',
+          font:'800 10px system-ui, sans-serif',
+          fill:new Fill({color:'#fff'}),
+          stroke:new Stroke({color:'rgba(0,0,0,.28)',width:1})
+        })
+      });
+    }
     if(substation){
       return haloPolygonStyles({
         fill:satelliteMode()?(selected?'rgba(251,191,36,.52)':'rgba(245,158,11,.34)'):(selected?'rgba(217,119,6,.32)':'rgba(245,158,11,.20)'),
@@ -6352,8 +6414,17 @@ function renderParcelRows(loaded){
     }catch(e){rejected++;dbgWarn('solar-location-rejected',{id:project.id,message:e.message});}
   }
   const loadedProjectIds=new Set(loaded.filter(d=>d.layerType==='projects').map(d=>d.project?.id).filter(Boolean));
+  const pointProjectRows=[];
+  for(const project of cadastralProjects.filter(p=>!loadedProjectIds.has(p.id)&&p.locationOnly&&Number.isFinite(Number(p.lon))&&Number.isFinite(Number(p.lat)))){
+    try{
+      const row={layerType:'projects',project,parcelRef:'',feature:{type:'Feature',properties:{__bgwfGeometryQuality:'location-only'},geometry:{type:'Point',coordinates:[Number(project.lon),Number(project.lat)]}},fallback:true};
+      const f=cloneGeoFeature(row.feature);
+      f.set('kind','project'); f.set('data',row); f.set('status',project.status); f.set('assetType',project.assetType||null);
+      projectSource.addFeature(f); pointProjectRows.push(row);
+    }catch(e){rejected++;dbgWarn('project-location-rejected',{id:project.id,message:e.message});}
+  }
   const fallbackProjectRows=[];
-  for(const project of cadastralProjects.filter(p=>!loadedProjectIds.has(p.id)&&Number.isFinite(Number(p.lon))&&Number.isFinite(Number(p.lat))&&Number(p.fallbackAreaM2)>0)){
+  for(const project of cadastralProjects.filter(p=>!loadedProjectIds.has(p.id)&&!p.locationOnly&&Number.isFinite(Number(p.lon))&&Number.isFinite(Number(p.lat))&&Number(p.fallbackAreaM2)>0)){
     try{
       const groundRadiusM=Math.sqrt(Number(project.fallbackAreaM2)/Math.PI);
       const mercatorRadiusM=groundRadiusM/Math.cos(Number(project.lat)*Math.PI/180);
@@ -6363,7 +6434,7 @@ function renderParcelRows(loaded){
       projectSource.addFeature(f); fallbackProjectRows.push(row);
     }catch(e){rejected++;dbgWarn('project-fallback-rejected',{id:project.id,message:e.message});}
   }
-  window.__bgwfProjectParcels=[...loaded.filter(d=>d.layerType==='projects'),...fallbackProjectRows];
+  window.__bgwfProjectParcels=[...loaded.filter(d=>d.layerType==='projects'),...pointProjectRows,...fallbackProjectRows];
   window.__bgwfSolarParcels=[...loaded.filter(d=>d.layerType==='solar'),...curatedSolarRows,...pointSolarRows];
   debugState.layerCounts.solar=solarSource.getFeatures().length;
   debugState.layerCounts.projects=projectSource.getFeatures().length;
@@ -6378,7 +6449,7 @@ function renderParcelRows(loaded){
   updateLayerStatus();
 }
 async function fetchRowsInBatches(rows,loaded,persistent,{chunkSize=22,pauseMs=0,phaseLabel='АГКК',onProgress=null}={}){const failed=[];let failedUniqueRefs=0,batchErrors=0,processed=0;for(let off=0;off<rows.length;off+=chunkSize){const chunk=rows.slice(off,off+chunkSize),grouped=rowsGroupedByRef(chunk);if(pauseMs&&off)await sleep(pauseMs);const t=performance.now();try{const payload=await fetchCadastralBatch(chunk);debugState.network[`${phaseLabel}-${Math.floor(off/chunkSize)+1}`]={ok:true,ms:Math.round(performance.now()-t),rows:chunk.length};if(payload?.error)throw new Error(payload.error.message||'query error');const returned=new Set();for(const ef of payload?.features??[]){const attrs=ef?.attributes??{},ref=sanitizeParcelRef(attrs.nationalcadastralref),rings=ef?.geometry?.rings,matching=grouped.get(ref)||[];if(!ref||!matching.length||!rings?.length)continue;const feature={type:'Feature',properties:attrs,geometry:{type:'Polygon',coordinates:rings}};returned.add(ref);cacheFeature(persistent,ref,feature);cadastralCache.set(ref,feature);addFeatureForRows(loaded,matching,ref,feature);}grouped.forEach((matching,ref)=>{if(!returned.has(ref)){failedUniqueRefs++;failed.push(...matching);}});writePersistentCadastralCache(persistent);}catch(e){batchErrors++;failedUniqueRefs+=grouped.size;failed.push(...chunk);debugState.network[`${phaseLabel}-${Math.floor(off/chunkSize)+1}`]={ok:false,ms:Math.round(performance.now()-t),error:e.message};dbgWarn(`${phaseLabel}-batch-failed`,{batch:Math.floor(off/chunkSize)+1,error:e.message});}processed+=chunk.length;renderParcelRows(loaded);onProgress?.({processed,total:rows.length,failedUniqueRefs,loadedCount:loaded.length});}return{failedRows:failed,failedUniqueRefs,batchErrors};}
-async function loadProjectParcels(){if(cadastralLoadStarted)return;cadastralLoadStarted=true;const started=performance.now();setFilterPanelLoading(true);const plannedRows=cadastralProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'projects',project,parcelRef})));const solarRows=operatingSolarProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'solar',project,parcelRef})));const rows=[...plannedRows,...solarRows];const totalRefs=new Set(rows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;veiDbgStage('load-start',{plannedRows:plannedRows.length,solarRows:solarRows.length,totalRows:rows.length,totalRefs});setLayerLoadState('solar','loading');setLayerLoadState('projects','loading');const persistent=readPersistentCadastralCache(),staticBuilt=await loadStaticBuiltVeiCache(),builtRefs=builtSolarRefsSet(),loaded=[],missing=[],grouped=rowsGroupedByRef(rows);veiDbgStage('cache-inputs',{
+async function loadProjectParcels(){if(cadastralLoadStarted)return;cadastralLoadStarted=true;const started=performance.now();setFilterPanelLoading(true);const plannedRows=cadastralProjects.flatMap(project=>(project.parcels||[]).map(parcelRef=>({layerType:'projects',project,parcelRef})));const solarRows=operatingSolarProjects.flatMap(project=>project.parcels.map(parcelRef=>({layerType:'solar',project,parcelRef})));const rows=[...plannedRows,...solarRows];const totalRefs=new Set(rows.map(r=>sanitizeParcelRef(r.parcelRef)).filter(Boolean)).size;veiDbgStage('load-start',{plannedRows:plannedRows.length,solarRows:solarRows.length,totalRows:rows.length,totalRefs});setLayerLoadState('solar','loading');setLayerLoadState('projects','loading');const persistent=readPersistentCadastralCache(),staticBuilt=await loadStaticBuiltVeiCache(),builtRefs=builtSolarRefsSet(),loaded=[],missing=[],grouped=rowsGroupedByRef(rows);veiDbgStage('cache-inputs',{
   persistentEntries:Object.keys(persistent||{}).length,
   staticBuiltEntries:Object.keys(staticBuilt||{}).length,
   builtRefs:builtRefs.size,
