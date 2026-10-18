@@ -16831,13 +16831,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-11T10:04:22Z",
+    "sourceHealthCheckedAt": "2026-10-18T08:10:18Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-11T10:03:55Z",
+        "checkedAt": "2026-10-18T08:07:26Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -16845,39 +16845,38 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-11T10:04:06Z",
+        "checkedAt": "2026-10-18T08:07:38Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
-        "digest": "35c97a0ca5c30a33a195635184ef756ccf8b3585c44327e07d1e632247fe3a71",
+        "digest": "55786164ca65d3f5d59753e8af5b296dd029181d2eced5986f7f1ece309320d3",
         "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
         "id": "MGU-PERNIK-CONCESSIONS",
         "role": "geometry-cross-check",
-        "ok": true,
-        "checkedAt": "2026-10-11T10:04:19Z",
+        "ok": false,
+        "checkedAt": "2026-10-18T08:07:51Z",
         "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0",
-        "records": 19,
-        "digest": "1979d07629e47ad96b7f8308da75e9b78b39cf47bd579338fee14fc7f8fffd3f"
+        "error": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=false&f=json: <urlopen error timed out>"
       },
       {
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-11T10:04:20Z",
+        "checkedAt": "2026-10-18T08:10:16Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
-        "bytes": 45707,
-        "digest": "96a3005e5af6eca763523da99b56db15477b8acbdb364b47131139e26e9b92e9"
+        "bytes": 45854,
+        "digest": "5eed6f7d3d5546f28c68bc83c53f428f90a334d264cab5cc4d2d1fa60c94ddec"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-11T10:04:21Z",
+        "checkedAt": "2026-10-18T08:10:17Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-        "bytes": 51291,
-        "digest": "a85e8e23b1eaffcf3663363ccd9cdcb7b5be5cb661b9ecedd7943cc10b9b7a00"
+        "bytes": 51438,
+        "digest": "50b60fab9b0e52ba761fd07796b5a8838e1b3cd176bb2f49f0b94f3fc646ebc1"
       }
     ],
     "coverage": {
@@ -16906,10 +16905,10 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-11T10:04:21Z",
+      "checkedAt": "2026-10-18T08:10:17Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-      "bytes": 51291,
-      "digest": "a85e8e23b1eaffcf3663363ccd9cdcb7b5be5cb661b9ecedd7943cc10b9b7a00"
+      "bytes": 51438,
+      "digest": "50b60fab9b0e52ba761fd07796b5a8838e1b3cd176bb2f49f0b94f3fc646ebc1"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
