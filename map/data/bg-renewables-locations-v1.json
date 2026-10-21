@@ -1,0 +1,879 @@
+{
+  "schema": "bgwf-renewable-locations-v1",
+  "locations": {
+    "RES-010": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9274639,
+          43.2944904
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "14012.137.9",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-011": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.6056442,
+          43.2069407
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "20482.505.470",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-012": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.2626475,
+          43.3858906
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "39503.11.360",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-013": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.3936392,
+          42.1226265
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "30819.47.592",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-014": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.5811174,
+          41.8190889
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "37383.500.313",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-018": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8258092,
+          42.0168073
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "47278.609.1342",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-019": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.2161964,
+          43.7097391
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "81219.54.1",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-020": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2168323,
+          43.3687807
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "52009.120.1",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-021": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0837027,
+          42.5735523
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "39387.70.1",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-022": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0756573,
+          42.442277
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "11404.32.10",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-026": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.8684324,
+          43.3930417
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "20359.31.86",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-030": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8902147,
+          42.1574829
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "18280.503.34",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-031": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4691041,
+          43.4577768
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "02912.70.293",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-033": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.8933249,
+          42.3024652
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "48948.35.70",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-034": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.8964837,
+          42.3017178
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "48948.35.62",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-036": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.1886553,
+          43.1948159
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "70295.314.322",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-039": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.482798,
+          42.142919
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "47843.29.385",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-040": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.0690521,
+          43.4054033
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "53120.29.177",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-041": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0421865,
+          42.4492953
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "81709.16.370",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-042": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.2697146,
+          42.1857336
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "30572.48.9902",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-043": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.7536265,
+          43.9461726
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "81075.4.1100",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-044": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.8824557,
+          41.5453055
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "04399.17.38",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-045": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7888324,
+          43.5619467
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "53117.61.327",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-047": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2551523,
+          42.3924338
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "20273.61.189",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-048": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.0422421,
+          42.1228697
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "32857.72.384",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-049": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.6743138,
+          42.5441017
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "11661.220.173",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-050": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7308238,
+          43.0498113
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "23217.251.571",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-WIND-ORISOL-1": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.167453,
+          42.4726804
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "05760.22.607",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-WIND-ORISOL-2": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9741706,
+          42.5818738
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "55871.344.160",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2011-KAOLINOVO-KA620": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1689793,
+          43.6221987
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "72549.44.620",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2023-LOVECH": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7068696,
+          43.1628301
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "43952.502.1102",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2023-TERRASOL": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.7030353,
+          42.429019
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "77476.57.11",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2023-VERILA": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.25014,
+          42.3455575
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "39339.134.147",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2024-CENOVO": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.6209941,
+          43.5875949
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "20849.9.8",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2024-ELHOVO": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.6724151,
+          42.1886775
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "21542.69.279",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2024-HADZHIDIMITROVO-KRONOS": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.4286524,
+          42.5225499
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "77030.24.924",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2025-ABACUS-PARK": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.0995857,
+          42.3459511
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "48725.38.875",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2025-BOYCHINOVTSI": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.3386549,
+          43.4917958
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "05236.105.4",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2025-GOLF": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.2916913,
+          42.638942
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "67338.828.33",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2025-GREENS-PARVOMAY": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.2446079,
+          42.0930736
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "59080.42.529",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2025-VARVARA": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.141739,
+          42.1778991
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "10104.378.221",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2025-YANEVETS": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.4959388,
+          42.0643745
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "68583.210.5",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-BOBOV-DOL": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.0240364,
+          42.2642168
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "55230.9.81",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-BREGARE": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.3226281,
+          43.5865744
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "06210.127.1",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-CHERNI-VRAH": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.3321525,
+          42.4334355
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "80916.50.372",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-ENERI-BG-1": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.5811174,
+          41.8190889
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "37383.500.313",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-GRAMADA": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.7133994,
+          43.8378064
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "17645.325.3",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-IHTIMAN": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7356946,
+          42.477932
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "10690.200.66",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-KEI-PARK": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.3792804,
+          42.6380428
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "67338.88.8",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-MAGLIZH": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.5983394,
+          42.615009
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "24342.9.113",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-SLIVEN": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.2936266,
+          42.6444767
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "67338.601.219",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-SMYADOVO": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.9602022,
+          43.0576932
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "67708.282.593",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-SV-GEORGI": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1923087,
+          44.0562239
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "57251.500.590",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-TENEVO": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.5660108,
+          42.3836735
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "72240.17.56",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-VEDRARE": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.8842241,
+          42.5832808
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "10291.64.228",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-VERILA-PH2": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.2424278,
+          42.3493714
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "39339.129.37",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2026-VULKAN": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.5611495,
+          42.0724255
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "21052.1008.309",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "RES-046": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.6681979,
+          43.4562541
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2705921.280.31%27%2C%2710759.72.340%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "10759.72.340",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:26:17+00:00"
+    },
+    "SOL-2012-KAOLINOVO-KA9905": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1332885,
+          43.5927679
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "36079.80.9905",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:30:12+00:00"
+    },
+    "SOL-2026-KAMENYAK": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.9777769,
+          43.4133416
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "35969.4.305",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:30:12+00:00"
+    },
+    "SOL-2026-SINITOVO": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.3471795,
+          42.1420741
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "66559.62.1",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:30:12+00:00"
+    },
+    "RES-016": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6636728,
+          43.332135
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2705921.170.27%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "05921.170.27",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-21T12:30:12+00:00"
+    }
+  },
+  "lastAttempt": {
+    "checkedAt": "2026-10-21T12:30:12+00:00",
+    "added": 4,
+    "unresolvedIds": [],
+    "errors": []
+  }
+}

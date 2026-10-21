@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-10-21T18:37:07.358615+00:00",
+  "sources": {
+    "veiregistar:photovoltaic-power-plants-with-power-over-1-mw": {
+      "status": "ok",
+      "records": 230
+    },
+    "veiregistar:wind-power-plants-with-power-over-1-mw": {
+      "status": "ok",
+      "records": 115
+    },
+    "veiregistar:hydropower-plants-with-power-over-1-mw": {
+      "status": "ok",
+      "records": 72
+    },
+    "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
+      "status": "ok",
+      "records": 36
+    },
+    "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw": {
+      "status": "ok",
+      "records": 2
+    },
+    "veiregistar:biomass-power-plants-with-power-over-4-mw": {
+      "status": "ok",
+      "records": 3
+    },
+    "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw": {
+      "status": "ok",
+      "records": 13
+    },
+    "osm": {
+      "status": "ok",
+      "records": 70
+    }
+  },
+  "excludedCapacityUnknown": [
+    {
+      "id": "SOL-SLIVEN-DINAMO",
+      "name": "ФЕЦ „Динамо“ – Сливен",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED",
+      "name": "ФЕЦ югозападно от Сливен — неидентифициран",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-CHERGANOVO-WEST-UNIDENTIFIED",
+      "name": "ФЕЦ западно от Черганово — неидентифициран",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-2023-KALKAS-VMV-DAPALIS",
+      "name": "ФЕЦ „Калкас“ — ВМВ Дапалис",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-001",
+      "name": "Вятърен парк „Красен“",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-004",
+      "name": "ФЕЦ „Вратица“",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-005",
+      "name": "ФЕЦ „Табите“",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-006",
+      "name": "ФЕЦ „Бозалъка“",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-007",
+      "name": "Горичане — група ВГ",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-008",
+      "name": "ФЕЦ „Борнарево / Прибой“",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-009",
+      "name": "ФЕЦ „Костинброд Солар“ — Богьовци",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-017",
+      "name": "ФЕЦ „Средец“ — СР-Соларис Енерджи",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-023",
+      "name": "ФЕЦ „Винпром“ / Крумово, Тунджа",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-024",
+      "name": "ФЕЦ „Старосел Инвест Груп“ — Старосел",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-025",
+      "name": "ФЕЦ „Аврен“ — Бадемова градина",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-027",
+      "name": "ФЕЦ „Сливен“ — ПИ 67338.104.15",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-028",
+      "name": "ФЕЦ „Сливен“ — ПИ 67338.835.78",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-029",
+      "name": "Вятърен парк „Добруджа 3“ — Тригорци",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-032",
+      "name": "ФЕЦ „Момино село“ — поле 32.36",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "RES-035",
+      "name": "ФЕЦ „Карлово Солар БГ“ — Дъбене",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED",
+      "name": "ФЕЦ югозападно от Сливен — неидентифициран",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-SLIVEN-DINAMO",
+      "name": "ФЕЦ „Динамо“ – Сливен",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-CHERGANOVO-WEST-UNIDENTIFIED",
+      "name": "ФЕЦ западно от Черганово — неидентифициран",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    }
+  ],
+  "counts": {
+    "operating": 591,
+    "construction": 7,
+    "planned": 29
+  },
+  "withoutGeometry": 463,
+  "reconciledAt": "2026-10-21T18:37:54.296227+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "bgwf-renewable-identities-v1",
+  "entities": [
+    {
+      "canonicalId": "VEIREG-pavets-belmeken",
+      "memberIds": [
+        "VEIREG-pavets-belmeken",
+        "OSM-BG-W288644875"
+      ],
+      "note": "Confirmed same Belmeken pumped-storage plant; preserve registry capacity and OSM location."
+    },
+    {
+      "canonicalId": "VEIREG-pavets-orfey",
+      "memberIds": [
+        "VEIREG-pavets-orfey",
+        "OSM-BG-W1342874437"
+      ],
+      "note": "Confirmed same Orfey pumped-storage plant; preserve registry capacity and OSM location."
+    },
+    {
+      "canonicalId": "SOL-KARADZHALOVO-2012",
+      "memberIds": [
+        "SOL-KARADZHALOVO-2012",
+        "VEIREG-fets-karadzhalovo",
+        "OSM-BG-W157097156"
+      ],
+      "note": "Same Karadzhalovo physical plant. Retain 60.4 MWp DC and registry 50 MW as separate published capacity observations."
+    },
+    {
+      "canonicalId": "SOL-2012-DOBRICH",
+      "memberIds": [
+        "SOL-2012-DOBRICH",
+        "VEIREG-fets-dobrich"
+      ],
+      "note": "Same named plant and published 14.071 MW in the curated KEVR entry and registry; retain existing site location."
+    }
+  ]
+}
