@@ -180,6 +180,14 @@ def merge(rows):
    for f in group:f['properties']['possibleDuplicateIds']=[other['id'] for other in group if other is not f]
  return sorted(apply_locations(result),key=lambda f:f['id'])
 
+def validate_source_batch(mode,batch,previous):
+ if not batch:raise ValueError('Empty source response')
+ # Reject partial registry responses before replacing the last valid records.
+ if mode.startswith('veiregistar:'):
+  before=sum(mode in f['properties'].get('sourceModes',[f['properties'].get('sourceMode')]) for f in previous)
+  if before>=10 and len(batch)<before*0.8:
+   raise ValueError(f'Registry shrink protection: {len(batch)} records, previously {before}')
+
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--offline',action='store_true');ap.add_argument('--reconcile-only',action='store_true');args=ap.parse_args()
  previous=json.loads(OUT.read_text()) if OUT.exists() else {'features':[]}
@@ -193,7 +201,7 @@ def main():
  for mode,fn in modes:
   try:
    if args.offline:raise RuntimeError('offline: remote source not checked')
-   batch=fn();assert batch,'Empty source response'
+   batch=fn();validate_source_batch(mode,batch,previous['features'])
    for f in batch:
     f['properties']['sourceMode']=mode
     f['properties']['retrievedAt']=health['checkedAt']

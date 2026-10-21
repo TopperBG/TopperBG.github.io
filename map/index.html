@@ -4455,9 +4455,9 @@ const CURATED_INDUSTRIAL_POINTS = [];
     return{areaHa:project.mw*(project.technology==='solar'?1.5:20),areaBasis:'estimated'};
   }
 
-  const LARGE_SOLAR_THRESHOLD_MWP = 10;
+  const LARGE_SOLAR_THRESHOLD_MWP = 1;
   function solarCapacityForThreshold(project){
-    // MW AC > 10 is sufficient because the corresponding DC MWp cannot be lower.
+    // MW AC > 1 is sufficient because the corresponding DC MWp cannot be lower.
     return Number(project.mwpDc??project.mwAc??project.mw);
   }
   function hasSolarMapGeometry(project){
