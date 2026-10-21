@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-21T10:44:11.032685+00:00",
+  "checkedAt": "2026-10-21T10:49:50.287432+00:00",
   "sources": {
     "veiregistar:photovoltaic-power-plants-with-power-over-1-mw": {
       "status": "ok",
@@ -30,8 +30,9 @@
       "records": 13
     },
     "osm": {
-      "status": "ok",
-      "records": 72
+      "status": "stale",
+      "error": "All Overpass endpoints failed: The read operation timed out",
+      "retained": 71
     }
   },
   "excludedCapacityUnknown": [
