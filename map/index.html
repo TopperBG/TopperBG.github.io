@@ -1637,6 +1637,7 @@ svg {
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
       <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.92k</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-national-inventory title="Всички установени ВЕИ над 1 MW, включително без координати">ВЕИ &gt;1 MW</button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -4454,7 +4455,7 @@ const CURATED_INDUSTRIAL_POINTS = [];
     return{areaHa:project.mw*(project.technology==='solar'?1.5:20),areaBasis:'estimated'};
   }
 
-  const LARGE_SOLAR_THRESHOLD_MWP = 10;
+  const LARGE_SOLAR_THRESHOLD_MWP = 1;
   function solarCapacityForThreshold(project){
     // MW AC > 10 is sufficient because the corresponding DC MWp cannot be lower.
     return Number(project.mwpDc??project.mwAc??project.mw);
@@ -5870,7 +5871,7 @@ function solarLabel(d){
   const powerText=powers.length?` · ${powers.join(' · ')}`:'';
   const ownerText=project.owner?` · ${project.owner}`:'';
   const timeText=project.year!==null&&Number.isFinite(Number(project.year))?`действаща от ${project.year} г.`:(project.statusLabel||'изградена ФЕЦ');
-  const geometryText=quality==='location-only'?'само местоположение · без заявен кадастрален контур':quality==='satellite-traced'?`сателитно проверен контур${d.parcelRef?` · ${d.parcelRef}`:''}`:`ПИ ${d.parcelRef}`;
+  const geometryText=project.locationQuality==='settlement-approximate'?'приблизителна точка по населено място · не е площадката на централата':quality==='location-only'?'само местоположение · без заявен кадастрален контур':quality==='satellite-traced'?`сателитно проверен контур${d.parcelRef?` · ${d.parcelRef}`:''}`:`ПИ ${d.parcelRef}`;
   return `${project.name}${powerText}${ownerText} · ${timeText} · ${geometryText}${areaText}`;
 }
 function windPlantLabel(d){return `${d.name} · ${d.id}${d.output&&d.output!=='yes'?` · ${d.output}`:''}${d.operator?` · ${d.operator}`:''} · ${d.lat.toFixed(6)}, ${d.lon.toFixed(6)} · ${d.geometrySource} · съществуваща по OSM; експлоатацията не е независимо потвърдена`;}
@@ -6439,7 +6440,21 @@ window.bgwfDownloadUnresolvedParcels=function(){
   return payload;
 };
 
+let nationalRenewableCache=[];
+let lastNationalParcelRows=[];
+async function loadNationalRenewableCache(){
+  try{
+    const response=await fetch('./data/bg-renewables-cache-v1.geojson');
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    const cache=await response.json();
+    if(cache.type!=='FeatureCollection'||!Array.isArray(cache.features))throw new Error('Invalid national cache');
+    nationalRenewableCache=cache.features;
+    window.__bgwfNationalRenewableInventory=cache;
+    renderParcelRows(lastNationalParcelRows);
+  }catch(error){console.warn('National renewable cache:',error);}
+}
 function renderParcelRows(loaded){
+  lastNationalParcelRows=loaded;
   solarSource.clear();
   projectSource.clear();
   let rejected=0;
@@ -6501,6 +6516,20 @@ function renderParcelRows(loaded){
   }
   window.__bgwfProjectParcels=[...loaded.filter(d=>d.layerType==='projects'),...pointProjectRows,...fallbackProjectRows];
   window.__bgwfSolarParcels=[...loaded.filter(d=>d.layerType==='solar'),...curatedSolarRows,...pointSolarRows];
+  windSource.getFeatures().filter(f=>f.get('nationalCache')).forEach(f=>windSource.removeFeature(f));
+  const existingIds=new Set([...solarSource.getFeatures(),...projectSource.getFeatures()].map(f=>f.get('data')?.project?.id));
+  const curatedIds=new Set([...operatingSolarProjects,...operatingWindProjects,...cadastralProjects].map(p=>p.id));
+  for(const item of nationalRenewableCache){
+    const project=item.properties;
+    if(!item.geometry||existingIds.has(project.id)||curatedIds.has(project.id)||!(project.mw>1))continue;
+    if(!['operating','planned','construction'].includes(project.status))continue;
+    const planned=project.status!=='operating';
+    const row={layerType:planned?'projects':'solar',project,parcelRef:'',feature:{...item,properties:{...project,__bgwfGeometryQuality:'location-only'}}};
+    const f=cloneGeoFeature(row.feature);
+    f.set('kind',planned?'project':'solar');f.set('data',row);f.set('status',project.status);
+    f.set('nationalCache',true);
+    (planned?projectSource:project.technology==='wind'?windSource:solarSource).addFeature(f);
+  }
   debugState.layerCounts.solar=solarSource.getFeatures().length;
   debugState.layerCounts.projects=projectSource.getFeatures().length;
   veiDbgStage('render',{
@@ -7114,7 +7143,7 @@ function updateIndustryLegendHint(){
 function updateCompactFilterSummary(){
   if(!filterSummary)return;
   const parts=[satelliteLayer.getVisible()?'SAT':'MAP'];
-  if(layerVisibility.solar)parts.push('ФЕЦ');
+  if(layerVisibility.solar)parts.push('ВЕИ');
   if(layerVisibility.wind)parts.push('ВяЕЦ');
   if(layerVisibility.projects)parts.push('Проект');
   if(layerVisibility.future)parts.push('RED III');
@@ -7146,7 +7175,7 @@ function updateLayerStatus(){
   const solarText=!layerVisibility.solar
     ?'ФЕЦ изключени'
     :cadastralLoadStarted
-      ?`${solarProjects} ФЕЦ / ${solarCount} геометрии`
+      ?`${solarProjects} ВЕИ / ${solarCount} геометрии`
       :'ФЕЦ се зареждат';
   const windText=layerVisibility.wind
     ?`${individualWindTurbines.length} отделни вятърни турбини (OSM; непотвърдена пълнота)`
@@ -7338,7 +7367,7 @@ territoryScaleBars?.querySelectorAll('[data-territory-scale]').forEach(button=>b
 }));
 
 const configs=[
-  ['solar','ФЕЦ','#f59e0b','ФЕЦ — фотоволтаична електрическа централа. Показва проверените изградени соларни електроцентрали.'],
+  ['solar','ВЕИ','#f59e0b','Действащи ВЕИ: ФЕЦ, ВЕЦ и биоенергия над 1 MW. Вятърните централи са в отделния слой ВяЕЦ.'],
   ['wind','ВяЕЦ','#0891b2','ВяЕЦ — показва само индивидуални турбини от проверени действащи ветропаркове с публикуван брой генератори и пълно пространствено съвпадение на този брой. Всички останали OSM точки са изключени от атласа.'],
   ['projects','Проектни ВЕИ','#2563eb','Проектни ВЕИ — планирани или процедирани възобновяеми енергийни проекти по налични ПУП/ПИ и официални документи.'],
   ['future','RED III','#2f9e44','RED III — приоритетни зони по Директивата за възобновяема енергия. Приоритетна зона ≠ одобрен проект ≠ засегнат имот ≠ отчуждена земя.'],
@@ -7396,7 +7425,7 @@ function featureSearchMeta(feature){
   }
   if(kind==='solar'){
     const p=d.project||{},title=p.name||'ФЕЦ';
-    return {title,category:`Изградена ФЕЦ${Number.isFinite(Number(p.mwpDc??p.mwAc??p.mw))?` · ${Number(p.mwpDc??p.mwAc??p.mw).toLocaleString('bg-BG')} MW`:''}`,searchable:`${title} ${p.id||''} ${p.owner||''} ${p.statusLabel||''} ${d.parcelRef||''}` ,groupKey:`solar|${p.id||title}`};
+    return {title,category:`Изграден ВЕИ обект${Number.isFinite(Number(p.mwpDc??p.mwAc??p.mw))?` · ${Number(p.mwpDc??p.mwAc??p.mw).toLocaleString('bg-BG')} MW`:''}`,searchable:`${title} ${p.id||''} ${p.owner||''} ${p.statusLabel||''} ${d.parcelRef||''}` ,groupKey:`solar|${p.id||title}`};
   }
   if(kind==='project'){
     const p=d.project||{},title=p.name||'ПУП/ПИ проект';
@@ -7708,6 +7737,34 @@ if(layerVisibility.natura)void ensureNatura2000().catch(()=>{});
 void ensureForeignRenewableCache().catch(()=>{});
 if(layerVisibility.epm)void ensureEpmLines();
 if(layerVisibility.live&&(allFireYearsSelected()||fireYearSelected(2026)||fireYearsHidden()))void loadLiveSentinelFires();
+root.querySelector('[data-national-inventory]')?.addEventListener('click',async()=>{
+  if(!nationalRenewableCache.length)await loadNationalRenewableCache();
+  const dialog=document.createElement('dialog');
+  dialog.style.cssText='width:min(1000px,94vw);max-height:85vh;border:1px solid #94a3b8;border-radius:14px;padding:18px;background:#fff;color:#111827';
+  const title=document.createElement('h3');title.textContent=`ВЕИ над 1 MW · ${nationalRenewableCache.length} установени записа`;
+  const close=document.createElement('button');close.textContent='Затвори';close.style.float='right';close.onclick=()=>dialog.close();
+  const note=document.createElement('p');note.textContent='Частичен национален инвентар. Приблизителната точка не е точен контур. Записите без координати остават в списъка. MW AC и MWp DC не се сумират.';
+  const input=document.createElement('input');input.placeholder='Търси име, технология или населено място';input.style.cssText='width:100%;padding:8px;box-sizing:border-box';
+  const select=document.createElement('select');
+  const statuses={operating:'Действащи',construction:'В строеж',planned:'Планирани',unknown:'Непотвърден статус'};
+  for(const [value,label] of [['','Всички статуси'],...Object.entries(statuses)]){const option=document.createElement('option');option.value=value;option.textContent=label;select.append(option);}
+  const scroller=document.createElement('div');scroller.style.cssText='overflow:auto;max-height:55vh;margin-top:10px';
+  const table=document.createElement('table');table.style.cssText='width:100%;border-collapse:collapse;font-size:13px';
+  const render=()=>{
+    table.replaceChildren();const header=document.createElement('tr');
+    for(const text of ['Обект / източник','Мощност','Статус','Местоположение']){const th=document.createElement('th');th.textContent=text;th.style.textAlign='left';header.append(th);}table.append(header);
+    for(const f of nationalRenewableCache){const p=f.properties;
+      if(select.value&&p.status!==select.value)continue;
+      if(input.value&&!`${p.name} ${p.technology} ${p.location||''}`.toLocaleLowerCase().includes(input.value.toLocaleLowerCase()))continue;
+      const row=document.createElement('tr');const name=document.createElement('td');const link=document.createElement('a');link.textContent=p.name;try{const url=new URL(p.source);if(['https:','http:'].includes(url.protocol)){link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';}}catch{}name.append(link);row.append(name);
+      const values=[`${p.mw} ${p.capacityBasis||'MW'}`,statuses[p.status]||p.status,p.locationQuality==='settlement-approximate'?'Приблизително по населено място':f.geometry?'Само местоположение':'Без координати'];
+      for(const text of values){const td=document.createElement('td');td.textContent=text;row.append(td);}
+      for(const td of row.children)td.style.cssText='padding:7px 5px;border-bottom:1px solid #e2e8f0;vertical-align:top';table.append(row);
+    }
+  };
+  input.oninput=render;select.onchange=render;scroller.append(table);dialog.append(close,title,note,input,select,scroller);document.body.append(dialog);dialog.addEventListener('close',()=>dialog.remove(),{once:true});render();dialog.showModal();
+});
+void loadNationalRenewableCache();
 setTimeout(()=>void loadProjectParcels(),100);
 setTimeout(()=>{
   try{runSelfTests();}catch(e){dbgWarn('self-tests-runtime',{error:e.message});}

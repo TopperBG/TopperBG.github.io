@@ -1,0 +1,38 @@
+name: Refresh national renewable inventory
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * *'
+  push:
+    paths:
+      - scripts/refresh-bg-renewables.py
+      - .github/workflows/refresh-bg-renewables.yml
+permissions:
+  contents: write
+concurrency:
+  group: national-renewable-cache
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install beautifulsoup4==4.14.3
+      - run: python -m unittest discover -s tests -p test_bg_renewables.py
+      - run: python scripts/refresh-bg-renewables.py
+      - name: Commit refreshed cache
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add map/data/bg-renewables-cache-v1.geojson
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh national renewable inventory over 1 MW'
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
