@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-bg-renewables-cache-v1",
-  "generatedAt": "2026-10-21T10:49:50.287432+00:00",
+  "generatedAt": "2026-10-21T11:53:53.097845+00:00",
   "scope": "Bulgaria; explicitly published capacity >1 MW",
   "coverage": "partial; discovery sources are not an exhaustive national register",
   "aggregation": "Do not sum AC/DC, pumped storage or unresolved cross-source duplicates together.",
@@ -14,14 +14,14 @@
         "name": "ВЕЦ \"Въча\"",
         "mw": 160.0,
         "capacityBasis": "unspecified",
-        "technology": "hydro",
+        "technology": "pumped_hydro",
         "status": "operating",
         "statusLabel": "действащ · OpenStreetMap",
         "source": "https://www.openstreetmap.org/node/1835658459",
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -46,11 +46,11 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-batak",
           "OSM-BG-W299988326"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -75,10 +75,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-ivaylovgrad"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +103,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -128,7 +128,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -153,7 +153,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -178,7 +178,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -203,7 +203,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -228,7 +228,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -253,7 +253,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -278,7 +278,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -303,10 +303,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-aleko"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -331,10 +331,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-petrovo"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -352,14 +352,14 @@
         "name": "ПАВЕЦ Чаира",
         "mw": 864.0,
         "capacityBasis": "unspecified",
-        "technology": "hydro",
+        "technology": "pumped_hydro",
         "status": "operating",
         "statusLabel": "действащ · OpenStreetMap",
         "source": "https://www.openstreetmap.org/way/1256108851",
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -384,7 +384,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -402,17 +402,17 @@
         "name": "ПАВЕЦ „Орфей“",
         "mw": 160.0,
         "capacityBasis": "unspecified",
-        "technology": "hydro",
+        "technology": "pumped_hydro",
         "status": "operating",
         "statusLabel": "действащ · OpenStreetMap",
         "source": "https://www.openstreetmap.org/way/1342874437",
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-pavets-orfey"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -437,7 +437,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -462,10 +462,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-mvets-tsrancha"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -490,10 +490,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-stara-zagora"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -518,10 +518,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-kozloduy"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -546,7 +546,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -571,10 +571,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "SOL-2023-VERILA"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -599,10 +599,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-beli-iskar"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -627,7 +627,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -652,10 +652,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-kardzhali"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -680,10 +680,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-levski"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -708,10 +708,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-momina-klisura"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -736,7 +736,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -761,10 +761,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-kamen-rid"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -789,10 +789,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-vacha-1"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -817,10 +817,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-krichim"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -845,10 +845,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-vacha-2"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -873,7 +873,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -898,10 +898,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-rositsa-1"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -926,7 +926,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -951,10 +951,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-kokalyane"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -979,10 +979,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-tazha"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1007,10 +1007,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-devin"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1028,17 +1028,17 @@
         "name": "ПАВЕЦ Белмекен",
         "mw": 375.0,
         "capacityBasis": "unspecified",
-        "technology": "hydro",
+        "technology": "pumped_hydro",
         "status": "operating",
         "statusLabel": "действащ · OpenStreetMap",
         "source": "https://www.openstreetmap.org/way/288644875",
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-pavets-belmeken"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1063,10 +1063,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-mvets-tserovo"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1091,11 +1091,11 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-batak",
           "OSM-BG-N1836873920"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1111,7 +1111,7 @@
       "properties": {
         "id": "OSM-BG-W305940629",
         "name": "ВЕЦ \"Горни Лом\"",
-        "mw": 1.4,
+        "mw": 1.4000000000000001,
         "capacityBasis": "unspecified",
         "technology": "hydro",
         "status": "operating",
@@ -1120,7 +1120,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1145,10 +1145,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-kitka"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1173,10 +1173,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-koynare"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1201,10 +1201,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-rakita"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1229,10 +1229,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-mvets-kaleto"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1257,10 +1257,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-mezdra"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1285,7 +1285,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1310,7 +1310,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1335,10 +1335,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-pasarel"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1363,10 +1363,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-topolnitsa"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1391,7 +1391,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1416,10 +1416,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-tsankov-kamak"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1444,7 +1444,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1469,41 +1469,16 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-vidima"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           24.9213021,
           42.7801781
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W439492136",
-      "properties": {
-        "id": "OSM-BG-W439492136",
-        "name": "Saparevo",
-        "mw": 5.0,
-        "capacityBasis": "unspecified",
-        "technology": "solar",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/439492136",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.2959333,
-          42.3289755
         ]
       }
     },
@@ -1522,7 +1497,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1547,10 +1522,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-studen-kladenets"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1575,7 +1550,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1600,10 +1575,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-mvets-lakatnik"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1628,10 +1603,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-mvets-svrazhen"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1656,7 +1631,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1681,7 +1656,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1706,38 +1681,13 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           24.775621,
           42.4329864
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W680094671",
-      "properties": {
-        "id": "OSM-BG-W680094671",
-        "name": "Фотоволтаична централа",
-        "mw": 2.15,
-        "capacityBasis": "unspecified",
-        "technology": "solar",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/680094671",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.5251983,
-          43.9004335
         ]
       }
     },
@@ -1756,10 +1706,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-koprinka"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1784,7 +1734,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1809,10 +1759,10 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "VEIREG-vets-sestrimo"
-        ],
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -1837,7 +1787,7 @@
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1855,14 +1805,14 @@
         "name": "ВЕЦ \"Рила\"",
         "mw": 3.0,
         "capacityBasis": "unspecified",
-        "technology": "hydro",
+        "technology": "pumped_hydro",
         "status": "operating",
         "statusLabel": "действащ · OpenStreetMap",
         "source": "https://www.openstreetmap.org/way/973132955",
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -1880,14 +1830,14 @@
         "name": "ВЕЦ \"Пастра\"",
         "mw": 6.9,
         "capacityBasis": "unspecified",
-        "technology": "hydro",
+        "technology": "pumped_hydro",
         "status": "operating",
         "statusLabel": "действащ · OpenStreetMap",
         "source": "https://www.openstreetmap.org/way/973209819",
         "countryCode": "BG",
         "sourceMode": "osm",
         "geometryQuality": "location-only",
-        "retrievedAt": "2026-10-21T10:44:11.032685+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": {
         "type": "Point",
@@ -3884,7 +3834,10 @@
         "geometryQuality": "footprint",
         "sourceMode": "curated",
         "capacityBasis": "AC",
-        "sourceStatus": "operating"
+        "sourceStatus": "operating",
+        "sources": [
+          "https://www.openstreetmap.org/way/195652883"
+        ]
       },
       "geometry": {
         "type": "Polygon",
@@ -6108,7 +6061,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:biomass-power-plants-with-power-over-4-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6127,7 +6080,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:biomass-power-plants-with-power-over-4-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6146,7 +6099,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:biomass-power-plants-with-power-over-4-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6165,7 +6118,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6184,7 +6137,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6203,7 +6156,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6222,7 +6175,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6241,7 +6194,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6260,7 +6213,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6279,7 +6232,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6298,7 +6251,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6317,7 +6270,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6336,7 +6289,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6355,7 +6308,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6374,7 +6327,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6393,7 +6346,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6412,7 +6365,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6431,7 +6384,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6450,7 +6403,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6469,7 +6422,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6488,7 +6441,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6507,7 +6460,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6526,7 +6479,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6545,7 +6498,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6564,7 +6517,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6583,7 +6536,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6602,7 +6555,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6621,7 +6574,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6640,7 +6593,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6659,7 +6612,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6678,7 +6631,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6697,7 +6650,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6716,7 +6669,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6735,7 +6688,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6754,7 +6707,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6773,7 +6726,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6792,7 +6745,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6811,7 +6764,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6830,7 +6783,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6849,7 +6802,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6868,7 +6821,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6887,7 +6840,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6906,7 +6859,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6925,7 +6878,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6944,7 +6897,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6963,7 +6916,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -6982,7 +6935,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7001,7 +6954,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7020,7 +6973,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7039,7 +6992,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "SOL-2012-DOBRICH"
         ]
@@ -7061,7 +7014,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7080,7 +7033,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7099,7 +7052,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7118,7 +7071,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7137,7 +7090,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7156,7 +7109,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7175,7 +7128,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7194,7 +7147,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7213,7 +7166,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7232,7 +7185,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7251,7 +7204,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7270,7 +7223,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7289,7 +7242,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7308,7 +7261,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7327,7 +7280,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7346,7 +7299,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7365,7 +7318,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7384,7 +7337,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7403,7 +7356,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7422,7 +7375,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7441,7 +7394,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7460,7 +7413,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7479,7 +7432,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7498,7 +7451,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7517,7 +7470,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7536,7 +7489,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7555,7 +7508,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7574,7 +7527,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7593,7 +7546,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7612,7 +7565,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7631,7 +7584,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7650,7 +7603,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7669,7 +7622,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7688,7 +7641,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7707,7 +7660,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7726,7 +7679,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7745,7 +7698,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7764,7 +7717,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7783,7 +7736,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7802,7 +7755,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7821,7 +7774,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7840,7 +7793,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7859,7 +7812,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7878,7 +7831,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7897,7 +7850,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7916,7 +7869,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7935,7 +7888,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7954,7 +7907,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7973,7 +7926,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -7992,7 +7945,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8011,7 +7964,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8030,7 +7983,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8049,7 +8002,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8068,7 +8021,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8087,7 +8040,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8106,7 +8059,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8125,7 +8078,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8144,7 +8097,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8163,7 +8116,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8182,7 +8135,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8201,7 +8154,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8220,7 +8173,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8239,7 +8192,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8258,7 +8211,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8277,7 +8230,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8296,7 +8249,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8315,7 +8268,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8334,7 +8287,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8353,7 +8306,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8372,7 +8325,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8391,7 +8344,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8410,7 +8363,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8429,7 +8382,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8448,7 +8401,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8467,7 +8420,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8486,7 +8439,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8505,7 +8458,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8524,7 +8477,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8543,7 +8496,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8562,7 +8515,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8581,7 +8534,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8600,7 +8553,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8619,7 +8572,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8638,7 +8591,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8657,7 +8610,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "SOL-2023-LOVECH"
         ]
@@ -8679,7 +8632,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8698,7 +8651,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8717,7 +8670,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8736,7 +8689,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8755,7 +8708,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8774,7 +8727,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8793,7 +8746,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8812,7 +8765,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8831,7 +8784,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8850,7 +8803,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8869,7 +8822,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8888,7 +8841,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8907,7 +8860,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8926,7 +8879,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8945,7 +8898,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8964,7 +8917,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -8983,7 +8936,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9002,7 +8955,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9021,7 +8974,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9040,7 +8993,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9059,7 +9012,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9078,7 +9031,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9097,7 +9050,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9116,7 +9069,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9135,7 +9088,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9154,7 +9107,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9173,7 +9126,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9192,7 +9145,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9211,7 +9164,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9230,7 +9183,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9249,7 +9202,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9268,7 +9221,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9287,7 +9240,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9306,7 +9259,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9325,7 +9278,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9344,7 +9297,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9363,7 +9316,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9382,7 +9335,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9401,7 +9354,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9420,7 +9373,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9439,7 +9392,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9458,7 +9411,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9477,7 +9430,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9496,7 +9449,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9515,7 +9468,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9534,7 +9487,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9553,7 +9506,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9572,7 +9525,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9591,7 +9544,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9610,7 +9563,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9629,7 +9582,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9648,7 +9601,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9667,7 +9620,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9686,7 +9639,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9705,7 +9658,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9724,7 +9677,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9743,7 +9696,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9762,7 +9715,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9781,7 +9734,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9800,7 +9753,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9819,7 +9772,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9838,7 +9791,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9857,7 +9810,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9876,7 +9829,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9895,7 +9848,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9914,7 +9867,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9933,7 +9886,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9952,7 +9905,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9971,7 +9924,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -9990,7 +9943,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10009,7 +9962,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10028,7 +9981,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10047,7 +10000,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10066,7 +10019,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10085,7 +10038,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10104,7 +10057,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10123,7 +10076,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10142,7 +10095,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10161,7 +10114,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10180,7 +10133,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10199,7 +10152,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10218,7 +10171,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10237,7 +10190,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10256,7 +10209,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "sources": [
           "https://www.veiregistar.bg/object/fets-topsol-topolovo"
         ]
@@ -10278,7 +10231,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10297,7 +10250,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10316,7 +10269,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10335,7 +10288,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10354,7 +10307,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10373,7 +10326,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10392,7 +10345,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10411,7 +10364,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10430,7 +10383,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10449,7 +10402,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10468,7 +10421,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10487,7 +10440,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10506,7 +10459,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10525,7 +10478,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10544,7 +10497,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10563,7 +10516,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10582,7 +10535,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10601,7 +10554,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10620,7 +10573,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10639,7 +10592,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10658,7 +10611,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:photovoltaic-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10677,7 +10630,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10696,7 +10649,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10715,7 +10668,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10734,7 +10687,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10753,7 +10706,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10772,7 +10725,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10791,7 +10744,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10810,7 +10763,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10829,7 +10782,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10848,7 +10801,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10867,7 +10820,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10886,7 +10839,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "sources": [
           "https://www.veiregistar.bg/object/mvets-kaleto"
         ],
@@ -10911,7 +10864,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10930,7 +10883,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10949,7 +10902,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W628952353"
         ]
@@ -10971,7 +10924,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -10990,7 +10943,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11009,7 +10962,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11028,7 +10981,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11047,7 +11000,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11066,7 +11019,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11085,7 +11038,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11104,7 +11057,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11123,7 +11076,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11142,7 +11095,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11161,7 +11114,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11180,7 +11133,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11199,7 +11152,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11218,7 +11171,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11237,7 +11190,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W628952630"
         ]
@@ -11259,7 +11212,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11278,7 +11231,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W297013281"
         ]
@@ -11300,7 +11253,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11319,7 +11272,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W1410194902"
         ]
@@ -11341,7 +11294,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11360,7 +11313,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11379,7 +11332,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W288644875"
         ]
@@ -11401,7 +11354,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W1342874437"
         ]
@@ -11423,7 +11376,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11442,7 +11395,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11461,7 +11414,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W104162954"
         ]
@@ -11483,7 +11436,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11502,7 +11455,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11521,7 +11474,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11540,7 +11493,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-N1836873920",
           "OSM-BG-W299988326"
@@ -11563,7 +11516,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11582,7 +11535,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W1479889910"
         ]
@@ -11604,7 +11557,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11623,7 +11576,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11642,7 +11595,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11661,7 +11614,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11680,7 +11633,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11699,7 +11652,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11718,7 +11671,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11737,7 +11690,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W285893857"
         ]
@@ -11759,7 +11712,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11778,7 +11731,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11797,7 +11750,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11816,7 +11769,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-R11949072"
         ]
@@ -11838,7 +11791,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W197749024"
         ]
@@ -11860,7 +11813,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W168092719"
         ]
@@ -11882,7 +11835,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11901,7 +11854,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11920,7 +11873,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W305940630"
         ]
@@ -11942,7 +11895,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -11961,7 +11914,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W277261383"
         ]
@@ -11983,7 +11936,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W87394466"
         ]
@@ -12005,7 +11958,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W305943566"
         ]
@@ -12027,7 +11980,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W1459917302"
         ]
@@ -12049,7 +12002,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W204791052"
         ]
@@ -12071,7 +12024,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W169361655"
         ]
@@ -12093,7 +12046,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12112,7 +12065,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12131,7 +12084,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12150,7 +12103,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W305971013"
         ]
@@ -12172,7 +12125,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W172685485"
         ]
@@ -12194,7 +12147,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12213,7 +12166,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W309368662"
         ]
@@ -12235,7 +12188,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12254,7 +12207,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12273,7 +12226,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W1250747030"
         ]
@@ -12295,7 +12248,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12314,7 +12267,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12333,7 +12286,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12352,7 +12305,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W305948282"
         ]
@@ -12374,7 +12327,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12393,7 +12346,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12412,7 +12365,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W243004086"
         ]
@@ -12434,7 +12387,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12453,7 +12406,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12472,7 +12425,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W918500398"
         ]
@@ -12494,7 +12447,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12513,7 +12466,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12532,7 +12485,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12551,7 +12504,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W1412838224"
         ]
@@ -12573,7 +12526,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W485280749"
         ]
@@ -12595,7 +12548,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12614,7 +12567,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12633,7 +12586,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12652,7 +12605,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W283141247"
         ]
@@ -12674,7 +12627,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W309373781"
         ]
@@ -12696,7 +12649,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12715,7 +12668,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W338686744"
         ]
@@ -12737,7 +12690,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W204791050"
         ]
@@ -12759,7 +12712,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W204794205"
         ]
@@ -12781,7 +12734,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00",
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00",
         "possibleDuplicateIds": [
           "OSM-BG-W391783449"
         ]
@@ -12803,7 +12756,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12822,7 +12775,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12841,7 +12794,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12860,7 +12813,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12879,7 +12832,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12898,7 +12851,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12917,7 +12870,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12936,7 +12889,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12955,7 +12908,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12974,7 +12927,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -12993,7 +12946,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13012,7 +12965,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13031,7 +12984,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13050,7 +13003,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13069,7 +13022,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13088,7 +13041,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13107,7 +13060,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13126,7 +13079,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13145,7 +13098,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13164,7 +13117,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13183,7 +13136,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13202,7 +13155,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13221,7 +13174,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13240,7 +13193,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13259,7 +13212,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13278,7 +13231,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13297,7 +13250,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13316,7 +13269,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13335,7 +13288,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13354,7 +13307,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13373,7 +13326,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13392,7 +13345,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13411,7 +13364,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13430,7 +13383,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13449,7 +13402,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13468,7 +13421,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13487,7 +13440,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13506,7 +13459,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13525,7 +13478,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13544,7 +13497,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13563,7 +13516,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13582,7 +13535,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13601,7 +13554,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13620,7 +13573,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13639,7 +13592,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13658,7 +13611,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13677,7 +13630,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13696,7 +13649,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13715,7 +13668,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13734,7 +13687,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13753,7 +13706,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13772,7 +13725,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13791,7 +13744,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13810,7 +13763,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13829,7 +13782,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13848,7 +13801,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13867,7 +13820,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13886,7 +13839,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13905,7 +13858,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13924,7 +13877,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13943,7 +13896,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13962,7 +13915,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -13981,7 +13934,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14000,7 +13953,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14019,7 +13972,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14038,7 +13991,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14057,7 +14010,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14076,7 +14029,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14095,7 +14048,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14114,7 +14067,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14133,7 +14086,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14152,7 +14105,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14171,7 +14124,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14190,7 +14143,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14209,7 +14162,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14228,7 +14181,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14247,7 +14200,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14266,7 +14219,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14285,7 +14238,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14304,7 +14257,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14323,7 +14276,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14342,7 +14295,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14361,7 +14314,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14380,7 +14333,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14399,7 +14352,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14418,7 +14371,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14437,7 +14390,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14456,7 +14409,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14475,7 +14428,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14494,7 +14447,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14513,7 +14466,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14532,7 +14485,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14551,7 +14504,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14570,7 +14523,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14589,7 +14542,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14608,7 +14561,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14627,7 +14580,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14646,7 +14599,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14665,7 +14618,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14684,7 +14637,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14703,7 +14656,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14722,7 +14675,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14741,7 +14694,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14760,7 +14713,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14779,7 +14732,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14798,7 +14751,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14817,7 +14770,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14836,7 +14789,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14855,7 +14808,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14874,7 +14827,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14893,7 +14846,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14912,7 +14865,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14931,7 +14884,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14950,7 +14903,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14969,7 +14922,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -14988,7 +14941,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -15007,7 +14960,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
@@ -15026,7 +14979,7 @@
         "countryCode": "BG",
         "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
         "geometryQuality": "unknown",
-        "retrievedAt": "2026-10-21T10:49:50.287432+00:00"
+        "retrievedAt": "2026-10-21T11:53:53.097845+00:00"
       },
       "geometry": null
     },
