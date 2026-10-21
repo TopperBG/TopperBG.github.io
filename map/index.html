@@ -5181,14 +5181,14 @@ const projectLayer=new VectorLayer({
       const project=f.get('data')?.project||{};
       const isWind=project.technology==='wind';
       const capacity=Number(project.mw??project.mwMax??project.mwMin??10);
-      const radius=Math.max(8,Math.min(15,7+Math.log10(Math.max(10,capacity))*3));
+      const radius=renewablePointRadius(capacity,selected);
       const fill=satelliteMode()?'rgba(37,99,235,.92)':'rgba(37,99,235,.88)';
       const stroke=selected?'#111827':(satelliteMode()?'#bfdbfe':'#1e40af');
       return new Style({
-        image:new CircleStyle({radius,fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selected?3.2:2})}),
+        image:new CircleStyle({radius,fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selected?1.8:1})}),
         text:new TextStyle({
-          text:isWind?'W':'P',
-          font:'800 10px system-ui, sans-serif',
+          text:radius>=6?(isWind?'W':'P'):'',
+          font:'800 8px system-ui, sans-serif',
           fill:new Fill({color:'#fff'}),
           stroke:new Stroke({color:'rgba(0,0,0,.28)',width:1})
         })
@@ -5210,6 +5210,12 @@ const projectLayer=new VectorLayer({
     return haloPolygonStyles({fill,stroke,innerWidth:selected?2.7:1.8,selected,halo:'rgba(255,255,255,.98)',haloWidth:4.8});
   }
 });
+// Small location symbols; their screen radius is not a ground footprint.
+function renewablePointRadius(capacity,selected=false){
+  const mw=Number(capacity);
+  const radius=2.5+1.5*Math.log10(Math.max(1,Number.isFinite(mw)?mw:1));
+  return Math.min(7,Math.max(2.5,radius))+(selected?1.2:0);
+}
 const solarLayer=new VectorLayer({
   source:solarSource,zIndex:6,visible:layerVisibility.solar,
   style:f=>{
@@ -5217,12 +5223,12 @@ const solarLayer=new VectorLayer({
     if(f.getGeometry()?.getType()==='Point'){
       const project=f.get('data')?.project||{};
       const capacity=Number(project.mwpDc??project.mwAc??project.mw??10);
-      const radius=Math.max(6,Math.min(12,5+Math.log10(Math.max(10,capacity))*3));
+      const radius=renewablePointRadius(capacity,selected);
       const fill=satelliteMode()?'rgba(255,213,0,.92)':'rgba(245,158,11,.88)';
       const stroke=selected?cssVar('--foreground','#111827'):(satelliteMode()?'#111827':'#92400e');
       return [
-        new Style({image:new CircleStyle({radius:radius+3,fill:new Fill({color:'rgba(255,255,255,.96)'})})}),
-        new Style({image:new CircleStyle({radius:selected?radius+1:radius,fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selected?3:2})})})
+        new Style({image:new CircleStyle({radius:radius+1,fill:new Fill({color:'rgba(255,255,255,.85)'})})}),
+        new Style({image:new CircleStyle({radius,fill:new Fill({color:fill}),stroke:new Stroke({color:stroke,width:selected?1.8:1})})})
       ];
     }
     const fill=satelliteMode()?(selected?'rgba(255,213,0,.62)':'rgba(255,193,7,.48)'):(selected?'rgba(245,158,11,.42)':'rgba(245,158,11,.28)');
@@ -6469,7 +6475,7 @@ function renderParcelRows(loaded){
     }catch(e){rejected++;dbgWarn('curated-solar-rejected',{id:project.id,message:e.message});}
   }
   const pointSolarRows=[];
-  for(const project of operatingSolarProjects.filter(p=>!p.curatedFootprint&&!(p.parcels?.length)&&Number.isFinite(Number(p.lon))&&Number.isFinite(Number(p.lat)))){
+  for(const project of operatingSolarProjects.filter(p=>!p.curatedFootprint&&!CURATED_SOLAR_FOOTPRINTS.some(poly=>poly.id===p.id)&&!(p.parcels?.length)&&Number.isFinite(Number(p.lon))&&Number.isFinite(Number(p.lat)))){
     try{
       const row={layerType:'solar',project,parcelRef:'',feature:{type:'Feature',properties:{__bgwfGeometryQuality:'location-only'},geometry:{type:'Point',coordinates:[Number(project.lon),Number(project.lat)]}}};
       const f=cloneGeoFeature(row.feature);
@@ -7702,11 +7708,12 @@ function runSelfTests(){
 }
 window.bgwfRunSelfTests=runSelfTests;
 
-// Central repository inventory: preserved even when a site has no coordinates.
+// The inventory retains every technology; map layers accept only solar/wind.
 const renewableCacheSource=new VectorSource();
 const renewableCacheLayer=new VectorLayer({source:renewableCacheSource,zIndex:6,
   style:f=>{
     const p=f.get('data')?.project||{};
+    if(!['solar','wind'].includes(p.technology))return null;
     const key=p.status==='operating'?(p.technology==='wind'?'wind':'solar'):'projects';
     if(!layerVisibility[key])return null;
     return (p.status==='operating'?solarLayer:projectLayer).getStyleFunction()(f,view.getResolution());
@@ -7714,6 +7721,54 @@ const renewableCacheLayer=new VectorLayer({source:renewableCacheSource,zIndex:6,
 });
 map.addLayer(renewableCacheLayer);
 [solarLayer,windLayer,projectLayer].forEach(layer=>layer.on('change:visible',()=>renewableCacheLayer.changed()));
+// Identity is independent of cache IDs and survives different source names.
+// Only object-specific URLs are identities; a shared register/PDF is not one.
+function renewableIdentityKeys(project){
+  const keys=new Set();
+  if(project?.id)keys.add(`id:${project.id}`);
+  const refs=[project?.id,project?.parcelRef,project?.osm_id,project?.source,project?.secondarySource,...(project?.sources||[])];
+  for(const ref of refs){
+    const value=String(ref||'');
+    for(const m of value.matchAll(/\/(node|way|relation)\/(\d+)/gi))keys.add(`osm:${m[1].toLowerCase()}:${m[2]}`);
+    const compact=value.match(/^(?:OSM(?:-BG)?[-:]?)?([NWR])(\d+)$/i);
+    if(compact)keys.add(`osm:${{n:'node',w:'way',r:'relation'}[compact[1].toLowerCase()]}:${compact[2]}`);
+    if(/veiregistar\.bg\/object\//i.test(value))keys.add(`url:${value.replace(/^https?:\/\/(?:www\.)?/i,'').replace(/\/$/,'')}`);
+  }
+  return keys;
+}
+let renewableCacheCandidates=[];
+const renewableCuratedPolygons=CURATED_SOLAR_FOOTPRINTS.map(project=>cloneGeoFeature({type:'Feature',properties:{},geometry:project.geometry}));
+function reconcileRenewableCache(){
+  const knownKeys=new Set();
+  const knownProjects=[...operatingSolarProjects,...operatingWindProjects,...cadastralProjects,...CURATED_SOLAR_FOOTPRINTS];
+  for(const p of knownProjects)for(const key of renewableIdentityKeys(p))knownKeys.add(key);
+  const polygons=[...renewableCuratedPolygons,...solarSource.getFeatures(),...projectSource.getFeatures()]
+    .filter(f=>['Polygon','MultiPolygon'].includes(f.getGeometry()?.getType()));
+  for(const f of polygons){
+    const row=f.get('data')||{};
+    for(const key of renewableIdentityKeys({...row.project,parcelRef:row.parcelRef||row.project?.parcelRef}))knownKeys.add(key);
+  }
+  const wanted=renewableCacheCandidates.filter(f=>{
+    const p=f.get('data').project;
+    if([...renewableIdentityKeys(p)].some(key=>knownKeys.has(key)))return false;
+    const geometry=f.getGeometry();
+    if(geometry?.getType()==='Point'){
+      const coordinate=geometry.getCoordinates();
+      if(polygons.some(poly=>poly.getGeometry().intersectsCoordinate(coordinate)))return false;
+    }
+    return true;
+  });
+  const ids=new Set(wanted.map(f=>f.getId()));
+  for(const f of renewableCacheSource.getFeatures())if(!ids.has(f.getId()))renewableCacheSource.removeFeature(f);
+  for(const f of wanted)if(!renewableCacheSource.getFeatureById(f.getId()))renewableCacheSource.addFeature(f);
+}
+let renewableCacheReconcileTimer;
+function scheduleRenewableCacheReconcile(){
+  clearTimeout(renewableCacheReconcileTimer);
+  renewableCacheReconcileTimer=setTimeout(reconcileRenewableCache,0);
+}
+// Cadastral polygons may arrive after the cache. Remove their point duplicates then too.
+[solarSource,projectSource].forEach(source=>source.on('change',scheduleRenewableCacheReconcile));
 async function loadRenewableCache(){
   try{
     const response=await fetch('./data/bg-renewables-cache-v1.geojson');
@@ -7721,19 +7776,18 @@ async function loadRenewableCache(){
     const payload=await response.json();
     if(payload.schema!=='bgwf-bg-renewables-cache-v1'||!Array.isArray(payload.features))throw Error('Invalid renewable cache');
     window.bgwfRenewableInventory=payload;
-    const existing=new Set([...operatingSolarProjects,...operatingWindProjects,...cadastralProjects].map(p=>p.id));
     const rows=[];
     for(const raw of payload.features){
       const p=raw.properties||{};
-      if(!raw.geometry||existing.has(p.id)||!(Number(p.mw)>1))continue;
+      if(!['solar','wind'].includes(p.technology)||!raw.geometry||!(Number(p.mw)>1))continue;
       const f=cloneGeoFeature(raw);
       const project={...p,statusLabel:`${p.statusLabel||p.status} · ${p.technology} · ${p.geometryQuality==='location-only'?'приблизително местоположение':'геометрия по източника'}`};
       f.setId(p.id);f.set('kind','renewable-cache');
       f.set('status',p.status);f.set('data',{project,parcelRef:'',layerType:p.status==='operating'?'solar':'projects'});rows.push(f);
     }
-    renewableCacheSource.clear();renewableCacheSource.addFeatures(rows);
+    renewableCacheCandidates=rows;reconcileRenewableCache();
     const link=document.createElement('a');link.className='btn';link.href='./renewables.html';link.target='_blank';link.rel='noopener';
-    link.textContent=`ВЕИ >1 MW (${payload.features.length})`;link.title='Пълен опис, включително обектите без координати; ВЕЦ и биоенергия са с действащите ВЕИ';
+    link.textContent=`ВЕИ >1 MW (${payload.features.length})`;link.title='Пълен опис на ВЕИ, включително ВЕЦ, ПАВЕЦ, биоенергия и обекти без координати';
     const host=root.querySelector('.bgwf-search-strip');(host||root).appendChild(link);
   }catch(e){dbgWarn('renewable-cache',{error:e.message});}
 }
