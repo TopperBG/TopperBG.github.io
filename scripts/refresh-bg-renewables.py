@@ -37,13 +37,13 @@ def feature(p, geometry=None):
  return {'type':'Feature', 'id':p['id'], 'properties':p, 'geometry':geometry}
 
 def embedded():
- js = r'''const fs=require('fs'),vm=require('vm');const h=fs.readFileSync(process.argv[1],'utf8');let out={};for(const name of ['operatingSolarProjects','operatingWindProjects','cadastralProjects','CURATED_SOLAR_FOOTPRINTS']){const m=h.match(new RegExp('(?:const|let)\\s+'+name+'\\s*=\\s*(\\[[\\s\\S]*?\\n\\s*\\]);'));if(!m)throw Error(name);out[name]=vm.runInNewContext('('+m[1]+')',{}, {timeout:1000});}console.log(JSON.stringify(out));'''
+ js = r'''const fs=require('fs'),vm=require('vm');const h=fs.readFileSync(process.argv[1],'utf8');let out={};for(const name of ['operatingSolarProjects','operatingWindProjects','cadastralProjects','CURATED_SOLAR_FOOTPRINTS']){const m=h.match(new RegExp('(?:const|let)\\s+'+name+'\\s*=\\s*(\\[[\\s\\S]*?\\n\\s*\\]);'));if(!m)throw Error(name);out[name]=vm.runInNewContext('('+m[1]+')',{}, {timeout:1000});}const transitioned=h.match(/const transitionedToOperatingProjectIds = new Set\((\[[^;]*?\])\)/);out.transitionedIds=transitioned?JSON.parse(transitioned[1]):[];console.log(JSON.stringify(out));'''
  data=json.loads(subprocess.check_output(['node','-e',js,str(ROOT/'map/index.html')]))
  footprints={p['id']:p for p in data['CURATED_SOLAR_FOOTPRINTS']}
  result=[]; skipped=[]
- for group, tech, status in [('operatingSolarProjects','solar','operating'),('operatingWindProjects','wind','operating'),('cadastralProjects',None,'planned')]:
+ for group, tech, status in [('operatingSolarProjects','solar','operating'),('operatingWindProjects','wind','operating'),('cadastralProjects',None,'planned'),('CURATED_SOLAR_FOOTPRINTS','solar','operating')]:
   for row in data[group]:
-   if row.get('assetType')=='substation': continue
+   if row.get('assetType')=='substation' or row['id'] in data.get('transitionedIds',[]): continue
    mw=next((row[k] for k in ('mwAc','mwpDc','mw','mwMin') if isinstance(row.get(k),(int,float))),None)
    if mw is None:
     # Capacity text is accepted only with an explicit unit, never from parcel areas.
@@ -57,7 +57,9 @@ def embedded():
    quality='footprint' if geom else 'unknown'
    if not geom and all(isinstance(row.get(k),(int,float)) for k in ('lon','lat')):
     geom={'type':'Point','coordinates':[row['lon'],row['lat']]};quality='location-only'
-   p=dict(row,technology=row.get('technology') or tech or ('wind' if re.search('вят|ВяЕЦ',row['name'],re.I) else 'solar'),status=row.get('status',status),mw=mw,countryCode='BG',geometryQuality=quality,sourceMode='curated',capacityBasis='AC' if 'mwAc' in row else 'DC' if 'mwpDc' in row else 'unspecified')
+   p=dict(row,technology=row.get('technology') or tech or ('wind' if re.search('вят|ВяЕЦ|ВяЕИ|wind',row['name'],re.I) else 'solar'),status=row.get('status',status),mw=mw,countryCode='BG',geometryQuality=quality,sourceMode='curated',capacityBasis='AC' if 'mwAc' in row else 'DC' if 'mwpDc' in row else 'unspecified')
+   if geom and row['id'] in footprints:
+    footprint=footprints[row['id']];p['geometrySource']=footprint.get('source',source);p['geometryRef']=footprint.get('parcelRef')
    p['sourceStatus']=p['status'];p['status']='planned' if p['status']=='approved' else p['status']
    p.pop('geometry',None);result.append(feature(p,geom))
  return result,skipped
@@ -109,33 +111,86 @@ def osm():
   result.append(feature({'id':'OSM-BG-'+m.osm_id(el),'name':tags.get('name') or tags.get('operator') or 'OSM '+m.osm_id(el),'mw':mw,'capacityBasis':'unspecified','technology':tech,'status':status,'statusLabel':label+' · OpenStreetMap','source':f"https://www.openstreetmap.org/{el['type']}/{el['id']}",'countryCode':'BG','sourceMode':'osm','geometryQuality':'location-only' if point else 'unknown'}, {'type':'Point','coordinates':list(point)} if point else None))
  return result
 
-def merge(rows):
- result=[];by_source={};by_id={}
+def transitioned_ids():
+ match=re.search(r'const transitionedToOperatingProjectIds = new Set\((\[[^;]*?\])\)',(ROOT/'map/index.html').read_text())
+ return set(json.loads(match[1])) if match else set()
+
+def apply_locations(rows):
+ path=ROOT/'map/data/bg-renewables-locations-v1.json'
+ locations=json.loads(path.read_text()).get('locations',{}) if path.exists() else {}
  for f in rows:
-  p=f['properties'];ident=p['id'];urls=[p.get(k) for k in ('source','secondarySource') if p.get(k)]
+  location=locations.get(f['properties']['id'])
+  if location and not f.get('geometry'):
+   f['geometry']=location['geometry']
+   f['properties'].update({k:v for k,v in location.items() if k!='geometry'})
+ return rows
+
+def merge(rows):
+ path=ROOT/'map/data/bg-renewables-identities-v1.json'
+ entities=json.loads(path.read_text()).get('entities',[]) if path.exists() else []
+ aliases={member:e['canonicalId'] for e in entities for member in e['memberIds']}
+ def norm(value):return re.sub(r'[^\w]','',value.lower())
+ def sources(p):return {str(u) for u in [p.get('source'),p.get('secondarySource'),p.get('geometrySource'),*(p.get('sources') or [])] if u}
+ def keys(p):
+  found={}
+  for url in sources(p):
+   osm=re.search(r'openstreetmap\.org/(node|way|relation)/(\d+)',url)
+   if osm:found['osm:'+osm[1]+':'+osm[2]]=True
+   elif 'veiregistar.bg/object/' in url:found['url:'+url.rstrip('/')]=True
+   else:found['url:'+url+'|name:'+norm(p['name'])]=True
+  for ref in (p.get('geometryRef'),p.get('parcelRef'),p.get('osm_id')):
+   osm=re.fullmatch(r'(?:OSM-)?([NWR])(\d+)',str(ref or ''),re.I)
+   if osm:found['osm:'+{'n':'node','w':'way','r':'relation'}[osm[1].lower()]+':'+osm[2]]=True
+  return set(found)
+ result=[];by_key={};by_id={};retired_planning_ids=transitioned_ids()
+ # Confirmed canonical entries retain their displayed name/capacity.
+ for original in sorted(rows,key=lambda f:0 if aliases.get(f['properties']['id'])==f['properties']['id'] else 1):
+  if original['properties']['id'] in retired_planning_ids:continue
+  f=json.loads(json.dumps(original));p=f['properties'];raw_id=p['id'];ident=aliases.get(raw_id,raw_id);p['id']=ident;f['id']=ident
+  p.pop('possibleDuplicateIds',None)
+  p['sourceModes']=sorted(set(p.get('sourceModes',[])+[p.get('sourceMode','unknown')]))
+  members=set(p.get('mergedIds',[])+[raw_id,ident])
   match=by_id.get(ident)
-  if match is None:match=next((by_source[u] for u in urls if u in by_source),None)
+  if match is None:match=next((by_key[k] for k in sorted(keys(p)) if k in by_key),None)
   if match is not None:
-   old=result[match]['properties'];old['sources']=sorted(set(old.get('sources',[])+urls))
-   if not result[match]['geometry'] and f['geometry']:result[match]['geometry']=f['geometry'];old['geometryQuality']=p.get('geometryQuality','location-only')
+   old=result[match]['properties'];members.update(old.get('mergedIds',[]));members.add(old['id'])
+   old['sources']=sorted(sources(old)|sources(p))
+   old['sourceModes']=sorted(set(old.get('sourceModes',[])+p['sourceModes']))
+   old['mergedIds']=sorted(members)
+   observations=[{'source':q['source'],'mw':q['mw'],'capacityBasis':q.get('capacityBasis','unspecified')} for q in (old,p)]
+   observations+=old.get('capacityObservations',[])+p.get('capacityObservations',[])
+   unique={json.dumps(o,sort_keys=True):o for o in observations}
+   if len({(o['mw'],o['capacityBasis']) for o in unique.values()})>1:old['capacityObservations']=list(unique.values())
+   if not result[match]['geometry'] and f.get('geometry'):
+    result[match]['geometry']=f['geometry']
+    old.update({k:v for k,v in p.items() if k.startswith(('geometry','location'))})
+    old.setdefault('geometrySource',p['source'])
+   for k in keys(p):by_key[k]=match
+   for member in members:by_id[member]=match
    continue
-  by_id[ident]=len(result)
-  for u in urls:by_source[u]=len(result)
+  index=len(result);by_id[ident]=index
+  for member in members:by_id[member]=index
+  for key in keys(p):by_key[key]=index
+  if len(members)>1:p['mergedIds']=sorted(members)
   result.append(f)
- # Cross-source overlaps without a shared identifier are flagged, never silently summed.
- def norm(s):return re.sub(r'[^\w]','',s.lower())
  groups={}
  for f in result:groups.setdefault(norm(f['properties']['name']),[]).append(f)
- for g in groups.values():
-  if len(g)>1:
-   for f in g:f['properties']['possibleDuplicateIds']=[x['id'] for x in g if x is not f]
- return sorted(result,key=lambda f:f['id'])
+ for group in groups.values():
+  if len(group)>1:
+   for f in group:f['properties']['possibleDuplicateIds']=[other['id'] for other in group if other is not f]
+ return sorted(apply_locations(result),key=lambda f:f['id'])
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--offline',action='store_true');args=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--offline',action='store_true');ap.add_argument('--reconcile-only',action='store_true');args=ap.parse_args()
  previous=json.loads(OUT.read_text()) if OUT.exists() else {'features':[]}
  rows,skipped=embedded();health={'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'sources':{},'excludedCapacityUnknown':skipped}
- for mode,fn in [*[(f'veiregistar:{category}',lambda c=category,t=tech:registry_category((c,t))) for category,tech in TECHS.items()],('osm',osm)]:
+ modes=[*[(f'veiregistar:{category}',lambda c=category,t=tech:registry_category((c,t))) for category,tech in TECHS.items()],('osm',osm)]
+ if args.reconcile_only:
+  rows+=previous['features']
+  checked_at=health['checkedAt']
+  health=json.loads(HEALTH.read_text()) if HEALTH.exists() else health
+  health['reconciledAt']=checked_at;health['excludedCapacityUnknown']=skipped;modes=[]
+ for mode,fn in modes:
   try:
    if args.offline:raise RuntimeError('offline: remote source not checked')
    batch=fn();assert batch,'Empty source response'
@@ -145,7 +200,7 @@ def main():
    print(mode+': '+str(len(batch))+' records',flush=True)
    rows+=batch;health['sources'][mode]={'status':'ok','records':len(batch)}
   except Exception as exc:
-   retained=[f for f in previous['features'] if f['properties'].get('sourceMode')==mode];rows+=retained
+   retained=[f for f in previous['features'] if mode in f['properties'].get('sourceModes',[f['properties'].get('sourceMode')])];rows+=retained
    health['sources'][mode]={'status':'stale' if retained else 'unavailable','error':str(exc),'retained':len(retained)}
  rows=merge(rows)
  for f in rows:
@@ -153,7 +208,7 @@ def main():
   assert p['status'] in ('operating','construction','planned')
   if f['geometry'] and f['geometry']['type']=='Point':
    lon,lat=f['geometry']['coordinates'];assert 22<lon<29 and 41<lat<45
- payload={'type':'FeatureCollection','schema':'bgwf-bg-renewables-cache-v1','generatedAt':health['checkedAt'],'scope':'Bulgaria; explicitly published capacity >1 MW','coverage':'partial; discovery sources are not an exhaustive national register','aggregation':'Do not sum AC/DC, pumped storage or unresolved cross-source duplicates together.','features':rows}
+ payload={'type':'FeatureCollection','schema':'bgwf-bg-renewables-cache-v1','generatedAt':health.get('reconciledAt',health['checkedAt']),'scope':'Bulgaria; explicitly published capacity >1 MW','coverage':'partial; discovery sources are not an exhaustive national register','aggregation':'Do not sum AC/DC, pumped storage or unresolved cross-source duplicates together.','features':rows}
  OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
  health['counts']={s:sum(f['properties']['status']==s for f in rows) for s in ('operating','construction','planned')};health['withoutGeometry']=sum(f['geometry'] is None for f in rows)
  HEALTH.write_text(json.dumps(health,ensure_ascii=False,indent=2)+'\n');print(json.dumps(health,ensure_ascii=False))

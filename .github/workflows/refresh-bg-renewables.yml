@@ -6,6 +6,8 @@ on:
   push:
     paths:
       - scripts/refresh-bg-renewables.py
+      - scripts/enrich-bg-renewable-locations.py
+      - map/data/bg-renewables-identities-v1.json
       - .github/workflows/refresh-bg-renewables.yml
       - map/index.html
 permissions:
@@ -27,11 +29,14 @@ jobs:
           node-version: '22'
       - run: python scripts/test-bg-renewables.py
       - run: python scripts/refresh-bg-renewables.py
+      - run: python scripts/enrich-bg-renewable-locations.py
+      - run: python scripts/refresh-bg-renewables.py --reconcile-only
+      - run: node scripts/test-renewables-list.cjs
       - name: Publish cache
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add map/data/bg-renewables-cache-v1.geojson map/data/bg-renewables-health-v1.json
+          git add map/data/bg-renewables-cache-v1.geojson map/data/bg-renewables-health-v1.json map/data/bg-renewables-locations-v1.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Bulgaria renewable inventory >1 MW'
           git pull --rebase origin main

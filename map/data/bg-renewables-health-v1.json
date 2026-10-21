@@ -91,11 +91,6 @@
       "reason": "capacity_not_published_or_not_above_1_MW"
     },
     {
-      "id": "RES-015",
-      "name": "ФЕЦ „Смядово“ — разширение до 80 MW",
-      "reason": "capacity_not_published_or_not_above_1_MW"
-    },
-    {
       "id": "RES-017",
       "name": "ФЕЦ „Средец“ — СР-Соларис Енерджи",
       "reason": "capacity_not_published_or_not_above_1_MW"
@@ -139,12 +134,28 @@
       "id": "RES-035",
       "name": "ФЕЦ „Карлово Солар БГ“ — Дъбене",
       "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED",
+      "name": "ФЕЦ югозападно от Сливен — неидентифициран",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-SLIVEN-DINAMO",
+      "name": "ФЕЦ „Динамо“ – Сливен",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
+      "id": "SOL-CHERGANOVO-WEST-UNIDENTIFIED",
+      "name": "ФЕЦ западно от Черганово — неидентифициран",
+      "reason": "capacity_not_published_or_not_above_1_MW"
     }
   ],
   "counts": {
-    "operating": 592,
-    "construction": 9,
-    "planned": 28
+    "operating": 591,
+    "construction": 7,
+    "planned": 29
   },
-  "withoutGeometry": 526
+  "withoutGeometry": 463,
+  "reconciledAt": "2026-10-21T18:35:55.844237+00:00"
 }

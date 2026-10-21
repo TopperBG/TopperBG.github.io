@@ -1646,6 +1646,7 @@ svg {
       <div class="viz-row bgwf-legend" aria-label="Филтър по години и пожарни източници"></div>
     </div>
     <div class="bgwf-filter-strip bgwf-search-strip">
+      <a class="btn" href="./renewables.html" data-renewables-list target="_blank" rel="noopener" title="Пълен опис на ВЕИ с филтри по технология, статус и мощност">Лист ВЕИ</a>
       <span class="bgwf-control-label">Търси</span>
       <div class="bgwf-search" data-map-search>
         <label class="bgwf-sr-only" for="bgwf-search-input">Търсене на обект</label>
@@ -7781,14 +7782,13 @@ async function loadRenewableCache(){
       const p=raw.properties||{};
       if(!['solar','wind'].includes(p.technology)||!raw.geometry||!(Number(p.mw)>1))continue;
       const f=cloneGeoFeature(raw);
-      const project={...p,statusLabel:`${p.statusLabel||p.status} · ${p.technology} · ${p.geometryQuality==='location-only'?'приблизително местоположение':'геометрия по източника'}`};
+      const project={...p,statusLabel:`${p.statusLabel||p.status} · ${p.technology} · ${p.geometryQuality==='parcel-location'?`точка в потвърден ПИ ${p.locationParcelRef||''} (част от обекта)`:p.geometryQuality==='location-only'?'приблизително местоположение':'геометрия по източника'}`};
       f.setId(p.id);f.set('kind','renewable-cache');
       f.set('status',p.status);f.set('data',{project,parcelRef:'',layerType:p.status==='operating'?'solar':'projects'});rows.push(f);
     }
     renewableCacheCandidates=rows;reconcileRenewableCache();
-    const link=document.createElement('a');link.className='btn';link.href='./renewables.html';link.target='_blank';link.rel='noopener';
-    link.textContent=`ВЕИ >1 MW (${payload.features.length})`;link.title='Пълен опис на ВЕИ, включително ВЕЦ, ПАВЕЦ, биоенергия и обекти без координати';
-    const host=root.querySelector('.bgwf-search-strip');(host||root).appendChild(link);
+    const link=root.querySelector('[data-renewables-list]');
+    if(link)link.title=`Пълен опис на ${payload.features.length} ВЕИ с филтри по мощност, технология и статус`;
   }catch(e){dbgWarn('renewable-cache',{error:e.message});}
 }
 void loadRenewableCache();
