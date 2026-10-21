@@ -1,0 +1,161 @@
+#!/usr/bin/env python3
+"""Central BG renewable inventory. Unknown locations remain valid null GeoJSON geometry.
+Only explicitly published capacities >1 MW; no estimates from land area.
+"""
+import argparse
+import concurrent.futures
+import datetime as dt
+import hashlib
+import html
+import importlib.util
+import json
+import math
+from pathlib import Path
+import re
+import subprocess
+import urllib.request
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'map/data/bg-renewables-cache-v1.geojson'
+HEALTH = ROOT / 'map/data/bg-renewables-health-v1.json'
+TECHS = {
+ 'photovoltaic-power-plants-with-power-over-1-mw': 'solar',
+ 'wind-power-plants-with-power-over-1-mw': 'wind',
+ 'hydropower-plants-with-power-over-1-mw': 'hydro',
+ 'micro-hydropower-plants-with-power-over-1-mw': 'hydro',
+ 'pumped-accumulating-hydropower-plants-with-power-over-1-mw': 'pumped_hydro',
+ 'biomass-power-plants-with-power-over-4-mw': 'biomass',
+ 'renewable-gas-power-plants-sources-with-power-over-1-mw': 'biogas',
+}
+# Explicit user correction: do not reintroduce the removed object automatically.
+EXCLUDED = {'https://www.veiregistar.bg/object/fets-zlaten-lev-solar'}
+
+def text(s):
+ return ' '.join(html.unescape(re.sub('<[^>]+>', ' ', s)).split())
+
+def feature(p, geometry=None):
+ return {'type':'Feature', 'id':p['id'], 'properties':p, 'geometry':geometry}
+
+def embedded():
+ js = r'''const fs=require('fs'),vm=require('vm');const h=fs.readFileSync(process.argv[1],'utf8');let out={};for(const name of ['operatingSolarProjects','operatingWindProjects','cadastralProjects','CURATED_SOLAR_FOOTPRINTS']){const m=h.match(new RegExp('(?:const|let)\\s+'+name+'\\s*=\\s*(\\[[\\s\\S]*?\\n\\s*\\]);'));if(!m)throw Error(name);out[name]=vm.runInNewContext('('+m[1]+')',{}, {timeout:1000});}console.log(JSON.stringify(out));'''
+ data=json.loads(subprocess.check_output(['node','-e',js,str(ROOT/'map/index.html')]))
+ footprints={p['id']:p for p in data['CURATED_SOLAR_FOOTPRINTS']}
+ result=[]; skipped=[]
+ for group, tech, status in [('operatingSolarProjects','solar','operating'),('operatingWindProjects','wind','operating'),('cadastralProjects',None,'planned')]:
+  for row in data[group]:
+   if row.get('assetType')=='substation': continue
+   mw=next((row[k] for k in ('mwAc','mwpDc','mw','mwMin') if isinstance(row.get(k),(int,float))),None)
+   if mw is None:
+    # Capacity text is accepted only with an explicit unit, never from parcel areas.
+    m=re.search(r'(\d+(?:[.,]\d+)?)\s*(MWp?|МВт)\b',row.get('statusLabel',''),re.I)
+    if m: mw=float(m[1].replace(',','.'))
+   if mw is None or mw<=1:
+    skipped.append({'id':row['id'],'name':row['name'],'reason':'capacity_not_published_or_not_above_1_MW'});continue
+   source=row.get('source','')
+   if source in EXCLUDED: continue
+   geom=footprints.get(row['id'],{}).get('geometry')
+   quality='footprint' if geom else 'unknown'
+   if not geom and all(isinstance(row.get(k),(int,float)) for k in ('lon','lat')):
+    geom={'type':'Point','coordinates':[row['lon'],row['lat']]};quality='location-only'
+   p=dict(row,technology=row.get('technology') or tech or ('wind' if re.search('вят|ВяЕЦ',row['name'],re.I) else 'solar'),status=row.get('status',status),mw=mw,countryCode='BG',geometryQuality=quality,sourceMode='curated',capacityBasis='AC' if 'mwAc' in row else 'DC' if 'mwpDc' in row else 'unspecified')
+   p['sourceStatus']=p['status'];p['status']='planned' if p['status']=='approved' else p['status']
+   p.pop('geometry',None);result.append(feature(p,geom))
+ return result,skipped
+
+def get(url):
+ req=urllib.request.Request(url,headers={'User-Agent':'EnergoKarta-BG-inventory/1.0 (+https://topperbg.github.io/map/)'})
+ with urllib.request.urlopen(req,timeout=30) as response:return response.read().decode('utf-8')
+
+def registry_category(item):
+ category,tech=item; base='https://www.veiregistar.bg/objects&type='+category
+ first=get(base)
+ pages={1}|{int(n) for n in re.findall(r'&(?:amp;)?page=(\d+)',first)}
+ result=[]
+ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+  bodies=[first]+list(pool.map(get,[base+'&page='+str(page) for page in range(2,max(pages)+1)]))
+ for page,body in enumerate(bodies,1):
+  cards=re.findall(r'<a\b[^>]*href="(https://www\.veiregistar\.bg/object/[^"]+)"[^>]*>(.*?)</a>',body,re.S)
+  if not cards: raise ValueError('No registry cards: '+base+' page '+str(page))
+  for url,card in cards:
+   if url in EXCLUDED:continue
+   title=re.search(r'<h3\b[^>]*>(.*?)</h3>',card,re.S)
+   power=re.search(r'([\d.,]+)\s*МВт',text(card))
+   if not title or not power:raise ValueError('Unrecognized registry card: '+url)
+   mw=float(power[1].replace(',','.'))
+   if mw<=1:continue
+   result.append(feature({'id':'VEIREG-'+url.rsplit('/',1)[1],'name':text(title[1]),'mw':mw,'capacityBasis':'unspecified','technology':tech,'status':'operating','statusLabel':text(card),'source':url,'countryCode':'BG','sourceMode':'veiregistar','geometryQuality':'unknown'}))
+ return result
+
+def osm():
+ spec=importlib.util.spec_from_file_location('foreign',ROOT/'scripts/refresh-foreign-renewables.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ query='[out:json][timeout:150];area["ISO3166-1"="BG"][admin_level=2]->.a;('
+ for key in ('power','construction:power','proposed:power','planned:power'):
+  query+=f'nwr(area.a)["{key}"="plant"];'
+ query+=');out tags center;'
+ result=[]
+ for el in m.request_overpass(query).get('elements',[]):
+  tags=el.get('tags',{});raw=' '.join(str(tags.get(k,'')) for k in ('plant:source','generator:source')).lower()
+  tech=next((t for token,t in [('solar','solar'),('wind','wind'),('hydro','hydro'),('biomass','biomass'),('biogas','biogas'),('geothermal','geothermal')] if token in raw),None)
+  if not tech or any(k.startswith(('disused:','abandoned:','demolished:')) and v=='plant' for k,v in tags.items()):continue
+  mw=None
+  for key in m.CAPACITY_KEYS:
+   power=re.fullmatch(r'\s*(\d+(?:[.,]\d+)?)\s*(GW|MW|kW|W)\s*',str(tags.get(key,'')),re.I)
+   if power:
+    mw=float(power[1].replace(',','.'))*{'gw':1000,'mw':1,'kw':0.001,'w':0.000001}[power[2].lower()];break
+  if mw is None or mw<=1:continue
+  if tags.get('status') in ('decommissioned','abandoned','disused','demolished'):continue
+  if tech=='hydro' and 'pumped' in str(tags.get('plant:method','')):tech='pumped_hydro'
+  status,label=m.lifecycle_status(tags);point=m.element_point(el)
+  result.append(feature({'id':'OSM-BG-'+m.osm_id(el),'name':tags.get('name') or tags.get('operator') or 'OSM '+m.osm_id(el),'mw':mw,'capacityBasis':'unspecified','technology':tech,'status':status,'statusLabel':label+' · OpenStreetMap','source':f"https://www.openstreetmap.org/{el['type']}/{el['id']}",'countryCode':'BG','sourceMode':'osm','geometryQuality':'location-only' if point else 'unknown'}, {'type':'Point','coordinates':list(point)} if point else None))
+ return result
+
+def merge(rows):
+ result=[];by_source={};by_id={}
+ for f in rows:
+  p=f['properties'];ident=p['id'];urls=[p.get(k) for k in ('source','secondarySource') if p.get(k)]
+  match=by_id.get(ident)
+  if match is None:match=next((by_source[u] for u in urls if u in by_source),None)
+  if match is not None:
+   old=result[match]['properties'];old['sources']=sorted(set(old.get('sources',[])+urls))
+   if not result[match]['geometry'] and f['geometry']:result[match]['geometry']=f['geometry'];old['geometryQuality']=p.get('geometryQuality','location-only')
+   continue
+  by_id[ident]=len(result)
+  for u in urls:by_source[u]=len(result)
+  result.append(f)
+ # Cross-source overlaps without a shared identifier are flagged, never silently summed.
+ def norm(s):return re.sub(r'[^\w]','',s.lower())
+ groups={}
+ for f in result:groups.setdefault(norm(f['properties']['name']),[]).append(f)
+ for g in groups.values():
+  if len(g)>1:
+   for f in g:f['properties']['possibleDuplicateIds']=[x['id'] for x in g if x is not f]
+ return sorted(result,key=lambda f:f['id'])
+
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--offline',action='store_true');args=ap.parse_args()
+ previous=json.loads(OUT.read_text()) if OUT.exists() else {'features':[]}
+ rows,skipped=embedded();health={'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'sources':{},'excludedCapacityUnknown':skipped}
+ for mode,fn in [*[(f'veiregistar:{category}',lambda c=category,t=tech:registry_category((c,t))) for category,tech in TECHS.items()],('osm',osm)]:
+  try:
+   if args.offline:raise RuntimeError('offline: remote source not checked')
+   batch=fn();assert batch,'Empty source response'
+   for f in batch:
+    f['properties']['sourceMode']=mode
+    f['properties']['retrievedAt']=health['checkedAt']
+   print(mode+': '+str(len(batch))+' records',flush=True)
+   rows+=batch;health['sources'][mode]={'status':'ok','records':len(batch)}
+  except Exception as exc:
+   retained=[f for f in previous['features'] if f['properties'].get('sourceMode')==mode];rows+=retained
+   health['sources'][mode]={'status':'stale' if retained else 'unavailable','error':str(exc),'retained':len(retained)}
+ rows=merge(rows)
+ for f in rows:
+  p=f['properties'];assert math.isfinite(p['mw']) and p['mw']>1 and p['source'].startswith('https://')
+  assert p['status'] in ('operating','construction','planned')
+  if f['geometry'] and f['geometry']['type']=='Point':
+   lon,lat=f['geometry']['coordinates'];assert 22<lon<29 and 41<lat<45
+ payload={'type':'FeatureCollection','schema':'bgwf-bg-renewables-cache-v1','generatedAt':health['checkedAt'],'scope':'Bulgaria; explicitly published capacity >1 MW','coverage':'partial; discovery sources are not an exhaustive national register','aggregation':'Do not sum AC/DC, pumped storage or unresolved cross-source duplicates together.','features':rows}
+ OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n')
+ health['counts']={s:sum(f['properties']['status']==s for f in rows) for s in ('operating','construction','planned')};health['withoutGeometry']=sum(f['geometry'] is None for f in rows)
+ HEALTH.write_text(json.dumps(health,ensure_ascii=False,indent=2)+'\n');print(json.dumps(health,ensure_ascii=False))
+
+if __name__=='__main__':main()
