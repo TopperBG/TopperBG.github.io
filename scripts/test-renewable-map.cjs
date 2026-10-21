@@ -21,7 +21,7 @@ async function main(){
   c.CURATED_SOLAR_FOOTPRINTS.push({id:'known-identity',source:'https://example.org/other',parcelRef:'OSM-W123456789012',geometry:{type:'Polygon',coordinates:[[[23,43],[23.01,43],[23.01,43.01],[23,43.01],[23,43]]]}});
   c.fetch=async()=>({ok:true,json:async()=>({...payload,features:[...payload.features,...fixtures]})});
   const start=html.indexOf('// The inventory retains every technology;');
-  vm.runInContext(html.slice(start,html.indexOf('// Initial state\n',start))+'\nglobalThis.cacheSource=renewableCacheSource;globalThis.cacheLayer=renewableCacheLayer;',c);
+  vm.runInContext(html.slice(start,html.indexOf('// Load status wiring:',start))+'\nvoid loadRenewableCache();'+'\nglobalThis.cacheSource=renewableCacheSource;globalThis.cacheLayer=renewableCacheLayer;',c);
   await new Promise(r=>setTimeout(r,0));
   const has=id=>!!c.cacheSource.getFeatureById(id);
   assert(has('inside-late'));assert(has('outside'));assert(!has('hydro-fixture'));assert(!has('bio-fixture'));assert(!has('identity-fixture'));

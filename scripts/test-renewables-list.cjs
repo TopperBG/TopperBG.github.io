@@ -16,7 +16,7 @@ async function run(){
  const belmeken=check('375','pumped_hydro','','Белмекен');assert.equal(belmeken.length,1);assert(belmeken[0].geometry);assert.equal(belmeken[0].properties.mw,375);
  const orfey=check('160','pumped_hydro','','Орфей');assert.equal(orfey.length,1);assert(orfey[0].geometry);
  check('');assert.equal(elements.rows.children.length,payload.features.length);
- assert.equal((mapHtml.match(/data-renewables-list(?:\s|>)/g)||[]).length,1);assert(/href="\.\/renewables.html"[^>]*data-renewables-list[^>]*>Лист ВЕИ<\/a>/.test(mapHtml));
+ assert.equal((mapHtml.match(/data-renewables-list(?:\s|>)/g)||[]).length,1);assert(/href="\.\/renewables.html"[^>]*data-renewables-list[^>]*>Лист ВЕИ обекти<\/a>/.test(mapHtml));
  console.log('PASS: inclusive minimum MW filter, decimal threshold, combined filters, reset, merged hydro rows with coordinates, persistent Лист ВЕИ link.');
 }
 run().catch(e=>{console.error(e.message);process.exitCode=1;});

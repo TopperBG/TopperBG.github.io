@@ -1646,7 +1646,7 @@ svg {
       <div class="viz-row bgwf-legend" aria-label="Филтър по години и пожарни източници"></div>
     </div>
     <div class="bgwf-filter-strip bgwf-search-strip">
-      <a class="btn" href="./renewables.html" data-renewables-list target="_blank" rel="noopener" title="Пълен опис на ВЕИ с филтри по технология, статус и мощност">Лист ВЕИ</a>
+      <a class="btn" href="./renewables.html" data-renewables-list target="_blank" rel="noopener" title="Пълен опис на ВЕИ с филтри по технология, статус и мощност">Лист ВЕИ обекти</a>
       <span class="bgwf-control-label">Търси</span>
       <div class="bgwf-search" data-map-search>
         <label class="bgwf-sr-only" for="bgwf-search-input">Търсене на обект</label>
@@ -1662,7 +1662,7 @@ svg {
       <span class="bgwf-control-label">Слоеве</span>
       <div class="viz-row bgwf-layer-controls" aria-label="Слоеве на картата"></div>
     </div>
-    <div class="bgwf-map-loadbar" data-map-loadbar aria-hidden="true">
+    <div class="bgwf-map-loadbar" data-map-loadbar role="progressbar" aria-label="Зареждане на заявените геометрии" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
       <div class="bgwf-map-loadbar-fill" data-map-loadbar-fill></div>
     </div>
     <div class="bgwf-status-row">
@@ -2271,6 +2271,31 @@ svg {
 #bg-wildfires-map .bgwf-layer-row-a,
 #bg-wildfires-map .bgwf-layer-row-b{display:flex;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:.35rem;width:100%;overflow:visible;z-index:1!important}
 #bg-wildfires-map .bgwf-layer-row-b{margin-top:.28rem}
+/* Keep list, label and input on one row, including narrow phones. */
+#bg-wildfires-map .bgwf-filter-strip.bgwf-search-strip{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:center;gap:.35rem}
+#bg-wildfires-map .bgwf-search-strip [data-renewables-list]{height:28px;min-height:28px;white-space:nowrap;font-size:11px;padding-inline:.5rem}
+#bg-wildfires-map .bgwf-search-strip .bgwf-control-label{min-width:0}
+#bg-wildfires-map .bgwf-search-strip .bgwf-search{max-width:none}
+#bg-wildfires-map .bgwf-search-strip .bgwf-search-input{min-width:0;width:100%}
+@media(max-width:520px){
+ #bg-wildfires-map .bgwf-filter-strip.bgwf-search-strip{gap:.25rem}
+ #bg-wildfires-map .bgwf-search-strip [data-renewables-list]{font-size:9px;padding-inline:.3rem}
+ #bg-wildfires-map .bgwf-search-strip .bgwf-control-label{font-size:9px;padding:0}
+}
+/* Full button backgrounds show loading, independently of aria-pressed selection. */
+#bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]{
+ background:linear-gradient(90deg,hsl(var(--load-hue,0) 65% 86% / .94) 0 var(--load-progress,0%),hsl(var(--load-hue,0) 65% 95% / .9) var(--load-progress,0%) 100%)!important;
+ color:#182331;transition:background 220ms ease,opacity 120ms ease;animation:bgwf-source-pulse 1.3s ease-in-out infinite
+}
+#bg-wildfires-map .bgwf-layer-toggle[data-load-state="ready"]{background:#dcfce7!important;color:#14532d}
+#bg-wildfires-map .bgwf-layer-toggle[data-load-state="warning"]{background:#fef3c7!important;color:#78350f}
+#bg-wildfires-map .bgwf-layer-toggle[data-load-state="error"]{background:#fee2e2!important;color:#7f1d1d}
+#bg-wildfires-map .bgwf-layer-toggle[aria-pressed="true"]{box-shadow:inset 0 0 0 2px #172033!important;font-weight:800}
+#bg-wildfires-map .bgwf-map-loadbar.is-ready{opacity:1;background:#dcfce7}
+#bg-wildfires-map .bgwf-map-loadbar.is-ready .bgwf-map-loadbar-fill{width:100%;background:#16a34a;box-shadow:none}
+#bg-wildfires-map .bgwf-map-loadbar.is-active{background:#fee2e2}
+@keyframes bgwf-source-pulse{50%{filter:brightness(.97)}}
+@media(prefers-reduced-motion:reduce){#bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]{animation:none}}
 #bg-wildfires-map .bgwf-search-strip .bgwf-search{flex:1 1 auto;min-width:0;width:auto;margin:0}
 #bg-wildfires-map .bgwf-search-strip .bgwf-search-box{width:100%}
 @media (max-width:700px){
@@ -4562,15 +4587,68 @@ function colorWithAlpha(color,alpha){const nums=String(color).match(/[\d.]+/g)?.
 const fireYearPalette=['rgb(124 109 176)','rgb(79 143 184)','rgb(53 167 122)','rgb(239 181 66)','rgb(223 107 67)','rgb(181 79 103)'];
 const yearColors = new Map(years.map((year,i)=>[year,fireYearPalette[i]]));
 
-function setFilterPanelLoading(isLoading){filterPanel?.classList.toggle('is-ready',!isLoading);}
+// Requested sources share one completion model; inactive lazy layers do not block it.
+const mapLoadTasks=new Map();
+const layerLoadStates=new Map();
+function loadStateSummary(items){
+  if(!items.length)return {state:'idle',progress:0};
+  const pending=items.some(item=>item.pending||item.state==='loading');
+  const failed=items.some(item=>['warning','error'].includes(item.state));
+  const progress=items.reduce((sum,item)=>sum+(Number(item.progress)||0),0)/items.length;
+  return {state:pending?'loading':failed?'warning':'ready',progress:pending?Math.min(99,progress):100};
+}
+function renderMapLoadIndicators(){
+  const summary=loadStateSummary([...mapLoadTasks.values()]);
+  if(mapLoadbar&&mapLoadbarFill){
+    mapLoadbar.dataset.loadState=summary.state;
+    mapLoadbar.classList.toggle('is-active',summary.state==='loading');
+    mapLoadbar.classList.toggle('is-ready',summary.state==='ready');
+    mapLoadbar.classList.toggle('is-warning',summary.state==='warning');
+    mapLoadbarFill.style.width=`${summary.progress}%`;
+    mapLoadbarFill.style.background=summary.state==='ready'?'#16a34a':summary.state==='warning'?'#f59e0b':`hsl(${Math.round(summary.progress*1.1)} 70% 44%)`;
+    const label=summary.state==='ready'?'Всички заявени геометрии са заредени':summary.state==='warning'?'Зареждането приключи с липсващи геометрии или грешки':`Зареждане на геометрии: ${Math.round(summary.progress)}%`;
+    mapLoadbar.title=label;mapLoadbar.setAttribute('aria-valuenow',String(Math.round(summary.progress)));mapLoadbar.setAttribute('aria-valuetext',label);
+  }
+  filterPanel?.classList.toggle('is-loading',summary.state==='loading');
+  filterPanel?.classList.toggle('is-ready',summary.state==='ready');
+  filterPanel?.classList.toggle('is-warning',summary.state==='warning');
+  for(const button of root.querySelectorAll('.bgwf-layer-toggle[data-layer]')){
+    const key=button.dataset.layer;
+    const tasks=[...mapLoadTasks.values()].filter(task=>task.keys.includes(key));
+    const status=tasks.length?loadStateSummary(tasks):(layerLoadStates.get(key)||{state:'idle',progress:0});
+    button.dataset.loadState=status.state;button.style.setProperty('--load-progress',`${status.progress}%`);button.style.setProperty('--load-hue',String(Math.round(status.progress*1.1)));
+    button.setAttribute('aria-busy',String(status.state==='loading'));
+    button.setAttribute('aria-description',status.state==='ready'?'Данните са заредени':status.state==='loading'?`Зареждане ${Math.round(status.progress)}%`:status.state==='warning'||status.state==='error'?'Има липсващи геометрии или грешка':'Данните ще се заредят при включване');
+  }
+}
+function setMapLoadTask(id,keys,state,progress=0,pending=false){
+  mapLoadTasks.set(id,{keys,state,progress:Math.max(0,Math.min(100,Number(progress)||0)),pending});renderMapLoadIndicators();
+}
+function setFilterPanelLoading(isLoading){
+  if(isLoading)setMapLoadTask('cadastre',['solar','projects'],'loading',0,true);
+  else renderMapLoadIndicators();
+}
 function setMapLoadProgress(percent,state='loading'){
-  if(!mapLoadbar||!mapLoadbarFill)return; const value=Math.max(0,Math.min(100,Number(percent)||0));
-  mapLoadbarFill.style.width=`${value}%`; mapLoadbar.classList.toggle('is-active',state==='loading');
-  mapLoadbar.classList.toggle('is-warning',state==='warning'); if(state==='ready') mapLoadbar.classList.remove('is-active','is-warning');
+  const previous=mapLoadTasks.get('cadastre');
+  setMapLoadTask('cadastre',['solar','projects'],state,percent,previous?.pending??state==='loading');
 }
 function setLayerLoadState(layerKey,state,title=''){
-  const button=root.querySelector(`.bgwf-layer-toggle[data-layer="${layerKey}"]`); if(!button)return;
-  button.dataset.loadState=state; if(title)button.title=title; else button.removeAttribute('title');
+  layerLoadStates.set(layerKey,{state,progress:state==='ready'?100:0});
+  const button=root.querySelector(`.bgwf-layer-toggle[data-layer="${layerKey}"]`);
+  if(button){if(title)button.title=title;else button.removeAttribute('title');}
+  renderMapLoadIndicators();
+}
+function trackMapLoader(id,keys,loader,resultState=()=> 'ready'){
+  let pending=null;
+  return function(...args){
+    if(pending)return pending;
+    setMapLoadTask(id,keys,'loading',0,true);
+    pending=Promise.resolve().then(()=>loader.apply(this,args)).then(result=>{
+      const state=resultState(result);
+      setMapLoadTask(id,keys,state==='ready'?'ready':'warning',100,false);return result;
+    },error=>{setMapLoadTask(id,keys,'error',100,false);throw error;}).finally(()=>{pending=null;});
+    return pending;
+  };
 }
 function updateProvinceChipPosition(){
   if(!provinceChip||!filterPanel||!mapWrap)return;
@@ -7369,8 +7447,7 @@ configs.forEach(([key,label,color,help])=>{
     if(key==='industry'){
       industryLayer.setVisible(layerVisibility.industry);if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
       concessionEstimateLayer.setVisible(layerVisibility.industry);concessionLayer.setVisible(layerVisibility.industry);rebuildEstimatedConcessionAreas();
-      if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints(),0);
-      if(layerVisibility.industry)void Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
+      if(layerVisibility.industry)void Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons(),loadStaticIndustrialFootprints()]);
     }
     updateLayerStatus();updateTerritoryScaleBars();scheduleNaturaOverlapUpdate();scheduleUrlSync();
   }});
@@ -7791,13 +7868,29 @@ async function loadRenewableCache(){
     if(link)link.title=`Пълен опис на ${payload.features.length} ВЕИ с филтри по мощност, технология и статус`;
   }catch(e){dbgWarn('renewable-cache',{error:e.message});}
 }
+// Load status wiring: cached and online completion follow the same path.
+loadProjectParcels=trackMapLoader('cadastre',['solar','projects'],loadProjectParcels,()=>cadastralLoadErrors?'warning':'ready');
+loadRenewableCache=trackMapLoader('renewable-cache',['solar','wind','projects'],loadRenewableCache,()=>window.bgwfRenewableInventory?'ready':'warning');
+ensureNatura2000=trackMapLoader('natura',['natura'],ensureNatura2000,()=>naturaLoadState);
+ensureEpmLines=trackMapLoader('epm',['epm'],ensureEpmLines,()=>epmLoadState);
+ensureForeignRenewableCache=trackMapLoader('foreign-cache',['foreign'],ensureForeignRenewableCache,()=>foreignCacheLoadState);
+ensureForeignOsmPolygons=trackMapLoader('foreign-polygons',['foreign'],ensureForeignOsmPolygons,()=>foreignOsmLoadState);
+ensureIndustrialPolygons=trackMapLoader('industry-polygons',['industry'],ensureIndustrialPolygons,()=>industrialPolygonLoadState==='ready'&&!industrialPolygonLoadError?'ready':'warning');
+ensureOfficialConcessionPolygons=trackMapLoader('concessions',['industry'],ensureOfficialConcessionPolygons,()=>officialConcessionLoadState==='ready'&&!officialConcessionLoadError?'ready':'warning');
+loadStaticIndustrialFootprints=trackMapLoader('industry-cache',['industry'],loadStaticIndustrialFootprints,()=>debugState.network.industryStatic?.ok&&!debugState.network.industryStatic?.pending?'ready':'warning');
+showEffisPerimeter=trackMapLoader('effis',[],showEffisPerimeter,result=>result?'ready':'warning');
+findKkkrParcel=trackMapLoader('parcel-search',[],findKkkrParcel,result=>result?'ready':'warning');
+// The cadastre starts on a short timer; count this queued request immediately.
+setMapLoadTask('cadastre',['solar','projects'],'loading',0,true);
+if(layerVisibility.industry)setMapLoadTask('industry-cache',['industry'],'loading',0,true);
+setLayerLoadState('wind','ready');setLayerLoadState('future','ready');
 void loadRenewableCache();
 
 // Initial state
 compactYearFilterButtons();
 void loadSourceHealth();
 updateFiresAndDensity();updateLayerStatus();updateFloatingUiPosition();void showGoatCounter();
-if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons()]);
+if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons(),loadStaticIndustrialFootprints()]);
 if(layerVisibility.natura)void ensureNatura2000().catch(()=>{});
 void ensureForeignRenewableCache().catch(()=>{});
 if(layerVisibility.epm)void ensureEpmLines();
@@ -7811,7 +7904,6 @@ setTimeout(()=>{
   mapTarget.classList.remove('is-loading');
   dbg('initial-ready',{ms:debugState.timings.initialReady});
   window.__bgwfReady=true;
-  if(layerVisibility.industry)setTimeout(()=>void loadStaticIndustrialFootprints(),900);
   window.dispatchEvent(new CustomEvent('bgwf:ready',{detail:snapshotDebug()}));
 },700);
 </script>
