@@ -2282,20 +2282,14 @@ svg {
  #bg-wildfires-map .bgwf-search-strip [data-renewables-list]{font-size:9px;padding-inline:.3rem}
  #bg-wildfires-map .bgwf-search-strip .bgwf-control-label{font-size:9px;padding:0}
 }
-/* Full button backgrounds show loading, independently of aria-pressed selection. */
-#bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]{
- background:linear-gradient(90deg,hsl(var(--load-hue,0) 65% 86% / .94) 0 var(--load-progress,0%),hsl(var(--load-hue,0) 65% 95% / .9) var(--load-progress,0%) 100%)!important;
- color:#182331;transition:background 220ms ease,opacity 120ms ease;animation:bgwf-source-pulse 1.3s ease-in-out infinite
-}
-#bg-wildfires-map .bgwf-layer-toggle[data-load-state="ready"]{background:#dcfce7!important;color:#14532d}
-#bg-wildfires-map .bgwf-layer-toggle[data-load-state="warning"]{background:#fef3c7!important;color:#78350f}
-#bg-wildfires-map .bgwf-layer-toggle[data-load-state="error"]{background:#fee2e2!important;color:#7f1d1d}
-#bg-wildfires-map .bgwf-layer-toggle[aria-pressed="true"]{box-shadow:inset 0 0 0 2px #172033!important;font-weight:800}
+/* The translucent control strip carries loading colour; button colours stay unchanged. */
+#bg-wildfires-map .bgwf-floating-controls{transition:background-color 350ms ease}
+#bg-wildfires-map .bgwf-floating-controls[data-load-state="loading"]{background-color:hsl(var(--source-load-hue,0) 75% 88% / .60)!important}
+#bg-wildfires-map .bgwf-floating-controls[data-load-state="ready"]{background-color:rgb(187 247 208 / .64)!important}
+#bg-wildfires-map .bgwf-floating-controls[data-load-state="warning"]{background-color:rgb(254 240 138 / .64)!important}
 #bg-wildfires-map .bgwf-map-loadbar.is-ready{opacity:1;background:#dcfce7}
 #bg-wildfires-map .bgwf-map-loadbar.is-ready .bgwf-map-loadbar-fill{width:100%;background:#16a34a;box-shadow:none}
 #bg-wildfires-map .bgwf-map-loadbar.is-active{background:#fee2e2}
-@keyframes bgwf-source-pulse{50%{filter:brightness(.97)}}
-@media(prefers-reduced-motion:reduce){#bg-wildfires-map .bgwf-layer-toggle[data-load-state="loading"]{animation:none}}
 #bg-wildfires-map .bgwf-search-strip .bgwf-search{flex:1 1 auto;min-width:0;width:auto;margin:0}
 #bg-wildfires-map .bgwf-search-strip .bgwf-search-box{width:100%}
 @media (max-width:700px){
@@ -4608,6 +4602,10 @@ function renderMapLoadIndicators(){
     mapLoadbarFill.style.background=summary.state==='ready'?'#16a34a':summary.state==='warning'?'#f59e0b':`hsl(${Math.round(summary.progress*1.1)} 70% 44%)`;
     const label=summary.state==='ready'?'Всички заявени геометрии са заредени':summary.state==='warning'?'Зареждането приключи с липсващи геометрии или грешки':`Зареждане на геометрии: ${Math.round(summary.progress)}%`;
     mapLoadbar.title=label;mapLoadbar.setAttribute('aria-valuenow',String(Math.round(summary.progress)));mapLoadbar.setAttribute('aria-valuetext',label);
+  }
+  if(filterPanel){
+    filterPanel.dataset.loadState=summary.state;
+    filterPanel.style.setProperty('--source-load-hue',String(Math.round(summary.progress*1.1)));
   }
   filterPanel?.classList.toggle('is-loading',summary.state==='loading');
   filterPanel?.classList.toggle('is-ready',summary.state==='ready');
