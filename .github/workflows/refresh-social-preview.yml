@@ -44,4 +44,8 @@ jobs:
           git add map/assets/energokarta-preview.jpg
           git commit -m "Refresh EnergoKarta social preview"
           git pull --rebase origin main
+          python scripts/bump-map-version.py
+          python scripts/bump-map-version.py --check
+          git add map/data/map-version.json map/index.html map/renewables.html
+          git commit --amend --no-edit
           git push

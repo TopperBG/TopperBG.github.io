@@ -77,6 +77,10 @@ jobs:
           fi
           git add "$FILE"
           git commit -m "Refresh Foreign renewable cache"
+          python scripts/bump-map-version.py
+          python scripts/bump-map-version.py --check
+          git add map/data/map-version.json map/index.html map/renewables.html
+          git commit --amend --no-edit
           if git push origin HEAD:main; then
             exit 0
           fi
@@ -91,6 +95,10 @@ jobs:
             fi
             git add "$FILE"
             git commit -m "Refresh Foreign renewable cache"
+            python scripts/bump-map-version.py
+            python scripts/bump-map-version.py --check
+            git add map/data/map-version.json map/index.html map/renewables.html
+            git commit --amend --no-edit
             if git push origin HEAD:main; then
               exit 0
             fi

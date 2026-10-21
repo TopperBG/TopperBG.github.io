@@ -36,4 +36,8 @@ jobs:
           git add map/data/natura-2000-bg-v1.json map/data/natura-2000-bg-v1-part-*.geojson
           git commit -m "Refresh Natura 2000 snapshot"
           git pull --rebase origin main
+          python scripts/bump-map-version.py
+          python scripts/bump-map-version.py --check
+          git add map/data/map-version.json map/index.html map/renewables.html
+          git commit --amend --no-edit
           git push

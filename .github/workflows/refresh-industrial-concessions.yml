@@ -177,6 +177,10 @@ jobs:
           # external checks. Only rebuild if main moved and the push races.
           git add "${TRACKED_GENERATED[@]}"
           git commit -m "Refresh national concession source health"
+          python scripts/bump-map-version.py
+          python scripts/bump-map-version.py --check
+          git add map/data/map-version.json map/index.html map/renewables.html
+          git commit --amend --no-edit
           if git push origin HEAD:main; then
             exit 0
           fi
@@ -202,6 +206,10 @@ jobs:
 
             git add "${TRACKED_GENERATED[@]}"
             git commit -m "Refresh national concession source health"
+            python scripts/bump-map-version.py
+            python scripts/bump-map-version.py --check
+            git add map/data/map-version.json map/index.html map/renewables.html
+            git commit --amend --no-edit
             if git push origin HEAD:main; then
               exit 0
             fi

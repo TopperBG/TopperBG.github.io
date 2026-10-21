@@ -22,6 +22,25 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - name: Remove the merged PR 4 branch if unchanged
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[cleanup-merged-inventory]')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          if ! cleanup_branch_sha=$(gh api "repos/$GH_REPO/git/ref/heads/feat/national-renewables-cache" --jq '.object.sha' 2>/dev/null); then
+            echo "Inventory branch already absent."
+            exit 0
+          fi
+          if [ "$cleanup_branch_sha" != "2cda29ae1afe1d1b411994480242d75df467b052" ]; then
+            echo "Inventory branch has newer commits; keeping it."
+            exit 0
+          fi
+          cleanup_pr_merged=$(gh api "repos/$GH_REPO/pulls/4" --jq '.merged')
+          if [ "$cleanup_pr_merged" = "true" ]; then
+            gh api --method DELETE "repos/$GH_REPO/git/refs/heads/feat/national-renewables-cache"
+            echo "Deleted merged inventory branch."
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -42,4 +61,8 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh Bulgaria renewable inventory >1 MW'
           git pull --rebase origin main
+          python scripts/bump-map-version.py
+          python scripts/bump-map-version.py --check
+          git add map/data/map-version.json map/index.html map/renewables.html
+          git commit --amend --no-edit
           git push origin HEAD:main
