@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.95.13">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.13</title>
+<meta name="bgwf-build" content="v0.95.14">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.14</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1636,7 +1636,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.13</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.14</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -3539,6 +3539,15 @@ const INDUSTRIAL_CURATED_AUX = [];
 
 const CURATED_SOLAR_FOOTPRINTS = [
   {
+    id:'SOL-KAOLINOVO-80-171', name:'ФЕЦ „Каолиново“ — отделна съществуваща площадка',
+    status:'operating',
+    statusLabel:'действаща ФЕЦ, отделна от новия хибриден проект · ПИ 36079.80.171 е 148,08 дка, а според общинския ДОВОС панелите заемат около 83 дка · OSM контурът обхваща приблизително 93,7 дка и е ориентировъчен, не кадастрална граница · мощността и операторът на тази конкретна площадка не са потвърдени',
+    source:'https://kaolinovo.bg/wp-content/uploads/2024/11/3.-%D0%94%D0%9E%D0%92%D0%9E%D0%A1-%D0%92%D0%95%D0%9F-%D0%9A%D0%B0%D0%BE%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D0%BE_%D1%84%D0%B8%D0%BD.-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F.pdf',
+    secondarySource:'https://www.openstreetmap.org/way/268907872',
+    parcelRef:'OSM-W268907872', cadastralParcel:'36079.80.171',
+    geometry:{type:'Polygon',coordinates:[[[27.1209976,43.6053168],[27.1254283,43.6051949],[27.1254368,43.6028831],[27.1225277,43.6029391],[27.1209776,43.6030316],[27.1208704,43.6041552],[27.1209976,43.6053168]]]}
+  },
+  {
     id:'SOL-2012-POBEDA', name:'ФЕЦ „Победа“', year:2012, mwpDc:50,
     statusLabel:'действаща ФЕЦ 50 MW по ВЕИ регистъра · в експлоатация от 20.06.2012 г. · OSM отбелязва 51 MW · проверен OSM контур (не е кадастрална граница)',
     source:'https://www.openstreetmap.org/way/469655230', parcelRef:'OSM-W469655230',
@@ -4236,7 +4245,7 @@ const CURATED_INDUSTRIAL_POINTS = [];
           "name": "ФЕЦ „Каолиново – КА620“",
           "year": 2011,
           "mwAc": 4.5,
-          "statusLabel": "действаща · въведена 2011 · точен ПИ по РИОСВ/КККР · реконструирана в същите граници",
+          "statusLabel": "действаща · въведена 2011 · точен ПИ по РИОСВ/КККР · реконструирана в същите граници · показана по изрично искане за всички полета на Каолиново",
           "source": "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
           "parcels": ["72549.44.620"]
       },
@@ -4245,7 +4254,7 @@ const CURATED_INDUSTRIAL_POINTS = [];
           "name": "ФЕЦ „Каолиново – КА9905“",
           "year": 2012,
           "mwAc": 4.5,
-          "statusLabel": "действаща · въведена 2012 · точен ПИ по РИОСВ/КККР · реконструирана в същите граници",
+          "statusLabel": "действаща · въведена 2012 · точен ПИ по РИОСВ/КККР · реконструирана в същите граници · показана по изрично искане за всички полета на Каолиново",
           "source": "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
           "parcels": ["36079.80.9905"]
       },
@@ -4498,6 +4507,11 @@ const CURATED_INDUSTRIAL_POINTS = [];
   }
 
   const LARGE_SOLAR_THRESHOLD_MWP = 10;
+  // Explicitly requested Kaolinovo legacy footprints; other Bulgarian solar
+  // plants still follow the 10 MW map threshold.
+  const KAOLINOVO_LEGACY_FOOTPRINT_IDS = new Set([
+    'SOL-2011-KAOLINOVO-KA620', 'SOL-2012-KAOLINOVO-KA9905', 'SOL-KAOLINOVO-80-171'
+  ]);
   // Foreign is independent of the Bulgarian renewable map threshold.
   const FOREIGN_MIN_CAPACITY_MW = 1;
   function meetsForeignMapThreshold(project){
@@ -4510,6 +4524,7 @@ const CURATED_INDUSTRIAL_POINTS = [];
   }
   // Map-only cutoff: retain smaller plants in the full renewable inventory.
   function meetsRenewableMapThreshold(project){
+    if(KAOLINOVO_LEGACY_FOOTPRINT_IDS.has(project?.id))return true;
     const known=operatingSolarProjects.find(p=>p.id===project?.id);
     const capacity=Number(project?.mwpDc??project?.mwAc??project?.mw??project?.mwMin??project?.mwMax??known?.mwpDc??known?.mwAc??known?.mw);
     return Number.isFinite(capacity)&&capacity>=LARGE_SOLAR_THRESHOLD_MWP;
@@ -4536,7 +4551,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.95.13', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.95.14', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4581,7 +4596,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.13-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.14-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());

@@ -14,6 +14,8 @@ async function main(){
   }
   vm.runInContext(html.slice(html.indexOf('  const LARGE_SOLAR_THRESHOLD_MWP'),html.indexOf('  function hasSolarMapGeometry')),c);
   assert(!c.meetsRenewableMapThreshold({mw:9.99}));assert(c.meetsRenewableMapThreshold({mw:10}));assert(!c.meetsRenewableMapThreshold(c.operatingSolarProjects.find(p=>p.id==='SOL-2012-MARINO-POLE-ALFA')));
+  for(const id of ['SOL-2011-KAOLINOVO-KA620','SOL-2012-KAOLINOVO-KA9905','SOL-KAOLINOVO-80-171'])assert(c.meetsRenewableMapThreshold({id,mw:4.5}),id+' is a scoped map exception');
+  assert(!c.meetsRenewableMapThreshold({id:'unrelated-small-solar',mw:4.5}));
   Object.assign(c,{debugState:{layerCounts:{}},veiDbgStage(){},updateLayerStatus(){},Feature:ol.Feature,Point:ol.geom.Point,CircleGeom:ol.geom.Circle,fromLonLat:ol.proj.fromLonLat});
   vm.runInContext(html.slice(html.indexOf('function renderParcelRows(loaded){'),html.indexOf('async function fetchRowsInBatches')),c);
   c.renderParcelRows([9.99,10].map(mw=>({layerType:'solar',project:{id:'threshold-'+mw,mw},feature:pointGeometry(mw)})));
@@ -21,6 +23,10 @@ async function main(){
   for(const f of [...c.solarSource.getFeatures(),...c.projectSource.getFeatures()])assert(c.meetsRenewableMapThreshold(f.get('data').project));
   assert(c.solarSource.getFeatures().some(f=>f.get('data').project.id==='threshold-10'));
   assert(!c.solarSource.getFeatures().some(f=>f.get('data').project.id==='threshold-9.99'));
+  const kaolinovo=c.solarSource.getFeatures().find(f=>f.get('data').project.id==='SOL-KAOLINOVO-80-171');
+  assert(kaolinovo,'Kaolinovo OSM footprint is rendered');
+  assert.equal(kaolinovo.getGeometry().getType(),'Polygon');
+  assert(kaolinovo.getGeometry().intersectsCoordinate(ol.proj.fromLonLat([27.121985,43.604383])),'User-provided location lies inside the restored footprint');
   c.solarSource.clear();c.projectSource.clear();
   c.windLayer=new ol.layer.Vector({source:c.windSource});
   vm.runInContext(html.slice(html.indexOf('const projectLayer=new VectorLayer({'),html.indexOf('const windLayer=new VectorLayer({')),c);
