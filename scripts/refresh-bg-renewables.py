@@ -18,6 +18,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'map/data/bg-renewables-cache-v1.geojson'
 HEALTH = ROOT / 'map/data/bg-renewables-health-v1.json'
+KAZANLAK_PARCELS = ROOT / 'map/data/kazanlak-solar-official-parcels-v1.geojson'
 TECHS = {
  'photovoltaic-power-plants-with-power-over-1-mw': 'solar',
  'wind-power-plants-with-power-over-1-mw': 'wind',
@@ -188,6 +189,28 @@ def validate_source_batch(mode,batch,previous):
   if before>=10 and len(batch)<before*0.8:
    raise ValueError(f'Registry shrink protection: {len(batch)} records, previously {before}')
 
+def apply_kazanlak_official_parcels(rows):
+ """Keep the published AGKK parcel boundaries through automated OSM refreshes."""
+ parcel_data=json.loads(KAZANLAK_PARCELS.read_text())
+ expected={f'15864.10.{n}' for n in range(1,10)}|{'15864.10.47','87641.69.155','87641.69.190','87641.69.252','87641.69.253','87641.69.334'}
+ parcels=parcel_data['features']
+ refs={f['properties']['nationalcadastralref'] for f in parcels}
+ if refs!=expected or len(parcels)!=len(expected):raise ValueError('Kazanlak AGKK parcel set changed')
+ for parcel in parcels:
+  geometry=parcel['geometry']
+  if geometry['type']!='Polygon' or not geometry['coordinates'] or any(ring[0]!=ring[-1] for ring in geometry['coordinates']):
+   raise ValueError('Invalid official Kazanlak parcel geometry')
+ target=next((f for f in rows if f['id']=='OSM-BG-R16941504'),None)
+ if target is None:raise ValueError('Kazanlak solar farm is missing from renewable inventory')
+ target['geometry']={'type':'MultiPolygon','coordinates':[parcel['geometry']['coordinates'] for parcel in parcels]}
+ p=target['properties']
+ p['geometryQuality']='cadastral-parcels'
+ p['geometrySource']=parcel_data['geometrySource']
+ p['geometryRefs']=sorted(refs)
+ p['geometryEvidence']=parcel_data['projectEvidence']
+ p['geometryNote']='Граници на имоти на комплекса; не са контур само на фотоволтаичните панели.'
+ return rows
+
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--offline',action='store_true');ap.add_argument('--reconcile-only',action='store_true');args=ap.parse_args()
  previous=json.loads(OUT.read_text()) if OUT.exists() else {'features':[]}
@@ -210,7 +233,7 @@ def main():
   except Exception as exc:
    retained=[f for f in previous['features'] if mode in f['properties'].get('sourceModes',[f['properties'].get('sourceMode')])];rows+=retained
    health['sources'][mode]={'status':'stale' if retained else 'unavailable','error':str(exc),'retained':len(retained)}
- rows=merge(rows)
+ rows=apply_kazanlak_official_parcels(merge(rows))
  for f in rows:
   p=f['properties'];assert math.isfinite(p['mw']) and p['mw']>1 and p['source'].startswith('https://')
   assert p['status'] in ('operating','construction','planned')

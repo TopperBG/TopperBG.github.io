@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.95.7">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.7</title>
+<meta name="bgwf-build" content="v0.95.8">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.8</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1636,7 +1636,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.7</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.8</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -4513,7 +4513,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.95.7', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.95.8', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4558,7 +4558,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.7-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.8-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
@@ -5975,7 +5975,7 @@ function liveFireLabel(d){const when=d.observedAt?formatDateTime.format(d.observ
 
 function showMapTooltip(pixel,text){if(!tooltip)return;tooltip.hidden=true;tooltip.textContent=text;tooltip.hidden=false;const wrap=root.querySelector('.bgwf-map-wrap');const rect=wrap.getBoundingClientRect();tooltip.style.left=`${Math.min(rect.width-tooltip.offsetWidth-6,Math.max(6,pixel[0]+12))}px`;tooltip.style.top=`${Math.min(rect.height-tooltip.offsetHeight-6,Math.max(6,pixel[1]-tooltip.offsetHeight-8))}px`;}
 function hideMapTooltip(){if(tooltip)tooltip.hidden=true;}
-function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='renewable-cache')return `${d.project.name} · ${d.project.mw} MW · ${d.project.statusLabel}`;if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='osm-hull'?'обвивка по реални OSM турбини':d.areaBasis==='osm'?(d.osmScope==='partial'?'OSM частичен контур':'реален OSM контур'):d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='kkkr'){const d=f.get('data')||{},a=Number(d.attributes?.areavalue);return `КККР · ПИ ${d.parcelRef||f.get('parcelRef')}${Number.isFinite(a)?` · ${a.toLocaleString('bg-BG',{maximumFractionDigits:1})} m²`:''} · АГКК/INSPIRE`;}if(kind==='epm'){const kv=epmVoltageKv(f);return `ЕПМ · ${kv||'—'} kV${f.get('name')?` · ${f.get('name')}`:''} · ориентировъчно трасе; свободният капацитет се потвърждава от ЕСО`;}if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
+function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='renewable-cache')return d.project.geometryQuality==='cadastral-parcels'?`${d.project.name} · ${d.project.mw} MW по OSM · ${d.project.geometryRefs.length} официални кадастрални имота (АГКК); не е контур на панелите`:`${d.project.name} · ${d.project.mw} MW · ${d.project.statusLabel}`;if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='osm-hull'?'обвивка по реални OSM турбини':d.areaBasis==='osm'?(d.osmScope==='partial'?'OSM частичен контур':'реален OSM контур'):d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='kkkr'){const d=f.get('data')||{},a=Number(d.attributes?.areavalue);return `КККР · ПИ ${d.parcelRef||f.get('parcelRef')}${Number.isFinite(a)?` · ${a.toLocaleString('bg-BG',{maximumFractionDigits:1})} m²`:''} · АГКК/INSPIRE`;}if(kind==='epm'){const kv=epmVoltageKv(f);return `ЕПМ · ${kv||'—'} kV${f.get('name')?` · ${f.get('name')}`:''} · ориентировъчно трасе; свободният капацитет се потвърждава от ЕСО`;}if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
 if(kind==='industry-aux'){return industryAuxLabel(f);}
 if(kind==='industry'){
   const meta=industrialConcessionMeta[d.id];
@@ -6009,7 +6009,12 @@ map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url
   if(kind!=='fire'){effisSource.clear();fireSource.getFeatures().forEach(ff=>{if(ff.get('hiddenByPerimeter')){ff.set('hiddenByPerimeter',false);ff.changed();}});selectedFireId=null;}
   selectedFeature=f;f.set('selected',true);f.changed();activateDetail();const d=f.get('data');
   if(kind==='fire'){selectedFireId=d.id;if(detail)detail.textContent=`${labelFire(d)} · Natura 2000: ${Number(d.natura2000_pct).toLocaleString('bg-BG',{maximumFractionDigits:1})}% · търся реалния EFFIS/Copernicus GIS периметър…`;await showEffisPerimeter(d,f);}
-  else if(kind==='renewable-cache'){detail.textContent=featureLabel(f)+' · ';const a=document.createElement('a');a.href=d.project.source;a.target='_blank';a.rel='noopener';a.textContent='Източник ↗';detail.appendChild(a);}
+  else if(kind==='renewable-cache'){
+    const project=d.project;
+    if(project.geometryQuality==='cadastral-parcels'){
+      detail.innerHTML=`<strong>${project.name}</strong> · ${project.geometryRefs.length} точни граници на имоти от АГКК/INSPIRE: ${project.geometryRefs.join(', ')}. <strong>Това са имотите на комплекса, не контур само на панелите.</strong> Посочените ${project.mw} MW са по OSM и не са сверени с мощността на целия комплекс. · ${safeLink(project.geometrySource,'АГКК ↗')} · ${safeLink(project.geometryEvidence[0],'Община Казанлък ↗')} · ${safeLink(project.geometryEvidence[2],'КЕВР ↗')}`;
+    }else{detail.textContent=featureLabel(f)+' · ';const a=document.createElement('a');a.href=project.source;a.target='_blank';a.rel='noopener';a.textContent='Източник ↗';detail.appendChild(a);}
+  }
   else if(kind==='project'){detail.innerHTML=`${projectLabel(d)} · ${safeLink(d.project.source,'официален източник ↗')}`;}
   else if(kind==='solar'){detail.innerHTML=`${solarLabel(d)} · ${d.project.statusLabel} · ${safeLink(d.project.source,'официален източник ↗')}`;}
   else if(kind==='wind'){
@@ -7870,7 +7875,7 @@ async function loadRenewableCache(){
       const p=raw.properties||{};
       if(!['solar','wind'].includes(p.technology)||!raw.geometry||!meetsRenewableMapThreshold(p))continue;
       const f=cloneGeoFeature(raw);
-      const project={...p,statusLabel:`${p.statusLabel||p.status} · ${p.technology} · ${p.geometryQuality==='parcel-location'?`точка в потвърден ПИ ${p.locationParcelRef||''} (част от обекта)`:p.geometryQuality==='location-only'?'приблизително местоположение':'геометрия по източника'}`};
+      const project={...p,statusLabel:`${p.statusLabel||p.status} · ${p.technology} · ${p.geometryQuality==='cadastral-parcels'?'точни граници на имоти от АГКК':p.geometryQuality==='parcel-location'?`точка в потвърден ПИ ${p.locationParcelRef||''} (част от обекта)`:p.geometryQuality==='location-only'?'приблизително местоположение':'геометрия по източника'}`};
       f.setId(p.id);f.set('kind','renewable-cache');
       f.set('status',p.status);f.set('data',{project,parcelRef:'',layerType:p.status==='operating'?'solar':'projects'});rows.push(f);
     }
