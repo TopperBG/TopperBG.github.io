@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-22T10:09:46.002107+00:00",
+  "checkedAt": "2026-10-22T10:26:00.034852+00:00",
   "sources": {
     "veiregistar:photovoltaic-power-plants-with-power-over-1-mw": {
       "status": "ok",
@@ -136,6 +136,11 @@
       "reason": "capacity_not_published_or_not_above_1_MW"
     },
     {
+      "id": "SOL-KAOLINOVO-80-171",
+      "name": "ФЕЦ „Каолиново“ — отделна съществуваща площадка",
+      "reason": "capacity_not_published_or_not_above_1_MW"
+    },
+    {
       "id": "SOL-SLIVEN-SOUTHWEST-UNIDENTIFIED",
       "name": "ФЕЦ югозападно от Сливен — неидентифициран",
       "reason": "capacity_not_published_or_not_above_1_MW"
@@ -157,5 +162,5 @@
     "planned": 31
   },
   "withoutGeometry": 464,
-  "reconciledAt": "2026-10-22T10:10:49.795548+00:00"
+  "reconciledAt": "2026-10-22T10:27:17.871146+00:00"
 }
