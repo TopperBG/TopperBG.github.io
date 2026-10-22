@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.95.10">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.10</title>
+<meta name="bgwf-build" content="v0.95.11">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.11</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1636,7 +1636,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.10</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.11</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -3405,6 +3405,29 @@ function normalizeProvinceName(value) {
             "65869.15.21","72655.10.24",
             "78402.16.839","78402.26.23","78402.80.9907","78402.114.311","78402.1.2","78402.1.19","78402.1.21","78402.10.14","78402.11.14","78402.4.2","78402.5.1","78402.5.11","78402.98.4","78402.16.8","78402.16.150"
           ]
+      },
+      {
+          "id": "RES-053", "name": "ФЕЦ „Омуртаг“ — Обител", "year": 2026,
+          "status": "construction", "mw": 75, "bessMw": 15, "bessMwh": 30,
+          "statusLabel": "обява РИОСВ-Шумен 13.10.2026 · 45 MW AC + разширение 30 MW AC · BESS 15 MW / 30 MWh · два производствени ПИ; процедурите за изменения по време на строителство са прекратени на 14.10.2026, без това да удостоверява прекратяване на самите централи",
+          "source": "https://riosv-shumen.eu/index.php?act=257&homepage=7&subnavy=2",
+          "secondarySource": "https://riosv-shumen.eu/index.php?act=255&homepage=7&subnavy=2",
+          "parcels": ["53062.15.56", "53062.16.209"]
+      },
+      {
+          "id": "RES-054", "name": "Вятърен парк „Винарско“", "year": 2026,
+          "status": "planned", "assetType": "wind", "mw": 200, "turbines": 22,
+          "statusLabel": "инвестиционно предложение на община Айтос 16.04.2026 · 22 ВГ · заявена обща мощност до 200 MW; същото съобщение посочва до 7 MW на ВГ · 21 публикувани площадки (22 КККР имота заради разделен ПИ 36381.19.97/98) · без потвърдено разрешение за строеж",
+          "source": "https://aytos.bg/saobshtenie-do-zainteresovanite-lica-obshtestvenost-7747.html",
+          "secondarySource": "https://aytos.bg/files/7747/2514596575556.pdf",
+          "parcels": ["46440.32.57", "36381.21.33", "36381.30.23", "36381.47.18", "36381.45.31", "46440.16.15", "46440.34.50", "46440.22.2", "46440.24.36", "46440.25.33", "46440.27.30", "36381.19.97", "36381.19.98", "36381.20.74", "36381.11.7", "00151.462.32", "00151.466.35", "56438.117.45", "00151.241.10", "56438.18.34", "46440.23.49", "56438.55.17"]
+      },
+      {
+          "id": "RES-055", "name": "ФЕЦ „Шивачево“ — Херос Солар Енерджи 1", "year": 2025,
+          "status": "approved", "mw": 90, "bessMw": 90, "bessMwh": 180,
+          "statusLabel": "Решение СЗ-77-ЕО/03.10.2025 за ПУП-ПЗ/ПП · индикативна мощност до 90 MW AC · BESS 90 MW / 180 MWh е в отделен ПИ извън контура на ФЕЦ · 27 производствени ПИ",
+          "source": "https://stz.riew.gov.bg/Publikuvano_na_03_10_2025_g_-p3279",
+          "parcels": ["15944.227.28", "15944.228.488", "15944.229.13", "15944.229.14", "15944.229.485", "15944.230.49", "15944.230.48", "15944.230.50", "15944.231.52", "15944.231.484", "15944.231.53", "15944.233.493", "15944.234.34", "15944.234.35", "15944.234.36", "15944.223.5", "15944.224.781", "15944.225.11", "15944.226.484", "15944.226.26", "15944.235.35", "15944.235.485", "15944.235.486", "15944.235.489", "15944.236.74", "15944.236.75", "15944.237.54"]
       }
   ];
 
@@ -4513,7 +4536,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.95.10', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.95.11', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4558,7 +4581,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.10-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.11-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
