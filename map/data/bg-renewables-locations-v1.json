@@ -868,11 +868,39 @@
       "locationParcelRef": "05921.170.27",
       "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
       "locationCheckedAt": "2026-10-21T12:30:12+00:00"
+    },
+    "RES-053": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.5361862,
+          43.0808628
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2715944.227.28%27%2C%2753062.15.56%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "53062.15.56",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-22T10:10:46+00:00"
+    },
+    "RES-055": {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.9968825,
+          42.6335518
+        ]
+      },
+      "geometryQuality": "parcel-location",
+      "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2715944.227.28%27%2C%2753062.15.56%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+      "locationParcelRef": "15944.227.28",
+      "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+      "locationCheckedAt": "2026-10-22T10:10:46+00:00"
     }
   },
   "lastAttempt": {
-    "checkedAt": "2026-10-21T12:30:12+00:00",
-    "added": 4,
+    "checkedAt": "2026-10-22T10:10:46+00:00",
+    "added": 2,
     "unresolvedIds": [],
     "errors": []
   }
