@@ -5913,7 +5913,7 @@ async function shareCurrentMap(){
 const mapShareMenu=document.createElement('div');
 mapShareMenu.className='bgwf-map-share-menu';
 mapShareMenu.hidden=true;
-mapShareMenu.innerHTML='<button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button><button type="button" data-action="history">Исторически снимки</button>';
+mapShareMenu.innerHTML='<button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button><button type="button" data-action="ortho">Исторически Ортофото · АГКК</button><button type="button" data-action="history">Исторически снимки</button>';
 root.appendChild(mapShareMenu);
 let mapContextLonLat=null;
 mapShareMenu.addEventListener('click',async e=>{
@@ -5929,6 +5929,12 @@ mapShareMenu.addEventListener('click',async e=>{
     const [lon,lat]=mapContextLonLat;
     const query=encodeURIComponent(`${lat.toFixed(6)},${lon.toFixed(6)}`);
     window.open(`https://www.google.com/maps/search/?api=1&query=${query}`,'_blank','noopener');
+  }
+  if(action==='ortho'&&mapContextLonLat){
+    // KAIS provides historical orthophoto layers (2011, 2019, 2022).
+    // Do not assume its portal supports a documented deep-link to coordinates.
+    window.open('https://kais.cadastre.bg/bg/Map','_blank','noopener');
+    return;
   }
   if(action==='history'&&mapContextLonLat){
     const [lon,lat]=mapContextLonLat;
