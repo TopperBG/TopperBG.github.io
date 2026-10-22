@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.95.6">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.6</title>
+<meta name="bgwf-build" content="v0.95.7">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.7</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1636,7 +1636,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.6</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.7</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach>Съвет: след избор менюто се прибира автоматично. Отворете го от „Покажи филтрите“.</span>
@@ -4475,6 +4475,12 @@ const CURATED_INDUSTRIAL_POINTS = [];
   }
 
   const LARGE_SOLAR_THRESHOLD_MWP = 10;
+  // Foreign is independent of the Bulgarian renewable map threshold.
+  const FOREIGN_MIN_CAPACITY_MW = 1;
+  function meetsForeignMapThreshold(project){
+    const capacity=Number(project?.mw??project?.mwAc??project?.mwpDc);
+    return Number.isFinite(capacity)&&capacity>FOREIGN_MIN_CAPACITY_MW;
+  }
   function solarCapacityForThreshold(project){
     // Use the published plant capacity, independently of the inventory cutoff.
     return Number(project.mwpDc??project.mwAc??project.mw);
@@ -4552,7 +4558,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.6-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.7-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
@@ -5084,7 +5090,7 @@ const liveSource=new VectorSource();
 const epmSource=new VectorSource();
 const kkkrSource=new VectorSource();
 
-foreignSource.addFeatures(foreignRenewableProjects.filter(meetsRenewableMapThreshold).map(project=>{
+foreignSource.addFeatures(foreignRenewableProjects.filter(meetsForeignMapThreshold).map(project=>{
   const area=foreignProjectArea(project);
   const groundRadiusM=Math.sqrt(area.areaHa*10000/Math.PI);
   const mercatorRadiusM=groundRadiusM/Math.cos(project.lat*Math.PI/180);
@@ -5108,7 +5114,7 @@ async function ensureForeignRenewableCache(){
         const p=row?.properties||{},coords=row?.geometry?.coordinates;
         if(row?.geometry?.type!=='Point'||!Array.isArray(coords)||coords.length<2)continue;
         const lon=Number(coords[0]),lat=Number(coords[1]),mw=Number(p.mw);
-        if(!Number.isFinite(lon)||!Number.isFinite(lat)||!Number.isFinite(mw)||mw<LARGE_SOLAR_THRESHOLD_MWP)continue;
+        if(!Number.isFinite(lon)||!Number.isFinite(lat)||!Number.isFinite(mw)||!meetsForeignMapThreshold(p))continue;
         const status=p.status||'operating';
         const project={...p,lon,lat,major:mw>50,status,statusLabel:p.statusLabel||(status==='construction'?'в строеж':status==='planned'?'планиран':'действащ')};
         const area=foreignProjectArea(project);
@@ -5120,7 +5126,7 @@ async function ensureForeignRenewableCache(){
         feature.set('data',{...project,...area,cacheGeneratedAt:data.generatedAt||null,sourceMode:p.sourceMode||'repository-cache'});
         features.push(feature);
       }
-      if(!features.length)throw new Error('Foreign cache няма валидни ≥10 MW обекти');
+      if(!features.length)throw new Error('Foreign cache няма валидни >1 MW обекти');
       foreignSource.clear();
       foreignSource.addFeatures(features);
       foreignCacheLoadState='ready';
