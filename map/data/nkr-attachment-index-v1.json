@@ -1,11 +1,11 @@
 {
   "schema": "bgwf-nkr-attachment-index-v1",
-  "generatedAt": "2026-10-18T08:07:23Z",
+  "generatedAt": "2026-10-25T09:13:09Z",
   "runtimeDependency": false,
   "knownLinkCount": 455,
-  "archivedOkCount": 314,
-  "downloadedThisRun": 41,
-  "downloadedBytesThisRun": 64521762,
+  "archivedOkCount": 351,
+  "downloadedThisRun": 38,
+  "downloadedBytesThisRun": 68927149,
   "errors": [],
   "files": {
     "7cff2f84-1391-4609-8f60-cc5309647fa9": {
@@ -2746,6 +2746,9 @@
       "fileId": "105a0d36-a1e6-4faa-90e7-8315c28958bc",
       "url": "https://nkr.government.bg/File/Download/105a0d36-a1e6-4faa-90e7-8315c28958bc",
       "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "",
+      "publishedAt": "13.07.2023 г.",
       "partyGuids": [
         "3bcb22a2-ae09-4883-8da2-6633e5276f3b"
       ],
@@ -2757,7 +2760,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:31:51Z",
+      "checkedAt": "2026-10-25T09:13:09Z",
       "filename": "%D0%94%D0%9E%D0%93%D0%9E%D0%92%D0%9E%D0%A0.pdf",
       "extension": ".pdf",
       "contentType": "application/octet-stream",
@@ -2768,6 +2771,7 @@
       "extractor": "pypdf",
       "textChars": 114,
       "keywordHit": false,
+      "coordinateParserVersion": 2,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},
       "coordinateSample": []
@@ -10082,7 +10086,7 @@
       "priority": 4,
       "status": "skipped-too-large",
       "bytes": 19533443,
-      "checkedAt": "2026-10-18T08:06:00Z"
+      "checkedAt": "2026-10-25T09:12:12Z"
     },
     "93e39dc4-0dbc-4485-bf0f-e0b163a3eb35": {
       "fileId": "93e39dc4-0dbc-4485-bf0f-e0b163a3eb35",
@@ -14806,6 +14810,1306 @@
           "crsClass": "WGS84"
         }
       ]
+    },
+    "490f4108-c98d-41dd-9c61-96efb7926672": {
+      "fileId": "490f4108-c98d-41dd-9c61-96efb7926672",
+      "url": "https://nkr.government.bg/File/Download/490f4108-c98d-41dd-9c61-96efb7926672",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 3 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – ДОЛОМИТИ, ОТ НАХОДИЩЕ „СТУДЕНА“, УЧАСТЪК „ХИДРОСТРОЙ 1“, РАЗПОЛОЖЕНО В ЗЕМЛИЩАТА НА С. СТУДЕНА, ОБЩИНА ПЕРНИК И С. СТАРО СЕЛО И С. ДРУГАН, ОБЩИНА РАДОМИР, ОБЛАСТ ПЕРНИК, СКЛЮЧЕН НА 15 СЕПТЕМВРИ 2008 Г., МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА РЕГИОНАЛНОТО РАЗВИТИЕ И БЛАГОУСТРОЙСТВОТО И „ХИДРОСТРОЙ“ ООД, ГР. ПЕРНИК, ИЗМЕНЕН И ДОПЪЛНЕН С ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 ОТ 10 ФЕВРУАРИ 2009 Г. И ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 2 ОТ 10 МАЙ 2021 Г.",
+      "publishedAt": "30.12.2025 г.",
+      "partyGuids": [
+        "53017447-9606-4822-bd1a-822bcbd465b1"
+      ],
+      "inventoryIds": [
+        "D-000482"
+      ],
+      "concessionIds": [
+        "D-000482"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:13Z",
+      "filename": "Studena_Hidrostroy1_clear.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1462641,
+      "sha256": "2c9e4f682f1a0595e925534d90ef4fb50cacd850c10463a2717f6444a176ad08",
+      "archivePath": "source-archive/concessions/nkr-attachments/2c9e4f682f1a0595e925534d90ef4fb50cacd850c10463a2717f6444a176ad08.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2c9e4f682f1a0595e925534d90ef4fb50cacd850c10463a2717f6444a176ad08.txt",
+      "extractor": "pypdf",
+      "textChars": 45,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "7603c407-d2f6-434a-986a-adc1600d6080": {
+      "fileId": "7603c407-d2f6-434a-986a-adc1600d6080",
+      "url": "https://nkr.government.bg/File/Download/7603c407-d2f6-434a-986a-adc1600d6080",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 2 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – ДОЛОМИТИ, ОТ НАХОДИЩЕ „СТУДЕНА“, УЧАСТЪК „ХИДРОСТРОЙ 1“, РАЗПОЛОЖЕНО В ЗЕМЛИЩАТА НА С. СТУДЕНА, ОБЩИНА ПЕРНИК И С. СТАРО СЕЛО И С. ДРУГАН, ОБЩИНА РАДОМИР, ОБЛАСТ ПЕРНИК, СКЛЮЧЕН НА 15 СЕПТЕМВРИ 2008Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА РЕГИОНАЛНОТО РАЗВИТИЕ И БЛАГОУСТРОЙСТВОТО И „ХИДРОСТРОЙ“ ООД, ГР. ПЕРНИК, ИЗМЕНЕН С ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 ОТ 10 ФЕВРУАРИ 2009Г.",
+      "publishedAt": "02.09.2022 г.",
+      "partyGuids": [
+        "53017447-9606-4822-bd1a-822bcbd465b1"
+      ],
+      "inventoryIds": [
+        "D-000482"
+      ],
+      "concessionIds": [
+        "D-000482"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:14Z",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%81_%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D0%B0.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 667719,
+      "sha256": "0b2d43a665b01a0560f9602de34b2f903dbe5353ded0bd8ec5b89427135c7d3f",
+      "archivePath": "source-archive/concessions/nkr-attachments/0b2d43a665b01a0560f9602de34b2f903dbe5353ded0bd8ec5b89427135c7d3f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0b2d43a665b01a0560f9602de34b2f903dbe5353ded0bd8ec5b89427135c7d3f.txt",
+      "extractor": "pdftotext",
+      "textChars": 162,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "0fa69be5-aed6-42b9-87a2-7ee3e44356fc": {
+      "fileId": "0fa69be5-aed6-42b9-87a2-7ee3e44356fc",
+      "url": "https://nkr.government.bg/File/Download/0fa69be5-aed6-42b9-87a2-7ee3e44356fc",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – МРАМОРИ, ОТ НАХОДИЩЕ „ЛИСОВО“, ОБЩИНА СВИЛЕНГРАД, ОБЛАСТ ХАСКОВО, СКЛЮЧЕН НА 4 ЮЛИ 2008 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА РЕГИОНАЛНОТО РАЗВИТИЕ И БЛАГОУСТРОЙСТВОТО И „АБ“ АД, ГР. ХАСКОВО",
+      "publishedAt": "08.01.2025 г.",
+      "partyGuids": [
+        "6dc2e6df-4d28-4f43-a976-75061152517e"
+      ],
+      "inventoryIds": [
+        "D-000489"
+      ],
+      "concessionIds": [
+        "D-000489"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:15Z",
+      "filename": "DS_Lisovo.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 900602,
+      "sha256": "f189deb669b0ddfc5d4f620ef9bda9d962141e1dca06fdd23b5543ff4865625f",
+      "archivePath": "source-archive/concessions/nkr-attachments/f189deb669b0ddfc5d4f620ef9bda9d962141e1dca06fdd23b5543ff4865625f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f189deb669b0ddfc5d4f620ef9bda9d962141e1dca06fdd23b5543ff4865625f.txt",
+      "extractor": "pypdf",
+      "textChars": 33,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3e5550aa-c0a6-4f51-841c-3c9e0be21daa": {
+      "fileId": "3e5550aa-c0a6-4f51-841c-3c9e0be21daa",
+      "url": "https://nkr.government.bg/File/Download/3e5550aa-c0a6-4f51-841c-3c9e0be21daa",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 към Договор за предоставяне на концесия за добив на подземни богатства – строителни материали – баластра (пясък и чакъл), от находище „Луда Яна“, община Панагюрище и община Стрелча, област Пазарджик, сключен на 11 юни 2008 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството, и „ЕЛШИЦА-99“ АД - гр. София, изменен и допълнен с Допълнително споразумение № 1 от 29 октомври 2019 г.",
+      "publishedAt": "04.05.2026 г.",
+      "partyGuids": [
+        "02ee9b8a-8bef-42ec-b107-ff8b84d271aa"
+      ],
+      "inventoryIds": [
+        "D-000496"
+      ],
+      "concessionIds": [
+        "D-000496"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:16Z",
+      "filename": "Luda Iana.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1586094,
+      "sha256": "b5fd6bc8330423610f38fe98e436cc93a75129b29d45bf62a7268399a931e041",
+      "archivePath": "source-archive/concessions/nkr-attachments/b5fd6bc8330423610f38fe98e436cc93a75129b29d45bf62a7268399a931e041.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/b5fd6bc8330423610f38fe98e436cc93a75129b29d45bf62a7268399a931e041.txt",
+      "extractor": "pypdf",
+      "textChars": 66,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "5af707b6-dc79-4495-a102-d8b28d7fb9d4": {
+      "fileId": "5af707b6-dc79-4495-a102-d8b28d7fb9d4",
+      "url": "https://nkr.government.bg/File/Download/5af707b6-dc79-4495-a102-d8b28d7fb9d4",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Р Е Ш Е Н И Е № 41 ОТ 19 януари 2026 Г. ЗА ДАВАНЕ НА СЪГЛАСИЕ ЗА ИЗМЕНЕНИЕ НА ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – БАЛАСТРА (ПЯСЪК И ЧАКЪЛ), ОТ НАХОДИЩЕ „ЛУДА ЯНА“, ОБЩИНА ПАНАГЮРИЩЕ И ОБЩИНА СТРЕЛЧА, ОБЛАСТ ПАЗАРДЖИК, СКЛЮЧЕН НА 11 ЮНИ 2008 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА РЕГИОНАЛНОТО РАЗВИТИЕ И БЛАГОУСТРОЙСТВОТО, И „ЕЛШИЦА-99“ АД - ГР. СОФИЯ, ИЗМЕНЕН И ДОПЪЛНЕН С ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 ОТ 29 ОКТОМВРИ 2019 Г., И ЗА ОТПРАВЯНЕ НА ПРЕДЛОЖЕНИЕ ДО КОНЦЕСИОНЕРА ЗА ИЗМЕНЕНИЕ И ДОПЪЛНЕНИЕ НА КОНЦЕСИОННИЯ ДОГОВОР",
+      "publishedAt": "04.05.2026 г.",
+      "partyGuids": [
+        "02ee9b8a-8bef-42ec-b107-ff8b84d271aa"
+      ],
+      "inventoryIds": [
+        "D-000496"
+      ],
+      "concessionIds": [
+        "D-000496"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:17Z",
+      "filename": "26RH041.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 27357,
+      "sha256": "c5713cbdbed52406166ee70434307a892891962614070aaa321d9941b6c026d0",
+      "archivePath": "source-archive/concessions/nkr-attachments/c5713cbdbed52406166ee70434307a892891962614070aaa321d9941b6c026d0.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c5713cbdbed52406166ee70434307a892891962614070aaa321d9941b6c026d0.txt",
+      "extractor": "python-docx",
+      "textChars": 6845,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "ff3352bd-f7c7-48ab-b707-0c671d3b710c": {
+      "fileId": "ff3352bd-f7c7-48ab-b707-0c671d3b710c",
+      "url": "https://nkr.government.bg/File/Download/ff3352bd-f7c7-48ab-b707-0c671d3b710c",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 9 юли 2021г.",
+      "publishedAt": "21.10.2021 г.",
+      "partyGuids": [
+        "f17ac8df-a26f-47e4-9388-65738afa37bb"
+      ],
+      "inventoryIds": [
+        "D-000497"
+      ],
+      "concessionIds": [
+        "D-000497"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:18Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%20%E2%84%96%201%20%D0%9B%D0%BE%D0%B7%D0%BD%D0%B8%D1%86%D0%B02.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1153291,
+      "sha256": "563210095a5b16294c8894137948c71bb93067d14e43eb0219440aceb9d69935",
+      "archivePath": "source-archive/concessions/nkr-attachments/563210095a5b16294c8894137948c71bb93067d14e43eb0219440aceb9d69935.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/563210095a5b16294c8894137948c71bb93067d14e43eb0219440aceb9d69935.txt",
+      "extractor": "pypdf",
+      "textChars": 9192,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "57f41726-0420-4e93-8484-770f64ba02fd": {
+      "fileId": "57f41726-0420-4e93-8484-770f64ba02fd",
+      "url": "https://nkr.government.bg/File/Download/57f41726-0420-4e93-8484-770f64ba02fd",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 2 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – АНДЕЗИТИ, ОТ НАХОДИЩЕ „ЗМИЯРНИКА“, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. ГАРВАНОВО, ОБЩИНА ХАСКОВО, ОБЛАСТ ХАСКОВО, СКЛЮЧЕН НА 17 МАРТ 2009 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА РЕГИОНАЛНОТО РАЗВИТИЕ И БЛАГОУСТРОЙСТВОТО И „ПЪТСТРОЙ - 97“ АД, ГР. ХАСКОВО, ИЗМЕНЕН И ДОПЪЛНЕН С ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 ОТ 17 ДЕКЕМВРИ 2020 Г.",
+      "publishedAt": "08.01.2025 г.",
+      "partyGuids": [
+        "3f387a0a-235d-4a7c-b3f9-f89538beecec"
+      ],
+      "inventoryIds": [
+        "D-000507"
+      ],
+      "concessionIds": [
+        "D-000507"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:19Z",
+      "filename": "Zmiarnika.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 865101,
+      "sha256": "c98ff20b2e843b201c5e78b1d89d98a99b0b99dd1aeab7f613fc306496e0c22d",
+      "archivePath": "source-archive/concessions/nkr-attachments/c98ff20b2e843b201c5e78b1d89d98a99b0b99dd1aeab7f613fc306496e0c22d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c98ff20b2e843b201c5e78b1d89d98a99b0b99dd1aeab7f613fc306496e0c22d.txt",
+      "extractor": "pypdf",
+      "textChars": 33,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "497a452d-db87-4bbb-b404-6e7babdcf0f2": {
+      "fileId": "497a452d-db87-4bbb-b404-6e7babdcf0f2",
+      "url": "https://nkr.government.bg/File/Download/497a452d-db87-4bbb-b404-6e7babdcf0f2",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 от 11 септември 2024г. към Договора за предоставяне на концесия за добив на подземни богатства – строителни материали – доломити и доломитни варовици, от находище „Студена“, участък „Благоустройствени строежи“, община Перник, област Перник, сключен на 21 август 2008 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Благоустройствени строежи“ ЕООД, гр. Перник, изменен с Допълнително споразумение № 1 от 8 юли 2009 г.",
+      "publishedAt": "11.09.2024 г.",
+      "partyGuids": [
+        "1911f74d-cea0-4894-9aa6-be2f5a5910ee"
+      ],
+      "inventoryIds": [
+        "D-000514"
+      ],
+      "concessionIds": [
+        "D-000514"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:21Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202%20%D0%A1%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D0%B0-%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%B8%20%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%B6%D0%B8.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1702264,
+      "sha256": "89590e0790181f9a827bc7cec52aad60ddba794ca08593942f277b558e31b601",
+      "archivePath": "source-archive/concessions/nkr-attachments/89590e0790181f9a827bc7cec52aad60ddba794ca08593942f277b558e31b601.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/89590e0790181f9a827bc7cec52aad60ddba794ca08593942f277b558e31b601.txt",
+      "extractor": "pypdf",
+      "textChars": 35670,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 3,
+      "coordinateClassCounts": {
+        "WGS84": 3
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 4,
+          "line": 388,
+          "a": 22.0,
+          "b": 41.0,
+          "crsClass": "WGS84"
+        },
+        {
+          "pointNo": 4,
+          "line": 406,
+          "a": 23.0,
+          "b": 41.0,
+          "crsClass": "WGS84",
+          "duplicateConflict": true
+        },
+        {
+          "pointNo": 1,
+          "line": 434,
+          "a": 25.0,
+          "b": 44.0,
+          "crsClass": "WGS84"
+        }
+      ]
+    },
+    "f5aee46c-deec-43f9-aabd-76735b49de7d": {
+      "fileId": "f5aee46c-deec-43f9-aabd-76735b49de7d",
+      "url": "https://nkr.government.bg/File/Download/f5aee46c-deec-43f9-aabd-76735b49de7d",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 27 февруари 2024 г. към Договора за предоставяне на концесия за добив на подземни богатства – строителни материали – мрамори и мраморизирани варовици, от находище „Каменец“, участък „Каменец-1“ и участък „Каменец-2“, община Стралджа, област Ямбол, сключен на 12 март 2009 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Инертни материали-Ямбол“ АД, гр. Ямбол",
+      "publishedAt": "27.02.2024 г.",
+      "partyGuids": [
+        "e35ba6eb-01e5-44a2-aa28-fc0ec758e9c3"
+      ],
+      "inventoryIds": [
+        "D-000520"
+      ],
+      "concessionIds": [
+        "D-000520"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:23Z",
+      "filename": "%D0%94%D0%BE%D0%BF%D1%8A%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-2024%20%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%B5%D1%86.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2662054,
+      "sha256": "66d24f062efce0184fcc0796cb774fbd5722b72d2acd026b68dc8602797cee7c",
+      "archivePath": "source-archive/concessions/nkr-attachments/66d24f062efce0184fcc0796cb774fbd5722b72d2acd026b68dc8602797cee7c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/66d24f062efce0184fcc0796cb774fbd5722b72d2acd026b68dc8602797cee7c.txt",
+      "extractor": "pypdf",
+      "textChars": 34185,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 2,
+      "coordinateClassCounts": {
+        "WGS84": 2
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 2024,
+          "line": 10,
+          "a": 44.0,
+          "b": 23.0,
+          "crsClass": "WGS84"
+        },
+        {
+          "pointNo": 2009,
+          "line": 43,
+          "a": 44.0,
+          "b": 23.0,
+          "crsClass": "WGS84"
+        }
+      ]
+    },
+    "7fcbeac9-0e24-420c-a8a3-fbb1d26c2caa": {
+      "fileId": "7fcbeac9-0e24-420c-a8a3-fbb1d26c2caa",
+      "url": "https://nkr.government.bg/File/Download/7fcbeac9-0e24-420c-a8a3-fbb1d26c2caa",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 към Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 3 от Закона за подземните богатства - природен газ - от находище \"Калиакра\", находящо се в континенталния шелф и изключителната икономическа зона на Република България в Черно море.",
+      "publishedAt": "31.03.2022 г.",
+      "partyGuids": [
+        "e666058b-7e50-4ca7-abe9-b17da12ac73c"
+      ],
+      "inventoryIds": [
+        "D-000544"
+      ],
+      "concessionIds": [
+        "D-000544"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:24Z",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%811_%D0%9A%D0%B0%D0%BB%D0%B8%D0%B0%D0%BA%D1%80%D0%B0.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1075994,
+      "sha256": "843fbe668f11465d72b2c67898efb454da716b4b453aa9d3b6daef4b7971174b",
+      "archivePath": "source-archive/concessions/nkr-attachments/843fbe668f11465d72b2c67898efb454da716b4b453aa9d3b6daef4b7971174b.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/843fbe668f11465d72b2c67898efb454da716b4b453aa9d3b6daef4b7971174b.txt",
+      "extractor": "pypdf",
+      "textChars": 2862,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "4b10adee-315f-4c4a-821d-d2a6ba318ae1": {
+      "fileId": "4b10adee-315f-4c4a-821d-d2a6ba318ae1",
+      "url": "https://nkr.government.bg/File/Download/4b10adee-315f-4c4a-821d-d2a6ba318ae1",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 15.11.2024г. към договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Козирог“, разположено в землищата на с. Кози рог, община Габрово и с. Янтра, община Дряново, област Габрово, сключен на 1 юни 2011 г. между Министерския съвет на Република България, представляван от министъра на икономиката, енергетиката и туризма и „Пътстрой-Габрово“ АД, гр. Габрово",
+      "publishedAt": "19.11.2024 г.",
+      "partyGuids": [
+        "81f23153-a92e-4435-89b6-d741d65869a7"
+      ],
+      "inventoryIds": [
+        "D-000561"
+      ],
+      "concessionIds": [
+        "D-000561"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:26Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-15-11-2024%20%D0%9A%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B3.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1613323,
+      "sha256": "df21f52cb1e5b6d0747a13e985de9e91b03a86211902c04664b6a7c60e0a816d",
+      "archivePath": "source-archive/concessions/nkr-attachments/df21f52cb1e5b6d0747a13e985de9e91b03a86211902c04664b6a7c60e0a816d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/df21f52cb1e5b6d0747a13e985de9e91b03a86211902c04664b6a7c60e0a816d.txt",
+      "extractor": "pypdf",
+      "textChars": 33054,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d11ca445-d8fc-4a39-881f-bea81b23f402": {
+      "fileId": "d11ca445-d8fc-4a39-881f-bea81b23f402",
+      "url": "https://nkr.government.bg/File/Download/d11ca445-d8fc-4a39-881f-bea81b23f402",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 18 февруари 2026 г. към Договора за предоставяне на концесия за добив на подземни богатства - строителни материали – варовици, от находище „Рафаело“, разположено в землището на с. Киреево, община Макреш, област Видин, сключен на 23 декември 2010 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Киряевска вар“ ООД, с. Киреево",
+      "publishedAt": "19.02.2026 г.",
+      "partyGuids": [
+        "832af003-a0ed-4f13-93fc-894904cbd0d9"
+      ],
+      "inventoryIds": [
+        "D-000562"
+      ],
+      "concessionIds": [
+        "D-000562"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:27Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-18-02-2026.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1104522,
+      "sha256": "659e8565cd3313cd73f5dff409379e058bfb45ef6078472888b9df2b0a7d6561",
+      "archivePath": "source-archive/concessions/nkr-attachments/659e8565cd3313cd73f5dff409379e058bfb45ef6078472888b9df2b0a7d6561.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/659e8565cd3313cd73f5dff409379e058bfb45ef6078472888b9df2b0a7d6561.txt",
+      "extractor": "pypdf",
+      "textChars": 45,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "ab453abd-29a4-4ead-9442-8c6f739236d5": {
+      "fileId": "ab453abd-29a4-4ead-9442-8c6f739236d5",
+      "url": "https://nkr.government.bg/File/Download/ab453abd-29a4-4ead-9442-8c6f739236d5",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 21 март 2023г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Градец“, участъци „Южен“ и „Градище“, разположено в землището на с. Градец, община Костинброд, Софийска област",
+      "publishedAt": "21.03.2023 г.",
+      "partyGuids": [
+        "d2c96490-404c-4e4c-b6ad-78a247f2a628"
+      ],
+      "inventoryIds": [
+        "D-000563"
+      ],
+      "concessionIds": [
+        "D-000563"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:29Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201%20%D0%BE%D1%82%202023.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 777854,
+      "sha256": "5b85103c09c8f2096a45fef3f4caa38f195febbb19b94ed3fb9550848ab4eb89",
+      "archivePath": "source-archive/concessions/nkr-attachments/5b85103c09c8f2096a45fef3f4caa38f195febbb19b94ed3fb9550848ab4eb89.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/5b85103c09c8f2096a45fef3f4caa38f195febbb19b94ed3fb9550848ab4eb89.txt",
+      "extractor": "pypdf",
+      "textChars": 17286,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c4132dd6-e482-433d-8db7-42b12c136e84": {
+      "fileId": "c4132dd6-e482-433d-8db7-42b12c136e84",
+      "url": "https://nkr.government.bg/File/Download/c4132dd6-e482-433d-8db7-42b12c136e84",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение №1 към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - варовици, от находище „Самоводене“, участък „Запад“, разположено в землището на с. Самоводене, община Велико Търново, област Велико Търново",
+      "publishedAt": "27.01.2026 г.",
+      "partyGuids": [
+        "32e9a51f-c396-4d28-934e-d6efb4315816"
+      ],
+      "inventoryIds": [
+        "D-000564"
+      ],
+      "concessionIds": [
+        "D-000564"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:30Z",
+      "filename": "DS1.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 5059469,
+      "sha256": "9cfb3a710c763eedd7781c524ac587a6e863f7b17a838b4e152062b7edbd48c8",
+      "archivePath": "source-archive/concessions/nkr-attachments/9cfb3a710c763eedd7781c524ac587a6e863f7b17a838b4e152062b7edbd48c8.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9cfb3a710c763eedd7781c524ac587a6e863f7b17a838b4e152062b7edbd48c8.txt",
+      "extractor": "pypdf",
+      "textChars": 69,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b8bea43e-9e92-4c7a-b480-157ab0d79a93": {
+      "fileId": "b8bea43e-9e92-4c7a-b480-157ab0d79a93",
+      "url": "https://nkr.government.bg/File/Download/b8bea43e-9e92-4c7a-b480-157ab0d79a93",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 от 6 март 2023г. към договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – доломити, от находище „Коневец“, разположено в землището на с. Коневец, община „Тунджа“, област Ямбол, сключен на 18 октомври 2011 г. между Министерския съвет на Република България, представляван от министъра на икономиката, енергетиката и туризма и „Технострой - Инженеринг 99“ АД, гр. Ямбол, допълнен с допълнително споразумение № 1 от 1 март 2012 г.",
+      "publishedAt": "06.03.2023 г.",
+      "partyGuids": [
+        "2da0608f-b21c-4e8a-864b-f79fc85b8b93"
+      ],
+      "inventoryIds": [
+        "D-000574"
+      ],
+      "concessionIds": [
+        "D-000574"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:33Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202-06-03-23.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 948262,
+      "sha256": "b093af9fcfacc0e66aca3a2064de7801b7ffa0226ca30eb9a7a358caf47bf2b2",
+      "archivePath": "source-archive/concessions/nkr-attachments/b093af9fcfacc0e66aca3a2064de7801b7ffa0226ca30eb9a7a358caf47bf2b2.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/b093af9fcfacc0e66aca3a2064de7801b7ffa0226ca30eb9a7a358caf47bf2b2.txt",
+      "extractor": "pypdf",
+      "textChars": 18474,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "4884904b-36ea-43cd-8012-cc384fea4416": {
+      "fileId": "4884904b-36ea-43cd-8012-cc384fea4416",
+      "url": "https://nkr.government.bg/File/Download/4884904b-36ea-43cd-8012-cc384fea4416",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 12 октомври 2023г. към Договора за предоставяне на концесия за добив на подземни богатства - скалнооблицовъчни материали – варовици, от находище „Кремона“ – участък „Кален“ и участък „Кален-изток“, разположено в землището на с. Кален, община Мездра, област Враца, сключен на 21 декември 2010 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „Илинденски мрамор“ ООД, гр. София",
+      "publishedAt": "16.10.2023 г.",
+      "partyGuids": [
+        "49a0c40a-755b-4fa7-aaa0-661fe74c57eb"
+      ],
+      "inventoryIds": [
+        "D-000577"
+      ],
+      "concessionIds": [
+        "D-000577"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:34Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-12-10-23.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1032718,
+      "sha256": "b7780f981f0ba4d2057d7213101c254104e94f5245b58498f6cde279c66b04eb",
+      "archivePath": "source-archive/concessions/nkr-attachments/b7780f981f0ba4d2057d7213101c254104e94f5245b58498f6cde279c66b04eb.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/b7780f981f0ba4d2057d7213101c254104e94f5245b58498f6cde279c66b04eb.txt",
+      "extractor": "pypdf",
+      "textChars": 22702,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "51994b29-531f-47d2-bf5a-dd01c886569f": {
+      "fileId": "51994b29-531f-47d2-bf5a-dd01c886569f",
+      "url": "https://nkr.government.bg/File/Download/51994b29-531f-47d2-bf5a-dd01c886569f",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 28 април 2026г. към Договора за предоставяне на концесия за добив на подземни богатства – строителни материали – варовици, от находище „Исенов връх“, разположено в землището на с. Ракитница, община Стара Загора, област Стара Загора, сключен на 25 декември 2010 г. между Министерския съвет на Република България, представляван от министъра на регионалното развитие и благоустройството и „ПИ ЕС АЙ“ АД, гр. Стара Загора",
+      "publishedAt": "28.04.2026 г.",
+      "partyGuids": [
+        "165ac861-0e05-4160-b691-bb737f191f96"
+      ],
+      "inventoryIds": [
+        "D-000578"
+      ],
+      "concessionIds": [
+        "D-000578"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:36Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201%20%D0%98%D1%81%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%B2%D1%80%D1%8A%D1%85.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1643220,
+      "sha256": "d8eab5f7bbe325ccb2729b35750c98753d5986eaace11b0ebdee4db847a4fe06",
+      "archivePath": "source-archive/concessions/nkr-attachments/d8eab5f7bbe325ccb2729b35750c98753d5986eaace11b0ebdee4db847a4fe06.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/d8eab5f7bbe325ccb2729b35750c98753d5986eaace11b0ebdee4db847a4fe06.txt",
+      "extractor": "pypdf",
+      "textChars": 57,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "1567d3a0-a3c1-41fe-80b0-781a2e8d8090": {
+      "fileId": "1567d3a0-a3c1-41fe-80b0-781a2e8d8090",
+      "url": "https://nkr.government.bg/File/Download/1567d3a0-a3c1-41fe-80b0-781a2e8d8090",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 18 февруари 2026г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства – скалнооблицовъчни материали – гнайси и гнайсошисти, от находище „Айселана“ – участък „Айселана 2“, разположено в землището на с. Крушево, община Гърмен, област Благоевград, сключен на 9 февруари 2012 г. между Министерския съвет на Република България, представляван от министъра на икономиката, енергетиката и туризма и „Гейт“ ЕООД, с. Гърмен",
+      "publishedAt": "19.02.2026 г.",
+      "partyGuids": [
+        "c96050fd-665b-4b8e-b29d-75939c4d052f"
+      ],
+      "inventoryIds": [
+        "D-000606"
+      ],
+      "concessionIds": [
+        "D-000606"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:37Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-18-02-2026.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 816663,
+      "sha256": "1576ec7b3eb5cfe08f92f47836b9ab66672bfcd35f6f5132f2c90323f111f6d9",
+      "archivePath": "source-archive/concessions/nkr-attachments/1576ec7b3eb5cfe08f92f47836b9ab66672bfcd35f6f5132f2c90323f111f6d9.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/1576ec7b3eb5cfe08f92f47836b9ab66672bfcd35f6f5132f2c90323f111f6d9.txt",
+      "extractor": "pypdf",
+      "textChars": 33,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "1924b18b-7131-4af6-af8d-4f38d0c9ba67": {
+      "fileId": "1924b18b-7131-4af6-af8d-4f38d0c9ba67",
+      "url": "https://nkr.government.bg/File/Download/1924b18b-7131-4af6-af8d-4f38d0c9ba67",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 5 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – ВАРОВИЦИ, ОТ НАХОДИЩЕ „ШЕРЕМЕТЯ“, УЧАСТЪК „ИЗТОК“, РАЗПОЛОЖЕНО В ЗЕМЛИЩАТА НА С. ДРАГИЖЕВО, ОБЩИНА ЛЯСКОВЕЦ И С. ШЕРЕМЕТЯ, ОБЩИНА ВЕЛИКО ТЪРНОВО, ОБЛАСТ ВЕЛИКО ТЪРНОВО, СКЛЮЧЕН НА 29 ЮНИ 2012 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА ИКОНОМИКАТА, ЕНЕРГЕТИКАТА И ТУРИЗМА И „СТРЕЛА - 92“ ООД, ГР. ВЕЛИКО ТЪРНОВО",
+      "publishedAt": "20.10.2025 г.",
+      "partyGuids": [
+        "619091c6-4481-47a1-ae44-1c905bb09258"
+      ],
+      "inventoryIds": [
+        "D-000613"
+      ],
+      "concessionIds": [
+        "D-000613"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:38Z",
+      "filename": "Aneks-Sheremetia.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 770422,
+      "sha256": "62eef163e5424ab679232457ea383edb28930f7e9852add64b01b73f309a0bb8",
+      "archivePath": "source-archive/concessions/nkr-attachments/62eef163e5424ab679232457ea383edb28930f7e9852add64b01b73f309a0bb8.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/62eef163e5424ab679232457ea383edb28930f7e9852add64b01b73f309a0bb8.txt",
+      "extractor": "pypdf",
+      "textChars": 39,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d89faf50-8fb7-421c-b3ad-49f8c8b34522": {
+      "fileId": "d89faf50-8fb7-421c-b3ad-49f8c8b34522",
+      "url": "https://nkr.government.bg/File/Download/d89faf50-8fb7-421c-b3ad-49f8c8b34522",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 30 януари 2026г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства – скалнооблицовъчни материали – гнайси, гнайсошисти и амфиболити от находище „Ерковище“, участъци „Вриза“ и „Бистрица“, разположено в землището на с. Плетена, община Сатовча, област Благоевград, сключен на 28 февруари 2013 г. между Министерския съвет на Република България, представляван от министъра на икономиката, енергетиката и туризма и ЕТ „Румен Арнаудов – Айтен Арнаудова“, с. Плетена",
+      "publishedAt": "03.02.2026 г.",
+      "partyGuids": [
+        "21624293-638b-4ec4-8b2f-659cfa35b50f"
+      ],
+      "inventoryIds": [
+        "D-000642"
+      ],
+      "concessionIds": [
+        "D-000642"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:39Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-30-01-2026.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 618403,
+      "sha256": "058869cd71b4818e39db6bfde74522018ed679e94ee0af3b7ed46d0fdcbfe3dc",
+      "archivePath": "source-archive/concessions/nkr-attachments/058869cd71b4818e39db6bfde74522018ed679e94ee0af3b7ed46d0fdcbfe3dc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/058869cd71b4818e39db6bfde74522018ed679e94ee0af3b7ed46d0fdcbfe3dc.txt",
+      "extractor": "pypdf",
+      "textChars": 24,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "fbb90088-b64a-4238-884e-a85b0f5a3ee5": {
+      "fileId": "fbb90088-b64a-4238-884e-a85b0f5a3ee5",
+      "url": "https://nkr.government.bg/File/Download/fbb90088-b64a-4238-884e-a85b0f5a3ee5",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 29 декември 2025 г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – андезитобазалти, от находище „Футула“, разположено в землищата на с. Железник и с. Смолник, община Карнобат, област Бургас, сключен на 12 март 2013 г. между Министерския съвет на Република България, представляван от министъра на икономиката, енергетиката и туризма и „Пътстрой Бургас“ ЕООД, гр. Бургас",
+      "publishedAt": "29.12.2025 г.",
+      "partyGuids": [
+        "c9cdd652-76b4-48c2-9e78-015af091aa15"
+      ],
+      "inventoryIds": [
+        "D-000649"
+      ],
+      "concessionIds": [
+        "D-000649"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:40Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-29-12-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 646932,
+      "sha256": "fa760b66a5564d5203b9ed81507147f426ddb3f5f7b5536aa33ae33182a08aea",
+      "archivePath": "source-archive/concessions/nkr-attachments/fa760b66a5564d5203b9ed81507147f426ddb3f5f7b5536aa33ae33182a08aea.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/fa760b66a5564d5203b9ed81507147f426ddb3f5f7b5536aa33ae33182a08aea.txt",
+      "extractor": "pypdf",
+      "textChars": 13480,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "f0ff6d0d-9cd4-4f35-a0ca-5b00b1472b0c": {
+      "fileId": "f0ff6d0d-9cd4-4f35-a0ca-5b00b1472b0c",
+      "url": "https://nkr.government.bg/File/Download/f0ff6d0d-9cd4-4f35-a0ca-5b00b1472b0c",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 от 6 април 2023г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 3 от Закона за подземните богатства – природен газ, от находище „Каварна Изток“, разположено в континенталния шелф и изключителната икономическа зона на Република България в Черно море, сключен на 26 февруари 2013г. между Министерския съвет на Република България, представляван от министъра на икономиката, енергетиката и туризма и „Мелроуз Рисорсиз“ ООД, Люксембург, изменен с допълнително споразумение № 1 от 20 февруари 2020г.",
+      "publishedAt": "10.04.2023 г.",
+      "partyGuids": [
+        "5ae66803-e2cf-43b0-b210-0fb3f28267fb"
+      ],
+      "inventoryIds": [
+        "D-000651"
+      ],
+      "concessionIds": [
+        "D-000651"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:41Z",
+      "filename": "%D0%94%D0%BE%D0%BF%D1%8A%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202-06-04-2023.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 404210,
+      "sha256": "1b4e421539d3867c7234ca1b6a56b095dbb29996142c0ccef8f387d4db0e0e47",
+      "archivePath": "source-archive/concessions/nkr-attachments/1b4e421539d3867c7234ca1b6a56b095dbb29996142c0ccef8f387d4db0e0e47.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/1b4e421539d3867c7234ca1b6a56b095dbb29996142c0ccef8f387d4db0e0e47.txt",
+      "extractor": "pypdf",
+      "textChars": 8949,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "7616b509-cbf0-4e21-90e7-d9384e8d8651": {
+      "fileId": "7616b509-cbf0-4e21-90e7-d9384e8d8651",
+      "url": "https://nkr.government.bg/File/Download/7616b509-cbf0-4e21-90e7-d9384e8d8651",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 14 октомври 2025 г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Вишовград“, разположено в землището на с. Вишовград, община Павликени, област Велико Търново, сключен на 23 октомври 2013 г. между Министерския съвет на Република България, представляван от министъра на икономиката и енергетиката и „Стрела-92“ ООД, гр. Велико Търново",
+      "publishedAt": "15.10.2025 г.",
+      "partyGuids": [
+        "81f5a376-596e-4425-ad32-3a25454a42af"
+      ],
+      "inventoryIds": [
+        "D-000667"
+      ],
+      "concessionIds": [
+        "D-000667"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:44Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-2025.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1778735,
+      "sha256": "c7b6ed7f8065948c1477e3792b09b92feec82b5fd44d9667612a529a485c5ef5",
+      "archivePath": "source-archive/concessions/nkr-attachments/c7b6ed7f8065948c1477e3792b09b92feec82b5fd44d9667612a529a485c5ef5.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c7b6ed7f8065948c1477e3792b09b92feec82b5fd44d9667612a529a485c5ef5.txt",
+      "extractor": "pypdf",
+      "textChars": 39228,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3b6fbdd5-ad26-4f88-89bf-f78bb13ae697": {
+      "fileId": "3b6fbdd5-ad26-4f88-89bf-f78bb13ae697",
+      "url": "https://nkr.government.bg/File/Download/3b6fbdd5-ad26-4f88-89bf-f78bb13ae697",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 от 28 ноември 2023г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали – варовици и мергели, от находище „Мадлен“, разположено в землището на с. Горско Сливово, община Летница, област Ловеч, сключен на 30 май 2014 г. между Министерския съвет на Република България, представляван от министъра на икономиката и енергетиката и „Хидробетон“ ООД, с. Казичене, изменен с Допълнително споразумение № 1 от 22 август 2018 г.",
+      "publishedAt": "04.12.2023 г.",
+      "partyGuids": [
+        "c653ca95-d866-4b49-8aa0-f61ca1f1c786"
+      ],
+      "inventoryIds": [
+        "D-000672"
+      ],
+      "concessionIds": [
+        "D-000672"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:45Z",
+      "filename": "%D0%94%D0%A1%202-2023%20%D0%9C%D0%B0%D0%B4%D0%BB%D0%B5%D0%BD.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1206814,
+      "sha256": "70cb7b0387519cb6b4b85bec8b739854e0fdadf15060206a923506de660a4df3",
+      "archivePath": "source-archive/concessions/nkr-attachments/70cb7b0387519cb6b4b85bec8b739854e0fdadf15060206a923506de660a4df3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/70cb7b0387519cb6b4b85bec8b739854e0fdadf15060206a923506de660a4df3.txt",
+      "extractor": "pypdf",
+      "textChars": 13509,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "6aec6851-ba97-4e8d-b716-4d66dc59fdd6": {
+      "fileId": "6aec6851-ba97-4e8d-b716-4d66dc59fdd6",
+      "url": "https://nkr.government.bg/File/Download/6aec6851-ba97-4e8d-b716-4d66dc59fdd6",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "ДОПЪЛНИТЕЛНО СПОРАЗУМЕНИЕ № 1 КЪМ ДОГОВОР ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 6 ОТ ЗАКОНА ЗА ПОДЗЕМНИ БОГАТСТВА – СКАЛНООБЛИЦОВЪЧНИ МАТЕРИАЛИ – ВАРОВИЦИ, ОТ НАХОДИЩЕ „РАВНИЩЕ - 2“, УЧАСТЪЦИ „ЦЕНТРАЛЕН“ И „ИЗТОЧЕН“, РАЗПОЛОЖЕНО В ЗЕМЛИЩАТА НА С. ГОРНА КРЕМЕНА И С. ВЪРБЕШНИЦА, ОБЩИНА МЕЗДРА, ОБЛАСТ ВРАЦА, СКЛЮЧЕН НА 18 ЯНУАРИ 2018 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА ЕНЕРГЕТИКАТА И „ЙОТОВ СТОУН“ ЕООД, ГР. МЕЗДРА",
+      "publishedAt": "02.09.2022 г.",
+      "partyGuids": [
+        "b192be77-72b0-43ac-bcd6-0f3dc021fe7d"
+      ],
+      "inventoryIds": [
+        "D-000753"
+      ],
+      "concessionIds": [
+        "D-000753"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:46Z",
+      "filename": "Ravnishte-2_Aneks 1.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2210918,
+      "sha256": "3ab12cf1f43f4bccd0853008306b4735e630c782f47be6e9093e586f5f2304e6",
+      "archivePath": "source-archive/concessions/nkr-attachments/3ab12cf1f43f4bccd0853008306b4735e630c782f47be6e9093e586f5f2304e6.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3ab12cf1f43f4bccd0853008306b4735e630c782f47be6e9093e586f5f2304e6.txt",
+      "extractor": "pypdf",
+      "textChars": 6,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "f646968b-78b8-4315-972b-1a74f55a422a": {
+      "fileId": "f646968b-78b8-4315-972b-1a74f55a422a",
+      "url": "https://nkr.government.bg/File/Download/f646968b-78b8-4315-972b-1a74f55a422a",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 от 10 септември 2024г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Белите камъни“, разположено в землището на гр. Суворово, община Суворово, област Варна, сключен на 11 юли 2018г. между Министерския съвет на Република България, представляван от министъра на енергетиката и „Пътстрой Бургас\" ЕООД, гр. Бургас, изменен и допълнен с допълнително споразумение № 1 от 13 февруари 2020г.",
+      "publishedAt": "12.09.2024 г.",
+      "partyGuids": [
+        "1e6eb031-b2e4-4669-b496-e9020211ede3"
+      ],
+      "inventoryIds": [
+        "D-000767"
+      ],
+      "concessionIds": [
+        "D-000767"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:48Z",
+      "filename": "%D0%94%D0%BE%D0%BF%D1%8A%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%202-%D0%91%D0%B5%D0%BB%D0%B8%D1%82%D0%B5%20%D0%BA%D0%B0%D0%BC%D1%8A%D0%BD%D0%B8.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 346033,
+      "sha256": "566a733b9674e796549ff31b64e22792ba7081ed4523d64f33d64812d530690d",
+      "archivePath": "source-archive/concessions/nkr-attachments/566a733b9674e796549ff31b64e22792ba7081ed4523d64f33d64812d530690d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/566a733b9674e796549ff31b64e22792ba7081ed4523d64f33d64812d530690d.txt",
+      "extractor": "pypdf",
+      "textChars": 7499,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e5aa7a2a-2672-48f0-aafc-8b4d8308ff4f": {
+      "fileId": "e5aa7a2a-2672-48f0-aafc-8b4d8308ff4f",
+      "url": "https://nkr.government.bg/File/Download/e5aa7a2a-2672-48f0-aafc-8b4d8308ff4f",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 4 септември 2025г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Лома-1“, участъци „Североизток“ и „Югозапад“, общини Ружинци и Димово, област Видин",
+      "publishedAt": "09.10.2025 г.",
+      "partyGuids": [
+        "1d01992f-d2fc-4247-9006-55c98a37f7d5"
+      ],
+      "inventoryIds": [
+        "D-000791"
+      ],
+      "concessionIds": [
+        "D-000791"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:49Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-04-09-25.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 427791,
+      "sha256": "12404ce60cfae8660d9d6ddc390081e1e65a12b08d9a819439e41278dd0f2004",
+      "archivePath": "source-archive/concessions/nkr-attachments/12404ce60cfae8660d9d6ddc390081e1e65a12b08d9a819439e41278dd0f2004.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/12404ce60cfae8660d9d6ddc390081e1e65a12b08d9a819439e41278dd0f2004.txt",
+      "extractor": "pypdf",
+      "textChars": 9008,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "7d9b836f-5ebd-4f9c-b086-5b5cbccb73f4": {
+      "fileId": "7d9b836f-5ebd-4f9c-b086-5b5cbccb73f4",
+      "url": "https://nkr.government.bg/File/Download/7d9b836f-5ebd-4f9c-b086-5b5cbccb73f4",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "",
+      "publishedAt": "29.12.2025 г.",
+      "partyGuids": [
+        "19637cc8-5529-41f0-ad3e-0ce92d3e6813"
+      ],
+      "inventoryIds": [
+        "D-000858"
+      ],
+      "concessionIds": [
+        "D-000858"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:50Z",
+      "filename": "Kozya polyana_clear.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 391657,
+      "sha256": "96e866c9842cbcf593b24705e294a3deb8ee0701f8bb8226a166968db7ce01ad",
+      "archivePath": "source-archive/concessions/nkr-attachments/96e866c9842cbcf593b24705e294a3deb8ee0701f8bb8226a166968db7ce01ad.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/96e866c9842cbcf593b24705e294a3deb8ee0701f8bb8226a166968db7ce01ad.txt",
+      "extractor": "pypdf",
+      "textChars": 9,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "bae5eb62-1ece-4089-96ad-1d984b0930af": {
+      "fileId": "bae5eb62-1ece-4089-96ad-1d984b0930af",
+      "url": "https://nkr.government.bg/File/Download/bae5eb62-1ece-4089-96ad-1d984b0930af",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "",
+      "publishedAt": "17.12.2024 г.",
+      "partyGuids": [
+        "e83bb27f-4a5d-4ecc-8fe9-2373ad9653b0"
+      ],
+      "inventoryIds": [
+        "O-000040"
+      ],
+      "concessionIds": [
+        "O-000040"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:51Z",
+      "filename": "Aneks_Bov.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1192686,
+      "sha256": "527da1c9dcacb6c918890d78316dd95604b4e73f9f096bd30d3611aa318387f4",
+      "archivePath": "source-archive/concessions/nkr-attachments/527da1c9dcacb6c918890d78316dd95604b4e73f9f096bd30d3611aa318387f4.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/527da1c9dcacb6c918890d78316dd95604b4e73f9f096bd30d3611aa318387f4.txt",
+      "extractor": "pypdf",
+      "textChars": 48,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3abb19f0-dd1b-44e1-b6fc-fb84fe533175": {
+      "fileId": "3abb19f0-dd1b-44e1-b6fc-fb84fe533175",
+      "url": "https://nkr.government.bg/File/Download/3abb19f0-dd1b-44e1-b6fc-fb84fe533175",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 2 към Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - пясъци, представляващи изключителна държавна собственост, от находище \"Калиманци\", разположено в землището на с. Калиманци, община Суворово, област Варна.",
+      "publishedAt": "15.04.2022 г.",
+      "partyGuids": [
+        "059d323e-e68e-4c68-a4dc-4ad2d3f6ddb5"
+      ],
+      "inventoryIds": [
+        "O-000466"
+      ],
+      "concessionIds": [
+        "O-000466"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:53Z",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%812_%D0%9A%D0%B0%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD%D1%86%D0%B8_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 8129071,
+      "sha256": "2c8bc74d1b338f048db69ef9c25901baa31a00a8e85ff93d140e23db36d66106",
+      "archivePath": "source-archive/concessions/nkr-attachments/2c8bc74d1b338f048db69ef9c25901baa31a00a8e85ff93d140e23db36d66106.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2c8bc74d1b338f048db69ef9c25901baa31a00a8e85ff93d140e23db36d66106.txt",
+      "extractor": "pypdf",
+      "textChars": 3529,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "6e325dd5-9b53-4ff8-bcb1-d91c89264df5": {
+      "fileId": "6e325dd5-9b53-4ff8-bcb1-d91c89264df5",
+      "url": "https://nkr.government.bg/File/Download/6e325dd5-9b53-4ff8-bcb1-d91c89264df5",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 към Договор за предоставяне на концесия с предмет особено право на ползване върху подземни богатства чрез добив на пясък от обект \"Кариера за добев на пясък в местността \"Лозята\", разположена в землището на с. Калиманци, община Суворово, област Варна.",
+      "publishedAt": "15.04.2022 г.",
+      "partyGuids": [
+        "059d323e-e68e-4c68-a4dc-4ad2d3f6ddb5"
+      ],
+      "inventoryIds": [
+        "O-000466"
+      ],
+      "concessionIds": [
+        "O-000466"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:55Z",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%811_%D0%9A%D0%B0%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD%D1%86%D0%B8_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 8153039,
+      "sha256": "4d9535fde5e70f03032b150878de2f7b03d4b542adbb5ef4cad54d72361ae065",
+      "archivePath": "source-archive/concessions/nkr-attachments/4d9535fde5e70f03032b150878de2f7b03d4b542adbb5ef4cad54d72361ae065.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/4d9535fde5e70f03032b150878de2f7b03d4b542adbb5ef4cad54d72361ae065.txt",
+      "extractor": "pypdf",
+      "textChars": 19827,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "8fc9d1d1-7695-410c-be0b-a5894ccf713f": {
+      "fileId": "8fc9d1d1-7695-410c-be0b-a5894ccf713f",
+      "url": "https://nkr.government.bg/File/Download/8fc9d1d1-7695-410c-be0b-a5894ccf713f",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "",
+      "publishedAt": "29.12.2025 г.",
+      "partyGuids": [
+        "059d323e-e68e-4c68-a4dc-4ad2d3f6ddb5"
+      ],
+      "inventoryIds": [
+        "O-000466"
+      ],
+      "concessionIds": [
+        "O-000466"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:56Z",
+      "filename": "%D0%9A%D0%90%D0%9B%D0%98%D0%9C%D0%90%D0%9D%D0%A6%D0%98.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 409560,
+      "sha256": "7d4379858ee6090d5dc02f55724827522fc27bd761165fc8d787bbe6e13e65bd",
+      "archivePath": "source-archive/concessions/nkr-attachments/7d4379858ee6090d5dc02f55724827522fc27bd761165fc8d787bbe6e13e65bd.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7d4379858ee6090d5dc02f55724827522fc27bd761165fc8d787bbe6e13e65bd.txt",
+      "extractor": "pypdf",
+      "textChars": 9,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a3538ec4-21ac-4bd2-84d1-8639117bd1c2": {
+      "fileId": "a3538ec4-21ac-4bd2-84d1-8639117bd1c2",
+      "url": "https://nkr.government.bg/File/Download/a3538ec4-21ac-4bd2-84d1-8639117bd1c2",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 към Договор за отдаване на концесия за обект \"Каменна кариера\"/Концесия за добив на подземни богатства - строителни материали - андезитови туфи, от находище \"Грудово\", разположено в землището на гр. Средец, община Средец, област Бургас/.",
+      "publishedAt": "19.04.2022 г.",
+      "partyGuids": [
+        "59ffd060-1a45-4973-8946-1a52c5647d57"
+      ],
+      "inventoryIds": [
+        "O-000715"
+      ],
+      "concessionIds": [
+        "O-000715"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:58Z",
+      "filename": "%D0%90%D0%BD%D0%B5%D0%BA%D1%811_%D0%93%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%BE_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1967626,
+      "sha256": "f453234f00084fbaf5f5c1ca6e91816469d78394483912f03a5f4099d78f23fb",
+      "archivePath": "source-archive/concessions/nkr-attachments/f453234f00084fbaf5f5c1ca6e91816469d78394483912f03a5f4099d78f23fb.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f453234f00084fbaf5f5c1ca6e91816469d78394483912f03a5f4099d78f23fb.txt",
+      "extractor": "pypdf",
+      "textChars": 11455,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "34d16628-2615-40d4-b2d6-37ca204c0720": {
+      "fileId": "34d16628-2615-40d4-b2d6-37ca204c0720",
+      "url": "https://nkr.government.bg/File/Download/34d16628-2615-40d4-b2d6-37ca204c0720",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Анекс № 412/18.05.2007 г. към Концесионен договор № 003/09.01.2006 г.",
+      "publishedAt": "20.04.2022 г.",
+      "partyGuids": [
+        "7ba38774-24fa-4f84-8a46-76b8a3603b93"
+      ],
+      "inventoryIds": [
+        "O-000794"
+      ],
+      "concessionIds": [
+        "O-000794"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:12:59Z",
+      "filename": "%D0%B0%D0%BD%D0%B5%D0%BA%D1%81_%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%B5%D1%86_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 687675,
+      "sha256": "ee8c44c2faccbc87980434e491a98403f4469076261661c53d93424b82d7ec7c",
+      "archivePath": "source-archive/concessions/nkr-attachments/ee8c44c2faccbc87980434e491a98403f4469076261661c53d93424b82d7ec7c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ee8c44c2faccbc87980434e491a98403f4469076261661c53d93424b82d7ec7c.txt",
+      "extractor": "pdftotext",
+      "textChars": 930,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "96286439-9766-44ee-9557-eac9b5f6c13f": {
+      "fileId": "96286439-9766-44ee-9557-eac9b5f6c13f",
+      "url": "https://nkr.government.bg/File/Download/96286439-9766-44ee-9557-eac9b5f6c13f",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение към Концесионен договор № 003/09.01.2006 г.",
+      "publishedAt": "20.04.2022 г.",
+      "partyGuids": [
+        "7ba38774-24fa-4f84-8a46-76b8a3603b93"
+      ],
+      "inventoryIds": [
+        "O-000794"
+      ],
+      "concessionIds": [
+        "O-000794"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:13:00Z",
+      "filename": "%D0%B0%D0%BD%D0%B5%D0%BA%D1%811_%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%B5%D1%86_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 847813,
+      "sha256": "6a352011647ecefb3221559080ed98afd841cde99fb426631900495ccab23231",
+      "archivePath": "source-archive/concessions/nkr-attachments/6a352011647ecefb3221559080ed98afd841cde99fb426631900495ccab23231.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6a352011647ecefb3221559080ed98afd841cde99fb426631900495ccab23231.txt",
+      "extractor": "pypdf",
+      "textChars": 773,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c988a1a1-3e22-4db3-a24c-054b5146d4b4": {
+      "fileId": "c988a1a1-3e22-4db3-a24c-054b5146d4b4",
+      "url": "https://nkr.government.bg/File/Download/c988a1a1-3e22-4db3-a24c-054b5146d4b4",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 3 от 19 септември 2023г. към концесионен договор с предмет – особено право на ползване върху обект - публична общинска собственост – строителни материали – варовици за добив на негасена вар от находище с. Каменец, община Стралджа, област Ямбол, сключен на 29.12.2005 г. между община Стралджа и ЕТ „Яна Петрова“, с. Каменец, изменен и допълнен с Допълнително споразумение от 17.01.2007 г. и Анекс от 18.05.2007 г.",
+      "publishedAt": "25.09.2023 г.",
+      "partyGuids": [
+        "7ba38774-24fa-4f84-8a46-76b8a3603b93"
+      ],
+      "inventoryIds": [
+        "O-000794"
+      ],
+      "concessionIds": [
+        "O-000794"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:13:04Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%203-19-09-23.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 4227003,
+      "sha256": "00c4b01e0e7f50ad482f167917fff43bbeda8bc2295576bdbab51789355e01c5",
+      "archivePath": "source-archive/concessions/nkr-attachments/00c4b01e0e7f50ad482f167917fff43bbeda8bc2295576bdbab51789355e01c5.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/00c4b01e0e7f50ad482f167917fff43bbeda8bc2295576bdbab51789355e01c5.txt",
+      "extractor": "pypdf",
+      "textChars": 92371,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e0cb0e94-3a9e-4845-9ca8-f8f5cc7ca5cd": {
+      "fileId": "e0cb0e94-3a9e-4845-9ca8-f8f5cc7ca5cd",
+      "url": "https://nkr.government.bg/File/Download/e0cb0e94-3a9e-4845-9ca8-f8f5cc7ca5cd",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за подземни природни богатства - оловно-цинкови и златосъдържащи руди чрез добив от находище \"Чала\", Хасковска област",
+      "publishedAt": "22.10.2021 г.",
+      "partyGuids": [
+        "90716d7d-a0b3-4647-8860-745964b933be"
+      ],
+      "inventoryIds": [
+        "D-000075"
+      ],
+      "concessionIds": [
+        "D-000075"
+      ],
+      "priority": 2,
+      "status": "ok",
+      "checkedAt": "2026-10-25T09:13:06Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A7%D0%B0%D0%BB%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1863916,
+      "sha256": "06dad19e030dc0c78b2d906247d21ea789d13b72f5dce243feccc86a90a28c80",
+      "archivePath": "source-archive/concessions/nkr-attachments/06dad19e030dc0c78b2d906247d21ea789d13b72f5dce243feccc86a90a28c80.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/06dad19e030dc0c78b2d906247d21ea789d13b72f5dce243feccc86a90a28c80.txt",
+      "extractor": "pypdf",
+      "textChars": 9321,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
     }
   }
 }
