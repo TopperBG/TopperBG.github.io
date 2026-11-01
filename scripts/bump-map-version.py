@@ -10,6 +10,7 @@ VERSION_FILE=ROOT/'map/data/map-version.json'
 def render(version):
  page=ROOT/'map/index.html';text=page.read_text()
  replacements=[
+  (r'(map-interface\.(?:css|js)\?v=)[\d.]+',rf'\g<1>{version}'),
   (r'(<meta name="bgwf-build" content=")[^"]+(">)',rf'\g<1>v{version}\2'),
   (r'(<title>[^<]*? · )v[\w.]+(</title>)',rf'\g<1>v{version}\2'),
   (r'(<span class="bgwf-filter-version">)v[^<]+(</span>)',rf'\g<1>v{version}\2'),
@@ -17,7 +18,8 @@ def render(version):
   (r"(a.download=')bgwf-v[\w.]+-debug-report.json(';)",rf'\g<1>bgwf-v{version}-debug-report.json\2')]
  for pattern,replacement in replacements:
   text,count=re.subn(pattern,replacement,text)
-  if count!=1:raise ValueError(f'Expected one active version location: {pattern}; found {count}')
+  expected=2 if 'map-interface' in pattern else 1
+  if count!=expected:raise ValueError(f'Expected {expected} active version locations: {pattern}; found {count}')
  listing=ROOT/'map/renewables.html';list_text=listing.read_text()
  list_text=re.sub(r' · v[\d.]+(?=</title>)','',list_text)
  list_text,count=re.subn(r'(<title>[^<]+)(</title>)',rf'\g<1> · v{version}\2',list_text)
