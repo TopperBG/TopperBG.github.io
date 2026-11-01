@@ -55,7 +55,7 @@ window.setupBgwfInterface=function({root,map,setFilterPanelOpen,refreshFilterLay
   for(const button of fireStrip.querySelectorAll('.bgwf-legend [data-year]')){const label=document.createElement('span'),dot=document.createElement('i');dot.style.background=button.style.getPropertyValue('--bgwf-filter-color');label.append(dot,document.createTextNode(button.dataset.year));yearKeys.append(label);}legendContent.append(yearKeys);
   const legendNote=document.createElement('p');legendNote.className='bgwf-legend-note';legendNote.textContent='Цветовете обозначават тематичните слоеве. Полигоните показват наличните контури, а точковите маркери — местоположение. Годините управляват само историческите пожари.';legendContent.append(legendNote);
   layerContent.append(layerStrip,fireStrip);
-  const stats=document.createElement('details');stats.className='bgwf-panel-stats';stats.innerHTML='<summary>Площи и статистика</summary>';stats.append(q('.bgwf-status-row'),q('[data-natura-overlap]'),q('[data-territory-scale-bars]'));
+  const stats=document.createElement('details');stats.className='bgwf-panel-stats';stats.open=true;stats.innerHTML='<summary>Площи и статистика</summary>';stats.append(q('.bgwf-status-row'),q('[data-natura-overlap]'),q('[data-territory-scale-bars]'));
   body.prepend(tabs,layerContent,legendContent);body.append(stats);
   const version=q('.bgwf-filter-version'),footer=document.createElement('div');footer.className='bgwf-panel-footer';footer.append(version);body.append(footer);
 
