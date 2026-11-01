@@ -11,7 +11,7 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 #bg-wildfires-map [data-active-layer-count]{min-width:17px;padding:2px 4px;border-radius:20px;background:#367553;color:white;font:10px Arial;text-align:center}
 #bg-wildfires-map .bgwf-main-toolbar [data-ui-search]{display:flex}
-#bg-wildfires-map .bgwf-floating-controls{position:absolute!important;left:12px!important;right:auto!important;top:60px!important;bottom:auto!important;width:280px!important;max-width:calc(100% - 36px)!important;max-height:calc(100dvh - 72px)!important;margin:0!important;padding:16px!important;border:1px solid #ffffffb0!important;border-radius:18px!important;background:var(--ui-glass)!important;box-shadow:var(--ui-shadow)!important;backdrop-filter:blur(16px);overflow:auto!important;scrollbar-width:thin;z-index:55}
+#bg-wildfires-map .bgwf-floating-controls{position:absolute!important;left:12px!important;right:auto!important;top:60px!important;bottom:auto!important;width:280px!important;max-width:calc(100% - 36px)!important;max-height:calc(100dvh - 72px - var(--source-warning-space,0px))!important;margin:0!important;padding:16px!important;border:1px solid #ffffffb0!important;border-radius:18px!important;background:var(--ui-glass)!important;box-shadow:var(--ui-shadow)!important;backdrop-filter:blur(16px);overflow:auto!important;scrollbar-width:thin;z-index:55}
 #bg-wildfires-map.is-filter-collapsed .bgwf-floating-controls{display:none!important}
 #bg-wildfires-map .bgwf-floating-controls::before{display:none!important}
 #bg-wildfires-map .bgwf-floating-controls[data-load-state=loading]{background:hsla(var(--source-load-hue,0),65%,95%,.78)!important}
@@ -63,8 +63,6 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map .bgwf-detail-close{position:absolute;top:8px;right:7px;border:0;background:transparent;padding:4px;cursor:pointer;color:var(--ui-muted)}
 #bg-wildfires-map .bgwf-province-chip{top:90px!important;left:340px!important;right:auto!important;max-width:calc(100% - 410px);background:var(--ui-glass)!important;border-radius:12px!important;z-index:38!important}
 #bg-wildfires-map.is-filter-collapsed .bgwf-province-chip{left:18px!important}
-#bg-wildfires-map .bgwf-source-warning{top:130px!important;left:340px!important;right:75px!important;max-width:520px;max-height:80px;overflow:auto;z-index:39!important}
-#bg-wildfires-map.is-filter-collapsed .bgwf-source-warning{left:18px!important}
 #bg-wildfires-map .bgwf-territory-bars{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;width:100%!important;max-width:none!important;margin:12px 0 0!important;padding:12px 4px 0!important;background:transparent!important;border:0!important;border-top:1px solid var(--ui-line)!important;box-shadow:none!important}
 #bg-wildfires-map .bgwf-info-dialog{position:fixed;inset:0;width:min(680px,calc(100% - 28px));max-height:85dvh;margin:auto;padding:24px;border:1px solid #e3e9df;border-radius:20px;background:rgba(251,253,248,.91);backdrop-filter:blur(14px);color:var(--ui-ink);box-shadow:0 20px 80px #12372d40;font:13px/1.7 Arial;overflow:auto}
 #bg-wildfires-map .bgwf-info-dialog::backdrop{background:#1c362b66;backdrop-filter:blur(4px)}
@@ -89,7 +87,7 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
  #bg-wildfires-map .bgwf-main-toolbar :is(button,a)>span{display:block;font-size:10px}
  #bg-wildfires-map .bgwf-main-toolbar [data-ui-search]{display:flex}
  #bg-wildfires-map [data-active-layer-count]{position:absolute;top:1px;left:calc(50% + 6px);font-size:9px;min-width:16px}
- #bg-wildfires-map .bgwf-floating-controls{top:auto!important;bottom:var(--nav-height)!important;left:0!important;right:0!important;width:100%!important;max-width:100%!important;max-height:min(70dvh,560px)!important;padding:14px 18px!important;border-radius:22px 22px 0 0!important;z-index:60;box-shadow:0 -8px 30px #173b2824!important;overscroll-behavior:contain}
+ #bg-wildfires-map .bgwf-floating-controls{top:auto!important;bottom:calc(var(--nav-height) + var(--source-warning-space,0px))!important;left:0!important;right:0!important;width:100%!important;max-width:100%!important;max-height:min(70dvh,560px,calc(100dvh - var(--nav-height) - var(--source-warning-space,0px) - 12px))!important;padding:14px 18px!important;border-radius:22px 22px 0 0!important;z-index:60;box-shadow:0 -8px 30px #173b2824!important;overscroll-behavior:contain}
  #bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle{height:44px!important;min-height:44px!important}
  #bg-wildfires-map .bgwf-filter-toggle-copy strong{font-size:19px!important}
  #bg-wildfires-map .bgwf-floating-controls .bgwf-year-filter{height:38px!important;min-height:38px!important;max-height:none!important}
@@ -105,7 +103,6 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
  #bg-wildfires-map .bgwf-detail,#bg-wildfires-map.is-filter-collapsed .bgwf-detail{left:12px!important;right:12px!important;bottom:calc(var(--nav-height) + 90px)!important;width:auto;max-height:30dvh!important;font-size:11px!important;padding:12px 38px 12px 14px!important}
  #bg-wildfires-map:has(.is-filter-open) .bgwf-detail,#bg-wildfires-map.is-search-open .bgwf-detail{display:none!important}
  #bg-wildfires-map .bgwf-province-chip,#bg-wildfires-map.is-filter-collapsed .bgwf-province-chip{top:max(12px,env(safe-area-inset-top))!important;left:12px!important;max-width:calc(100% - 80px)}
- #bg-wildfires-map .bgwf-source-warning,#bg-wildfires-map.is-filter-collapsed .bgwf-source-warning{top:54px!important;left:12px!important;right:66px!important;max-height:60px;font-size:10px}
  #bg-wildfires-map .bgwf-info-dialog{padding:20px;max-height:85dvh}
 }
 @media(max-height:450px) and (hover:none),(max-width:950px) and (max-height:450px){#bg-wildfires-map .bgwf-main-toolbar{--nav-height:calc(56px + env(safe-area-inset-bottom,0px))}#bg-wildfires-map .bgwf-main-toolbar :is(button,a){height:44px}#bg-wildfires-map .bgwf-floating-controls{max-height:calc(100dvh - 66px)!important}#bg-wildfires-map .bgwf-zoom-controls{top:40%!important;gap:2px!important}#bg-wildfires-map .bgwf-map-button{height:36px!important;min-height:36px!important}}
@@ -171,3 +168,8 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map .bgwf-legend-years{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;font:10px Arial;color:var(--ui-muted)}
 #bg-wildfires-map .bgwf-legend-years span{display:flex;align-items:center;gap:6px}
 #bg-wildfires-map .bgwf-legend-years i{width:9px;height:9px;border-radius:50%}
+
+/* Compact source notice follows the panel and reserves room below it. */
+#bg-wildfires-map .bgwf-source-warning{top:var(--source-warning-top,60px)!important;left:var(--source-warning-left,12px)!important;right:auto!important;bottom:auto!important;width:var(--source-warning-width,280px)!important;max-width:calc(100% - 24px)!important;max-height:110px!important;transform:none!important;overflow:auto;text-align:left!important;z-index:61!important}
+#bg-wildfires-map .bgwf-source-warning[data-transient=true]{font:400 9px/1.45 Arial!important;color:#5c7064!important;padding:5px 8px!important;border:1px solid rgba(110,135,115,.24)!important;border-radius:8px!important;background:rgba(248,252,246,.72)!important;backdrop-filter:blur(8px);box-shadow:0 2px 8px #173b2812!important}
+#bg-wildfires-map .bgwf-industry-legend-hint{display:flex!important;flex-wrap:wrap;white-space:normal!important;max-width:100%;line-height:1.5}

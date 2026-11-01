@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.95.38">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.38</title>
+<meta name="bgwf-build" content="v0.95.39">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.95.39</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1626,8 +1626,8 @@ svg {
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
-<link rel="stylesheet" href="./assets/map-interface.css?v=0.95.38">
-<script src="./assets/map-interface.js?v=0.95.38"></script>
+<link rel="stylesheet" href="./assets/map-interface.css?v=0.95.39">
+<script src="./assets/map-interface.js?v=0.95.39"></script>
 </head>
 <body>
 <div id="bg-wildfires-map" class="is-filter-collapsed" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
@@ -1638,7 +1638,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.38</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.95.39</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach hidden></span>
@@ -4552,7 +4552,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.95.38', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.95.39', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4597,7 +4597,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.38-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.95.39-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
@@ -4712,19 +4712,28 @@ function updateFloatingUiPosition(){
   updateSourceWarningPosition();
 }
 addEventListener('scroll',updateFloatingUiPosition,{passive:true}); addEventListener('resize',()=>{updateFloatingUiPosition();map?.updateSize();},{passive:true});
-if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateProvinceChipPosition).observe(filterPanel);
+if('ResizeObserver' in window&&filterPanel)new ResizeObserver(updateFloatingUiPosition).observe(filterPanel);
 
 const sourceWarning=root.querySelector('[data-source-warning]');
 const SOURCE_HEALTH_URL='./data/gis-source-health-v1.json';
 let sourceHealth=null;
 let sourceHealthLoadState='idle';
+const SOURCE_WARNING_NOTICE_MS=20000;
+let sourceWarningNoticeKey='';
+let sourceWarningNoticeExpired=false;
+let sourceWarningNoticeTimer=null;
 
 function updateSourceWarningPosition(){
   if(!sourceWarning||!filterPanel||!mapWrap)return;
-  const panelRect=filterPanel.getBoundingClientRect();
-  const wrapRect=mapWrap.getBoundingClientRect();
-  const top=Math.max(42,Math.round(panelRect.bottom-wrapRect.top+8));
-  sourceWarning.style.top=`${top}px`;
+  const set=(name,value)=>{if(root.style.getPropertyValue(name)!==value)root.style.setProperty(name,value);};
+  if(sourceWarning.hidden||!filterPanel.classList.contains('is-filter-open')){set('--source-warning-space','0px');return;}
+  const wrapRect=mapWrap.getBoundingClientRect(),panelRect=filterPanel.getBoundingClientRect();
+  set('--source-warning-left',`${Math.max(12,Math.round(panelRect.left-wrapRect.left))}px`);
+  set('--source-warning-width',`${Math.max(1,Math.min(Math.round(panelRect.width),wrapRect.width-24))}px`);
+  const height=Math.ceil(sourceWarning.getBoundingClientRect().height);
+  set('--source-warning-space',`${height+8}px`);
+  const top=filterPanel.getBoundingClientRect().bottom-wrapRect.top+6;
+  set('--source-warning-top',`${Math.max(0,Math.round(top))}px`);
 }
 function layerSourceWarnings(){
   const warnings=[];
@@ -4746,6 +4755,7 @@ function layerSourceWarnings(){
       const localOk=inv>0||geo>0||disturbed>0||abandoned>0;
       warnings.push({
         severity:localOk?'warning':'error',
+        transient:localOk,
         text:localOk
           ?`Концесии · локален cache: ${inv||'—'} регистърни записа · ${geo} официални граници${pending?` · ${pending} очакват геометрия`:''}${abandoned?` · ${abandoned} закрити/изоставени минни съоръжения`:''}. data.egov.bg не е бил достъпен при последната проверка; сверяването е през ${fallback}. Картата не зависи от текущ онлайн достъп.`
           :'Концесии: няма локален baseline и онлайн официалните регистри са недостъпни.'
@@ -4768,10 +4778,25 @@ function layerSourceWarnings(){
 function renderSourceWarning(){
   if(!sourceWarning)return;
   const warnings=layerSourceWarnings();
-  if(!warnings.length){sourceWarning.hidden=true;sourceWarning.textContent='';sourceWarning.removeAttribute('data-severity');return;}
+  const key=warnings.filter(w=>w.transient).map(w=>w.text).join(' ');
+  if(key!==sourceWarningNoticeKey){
+    clearTimeout(sourceWarningNoticeTimer);sourceWarningNoticeTimer=null;
+    sourceWarningNoticeKey=key;sourceWarningNoticeExpired=false;
+  }
+  // Start once the panel actually displays the notice. Background refreshes
+  // must neither extend its lifetime nor resurrect an expired notice.
+  if(key&&!sourceWarningNoticeExpired&&sourceWarningNoticeTimer===null&&filterPanel?.classList.contains('is-filter-open')){
+    sourceWarningNoticeTimer=setTimeout(()=>{sourceWarningNoticeTimer=null;sourceWarningNoticeExpired=true;renderSourceWarning();},SOURCE_WARNING_NOTICE_MS);
+  }
+  const visible=warnings.filter(w=>!w.transient||!sourceWarningNoticeExpired);
+  if(!visible.length){
+    sourceWarning.hidden=true;sourceWarning.textContent='';sourceWarning.removeAttribute('data-severity');sourceWarning.removeAttribute('data-transient');
+    updateSourceWarningPosition();return;
+  }
   sourceWarning.hidden=false;
-  sourceWarning.dataset.severity=warnings.some(w=>w.severity==='error')?'error':'warning';
-  sourceWarning.textContent=warnings.map(w=>w.text).join(' ');
+  sourceWarning.dataset.severity=visible.some(w=>w.severity==='error')?'error':'warning';
+  sourceWarning.dataset.transient=String(visible.every(w=>w.transient));
+  sourceWarning.textContent=visible.map(w=>w.text).join(' ');
   updateSourceWarningPosition();
 }
 async function loadSourceHealth(){
@@ -4842,6 +4867,7 @@ function setFilterPanelOpen(open){
   if(filterChevron)filterChevron.textContent='×';
 
   if(!open)filterPanel?.classList.remove('is-filter-coaching');
+  requestAnimationFrame(()=>renderSourceWarning());
 }
 function refreshFilterLayout(){
   const currentCenter=map?.getView()?.getCenter()?.slice();
