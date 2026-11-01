@@ -385,7 +385,7 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-10-05T11:55:50Z",
+    "generatedAt": "2026-11-01T11:20:05Z",
     "featureCount": 11,
     "features": [
       {
@@ -16731,11 +16731,25 @@
         "concessionId": "216-259",
         "name": "Ясака",
         "officialAreaDka": null,
-        "sourceCrs": null,
-        "sourcePoints": null,
-        "status": "official_coordinate_register_not_archived",
-        "sourceUrl": null,
-        "stagingEvidence": null,
+        "sourceCrs": "BGS2005",
+        "sourcePoints": 0,
+        "status": "coordinate_register_archived__QA_blocked__expected_13_got_0__official_area_missing__coordinate_order_unverified",
+        "sourceUrl": "https://nkr.government.bg/File/Download/103b460f-34b0-4f53-8b3e-78b8cdc05c47",
+        "stagingEvidence": {
+          "fileId": "103b460f-34b0-4f53-8b3e-78b8cdc05c47",
+          "sha256": "7cbfc7d02516ebdf10fcbe90e7825c1a150fcf17c2676fe56922cd8a1449e890",
+          "archivePath": "source-archive/concessions/nkr-attachments/7cbfc7d02516ebdf10fcbe90e7825c1a150fcf17c2676fe56922cd8a1449e890.pdf",
+          "blockers": [
+            "expected_13_got_0",
+            "official_area_missing",
+            "coordinate_order_unverified"
+          ],
+          "declaredCrs": "BGS2005",
+          "numericCrsCounts": {
+            "WGS84": 2
+          },
+          "pointNumberRanges": []
+        },
         "queueSource": "national-inventory",
         "sourceRowNo": "18",
         "inventoryStatus": "active",
@@ -16831,13 +16845,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-10-25T09:13:42Z",
+    "sourceHealthCheckedAt": "2026-11-01T11:20:33Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-10-25T09:13:12Z",
+        "checkedAt": "2026-11-01T11:20:07Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -16845,38 +16859,39 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-10-25T09:13:23Z",
+        "checkedAt": "2026-11-01T11:20:18Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
-        "digest": "2ab3b806ac41d36f675f5bbf4d442a5261a4a73abdc0f86a355fe1a46050fd06",
+        "digest": "41ba73918341684de1c1313153713a50afd0c87cc4016d449ac7f40c455c77ee",
         "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
         "id": "MGU-PERNIK-CONCESSIONS",
         "role": "geometry-cross-check",
-        "ok": false,
-        "checkedAt": "2026-10-25T09:13:36Z",
+        "ok": true,
+        "checkedAt": "2026-11-01T11:20:31Z",
         "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0",
-        "error": "MGU query returned no concession records"
+        "records": 19,
+        "digest": "1979d07629e47ad96b7f8308da75e9b78b39cf47bd579338fee14fc7f8fffd3f"
       },
       {
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-10-25T09:13:40Z",
+        "checkedAt": "2026-11-01T11:20:32Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
-        "bytes": 45776,
-        "digest": "f030cbac05d7f6bec22ef992957165534a8ffdb632b64f5ac8e861e9f0074774"
+        "bytes": 45982,
+        "digest": "90704f444e76ad467731e01207fd4d40100bd264fbbc2dc056700e4c3c611d09"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-10-25T09:13:41Z",
+        "checkedAt": "2026-11-01T11:20:33Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-        "bytes": 51360,
-        "digest": "2423e40fb361731a6001e36cf27189443b83890b27e2c34a142d7bde0e184bcd"
+        "bytes": 51566,
+        "digest": "765e814b69f2f67676cd9efc7f3ad1bbd95eb9dcc3fb5de3f82f0e3b6770e4ac"
       }
     ],
     "coverage": {
@@ -16905,14 +16920,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-10-25T09:13:41Z",
+      "checkedAt": "2026-11-01T11:20:33Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-      "bytes": 51360,
-      "digest": "2423e40fb361731a6001e36cf27189443b83890b27e2c34a142d7bde0e184bcd"
+      "bytes": 51566,
+      "digest": "765e814b69f2f67676cd9efc7f3ad1bbd95eb9dcc3fb5de3f82f0e3b6770e4ac"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-10-05T11:55:50Z"
+    "concessionsBaseline": "2026-11-01T11:20:05Z"
   }
 }

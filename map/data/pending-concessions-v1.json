@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-pending-concessions-v1",
-  "generatedAt": "2026-10-25T09:13:10Z",
+  "generatedAt": "2026-11-01T11:20:05Z",
   "inventoryRecordCount": 530,
   "publishedGeometryCount": 11,
   "pendingCount": 519,
@@ -14870,11 +14870,25 @@
       "concessionId": "216-259",
       "name": "Ясака",
       "officialAreaDka": null,
-      "sourceCrs": null,
-      "sourcePoints": null,
-      "status": "official_coordinate_register_not_archived",
-      "sourceUrl": null,
-      "stagingEvidence": null,
+      "sourceCrs": "BGS2005",
+      "sourcePoints": 0,
+      "status": "coordinate_register_archived__QA_blocked__expected_13_got_0__official_area_missing__coordinate_order_unverified",
+      "sourceUrl": "https://nkr.government.bg/File/Download/103b460f-34b0-4f53-8b3e-78b8cdc05c47",
+      "stagingEvidence": {
+        "fileId": "103b460f-34b0-4f53-8b3e-78b8cdc05c47",
+        "sha256": "7cbfc7d02516ebdf10fcbe90e7825c1a150fcf17c2676fe56922cd8a1449e890",
+        "archivePath": "source-archive/concessions/nkr-attachments/7cbfc7d02516ebdf10fcbe90e7825c1a150fcf17c2676fe56922cd8a1449e890.pdf",
+        "blockers": [
+          "expected_13_got_0",
+          "official_area_missing",
+          "coordinate_order_unverified"
+        ],
+        "declaredCrs": "BGS2005",
+        "numericCrsCounts": {
+          "WGS84": 2
+        },
+        "pointNumberRanges": []
+      },
       "queueSource": "national-inventory",
       "sourceRowNo": "18",
       "inventoryStatus": "active",
