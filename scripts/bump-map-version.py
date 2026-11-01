@@ -33,14 +33,16 @@ def render(version):
  return {page:text,listing:list_text}
 
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
+ parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group();mode.add_argument('--check',action='store_true');mode.add_argument('--set-version');args=parser.parse_args()
  stored=json.loads(VERSION_FILE.read_text())['version']
  if not re.fullmatch(r'\d+\.\d+\.\d+',stored):raise ValueError('Expected major.minor.patch')
  if args.check:
   for path,expected in render(stored).items():
    if path.read_text()!=expected:raise SystemExit(f'Version mismatch: {path.relative_to(ROOT)}')
   print('Version synchronized: v'+stored);return
- major,minor,patch=map(int,stored.split('.'));version=f'{major}.{minor}.{patch+1}'
+ major,minor,patch=map(int,stored.split('.'));version=args.set_version or f'{major}.{minor}.{patch+1}'
+ if not re.fullmatch(r'\d+\.\d+\.\d+',version):parser.error('Expected major.minor.patch for --set-version')
+ if tuple(map(int,version.split('.')))<=tuple(map(int,stored.split('.'))):parser.error('New version must be greater than the stored version')
  output=render(version)
  for path,content in output.items():path.write_text(content)
  VERSION_FILE.write_text(json.dumps({'version':version},indent=2)+'\n')
