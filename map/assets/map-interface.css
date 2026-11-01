@@ -1,26 +1,22 @@
 /* Variant 1: a full map, floating desktop panel, one mobile navigation bar. */
 html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow:hidden;background:#e7eee5!important}
-#bg-wildfires-map{--ui-ink:#23463b;--ui-muted:#6a8074;--ui-line:#dde6dc;--ui-glass:rgba(255,255,255,.88);--ui-shadow:0 5px 24px #173b2824;position:fixed!important;inset:0!important;width:100%!important;max-width:none!important;height:100dvh!important;margin:0!important;padding:0!important;color:var(--ui-ink);font-family:Arial,sans-serif}
+#bg-wildfires-map{--ui-ink:#23463b;--ui-muted:#6a8074;--ui-line:#dde6dc;--ui-glass:rgba(255,255,255,.76);--ui-shadow:0 5px 24px #173b2824;position:fixed!important;inset:0!important;width:100%!important;max-width:none!important;height:100dvh!important;margin:0!important;padding:0!important;color:var(--ui-ink);font-family:Arial,sans-serif}
 #bg-wildfires-map .bgwf-map-wrap,#bg-wildfires-map.is-filter-collapsed .bgwf-map-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;border:0!important;border-radius:0!important;overflow:hidden}
 #bg-wildfires-map .bgwf-map{position:absolute!important;inset:0!important;height:100%!important;min-height:0!important;max-height:none!important}
 #bg-wildfires-map button,#bg-wildfires-map a{-webkit-tap-highlight-color:transparent}
 #bg-wildfires-map button:focus-visible,#bg-wildfires-map a:focus-visible{outline:3px solid #c69b32;outline-offset:2px}
-#bg-wildfires-map .bgwf-brand{position:absolute!important;top:18px!important;left:18px!important;right:auto!important;display:flex!important;align-items:center;gap:9px;padding:10px 14px!important;margin:0!important;border-radius:14px;background:var(--ui-glass)!important;box-shadow:var(--ui-shadow);backdrop-filter:blur(12px);z-index:45;pointer-events:none;color:var(--ui-ink)!important;text-shadow:none!important}
-#bg-wildfires-map .bgwf-brand h1{font:700 16px/1.2 Arial!important;color:var(--ui-ink)!important;margin:0!important}
-#bg-wildfires-map .bgwf-brand p{font:8px/1.4 Arial!important;color:var(--ui-muted)!important;margin:4px 0 0!important}
-#bg-wildfires-map .bgwf-brand-mark{font-size:29px;color:#347452}
-#bg-wildfires-map .bgwf-main-toolbar{position:absolute;right:18px;top:18px;display:flex;align-items:center;gap:3px;padding:4px;background:var(--ui-glass);border:1px solid #ffffffaa;box-shadow:var(--ui-shadow);border-radius:14px;z-index:50;backdrop-filter:blur(14px)}
-#bg-wildfires-map .bgwf-main-toolbar :is(button,a){position:relative;display:flex;align-items:center;justify-content:center;gap:7px;height:44px;min-height:44px;min-width:44px;margin:0;padding:0 11px;color:var(--ui-ink);background:transparent;border:0;border-radius:10px;font:12px Arial;text-decoration:none;cursor:pointer;box-shadow:none}
-#bg-wildfires-map .bgwf-main-toolbar :is(button,a):hover,#bg-wildfires-map .bgwf-main-toolbar [aria-expanded=true]{background:#e5eee4}
+#bg-wildfires-map .bgwf-main-toolbar{position:absolute;right:12px;top:12px;display:flex;align-items:center;gap:2px;padding:3px;background:var(--ui-glass);border:1px solid #ffffffaa;box-shadow:var(--ui-shadow);border-radius:14px;z-index:50;backdrop-filter:blur(14px)}
+#bg-wildfires-map .bgwf-main-toolbar :is(button,a){position:relative;display:flex;align-items:center;justify-content:center;gap:5px;height:32px;min-height:32px;min-width:32px;margin:0;padding:0 8px;color:var(--ui-ink);background:transparent;border:0;border-radius:8px;font:11px Arial;text-decoration:none;cursor:pointer;box-shadow:none}
+#bg-wildfires-map .bgwf-main-toolbar :is(button,a):hover,#bg-wildfires-map .bgwf-main-toolbar [aria-expanded=true]{background:rgba(229,238,228,.65)}
 #bg-wildfires-map svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 #bg-wildfires-map [data-active-layer-count]{min-width:17px;padding:2px 4px;border-radius:20px;background:#367553;color:white;font:10px Arial;text-align:center}
-#bg-wildfires-map .bgwf-main-toolbar [data-ui-search]{display:none}
-#bg-wildfires-map .bgwf-floating-controls{position:absolute!important;left:18px!important;right:auto!important;top:91px!important;bottom:auto!important;width:304px!important;max-width:calc(100% - 36px)!important;max-height:calc(100dvh - 110px)!important;margin:0!important;padding:16px!important;border:1px solid #ffffffb0!important;border-radius:18px!important;background:var(--ui-glass)!important;box-shadow:var(--ui-shadow)!important;backdrop-filter:blur(16px);overflow:auto!important;scrollbar-width:thin;z-index:55}
+#bg-wildfires-map .bgwf-main-toolbar [data-ui-search]{display:flex}
+#bg-wildfires-map .bgwf-floating-controls{position:absolute!important;left:18px!important;right:auto!important;top:18px!important;bottom:auto!important;width:280px!important;max-width:calc(100% - 36px)!important;max-height:calc(100dvh - 36px)!important;margin:0!important;padding:16px!important;border:1px solid #ffffffb0!important;border-radius:18px!important;background:var(--ui-glass)!important;box-shadow:var(--ui-shadow)!important;backdrop-filter:blur(16px);overflow:auto!important;scrollbar-width:thin;z-index:55}
 #bg-wildfires-map.is-filter-collapsed .bgwf-floating-controls{display:none!important}
 #bg-wildfires-map .bgwf-floating-controls::before{display:none!important}
-#bg-wildfires-map .bgwf-floating-controls[data-load-state=loading]{background:hsla(var(--source-load-hue,0),65%,95%,.90)!important}
-#bg-wildfires-map .bgwf-floating-controls[data-load-state=ready]{background:rgba(246,253,246,.91)!important}
-#bg-wildfires-map .bgwf-floating-controls[data-load-state=warning]{background:rgba(255,249,226,.92)!important}
+#bg-wildfires-map .bgwf-floating-controls[data-load-state=loading]{background:hsla(var(--source-load-hue,0),65%,95%,.78)!important}
+#bg-wildfires-map .bgwf-floating-controls[data-load-state=ready]{background:rgba(246,253,246,.78)!important}
+#bg-wildfires-map .bgwf-floating-controls[data-load-state=warning]{background:rgba(255,249,226,.80)!important}
 #bg-wildfires-map .bgwf-mobile-filter-head{margin:0 0 13px!important}
 #bg-wildfires-map .bgwf-mobile-filter-toggle{width:100%;min-height:38px!important;padding:0!important}
 #bg-wildfires-map .bgwf-filter-toggle-copy{display:flex!important;flex-wrap:wrap!important;gap:6px!important}
@@ -35,22 +31,22 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map .bgwf-floating-controls .bgwf-legend{display:flex!important;flex-wrap:wrap!important;gap:5px!important;overflow:visible!important}
 #bg-wildfires-map .bgwf-floating-controls :is(.bgwf-year-filter,.bgwf-live-link){height:32px!important;min-height:32px!important;font-size:11px!important;padding:0 8px!important;border-radius:8px!important}
 #bg-wildfires-map .bgwf-layer-controls,#bg-wildfires-map .bgwf-layer-row{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:3px!important;width:100%!important;overflow:visible!important;grid-template-columns:none!important}
-#bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle{display:flex!important;justify-content:flex-start!important;align-items:center!important;gap:10px!important;width:100%!important;height:42px!important;min-height:42px!important;max-height:none!important;padding:0 5px!important;margin:0!important;border:0!important;border-radius:9px!important;background:transparent!important;box-shadow:none!important;color:var(--ui-ink)!important;font:12px Arial!important}
+#bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle{display:flex!important;justify-content:flex-start!important;align-items:center!important;gap:9px!important;width:100%!important;height:36px!important;min-height:36px!important;max-height:none!important;padding:0 5px!important;margin:0!important;border:0!important;border-radius:9px!important;background:transparent!important;box-shadow:none!important;color:var(--ui-ink)!important;font:12px Arial!important}
 #bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle::before{display:none!important}
 #bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle::after{content:''!important;display:block!important;position:static!important;margin-left:auto!important;width:30px!important;height:18px!important;border:0!important;border-radius:20px!important;background:radial-gradient(circle at 9px 9px,#fff 6px,transparent 6.5px),#cdd9ce!important;flex:0 0 30px;opacity:1!important;transform:none!important}
 #bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle[aria-pressed=true]::after{background:radial-gradient(circle at 21px 9px,#fff 6px,transparent 6.5px),#347854!important}
-#bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle:hover{background:#e7efe3!important}
+#bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle:hover{background:rgba(231,239,227,.5)!important}
 #bg-wildfires-map .bgwf-swatch{width:9px!important;height:9px!important;border-radius:3px!important;flex-shrink:0}
 #bg-wildfires-map .bgwf-status-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin-top:8px;padding-top:10px;border-top:1px solid var(--ui-line)}
 #bg-wildfires-map .bgwf-layer-status{font-size:10px;line-height:1.5;max-width:100%;white-space:normal}
 #bg-wildfires-map .bgwf-summary-inline{display:flex;flex-wrap:wrap;font-size:10px;gap:8px;justify-content:flex-start}
-#bg-wildfires-map .bgwf-search-panel{position:absolute!important;top:18px!important;left:230px!important;right:auto!important;bottom:auto!important;width:min(340px,28vw)!important;max-width:none!important;min-width:0!important;height:54px!important;max-height:none!important;margin:0!important;z-index:60;background:var(--ui-glass);box-shadow:var(--ui-shadow);border:1px solid #ffffffaa;border-radius:14px;padding:6px 10px;backdrop-filter:blur(14px)}
+#bg-wildfires-map .bgwf-search-panel{display:none!important;position:absolute!important;top:60px!important;left:auto!important;right:12px!important;bottom:auto!important;width:min(340px,calc(100% - 24px))!important;max-width:none!important;min-width:0!important;height:54px!important;max-height:none!important;margin:0!important;z-index:60;background:var(--ui-glass);box-shadow:var(--ui-shadow);border:1px solid #ffffffaa;border-radius:14px;padding:6px 10px;backdrop-filter:blur(14px)}
 #bg-wildfires-map .bgwf-search-box{height:40px!important;max-height:none!important;padding-right:25px}
 #bg-wildfires-map .bgwf-search-input{height:40px!important;max-height:none!important;padding:0 24px 0 27px!important;background:transparent!important;box-shadow:none!important;border:0!important;font:12px Arial!important;color:var(--ui-ink)}
 #bg-wildfires-map .bgwf-search-icon{top:15px!important;left:14px!important}
 #bg-wildfires-map .bgwf-search-clear{top:8px!important;right:36px!important}
 #bg-wildfires-map .bgwf-search-dismiss{position:absolute;right:6px;top:12px;background:transparent;border:0;padding:4px;cursor:pointer;color:var(--ui-muted)}
-#bg-wildfires-map .bgwf-search-results{top:60px!important;left:0!important;right:0!important;max-height:min(55dvh,420px)!important;width:100%!important;padding:6px;border:1px solid var(--ui-line);border-radius:13px;background:#fff;box-shadow:var(--ui-shadow);overflow:auto}
+#bg-wildfires-map .bgwf-search-results{top:60px!important;left:0!important;right:0!important;max-height:min(55dvh,420px)!important;width:100%!important;padding:6px;border:1px solid var(--ui-line);border-radius:13px;background:rgba(255,255,255,.87);backdrop-filter:blur(14px);box-shadow:var(--ui-shadow);overflow:auto}
 #bg-wildfires-map .bgwf-search-result{min-height:44px!important;padding:10px!important}
 #bg-wildfires-map .bgwf-zoom-controls{right:18px!important;gap:5px!important;z-index:35!important}
 #bg-wildfires-map .bgwf-map-button{width:42px!important;height:42px!important;min-height:42px!important;border:1px solid #ffffff90!important;border-radius:12px!important;background:var(--ui-glass)!important;color:var(--ui-ink)!important;box-shadow:var(--ui-shadow)!important;font-size:23px!important;backdrop-filter:blur(10px)}
@@ -70,7 +66,7 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map .bgwf-source-warning{top:130px!important;left:340px!important;right:75px!important;max-width:520px;max-height:80px;overflow:auto;z-index:39!important}
 #bg-wildfires-map.is-filter-collapsed .bgwf-source-warning{left:18px!important}
 #bg-wildfires-map .bgwf-territory-bars{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;width:100%!important;max-width:none!important;margin:12px 0 0!important;padding:12px 4px 0!important;background:transparent!important;border:0!important;border-top:1px solid var(--ui-line)!important;box-shadow:none!important}
-#bg-wildfires-map .bgwf-info-dialog{position:fixed;inset:0;width:min(680px,calc(100% - 28px));max-height:85dvh;margin:auto;padding:24px;border:1px solid #e3e9df;border-radius:20px;background:#fbfdf8;color:var(--ui-ink);box-shadow:0 20px 80px #12372d40;font:13px/1.7 Arial;overflow:auto}
+#bg-wildfires-map .bgwf-info-dialog{position:fixed;inset:0;width:min(680px,calc(100% - 28px));max-height:85dvh;margin:auto;padding:24px;border:1px solid #e3e9df;border-radius:20px;background:rgba(251,253,248,.91);backdrop-filter:blur(14px);color:var(--ui-ink);box-shadow:0 20px 80px #12372d40;font:13px/1.7 Arial;overflow:auto}
 #bg-wildfires-map .bgwf-info-dialog::backdrop{background:#1c362b66;backdrop-filter:blur(4px)}
 #bg-wildfires-map .bgwf-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
 #bg-wildfires-map .bgwf-dialog-heading h2{font:500 24px Arial;margin:0}
@@ -83,12 +79,11 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 @media(max-width:1100px){
  #bg-wildfires-map .bgwf-main-toolbar [data-ui-search]{display:flex}
  #bg-wildfires-map .bgwf-main-toolbar :is(button,a)>span{display:none}
- #bg-wildfires-map .bgwf-search-panel{display:none!important;top:82px!important;left:auto!important;right:18px!important;width:min(400px,calc(100% - 36px))!important}
+ #bg-wildfires-map .bgwf-search-panel{display:none!important;top:60px!important;left:auto!important;right:12px!important;width:min(400px,calc(100% - 36px))!important}
  #bg-wildfires-map.is-search-open .bgwf-search-panel{display:block!important}
 }
 @media(max-width:700px),(max-height:600px) and (hover:none),(max-width:950px) and (max-height:600px){
  #bg-wildfires-map{--nav-height:calc(66px + env(safe-area-inset-bottom,0px))}
- #bg-wildfires-map .bgwf-brand{display:none!important}
  #bg-wildfires-map .bgwf-main-toolbar{position:absolute;top:auto;right:0;left:0;bottom:0;height:var(--nav-height);padding:5px 8px calc(5px + env(safe-area-inset-bottom,0px));gap:0;border:0;border-top:1px solid #ffffffcc;border-radius:17px 17px 0 0;background:#ffffffe0;box-shadow:0 -3px 20px #173b281a;z-index:70}
  #bg-wildfires-map .bgwf-main-toolbar :is(button,a){display:flex;flex:1;flex-direction:column;gap:4px;height:54px;min-height:44px;min-width:0;padding:4px 0;font-size:10px}
  #bg-wildfires-map .bgwf-main-toolbar :is(button,a)>span{display:block;font-size:10px}
@@ -120,6 +115,59 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map .bgwf-territory-hint{position:static!important;grid-column:1/-1!important;white-space:normal!important;font-size:9px!important;line-height:1.4!important;padding:5px 0!important}
 #bg-wildfires-map .bgwf-layer-controls .bgwf-layer-toggle::after{box-sizing:border-box!important;padding:0!important;min-width:30px!important;max-width:30px!important;min-height:18px!important;max-height:18px!important;line-height:0!important;box-shadow:none!important;transition:none!important}
 #bg-wildfires-map .bgwf-filter-chevron{font-size:24px!important;font-weight:400!important;line-height:20px!important}
-#bg-wildfires-map .bgwf-mobile-filter-toggle{min-height:44px!important}
+#bg-wildfires-map .bgwf-mobile-filter-toggle{min-height:32px!important}
 #bg-wildfires-map .bgwf-search-input::-webkit-search-cancel-button{display:none}
 #bg-wildfires-map .bgwf-search-icon svg{width:17px;height:17px}
+/* Mockup panel hierarchy and quiet, compact desktop controls. */
+#bg-wildfires-map.is-search-open .bgwf-search-panel{display:block!important}
+#bg-wildfires-map .bgwf-main-toolbar svg{width:16px;height:16px;stroke-width:1.55}
+#bg-wildfires-map .bgwf-main-toolbar [data-active-layer-count]{font-size:9px;min-width:15px;padding:2px 4px}
+#bg-wildfires-map .bgwf-panel-eyebrow{display:block;font:8px/1.4 Arial;letter-spacing:1.6px;color:var(--ui-muted);margin:2px 0 6px}
+#bg-wildfires-map .bgwf-mobile-filter-head{margin-bottom:6px!important}
+#bg-wildfires-map .bgwf-filter-toggle-copy strong{font:500 19px/1.3 Arial!important;flex:1 0 100%}
+#bg-wildfires-map .bgwf-filter-action{top:30px!important;right:12px!important}
+#bg-wildfires-map .bgwf-panel-tabs{display:flex;gap:18px;border-bottom:1px solid var(--ui-line);margin-bottom:8px}
+#bg-wildfires-map .bgwf-panel-tabs button{font:11px Arial;color:var(--ui-muted);background:transparent;border:0;border-bottom:2px solid transparent;padding:10px 0;cursor:pointer}
+#bg-wildfires-map .bgwf-panel-tabs [aria-selected=true]{border-bottom-color:#347854;color:#255b3d}
+#bg-wildfires-map .bgwf-layer-content[hidden],#bg-wildfires-map .bgwf-legend-content[hidden]{display:none!important}
+#bg-wildfires-map .bgwf-layer-strip{border:0!important;padding:0!important}
+#bg-wildfires-map .bgwf-layer-strip>.bgwf-control-label{display:none!important}
+#bg-wildfires-map .bgwf-layer-group{display:flex;flex-direction:column;gap:0}
+#bg-wildfires-map .bgwf-group-title{font:8px/1.4 Arial;letter-spacing:1.2px;color:var(--ui-muted);margin:11px 4px 5px}
+#bg-wildfires-map .bgwf-year-strip{border:0!important;padding:10px 0 0!important;gap:7px!important}
+#bg-wildfires-map .bgwf-year-strip>.bgwf-control-label{font:8px/1.4 Arial!important;letter-spacing:1.2px;margin:0 4px}
+#bg-wildfires-map .bgwf-fire-heading{display:flex;align-items:center;justify-content:space-between;font:11px Arial;padding:0 4px}
+#bg-wildfires-map .bgwf-floating-controls .bgwf-legend{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px!important;padding:0!important}
+#bg-wildfires-map .bgwf-year-strip .bgwf-year-filter[data-year]{box-sizing:border-box;display:flex!important;align-items:center;justify-content:center;min-width:0!important;width:100%!important;height:27px!important;min-height:27px!important;max-height:27px!important;padding:0 2px!important;border:1px solid transparent!important;border-radius:6px!important;box-shadow:none!important;background:rgba(239,244,235,.7)!important;color:#718571!important;font:10px/1 Arial!important;text-shadow:none!important;transform:none!important}
+#bg-wildfires-map .bgwf-year-strip .bgwf-year-filter[data-year][aria-pressed=true]{background:rgba(222,236,215,.88)!important;color:#255a3a!important;border-color:#aec9aa!important;font-weight:700!important;box-shadow:none!important}
+#bg-wildfires-map .bgwf-year-strip .bgwf-fire-heading .bgwf-year-filter[data-year=all]{width:auto!important;min-width:0!important;padding:0 6px!important;height:23px!important;min-height:23px!important;background:transparent!important;font-size:9px!important}
+#bg-wildfires-map .bgwf-year-note{font:8px/1.6 Arial;color:var(--ui-muted);padding:0 4px}
+#bg-wildfires-map .bgwf-year-note .bgwf-iskra-year-link{display:inline!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;height:auto!important;min-height:0!important;font:inherit!important;color:#3b7650!important;text-decoration:underline}
+#bg-wildfires-map .bgwf-panel-stats{margin-top:12px;border-top:1px solid var(--ui-line);padding-top:9px}
+#bg-wildfires-map .bgwf-panel-stats>summary{font:10px/1.4 Arial;color:var(--ui-muted);cursor:pointer;padding:2px 0}
+#bg-wildfires-map .bgwf-panel-stats .bgwf-status-row{border-top:0;padding-top:7px}
+#bg-wildfires-map .bgwf-panel-footer{display:flex;justify-content:flex-end;border-top:1px solid var(--ui-line);margin-top:10px;padding-top:9px}
+#bg-wildfires-map .bgwf-panel-footer .bgwf-filter-version{font:9px Arial;color:var(--ui-muted)}
+#bg-wildfires-map .bgwf-legend-content{font:11px/1.6 Arial;padding:8px 3px;min-height:240px}
+#bg-wildfires-map .bgwf-legend-content p{display:flex;gap:9px;align-items:center;margin:8px 0}
+#bg-wildfires-map .bgwf-legend-content .bgwf-legend-note{display:block;border-top:1px solid var(--ui-line);padding-top:13px;margin-top:16px;color:var(--ui-muted);font-size:10px}
+#bg-wildfires-map .bgwf-detail:not(.is-hint){background:rgba(255,255,255,.82)!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important}
+@media(min-width:701px) and (min-height:601px), (min-width:951px) and (hover:hover){
+ #bg-wildfires-map .bgwf-main-toolbar{border-radius:11px;backdrop-filter:blur(12px);box-shadow:0 3px 15px #173b281a}
+ #bg-wildfires-map .bgwf-search-panel{height:44px!important;padding:2px 8px;border-radius:11px}
+ #bg-wildfires-map .bgwf-search-input{font-size:11px!important}
+ #bg-wildfires-map .bgwf-search-icon{top:12px!important;left:12px!important}
+ #bg-wildfires-map .bgwf-search-dismiss{top:9px}
+ #bg-wildfires-map .bgwf-search-results{top:50px!important}
+}
+@media(max-width:700px),(max-height:600px) and (hover:none),(max-width:950px) and (max-height:600px){
+ #bg-wildfires-map .bgwf-main-toolbar svg{width:20px;height:20px}
+ #bg-wildfires-map .bgwf-main-toolbar [data-active-layer-count]{font-size:9px}
+ #bg-wildfires-map .bgwf-floating-controls .bgwf-mobile-filter-toggle{min-height:44px!important}
+ #bg-wildfires-map .bgwf-year-strip .bgwf-legend .bgwf-year-filter[data-year]{height:38px!important;min-height:38px!important;max-height:38px!important;font-size:11px!important}
+ #bg-wildfires-map .bgwf-panel-tabs button{min-height:40px}
+}
+
+#bg-wildfires-map .bgwf-legend-years{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;font:10px Arial;color:var(--ui-muted)}
+#bg-wildfires-map .bgwf-legend-years span{display:flex;align-items:center;gap:6px}
+#bg-wildfires-map .bgwf-legend-years i{width:9px;height:9px;border-radius:50%}

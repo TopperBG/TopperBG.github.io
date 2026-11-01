@@ -5,21 +5,60 @@ window.setupBgwfInterface=function({root,map,setFilterPanelOpen,refreshFilterLay
   const icon=key=>`<svg viewBox="0 0 24 24" aria-hidden="true">${paths[key]}</svg>`;
   const panel=q('.bgwf-floating-controls');panel.id='bgwf-layers-panel';panel.setAttribute('aria-label','Слоеве на картата');
   const wrap=q('.bgwf-map-wrap');
-  const brand=q('.bgwf-brand');brand.innerHTML='<span class="bgwf-brand-mark" aria-hidden="true">◈</span><div><h1>ЕнергоКарта</h1><p>Б Ъ Л Г А Р И Я</p></div>';
+  q('.bgwf-brand')?.remove();
   const toolbar=document.createElement('nav');toolbar.className='bgwf-main-toolbar';toolbar.setAttribute('aria-label','Управление на картата');wrap.append(toolbar);
   const layers=document.createElement('button');layers.type='button';layers.dataset.uiLayers='';layers.setAttribute('aria-controls',panel.id);layers.innerHTML=icon('layers')+'<span>Слоеве</span><sup data-active-layer-count></sup>';
-  const searchButton=document.createElement('button');searchButton.type='button';searchButton.dataset.uiSearch='';searchButton.setAttribute('aria-controls','bgwf-search-panel');searchButton.setAttribute('aria-label','Търсене');searchButton.innerHTML=icon('search')+'<span>Търси</span>';
+  const searchButton=document.createElement('button');searchButton.type='button';searchButton.dataset.uiSearch='';searchButton.setAttribute('aria-controls','bgwf-search-panel');searchButton.setAttribute('aria-label','Търсене');searchButton.setAttribute('aria-expanded','false');searchButton.innerHTML=icon('search')+'<span>Търси</span>';
   const objects=q('[data-renewables-list]');objects.className='bgwf-toolbar-objects';objects.innerHTML=icon('list')+'<span>Обекти</span>';objects.setAttribute('aria-label','Отвори списъка с ВЕИ обекти');
   const info=q('[data-compact-info]');info.className='bgwf-toolbar-info';info.innerHTML=icon('info')+'<span>Info</span>';
   const base=q('[data-layer="satellite"]');base.className='bgwf-toolbar-base';base.setAttribute('aria-label','Превключи карта / сателит');base.innerHTML=icon('base')+'<span data-base-label>Основа</span>';
   toolbar.append(layers,searchButton,objects,info,base);
-  const closePanel=q('[data-mobile-filter-toggle]');closePanel.querySelector('strong').textContent='Слоеве на картата';
+  const closePanel=q('[data-mobile-filter-toggle]');closePanel.querySelector('strong').textContent='Какво да видиш?';
+  const eyebrow=document.createElement('small');eyebrow.className='bgwf-panel-eyebrow';eyebrow.textContent='ИЗСЛЕДВАЙ БЪЛГАРИЯ';panel.prepend(eyebrow);
   closePanel.querySelector('.bgwf-filter-chevron').innerHTML=icon('close');
   q('.bgwf-search-icon').innerHTML=icon('search');
   const search=q('[data-map-search]');search.id='bgwf-search-panel';search.classList.add('bgwf-search-panel');wrap.append(search);
   const closeSearch=document.createElement('button');closeSearch.type='button';closeSearch.className='bgwf-search-dismiss';closeSearch.setAttribute('aria-label','Затвори търсенето');closeSearch.innerHTML=icon('close');search.append(closeSearch);
   q('.bgwf-search-strip').remove();
-  q('.bgwf-mobile-filter-body').append(q('[data-territory-scale-bars]'));
+  // Preserve real controls and their handlers while restoring the mockup's hierarchy.
+  const body=q('.bgwf-mobile-filter-body'),layerStrip=q('.bgwf-layer-strip'),fireStrip=q('.bgwf-year-strip');
+  const layerContent=document.createElement('div');layerContent.id='bgwf-layer-content';layerContent.className='bgwf-layer-content';
+  const legendContent=document.createElement('div');legendContent.id='bgwf-legend-content';legendContent.className='bgwf-legend-content';legendContent.hidden=true;
+  const tabs=document.createElement('div');tabs.className='bgwf-panel-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Слоеве и легенда');
+  for(const [name,label,content] of [['layers','Слоеве',layerContent],['legend','Легенда',legendContent]]){
+    const tab=document.createElement('button');tab.type='button';tab.id='bgwf-tab-'+name;tab.dataset.panelTab=name;tab.textContent=label;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',content.id);tab.setAttribute('aria-selected',String(name==='layers'));tab.tabIndex=name==='layers'?0:-1;
+    content.setAttribute('role','tabpanel');content.setAttribute('aria-labelledby',tab.id);
+    tab.onclick=()=>{for(const other of tabs.children){const selected=other===tab;other.setAttribute('aria-selected',String(selected));other.tabIndex=selected?0:-1;}layerContent.hidden=name!=='layers';legendContent.hidden=name!=='legend';};
+    tab.onkeydown=event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const other=event.key==='Home'?tabs.children[0]:event.key==='End'?tabs.children[1]:tabs.children[name==='layers'?1:0];other.click();other.focus();};
+    tabs.append(tab);
+  }
+  const controls=q('.bgwf-layer-controls'),hint=q('[data-industry-legend]');
+  const names={solar:'Фотоволтаици',projects:'Планирани · ПУП/ПИ',wind:'Вятърни турбини',foreign:'ВЕИ в съседни държави',natura:'Natura 2000',future:'Зони RED III',epm:'Електропреносна мрежа',industry:'Мини и хвостохранилища'};
+  const groups=[];
+  for(const [title,keys] of [['ЕНЕРГИЯ',['solar','projects','wind','foreign']],['ТЕРИТОРИЯ',['natura','future','epm','industry']]]){
+    const group=document.createElement('div');group.className='bgwf-layer-group';
+    const heading=document.createElement('div');heading.className='bgwf-group-title';heading.textContent=title;group.append(heading);
+    for(const key of keys){const button=q('[data-layer="'+key+'"]');if(!button)continue;button.querySelector('span:last-child').textContent=names[key];group.append(button);
+      const entry=document.createElement('p'),swatch=button.querySelector('.bgwf-swatch').cloneNode(true);entry.append(swatch,document.createTextNode(names[key]));legendContent.append(entry);
+    }
+    groups.push(group);
+  }
+  controls.replaceChildren(...groups);if(hint)controls.append(hint);
+  layerStrip.querySelector('.bgwf-control-label').hidden=true;
+  const allYears=fireStrip.querySelector('[data-year="all"]'),iskra=fireStrip.querySelector('.bgwf-iskra-year-link');
+  const fireLabel=document.createElement('div');fireLabel.className='bgwf-fire-heading';fireLabel.append(document.createTextNode('Пожарни периметри'),allYears);
+  fireStrip.querySelector('.bgwf-control-label').textContent='ПРИРОДНИ РИСКОВЕ';
+  fireStrip.insertBefore(fireLabel,fireStrip.querySelector('.bgwf-legend'));
+  const yearNote=document.createElement('div');yearNote.className='bgwf-year-note';yearNote.append(document.createTextNode('Годината филтрира само пожарите. '),iskra);fireStrip.append(yearNote);
+  const fireLegend=document.createElement('p');fireLegend.textContent='Исторически пожари по години';legendContent.append(fireLegend);
+  const yearKeys=document.createElement('div');yearKeys.className='bgwf-legend-years';
+  for(const button of fireStrip.querySelectorAll('.bgwf-legend [data-year]')){const label=document.createElement('span'),dot=document.createElement('i');dot.style.background=button.style.getPropertyValue('--bgwf-filter-color');label.append(dot,document.createTextNode(button.dataset.year));yearKeys.append(label);}legendContent.append(yearKeys);
+  const legendNote=document.createElement('p');legendNote.className='bgwf-legend-note';legendNote.textContent='Цветовете обозначават тематичните слоеве. Полигоните показват наличните контури, а точковите маркери — местоположение. Годините управляват само историческите пожари.';legendContent.append(legendNote);
+  layerContent.append(layerStrip,fireStrip);
+  const stats=document.createElement('details');stats.className='bgwf-panel-stats';stats.innerHTML='<summary>Площи и статистика</summary>';stats.append(q('.bgwf-status-row'),q('[data-natura-overlap]'),q('[data-territory-scale-bars]'));
+  body.prepend(tabs,layerContent,legendContent);body.append(stats);
+  const version=q('.bgwf-filter-version'),footer=document.createElement('div');footer.className='bgwf-panel-footer';footer.append(version);body.append(footer);
+
   // Info is a modal, so it never expands the map's layout or opens the layers.
   const dialog=document.createElement('dialog');dialog.className='bgwf-info-dialog';dialog.dataset.infoDialog='';dialog.setAttribute('aria-labelledby','bgwf-info-title');
   dialog.innerHTML='<div class="bgwf-dialog-heading"><h2 id="bgwf-info-title">Методика и източници</h2><button type="button" data-info-close aria-label="Затвори информацията">'+icon('close')+'</button></div>';
