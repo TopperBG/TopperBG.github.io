@@ -72,7 +72,7 @@ window.setupBgwfInterface=function({root,map,setFilterPanelOpen,refreshFilterLay
   const closeLayers=()=>{setFilterPanelOpen(false);refreshFilterLayout();};
   const closeSearchPanel=()=>{root.classList.remove('is-search-open');q('[data-map-search-results]').hidden=true;searchButton.setAttribute('aria-expanded','false');q('[data-map-search-input]').setAttribute('aria-expanded','false');};
   layers.onclick=()=>{closeSearchPanel();setFilterPanelOpen(!panel.classList.contains('is-filter-open'));refreshFilterLayout();};
-  searchButton.onclick=()=>{const open=!root.classList.contains('is-search-open');if(mobile())closeLayers();root.classList.toggle('is-search-open',open);searchButton.setAttribute('aria-expanded',String(open));if(open)q('[data-map-search-input]').focus();else closeSearchPanel();};
+  searchButton.onclick=()=>{const open=!root.classList.contains('is-search-open');closeLayers();root.classList.toggle('is-search-open',open);searchButton.setAttribute('aria-expanded',String(open));if(open)q('[data-map-search-input]').focus();else closeSearchPanel();};
   info.addEventListener('click',closeSearchPanel);
   closeSearch.onclick=()=>{closeSearchPanel();searchButton.focus();};
   search.addEventListener('click',event=>{if(event.target.closest('.bgwf-search-result')){closeSearchPanel();if(mobile())closeLayers();}});
@@ -86,7 +86,7 @@ window.setupBgwfInterface=function({root,map,setFilterPanelOpen,refreshFilterLay
     const mode=base.getAttribute('aria-pressed')==='true'?'Сателит':'Карта';if(q('[data-base-label]').textContent!==mode)q('[data-base-label]').textContent=mode;
   };
   new MutationObserver(sync).observe(root,{subtree:true,attributes:true,attributeFilter:['aria-pressed','class']});
-  let wasMobile=mobile();window.addEventListener('resize',()=>{const isMobile=mobile();if(isMobile!==wasMobile){setFilterPanelOpen(!isMobile);closeSearchPanel();wasMobile=isMobile;}sync();});
+  let wasMobile=mobile();window.addEventListener('resize',()=>{const isMobile=mobile();if(isMobile!==wasMobile){setFilterPanelOpen(false);closeSearchPanel();wasMobile=isMobile;}sync();});
   // Native OpenLayers scale responds to resolution and latitude, including pinch zoom.
   map.addControl(new ol.control.ScaleLine({units:'metric',minWidth:70}));
   map.getControls().forEach(control=>{if(control instanceof ol.control.Attribution)control.setCollapsible(false);});
