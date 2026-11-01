@@ -173,3 +173,19 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
 #bg-wildfires-map .bgwf-source-warning{top:var(--source-warning-top,60px)!important;left:var(--source-warning-left,12px)!important;right:auto!important;bottom:auto!important;width:var(--source-warning-width,280px)!important;max-width:calc(100% - 24px)!important;max-height:110px!important;transform:none!important;overflow:auto;text-align:left!important;z-index:61!important}
 #bg-wildfires-map .bgwf-source-warning[data-transient=true]{font:400 9px/1.45 Arial!important;color:#5c7064!important;padding:5px 8px!important;border:1px solid rgba(110,135,115,.24)!important;border-radius:8px!important;background:rgba(248,252,246,.72)!important;backdrop-filter:blur(8px);box-shadow:0 2px 8px #173b2812!important}
 #bg-wildfires-map .bgwf-industry-legend-hint{display:flex!important;flex-wrap:wrap;white-space:normal!important;max-width:100%;line-height:1.5}
+/* Desktop: a narrow left rail with consistently aligned adjacent panels. */
+@media(min-width:701px) and (min-height:601px), (min-width:951px) and (hover:hover){
+ #bg-wildfires-map{--desktop-panel-left:80px}
+ #bg-wildfires-map .bgwf-main-toolbar{left:12px;right:auto;top:12px;bottom:auto;flex-direction:column;align-items:stretch;width:56px;padding:4px;gap:2px;border-radius:13px}
+ #bg-wildfires-map .bgwf-main-toolbar :is(button,a){flex:none;flex-direction:column;gap:4px;width:100%;height:48px;min-height:48px;min-width:0;padding:5px 2px;border-radius:9px}
+ #bg-wildfires-map .bgwf-main-toolbar :is(button,a)>span{display:block;font:8px/1.2 Arial}
+ #bg-wildfires-map .bgwf-main-toolbar svg{width:18px;height:18px}
+ #bg-wildfires-map .bgwf-main-toolbar [data-active-layer-count]{position:absolute;top:1px;right:2px;left:auto;font-size:8px;min-width:14px;padding:2px 3px}
+ #bg-wildfires-map .bgwf-floating-controls{left:var(--desktop-panel-left)!important;right:auto!important;top:12px!important;max-width:calc(100% - 92px)!important;max-height:calc(100dvh - 24px - var(--source-warning-space,0px))!important}
+ #bg-wildfires-map .bgwf-search-panel{left:var(--desktop-panel-left)!important;right:auto!important;top:12px!important;width:min(340px,calc(100% - 92px))!important}
+ #bg-wildfires-map .bgwf-info-dialog{left:var(--desktop-panel-left);right:auto;top:12px;bottom:auto;margin:0;width:min(640px,calc(100% - 92px));max-height:calc(100dvh - 24px)}
+ #bg-wildfires-map .bgwf-province-chip{left:372px!important;max-width:calc(100% - 444px)}
+ #bg-wildfires-map.is-filter-collapsed .bgwf-province-chip{left:var(--desktop-panel-left)!important;top:12px!important;max-width:calc(100% - 154px)}
+ #bg-wildfires-map .bgwf-detail{left:372px!important}
+ #bg-wildfires-map.is-filter-collapsed .bgwf-detail{left:var(--desktop-panel-left)!important}
+}
