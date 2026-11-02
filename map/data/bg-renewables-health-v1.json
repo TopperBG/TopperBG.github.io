@@ -1,40 +1,33 @@
 {
-  "checkedAt": "2026-11-02T06:38:40.389688+00:00",
+  "checkedAt": "2026-11-02T06:47:33.943537+00:00",
   "sources": {
     "veiregistar:photovoltaic-power-plants-with-power-over-1-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=photovoltaic-power-plants-with-power-over-1-mw page 1",
-      "retained": 228
+      "status": "ok",
+      "records": 230
     },
     "veiregistar:wind-power-plants-with-power-over-1-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw page 1",
-      "retained": 115
+      "status": "ok",
+      "records": 115
     },
     "veiregistar:hydropower-plants-with-power-over-1-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=hydropower-plants-with-power-over-1-mw page 1",
-      "retained": 72
+      "status": "ok",
+      "records": 72
     },
     "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=micro-hydropower-plants-with-power-over-1-mw page 1",
-      "retained": 35
+      "status": "ok",
+      "records": 36
     },
     "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=pumped-accumulating-hydropower-plants-with-power-over-1-mw page 1",
-      "retained": 2
+      "status": "ok",
+      "records": 2
     },
     "veiregistar:biomass-power-plants-with-power-over-4-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=biomass-power-plants-with-power-over-4-mw page 1",
-      "retained": 3
+      "status": "ok",
+      "records": 3
     },
     "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw": {
-      "status": "stale",
-      "error": "No registry cards: https://www.veiregistar.bg/objects&type=renewable-gas-power-plants-sources-with-power-over-1-mw page 1",
-      "retained": 13
+      "status": "ok",
+      "records": 13
     },
     "osm": {
       "status": "stale",
@@ -170,5 +163,5 @@
     "planned": 31
   },
   "withoutGeometry": 464,
-  "reconciledAt": "2026-11-02T06:40:09.461980+00:00"
+  "reconciledAt": "2026-11-02T06:50:09.678940+00:00"
 }
