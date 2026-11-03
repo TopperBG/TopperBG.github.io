@@ -3,36 +3,52 @@
   "sources": {
     "veiregistar:photovoltaic-power-plants-with-power-over-1-mw": {
       "status": "ok",
-      "records": 230
+      "records": 230,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "veiregistar:wind-power-plants-with-power-over-1-mw": {
       "status": "ok",
-      "records": 115
+      "records": 115,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "veiregistar:hydropower-plants-with-power-over-1-mw": {
       "status": "ok",
-      "records": 72
+      "records": 72,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
       "status": "ok",
-      "records": 36
+      "records": 36,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw": {
       "status": "ok",
-      "records": 2
+      "records": 2,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "veiregistar:biomass-power-plants-with-power-over-4-mw": {
       "status": "ok",
-      "records": 3
+      "records": 3,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw": {
       "status": "ok",
-      "records": 13
+      "records": 13,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-03T10:59:25.355726+00:00"
     },
     "osm": {
       "status": "stale",
       "error": "All Overpass endpoints failed: The read operation timed out",
-      "retained": 70
+      "retained": 70,
+      "lastAttemptAt": "2026-11-03T10:59:25.355726+00:00",
+      "lastSuccessAt": "2026-11-02T11:20:31.894849+00:00"
     }
   },
   "excludedCapacityUnknown": [
@@ -163,5 +179,5 @@
     "planned": 31
   },
   "withoutGeometry": 464,
-  "reconciledAt": "2026-11-03T11:01:07.571994+00:00"
+  "reconciledAt": "2026-11-03T18:46:15.728663+00:00"
 }

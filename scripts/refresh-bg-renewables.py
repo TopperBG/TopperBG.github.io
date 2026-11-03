@@ -126,6 +126,20 @@ def apply_locations(rows):
    f['properties'].update({k:v for k,v in location.items() if k!='geometry'})
  return rows
 
+def last_success(mode, previous_health, previous):
+ """A rebuild/attempt timestamp must never become a source observation date."""
+ known=previous_health.get('sources',{}).get(mode,{})
+ if known.get('lastSuccessAt'):return known['lastSuccessAt']
+ dates=[f['properties'].get('retrievedAt') for f in previous
+        if f['properties'].get('sourceMode')==mode and f['properties'].get('retrievedAt')]
+ return max(dates,default=previous_health.get('checkedAt') if known.get('status')=='ok' else None)
+
+def apply_freshness(rows, health):
+ for f in rows:
+  p=f['properties']
+  p['sourceFreshness']={mode:{k:health['sources'][mode].get(k) for k in ('status','lastAttemptAt','lastSuccessAt')} for mode in p.get('sourceModes',[p.get('sourceMode')]) if mode in health.get('sources',{})}
+ return rows
+
 def merge(rows):
  path=ROOT/'map/data/bg-renewables-identities-v1.json'
  entities=json.loads(path.read_text()).get('entities',[]) if path.exists() else []
@@ -148,6 +162,10 @@ def merge(rows):
  for original in sorted(rows,key=lambda f:0 if aliases.get(f['properties']['id'])==f['properties']['id'] else 1):
   if original['properties']['id'] in retired_planning_ids:continue
   f=json.loads(json.dumps(original));p=f['properties'];raw_id=p['id'];ident=aliases.get(raw_id,raw_id);p['id']=ident;f['id']=ident
+  p.setdefault('statusSourceMode',p.get('sourceMode','unknown'))
+  p.setdefault('capacitySourceMode',p.get('sourceMode','unknown'))
+  if f.get('geometry'):
+   p.setdefault('geometrySourceMode','osm' if 'openstreetmap.org/' in str(p.get('geometrySource','')) else p.get('sourceMode','unknown'))
   p.pop('possibleDuplicateIds',None)
   p['sourceModes']=sorted(set(p.get('sourceModes',[])+[p.get('sourceMode','unknown')]))
   members=set(p.get('mergedIds',[])+[raw_id,ident])
@@ -205,6 +223,7 @@ def apply_kazanlak_official_parcels(rows):
  target['geometry']={'type':'MultiPolygon','coordinates':[parcel['geometry']['coordinates'] for parcel in parcels]}
  p=target['properties']
  p['geometryQuality']='cadastral-parcels'
+ p['geometrySourceMode']='agkk'
  p['geometrySource']=parcel_data['geometrySource']
  p['geometryRefs']=sorted(refs)
  p['geometryEvidence']=parcel_data['projectEvidence']
@@ -214,6 +233,7 @@ def apply_kazanlak_official_parcels(rows):
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--offline',action='store_true');ap.add_argument('--reconcile-only',action='store_true');args=ap.parse_args()
  previous=json.loads(OUT.read_text()) if OUT.exists() else {'features':[]}
+ previous_health=json.loads(HEALTH.read_text()) if HEALTH.exists() else {}
  rows,skipped=embedded();health={'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'sources':{},'excludedCapacityUnknown':skipped}
  modes=[*[(f'veiregistar:{category}',lambda c=category,t=tech:registry_category((c,t))) for category,tech in TECHS.items()],('osm',osm)]
  if args.reconcile_only:
@@ -229,11 +249,16 @@ def main():
     f['properties']['sourceMode']=mode
     f['properties']['retrievedAt']=health['checkedAt']
    print(mode+': '+str(len(batch))+' records',flush=True)
-   rows+=batch;health['sources'][mode]={'status':'ok','records':len(batch)}
+   rows+=batch;health['sources'][mode]={'status':'ok','records':len(batch),'lastAttemptAt':health['checkedAt'],'lastSuccessAt':health['checkedAt']}
   except Exception as exc:
    retained=[f for f in previous['features'] if mode in f['properties'].get('sourceModes',[f['properties'].get('sourceMode')])];rows+=retained
-   health['sources'][mode]={'status':'stale' if retained else 'unavailable','error':str(exc),'retained':len(retained)}
+   health['sources'][mode]={'status':'stale' if retained else 'unavailable','error':str(exc),'retained':len(retained),'lastAttemptAt':health['checkedAt'],'lastSuccessAt':last_success(mode,previous_health,previous['features'])}
  rows=apply_kazanlak_official_parcels(merge(rows))
+ # Reconciliation may enrich geometry, but does not recheck remote sources.
+ for mode,source in health.get('sources',{}).items():
+  source.setdefault('lastAttemptAt',health.get('checkedAt'))
+  source.setdefault('lastSuccessAt',last_success(mode,previous_health,previous['features']))
+ rows=apply_freshness(rows,health)
  for f in rows:
   p=f['properties'];assert math.isfinite(p['mw']) and p['mw']>1 and p['source'].startswith('https://')
   assert p['status'] in ('operating','construction','planned')

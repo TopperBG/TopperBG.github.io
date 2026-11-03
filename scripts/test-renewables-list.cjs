@@ -2,8 +2,8 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'map/renewables.html'),'utf8'),mapHtml=fs.readFileSync(path.join(root,'map/index.html'),'utf8');
 const payload=JSON.parse(fs.readFileSync(path.join(root,'map/data/bg-renewables-cache-v1.geojson')));
 class Element{constructor(){this.children=[];this.value='';this.textContent='';this.events={};}append(...xs){this.children.push(...xs);}appendChild(x){this.children.push(x);return x;}replaceChildren(...xs){this.children=xs;}addEventListener(type,fn){this.events[type]=fn;}}
-const elements=Object.fromEntries(['q','min-mw','max-mw','range-error','status','tech','count','rows'].map(id=>[id,new Element()]));
-const c={document:{getElementById:id=>elements[id],createElement:()=>new Element()},fetch:async()=>({ok:true,json:async()=>payload}),console};vm.createContext(c);vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],c);
+const elements=Object.fromEntries(['q','min-mw','max-mw','range-error','status','tech','count','rows','source-freshness'].map(id=>[id,new Element()]));
+const c={document:{getElementById:id=>elements[id],createElement:()=>new Element()},fetch:async url=>({ok:true,json:async()=>url.includes('health')?JSON.parse(fs.readFileSync(path.join(root,'map/data/bg-renewables-health-v1.json'))):payload}),console};c.window=c;vm.createContext(c);vm.runInContext(fs.readFileSync(path.join(root,'map/assets/renewable-freshness.js'),'utf8'),c);vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],c);
 async function run(){
  await new Promise(r=>setTimeout(r,0));assert.equal(elements.rows.children.length,payload.features.length);
  function check(min,tech='',status='',query='',max=''){

@@ -36,7 +36,10 @@ async function main(){
   fixtures.unshift(point('under-ten','solar',[24.2,42.2],9.99),point('small-wind','wind',[24.2,42.2],2));
   fixtures.at(-1).properties.source='https://www.openstreetmap.org/way/123456789012';
   c.CURATED_SOLAR_FOOTPRINTS.push({id:'known-identity',source:'https://example.org/other',parcelRef:'OSM-W123456789012',geometry:{type:'Polygon',coordinates:[[[23,43],[23.01,43],[23.01,43.01],[23,43.01],[23,43]]]}});
-  c.fetch=async()=>({ok:true,json:async()=>({...payload,features:[...payload.features,...fixtures]})});
+  const health=JSON.parse(fs.readFileSync(path.join(root,'map/data/bg-renewables-health-v1.json')));
+  c.renewableSourceHealth=null;c.renewableHealthChecked=false;c.renderSourceWarning=()=>{};
+  vm.runInContext(fs.readFileSync(path.join(root,'map/assets/renewable-freshness.js'),'utf8'),c);
+  c.fetch=async url=>({ok:true,json:async()=>url.includes('health')?health:({...payload,features:[...payload.features,...fixtures]})});
   const start=html.indexOf('// The inventory retains every technology;');
   vm.runInContext(html.slice(start,html.indexOf('// Load status wiring:',start))+'\nvoid loadRenewableCache();'+'\nglobalThis.cacheSource=renewableCacheSource;globalThis.cacheLayer=renewableCacheLayer;',c);
   await new Promise(r=>setTimeout(r,0));
