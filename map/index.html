@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.96.18">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.96.18</title>
+<meta name="bgwf-build" content="v0.96.19">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.96.19</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1626,10 +1626,10 @@ svg {
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
-<link rel="stylesheet" href="./assets/map-interface.css?v=0.96.18">
+<link rel="stylesheet" href="./assets/map-interface.css?v=0.96.19">
 <script src="./assets/renewable-freshness.js"></script>
-<script src="./assets/map-notes.js?v=1"></script>
-<script src="./assets/map-interface.js?v=0.96.18"></script>
+<script src="./assets/map-notes.js?v=2"></script>
+<script src="./assets/map-interface.js?v=0.96.19"></script>
 </head>
 <body>
 <div id="bg-wildfires-map" class="is-filter-collapsed" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
@@ -1640,7 +1640,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.96.18</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.96.19</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach hidden></span>
@@ -4555,7 +4555,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.96.18', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.96.19', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4600,7 +4600,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.96.18-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.96.19-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
@@ -5930,14 +5930,15 @@ async function shareCurrentMap(){
 const mapShareMenu=document.createElement('div');
 mapShareMenu.className='bgwf-map-share-menu';
 mapShareMenu.hidden=true;
-mapShareMenu.innerHTML='<button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button><button type="button" data-action="ortho">Исторически Ортофото · АГКК</button><button type="button" data-action="history">Исторически снимки</button>';
+mapShareMenu.innerHTML='<button type="button" data-action="note">Нова бележка</button><button type="button" data-action="share">Сподели този изглед</button><button type="button" data-action="gmaps">Отвори в Google Maps</button><button type="button" data-action="ortho">Исторически Ортофото · АГКК</button><button type="button" data-action="history">Исторически снимки</button>';
 root.appendChild(mapShareMenu);
-let mapContextLonLat=null;
+let mapContextLonLat=null,mapContextObjectName='';
 mapShareMenu.addEventListener('click',async e=>{
   const btn=e.target.closest('button[data-action]');
   if(!btn)return;
   const action=btn.dataset.action;
   mapShareMenu.hidden=true;
+  if(action==='note'&&mapContextLonLat){notesController?.createAt(mapContextLonLat,mapContextObjectName);return;}
   if(action==='share'){
     await shareCurrentMap();
     return;
@@ -5966,10 +5967,12 @@ mapTarget.addEventListener('contextmenu',e=>{
   const pixel=map.getEventPixel(e);
   const coord=map.getCoordinateFromPixel(pixel);
   mapContextLonLat=coord?toLonLat(coord):null;
+  const contextFeature=topFeatureAtPixel(pixel),contextData=contextFeature?.get('data');
+  mapContextObjectName=contextFeature?.get('kind')==='province'?'':String(contextData?.project?.name||contextData?.name||contextFeature?.get('name')||'');
   const rr=root.getBoundingClientRect();
-  mapShareMenu.style.left=`${Math.min(e.clientX-rr.left,rr.width-210)}px`;
-  mapShareMenu.style.top=`${Math.min(e.clientY-rr.top,rr.height-118)}px`;
   mapShareMenu.hidden=false;
+  mapShareMenu.style.left=`${Math.max(0,Math.min(e.clientX-rr.left,rr.width-mapShareMenu.offsetWidth))}px`;
+  mapShareMenu.style.top=`${Math.max(0,Math.min(e.clientY-rr.top,rr.height-mapShareMenu.offsetHeight))}px`;
 });
 addEventListener('pointerdown',e=>{
   if(!mapShareMenu.contains(e.target))mapShareMenu.hidden=true;
@@ -6060,7 +6063,6 @@ map.on('pointermove',e=>{
   bgwfHoverLastAt=now;
   if(bgwfHoverFrame)cancelAnimationFrame(bgwfHoverFrame);
   bgwfHoverFrame=requestAnimationFrame(()=>{
-if(notesController?.isPicking()){mapTarget.style.cursor='crosshair';hideMapTooltip();return;}
 if(e.dragging){hideMapTooltip();return;}const f=topFeatureAtPixel(e.pixel);mapTarget.style.cursor=f?'pointer':'';const txt=f&&f.get('kind')!=='province'?featureLabel(f):'';if(txt)showMapTooltip(e.pixel,txt);else hideMapTooltip();
   });
 });
@@ -8028,4 +8030,5 @@ setTimeout(()=>{
 </script>
 </body>
 </html>
+
 

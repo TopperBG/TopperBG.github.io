@@ -225,3 +225,18 @@ html,body{margin:0!important;padding:0!important;width:100%;height:100%;overflow
  #bg-wildfires-map .bgwf-notes-panel{top:auto;bottom:var(--nav-height,66px);left:0;width:100%;max-height:58%;border-radius:18px 18px 0 0;padding:14px 16px}
  #bg-wildfires-map .bgwf-notes-panel button{min-height:44px}
 }
+
+
+#bg-wildfires-map .bgwf-notes-panel .bgwf-note-select{display:block;width:100%;text-align:left;background:transparent;border-color:transparent;margin:0;padding:9px;white-space:normal;overflow-wrap:anywhere}
+#bg-wildfires-map .bgwf-note-select strong,#bg-wildfires-map .bgwf-note-select span{display:block;white-space:pre-wrap}
+#bg-wildfires-map .bgwf-note-select strong{font-size:15px}
+#bg-wildfires-map .bgwf-note-select span{margin:6px 0}
+#bg-wildfires-map .bgwf-notes-panel .bgwf-note-select[aria-pressed=true]{background:#f1eafe;border-color:#7c3aed}
+
+#bg-wildfires-map .bgwf-notes-list article{display:flex;align-items:flex-start;gap:4px}
+#bg-wildfires-map .bgwf-notes-panel .bgwf-note-select{flex:1;min-width:0;width:auto}
+#bg-wildfires-map .bgwf-note-icons{display:flex;flex:none;gap:2px}
+#bg-wildfires-map .bgwf-notes-panel .bgwf-note-icons button{display:flex;align-items:center;justify-content:center;width:36px;height:38px;padding:5px;margin:0;border-color:transparent;background:transparent;font-size:24px}
+#bg-wildfires-map .bgwf-note-icons svg{width:18px;height:18px}
+#bg-wildfires-map .bgwf-note-icons button:hover{background:#f1eafe}
+@media(max-width:700px){#bg-wildfires-map .bgwf-notes-panel .bgwf-note-icons button{width:44px;height:44px}}
