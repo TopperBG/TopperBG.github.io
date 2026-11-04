@@ -13,9 +13,16 @@
       "canonicalId": "VEIREG-pavets-orfey",
       "memberIds": [
         "VEIREG-pavets-orfey",
-        "OSM-BG-W1342874437"
+        "OSM-BG-W1342874437",
+        "OSM-BG-N1835658459"
       ],
-      "note": "Confirmed same Orfey pumped-storage plant; preserve registry capacity and OSM location."
+      "note": "Same 160 MW Orfey pumped-storage plant at Vacha dam. OSM node labelled Въча and plant way are not additional power stations. Preserve registry identity and existing plant-way location.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/pavets-orfey",
+        "https://www.openstreetmap.org/way/1342874437",
+        "https://www.openstreetmap.org/node/1835658459",
+        "https://nek.bg/bg/vec/tsentrali"
+      ]
     },
     {
       "canonicalId": "SOL-KARADZHALOVO-2012",
@@ -33,6 +40,428 @@
         "VEIREG-fets-dobrich"
       ],
       "note": "Same named plant and published 14.071 MW in the curated KEVR entry and registry; retain existing site location."
+    },
+    {
+      "canonicalId": "VEIREG-vets-batak",
+      "memberIds": [
+        "VEIREG-vets-batak",
+        "OSM-BG-N1836873920",
+        "OSM-BG-W299988326"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Батак\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/node/1836873920",
+        "https://www.openstreetmap.org/way/299988326",
+        "https://www.veiregistar.bg/object/vets-batak"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-ivaylovgrad",
+      "memberIds": [
+        "VEIREG-vets-ivaylovgrad",
+        "OSM-BG-R11949072"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Ивайловград\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/relation/11949072",
+        "https://www.veiregistar.bg/object/vets-ivaylovgrad"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-aleko",
+      "memberIds": [
+        "VEIREG-vets-aleko",
+        "OSM-BG-W104162954"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Алеко\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/104162954",
+        "https://www.veiregistar.bg/object/vets-aleko"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-petrovo",
+      "memberIds": [
+        "VEIREG-vets-petrovo",
+        "OSM-BG-W1250747030"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Петрово\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1250747030",
+        "https://www.veiregistar.bg/object/vets-petrovo"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-mvets-tsrancha",
+      "memberIds": [
+        "VEIREG-mvets-tsrancha",
+        "OSM-BG-W1410194902"
+      ],
+      "note": "Same named Bulgarian hydro plant (МВЕЦ \"Црънча\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1410194902",
+        "https://www.veiregistar.bg/object/mvets-tsrancha"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-stara-zagora",
+      "memberIds": [
+        "VEIREG-vets-stara-zagora",
+        "OSM-BG-W1412838224"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Стара Загора\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1412838224",
+        "https://www.veiregistar.bg/object/vets-stara-zagora"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-kozloduy",
+      "memberIds": [
+        "VEIREG-vets-kozloduy",
+        "OSM-BG-W1459917302"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Козлодуй\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1459917302",
+        "https://www.veiregistar.bg/object/vets-kozloduy"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-beli-iskar",
+      "memberIds": [
+        "VEIREG-vets-beli-iskar",
+        "OSM-BG-W1479889910"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Бели Искър\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1479889910",
+        "https://www.veiregistar.bg/object/vets-beli-iskar"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-kardzhali",
+      "memberIds": [
+        "VEIREG-vets-kardzhali",
+        "OSM-BG-W168092719"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Кърджали\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/168092719",
+        "https://www.veiregistar.bg/object/vets-kardzhali"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-levski",
+      "memberIds": [
+        "VEIREG-vets-levski",
+        "OSM-BG-W169361655"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Левски\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/169361655",
+        "https://www.veiregistar.bg/object/vets-levski"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-momina-klisura",
+      "memberIds": [
+        "VEIREG-vets-momina-klisura",
+        "OSM-BG-W172685485"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Момина клисура\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/172685485",
+        "https://www.veiregistar.bg/object/vets-momina-klisura"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-kamen-rid",
+      "memberIds": [
+        "VEIREG-vets-kamen-rid",
+        "OSM-BG-W197749024"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Камен рид\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/197749024",
+        "https://www.veiregistar.bg/object/vets-kamen-rid"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-vacha-1",
+      "memberIds": [
+        "VEIREG-vets-vacha-1",
+        "OSM-BG-W204791050"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Въча - 1\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/204791050",
+        "https://www.veiregistar.bg/object/vets-vacha-1"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-krichim",
+      "memberIds": [
+        "VEIREG-vets-krichim",
+        "OSM-BG-W204791052"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Кричим\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/204791052",
+        "https://www.veiregistar.bg/object/vets-krichim"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-vacha-2",
+      "memberIds": [
+        "VEIREG-vets-vacha-2",
+        "OSM-BG-W204794205"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Въча 2\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/204794205",
+        "https://www.veiregistar.bg/object/vets-vacha-2"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-rositsa-1",
+      "memberIds": [
+        "VEIREG-vets-rositsa-1",
+        "OSM-BG-W243004086"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Росица 1\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/243004086",
+        "https://www.veiregistar.bg/object/vets-rositsa-1"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-kokalyane",
+      "memberIds": [
+        "VEIREG-vets-kokalyane",
+        "OSM-BG-W277261383"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Кокаляне\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/277261383",
+        "https://www.veiregistar.bg/object/vets-kokalyane"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-tazha",
+      "memberIds": [
+        "VEIREG-vets-tazha",
+        "OSM-BG-W283141247"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Тъжа\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/283141247",
+        "https://www.veiregistar.bg/object/vets-tazha"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-devin",
+      "memberIds": [
+        "VEIREG-vets-devin",
+        "OSM-BG-W285893857"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Девин\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/285893857",
+        "https://www.veiregistar.bg/object/vets-devin"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-mvets-tserovo",
+      "memberIds": [
+        "VEIREG-mvets-tserovo",
+        "OSM-BG-W297013281"
+      ],
+      "note": "Same named Bulgarian hydro plant (МВЕЦ \"Церово\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/297013281",
+        "https://www.veiregistar.bg/object/mvets-tserovo"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-kitka",
+      "memberIds": [
+        "VEIREG-vets-kitka",
+        "OSM-BG-W305940630"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Китка\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/305940630",
+        "https://www.veiregistar.bg/object/vets-kitka"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-koynare",
+      "memberIds": [
+        "VEIREG-vets-koynare",
+        "OSM-BG-W305943566"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Койнаре\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/305943566",
+        "https://www.veiregistar.bg/object/vets-koynare"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-rakita",
+      "memberIds": [
+        "VEIREG-vets-rakita",
+        "OSM-BG-W305948282"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Ракита\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/305948282",
+        "https://www.veiregistar.bg/object/vets-rakita"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-mvets-kaleto",
+      "memberIds": [
+        "VEIREG-mvets-kaleto",
+        "OSM-BG-W305952881"
+      ],
+      "note": "Same named Bulgarian hydro plant (МВЕЦ \"Калето\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/305952881",
+        "https://www.veiregistar.bg/object/mvets-kaleto"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-mezdra",
+      "memberIds": [
+        "VEIREG-vets-mezdra",
+        "OSM-BG-W305971013"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Мездра\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/305971013",
+        "https://www.veiregistar.bg/object/vets-mezdra"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-pasarel",
+      "memberIds": [
+        "VEIREG-vets-pasarel",
+        "OSM-BG-W309368662"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Пасарел\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/309368662",
+        "https://www.veiregistar.bg/object/vets-pasarel"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-topolnitsa",
+      "memberIds": [
+        "VEIREG-vets-topolnitsa",
+        "OSM-BG-W309373781"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Тополница\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/309373781",
+        "https://www.veiregistar.bg/object/vets-topolnitsa"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-tsankov-kamak",
+      "memberIds": [
+        "VEIREG-vets-tsankov-kamak",
+        "OSM-BG-W338686744"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Цанков камък\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/338686744",
+        "https://www.veiregistar.bg/object/vets-tsankov-kamak"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-vidima",
+      "memberIds": [
+        "VEIREG-vets-vidima",
+        "OSM-BG-W391783449"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Видима\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/391783449",
+        "https://www.veiregistar.bg/object/vets-vidima"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-studen-kladenets",
+      "memberIds": [
+        "VEIREG-vets-studen-kladenets",
+        "OSM-BG-W485280749"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Студен кладенец\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/485280749",
+        "https://www.veiregistar.bg/object/vets-studen-kladenets"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-mvets-lakatnik",
+      "memberIds": [
+        "VEIREG-mvets-lakatnik",
+        "OSM-BG-W628952353"
+      ],
+      "note": "Same named Bulgarian hydro plant (МВЕЦ \"Лакатник\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/628952353",
+        "https://www.veiregistar.bg/object/mvets-lakatnik"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-mvets-svrazhen",
+      "memberIds": [
+        "VEIREG-mvets-svrazhen",
+        "OSM-BG-W628952630"
+      ],
+      "note": "Same named Bulgarian hydro plant (МВЕЦ \"Свражен\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/628952630",
+        "https://www.veiregistar.bg/object/mvets-svrazhen"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-koprinka",
+      "memberIds": [
+        "VEIREG-vets-koprinka",
+        "OSM-BG-W87394466"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Копринка\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/87394466",
+        "https://www.veiregistar.bg/object/vets-koprinka"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-vets-sestrimo",
+      "memberIds": [
+        "VEIREG-vets-sestrimo",
+        "OSM-BG-W918500398"
+      ],
+      "note": "Same named Bulgarian hydro plant (ВЕЦ \"Сестримо\"); registry identity/status/capacity, OSM plant location. Different published capacities remain separate observations, never summed.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/918500398",
+        "https://www.veiregistar.bg/object/vets-sestrimo"
+      ]
+    },
+    {
+      "canonicalId": "VEIREG-mvets-kunino",
+      "memberIds": [
+        "VEIREG-mvets-kunino",
+        "OSM-BG-W918500391"
+      ],
+      "note": "Same Kunino plant at Roman, 4.41 MW; VEИ register calls it МВЕЦ, OSM ВЕЦ. Preserve registry identity and OSM plant location.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/mvets-kunino",
+        "https://www.openstreetmap.org/way/918500391"
+      ]
     }
   ]
 }

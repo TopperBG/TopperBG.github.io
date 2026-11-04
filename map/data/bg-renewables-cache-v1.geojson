@@ -1,132 +1,11 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-bg-renewables-cache-v1",
-  "generatedAt": "2026-11-04T06:40:24.174166+00:00",
+  "generatedAt": "2026-11-04T06:44:08.573719+00:00",
   "scope": "Bulgaria; explicitly published capacity >1 MW",
   "coverage": "partial; discovery sources are not an exhaustive national register",
   "aggregation": "Do not sum AC/DC, pumped storage or unresolved cross-source duplicates together.",
   "features": [
-    {
-      "type": "Feature",
-      "id": "OSM-BG-N1835658459",
-      "properties": {
-        "id": "OSM-BG-N1835658459",
-        "name": "ВЕЦ \"Въча\"",
-        "mw": 160.0,
-        "capacityBasis": "unspecified",
-        "technology": "pumped_hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/node/1835658459",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.4522222,
-          41.9425
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-N1836873920",
-      "properties": {
-        "id": "OSM-BG-N1836873920",
-        "name": "ВЕЦ \"Батак\"",
-        "mw": 46.8,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/node/1836873920",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "OSM-BG-W299988326",
-          "VEIREG-vets-batak"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.1927705,
-          41.919537
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-R11949072",
-      "properties": {
-        "id": "OSM-BG-R11949072",
-        "name": "ВЕЦ \"Ивайловград\"",
-        "mw": 120.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/relation/11949072",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-ivaylovgrad"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.1075426,
-          41.5839122
-        ]
-      }
-    },
     {
       "type": "Feature",
       "id": "OSM-BG-R14073393",
@@ -3685,88 +3564,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W104162954",
-      "properties": {
-        "id": "OSM-BG-W104162954",
-        "name": "ВЕЦ \"Алеко\"",
-        "mw": 66.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/104162954",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-aleko"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.289352,
-          42.1191324
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W1250747030",
-      "properties": {
-        "id": "OSM-BG-W1250747030",
-        "name": "ВЕЦ „Петрово“",
-        "mw": 2.57,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1250747030",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-petrovo"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.5127492,
-          41.4369212
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W1256108851",
       "properties": {
         "id": "OSM-BG-W1256108851",
@@ -3881,129 +3678,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W1410194902",
-      "properties": {
-        "id": "OSM-BG-W1410194902",
-        "name": "МВЕЦ Црънча",
-        "mw": 3.2,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1410194902",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-mvets-tsrancha"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.0894338,
-          41.5852792
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W1412838224",
-      "properties": {
-        "id": "OSM-BG-W1412838224",
-        "name": "ВЕЦ Стара Загора",
-        "mw": 22.4,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1412838224",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-stara-zagora"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.6047266,
-          42.4147848
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W1459917302",
-      "properties": {
-        "id": "OSM-BG-W1459917302",
-        "name": "ВЕЦ Козлодуй",
-        "mw": 5.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1459917302",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-kozloduy"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.8491025,
-          43.7517105
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W1463899692",
       "properties": {
         "id": "OSM-BG-W1463899692",
@@ -4083,170 +3757,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W1479889910",
-      "properties": {
-        "id": "OSM-BG-W1479889910",
-        "name": "ВЕЦ \"Бели Искър\"",
-        "mw": 16.8,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1479889910",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-beli-iskar"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.5523815,
-          42.1958958
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W168092719",
-      "properties": {
-        "id": "OSM-BG-W168092719",
-        "name": "ВЕЦ Кърджали",
-        "mw": 106.4,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/168092719",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-kardzhali"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.3384488,
-          41.6325789
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W169361655",
-      "properties": {
-        "id": "OSM-BG-W169361655",
-        "name": "ВЕЦ \"Левски\"",
-        "mw": 3.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/169361655",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-levski"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.8090097,
-          42.653115
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W172685485",
-      "properties": {
-        "id": "OSM-BG-W172685485",
-        "name": "ВЕЦ \"Момина клисура\"",
-        "mw": 120.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/172685485",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-momina-klisura"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.9493758,
-          42.2322808
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W192390641",
       "properties": {
         "id": "OSM-BG-W192390641",
@@ -4280,170 +3790,6 @@
         "coordinates": [
           25.0067869,
           42.2238501
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W197749024",
-      "properties": {
-        "id": "OSM-BG-W197749024",
-        "name": "ВЕЦ Камен рид",
-        "mw": 1.75,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/197749024",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-kamen-rid"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.7311415,
-          43.0548191
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W204791050",
-      "properties": {
-        "id": "OSM-BG-W204791050",
-        "name": "ВЕЦ \"Въча 1\"",
-        "mw": 14.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/204791050",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-vacha-1"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.4695942,
-          42.0344363
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W204791052",
-      "properties": {
-        "id": "OSM-BG-W204791052",
-        "name": "ВЕЦ \"Кричим\"",
-        "mw": 80.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/204791052",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-krichim"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.4708929,
-          42.0272478
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W204794205",
-      "properties": {
-        "id": "OSM-BG-W204794205",
-        "name": "ВЕЦ \"Въча 2\"",
-        "mw": 7.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/204794205",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-vacha-2"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.4710373,
-          41.9943728
         ]
       }
     },
@@ -4487,47 +3833,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W243004086",
-      "properties": {
-        "id": "OSM-BG-W243004086",
-        "name": "ВЕЦ \"Росица 1\"",
-        "mw": 7.5,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/243004086",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-rositsa-1"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.1728513,
-          43.1247823
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W254263683",
       "properties": {
         "id": "OSM-BG-W254263683",
@@ -4566,212 +3871,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W277261383",
-      "properties": {
-        "id": "OSM-BG-W277261383",
-        "name": "ВЕЦ \"Кокаляне\"",
-        "mw": 22.4,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/277261383",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-kokalyane"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.4279567,
-          42.5838861
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W283141247",
-      "properties": {
-        "id": "OSM-BG-W283141247",
-        "name": "ВЕЦ \"Тъжа\"",
-        "mw": 5.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/283141247",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-tazha"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.052835,
-          42.665326
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W285893857",
-      "properties": {
-        "id": "OSM-BG-W285893857",
-        "name": "ВЕЦ \"Девин\"",
-        "mw": 88.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/285893857",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-devin"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.4244805,
-          41.7201461
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W297013281",
-      "properties": {
-        "id": "OSM-BG-W297013281",
-        "name": "МВЕЦ \"Церово\"",
-        "mw": 3.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/297013281",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-mvets-tserovo"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.3557277,
-          42.9985084
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W299988326",
-      "properties": {
-        "id": "OSM-BG-W299988326",
-        "name": "ВЕЦ Батак",
-        "mw": 46.8,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/299988326",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "OSM-BG-N1836873920",
-          "VEIREG-vets-batak"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.1931129,
-          41.9189174
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W305940629",
       "properties": {
         "id": "OSM-BG-W305940629",
@@ -4805,211 +3904,6 @@
         "coordinates": [
           22.7422549,
           43.479827
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W305940630",
-      "properties": {
-        "id": "OSM-BG-W305940630",
-        "name": "ВЕЦ \"Китка\"",
-        "mw": 5.2,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/305940630",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-kitka"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          22.7345925,
-          43.4666127
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W305943566",
-      "properties": {
-        "id": "OSM-BG-W305943566",
-        "name": "ВЕЦ \"Койнаре\"",
-        "mw": 1.5,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/305943566",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-koynare"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.1900846,
-          43.3713029
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W305948282",
-      "properties": {
-        "id": "OSM-BG-W305948282",
-        "name": "ВЕЦ \"Ракита\"",
-        "mw": 5.2,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/305948282",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-rakita"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.2962721,
-          43.2809972
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W305952881",
-      "properties": {
-        "id": "OSM-BG-W305952881",
-        "name": "МВЕЦ \"Калето\"",
-        "mw": 3.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/305952881",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-mvets-kaleto"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.7068264,
-          43.1337592
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W305971013",
-      "properties": {
-        "id": "OSM-BG-W305971013",
-        "name": "ВЕЦ \"Мездра\"",
-        "mw": 2.02,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/305971013",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-mezdra"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.7351747,
-          43.1362257
         ]
       }
     },
@@ -5091,129 +3985,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W309368662",
-      "properties": {
-        "id": "OSM-BG-W309368662",
-        "name": "ВЕЦ \"Пасарел\"",
-        "mw": 30.6,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/309368662",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-pasarel"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.4863068,
-          42.5439829
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W309373781",
-      "properties": {
-        "id": "OSM-BG-W309373781",
-        "name": "ВЕЦ Тополница",
-        "mw": 9.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/309373781",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-topolnitsa"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.0002208,
-          42.4188211
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W338686744",
-      "properties": {
-        "id": "OSM-BG-W338686744",
-        "name": "ВЕЦ Цанков камък",
-        "mw": 85.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/338686744",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-tsankov-kamak"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.4217655,
-          41.8321993
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W358634902",
       "properties": {
         "id": "OSM-BG-W358634902",
@@ -5252,88 +4023,6 @@
     },
     {
       "type": "Feature",
-      "id": "OSM-BG-W391783449",
-      "properties": {
-        "id": "OSM-BG-W391783449",
-        "name": "ВЕЦ Видима",
-        "mw": 3.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/391783449",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-vidima"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.9213021,
-          42.7801781
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W485280749",
-      "properties": {
-        "id": "OSM-BG-W485280749",
-        "name": "ВЕЦ \"Студен кладенец\"",
-        "mw": 85.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/485280749",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-studen-kladenets"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.640617,
-          41.6122859
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "OSM-BG-W492519058",
       "properties": {
         "id": "OSM-BG-W492519058",
@@ -5367,88 +4056,6 @@
         "coordinates": [
           26.3495784,
           42.3406876
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W628952353",
-      "properties": {
-        "id": "OSM-BG-W628952353",
-        "name": "МВЕЦ „Лакатник”",
-        "mw": 3.2,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/628952353",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-mvets-lakatnik"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.4041296,
-          43.0864238
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W628952630",
-      "properties": {
-        "id": "OSM-BG-W628952630",
-        "name": "МВЕЦ „Свражен”",
-        "mw": 3.6,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/628952630",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-mvets-svrazhen"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.4227789,
-          43.0944925
         ]
       }
     },
@@ -5563,126 +4170,6 @@
         "coordinates": [
           24.775621,
           42.4329864
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W87394466",
-      "properties": {
-        "id": "OSM-BG-W87394466",
-        "name": "ВЕЦ \"Копринка\"",
-        "mw": 7.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/87394466",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-koprinka"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.319844,
-          42.6123423
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W918500391",
-      "properties": {
-        "id": "OSM-BG-W918500391",
-        "name": "ВЕЦ \"Кунино\"",
-        "mw": 4.41,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/918500391",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.9945979,
-          43.1799163
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W918500398",
-      "properties": {
-        "id": "OSM-BG-W918500398",
-        "name": "ВЕЦ Сестримо",
-        "mw": 240.0,
-        "capacityBasis": "unspecified",
-        "technology": "hydro",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/918500398",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "VEIREG-vets-sestrimo"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.9158566,
-          42.208379
         ]
       }
     },
@@ -20019,17 +18506,20 @@
         "source": "https://www.veiregistar.bg/object/mvets-kaleto",
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw"
         ],
         "sources": [
+          "https://www.openstreetmap.org/way/305952881",
           "https://www.veiregistar.bg/object/mvets-kaleto"
         ],
         "mergedIds": [
+          "OSM-BG-W305952881",
           "VEIREG-mvets-kaleto"
         ],
         "capacityObservations": [
@@ -20039,23 +18529,38 @@
             "capacityBasis": "unspecified"
           },
           {
+            "source": "https://www.openstreetmap.org/way/305952881",
+            "mw": 3.0,
+            "capacityBasis": "unspecified"
+          },
+          {
             "source": "https://www.veiregistar.bg/object/mvets-kaleto",
             "mw": 3.0,
             "capacityBasis": "unspecified"
           }
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W305952881"
-        ]
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/305952881"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7068264,
+          43.1337592
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -20102,22 +18607,44 @@
         "source": "https://www.veiregistar.bg/object/mvets-kunino",
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "sources": [
+          "https://www.openstreetmap.org/way/918500391",
+          "https://www.veiregistar.bg/object/mvets-kunino"
+        ],
+        "mergedIds": [
+          "OSM-BG-W918500391",
+          "VEIREG-mvets-kunino"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/918500391"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9945979,
+          43.1799163
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -20133,25 +18660,56 @@
         "source": "https://www.veiregistar.bg/object/mvets-lakatnik",
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W628952353"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/628952353",
+          "https://www.veiregistar.bg/object/mvets-lakatnik"
+        ],
+        "mergedIds": [
+          "OSM-BG-W628952353",
+          "VEIREG-mvets-lakatnik"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/mvets-lakatnik",
+            "mw": 3.025,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/628952353",
+            "mw": 3.2,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/628952353"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4041296,
+          43.0864238
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -20601,25 +19159,56 @@
         "source": "https://www.veiregistar.bg/object/mvets-svrazhen",
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W628952630"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/628952630",
+          "https://www.veiregistar.bg/object/mvets-svrazhen"
+        ],
+        "mergedIds": [
+          "OSM-BG-W628952630",
+          "VEIREG-mvets-svrazhen"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/mvets-svrazhen",
+            "mw": 3.5,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/628952630",
+            "mw": 3.6,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/628952630"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4227789,
+          43.0944925
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -20666,25 +19255,44 @@
         "source": "https://www.veiregistar.bg/object/mvets-tserovo",
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W297013281"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/297013281",
+          "https://www.veiregistar.bg/object/mvets-tserovo"
+        ],
+        "mergedIds": [
+          "OSM-BG-W297013281",
+          "VEIREG-mvets-tserovo"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/297013281"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.3557277,
+          42.9985084
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -20731,25 +19339,44 @@
         "source": "https://www.veiregistar.bg/object/mvets-tsrancha",
         "countryCode": "BG",
         "sourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:micro-hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W1410194902"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/1410194902",
+          "https://www.veiregistar.bg/object/mvets-tsrancha"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1410194902",
+          "VEIREG-mvets-tsrancha"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/1410194902"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0894338,
+          41.5852792
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -20889,10 +19516,12 @@
           "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw"
         ],
         "sources": [
+          "https://www.openstreetmap.org/node/1835658459",
           "https://www.openstreetmap.org/way/1342874437",
           "https://www.veiregistar.bg/object/pavets-orfey"
         ],
         "mergedIds": [
+          "OSM-BG-N1835658459",
           "OSM-BG-W1342874437",
           "VEIREG-pavets-orfey"
         ],
@@ -20995,25 +19624,56 @@
         "source": "https://www.veiregistar.bg/object/vets-aleko",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W104162954"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/104162954",
+          "https://www.veiregistar.bg/object/vets-aleko"
+        ],
+        "mergedIds": [
+          "OSM-BG-W104162954",
+          "VEIREG-vets-aleko"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-aleko",
+            "mw": 71.4,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/104162954",
+            "mw": 66.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/104162954"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.289352,
+          42.1191324
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21122,26 +19782,63 @@
         "source": "https://www.veiregistar.bg/object/vets-batak",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
+        "sources": [
+          "https://www.openstreetmap.org/node/1836873920",
+          "https://www.openstreetmap.org/way/299988326",
+          "https://www.veiregistar.bg/object/vets-batak"
+        ],
+        "mergedIds": [
           "OSM-BG-N1836873920",
-          "OSM-BG-W299988326"
-        ]
+          "OSM-BG-W299988326",
+          "VEIREG-vets-batak"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-batak",
+            "mw": 46.0,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/299988326",
+            "mw": 46.8,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/node/1836873920",
+            "mw": 46.8,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/node/1836873920"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1927705,
+          41.919537
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21188,25 +19885,44 @@
         "source": "https://www.veiregistar.bg/object/vets-beli-iskar",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W1479889910"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/1479889910",
+          "https://www.veiregistar.bg/object/vets-beli-iskar"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1479889910",
+          "VEIREG-vets-beli-iskar"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/1479889910"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.5523815,
+          42.1958958
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21439,25 +20155,44 @@
         "source": "https://www.veiregistar.bg/object/vets-devin",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W285893857"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/285893857",
+          "https://www.veiregistar.bg/object/vets-devin"
+        ],
+        "mergedIds": [
+          "OSM-BG-W285893857",
+          "VEIREG-vets-devin"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/285893857"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4244805,
+          41.7201461
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21566,25 +20301,44 @@
         "source": "https://www.veiregistar.bg/object/vets-ivaylovgrad",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-R11949072"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/relation/11949072",
+          "https://www.veiregistar.bg/object/vets-ivaylovgrad"
+        ],
+        "mergedIds": [
+          "OSM-BG-R11949072",
+          "VEIREG-vets-ivaylovgrad"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/relation/11949072"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.1075426,
+          41.5839122
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21600,25 +20354,44 @@
         "source": "https://www.veiregistar.bg/object/vets-kamen-rid",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W197749024"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/197749024",
+          "https://www.veiregistar.bg/object/vets-kamen-rid"
+        ],
+        "mergedIds": [
+          "OSM-BG-W197749024",
+          "VEIREG-vets-kamen-rid"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/197749024"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.7311415,
+          43.0548191
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21634,25 +20407,56 @@
         "source": "https://www.veiregistar.bg/object/vets-kardzhali",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W168092719"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/168092719",
+          "https://www.veiregistar.bg/object/vets-kardzhali"
+        ],
+        "mergedIds": [
+          "OSM-BG-W168092719",
+          "VEIREG-vets-kardzhali"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-kardzhali",
+            "mw": 124.0,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/168092719",
+            "mw": 106.4,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/168092719"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.3384488,
+          41.6325789
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21730,25 +20534,56 @@
         "source": "https://www.veiregistar.bg/object/vets-kitka",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W305940630"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/305940630",
+          "https://www.veiregistar.bg/object/vets-kitka"
+        ],
+        "mergedIds": [
+          "OSM-BG-W305940630",
+          "VEIREG-vets-kitka"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-kitka",
+            "mw": 5.48,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/305940630",
+            "mw": 5.2,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/305940630"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.7345925,
+          43.4666127
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21795,25 +20630,44 @@
         "source": "https://www.veiregistar.bg/object/vets-kokalyane",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W277261383"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/277261383",
+          "https://www.veiregistar.bg/object/vets-kokalyane"
+        ],
+        "mergedIds": [
+          "OSM-BG-W277261383",
+          "VEIREG-vets-kokalyane"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/277261383"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4279567,
+          42.5838861
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21829,25 +20683,44 @@
         "source": "https://www.veiregistar.bg/object/vets-koprinka",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W87394466"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/87394466",
+          "https://www.veiregistar.bg/object/vets-koprinka"
+        ],
+        "mergedIds": [
+          "OSM-BG-W87394466",
+          "VEIREG-vets-koprinka"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/87394466"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.319844,
+          42.6123423
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21863,25 +20736,44 @@
         "source": "https://www.veiregistar.bg/object/vets-koynare",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W305943566"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/305943566",
+          "https://www.veiregistar.bg/object/vets-koynare"
+        ],
+        "mergedIds": [
+          "OSM-BG-W305943566",
+          "VEIREG-vets-koynare"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/305943566"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.1900846,
+          43.3713029
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21897,25 +20789,44 @@
         "source": "https://www.veiregistar.bg/object/vets-kozloduy",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W1459917302"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/1459917302",
+          "https://www.veiregistar.bg/object/vets-kozloduy"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1459917302",
+          "VEIREG-vets-kozloduy"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/1459917302"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.8491025,
+          43.7517105
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21931,25 +20842,44 @@
         "source": "https://www.veiregistar.bg/object/vets-krichim",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W204791052"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/204791052",
+          "https://www.veiregistar.bg/object/vets-krichim"
+        ],
+        "mergedIds": [
+          "OSM-BG-W204791052",
+          "VEIREG-vets-krichim"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/204791052"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4708929,
+          42.0272478
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -21965,25 +20895,56 @@
         "source": "https://www.veiregistar.bg/object/vets-levski",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W169361655"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/169361655",
+          "https://www.veiregistar.bg/object/vets-levski"
+        ],
+        "mergedIds": [
+          "OSM-BG-W169361655",
+          "VEIREG-vets-levski"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-levski",
+            "mw": 3.2,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/169361655",
+            "mw": 3.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/169361655"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.8090097,
+          42.653115
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22092,25 +21053,56 @@
         "source": "https://www.veiregistar.bg/object/vets-mezdra",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W305971013"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/305971013",
+          "https://www.veiregistar.bg/object/vets-mezdra"
+        ],
+        "mergedIds": [
+          "OSM-BG-W305971013",
+          "VEIREG-vets-mezdra"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-mezdra",
+            "mw": 2.2,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/305971013",
+            "mw": 2.02,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/305971013"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7351747,
+          43.1362257
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22126,25 +21118,44 @@
         "source": "https://www.veiregistar.bg/object/vets-momina-klisura",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W172685485"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/172685485",
+          "https://www.veiregistar.bg/object/vets-momina-klisura"
+        ],
+        "mergedIds": [
+          "OSM-BG-W172685485",
+          "VEIREG-vets-momina-klisura"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/172685485"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9493758,
+          42.2322808
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22191,25 +21202,44 @@
         "source": "https://www.veiregistar.bg/object/vets-pasarel",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W309368662"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/309368662",
+          "https://www.veiregistar.bg/object/vets-pasarel"
+        ],
+        "mergedIds": [
+          "OSM-BG-W309368662",
+          "VEIREG-vets-pasarel"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/309368662"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4863068,
+          42.5439829
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22287,25 +21317,44 @@
         "source": "https://www.veiregistar.bg/object/vets-petrovo",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W1250747030"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/1250747030",
+          "https://www.veiregistar.bg/object/vets-petrovo"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1250747030",
+          "VEIREG-vets-petrovo"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/1250747030"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.5127492,
+          41.4369212
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22414,25 +21463,56 @@
         "source": "https://www.veiregistar.bg/object/vets-rakita",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W305948282"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/305948282",
+          "https://www.veiregistar.bg/object/vets-rakita"
+        ],
+        "mergedIds": [
+          "OSM-BG-W305948282",
+          "VEIREG-vets-rakita"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-rakita",
+            "mw": 3.15,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/305948282",
+            "mw": 5.2,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/305948282"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.2962721,
+          43.2809972
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22510,25 +21590,44 @@
         "source": "https://www.veiregistar.bg/object/vets-rositsa-1",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W243004086"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/243004086",
+          "https://www.veiregistar.bg/object/vets-rositsa-1"
+        ],
+        "mergedIds": [
+          "OSM-BG-W243004086",
+          "VEIREG-vets-rositsa-1"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/243004086"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.1728513,
+          43.1247823
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22606,25 +21705,44 @@
         "source": "https://www.veiregistar.bg/object/vets-sestrimo",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W918500398"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/918500398",
+          "https://www.veiregistar.bg/object/vets-sestrimo"
+        ],
+        "mergedIds": [
+          "OSM-BG-W918500398",
+          "VEIREG-vets-sestrimo"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/918500398"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.9158566,
+          42.208379
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22733,25 +21851,44 @@
         "source": "https://www.veiregistar.bg/object/vets-stara-zagora",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W1412838224"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/1412838224",
+          "https://www.veiregistar.bg/object/vets-stara-zagora"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1412838224",
+          "VEIREG-vets-stara-zagora"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/1412838224"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.6047266,
+          42.4147848
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22767,25 +21904,56 @@
         "source": "https://www.veiregistar.bg/object/vets-studen-kladenets",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W485280749"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/485280749",
+          "https://www.veiregistar.bg/object/vets-studen-kladenets"
+        ],
+        "mergedIds": [
+          "OSM-BG-W485280749",
+          "VEIREG-vets-studen-kladenets"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-studen-kladenets",
+            "mw": 81.3,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/485280749",
+            "mw": 85.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/485280749"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.640617,
+          41.6122859
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22894,25 +22062,56 @@
         "source": "https://www.veiregistar.bg/object/vets-tazha",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W283141247"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/283141247",
+          "https://www.veiregistar.bg/object/vets-tazha"
+        ],
+        "mergedIds": [
+          "OSM-BG-W283141247",
+          "VEIREG-vets-tazha"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-tazha",
+            "mw": 4.9,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/283141247",
+            "mw": 5.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/283141247"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.052835,
+          42.665326
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22928,25 +22127,56 @@
         "source": "https://www.veiregistar.bg/object/vets-topolnitsa",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W309373781"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/309373781",
+          "https://www.veiregistar.bg/object/vets-topolnitsa"
+        ],
+        "mergedIds": [
+          "OSM-BG-W309373781",
+          "VEIREG-vets-topolnitsa"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-topolnitsa",
+            "mw": 9.48,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/309373781",
+            "mw": 9.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/309373781"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0002208,
+          42.4188211
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -22993,25 +22223,56 @@
         "source": "https://www.veiregistar.bg/object/vets-tsankov-kamak",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W338686744"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/338686744",
+          "https://www.veiregistar.bg/object/vets-tsankov-kamak"
+        ],
+        "mergedIds": [
+          "OSM-BG-W338686744",
+          "VEIREG-vets-tsankov-kamak"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-tsankov-kamak",
+            "mw": 86.3,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/338686744",
+            "mw": 85.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/338686744"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4217655,
+          41.8321993
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -23027,25 +22288,44 @@
         "source": "https://www.veiregistar.bg/object/vets-vacha-1",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W204791050"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/204791050",
+          "https://www.veiregistar.bg/object/vets-vacha-1"
+        ],
+        "mergedIds": [
+          "OSM-BG-W204791050",
+          "VEIREG-vets-vacha-1"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/204791050"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4695942,
+          42.0344363
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -23061,25 +22341,44 @@
         "source": "https://www.veiregistar.bg/object/vets-vacha-2",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W204794205"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/204794205",
+          "https://www.veiregistar.bg/object/vets-vacha-2"
+        ],
+        "mergedIds": [
+          "OSM-BG-W204794205",
+          "VEIREG-vets-vacha-2"
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/204794205"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.4710373,
+          41.9943728
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -23095,25 +22394,56 @@
         "source": "https://www.veiregistar.bg/object/vets-vidima",
         "countryCode": "BG",
         "sourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
+        "geometryQuality": "location-only",
         "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
         "statusSourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "capacitySourceMode": "veiregistar:hydropower-plants-with-power-over-1-mw",
         "sourceModes": [
+          "osm",
           "veiregistar:hydropower-plants-with-power-over-1-mw"
         ],
         "sourceFreshness": {
+          "osm": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:39:14.919119+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "OSM-BG-W391783449"
-        ]
+        "sources": [
+          "https://www.openstreetmap.org/way/391783449",
+          "https://www.veiregistar.bg/object/vets-vidima"
+        ],
+        "mergedIds": [
+          "OSM-BG-W391783449",
+          "VEIREG-vets-vidima"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.veiregistar.bg/object/vets-vidima",
+            "mw": 3.3,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/391783449",
+            "mw": 3.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "geometrySourceMode": "osm",
+        "geometrySource": "https://www.openstreetmap.org/way/391783449"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9213021,
+          42.7801781
+        ]
+      }
     },
     {
       "type": "Feature",

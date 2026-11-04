@@ -15,6 +15,12 @@ async function run(){
  check('');check('100');check('1.5','solar');check('0','solar','planned');check('100000');
  const belmeken=check('375','pumped_hydro','','Белмекен');assert.equal(belmeken.length,1);assert(belmeken[0].geometry);assert.equal(belmeken[0].properties.mw,375);
  const orfey=check('160','pumped_hydro','','Орфей');assert.equal(orfey.length,1);assert(orfey[0].geometry);
+ for(const name of ['Батак','Ивайловград','Кърджали','Сестримо','Кунино','Калето']){
+  const plant=check('','hydro','',name);assert.equal(plant.length,1,name+' has one row');assert(plant[0].geometry,name+' keeps its coordinates');
+ }
+ const batak=check('','hydro','','Батак')[0];assert.equal(batak.properties.mw,46);
+ assert.equal(elements.rows.children[0].children[2].children[0].children[0].textContent,'Различни мощности по източниците');
+ assert.deepEqual(new Set(batak.properties.capacityObservations.map(o=>o.mw)),new Set([46,46.8]));
  check('','','','','50');check('10','','','','100');check('1.5','solar','','','10.5');
  const exact=check('375','pumped_hydro','','Белмекен','375');assert.equal(exact.length,1);
  check('100','','','','10');assert.equal(elements.rows.children.length,0);assert.equal(elements['range-error'].hidden,false);
