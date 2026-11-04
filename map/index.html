@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.96.16">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.96.16</title>
+<meta name="bgwf-build" content="v0.96.17">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.96.17</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -1626,9 +1626,10 @@ svg {
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
-<link rel="stylesheet" href="./assets/map-interface.css?v=0.96.16">
+<link rel="stylesheet" href="./assets/map-interface.css?v=0.96.17">
 <script src="./assets/renewable-freshness.js"></script>
-<script src="./assets/map-interface.js?v=0.96.16"></script>
+<script src="./assets/map-notes.js?v=1"></script>
+<script src="./assets/map-interface.js?v=0.96.17"></script>
 </head>
 <body>
 <div id="bg-wildfires-map" class="is-filter-collapsed" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
@@ -1639,7 +1640,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.96.16</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.96.17</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach hidden></span>
@@ -4554,7 +4555,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.96.16', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.96.17', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4599,7 +4600,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.96.16-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.96.17-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
@@ -6051,6 +6052,7 @@ if(kind==='industry'){
 }if(kind==='concession')return `${f.get('sourceId')==='OFFICIAL-MAP-GEOREFERENCED'?'Концесионна граница · геореферирана по официална карта':'Официална концесионна граница'} · ${f.get('concessionId')||'—'} · ${f.get('name')||'Концесия'} · ${formatAreaDka(f.get('areaDka'))}`;if(kind==='live')return liveFireLabel(d);if(kind==='effis')return 'EFFIS/Copernicus реален опожарен периметър';return '';}
 const HIT_ORDER={'renewable-cache':80,'natura-renewables-overlap':110,'natura-industry-overlap':110,live:100,fire:90,effis:80,concession:70,foreign:68,industry:65,wind:60,solar:55,kkkr:52,project:50,epm:45,red:40,natura:35,province:1};
 function topFeatureAtPixel(pixel){const found=[];map.forEachFeatureAtPixel(pixel,(f,l)=>{if(f&&l!==densityLayer)found.push(f);},{hitTolerance:5});found.sort((a,b)=>(HIT_ORDER[b.get('kind')]||0)-(HIT_ORDER[a.get('kind')]||0));return found[0]||null;}
+let notesController=null;
 let bgwfHoverFrame=0,bgwfHoverLastAt=0;
 map.on('pointermove',e=>{
   const now=performance.now();
@@ -6058,13 +6060,14 @@ map.on('pointermove',e=>{
   bgwfHoverLastAt=now;
   if(bgwfHoverFrame)cancelAnimationFrame(bgwfHoverFrame);
   bgwfHoverFrame=requestAnimationFrame(()=>{
+if(notesController?.isPicking()){mapTarget.style.cursor='crosshair';hideMapTooltip();return;}
 if(e.dragging){hideMapTooltip();return;}const f=topFeatureAtPixel(e.pixel);mapTarget.style.cursor=f?'pointer':'';const txt=f&&f.get('kind')!=='province'?featureLabel(f):'';if(txt)showMapTooltip(e.pixel,txt);else hideMapTooltip();
   });
 });
 map.getViewport().addEventListener('pointerleave',hideMapTooltip);
 
 function clearSelection(){if(selectedFeature){selectedFeature.set('selected',false);selectedFeature.changed();}selectedFeature=null;selectedFireId=null;effisSource.clear();fireSource.getFeatures().forEach(f=>{if(f.get('hiddenByPerimeter')){f.set('hiddenByPerimeter',false);f.changed();}});}
-map.on('singleclick',async e=>{try{syncUrlState();}catch(err){dbgWarn('click-url-sync',{error:err.message});}const f=topFeatureAtPixel(e.pixel);hideMapTooltip();if(!f)return;const kind=f.get('kind');if(kind==='province'){const same=activeProvinceCode===f.get('provinceCode');if(!same||currentScale()<1.4)zoomToProvince(f);return;}
+map.on('singleclick',async e=>{if(notesController?.handleClick(e)){hideMapTooltip();return;}try{syncUrlState();}catch(err){dbgWarn('click-url-sync',{error:err.message});}const f=topFeatureAtPixel(e.pixel);hideMapTooltip();if(!f)return;const kind=f.get('kind');if(kind==='province'){const same=activeProvinceCode===f.get('provinceCode');if(!same||currentScale()<1.4)zoomToProvince(f);return;}
   if(selectedFeature&&selectedFeature!==f){selectedFeature.set('selected',false);selectedFeature.changed();}
   if(kind!=='fire'){effisSource.clear();fireSource.getFeatures().forEach(ff=>{if(ff.get('hiddenByPerimeter')){ff.set('hiddenByPerimeter',false);ff.changed();}});selectedFireId=null;}
   selectedFeature=f;f.set('selected',true);f.changed();activateDetail();const d=f.get('data');
@@ -7981,6 +7984,28 @@ void loadRenewableCache();
 window.setupBgwfInterface({root,map,setFilterPanelOpen,refreshFilterLayout,openAndFocusMethods,
   activeLayerCount:()=>Object.entries(layerVisibility).filter(([key,on])=>key!=='live'&&on).length+(fireYearsHidden()?0:1)});
 
+notesController=window.setupBgwfNotes({root,map,
+  capture:()=>({center:toLonLat(view.getCenter()),zoom:view.getZoom(),rotation:view.getRotation(),
+    satellite:satelliteLayer.getVisible(),layers:Object.fromEntries(Object.entries(layerVisibility).filter(([k])=>k!=='live')),
+    years:activeYears===null?null:[...activeYears]}),
+  restore:state=>{
+    for(const [key] of configs){
+      if(layerVisibility[key]!==state.layers[key])root.querySelector('[data-layer="'+key+'"]').click();
+    }
+    layerVisibility.kkkr=state.layers.kkkr;kkkrLayer.setVisible(state.layers.kkkr);
+    if(satelliteLayer.getVisible()!==state.satellite)root.querySelector('[data-layer="satellite"]').click();
+    activeYears=state.years===null?null:new Set(state.years.filter(y=>years.includes(y)));
+    updateFiresAndDensity();
+    view.cancelAnimations();view.setCenter(fromLonLat(state.center));view.setZoom(state.zoom);view.setRotation(state.rotation);
+    updateLayerStatus();syncUrlState();
+  },
+  closePanels:()=>{
+    setFilterPanelOpen(false);root.classList.remove('is-search-open');
+    root.querySelector('[data-ui-search]')?.setAttribute('aria-expanded','false');
+    root.querySelector('.bgwf-info-dialog')?.close();
+  }
+});
+
 // Initial state
 compactYearFilterButtons();
 void loadSourceHealth();
@@ -8003,3 +8028,4 @@ setTimeout(()=>{
 </script>
 </body>
 </html>
+
