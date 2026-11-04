@@ -1,125 +1,11 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-bg-renewables-cache-v1",
-  "generatedAt": "2026-11-04T06:49:49.151316+00:00",
+  "generatedAt": "2026-11-04T07:21:22.242018+00:00",
   "scope": "Bulgaria; explicitly published capacity >1 MW",
   "coverage": "partial; discovery sources are not an exhaustive national register",
   "aggregation": "Do not sum AC/DC, pumped storage or unresolved cross-source duplicates together.",
   "features": [
-    {
-      "type": "Feature",
-      "id": "OSM-BG-R14073393",
-      "properties": {
-        "id": "OSM-BG-R14073393",
-        "name": "Kaliakra Wind Farm",
-        "mw": 35.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/relation/14073393",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.4500458,
-          43.392054
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-R14073413",
-      "properties": {
-        "id": "OSM-BG-R14073413",
-        "name": "Karapelit Wind Farm",
-        "mw": 12.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/relation/14073413",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.5425978,
-          43.6326926
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-R14073473",
-      "properties": {
-        "id": "OSM-BG-R14073473",
-        "name": "Kardam Wind Farm",
-        "mw": 12.6,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/relation/14073473",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.1316181,
-          43.74367
-        ]
-      }
-    },
     {
       "type": "Feature",
       "id": "OSM-BG-R14073493",
@@ -148,7 +34,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-R14073493"
       },
       "geometry": {
         "type": "Point",
@@ -186,51 +73,14 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-R14073497"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           28.4273917,
           43.5938416
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-R14073507",
-      "properties": {
-        "id": "OSM-BG-R14073507",
-        "name": "Krupen Wind Farm",
-        "mw": 12.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/relation/14073507",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.2441663,
-          43.5600722
         ]
       }
     },
@@ -286,7 +136,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-R16941504"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -3552,7 +3403,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W1018547444"
       },
       "geometry": {
         "type": "Point",
@@ -3590,51 +3442,14 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W1256108851"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           23.8610027,
           42.1599136
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W1262781779",
-      "properties": {
-        "id": "OSM-BG-W1262781779",
-        "name": "OSM W1262781779",
-        "mw": 106.2,
-        "capacityBasis": "unspecified",
-        "technology": "solar",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1262781779",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.7125017,
-          43.1636327
         ]
       }
     },
@@ -3666,92 +3481,14 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W1375092118"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           25.7064082,
           42.3942073
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W1463899692",
-      "properties": {
-        "id": "OSM-BG-W1463899692",
-        "name": "OSM W1463899692",
-        "mw": 37.0,
-        "capacityBasis": "unspecified",
-        "technology": "solar",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1463899692",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        }
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.0996771,
-          42.345816
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "OSM-BG-W1469777676",
-      "properties": {
-        "id": "OSM-BG-W1469777676",
-        "name": "ФЕЦ Верила",
-        "mw": 123.0,
-        "capacityBasis": "unspecified",
-        "technology": "solar",
-        "status": "operating",
-        "statusLabel": "действащ · OpenStreetMap",
-        "source": "https://www.openstreetmap.org/way/1469777676",
-        "countryCode": "BG",
-        "sourceMode": "osm",
-        "geometryQuality": "location-only",
-        "retrievedAt": "2026-11-04T06:39:14.919119+00:00",
-        "statusSourceMode": "osm",
-        "capacitySourceMode": "osm",
-        "geometrySourceMode": "osm",
-        "sourceModes": [
-          "osm"
-        ],
-        "sourceFreshness": {
-          "osm": {
-            "status": "stale",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
-          }
-        },
-        "possibleDuplicateIds": [
-          "SOL-2023-VERILA"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.2499872,
-          42.3456153
         ]
       }
     },
@@ -3783,7 +3520,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W192390641"
       },
       "geometry": {
         "type": "Point",
@@ -3821,7 +3559,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W231869496"
       },
       "geometry": {
         "type": "Point",
@@ -3859,7 +3598,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W254263683"
       },
       "geometry": {
         "type": "Point",
@@ -3897,7 +3637,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W305940629"
       },
       "geometry": {
         "type": "Point",
@@ -3935,7 +3676,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W305974001"
       },
       "geometry": {
         "type": "Point",
@@ -3973,7 +3715,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W306662631"
       },
       "geometry": {
         "type": "Point",
@@ -4011,7 +3754,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W358634902"
       },
       "geometry": {
         "type": "Point",
@@ -4049,7 +3793,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W492519058"
       },
       "geometry": {
         "type": "Point",
@@ -4087,7 +3832,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W662945420"
       },
       "geometry": {
         "type": "Point",
@@ -4125,7 +3871,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W662962261"
       },
       "geometry": {
         "type": "Point",
@@ -4163,7 +3910,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W662970607"
       },
       "geometry": {
         "type": "Point",
@@ -4201,7 +3949,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W944459332"
       },
       "geometry": {
         "type": "Point",
@@ -4239,7 +3988,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W973132955"
       },
       "geometry": {
         "type": "Point",
@@ -4277,7 +4027,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
           }
-        }
+        },
+        "geometryRecordId": "OSM-BG-W973209819"
       },
       "geometry": {
         "type": "Point",
@@ -4344,8 +4095,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "14012.137.9",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-010",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4356,11 +4113,6 @@
         "mergedIds": [
           "RES-010"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "14012.137.9",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4392,8 +4144,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "39503.11.360",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-012",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4404,11 +4162,6 @@
         "mergedIds": [
           "RES-012"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "39503.11.360",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4447,8 +4200,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "30819.47.592",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-013",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4459,11 +4218,6 @@
         "mergedIds": [
           "RES-013"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "30819.47.592",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4498,8 +4252,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2705921.170.27%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "05921.170.27",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-016",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4510,11 +4270,6 @@
         "mergedIds": [
           "RES-016"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2705921.170.27%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "05921.170.27",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4555,8 +4310,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "47278.609.1342",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-018",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4567,11 +4328,6 @@
         "mergedIds": [
           "RES-018"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "47278.609.1342",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4603,8 +4359,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "81219.54.1",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-019",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4615,11 +4377,6 @@
         "mergedIds": [
           "RES-019"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "81219.54.1",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4650,8 +4407,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "52009.120.1",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-020",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4662,11 +4425,6 @@
         "mergedIds": [
           "RES-020"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "52009.120.1",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4701,8 +4459,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "39387.70.1",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-021",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4713,11 +4477,6 @@
         "mergedIds": [
           "RES-021"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "39387.70.1",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4749,8 +4508,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "approved",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "11404.32.10",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-022",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4761,11 +4526,6 @@
         "mergedIds": [
           "RES-022"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "11404.32.10",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4796,8 +4556,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "20359.31.86",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-026",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4808,11 +4574,6 @@
         "mergedIds": [
           "RES-026"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "20359.31.86",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4845,8 +4606,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "18280.503.34",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-030",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4857,11 +4624,6 @@
         "mergedIds": [
           "RES-030"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "18280.503.34",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4892,8 +4654,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "02912.70.293",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-031",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4904,11 +4672,6 @@
         "mergedIds": [
           "RES-031"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "02912.70.293",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4939,8 +4702,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "48948.35.70",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-033",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4951,11 +4720,6 @@
         "mergedIds": [
           "RES-033"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "48948.35.70",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -4986,8 +4750,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "48948.35.62",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-034",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -4998,11 +4768,6 @@
         "mergedIds": [
           "RES-034"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "48948.35.62",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5109,8 +4874,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "70295.314.322",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-036",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5121,11 +4892,6 @@
         "mergedIds": [
           "RES-036"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "70295.314.322",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5247,8 +5013,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "47843.29.385",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-039",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5259,11 +5031,6 @@
         "mergedIds": [
           "RES-039"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "47843.29.385",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5296,8 +5063,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "53120.29.177",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-040",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5308,11 +5081,6 @@
         "mergedIds": [
           "RES-040"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "53120.29.177",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5350,8 +5118,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "81709.16.370",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-041",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5362,11 +5136,6 @@
         "mergedIds": [
           "RES-041"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "81709.16.370",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5398,8 +5167,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "30572.48.9902",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-042",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5410,11 +5185,6 @@
         "mergedIds": [
           "RES-042"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "30572.48.9902",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5449,8 +5219,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "81075.4.1100",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-043",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5461,11 +5237,6 @@
         "mergedIds": [
           "RES-043"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "81075.4.1100",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5504,8 +5275,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "04399.17.38",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-044",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5516,11 +5293,6 @@
         "mergedIds": [
           "RES-044"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "04399.17.38",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5556,8 +5328,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "53117.61.327",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-045",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5568,11 +5346,6 @@
         "mergedIds": [
           "RES-045"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "53117.61.327",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5608,8 +5381,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2705921.280.31%27%2C%2710759.72.340%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "10759.72.340",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-046",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5620,11 +5399,6 @@
         "mergedIds": [
           "RES-046"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2705921.280.31%27%2C%2710759.72.340%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "10759.72.340",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5655,8 +5429,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "20273.61.189",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-047",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5667,11 +5447,6 @@
         "mergedIds": [
           "RES-047"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "20273.61.189",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5703,8 +5478,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "32857.72.384",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-048",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5715,11 +5496,6 @@
         "mergedIds": [
           "RES-048"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "32857.72.384",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5750,8 +5526,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "11661.220.173",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-049",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5762,11 +5544,6 @@
         "mergedIds": [
           "RES-049"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "11661.220.173",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5797,8 +5574,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "23217.251.571",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-050",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5809,11 +5592,6 @@
         "mergedIds": [
           "RES-050"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "23217.251.571",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -5853,6 +5631,7 @@
         "sourceStatus": "approved",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-051",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -5986,8 +5765,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "construction",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2715944.227.28%27%2C%2753062.15.56%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "53062.15.56",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-22T10:10:46+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-053",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -5999,11 +5784,6 @@
         "mergedIds": [
           "RES-053"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2715944.227.28%27%2C%2753062.15.56%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "53062.15.56",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-22T10:10:46+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -6122,8 +5902,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "approved",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2715944.227.28%27%2C%2753062.15.56%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "15944.227.28",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-22T10:10:46+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-055",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -6134,11 +5920,6 @@
         "mergedIds": [
           "RES-055"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2715944.227.28%27%2C%2753062.15.56%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "15944.227.28",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-22T10:10:46+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -6174,6 +5955,7 @@
         "sourceStatus": "approved",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-WIND-KAOLINOVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -6218,6 +6000,7 @@
         "sourceStatus": "approved",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-WIND-LUDOGORIE",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -6281,8 +6064,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "05760.22.607",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-WIND-ORISOL-1",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -6294,11 +6083,6 @@
         "mergedIds": [
           "RES-WIND-ORISOL-1"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "05760.22.607",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -6347,8 +6131,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "planned",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "55871.344.160",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-WIND-ORISOL-2",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -6359,11 +6149,6 @@
         "mergedIds": [
           "RES-WIND-ORISOL-2"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "55871.344.160",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -6398,6 +6183,7 @@
         "sourceStatus": "approved",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "RES-WIND-RUZHITSA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -6444,6 +6230,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2011-CHOBANKA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated",
@@ -6505,8 +6292,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "72549.44.620",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2011-KAOLINOVO-KA620",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -6517,11 +6310,6 @@
         "mergedIds": [
           "SOL-2011-KAOLINOVO-KA620"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "72549.44.620",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -6557,6 +6345,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2011-SOLSBOR",
         "geometrySourceMode": "osm",
         "sourceModes": [
           "curated"
@@ -6659,6 +6448,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2012-CHERGANOVO",
         "geometrySourceMode": "osm",
         "sourceModes": [
           "curated",
@@ -6849,6 +6639,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2012-DOBRICH",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated",
@@ -6911,8 +6702,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "36079.80.9905",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2012-KAOLINOVO-KA9905",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -6923,11 +6720,6 @@
         "mergedIds": [
           "SOL-2012-KAOLINOVO-KA9905"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "36079.80.9905",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -6964,6 +6756,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2012-MARINO-POLE-ALFA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated",
@@ -7085,6 +6878,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2012-POBEDA",
         "geometrySourceMode": "osm",
         "sourceModes": [
           "curated",
@@ -7269,6 +7063,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-DALGO-POLE",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -7320,6 +7115,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-GALABOVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -7368,6 +7164,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-KARNOBAT",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -7409,27 +7206,48 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
-        "statusSourceMode": "curated",
-        "capacitySourceMode": "curated",
-        "sourceModes": [
-          "curated"
-        ],
-        "sources": [
-          "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-          "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf"
-        ],
-        "mergedIds": [
-          "SOL-2023-LOVECH"
-        ],
         "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
         "locationParcelRef": "43952.502.1102",
         "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
         "locationCheckedAt": "2026-10-21T12:26:17+00:00",
+        "statusSourceMode": "curated",
+        "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-LOVECH",
         "geometrySourceMode": "curated",
-        "possibleDuplicateIds": [
-          "VEIREG-fets-lovech"
+        "sourceModes": [
+          "curated",
+          "osm"
         ],
-        "sourceFreshness": {}
+        "sources": [
+          "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+          "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf",
+          "https://www.openstreetmap.org/way/1262781779"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1262781779",
+          "SOL-2023-LOVECH"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf",
+            "mw": 86.2,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/1262781779",
+            "mw": 106.2,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          }
+        },
+        "identityReviewNote": "Проверени различни обекти: ФМ СОЛ, 4.4 MW, 2011 г.; Фотоволтаична централа – Ловеч, 86.2 MW AC, 2023 г. Еднаквото име не означава дублиране.",
+        "displayName": "ФЕЦ „Ловеч“ — 2023, 86.2 MW AC"
       },
       "geometry": {
         "type": "Point",
@@ -7470,6 +7288,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-RAZLOG",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -7512,8 +7331,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "77476.57.11",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-TERRASOL",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -7524,11 +7349,6 @@
         "mergedIds": [
           "SOL-2023-TERRASOL"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "77476.57.11",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -7560,27 +7380,46 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
-        "statusSourceMode": "curated",
-        "capacitySourceMode": "curated",
-        "sourceModes": [
-          "curated"
-        ],
-        "sources": [
-          "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-          "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_319_22.pdf"
-        ],
-        "mergedIds": [
-          "SOL-2023-VERILA"
-        ],
         "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
         "locationParcelRef": "39339.134.147",
         "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
         "locationCheckedAt": "2026-10-21T12:26:17+00:00",
+        "statusSourceMode": "curated",
+        "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2023-VERILA",
         "geometrySourceMode": "curated",
-        "possibleDuplicateIds": [
-          "OSM-BG-W1469777676"
+        "sourceModes": [
+          "curated",
+          "osm"
         ],
-        "sourceFreshness": {}
+        "sources": [
+          "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+          "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_319_22.pdf",
+          "https://www.openstreetmap.org/way/1469777676"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1469777676",
+          "SOL-2023-VERILA"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_319_22.pdf",
+            "mw": 100,
+            "capacityBasis": "unspecified"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/1469777676",
+            "mw": 123.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          }
+        }
       },
       "geometry": {
         "type": "Point",
@@ -7615,6 +7454,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-APRILTSI",
         "geometrySourceMode": "osm",
         "sourceModes": [
           "curated",
@@ -8918,6 +8758,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-ARATIDEN",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -8966,8 +8807,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "20849.9.8",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-CENOVO",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -8978,11 +8825,6 @@
         "mergedIds": [
           "SOL-2024-CENOVO"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "20849.9.8",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9013,8 +8855,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "21542.69.279",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-ELHOVO",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9025,11 +8873,6 @@
         "mergedIds": [
           "SOL-2024-ELHOVO"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "21542.69.279",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9065,8 +8908,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "77030.24.924",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-HADZHIDIMITROVO-KRONOS",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9077,11 +8926,6 @@
         "mergedIds": [
           "SOL-2024-HADZHIDIMITROVO-KRONOS"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "77030.24.924",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9127,6 +8971,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-KARLOVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -9176,6 +9021,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-RAMANUSHA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -9225,6 +9071,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2024-WINSLOW-MT",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -9266,24 +9113,46 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
-        "statusSourceMode": "curated",
-        "capacitySourceMode": "curated",
-        "sourceModes": [
-          "curated"
-        ],
-        "sources": [
-          "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-          "https://www.dker.bg/uploads/reshenia/2025/res-r-602-2025.pdf"
-        ],
-        "mergedIds": [
-          "SOL-2025-ABACUS-PARK"
-        ],
         "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
         "locationParcelRef": "48725.38.875",
         "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
         "locationCheckedAt": "2026-10-21T12:26:17+00:00",
+        "statusSourceMode": "curated",
+        "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-ABACUS-PARK",
         "geometrySourceMode": "curated",
-        "sourceFreshness": {}
+        "sourceModes": [
+          "curated",
+          "osm"
+        ],
+        "sources": [
+          "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+          "https://www.dker.bg/uploads/reshenia/2025/res-r-602-2025.pdf",
+          "https://www.openstreetmap.org/way/1463899692"
+        ],
+        "mergedIds": [
+          "OSM-BG-W1463899692",
+          "SOL-2025-ABACUS-PARK"
+        ],
+        "capacityObservations": [
+          {
+            "source": "https://www.dker.bg/uploads/reshenia/2025/res-r-602-2025.pdf",
+            "mw": 29.989,
+            "capacityBasis": "AC"
+          },
+          {
+            "source": "https://www.openstreetmap.org/way/1463899692",
+            "mw": 37.0,
+            "capacityBasis": "unspecified"
+          }
+        ],
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          }
+        }
       },
       "geometry": {
         "type": "Point",
@@ -9316,8 +9185,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "05236.105.4",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-BOYCHINOVTSI",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9328,11 +9203,6 @@
         "mergedIds": [
           "SOL-2025-BOYCHINOVTSI"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "05236.105.4",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9370,6 +9240,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-DVE-MOGILI",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -9410,8 +9281,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "67338.828.33",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-GOLF",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9422,11 +9299,6 @@
         "mergedIds": [
           "SOL-2025-GOLF"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "67338.828.33",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9458,8 +9330,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "59080.42.529",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-GREENS-PARVOMAY",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9470,11 +9348,6 @@
         "mergedIds": [
           "SOL-2025-GREENS-PARVOMAY"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "59080.42.529",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9513,6 +9386,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-KAOLINOVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -9554,8 +9428,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "10104.378.221",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-VARVARA",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9566,11 +9446,6 @@
         "mergedIds": [
           "SOL-2025-VARVARA"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "10104.378.221",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9603,8 +9478,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "68583.210.5",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2025-YANEVETS",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9615,11 +9496,6 @@
         "mergedIds": [
           "SOL-2025-YANEVETS"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "68583.210.5",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9651,8 +9527,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "55230.9.81",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-BOBOV-DOL",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9663,11 +9545,6 @@
         "mergedIds": [
           "SOL-2026-BOBOV-DOL"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "55230.9.81",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9698,8 +9575,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "06210.127.1",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-BREGARE",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9710,11 +9593,6 @@
         "mergedIds": [
           "SOL-2026-BREGARE"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "06210.127.1",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9745,8 +9623,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "80916.50.372",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-CHERNI-VRAH",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9757,11 +9641,6 @@
         "mergedIds": [
           "SOL-2026-CHERNI-VRAH"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "80916.50.372",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9805,6 +9684,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-DEVNYA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -9853,8 +9733,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "37383.500.313",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-ENERI-BG-1",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9865,11 +9751,6 @@
         "mergedIds": [
           "SOL-2026-ENERI-BG-1"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "37383.500.313",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9900,8 +9781,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "17645.325.3",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-GRAMADA",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9912,11 +9799,6 @@
         "mergedIds": [
           "SOL-2026-GRAMADA"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "17645.325.3",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9949,8 +9831,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "10690.200.66",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-IHTIMAN",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -9961,11 +9849,6 @@
         "mergedIds": [
           "SOL-2026-IHTIMAN"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "10690.200.66",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -9997,8 +9880,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "35969.4.305",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-KAMENYAK",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10009,11 +9898,6 @@
         "mergedIds": [
           "SOL-2026-KAMENYAK"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "35969.4.305",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10048,8 +9932,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "67338.88.8",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-KEI-PARK",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10060,11 +9950,6 @@
         "mergedIds": [
           "SOL-2026-KEI-PARK"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "67338.88.8",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10190,8 +10075,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "24342.9.113",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-MAGLIZH",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10202,11 +10093,6 @@
         "mergedIds": [
           "SOL-2026-MAGLIZH"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "24342.9.113",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10237,8 +10123,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "66559.62.1",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-SINITOVO",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10249,11 +10141,6 @@
         "mergedIds": [
           "SOL-2026-SINITOVO"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2706495.199.31%27%2C%2735969.4.305%27%2C%2736079.80.9905%27%2C%2766559.62.1%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "66559.62.1",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:30:12+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10287,8 +10174,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "67338.601.219",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-SLIVEN",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10299,11 +10192,6 @@
         "mergedIds": [
           "SOL-2026-SLIVEN"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "67338.601.219",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10337,8 +10225,14 @@
         "sourceMode": "curated",
         "capacityBasis": "AC",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "67708.282.593",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-SMYADOVO",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10349,11 +10243,6 @@
         "mergedIds": [
           "SOL-2026-SMYADOVO"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "67708.282.593",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10388,8 +10277,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "57251.500.590",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-SV-GEORGI",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10400,11 +10295,6 @@
         "mergedIds": [
           "SOL-2026-SV-GEORGI"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2748948.35.70%27%2C%2752009.120.1%27%2C%2753117.61.327%27%2C%2753120.29.177%27%2C%2755230.9.81%27%2C%2755871.344.160%27%2C%2757251.500.590%27%2C%2759080.42.529%27%2C%2767338.601.219%27%2C%2767338.828.33%27%2C%2767338.88.8%27%2C%2767708.282.593%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "57251.500.590",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10435,8 +10325,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "72240.17.56",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-TENEVO",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10447,11 +10343,6 @@
         "mergedIds": [
           "SOL-2026-TENEVO"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2768583.210.5%27%2C%2770295.314.322%27%2C%2772240.17.56%27%2C%2772549.44.620%27%2C%2777030.24.924%27%2C%2777476.57.11%27%2C%2780916.50.372%27%2C%2781075.4.1100%27%2C%2781219.54.1%27%2C%2781709.16.370%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "72240.17.56",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10483,8 +10374,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "10291.64.228",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-VEDRARE",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10495,11 +10392,6 @@
         "mergedIds": [
           "SOL-2026-VEDRARE"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2702912.70.293%27%2C%2704399.17.38%27%2C%2705236.105.4%27%2C%2705760.22.607%27%2C%2706210.127.1%27%2C%2706495.199.31%27%2C%2710104.378.221%27%2C%2710291.64.228%27%2C%2710690.200.66%27%2C%2711404.32.10%27%2C%2711661.220.173%27%2C%2714012.137.9%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "10291.64.228",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10534,8 +10426,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "39339.129.37",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-VERILA-PH2",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10546,11 +10444,6 @@
         "mergedIds": [
           "SOL-2026-VERILA-PH2"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2732857.72.384%27%2C%2735715.26.445%27%2C%2737383.500.313%27%2C%2739339.129.37%27%2C%2739339.134.147%27%2C%2739387.70.1%27%2C%2739503.11.360%27%2C%2743952.502.1102%27%2C%2747278.609.1342%27%2C%2747843.29.385%27%2C%2748725.38.875%27%2C%2748948.35.62%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "39339.129.37",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10581,8 +10474,14 @@
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
+        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
+        "locationParcelRef": "21052.1008.309",
+        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
+        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-2026-VULKAN",
+        "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
         ],
@@ -10593,11 +10492,6 @@
         "mergedIds": [
           "SOL-2026-VULKAN"
         ],
-        "geometrySource": "https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0/query?where=nationalcadastralref+IN+%28%2717645.325.3%27%2C%2718280.503.34%27%2C%2720273.61.189%27%2C%2720359.31.86%27%2C%2720482.505.470%27%2C%2720849.9.8%27%2C%2721052.1008.309%27%2C%2721542.69.279%27%2C%2723217.251.571%27%2C%2724342.9.113%27%2C%2730572.48.9902%27%2C%2730819.47.592%27%29&outFields=nationalcadastralref&returnGeometry=true&outSR=4326&f=json",
-        "locationParcelRef": "21052.1008.309",
-        "locationMethod": "representative interior point of one listed AGKK parcel; partial site location",
-        "locationCheckedAt": "2026-10-21T12:26:17+00:00",
-        "geometrySourceMode": "curated",
         "sourceFreshness": {}
       },
       "geometry": {
@@ -10634,6 +10528,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "SOL-KARADZHALOVO-2012",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated",
@@ -14201,7 +14096,9 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "identityReviewNote": "Исторически запис ЕМР КАОЛИНОВО, 4.913 MW, 2012 г. Няма потвърден ПИ/координати за връзка с КА620 или КА9905; не е слят по сходство на името.",
+        "inventoryReviewStatus": "pending-location"
       },
       "geometry": null
     },
@@ -14232,7 +14129,9 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "identityReviewNote": "Исторически запис АЛФА ЕНЕРДЖИ КА, 4.943 MW, 2012 г. Няма потвърден ПИ/координати за връзка с КА620 или КА9905; не е слят по сходство на името.",
+        "inventoryReviewStatus": "pending-location"
       },
       "geometry": null
     },
@@ -14884,9 +14783,8 @@
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
         },
-        "possibleDuplicateIds": [
-          "SOL-2023-LOVECH"
-        ]
+        "identityReviewNote": "Проверени различни обекти: ФМ СОЛ, 4.4 MW, 2011 г.; Фотоволтаична централа – Ловеч, 86.2 MW AC, 2023 г. Еднаквото име не означава дублиране.",
+        "displayName": "ФЕЦ „Ловеч“ — ФМ СОЛ, 2011, 4.4 MW"
       },
       "geometry": null
     },
@@ -18552,7 +18450,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-mvets-kaleto"
       },
       "geometry": {
         "type": "Point",
@@ -18636,7 +18535,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-mvets-kunino"
       },
       "geometry": {
         "type": "Point",
@@ -18701,7 +18601,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-mvets-lakatnik"
       },
       "geometry": {
         "type": "Point",
@@ -19200,7 +19101,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-mvets-svrazhen"
       },
       "geometry": {
         "type": "Point",
@@ -19284,7 +19186,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-mvets-tserovo"
       },
       "geometry": {
         "type": "Point",
@@ -19368,7 +19271,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-mvets-tsrancha"
       },
       "geometry": {
         "type": "Point",
@@ -19483,7 +19387,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-pavets-belmeken"
       },
       "geometry": {
         "type": "Point",
@@ -19538,7 +19443,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-pavets-orfey"
       },
       "geometry": {
         "type": "Point",
@@ -19665,7 +19571,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-aleko"
       },
       "geometry": {
         "type": "Point",
@@ -19830,7 +19737,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-batak"
       },
       "geometry": {
         "type": "Point",
@@ -19914,7 +19822,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-beli-iskar"
       },
       "geometry": {
         "type": "Point",
@@ -20184,7 +20093,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-devin"
       },
       "geometry": {
         "type": "Point",
@@ -20330,7 +20240,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-ivaylovgrad"
       },
       "geometry": {
         "type": "Point",
@@ -20383,7 +20294,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-kamen-rid"
       },
       "geometry": {
         "type": "Point",
@@ -20448,7 +20360,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-kardzhali"
       },
       "geometry": {
         "type": "Point",
@@ -20575,7 +20488,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-kitka"
       },
       "geometry": {
         "type": "Point",
@@ -20659,7 +20573,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-kokalyane"
       },
       "geometry": {
         "type": "Point",
@@ -20712,7 +20627,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-koprinka"
       },
       "geometry": {
         "type": "Point",
@@ -20765,7 +20681,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-koynare"
       },
       "geometry": {
         "type": "Point",
@@ -20818,7 +20735,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-kozloduy"
       },
       "geometry": {
         "type": "Point",
@@ -20871,7 +20789,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-krichim"
       },
       "geometry": {
         "type": "Point",
@@ -20936,7 +20855,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-levski"
       },
       "geometry": {
         "type": "Point",
@@ -21094,7 +21014,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-mezdra"
       },
       "geometry": {
         "type": "Point",
@@ -21147,7 +21068,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-momina-klisura"
       },
       "geometry": {
         "type": "Point",
@@ -21231,7 +21153,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-pasarel"
       },
       "geometry": {
         "type": "Point",
@@ -21346,7 +21269,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-petrovo"
       },
       "geometry": {
         "type": "Point",
@@ -21504,7 +21428,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-rakita"
       },
       "geometry": {
         "type": "Point",
@@ -21619,7 +21544,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-rositsa-1"
       },
       "geometry": {
         "type": "Point",
@@ -21734,7 +21660,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-sestrimo"
       },
       "geometry": {
         "type": "Point",
@@ -21880,7 +21807,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-stara-zagora"
       },
       "geometry": {
         "type": "Point",
@@ -21945,7 +21873,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-studen-kladenets"
       },
       "geometry": {
         "type": "Point",
@@ -22103,7 +22032,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-tazha"
       },
       "geometry": {
         "type": "Point",
@@ -22168,7 +22098,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-topolnitsa"
       },
       "geometry": {
         "type": "Point",
@@ -22264,7 +22195,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-tsankov-kamak"
       },
       "geometry": {
         "type": "Point",
@@ -22317,7 +22249,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-vacha-1"
       },
       "geometry": {
         "type": "Point",
@@ -22370,7 +22303,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-vacha-2"
       },
       "geometry": {
         "type": "Point",
@@ -22435,7 +22369,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "geometryRecordId": "VEIREG-vets-vidima"
       },
       "geometry": {
         "type": "Point",
@@ -22530,37 +22465,6 @@
         ],
         "sourceFreshness": {
           "veiregistar:hydropower-plants-with-power-over-1-mw": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
-          }
-        }
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "VEIREG-vtets-18-vranino",
-      "properties": {
-        "id": "VEIREG-vtets-18-vranino",
-        "name": "ВтЕЦ \"18 - Вранино\"",
-        "mw": 18.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "ВтЕЦ \"18 - Вранино\" В експоатация от 4 юли 2012 , с производствена мощност 18 МВт",
-        "source": "https://www.veiregistar.bg/object/vtets-18-vranino",
-        "countryCode": "BG",
-        "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
-        "retrievedAt": "2026-11-04T06:48:03.547154+00:00",
-        "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "sourceModes": [
-          "veiregistar:wind-power-plants-with-power-over-1-mw"
-        ],
-        "sourceFreshness": {
-          "veiregistar:wind-power-plants-with-power-over-1-mw": {
             "status": "ok",
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
@@ -23625,37 +23529,6 @@
     },
     {
       "type": "Feature",
-      "id": "VEIREG-vtets-kaliakra",
-      "properties": {
-        "id": "VEIREG-vtets-kaliakra",
-        "name": "ВтЕЦ \"Калиакра\"",
-        "mw": 35.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "ВтЕЦ \"Калиакра\" В експоатация от 20 юни 2008 , с производствена мощност 35 МВт",
-        "source": "https://www.veiregistar.bg/object/vtets-kaliakra",
-        "countryCode": "BG",
-        "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
-        "retrievedAt": "2026-11-04T06:48:03.547154+00:00",
-        "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "sourceModes": [
-          "veiregistar:wind-power-plants-with-power-over-1-mw"
-        ],
-        "sourceFreshness": {
-          "veiregistar:wind-power-plants-with-power-over-1-mw": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
-          }
-        }
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
       "id": "VEIREG-vtets-kamen-bryag-sever-1",
       "properties": {
         "id": "VEIREG-vtets-kamen-bryag-sever-1",
@@ -23681,7 +23554,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23712,7 +23586,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23743,7 +23618,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23774,7 +23650,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23805,7 +23682,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23836,7 +23714,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23867,7 +23746,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KAMEN-BRYAG"
       },
       "geometry": null
     },
@@ -23898,7 +23778,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARAPELIT"
       },
       "geometry": null
     },
@@ -23929,7 +23810,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARAPELIT"
       },
       "geometry": null
     },
@@ -23960,7 +23842,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARAPELIT"
       },
       "geometry": null
     },
@@ -23991,7 +23874,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARDAM"
       },
       "geometry": null
     },
@@ -24022,7 +23906,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARDAM"
       },
       "geometry": null
     },
@@ -24053,7 +23938,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARDAM"
       },
       "geometry": null
     },
@@ -24084,7 +23970,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KARDAM"
       },
       "geometry": null
     },
@@ -24239,7 +24126,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-VETROCOM"
       },
       "geometry": null
     },
@@ -24270,7 +24158,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KRUPEN"
       },
       "geometry": null
     },
@@ -24301,7 +24190,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KRUPEN"
       },
       "geometry": null
     },
@@ -24332,7 +24222,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-KRUPEN"
       },
       "geometry": null
     },
@@ -24524,37 +24415,6 @@
     },
     {
       "type": "Feature",
-      "id": "VEIREG-vtets-mogilishte-zapad",
-      "properties": {
-        "id": "VEIREG-vtets-mogilishte-zapad",
-        "name": "ВтЕЦ \"Могилище-запад\"",
-        "mw": 16.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "ВтЕЦ \"Могилище-запад\" В експоатация от 31 май 2010 , с производствена мощност 16 МВт",
-        "source": "https://www.veiregistar.bg/object/vtets-mogilishte-zapad",
-        "countryCode": "BG",
-        "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
-        "retrievedAt": "2026-11-04T06:48:03.547154+00:00",
-        "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "sourceModes": [
-          "veiregistar:wind-power-plants-with-power-over-1-mw"
-        ],
-        "sourceFreshness": {
-          "veiregistar:wind-power-plants-with-power-over-1-mw": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
-          }
-        }
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
       "id": "VEIREG-vtets-nachevi-2",
       "properties": {
         "id": "VEIREG-vtets-nachevi-2",
@@ -24704,7 +24564,9 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "identityReviewNote": "Нейково-2 и OSM Nejkovo са с 4 MW в едно землище, но няма проверена идентичност на турбините/имотите. Запазен за проверка извън основния списък.",
+        "inventoryReviewStatus": "pending-location"
       },
       "geometry": null
     },
@@ -25361,37 +25223,6 @@
     },
     {
       "type": "Feature",
-      "id": "VEIREG-vtets-suvorovo",
-      "properties": {
-        "id": "VEIREG-vtets-suvorovo",
-        "name": "ВтЕЦ \"Суворово\"",
-        "mw": 60.0,
-        "capacityBasis": "unspecified",
-        "technology": "wind",
-        "status": "operating",
-        "statusLabel": "ВтЕЦ \"Суворово\" В експоатация от 20 март 2012 , с производствена мощност 60 МВт",
-        "source": "https://www.veiregistar.bg/object/vtets-suvorovo",
-        "countryCode": "BG",
-        "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "geometryQuality": "unknown",
-        "retrievedAt": "2026-11-04T06:48:03.547154+00:00",
-        "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
-        "sourceModes": [
-          "veiregistar:wind-power-plants-with-power-over-1-mw"
-        ],
-        "sourceFreshness": {
-          "veiregistar:wind-power-plants-with-power-over-1-mw": {
-            "status": "ok",
-            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
-            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
-          }
-        }
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
       "id": "VEIREG-vtets-sveti-nikola-el-2",
       "properties": {
         "id": "VEIREG-vtets-sveti-nikola-el-2",
@@ -25417,7 +25248,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-SAINT-NIKOLA"
       },
       "geometry": null
     },
@@ -25448,7 +25280,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-SAINT-NIKOLA"
       },
       "geometry": null
     },
@@ -25665,7 +25498,8 @@
             "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
             "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
           }
-        }
+        },
+        "componentOf": "WIND-VETROCOM"
       },
       "geometry": null
     },
@@ -26124,6 +25958,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-BALCHIK",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26165,6 +26000,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-EVN-BULGAREVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26206,6 +26042,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-HRABROVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26241,29 +26078,48 @@
         "technology": "wind",
         "status": "operating",
         "countryCode": "BG",
-        "geometryQuality": "location-only",
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
-        "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "osm",
+          "veiregistar:wind-power-plants-with-power-over-1-mw"
         ],
         "sources": [
-          "https://www.kwp.bg/kwp-plant/technical-information/"
+          "https://www.kwp.bg/kwp-plant/technical-information/",
+          "https://www.openstreetmap.org/relation/14073393",
+          "https://www.veiregistar.bg/object/vtets-kaliakra"
         ],
         "mergedIds": [
+          "OSM-BG-R14073393",
+          "VEIREG-vtets-kaliakra",
           "WIND-KALIAKRA"
         ],
-        "sourceFreshness": {}
+        "geometryQuality": "location-only",
+        "geometrySourceMode": "osm",
+        "geometryRecordId": "OSM-BG-R14073393",
+        "geometrySource": "https://www.openstreetmap.org/relation/14073393",
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          },
+          "veiregistar:wind-power-plants-with-power-over-1-mw": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        }
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.43337,
-          43.39282
+          28.4500458,
+          43.392054
         ]
       }
     },
@@ -26288,6 +26144,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-KAMEN-BRYAG",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26298,7 +26155,156 @@
         "mergedIds": [
           "WIND-KAMEN-BRYAG"
         ],
-        "sourceFreshness": {}
+        "sourceFreshness": {},
+        "componentRecords": [
+          {
+            "id": "VEIREG-vtets-kamen-bryag-sever-1",
+            "name": "ВтЕЦ \"Камен бряг Север - 1\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kamen-bryag-sever-2",
+            "name": "ВтЕЦ \"Камен бряг Север - 2\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kamen-bryag-sever-3",
+            "name": "ВтЕЦ \"Камен бряг Север - 3\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kamen-bryag-sever-4",
+            "name": "ВтЕЦ \"Камен бряг Север - 4\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-4",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kamen-bryag-yug-1",
+            "name": "ВтЕЦ \"Камен бряг Юг - 1\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-1",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kamen-bryag-yug-2",
+            "name": "ВтЕЦ \"Камен бряг Юг - 2\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-2",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kamen-bryag-yug-3",
+            "name": "ВтЕЦ \"Камен бряг Юг - 3\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-3",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -26323,29 +26329,105 @@
         "technology": "wind",
         "status": "operating",
         "countryCode": "BG",
-        "geometryQuality": "location-only",
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
-        "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "osm"
         ],
         "sources": [
-          "https://www.gem.wiki/Kardam_wind_farm"
+          "https://www.gem.wiki/Kardam_wind_farm",
+          "https://www.openstreetmap.org/relation/14073413"
         ],
         "mergedIds": [
+          "OSM-BG-R14073413",
           "WIND-KARAPELIT"
         ],
-        "sourceFreshness": {}
+        "geometryQuality": "location-only",
+        "geometrySourceMode": "osm",
+        "geometryRecordId": "OSM-BG-R14073413",
+        "geometrySource": "https://www.openstreetmap.org/relation/14073413",
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          }
+        },
+        "componentRecords": [
+          {
+            "id": "VEIREG-vtets-karapelit",
+            "name": "ВтЕЦ \"Карапелит\"",
+            "mw": 4.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-karapelit",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-karapelit-1",
+            "name": "ВтЕЦ \"Карапелит - 1\"",
+            "mw": 4.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-karapelit-1",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-karapelit-2",
+            "name": "ВтЕЦ \"Карапелит - 2\"",
+            "mw": 4.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-karapelit-2",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.5673,
-          43.6483
+          27.5425978,
+          43.6326926
         ]
       }
     },
@@ -26364,29 +26446,126 @@
         "technology": "wind",
         "status": "operating",
         "countryCode": "BG",
-        "geometryQuality": "location-only",
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
-        "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "osm"
         ],
         "sources": [
+          "https://www.openstreetmap.org/relation/14073473",
           "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
         ],
         "mergedIds": [
+          "OSM-BG-R14073473",
           "WIND-KARDAM"
         ],
-        "sourceFreshness": {}
+        "geometryQuality": "location-only",
+        "geometrySourceMode": "osm",
+        "geometryRecordId": "OSM-BG-R14073473",
+        "geometrySource": "https://www.openstreetmap.org/relation/14073473",
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          }
+        },
+        "componentRecords": [
+          {
+            "id": "VEIREG-vtets-kardam-1",
+            "name": "ВтЕЦ \"Кардам - 1\"",
+            "mw": 4.2,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kardam-1",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kardam-2",
+            "name": "ВтЕЦ \"Кардам - 2\"",
+            "mw": 4.2,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kardam-2",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kardam-31",
+            "name": "ВтЕЦ \"Кардам - 31\"",
+            "mw": 2.1,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kardam-31",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kardam-32",
+            "name": "ВтЕЦ \"Кардам - 32\"",
+            "mw": 2.1,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kardam-32",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.1076,
-          43.7539
+          28.1316181,
+          43.74367
         ]
       }
     },
@@ -26411,6 +26590,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-KARNOBAT",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26446,29 +26626,105 @@
         "technology": "wind",
         "status": "operating",
         "countryCode": "BG",
-        "geometryQuality": "location-only",
         "sourceMode": "curated",
         "capacityBasis": "unspecified",
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
-        "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "osm"
         ],
         "sources": [
-          "https://www.gem.wiki/Krupen_wind_farm"
+          "https://www.gem.wiki/Krupen_wind_farm",
+          "https://www.openstreetmap.org/relation/14073507"
         ],
         "mergedIds": [
+          "OSM-BG-R14073507",
           "WIND-KRUPEN"
         ],
-        "sourceFreshness": {}
+        "geometryQuality": "location-only",
+        "geometrySourceMode": "osm",
+        "geometryRecordId": "OSM-BG-R14073507",
+        "geometrySource": "https://www.openstreetmap.org/relation/14073507",
+        "sourceFreshness": {
+          "osm": {
+            "status": "stale",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:39:14.919119+00:00"
+          }
+        },
+        "componentRecords": [
+          {
+            "id": "VEIREG-vtets-krupen-2",
+            "name": "ВтЕЦ \"Крупен - 2\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-krupen-2",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-krupen-3",
+            "name": "ВтЕЦ \"Крупен - 3\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-krupen-3",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-krupen-4",
+            "name": "ВтЕЦ \"Крупен - 4\"",
+            "mw": 3.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-krupen-4",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.2449,
-          43.5594
+          28.2441663,
+          43.5600722
         ]
       }
     },
@@ -26493,17 +26749,27 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-MOGILISHTE-W",
         "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "veiregistar:wind-power-plants-with-power-over-1-mw"
         ],
         "sources": [
+          "https://www.veiregistar.bg/object/vtets-mogilishte-zapad",
           "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
         ],
         "mergedIds": [
+          "VEIREG-vtets-mogilishte-zapad",
           "WIND-MOGILISHTE-W"
         ],
-        "sourceFreshness": {}
+        "sourceFreshness": {
+          "veiregistar:wind-power-plants-with-power-over-1-mw": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        }
       },
       "geometry": {
         "type": "Point",
@@ -26534,6 +26800,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-SAINT-NIKOLA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26544,7 +26811,51 @@
         "mergedIds": [
           "WIND-SAINT-NIKOLA"
         ],
-        "sourceFreshness": {}
+        "sourceFreshness": {},
+        "componentRecords": [
+          {
+            "id": "VEIREG-vtets-sveti-nikola-el1",
+            "name": "ВтЕЦ \"Свети Никола\" (ел.1)",
+            "mw": 78.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-sveti-nikola-el1",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-sveti-nikola-el-2",
+            "name": "ВтЕЦ \"Свети Никола\" (ел. 2)",
+            "mw": 78.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-sveti-nikola-el-2",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -26575,6 +26886,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-SHABLA",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26616,17 +26928,27 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-SUVOROVO",
         "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "veiregistar:wind-power-plants-with-power-over-1-mw"
         ],
         "sources": [
-          "https://www.gem.wiki/Suvorovo_wind_farm"
+          "https://www.gem.wiki/Suvorovo_wind_farm",
+          "https://www.veiregistar.bg/object/vtets-suvorovo"
         ],
         "mergedIds": [
+          "VEIREG-vtets-suvorovo",
           "WIND-SUVOROVO"
         ],
-        "sourceFreshness": {}
+        "sourceFreshness": {
+          "veiregistar:wind-power-plants-with-power-over-1-mw": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        }
       },
       "geometry": {
         "type": "Point",
@@ -26657,6 +26979,7 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-VETROCOM",
         "geometrySourceMode": "curated",
         "sourceModes": [
           "curated"
@@ -26667,7 +26990,51 @@
         "mergedIds": [
           "WIND-VETROCOM"
         ],
-        "sourceFreshness": {}
+        "sourceFreshness": {},
+        "componentRecords": [
+          {
+            "id": "VEIREG-vtets-vetrokom",
+            "name": "ВтЕЦ \"Ветроком\"",
+            "mw": 50.0,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-vetrokom",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          },
+          {
+            "id": "VEIREG-vtets-kontakt-konsul",
+            "name": "ВтЕЦ \"Контакт консул\"",
+            "mw": 22.5,
+            "capacityBasis": "unspecified",
+            "source": "https://www.veiregistar.bg/object/vtets-kontakt-konsul",
+            "sourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceModes": [
+              "veiregistar:wind-power-plants-with-power-over-1-mw"
+            ],
+            "statusSourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "capacitySourceMode": "veiregistar:wind-power-plants-with-power-over-1-mw",
+            "sourceFreshness": {
+              "veiregistar:wind-power-plants-with-power-over-1-mw": {
+                "status": "ok",
+                "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+                "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+              }
+            },
+            "retrievedAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -26698,17 +27065,27 @@
         "sourceStatus": "operating",
         "statusSourceMode": "curated",
         "capacitySourceMode": "curated",
+        "geometryRecordId": "WIND-VRANINO",
         "geometrySourceMode": "curated",
         "sourceModes": [
-          "curated"
+          "curated",
+          "veiregistar:wind-power-plants-with-power-over-1-mw"
         ],
         "sources": [
-          "https://www.thewindpower.net/windfarm_en_20189_vranino.php"
+          "https://www.thewindpower.net/windfarm_en_20189_vranino.php",
+          "https://www.veiregistar.bg/object/vtets-18-vranino"
         ],
         "mergedIds": [
+          "VEIREG-vtets-18-vranino",
           "WIND-VRANINO"
         ],
-        "sourceFreshness": {}
+        "sourceFreshness": {
+          "veiregistar:wind-power-plants-with-power-over-1-mw": {
+            "status": "ok",
+            "lastAttemptAt": "2026-11-04T06:48:03.547154+00:00",
+            "lastSuccessAt": "2026-11-04T06:48:03.547154+00:00"
+          }
+        }
       },
       "geometry": {
         "type": "Point",

@@ -1,0 +1,4439 @@
+{
+  "schema": "bgwf-renewable-duplicate-review-v1",
+  "reviewedAt": "2026-11-04T07:18:19.902031+00:00",
+  "baseline": "3ee1e7c4ec3df12225d2b1e3ae43d93bb06b5c63",
+  "scope": "All 593 inventory records; exact/fuzzy names, source IDs, proximity under 1 km, OSM wind-name transliterations, and parent/component overlap. A candidate is not proof of duplication. Point-in-polygon screening against all 7 available polygon/multipolygon features found no additional unmatched point records.",
+  "counts": {
+    "merged": 11,
+    "keep_separate": 8,
+    "not_confirmed_duplicate": 130,
+    "pending_location": 6,
+    "distinct": 1,
+    "separate_components": 25,
+    "component": 20
+  },
+  "pairs": [
+    {
+      "memberIds": [
+        "OSM-BG-R14073507",
+        "WIND-KRUPEN"
+      ],
+      "names": [
+        "Krupen Wind Farm",
+        "ВяЕЦ „Крупен“"
+      ],
+      "mw": [
+        12.0,
+        12
+      ],
+      "distanceKm": 0.1,
+      "nameSimilarity": 0.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.openstreetmap.org/relation/14073507",
+        "https://www.gem.wiki/Krupen_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W1262781779",
+        "SOL-2023-LOVECH"
+      ],
+      "names": [
+        "OSM W1262781779",
+        "ФЕЦ „Ловеч“"
+      ],
+      "mw": [
+        106.2,
+        86.2
+      ],
+      "distanceKm": 0.47,
+      "nameSimilarity": 0.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1262781779",
+        "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W1463899692",
+        "SOL-2025-ABACUS-PARK"
+      ],
+      "names": [
+        "OSM W1463899692",
+        "ФЕЦ „Абакус Парк“"
+      ],
+      "mw": [
+        37.0,
+        29.989
+      ],
+      "distanceKm": 0.02,
+      "nameSimilarity": 0.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1463899692",
+        "https://www.dker.bg/uploads/reshenia/2025/res-r-602-2025.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W1469777676",
+        "SOL-2023-VERILA"
+      ],
+      "names": [
+        "ФЕЦ Верила",
+        "ФЕЦ „Верила“"
+      ],
+      "mw": [
+        123.0,
+        100
+      ],
+      "distanceKm": 0.01,
+      "nameSimilarity": 1.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1469777676",
+        "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_319_22.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W1469777676",
+        "SOL-2026-VERILA-PH2"
+      ],
+      "names": [
+        "ФЕЦ Верила",
+        "ФЕЦ „Верила“ — Фаза 2"
+      ],
+      "mw": [
+        123.0,
+        50
+      ],
+      "distanceKm": 0.75,
+      "nameSimilarity": 0.71,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/1469777676",
+        "https://www.dker.bg/uploads/reshenia/2026/res-r-643-2026.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W254263683",
+        "OSM-BG-W662970607"
+      ],
+      "names": [
+        "Greentech Engineering Solutions",
+        "\"Greentech Engineering Solutions\" AD"
+      ],
+      "mw": [
+        2.0,
+        4.0
+      ],
+      "distanceKm": 107.58,
+      "nameSimilarity": 0.97,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/254263683",
+        "https://www.openstreetmap.org/way/662970607"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W305974001",
+        "VEIREG-vets-rositsa-1"
+      ],
+      "names": [
+        "ВЕЦ \"Росица 2\"",
+        "ВЕЦ \"Росица 1\""
+      ],
+      "mw": [
+        3.2,
+        7.5
+      ],
+      "distanceKm": 9.72,
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/305974001",
+        "https://www.veiregistar.bg/object/vets-rositsa-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W358634902",
+        "VEIREG-vets-asenitsa-1"
+      ],
+      "names": [
+        "ВЕЦ \"Каменица\"",
+        "ВЕЦ \"Асеница 1\""
+      ],
+      "mw": [
+        3.5,
+        8.09
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/358634902",
+        "https://www.veiregistar.bg/object/vets-asenitsa-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W358634902",
+        "VEIREG-vets-asenitsa-2"
+      ],
+      "names": [
+        "ВЕЦ \"Каменица\"",
+        "ВЕЦ \"Асеница 2\""
+      ],
+      "mw": [
+        3.5,
+        1.73
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/358634902",
+        "https://www.veiregistar.bg/object/vets-asenitsa-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W358634902",
+        "VEIREG-vets-kamen-rid"
+      ],
+      "names": [
+        "ВЕЦ \"Каменица\"",
+        "ВЕЦ \"Камен рид\""
+      ],
+      "mw": [
+        3.5,
+        1.75
+      ],
+      "distanceKm": 161.15,
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/358634902",
+        "https://www.veiregistar.bg/object/vets-kamen-rid"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W662945420",
+        "VEIREG-fets-solar-balgariya-1"
+      ],
+      "names": [
+        "Соларен парк \"България\" АД",
+        "ФЕЦ \"Солар България 1\""
+      ],
+      "mw": [
+        5.0,
+        4.979
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/662945420",
+        "https://www.veiregistar.bg/object/fets-solar-balgariya-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "OSM-BG-W662945420",
+        "VEIREG-fets-solar-balgariya-2"
+      ],
+      "names": [
+        "Соларен парк \"България\" АД",
+        "ФЕЦ \"Солар България 2\""
+      ],
+      "mw": [
+        5.0,
+        4.979
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.openstreetmap.org/way/662945420",
+        "https://www.veiregistar.bg/object/fets-solar-balgariya-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "RES-013",
+        "VEIREG-fets-chayna-solar"
+      ],
+      "names": [
+        "ФЕЦ „Чирпан Солар“",
+        "ФЕЦ \"Чайна Солар\""
+      ],
+      "mw": [
+        120.0,
+        2.608
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.76,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/_CGCalendar/2026/rep_lic_chirpan_solar_plant_29012026.pdf",
+        "https://www.veiregistar.bg/object/fets-chayna-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "RES-033",
+        "RES-034"
+      ],
+      "names": [
+        "ФЕЦ „Момино село“ — поле 35.70",
+        "ФЕЦ „Момино село“ — поле 35.62"
+      ],
+      "mw": [
+        10.764,
+        17.8776
+      ],
+      "distanceKm": 0.27,
+      "nameSimilarity": 0.89,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://plovdiv.riew.gov.bg/files/_documents/6978c23b161670.84413094.pdf",
+        "https://plovdiv.riew.gov.bg/files/_documents/6978c23ae94829.74247566.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "RES-040",
+        "VEIREG-fets-chayna-solar"
+      ],
+      "names": [
+        "ФЕЦ „Албена Солар“",
+        "ФЕЦ \"Чайна Солар\""
+      ],
+      "mw": [
+        24,
+        2.608
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.76,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2025/res_l_851_25.pdf",
+        "https://www.veiregistar.bg/object/fets-chayna-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "RES-040",
+        "VEIREG-fets-kamenar-solar-2"
+      ],
+      "names": [
+        "ФЕЦ „Албена Солар“",
+        "ФЕЦ \"Каменар Солар 2\""
+      ],
+      "mw": [
+        24,
+        1.053
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2025/res_l_851_25.pdf",
+        "https://www.veiregistar.bg/object/fets-kamenar-solar-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2011-KAOLINOVO-KA620",
+        "SOL-2012-KAOLINOVO-KA9905"
+      ],
+      "names": [
+        "ФЕЦ „Каолиново – КА620“",
+        "ФЕЦ „Каолиново – КА9905“"
+      ],
+      "mw": [
+        4.5,
+        4.5
+      ],
+      "distanceKm": 4.39,
+      "nameSimilarity": 0.83,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
+        "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2011-KAOLINOVO-KA620",
+        "VEIREG-fets-kaolinovo"
+      ],
+      "names": [
+        "ФЕЦ „Каолиново – КА620“",
+        "ФЕЦ \"Каолиново\""
+      ],
+      "mw": [
+        4.5,
+        4.913
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.78,
+      "decision": "pending_location",
+      "reason": "Нелокализираният кандидат е отделен за проверка; няма достатъчно доказателства за сливане.",
+      "evidence": [
+        "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
+        "https://www.veiregistar.bg/object/fets-kaolinovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2011-KAOLINOVO-KA620",
+        "VEIREG-fets-kaolinovo-1"
+      ],
+      "names": [
+        "ФЕЦ „Каолиново – КА620“",
+        "ФЕЦ \"Каолиново - 1\""
+      ],
+      "mw": [
+        4.5,
+        4.943
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "pending_location",
+      "reason": "Нелокализираният кандидат е отделен за проверка; няма достатъчно доказателства за сливане.",
+      "evidence": [
+        "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
+        "https://www.veiregistar.bg/object/fets-kaolinovo-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2012-KAOLINOVO-KA9905",
+        "SOL-2025-KAOLINOVO"
+      ],
+      "names": [
+        "ФЕЦ „Каолиново – КА9905“",
+        "ФЕЦ „Каолиново“ — нови полета"
+      ],
+      "mw": [
+        4.5,
+        33
+      ],
+      "distanceKm": 0.07,
+      "nameSimilarity": 0.59,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
+        "https://www.dker.bg/uploads/reshenia/2025/res_r_583_25.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2012-KAOLINOVO-KA9905",
+        "VEIREG-fets-kaolinovo"
+      ],
+      "names": [
+        "ФЕЦ „Каолиново – КА9905“",
+        "ФЕЦ \"Каолиново\""
+      ],
+      "mw": [
+        4.5,
+        4.913
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "pending_location",
+      "reason": "Нелокализираният кандидат е отделен за проверка; няма достатъчно доказателства за сливане.",
+      "evidence": [
+        "https://kaolinovo.bg/storage/2023/10/%D0%A3%D0%98%D0%9D-473-%D0%BE%D0%B1%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.pdf",
+        "https://www.veiregistar.bg/object/fets-kaolinovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2012-MARINO-POLE-ALFA",
+        "SOL-2026-VEDRARE"
+      ],
+      "names": [
+        "ФЕЦ „Алфа Солар Инвест“ / „Алфа Солар Груп“ — Марино поле",
+        "ФЕЦ „Ведраре Солар“"
+      ],
+      "mw": [
+        8,
+        70
+      ],
+      "distanceKm": 0.81,
+      "nameSimilarity": 0.24,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-alfa-solar-invest",
+        "https://www.dker.bg/uploads/reshenia/2026/res_r_651_26.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2023-LOVECH",
+        "VEIREG-fets-lovech"
+      ],
+      "names": [
+        "ФЕЦ „Ловеч“",
+        "ФЕЦ \"Ловеч\""
+      ],
+      "mw": [
+        86.2,
+        4.4
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 1.0,
+      "decision": "distinct",
+      "reason": "Проверени различни обекти: ФМ СОЛ, 4.4 MW, 2011 г.; Фотоволтаична централа – Ловеч, 86.2 MW AC, 2023 г. Еднаквото име не означава дублиране.",
+      "evidence": [
+        "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf",
+        "https://www.veiregistar.bg/object/fets-lovech"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2023-VERILA",
+        "SOL-2026-VERILA-PH2"
+      ],
+      "names": [
+        "ФЕЦ „Верила“",
+        "ФЕЦ „Верила“ — Фаза 2"
+      ],
+      "mw": [
+        100,
+        50
+      ],
+      "distanceKm": 0.76,
+      "nameSimilarity": 0.71,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_319_22.pdf",
+        "https://www.dker.bg/uploads/reshenia/2026/res-r-643-2026.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2024-ELHOVO",
+        "VEIREG-fets-elhovo-4"
+      ],
+      "names": [
+        "ФЕЦ „Елхово“",
+        "ФЕЦ \"Елхово 4\""
+      ],
+      "mw": [
+        60,
+        4.011
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/protokoli/zz/2024/prot_zz-235_24.pdf",
+        "https://www.veiregistar.bg/object/fets-elhovo-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2024-ELHOVO",
+        "VEIREG-fets-elhovo-5"
+      ],
+      "names": [
+        "ФЕЦ „Елхово“",
+        "ФЕЦ \"Елхово 5\""
+      ],
+      "mw": [
+        60,
+        5.08
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/protokoli/zz/2024/prot_zz-235_24.pdf",
+        "https://www.veiregistar.bg/object/fets-elhovo-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2024-KARLOVO",
+        "SOL-KARADZHALOVO-2012"
+      ],
+      "names": [
+        "ФЕЦ „Карлово“",
+        "ФЕЦ „Караджалово“"
+      ],
+      "mw": [
+        99,
+        60.4
+      ],
+      "distanceKm": 66.94,
+      "nameSimilarity": 0.78,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2024/res_l-734_24.pdf",
+        "https://enery.energy/bg/press/austrian-renewable-energy-company-enery-acquires-single-largest-pv-plant-in-bulgaria/"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2024-KARLOVO",
+        "VEIREG-fets-kaolinovo"
+      ],
+      "names": [
+        "ФЕЦ „Карлово“",
+        "ФЕЦ \"Каолиново\""
+      ],
+      "mw": [
+        99,
+        4.913
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "pending_location",
+      "reason": "Нелокализираният кандидат е отделен за проверка; няма достатъчно доказателства за сливане.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2024/res_l-734_24.pdf",
+        "https://www.veiregistar.bg/object/fets-kaolinovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2024-KARLOVO",
+        "VEIREG-fets-kolarovo"
+      ],
+      "names": [
+        "ФЕЦ „Карлово“",
+        "ФЕЦ \"Коларово\""
+      ],
+      "mw": [
+        99,
+        5.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2024/res_l-734_24.pdf",
+        "https://www.veiregistar.bg/object/fets-kolarovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2025-GOLF",
+        "SOL-2026-SLIVEN"
+      ],
+      "names": [
+        "ФЕЦ „Голф Солар“",
+        "ФЕЦ „Сливен“"
+      ],
+      "mw": [
+        40,
+        40
+      ],
+      "distanceKm": 0.63,
+      "nameSimilarity": 0.13,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://www.dker.bg/uploads/protokoli/zz/2025/prot-zz-159-02jun2025.pdf",
+        "https://www.dker.bg/uploads/reshenia/2026/res_r_652_26.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2025-GOLF",
+        "VEIREG-fets-yambol-solar"
+      ],
+      "names": [
+        "ФЕЦ „Голф Солар“",
+        "ФЕЦ \"Ямбол Солар\""
+      ],
+      "mw": [
+        40,
+        2.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://www.dker.bg/uploads/protokoli/zz/2025/prot-zz-159-02jun2025.pdf",
+        "https://www.veiregistar.bg/object/fets-yambol-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "SOL-2026-BREGARE",
+        "SOL-2026-VEDRARE"
+      ],
+      "names": [
+        "ФЕЦ „Брегаре Солар“",
+        "ФЕЦ „Ведраре Солар“"
+      ],
+      "mw": [
+        34.72,
+        70
+      ],
+      "distanceKm": 120.51,
+      "nameSimilarity": 0.75,
+      "decision": "keep_separate",
+      "reason": "Различни етапи/имоти/проекти; близките точки или сходното име не доказват един обект.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2026/res_r_657_26.pdf",
+        "https://www.dker.bg/uploads/reshenia/2026/res_r_651_26.pdf"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-atolovo-solar",
+        "VEIREG-fets-hanovo-1-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Атолово Солар\"",
+        "ФЕЦ \"Ханово 1 Солар\""
+      ],
+      "mw": [
+        5.0,
+        4.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-atolovo-solar",
+        "https://www.veiregistar.bg/object/fets-hanovo-1-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-atolovo-solar",
+        "VEIREG-fets-hanovo-2-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Атолово Солар\"",
+        "ФЕЦ \"Ханово 2 Солар\""
+      ],
+      "mw": [
+        5.0,
+        1.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-atolovo-solar",
+        "https://www.veiregistar.bg/object/fets-hanovo-2-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-atolovo-solar",
+        "VEIREG-fets-karavelovo-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Атолово Солар\"",
+        "ФЕЦ \"Каравелово Солар\""
+      ],
+      "mw": [
+        5.0,
+        2.2
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-atolovo-solar",
+        "https://www.veiregistar.bg/object/fets-karavelovo-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-atolovo-solar",
+        "VEIREG-fets-raklinovo-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Атолово Солар\"",
+        "ФЕЦ \"Раклиново Солар\""
+      ],
+      "mw": [
+        5.0,
+        1.9
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.77,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-atolovo-solar",
+        "https://www.veiregistar.bg/object/fets-raklinovo-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-bezmer-enerdzhi",
+        "VEIREG-fets-espe-enerdzhi"
+      ],
+      "names": [
+        "ФЕЦ \"Безмер Енерджи\"",
+        "ФЕЦ \"Еспе Енерджи\""
+      ],
+      "mw": [
+        4.0,
+        5.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-bezmer-enerdzhi",
+        "https://www.veiregistar.bg/object/fets-espe-enerdzhi"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-boynitsa-1",
+        "VEIREG-fets-boynitsa-2"
+      ],
+      "names": [
+        "ФЕЦ \"Бойница 1\"",
+        "ФЕЦ \"Бойница 2\""
+      ],
+      "mw": [
+        1.1,
+        2.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-boynitsa-1",
+        "https://www.veiregistar.bg/object/fets-boynitsa-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-chayna-solar",
+        "VEIREG-fets-chayna-solar-2"
+      ],
+      "names": [
+        "ФЕЦ \"Чайна Солар\"",
+        "ФЕЦ \"Чайна Солар 2\""
+      ],
+      "mw": [
+        2.608,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-chayna-solar",
+        "https://www.veiregistar.bg/object/fets-chayna-solar-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-chayna-solar",
+        "VEIREG-fets-skay-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Чайна Солар\"",
+        "ФЕЦ \"Скай Солар\""
+      ],
+      "mw": [
+        2.608,
+        2.75
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-chayna-solar",
+        "https://www.veiregistar.bg/object/fets-skay-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-chayna-solar-2",
+        "VEIREG-fets-kamenar-solar-2"
+      ],
+      "names": [
+        "ФЕЦ \"Чайна Солар 2\"",
+        "ФЕЦ \"Каменар Солар 2\""
+      ],
+      "mw": [
+        4.0,
+        1.053
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-chayna-solar-2",
+        "https://www.veiregistar.bg/object/fets-kamenar-solar-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-dolna-lipnitsa",
+        "VEIREG-fets-dolna-lipnitsa-1"
+      ],
+      "names": [
+        "ФЕЦ \"Долна Липница\"",
+        "ФЕЦ \"Долна Липница - 1\""
+      ],
+      "mw": [
+        1.184,
+        1.25
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.96,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-dolna-lipnitsa",
+        "https://www.veiregistar.bg/object/fets-dolna-lipnitsa-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-dzhey-bi-solar-bezmer-1",
+        "VEIREG-fets-dzhey-bi-solar-bezmer-2"
+      ],
+      "names": [
+        "ФЕЦ \"Джей Би Солар - Безмер 1\"",
+        "ФЕЦ \"Джей Би Солар - Безмер 2\""
+      ],
+      "mw": [
+        5.0,
+        5.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.94,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-dzhey-bi-solar-bezmer-1",
+        "https://www.veiregistar.bg/object/fets-dzhey-bi-solar-bezmer-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-e-v-t-elektra-volt-treyd-el-1",
+        "VEIREG-fets-e-v-t-elektra-volt-treyd-el-2"
+      ],
+      "names": [
+        "ФЕЦ \"Е. В. Т. - Електра Волт Трейд\" (ел. 1)",
+        "ФЕЦ \"Е. В. Т. - Електра Волт Трейд\" (ел. 2)"
+      ],
+      "mw": [
+        5.16,
+        4.72
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-e-v-t-elektra-volt-treyd-el-1",
+        "https://www.veiregistar.bg/object/fets-e-v-t-elektra-volt-treyd-el-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-elhovo-4",
+        "VEIREG-fets-elhovo-5"
+      ],
+      "names": [
+        "ФЕЦ \"Елхово 4\"",
+        "ФЕЦ \"Елхово 5\""
+      ],
+      "mw": [
+        4.011,
+        5.08
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-elhovo-4",
+        "https://www.veiregistar.bg/object/fets-elhovo-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-energiyni-proekti-bg-atolovo-1",
+        "VEIREG-fets-energiyni-proekti-bg-atolovo-2"
+      ],
+      "names": [
+        "ФЕЦ \"Енергийни проекти БГ - Атолово 1\"",
+        "ФЕЦ \"Енергийни проекти БГ - Атолово 2\""
+      ],
+      "mw": [
+        3.393,
+        2.482
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.96,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-energiyni-proekti-bg-atolovo-1",
+        "https://www.veiregistar.bg/object/fets-energiyni-proekti-bg-atolovo-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-forest-gabarevo",
+        "VEIREG-fets-kalreys-gabarevo"
+      ],
+      "names": [
+        "ФЕЦ \"Форест - Габарево\"",
+        "ФЕЦ \"Калрейс - Габарево\""
+      ],
+      "mw": [
+        2.6,
+        1.7
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.76,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-forest-gabarevo",
+        "https://www.veiregistar.bg/object/fets-kalreys-gabarevo"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-geran-kalipetrovo",
+        "VEIREG-fets-kalipetrovo"
+      ],
+      "names": [
+        "ФЕЦ \"Геран - Калипетрово\"",
+        "ФЕЦ \"Калипетрово\""
+      ],
+      "mw": [
+        1.6,
+        3.9
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.81,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-geran-kalipetrovo",
+        "https://www.veiregistar.bg/object/fets-kalipetrovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-hanovo-1-solar",
+        "VEIREG-fets-hanovo-2-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Ханово 1 Солар\"",
+        "ФЕЦ \"Ханово 2 Солар\""
+      ],
+      "mw": [
+        4.5,
+        1.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-hanovo-1-solar",
+        "https://www.veiregistar.bg/object/fets-hanovo-2-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-hanovo-1-solar",
+        "VEIREG-fets-raklinovo-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Ханово 1 Солар\"",
+        "ФЕЦ \"Раклиново Солар\""
+      ],
+      "mw": [
+        4.5,
+        1.9
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.77,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-hanovo-1-solar",
+        "https://www.veiregistar.bg/object/fets-raklinovo-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-hanovo-2-solar",
+        "VEIREG-fets-raklinovo-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Ханово 2 Солар\"",
+        "ФЕЦ \"Раклиново Солар\""
+      ],
+      "mw": [
+        1.5,
+        1.9
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.77,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-hanovo-2-solar",
+        "https://www.veiregistar.bg/object/fets-raklinovo-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kamenar-pv-1",
+        "VEIREG-fets-kamenar-pv-2"
+      ],
+      "names": [
+        "ФЕЦ \"Каменар ПВ 1\"",
+        "ФЕЦ \"Каменар ПВ 2\""
+      ],
+      "mw": [
+        1.015,
+        1.203
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.9,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kamenar-pv-1",
+        "https://www.veiregistar.bg/object/fets-kamenar-pv-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kameno-15-mw",
+        "VEIREG-fets-kameno-35-mw"
+      ],
+      "names": [
+        "ФЕЦ \"Камено - 1,5 MW\"",
+        "ФЕЦ \"Камено - 3,5 MW\""
+      ],
+      "mw": [
+        1.5,
+        3.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.9,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kameno-15-mw",
+        "https://www.veiregistar.bg/object/fets-kameno-35-mw"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kameno-inoveyshan",
+        "VEIREG-fets-kameno-inoveyshan-1"
+      ],
+      "names": [
+        "ФЕЦ \"Камено Иновейшън\"",
+        "ФЕЦ \"Камено Иновейшън 1\""
+      ],
+      "mw": [
+        2.149,
+        2.797
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.97,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kameno-inoveyshan",
+        "https://www.veiregistar.bg/object/fets-kameno-inoveyshan-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kaolinovo",
+        "VEIREG-fets-kaolinovo-1"
+      ],
+      "names": [
+        "ФЕЦ \"Каолиново\"",
+        "ФЕЦ \"Каолиново - 1\""
+      ],
+      "mw": [
+        4.913,
+        4.943
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "pending_location",
+      "reason": "Нелокализираният кандидат е отделен за проверка; няма достатъчно доказателства за сливане.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kaolinovo",
+        "https://www.veiregistar.bg/object/fets-kaolinovo-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-karavelovo-solar",
+        "VEIREG-fets-krumovo-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Каравелово Солар\"",
+        "ФЕЦ \"Крумово Солар\""
+      ],
+      "mw": [
+        2.2,
+        2.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-karavelovo-solar",
+        "https://www.veiregistar.bg/object/fets-krumovo-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-karavelovo-solar",
+        "VEIREG-fets-raklinovo-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Каравелово Солар\"",
+        "ФЕЦ \"Раклиново Солар\""
+      ],
+      "mw": [
+        2.2,
+        1.9
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.76,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-karavelovo-solar",
+        "https://www.veiregistar.bg/object/fets-raklinovo-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-karbintsi-1",
+        "VEIREG-fets-karbintsi-2"
+      ],
+      "names": [
+        "ФЕЦ \"Карбинци-1\"",
+        "ФЕЦ \"Карбинци-2\""
+      ],
+      "mw": [
+        3.15,
+        1.97
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-karbintsi-1",
+        "https://www.veiregistar.bg/object/fets-karbintsi-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-katunitsa-el-1",
+        "VEIREG-fets-katunitsa-el-2"
+      ],
+      "names": [
+        "ФЕЦ \"Катуница\" (ел. 1)",
+        "ФЕЦ \"Катуница\" (ел. 2)"
+      ],
+      "mw": [
+        2.5,
+        2.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-katunitsa-el-1",
+        "https://www.veiregistar.bg/object/fets-katunitsa-el-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kukorevo-1-solar",
+        "VEIREG-fets-kukorevo-2-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Кукорево 1 Солар\"",
+        "ФЕЦ \"Кукорево 2 Солар\""
+      ],
+      "mw": [
+        4.0,
+        1.7
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kukorevo-1-solar",
+        "https://www.veiregistar.bg/object/fets-kukorevo-2-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kukorevo-1-solar",
+        "VEIREG-fets-kukorevo-3-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Кукорево 1 Солар\"",
+        "ФЕЦ \"Кукорево 3 Солар\""
+      ],
+      "mw": [
+        4.0,
+        2.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kukorevo-1-solar",
+        "https://www.veiregistar.bg/object/fets-kukorevo-3-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kukorevo-2-solar",
+        "VEIREG-fets-kukorevo-3-solar"
+      ],
+      "names": [
+        "ФЕЦ \"Кукорево 2 Солар\"",
+        "ФЕЦ \"Кукорево 3 Солар\""
+      ],
+      "mw": [
+        1.7,
+        2.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kukorevo-2-solar",
+        "https://www.veiregistar.bg/object/fets-kukorevo-3-solar"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-kula-1",
+        "VEIREG-fets-kula-2"
+      ],
+      "names": [
+        "ФЕЦ \"Кула 1\"",
+        "ФЕЦ \"Кула 2\""
+      ],
+      "mw": [
+        2.15,
+        1.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-kula-1",
+        "https://www.veiregistar.bg/object/fets-kula-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-montan-aydemir",
+        "VEIREG-fets-okean-aydemir"
+      ],
+      "names": [
+        "ФЕЦ \"Монтан - Айдемир\"",
+        "ФЕЦ \"Океан - Айдемир\""
+      ],
+      "mw": [
+        3.0,
+        1.842
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-montan-aydemir",
+        "https://www.veiregistar.bg/object/fets-okean-aydemir"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-okean-aydemir",
+        "VEIREG-fets-renar-aydemir"
+      ],
+      "names": [
+        "ФЕЦ \"Океан - Айдемир\"",
+        "ФЕЦ \"Ренар - Айдемир\""
+      ],
+      "mw": [
+        1.842,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-okean-aydemir",
+        "https://www.veiregistar.bg/object/fets-renar-aydemir"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-1",
+        "VEIREG-fets-pv-tsentrala-10"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 1\"",
+        "ФЕЦ \"PV-централа 10\""
+      ],
+      "mw": [
+        4.99,
+        4.981
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.96,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-1",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-10"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-1",
+        "VEIREG-fets-pv-tsentrala-2"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 1\"",
+        "ФЕЦ \"PV-централа 2\""
+      ],
+      "mw": [
+        4.99,
+        4.959
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-1",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-1",
+        "VEIREG-fets-pv-tsentrala-8"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 1\"",
+        "ФЕЦ \"PV-централа 8\""
+      ],
+      "mw": [
+        4.99,
+        4.974
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-1",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-8"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-1",
+        "VEIREG-fets-pv-tsentrala-9"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 1\"",
+        "ФЕЦ \"PV-централа 9\""
+      ],
+      "mw": [
+        4.99,
+        4.92
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-1",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-9"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-10",
+        "VEIREG-fets-pv-tsentrala-2"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 10\"",
+        "ФЕЦ \"PV-централа 2\""
+      ],
+      "mw": [
+        4.981,
+        4.959
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.87,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-10",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-10",
+        "VEIREG-fets-pv-tsentrala-8"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 10\"",
+        "ФЕЦ \"PV-централа 8\""
+      ],
+      "mw": [
+        4.981,
+        4.974
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.87,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-10",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-8"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-10",
+        "VEIREG-fets-pv-tsentrala-9"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 10\"",
+        "ФЕЦ \"PV-централа 9\""
+      ],
+      "mw": [
+        4.981,
+        4.92
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.87,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-10",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-9"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-2",
+        "VEIREG-fets-pv-tsentrala-8"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 2\"",
+        "ФЕЦ \"PV-централа 8\""
+      ],
+      "mw": [
+        4.959,
+        4.974
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-2",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-8"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-2",
+        "VEIREG-fets-pv-tsentrala-9"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 2\"",
+        "ФЕЦ \"PV-централа 9\""
+      ],
+      "mw": [
+        4.959,
+        4.92
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-2",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-9"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-pv-tsentrala-8",
+        "VEIREG-fets-pv-tsentrala-9"
+      ],
+      "names": [
+        "ФЕЦ \"PV-централа 8\"",
+        "ФЕЦ \"PV-централа 9\""
+      ],
+      "mw": [
+        4.974,
+        4.92
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-8",
+        "https://www.veiregistar.bg/object/fets-pv-tsentrala-9"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-resen",
+        "VEIREG-fets-resen-1-1"
+      ],
+      "names": [
+        "ФЕЦ \"Ресен\"",
+        "ФЕЦ \"Ресен 1-1\""
+      ],
+      "mw": [
+        5.0,
+        1.992
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.83,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-resen",
+        "https://www.veiregistar.bg/object/fets-resen-1-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-resen",
+        "VEIREG-fets-resen-1-2"
+      ],
+      "names": [
+        "ФЕЦ \"Ресен\"",
+        "ФЕЦ \"Ресен 1-2\""
+      ],
+      "mw": [
+        5.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.83,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-resen",
+        "https://www.veiregistar.bg/object/fets-resen-1-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-resen-1-1",
+        "VEIREG-fets-resen-1-2"
+      ],
+      "names": [
+        "ФЕЦ \"Ресен 1-1\"",
+        "ФЕЦ \"Ресен 1-2\""
+      ],
+      "mw": [
+        1.992,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-resen-1-1",
+        "https://www.veiregistar.bg/object/fets-resen-1-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-rial-steyts",
+        "VEIREG-fets-rial-steyts-2"
+      ],
+      "names": [
+        "ФЕЦ \"Риал Стейтс\"",
+        "ФЕЦ \"Риал Стейтс 2\""
+      ],
+      "mw": [
+        1.148,
+        1.301
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-rial-steyts",
+        "https://www.veiregistar.bg/object/fets-rial-steyts-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-skobelevo-1",
+        "VEIREG-fets-skobelevo-2"
+      ],
+      "names": [
+        "ФЕЦ \"Скобелево 1\"",
+        "ФЕЦ \"Скобелево 2\""
+      ],
+      "mw": [
+        2.5,
+        2.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.9,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-skobelevo-1",
+        "https://www.veiregistar.bg/object/fets-skobelevo-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-smolnik-enerdzhi",
+        "VEIREG-fets-solera-enerdzhi"
+      ],
+      "names": [
+        "ФЕЦ \"Смолник Енерджи\"",
+        "ФЕЦ \"Солера Енерджи\""
+      ],
+      "mw": [
+        2.813,
+        3.25
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-smolnik-enerdzhi",
+        "https://www.veiregistar.bg/object/fets-solera-enerdzhi"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-solar-balgariya-1",
+        "VEIREG-fets-solar-balgariya-2"
+      ],
+      "names": [
+        "ФЕЦ \"Солар България 1\"",
+        "ФЕЦ \"Солар България 2\""
+      ],
+      "mw": [
+        4.979,
+        4.979
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-solar-balgariya-1",
+        "https://www.veiregistar.bg/object/fets-solar-balgariya-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-solar-r1-sliven",
+        "VEIREG-fets-solar-ras-sliven"
+      ],
+      "names": [
+        "ФЕЦ \"Солар Р1 - Сливен\"",
+        "ФЕЦ \"Солар РАС - Сливен\""
+      ],
+      "mw": [
+        4.0,
+        5.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-solar-r1-sliven",
+        "https://www.veiregistar.bg/object/fets-solar-ras-sliven"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-tera-invest-padarevo-el-1",
+        "VEIREG-fets-tera-invest-padarevo-el-2"
+      ],
+      "names": [
+        "ФЕЦ \"Тера Инвест - Пъдарево\" (ел. 1)",
+        "ФЕЦ \"Тера Инвест - Пъдарево\" (ел. 2)"
+      ],
+      "mw": [
+        2.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-tera-invest-padarevo-el-1",
+        "https://www.veiregistar.bg/object/fets-tera-invest-padarevo-el-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-topolata-1",
+        "VEIREG-fets-topolata-2"
+      ],
+      "names": [
+        "ФЕЦ \"Тополата 1\"",
+        "ФЕЦ \"Тополата 2\""
+      ],
+      "mw": [
+        4.9,
+        4.9
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-topolata-1",
+        "https://www.veiregistar.bg/object/fets-topolata-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-valchin-enerdzhi",
+        "VEIREG-fets-veselinovo-enerdzhi"
+      ],
+      "names": [
+        "ФЕЦ \"Вълчин Енерджи\"",
+        "ФЕЦ \"Веселиново Енерджи\""
+      ],
+      "mw": [
+        3.748,
+        3.989
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.73,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-valchin-enerdzhi",
+        "https://www.veiregistar.bg/object/fets-veselinovo-enerdzhi"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-fets-vat-burgas-rudnik-1",
+        "VEIREG-fets-vat-burgas-rudnik-2"
+      ],
+      "names": [
+        "ФЕЦ \"ВАТ Бургас - Рудник 1\"",
+        "ФЕЦ \"ВАТ Бургас - Рудник 2\""
+      ],
+      "mw": [
+        1.756,
+        1.129
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.94,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/fets-vat-burgas-rudnik-1",
+        "https://www.veiregistar.bg/object/fets-vat-burgas-rudnik-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-mvets-lozyata",
+        "VEIREG-mvets-lozyata-2"
+      ],
+      "names": [
+        "МВЕЦ \"Лозята\"",
+        "МВЕЦ \"Лозята 2\""
+      ],
+      "mw": [
+        5.0,
+        1.28
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/mvets-lozyata",
+        "https://www.veiregistar.bg/object/mvets-lozyata-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-mvets-sokol",
+        "VEIREG-mvets-sokolna"
+      ],
+      "names": [
+        "МВЕЦ \"Сокол\"",
+        "МВЕЦ \"Соколна\""
+      ],
+      "mw": [
+        2.0,
+        1.074
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.83,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/mvets-sokol",
+        "https://www.veiregistar.bg/object/mvets-sokolna"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-mvets-tserovo",
+        "VEIREG-vets-petrovo"
+      ],
+      "names": [
+        "МВЕЦ \"Церово\"",
+        "ВЕЦ \"Петрово\""
+      ],
+      "mw": [
+        3.0,
+        2.57
+      ],
+      "distanceKm": 173.81,
+      "nameSimilarity": 0.77,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/mvets-tserovo",
+        "https://www.veiregistar.bg/object/vets-petrovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-1-ot-kaskada-retizhe",
+        "VEIREG-vets-3-ot-kaskada-retizhe"
+      ],
+      "names": [
+        "ВЕЦ 1 от каскада \"Ретиже\"",
+        "ВЕЦ 3 от каскада \"Ретиже\""
+      ],
+      "mw": [
+        1.95,
+        4.95
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.94,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-1-ot-kaskada-retizhe",
+        "https://www.veiregistar.bg/object/vets-3-ot-kaskada-retizhe"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-asenitsa-1",
+        "VEIREG-vets-asenitsa-2"
+      ],
+      "names": [
+        "ВЕЦ \"Асеница 1\"",
+        "ВЕЦ \"Асеница 2\""
+      ],
+      "mw": [
+        8.09,
+        1.73
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-asenitsa-1",
+        "https://www.veiregistar.bg/object/vets-asenitsa-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-blagoevgradska-bistritsa-1",
+        "VEIREG-vets-blagoevgradska-bistritsa-2"
+      ],
+      "names": [
+        "ВЕЦ \"Благоевградска Бистрица - 1\"",
+        "ВЕЦ \"Благоевградска Бистрица - 2\""
+      ],
+      "mw": [
+        1.18,
+        1.4
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.96,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-blagoevgradska-bistritsa-1",
+        "https://www.veiregistar.bg/object/vets-blagoevgradska-bistritsa-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-blagoevgradska-bistritsa-1",
+        "VEIREG-vets-blagoevgradska-bistritsa-3"
+      ],
+      "names": [
+        "ВЕЦ \"Благоевградска Бистрица - 1\"",
+        "ВЕЦ \"Благоевградска Бистрица - 3\""
+      ],
+      "mw": [
+        1.18,
+        1.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.96,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-blagoevgradska-bistritsa-1",
+        "https://www.veiregistar.bg/object/vets-blagoevgradska-bistritsa-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-blagoevgradska-bistritsa-2",
+        "VEIREG-vets-blagoevgradska-bistritsa-3"
+      ],
+      "names": [
+        "ВЕЦ \"Благоевградска Бистрица - 2\"",
+        "ВЕЦ \"Благоевградска Бистрица - 3\""
+      ],
+      "mw": [
+        1.4,
+        1.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.96,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-blagoevgradska-bistritsa-2",
+        "https://www.veiregistar.bg/object/vets-blagoevgradska-bistritsa-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-krichim",
+        "VEIREG-vets-vacha-1"
+      ],
+      "names": [
+        "ВЕЦ \"Кричим\"",
+        "ВЕЦ \"Въча - 1\""
+      ],
+      "mw": [
+        80.0,
+        14.0
+      ],
+      "distanceKm": 0.8,
+      "nameSimilarity": 0.18,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-krichim",
+        "https://www.veiregistar.bg/object/vets-vacha-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-samoranovo",
+        "VEIREG-vets-simeonovo"
+      ],
+      "names": [
+        "ВЕЦ \"Самораново\"",
+        "ВЕЦ \"Симеоново\""
+      ],
+      "mw": [
+        2.92,
+        6.67
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-samoranovo",
+        "https://www.veiregistar.bg/object/vets-simeonovo"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vets-vacha-1",
+        "VEIREG-vets-vacha-2"
+      ],
+      "names": [
+        "ВЕЦ \"Въча - 1\"",
+        "ВЕЦ \"Въча 2\""
+      ],
+      "mw": [
+        14.0,
+        7.0
+      ],
+      "distanceKm": 4.45,
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vets-vacha-1",
+        "https://www.veiregistar.bg/object/vets-vacha-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-18-vranino",
+        "VEIREG-vtets-vranino-1"
+      ],
+      "names": [
+        "ВтЕЦ \"18 - Вранино\"",
+        "ВтЕЦ \"Вранино - 1\""
+      ],
+      "mw": [
+        18.0,
+        1.3
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.82,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-18-vranino",
+        "https://www.veiregistar.bg/object/vtets-vranino-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-18-vranino",
+        "WIND-VRANINO"
+      ],
+      "names": [
+        "ВтЕЦ \"18 - Вранино\"",
+        "ВяЕЦ „Вранино“"
+      ],
+      "mw": [
+        18.0,
+        18
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-18-vranino",
+        "https://www.thewindpower.net/windfarm_en_20189_vranino.php"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-balchik-g1-i-g2",
+        "VEIREG-vtets-balchik-g3"
+      ],
+      "names": [
+        "ВтЕЦ \"Балчик Г1 и Г2\"",
+        "ВтЕЦ \"Балчик Г3\""
+      ],
+      "mw": [
+        4.0,
+        2.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-balchik-g1-i-g2",
+        "https://www.veiregistar.bg/object/vtets-balchik-g3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-balchik-g1-i-g2",
+        "VEIREG-vtets-balchik-g4"
+      ],
+      "names": [
+        "ВтЕЦ \"Балчик Г1 и Г2\"",
+        "ВтЕЦ \"Балчик Г4\""
+      ],
+      "mw": [
+        4.0,
+        2.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-balchik-g1-i-g2",
+        "https://www.veiregistar.bg/object/vtets-balchik-g4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-balchik-g3",
+        "VEIREG-vtets-balchik-g4"
+      ],
+      "names": [
+        "ВтЕЦ \"Балчик Г3\"",
+        "ВтЕЦ \"Балчик Г4\""
+      ],
+      "mw": [
+        2.0,
+        2.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-balchik-g3",
+        "https://www.veiregistar.bg/object/vtets-balchik-g4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-balchik-g3",
+        "WIND-BALCHIK"
+      ],
+      "names": [
+        "ВтЕЦ \"Балчик Г3\"",
+        "ВяЕЦ Балчик"
+      ],
+      "mw": [
+        2.0,
+        10
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-balchik-g3",
+        "https://www.thewindpower.net/country_windfarms_en_37_bulgarie.php"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-balchik-g4",
+        "WIND-BALCHIK"
+      ],
+      "names": [
+        "ВтЕЦ \"Балчик Г4\"",
+        "ВяЕЦ Балчик"
+      ],
+      "mw": [
+        2.0,
+        10
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-balchik-g4",
+        "https://www.thewindpower.net/country_windfarms_en_37_bulgarie.php"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-balgarevo-2",
+        "WIND-EVN-BULGAREVO"
+      ],
+      "names": [
+        "ВтЕЦ \"Българево - 2\"",
+        "ВяЕЦ EVN Българево"
+      ],
+      "mw": [
+        1.2,
+        80
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.82,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-balgarevo-2",
+        "https://www.gem.wiki/Evn_Bulgarevo_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-eko-farm-byala-1",
+        "VEIREG-vtets-eko-farm-byala-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Еко Фарм - Бяла 1\"",
+        "ВтЕЦ \"Еко Фарм - Бяла 2\""
+      ],
+      "mw": [
+        1.2,
+        1.2
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-eko-farm-byala-1",
+        "https://www.veiregistar.bg/object/vtets-eko-farm-byala-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-1",
+        "VEIREG-vtets-hrabrovo-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 1\"",
+        "ВтЕЦ \"Храброво 2\""
+      ],
+      "mw": [
+        2.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-1",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-1",
+        "VEIREG-vtets-hrabrovo-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 1\"",
+        "ВтЕЦ \"Храброво 3\""
+      ],
+      "mw": [
+        2.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-1",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-1",
+        "VEIREG-vtets-hrabrovo-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 1\"",
+        "ВтЕЦ \"Храброво - 4\""
+      ],
+      "mw": [
+        2.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-1",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-1",
+        "VEIREG-vtets-hrabrovo-6"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 1\"",
+        "ВтЕЦ \"Храброво-6\""
+      ],
+      "mw": [
+        2.0,
+        3.075
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-1",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-2",
+        "VEIREG-vtets-hrabrovo-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 2\"",
+        "ВтЕЦ \"Храброво 3\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-2",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-2",
+        "VEIREG-vtets-hrabrovo-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 2\"",
+        "ВтЕЦ \"Храброво - 4\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-2",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-2",
+        "VEIREG-vtets-hrabrovo-6"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 2\"",
+        "ВтЕЦ \"Храброво-6\""
+      ],
+      "mw": [
+        4.0,
+        3.075
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-2",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-3",
+        "VEIREG-vtets-hrabrovo-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 3\"",
+        "ВтЕЦ \"Храброво - 4\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-3",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-3",
+        "VEIREG-vtets-hrabrovo-6"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво 3\"",
+        "ВтЕЦ \"Храброво-6\""
+      ],
+      "mw": [
+        4.0,
+        3.075
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-3",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-hrabrovo-4",
+        "VEIREG-vtets-hrabrovo-6"
+      ],
+      "names": [
+        "ВтЕЦ \"Храброво - 4\"",
+        "ВтЕЦ \"Храброво-6\""
+      ],
+      "mw": [
+        4.0,
+        3.075
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.89,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-4",
+        "https://www.veiregistar.bg/object/vtets-hrabrovo-6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-irechek",
+        "VEIREG-vtets-irechek-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Иречек\"",
+        "ВтЕЦ \"Иречек 2\""
+      ],
+      "mw": [
+        2.5,
+        1.25
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-irechek",
+        "https://www.veiregistar.bg/object/vtets-irechek-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kaliakra",
+        "WIND-KALIAKRA"
+      ],
+      "names": [
+        "ВтЕЦ \"Калиакра\"",
+        "ВяЕЦ „Калиакра“"
+      ],
+      "mw": [
+        35.0,
+        35
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 1.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kaliakra",
+        "https://www.kwp.bg/kwp-plant/technical-information/"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-1",
+        "VEIREG-vtets-kamen-bryag-sever-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 1\"",
+        "ВтЕЦ \"Камен бряг Север - 2\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-1",
+        "VEIREG-vtets-kamen-bryag-sever-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 1\"",
+        "ВтЕЦ \"Камен бряг Север - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-1",
+        "VEIREG-vtets-kamen-bryag-sever-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 1\"",
+        "ВтЕЦ \"Камен бряг Север - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-1",
+        "VEIREG-vtets-kamen-bryag-yug-1"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 1\"",
+        "ВтЕЦ \"Камен бряг Юг - 1\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-1",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 1\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-2",
+        "VEIREG-vtets-kamen-bryag-sever-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 2\"",
+        "ВтЕЦ \"Камен бряг Север - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-2",
+        "VEIREG-vtets-kamen-bryag-sever-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 2\"",
+        "ВтЕЦ \"Камен бряг Север - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-2",
+        "VEIREG-vtets-kamen-bryag-yug-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 2\"",
+        "ВтЕЦ \"Камен бряг Юг - 2\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-2",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 2\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-3",
+        "VEIREG-vtets-kamen-bryag-sever-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 3\"",
+        "ВтЕЦ \"Камен бряг Север - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-3",
+        "VEIREG-vtets-kamen-bryag-yug-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 3\"",
+        "ВтЕЦ \"Камен бряг Юг - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-3",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 3\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-4",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Север - 4\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-4",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-yug-1",
+        "VEIREG-vtets-kamen-bryag-yug-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Юг - 1\"",
+        "ВтЕЦ \"Камен бряг Юг - 2\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-yug-1",
+        "VEIREG-vtets-kamen-bryag-yug-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Юг - 1\"",
+        "ВтЕЦ \"Камен бряг Юг - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-yug-1",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Юг - 1\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-1",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-yug-2",
+        "VEIREG-vtets-kamen-bryag-yug-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Юг - 2\"",
+        "ВтЕЦ \"Камен бряг Юг - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-2",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-yug-2",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Юг - 2\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-2",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-yug-3",
+        "WIND-KAMEN-BRYAG"
+      ],
+      "names": [
+        "ВтЕЦ \"Камен бряг Юг - 3\"",
+        "ВяЕЦ „Камен бряг“"
+      ],
+      "mw": [
+        3.0,
+        21
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-3",
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-karapelit",
+        "VEIREG-vtets-karapelit-1"
+      ],
+      "names": [
+        "ВтЕЦ \"Карапелит\"",
+        "ВтЕЦ \"Карапелит - 1\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-karapelit",
+        "https://www.veiregistar.bg/object/vtets-karapelit-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-karapelit",
+        "VEIREG-vtets-karapelit-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Карапелит\"",
+        "ВтЕЦ \"Карапелит - 2\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-karapelit",
+        "https://www.veiregistar.bg/object/vtets-karapelit-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-karapelit",
+        "WIND-KARAPELIT"
+      ],
+      "names": [
+        "ВтЕЦ \"Карапелит\"",
+        "ВяЕЦ „Карапелит“"
+      ],
+      "mw": [
+        4.0,
+        12
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 1.0,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-karapelit",
+        "https://www.gem.wiki/Kardam_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-karapelit-1",
+        "VEIREG-vtets-karapelit-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Карапелит - 1\"",
+        "ВтЕЦ \"Карапелит - 2\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.9,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-karapelit-1",
+        "https://www.veiregistar.bg/object/vtets-karapelit-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-karapelit-1",
+        "WIND-KARAPELIT"
+      ],
+      "names": [
+        "ВтЕЦ \"Карапелит - 1\"",
+        "ВяЕЦ „Карапелит“"
+      ],
+      "mw": [
+        4.0,
+        12
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-karapelit-1",
+        "https://www.gem.wiki/Kardam_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-karapelit-2",
+        "WIND-KARAPELIT"
+      ],
+      "names": [
+        "ВтЕЦ \"Карапелит - 2\"",
+        "ВяЕЦ „Карапелит“"
+      ],
+      "mw": [
+        4.0,
+        12
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-karapelit-2",
+        "https://www.gem.wiki/Kardam_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-1",
+        "VEIREG-vtets-kardam-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 1\"",
+        "ВтЕЦ \"Кардам - 2\""
+      ],
+      "mw": [
+        4.2,
+        4.2
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-1",
+        "https://www.veiregistar.bg/object/vtets-kardam-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-1",
+        "VEIREG-vtets-kardam-31"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 1\"",
+        "ВтЕЦ \"Кардам - 31\""
+      ],
+      "mw": [
+        4.2,
+        2.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-1",
+        "https://www.veiregistar.bg/object/vtets-kardam-31"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-1",
+        "VEIREG-vtets-kardam-32"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 1\"",
+        "ВтЕЦ \"Кардам - 32\""
+      ],
+      "mw": [
+        4.2,
+        2.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-1",
+        "https://www.veiregistar.bg/object/vtets-kardam-32"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-1",
+        "WIND-KARDAM"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 1\"",
+        "ВяЕЦ „Кардам“"
+      ],
+      "mw": [
+        4.2,
+        12.6
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-1",
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-2",
+        "VEIREG-vtets-kardam-31"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 2\"",
+        "ВтЕЦ \"Кардам - 31\""
+      ],
+      "mw": [
+        4.2,
+        2.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-2",
+        "https://www.veiregistar.bg/object/vtets-kardam-31"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-2",
+        "VEIREG-vtets-kardam-32"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 2\"",
+        "ВтЕЦ \"Кардам - 32\""
+      ],
+      "mw": [
+        4.2,
+        2.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-2",
+        "https://www.veiregistar.bg/object/vtets-kardam-32"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-2",
+        "WIND-KARDAM"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 2\"",
+        "ВяЕЦ „Кардам“"
+      ],
+      "mw": [
+        4.2,
+        12.6
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-2",
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-31",
+        "VEIREG-vtets-kardam-32"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 31\"",
+        "ВтЕЦ \"Кардам - 32\""
+      ],
+      "mw": [
+        2.1,
+        2.1
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-31",
+        "https://www.veiregistar.bg/object/vtets-kardam-32"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-31",
+        "WIND-KARDAM"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 31\"",
+        "ВяЕЦ „Кардам“"
+      ],
+      "mw": [
+        2.1,
+        12.6
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-31",
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kardam-32",
+        "WIND-KARDAM"
+      ],
+      "names": [
+        "ВтЕЦ \"Кардам - 32\"",
+        "ВяЕЦ „Кардам“"
+      ],
+      "mw": [
+        2.1,
+        12.6
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kardam-32",
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-kavarna",
+        "VEIREG-vtets-kavarna-sever"
+      ],
+      "names": [
+        "ВтЕЦ \"Каварна\"",
+        "ВтЕЦ \"Каварна - Север\""
+      ],
+      "mw": [
+        16.0,
+        1.7
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.74,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-kavarna",
+        "https://www.veiregistar.bg/object/vtets-kavarna-sever"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-komarevo",
+        "VEIREG-vtets-komarevo-1"
+      ],
+      "names": [
+        "ВтЕЦ \"Комарево\"",
+        "ВтЕЦ \"Комарево - 1\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.94,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-komarevo",
+        "https://www.veiregistar.bg/object/vtets-komarevo-1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-krupen-2",
+        "VEIREG-vtets-krupen-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Крупен - 2\"",
+        "ВтЕЦ \"Крупен - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-krupen-2",
+        "https://www.veiregistar.bg/object/vtets-krupen-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-krupen-2",
+        "VEIREG-vtets-krupen-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Крупен - 2\"",
+        "ВтЕЦ \"Крупен - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-krupen-2",
+        "https://www.veiregistar.bg/object/vtets-krupen-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-krupen-2",
+        "WIND-KRUPEN"
+      ],
+      "names": [
+        "ВтЕЦ \"Крупен - 2\"",
+        "ВяЕЦ „Крупен“"
+      ],
+      "mw": [
+        3.0,
+        12
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-krupen-2",
+        "https://www.gem.wiki/Krupen_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-krupen-3",
+        "VEIREG-vtets-krupen-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Крупен - 3\"",
+        "ВтЕЦ \"Крупен - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-krupen-3",
+        "https://www.veiregistar.bg/object/vtets-krupen-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-krupen-3",
+        "WIND-KRUPEN"
+      ],
+      "names": [
+        "ВтЕЦ \"Крупен - 3\"",
+        "ВяЕЦ „Крупен“"
+      ],
+      "mw": [
+        3.0,
+        12
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-krupen-3",
+        "https://www.gem.wiki/Krupen_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-krupen-4",
+        "WIND-KRUPEN"
+      ],
+      "names": [
+        "ВтЕЦ \"Крупен - 4\"",
+        "ВяЕЦ „Крупен“"
+      ],
+      "mw": [
+        3.0,
+        12
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-krupen-4",
+        "https://www.gem.wiki/Krupen_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-lesovo-2",
+        "VEIREG-vtets-lesovo-5"
+      ],
+      "names": [
+        "ВтЕЦ \"Лесово 2\"",
+        "ВтЕЦ \"Лесово 5\""
+      ],
+      "mw": [
+        1.025,
+        1.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-lesovo-2",
+        "https://www.veiregistar.bg/object/vtets-lesovo-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-mesomarket-1",
+        "VEIREG-vtets-mesomarket-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Месомаркет - 1\"",
+        "ВтЕЦ \"Месомаркет - 2\""
+      ],
+      "mw": [
+        4.5,
+        4.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-mesomarket-1",
+        "https://www.veiregistar.bg/object/vtets-mesomarket-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-mogilishte-zapad",
+        "WIND-MOGILISHTE-W"
+      ],
+      "names": [
+        "ВтЕЦ \"Могилище-запад\"",
+        "ВяЕЦ „Могилище-запад“"
+      ],
+      "mw": [
+        16.0,
+        16
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 1.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-mogilishte-zapad",
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-nachevi-2",
+        "VEIREG-vtets-nachevi-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Начеви - 2\"",
+        "ВтЕЦ \"Начеви - 3\""
+      ],
+      "mw": [
+        1.5,
+        1.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-nachevi-2",
+        "https://www.veiregistar.bg/object/vtets-nachevi-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-neykovo-1",
+        "VEIREG-vtets-neykovo-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Нейково - 1\"",
+        "ВтЕЦ \"Нейково - 2\""
+      ],
+      "mw": [
+        1.98,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "pending_location",
+      "reason": "Нелокализираният кандидат е отделен за проверка; няма достатъчно доказателства за сливане.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-neykovo-1",
+        "https://www.veiregistar.bg/object/vtets-neykovo-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-1",
+        "VEIREG-vtets-prolezki-pat-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 1\"",
+        "ВтЕЦ \"Пролезки път - 2\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-1",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-1",
+        "VEIREG-vtets-prolezki-pat-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 1\"",
+        "ВтЕЦ \"Пролезки път - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-1",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-1",
+        "VEIREG-vtets-prolezki-pat-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 1\"",
+        "ВтЕЦ \"Пролезки път - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-1",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-1",
+        "VEIREG-vtets-prolezki-pat-5"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 1\"",
+        "ВтЕЦ \"Пролезки път - 5\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-1",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-2",
+        "VEIREG-vtets-prolezki-pat-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 2\"",
+        "ВтЕЦ \"Пролезки път - 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-2",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-2",
+        "VEIREG-vtets-prolezki-pat-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 2\"",
+        "ВтЕЦ \"Пролезки път - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-2",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-2",
+        "VEIREG-vtets-prolezki-pat-5"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 2\"",
+        "ВтЕЦ \"Пролезки път - 5\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-2",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-3",
+        "VEIREG-vtets-prolezki-pat-4"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 3\"",
+        "ВтЕЦ \"Пролезки път - 4\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-3",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-4"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-3",
+        "VEIREG-vtets-prolezki-pat-5"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 3\"",
+        "ВтЕЦ \"Пролезки път - 5\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-3",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-prolezki-pat-4",
+        "VEIREG-vtets-prolezki-pat-5"
+      ],
+      "names": [
+        "ВтЕЦ \"Пролезки път - 4\"",
+        "ВтЕЦ \"Пролезки път - 5\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-4",
+        "https://www.veiregistar.bg/object/vtets-prolezki-pat-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-pst-1-podgorets",
+        "VEIREG-vtets-pst-2-podgorets"
+      ],
+      "names": [
+        "ВтЕЦ \"ПСТ 1 - Подгорец\"",
+        "ВтЕЦ \"ПСТ 2 - Подгорец\""
+      ],
+      "mw": [
+        1.5,
+        1.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.92,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-pst-1-podgorets",
+        "https://www.veiregistar.bg/object/vtets-pst-2-podgorets"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-rakovski",
+        "VEIREG-vtets-rakovski-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Раковски\"",
+        "ВтЕЦ \"Раковски 2\""
+      ],
+      "mw": [
+        1.7,
+        3.4
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.94,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-rakovski",
+        "https://www.veiregistar.bg/object/vtets-rakovski-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-seltse",
+        "VEIREG-vtets-seltse-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Селце\"",
+        "ВтЕЦ \"Селце - 2\""
+      ],
+      "mw": [
+        1.2,
+        1.3
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-seltse",
+        "https://www.veiregistar.bg/object/vtets-seltse-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-seltse-sever",
+        "VEIREG-vtets-seltse-sever-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Селце Север\"",
+        "ВтЕЦ \"Селце Север 2\""
+      ],
+      "mw": [
+        1.2,
+        2.55
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-seltse-sever",
+        "https://www.veiregistar.bg/object/vtets-seltse-sever-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-seltse-sever",
+        "VEIREG-vtets-seltse-sever-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Селце Север\"",
+        "ВтЕЦ \"Селце Север 3\""
+      ],
+      "mw": [
+        1.2,
+        4.25
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.95,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-seltse-sever",
+        "https://www.veiregistar.bg/object/vtets-seltse-sever-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-seltse-sever-2",
+        "VEIREG-vtets-seltse-sever-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Селце Север 2\"",
+        "ВтЕЦ \"Селце Север 3\""
+      ],
+      "mw": [
+        2.55,
+        4.25
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.91,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-seltse-sever-2",
+        "https://www.veiregistar.bg/object/vtets-seltse-sever-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-shabla-yug",
+        "WIND-SHABLA"
+      ],
+      "names": [
+        "ВтЕЦ \"Шабла - Юг\"",
+        "ВяЕЦ Шабла"
+      ],
+      "mw": [
+        4.0,
+        42.7
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.83,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-shabla-yug",
+        "https://www.mig-kavarna-shabla.bg/"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-suvorovo",
+        "WIND-SUVOROVO"
+      ],
+      "names": [
+        "ВтЕЦ \"Суворово\"",
+        "ВяЕЦ „Суворово“"
+      ],
+      "mw": [
+        60.0,
+        60
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 1.0,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-suvorovo",
+        "https://www.gem.wiki/Suvorovo_wind_farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-sveti-nikola-el-2",
+        "VEIREG-vtets-sveti-nikola-el1"
+      ],
+      "names": [
+        "ВтЕЦ \"Свети Никола\" (ел. 2)",
+        "ВтЕЦ \"Свети Никола\" (ел.1)"
+      ],
+      "mw": [
+        78.0,
+        78.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "separate_components",
+      "reason": "Различни групи/блокове на един парк; запазени като съставни записи.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-sveti-nikola-el-2",
+        "https://www.veiregistar.bg/object/vtets-sveti-nikola-el1"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-sveti-nikola-el-2",
+        "WIND-SAINT-NIKOLA"
+      ],
+      "names": [
+        "ВтЕЦ \"Свети Никола\" (ел. 2)",
+        "ВяЕЦ „Свети Никола“"
+      ],
+      "mw": [
+        78.0,
+        156
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-sveti-nikola-el-2",
+        "https://www.aesbulgaria.com/bg/saint-nikola-wind-farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-sveti-nikola-el1",
+        "WIND-SAINT-NIKOLA"
+      ],
+      "names": [
+        "ВтЕЦ \"Свети Никола\" (ел.1)",
+        "ВяЕЦ „Свети Никола“"
+      ],
+      "mw": [
+        78.0,
+        156
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.88,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-sveti-nikola-el1",
+        "https://www.aesbulgaria.com/bg/saint-nikola-wind-farm"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-velga-1",
+        "VEIREG-vtets-velga-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Велга 1\"",
+        "ВтЕЦ \"Велга 2\""
+      ],
+      "mw": [
+        1.35,
+        2.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.83,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-velga-1",
+        "https://www.veiregistar.bg/object/vtets-velga-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-vetrokom",
+        "WIND-VETROCOM"
+      ],
+      "names": [
+        "ВтЕЦ \"Ветроком\"",
+        "ВяЕЦ „Ветроком“"
+      ],
+      "mw": [
+        50.0,
+        72.5
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 1.0,
+      "decision": "component",
+      "reason": "Съставен запис на парка; показва се под родителския запис, без повторно сумиране.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-vetrokom",
+        "https://www.thewindpower.net/windfarm_en_7061_vetrocom.php"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-vg-10-vg-11",
+        "VEIREG-vtets-vg-12-vg-13"
+      ],
+      "names": [
+        "ВтЕЦ \"ВГ - 10, ВГ - 11\"",
+        "ВтЕЦ \"ВГ - 12, ВГ - 13\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-vg-10-vg-11",
+        "https://www.veiregistar.bg/object/vtets-vg-12-vg-13"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-vg-10-vg-11",
+        "VEIREG-vtets-vg-14-vg-15"
+      ],
+      "names": [
+        "ВтЕЦ \"ВГ - 10, ВГ - 11\"",
+        "ВтЕЦ \"ВГ - 14, ВГ - 15\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-vg-10-vg-11",
+        "https://www.veiregistar.bg/object/vtets-vg-14-vg-15"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-vg-12-vg-13",
+        "VEIREG-vtets-vg-14-vg-15"
+      ],
+      "names": [
+        "ВтЕЦ \"ВГ - 12, ВГ - 13\"",
+        "ВтЕЦ \"ВГ - 14, ВГ - 15\""
+      ],
+      "mw": [
+        4.0,
+        4.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.75,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-vg-12-vg-13",
+        "https://www.veiregistar.bg/object/vtets-vg-14-vg-15"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-vg-14-vg-15",
+        "VEIREG-vtets-vg-4-vg-5"
+      ],
+      "names": [
+        "ВтЕЦ \"ВГ - 14, ВГ - 15\"",
+        "ВтЕЦ \"ВГ - 4, ВГ - 5\""
+      ],
+      "mw": [
+        4.0,
+        24.02
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.86,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-vg-14-vg-15",
+        "https://www.veiregistar.bg/object/vtets-vg-4-vg-5"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-vranino-1",
+        "WIND-VRANINO"
+      ],
+      "names": [
+        "ВтЕЦ \"Вранино - 1\"",
+        "ВяЕЦ „Вранино“"
+      ],
+      "mw": [
+        1.3,
+        18
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.93,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-vranino-1",
+        "https://www.thewindpower.net/windfarm_en_20189_vranino.php"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-yunit-1",
+        "VEIREG-vtets-yunit-2"
+      ],
+      "names": [
+        "ВтЕЦ \"Юнит 1\"",
+        "ВтЕЦ \"Юнит 2\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-yunit-1",
+        "https://www.veiregistar.bg/object/vtets-yunit-2"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-yunit-1",
+        "VEIREG-vtets-yunit-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Юнит 1\"",
+        "ВтЕЦ \"Юнит 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-yunit-1",
+        "https://www.veiregistar.bg/object/vtets-yunit-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "VEIREG-vtets-yunit-2",
+        "VEIREG-vtets-yunit-3"
+      ],
+      "names": [
+        "ВтЕЦ \"Юнит 2\"",
+        "ВтЕЦ \"Юнит 3\""
+      ],
+      "mw": [
+        3.0,
+        3.0
+      ],
+      "distanceKm": "-",
+      "nameSimilarity": 0.8,
+      "decision": "not_confirmed_duplicate",
+      "reason": "Различни номера, мощности, местоположения или само сходно име/оператор. Не е доказан дубликат; записите не се сливат автоматично.",
+      "evidence": [
+        "https://www.veiregistar.bg/object/vtets-yunit-2",
+        "https://www.veiregistar.bg/object/vtets-yunit-3"
+      ]
+    },
+    {
+      "memberIds": [
+        "WIND-KALIAKRA",
+        "OSM-BG-R14073393"
+      ],
+      "names": [
+        "ВяЕЦ „Калиакра“",
+        "Kaliakra Wind Farm"
+      ],
+      "mw": [
+        35,
+        35.0
+      ],
+      "distanceKm": null,
+      "nameSimilarity": null,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.kwp.bg/kwp-plant/technical-information/",
+        "https://www.openstreetmap.org/relation/14073393"
+      ]
+    },
+    {
+      "memberIds": [
+        "WIND-KARAPELIT",
+        "OSM-BG-R14073413"
+      ],
+      "names": [
+        "ВяЕЦ „Карапелит“",
+        "Karapelit Wind Farm"
+      ],
+      "mw": [
+        12,
+        12.0
+      ],
+      "distanceKm": null,
+      "nameSimilarity": null,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.gem.wiki/Kardam_wind_farm",
+        "https://www.openstreetmap.org/relation/14073413"
+      ]
+    },
+    {
+      "memberIds": [
+        "WIND-KARDAM",
+        "OSM-BG-R14073473"
+      ],
+      "names": [
+        "ВяЕЦ „Кардам“",
+        "Kardam Wind Farm"
+      ],
+      "mw": [
+        12.6,
+        12.6
+      ],
+      "distanceKm": null,
+      "nameSimilarity": null,
+      "decision": "merged",
+      "reason": "Потвърден един обект; запазено местоположение и отделни мощности по източник.",
+      "evidence": [
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6",
+        "https://www.openstreetmap.org/relation/14073473"
+      ]
+    }
+  ]
+}

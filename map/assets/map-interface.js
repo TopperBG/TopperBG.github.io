@@ -28,7 +28,7 @@ window.setupBgwfInterface=function({root,map,setFilterPanelOpen,refreshFilterLay
   for(const [name,label,content] of [['layers','Слоеве',layerContent],['legend','Легенда',legendContent]]){
     const tab=document.createElement('button');tab.type='button';tab.id='bgwf-tab-'+name;tab.dataset.panelTab=name;tab.textContent=label;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',content.id);tab.setAttribute('aria-selected',String(name==='layers'));tab.tabIndex=name==='layers'?0:-1;
     content.setAttribute('role','tabpanel');content.setAttribute('aria-labelledby',tab.id);
-    tab.onclick=()=>{for(const other of tabs.children){const selected=other===tab;other.setAttribute('aria-selected',String(selected));other.tabIndex=selected?0:-1;}layerContent.hidden=name!=='layers';legendContent.hidden=name!=='legend';};
+    tab.onclick=()=>{for(const other of tabs.querySelectorAll('[role="tab"]')){const selected=other===tab;other.setAttribute('aria-selected',String(selected));other.tabIndex=selected?0:-1;}layerContent.hidden=name!=='layers';legendContent.hidden=name!=='legend';};
     tab.onkeydown=event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const other=event.key==='Home'?tabs.children[0]:event.key==='End'?tabs.children[1]:tabs.children[name==='layers'?1:0];other.click();other.focus();};
     tabs.append(tab);
   }
@@ -57,7 +57,7 @@ window.setupBgwfInterface=function({root,map,setFilterPanelOpen,refreshFilterLay
   layerContent.append(layerStrip,fireStrip);
   const stats=document.createElement('details');stats.className='bgwf-panel-stats';stats.open=true;stats.innerHTML='<summary>Площи и статистика</summary>';stats.append(q('.bgwf-status-row'),q('[data-natura-overlap]'),q('[data-territory-scale-bars]'));
   body.prepend(tabs,layerContent,legendContent);body.append(stats);
-  const version=q('.bgwf-filter-version'),footer=document.createElement('div');footer.className='bgwf-panel-footer';footer.append(version);body.append(footer);
+  const version=q('.bgwf-filter-version');version.setAttribute('aria-label','Версия на картата');tabs.append(version);
 
   // Info is a modal, so it never expands the map's layout or opens the layers.
   const dialog=document.createElement('dialog');dialog.className='bgwf-info-dialog';dialog.dataset.infoDialog='';dialog.setAttribute('aria-labelledby','bgwf-info-title');

@@ -142,8 +142,18 @@ def apply_freshness(rows, health):
 
 def merge(rows):
  path=ROOT/'map/data/bg-renewables-identities-v1.json'
- entities=json.loads(path.read_text()).get('entities',[]) if path.exists() else []
+ reviewed=json.loads(path.read_text()) if path.exists() else {}
+ entities=reviewed.get('entities',[])
  aliases={member:e['canonicalId'] for e in entities for member in e['memberIds']}
+ distinct={frozenset(pair['memberIds']) for pair in reviewed.get('distinctPairs',[])}
+ preferred_geometry={e['canonicalId']:e.get('geometryMemberId') for e in entities}
+ def geometry_rank(f):
+  if not f.get('geometry'):return 0
+  p=f['properties']
+  if f['geometry']['type'] in ('Polygon','MultiPolygon'):return 100 if p.get('geometryQuality')=='cadastral-parcels' else 80
+  if p.get('geometryQuality')=='parcel-location':return 50
+  if preferred_geometry.get(p['id'])==p.get('geometryRecordId') and p.get('geometryRecordId'):return 40
+  return 10
  def norm(value):return re.sub(r'[^\w]','',value.lower())
  def sources(p):return {str(u) for u in [p.get('source'),p.get('secondarySource'),p.get('geometrySource'),*(p.get('sources') or [])] if u}
  def keys(p):
@@ -159,12 +169,14 @@ def merge(rows):
   return set(found)
  result=[];by_key={};by_id={};retired_planning_ids=transitioned_ids()
  # Confirmed canonical entries retain their displayed name/capacity.
- for original in sorted(rows,key=lambda f:0 if aliases.get(f['properties']['id'])==f['properties']['id'] else 1):
+ prepared=apply_locations(json.loads(json.dumps(rows)))
+ for original in sorted(prepared,key=lambda f:0 if aliases.get(f['properties']['id'])==f['properties']['id'] else 1):
   if original['properties']['id'] in retired_planning_ids:continue
-  f=json.loads(json.dumps(original));p=f['properties'];raw_id=p['id'];ident=aliases.get(raw_id,raw_id);p['id']=ident;f['id']=ident
+  f=original;p=f['properties'];raw_id=p['id'];ident=aliases.get(raw_id,raw_id);p['id']=ident;f['id']=ident
   p.setdefault('statusSourceMode',p.get('sourceMode','unknown'))
   p.setdefault('capacitySourceMode',p.get('sourceMode','unknown'))
   if f.get('geometry'):
+   p.setdefault('geometryRecordId',raw_id)
    p.setdefault('geometrySourceMode','osm' if 'openstreetmap.org/' in str(p.get('geometrySource','')) else p.get('sourceMode','unknown'))
   p.pop('possibleDuplicateIds',None)
   p['sourceModes']=sorted(set(p.get('sourceModes',[])+[p.get('sourceMode','unknown')]))
@@ -180,10 +192,12 @@ def merge(rows):
    observations+=old.get('capacityObservations',[])+p.get('capacityObservations',[])
    unique={json.dumps(o,sort_keys=True):o for o in observations}
    if len({(o['mw'],o['capacityBasis']) for o in unique.values()})>1:old['capacityObservations']=list(unique.values())
-   if not result[match]['geometry'] and f.get('geometry'):
+   if f.get('geometry') and geometry_rank(f)>geometry_rank(result[match]):
     result[match]['geometry']=f['geometry']
+    for k in list(old):
+     if k.startswith(('geometry','location')):old.pop(k)
     old.update({k:v for k,v in p.items() if k.startswith(('geometry','location'))})
-    old.setdefault('geometrySource',p['source'])
+    old.setdefault('geometrySource',p.get('geometrySource',p['source']))
    for k in keys(p):by_key[k]=match
    for member in members:by_id[member]=match
    continue
@@ -196,8 +210,38 @@ def merge(rows):
  for f in result:groups.setdefault(norm(f['properties']['name']),[]).append(f)
  for group in groups.values():
   if len(group)>1:
-   for f in group:f['properties']['possibleDuplicateIds']=[other['id'] for other in group if other is not f]
+   for f in group:
+    possible=[other['id'] for other in group if other is not f and frozenset((f['id'],other['id'])) not in distinct]
+    if possible:f['properties']['possibleDuplicateIds']=possible
  return sorted(apply_locations(result),key=lambda f:f['id'])
+
+def apply_inventory_relationships(rows):
+ """Separate plant identity from constituent units; never sum a park with its units."""
+ config=json.loads((ROOT/'map/data/bg-renewables-identities-v1.json').read_text())
+ by_id={f['id']:f for f in rows}
+ for f in rows:
+  for key in ('componentOf','componentRecords','identityReviewNote','displayName','inventoryReviewStatus'):f['properties'].pop(key,None)
+ for pair in config.get('distinctPairs',[]):
+  for ident in pair['memberIds']:
+   if ident in by_id:by_id[ident]['properties']['identityReviewNote']=pair['note']
+ for ident,name in config.get('displayNames',{}).items():
+  if ident in by_id:by_id[ident]['properties']['displayName']=name
+ for item in config.get('pendingLocationReviews',[]):
+  target=by_id.get(item['id'])
+  if target is None:continue
+  target['properties']['identityReviewNote']=item['note']
+  if not target.get('geometry'):target['properties']['inventoryReviewStatus']='pending-location'
+ for group in config.get('componentGroups',[]):
+  parent=by_id.get(group['parentId'])
+  if parent is None or not parent.get('geometry'):continue
+  records=[]
+  for ident in group['memberIds']:
+   child=by_id.get(ident)
+   if child is None:continue
+   child['properties']['componentOf']=parent['id']
+   records.append({'id':ident,**{k:child['properties'][k] for k in ('name','mw','capacityBasis','source','sourceMode','sourceModes','statusSourceMode','capacitySourceMode','sourceFreshness','retrievedAt') if k in child['properties']}})
+  if records:parent['properties']['componentRecords']=records
+ return rows
 
 def validate_source_batch(mode,batch,previous):
  if not batch:raise ValueError('Empty source response')
@@ -258,7 +302,7 @@ def main():
  for mode,source in health.get('sources',{}).items():
   source.setdefault('lastAttemptAt',health.get('checkedAt'))
   source.setdefault('lastSuccessAt',last_success(mode,previous_health,previous['features']))
- rows=apply_freshness(rows,health)
+ rows=apply_inventory_relationships(apply_freshness(rows,health))
  for f in rows:
   p=f['properties'];assert math.isfinite(p['mw']) and p['mw']>1 and p['source'].startswith('https://')
   assert p['status'] in ('operating','construction','planned')

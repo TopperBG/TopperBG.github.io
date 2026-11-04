@@ -15,6 +15,32 @@ m=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
 
 class InventoryTest(unittest.TestCase):
+ def test_polygon_beats_point_and_null_in_both_orders(self):
+  point=m.feature({'id':'geom-point','name':'Plant','mw':10,'source':'https://example.org/plant','sourceMode':'osm'},{'type':'Point','coordinates':[25,42]})
+  polygon=m.feature({'id':'geom-polygon','name':'Plant','mw':10,'source':'https://example.org/plant','sourceMode':'curated','geometryQuality':'footprint'},{'type':'Polygon','coordinates':[[[25,42],[25.1,42],[25.1,42.1],[25,42]]]})
+  empty=m.feature({'id':'geom-null','name':'Plant','mw':10,'source':'https://example.org/plant'})
+  for rows in ([point,polygon,empty],[empty,polygon,point]):
+   result=m.merge(rows);self.assertEqual(len(result),1)
+   self.assertEqual(result[0]['geometry'],polygon['geometry'])
+   self.assertEqual(result[0]['properties']['geometrySourceMode'],'curated')
+ def test_reviewed_distinct_lovech_and_parent_components(self):
+  root=Path(__file__).parents[1]
+  rows=json.loads((root/'map/data/bg-renewables-cache-v1.geojson').read_text())['features']
+  merged=m.apply_inventory_relationships(m.merge(rows))
+  by_id={f['id']:f for f in merged}
+  for ident in ('SOL-2023-LOVECH','VEIREG-fets-lovech'):
+   self.assertIn(ident,by_id);self.assertNotIn('possibleDuplicateIds',by_id[ident]['properties'])
+  parent=by_id['WIND-SAINT-NIKOLA'];self.assertEqual(parent['properties']['mw'],156)
+  self.assertEqual(sum(p['mw'] for p in parent['properties']['componentRecords']),156)
+  self.assertTrue(parent['geometry'])
+  self.assertEqual(by_id['VEIREG-vtets-sveti-nikola-el1']['properties']['componentOf'],parent['id'])
+  without_parent=m.apply_inventory_relationships([f for f in rows if f['id']!=parent['id']])
+  self.assertNotIn('componentOf',next(f for f in without_parent if f['id']=='VEIREG-vtets-sveti-nikola-el1')['properties'])
+  candidate=json.loads(json.dumps(by_id['VEIREG-fets-kaolinovo']))
+  self.assertEqual(candidate['properties']['inventoryReviewStatus'],'pending-location')
+  candidate['geometry']={'type':'Point','coordinates':[27.1,43.6]}
+  restored=m.apply_inventory_relationships([candidate])[0]
+  self.assertNotIn('inventoryReviewStatus',restored['properties'])
  def test_hydro_registry_and_osm_do_not_reappear_as_separate_rows(self):
   root=Path(__file__).parents[1]
   identities=json.loads((root/'map/data/bg-renewables-identities-v1.json').read_text())['entities']

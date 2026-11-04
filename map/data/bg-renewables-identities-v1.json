@@ -462,6 +462,275 @@
         "https://www.veiregistar.bg/object/mvets-kunino",
         "https://www.openstreetmap.org/way/918500391"
       ]
+    },
+    {
+      "canonicalId": "SOL-2023-VERILA",
+      "memberIds": [
+        "SOL-2023-VERILA",
+        "OSM-BG-W1469777676"
+      ],
+      "note": "Same Verila plant near Kraynitsi; 100 MW AC versus rounded 123 MW DC (KEVR 123.271 MWp). Preserve AGKK parcel location; phase 2 remains separate.",
+      "evidence": [
+        "https://www.dker.bg/uploads/protokoli/zz/2022/prot_zz_319_22.pdf",
+        "https://www.openstreetmap.org/way/1469777676",
+        "https://electrohold.bg/bg/fec-verila/"
+      ]
+    },
+    {
+      "canonicalId": "SOL-2023-LOVECH",
+      "memberIds": [
+        "SOL-2023-LOVECH",
+        "OSM-BG-W1262781779"
+      ],
+      "note": "Same plant on parcels 43952.502.1102/1103; 86.2 MW AC, 106.213 MWp DC per KEVR; OSM rounds to 106.2. The 2011 FM SOL 4.4 MW plant is a different installation.",
+      "evidence": [
+        "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf",
+        "https://www.openstreetmap.org/way/1262781779"
+      ]
+    },
+    {
+      "canonicalId": "SOL-2025-ABACUS-PARK",
+      "memberIds": [
+        "SOL-2025-ABACUS-PARK",
+        "OSM-BG-W1463899692"
+      ],
+      "note": "Same Mlekarevo site at parcel 48725.38.875 (OSM point 17 m from AGKK point). Published capacity disagreement is retained without assuming the OSM basis.",
+      "evidence": [
+        "https://www.dker.bg/uploads/reshenia/2025/res-r-602-2025.pdf",
+        "https://www.openstreetmap.org/way/1463899692"
+      ]
+    },
+    {
+      "canonicalId": "WIND-KALIAKRA",
+      "memberIds": [
+        "WIND-KALIAKRA",
+        "OSM-BG-R14073393",
+        "VEIREG-vtets-kaliakra"
+      ],
+      "note": "Same Kaliakra Wind Power 35 MW park at Bulgarevo. Use mapped OSM plant location rather than rounded curated point.",
+      "evidence": [
+        "https://www.kwp.bg/kwp-plant/technical-information/",
+        "https://www.openstreetmap.org/relation/14073393",
+        "https://www.veiregistar.bg/object/vtets-kaliakra"
+      ],
+      "geometryMemberId": "OSM-BG-R14073393"
+    },
+    {
+      "canonicalId": "WIND-KARAPELIT",
+      "memberIds": [
+        "WIND-KARAPELIT",
+        "OSM-BG-R14073413"
+      ],
+      "note": "Same Karapelit 12 MW wind park. Use OSM plant location; preserve curated capacity.",
+      "evidence": [
+        "https://www.gem.wiki/Kardam_wind_farm",
+        "https://www.openstreetmap.org/relation/14073413",
+        "https://www.terna-energy.com/wp-content/uploads/2022/04/Group_Te_FY-2021-IR-Report-3.pdf"
+      ],
+      "geometryMemberId": "OSM-BG-R14073413"
+    },
+    {
+      "canonicalId": "WIND-KARDAM",
+      "memberIds": [
+        "WIND-KARDAM",
+        "OSM-BG-R14073473"
+      ],
+      "note": "Same Kardam 12.6 MW park; use mapped OSM location rather than rounded curated point.",
+      "evidence": [
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6",
+        "https://www.openstreetmap.org/relation/14073473"
+      ],
+      "geometryMemberId": "OSM-BG-R14073473"
+    },
+    {
+      "canonicalId": "WIND-KRUPEN",
+      "memberIds": [
+        "WIND-KRUPEN",
+        "OSM-BG-R14073507"
+      ],
+      "note": "Same Krupen 12 MW wind park; OSM plant location replaces rounded curated point.",
+      "evidence": [
+        "https://www.gem.wiki/Krupen_wind_farm",
+        "https://www.openstreetmap.org/relation/14073507"
+      ],
+      "geometryMemberId": "OSM-BG-R14073507"
+    },
+    {
+      "canonicalId": "WIND-MOGILISHTE-W",
+      "memberIds": [
+        "WIND-MOGILISHTE-W",
+        "VEIREG-vtets-mogilishte-zapad"
+      ],
+      "note": "Same Mogilishte-west 16 MW park and settlement; retain located curated record.",
+      "evidence": [
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6",
+        "https://www.veiregistar.bg/object/vtets-mogilishte-zapad"
+      ]
+    },
+    {
+      "canonicalId": "WIND-SUVOROVO",
+      "memberIds": [
+        "WIND-SUVOROVO",
+        "VEIREG-vtets-suvorovo"
+      ],
+      "note": "Same Suvorovo 60 MW park; retain located curated record.",
+      "evidence": [
+        "https://www.gem.wiki/Suvorovo_wind_farm",
+        "https://www.veiregistar.bg/object/vtets-suvorovo"
+      ]
+    },
+    {
+      "canonicalId": "WIND-VRANINO",
+      "memberIds": [
+        "WIND-VRANINO",
+        "VEIREG-vtets-18-vranino"
+      ],
+      "note": "Same Vranino 18 MW park, not the separate Vranino-1 1.3 MW entry.",
+      "evidence": [
+        "https://www.thewindpower.net/windfarm_en_20189_vranino.php",
+        "https://www.veiregistar.bg/object/vtets-18-vranino",
+        "https://www.terna-energy.com/wp-content/uploads/2022/04/Group_Te_FY-2021-IR-Report-3.pdf"
+      ]
+    }
+  ],
+  "distinctPairs": [
+    {
+      "memberIds": [
+        "SOL-2023-LOVECH",
+        "VEIREG-fets-lovech"
+      ],
+      "note": "Проверени различни обекти: ФМ СОЛ, 4.4 MW, 2011 г.; Фотоволтаична централа – Ловеч, 86.2 MW AC, 2023 г. Еднаквото име не означава дублиране.",
+      "evidence": [
+        "https://www.dker.bg/uploads/_CGCalendar/2023/dokl-lic-pv-lovech-26jun2023.pdf",
+        "https://www.veiregistar.bg/object/fets-lovech"
+      ]
+    }
+  ],
+  "displayNames": {
+    "SOL-2023-LOVECH": "ФЕЦ „Ловеч“ — 2023, 86.2 MW AC",
+    "VEIREG-fets-lovech": "ФЕЦ „Ловеч“ — ФМ СОЛ, 2011, 4.4 MW"
+  },
+  "componentGroups": [
+    {
+      "parentId": "WIND-SAINT-NIKOLA",
+      "memberIds": [
+        "VEIREG-vtets-sveti-nikola-el1",
+        "VEIREG-vtets-sveti-nikola-el-2"
+      ],
+      "note": "Two 78 MW electrical units within the 156 MW Saint Nikola park.",
+      "evidence": [
+        "https://www.aesbulgaria.com/bg/saint-nikola-wind-farm",
+        "https://www.veiregistar.bg/object/vtets-sveti-nikola-el1",
+        "https://www.veiregistar.bg/object/vtets-sveti-nikola-el-2"
+      ]
+    },
+    {
+      "parentId": "WIND-VETROCOM",
+      "memberIds": [
+        "VEIREG-vtets-vetrokom",
+        "VEIREG-vtets-kontakt-konsul"
+      ],
+      "note": "The 72.5 MW complex comprises Vetrocom 50 MW and Kontakt Konsul 22.5 MW; these are components, not alternative whole-plant capacities.",
+      "evidence": [
+        "https://www.thewindpower.net/windfarm_en_7061_vetrocom.php",
+        "https://www.veiregistar.bg/object/vtets-vetrokom",
+        "https://www.veiregistar.bg/object/vtets-kontakt-konsul"
+      ]
+    },
+    {
+      "parentId": "WIND-KARDAM",
+      "memberIds": [
+        "VEIREG-vtets-kardam-1",
+        "VEIREG-vtets-kardam-2",
+        "VEIREG-vtets-kardam-31",
+        "VEIREG-vtets-kardam-32"
+      ],
+      "note": "Registry groups 4.2 + 4.2 + 2.1 + 2.1 MW within the 12.6 MW park.",
+      "evidence": [
+        "https://www.veiregistar.bg/objects&type=wind-power-plants-with-power-over-1-mw&page=6",
+        "https://www.veiregistar.bg/object/vtets-kardam-1",
+        "https://www.veiregistar.bg/object/vtets-kardam-2",
+        "https://www.veiregistar.bg/object/vtets-kardam-31",
+        "https://www.veiregistar.bg/object/vtets-kardam-32"
+      ]
+    },
+    {
+      "parentId": "WIND-KARAPELIT",
+      "memberIds": [
+        "VEIREG-vtets-karapelit",
+        "VEIREG-vtets-karapelit-1",
+        "VEIREG-vtets-karapelit-2"
+      ],
+      "note": "Registry groups 4 + 4 + 4 MW within the 12 MW park.",
+      "evidence": [
+        "https://www.gem.wiki/Kardam_wind_farm",
+        "https://www.veiregistar.bg/object/vtets-karapelit",
+        "https://www.veiregistar.bg/object/vtets-karapelit-1",
+        "https://www.veiregistar.bg/object/vtets-karapelit-2"
+      ]
+    },
+    {
+      "parentId": "WIND-KRUPEN",
+      "memberIds": [
+        "VEIREG-vtets-krupen-2",
+        "VEIREG-vtets-krupen-3",
+        "VEIREG-vtets-krupen-4"
+      ],
+      "note": "Three recorded 3 MW groups in the 12 MW Krupen park; partial registry coverage, never infer the missing 3 MW record.",
+      "evidence": [
+        "https://www.gem.wiki/Krupen_wind_farm",
+        "https://www.veiregistar.bg/object/vtets-krupen-2",
+        "https://www.veiregistar.bg/object/vtets-krupen-3",
+        "https://www.veiregistar.bg/object/vtets-krupen-4"
+      ]
+    },
+    {
+      "parentId": "WIND-KAMEN-BRYAG",
+      "memberIds": [
+        "VEIREG-vtets-kamen-bryag-sever-1",
+        "VEIREG-vtets-kamen-bryag-sever-2",
+        "VEIREG-vtets-kamen-bryag-sever-3",
+        "VEIREG-vtets-kamen-bryag-sever-4",
+        "VEIREG-vtets-kamen-bryag-yug-1",
+        "VEIREG-vtets-kamen-bryag-yug-2",
+        "VEIREG-vtets-kamen-bryag-yug-3"
+      ],
+      "note": "Seven 3 MW North/South registry units within the 21 MW Kamen Bryag park.",
+      "evidence": [
+        "https://www.gem.wiki/Kamen_Bryag_%28Enel%29_wind_farm",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-2",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-3",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-sever-4",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-1",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-2",
+        "https://www.veiregistar.bg/object/vtets-kamen-bryag-yug-3"
+      ]
+    }
+  ],
+  "pendingLocationReviews": [
+    {
+      "id": "VEIREG-fets-kaolinovo",
+      "candidateIds": [
+        "SOL-2011-KAOLINOVO-KA620",
+        "SOL-2012-KAOLINOVO-KA9905"
+      ],
+      "note": "Исторически запис ЕМР КАОЛИНОВО, 4.913 MW, 2012 г. Няма потвърден ПИ/координати за връзка с КА620 или КА9905; не е слят по сходство на името."
+    },
+    {
+      "id": "VEIREG-fets-kaolinovo-1",
+      "candidateIds": [
+        "SOL-2011-KAOLINOVO-KA620",
+        "SOL-2012-KAOLINOVO-KA9905"
+      ],
+      "note": "Исторически запис АЛФА ЕНЕРДЖИ КА, 4.943 MW, 2012 г. Няма потвърден ПИ/координати за връзка с КА620 или КА9905; не е слят по сходство на името."
+    },
+    {
+      "id": "VEIREG-vtets-neykovo-2",
+      "candidateIds": [
+        "OSM-BG-R14073497"
+      ],
+      "note": "Нейково-2 и OSM Nejkovo са с 4 MW в едно землище, но няма проверена идентичност на турбините/имотите. Запазен за проверка извън основния списък."
     }
   ]
 }

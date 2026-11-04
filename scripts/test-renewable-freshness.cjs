@@ -11,7 +11,7 @@ class Element{
  replaceChildren(...xs){this.children=xs;}addEventListener(type,fn){this.events[type]=fn;}
 }
 async function listCase(health,fail=false){
- const elements=Object.fromEntries(['q','min-mw','max-mw','range-error','status','tech','count','rows','source-freshness'].map(id=>[id,new Element()]));
+ const elements=Object.fromEntries(['q','min-mw','max-mw','range-error','status','tech','count','rows','source-freshness','pending-review','pending-review-count','pending-review-rows'].map(id=>[id,new Element()]));
  const c=context({document:{getElementById:id=>elements[id],createElement:()=>new Element()},fetch:async url=>{
   if(url.includes('health')){if(fail)throw Error('offline');return {ok:true,json:async()=>health};}
   return {ok:true,json:async()=>({features:[{type:'Feature',properties:project,geometry:{type:'Point',coordinates:[25,42]}}]})};
