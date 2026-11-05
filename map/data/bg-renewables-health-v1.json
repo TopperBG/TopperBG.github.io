@@ -1,53 +1,53 @@
 {
-  "checkedAt": "2026-11-04T11:03:38.459629+00:00",
+  "checkedAt": "2026-11-05T11:04:39.846130+00:00",
   "sources": {
     "veiregistar:photovoltaic-power-plants-with-power-over-1-mw": {
       "status": "ok",
       "records": 230,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "veiregistar:wind-power-plants-with-power-over-1-mw": {
       "status": "ok",
       "records": 115,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "veiregistar:hydropower-plants-with-power-over-1-mw": {
       "status": "ok",
       "records": 72,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "veiregistar:micro-hydropower-plants-with-power-over-1-mw": {
       "status": "ok",
       "records": 36,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "veiregistar:pumped-accumulating-hydropower-plants-with-power-over-1-mw": {
       "status": "ok",
       "records": 2,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "veiregistar:biomass-power-plants-with-power-over-4-mw": {
       "status": "ok",
       "records": 3,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "veiregistar:renewable-gas-power-plants-sources-with-power-over-1-mw": {
       "status": "ok",
       "records": 13,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     },
     "osm": {
       "status": "ok",
       "records": 70,
-      "lastAttemptAt": "2026-11-04T11:03:38.459629+00:00",
-      "lastSuccessAt": "2026-11-04T11:03:38.459629+00:00"
+      "lastAttemptAt": "2026-11-05T11:04:39.846130+00:00",
+      "lastSuccessAt": "2026-11-05T11:04:39.846130+00:00"
     }
   },
   "excludedCapacityUnknown": [
@@ -178,5 +178,5 @@
     "planned": 31
   },
   "withoutGeometry": 425,
-  "reconciledAt": "2026-11-04T11:04:46.530222+00:00"
+  "reconciledAt": "2026-11-05T11:05:41.290428+00:00"
 }
