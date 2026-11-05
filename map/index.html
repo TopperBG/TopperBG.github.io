@@ -6,8 +6,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f5f7fa">
-<meta name="bgwf-build" content="v0.96.22">
-<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.96.22</title>
+<meta name="bgwf-build" content="v0.96.23">
+<title>ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове · v0.96.23</title>
 <link rel="canonical" href="https://topperbg.github.io/map/">
 <meta name="description" content="Интерактивен атлас на енергията, територията и природните рискове в България.">
 <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
 <script>
 /* Compact, versioned, self-contained map links. No server-side storage. */
 (() => {
-  const keys=['solar','wind','pup','red','natura','industry','foreign','epm','kkkr','s3'];
+  const keys=['solar','wind','pup','red','natura','industry','foreign','epm','kkkr','s3','protected'];
   const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
   const b64=b=>btoa(String.fromCharCode(...b)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
   const bytes=s=>Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-s.length%4)%4)),c=>c.charCodeAt(0));
@@ -1626,10 +1626,10 @@ svg {
 <link rel="icon" type="image/svg+xml" href="/energokarta-favicon.svg">
 <link rel="alternate icon" href="/energokarta-favicon.svg">
 <link rel="apple-touch-icon" href="/energokarta-favicon.svg">
-<link rel="stylesheet" href="./assets/map-interface.css?v=0.96.22">
+<link rel="stylesheet" href="./assets/map-interface.css?v=0.96.23">
 <script src="./assets/renewable-freshness.js"></script>
 <script src="./assets/map-notes.js?v=2"></script>
-<script src="./assets/map-interface.js?v=0.96.22"></script>
+<script src="./assets/map-interface.js?v=0.96.23"></script>
 </head>
 <body>
 <div id="bg-wildfires-map" class="is-filter-collapsed" aria-label="ЕнергоКарта България — интерактивен атлас на енергията, територията и природните рискове">
@@ -1640,7 +1640,7 @@ svg {
   </header>
 <div class="card bgwf-floating-controls" aria-label="Плаващи филтри на картата">
     <div class="bgwf-mobile-filter-head">
-      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.96.22</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
+      <button type="button" class="bgwf-mobile-filter-toggle" data-mobile-filter-toggle aria-expanded="false"><span class="bgwf-filter-toggle-copy"><strong>ЕнергоКарта България</strong><span class="bgwf-filter-version">v0.96.23</span><span class="bgwf-filter-summary" data-filter-summary aria-live="polite"></span><span class="bgwf-filter-action"><span data-filter-action>Скрий филтрите</span><span class="bgwf-filter-chevron" aria-hidden="true">▲</span></span></span></button>
       <button type="button" class="bgwf-info-button bgwf-compact-info-button" data-compact-info title="Методика и източници" aria-label="Отвори Методика и източници">Info</button>
     </div>
     <span class="bgwf-filter-coach" data-filter-coach hidden></span>
@@ -4555,7 +4555,7 @@ const debugStatus = root.querySelector('[data-debug-status]');
 const debugJson = root.querySelector('[data-debug-json]');
 if (debugPanel) debugPanel.hidden = !DEBUG_ENABLED;
 const debugState = {
-  version:'0.96.22', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
+  version:'0.96.23', engine:'OpenLayers 10.10.0 legacy', startedAt:new Date().toISOString(),
   events:[], errors:[], warnings:[], timings:{}, network:{}, renderCount:0,
   layerCounts:{}, selfTests:[], selfTestSummary:null, homeResolution:null, currentScale:null,
   environment:{
@@ -4600,7 +4600,7 @@ function snapshotDebug() {
 window.bgwfDebugReport = snapshotDebug;
 window.bgwfDebugDownload = function() {
   const blob=new Blob([JSON.stringify(snapshotDebug(),null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.96.22-debug-report.json';
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bgwf-v0.96.23-debug-report.json';
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 };
 root.querySelector('[data-debug-download]')?.addEventListener('click',()=>window.bgwfDebugDownload());
@@ -4910,7 +4910,7 @@ function selectedFireYearList(){return activeYears===null?[...years]:[...activeY
 let activeProvinceCode=null;
 let selectedFeature=null;
 let selectedFireId=null;
-const layerVisibility={solar:parseBoolParam('solar',true),wind:parseBoolParam('wind',false),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),natura:parseBoolParam('natura',false),industry:parseBoolParam('industry',false),foreign:parseBoolParam('foreign',false),epm:parseBoolParam('epm',false),kkkr:parseBoolParam('kkkr',false),live:false};
+const layerVisibility={solar:parseBoolParam('solar',true),wind:parseBoolParam('wind',false),projects:parseBoolParam('pup',true),future:parseBoolParam('red',false),natura:parseBoolParam('natura',false),protected:parseBoolParam('protected',false),industry:parseBoolParam('industry',false),foreign:parseBoolParam('foreign',false),epm:parseBoolParam('epm',false),kkkr:parseBoolParam('kkkr',false),live:false};
 let urlStateReady=false,urlSyncTimer=0,homeResolution=null;
 function currentScale(){const r=view?.getResolution();return homeResolution&&r?homeResolution/r:1;}
 function formatZoomFactor(scale){
@@ -4936,6 +4936,7 @@ function buildUrlParams(){
   p.set('pup',layerVisibility.projects?'1':'0');
   p.set('red',layerVisibility.future?'1':'0');
   p.set('natura',layerVisibility.natura?'1':'0');
+  p.set('protected',layerVisibility.protected?'1':'0');
   p.set('industry',layerVisibility.industry?'1':'0');
   p.set('foreign',layerVisibility.foreign?'1':'0');
   p.set('epm',layerVisibility.epm?'1':'0');
@@ -5136,6 +5137,7 @@ const foreignOsmSource=new VectorSource();
 const FOREIGN_RENEWABLE_CACHE_URL='./data/foreign-renewables-cache-v1.geojson';
 let foreignCacheLoadState='idle',foreignCacheLoadPromise=null;
 const redSource=new VectorSource();
+const protectedSource=new VectorSource();
 const naturaSource=new VectorSource();
 const naturaRenewablesOverlapSource=new VectorSource();
 const naturaIndustryOverlapSource=new VectorSource();
@@ -5272,7 +5274,7 @@ function refreshSatelliteOverlayStyles(){
   const referenceOpacity=overviewScale>=45?(satelliteMode()?.18:.10):overviewScale>=20?(satelliteMode()?.30:.18):overviewScale>=10?(satelliteMode()?.48:.34):(satelliteMode()?.82:.62);
   regionalReferenceLayer?.setOpacity?.(referenceOpacity);
   regionalMajorLabelLayer?.setVisible?.(overviewScale<12);
-  [regionalReferenceLayer,regionalMajorLabelLayer,placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
+  [regionalReferenceLayer,regionalMajorLabelLayer,placeLabelsLayer,provinceBackdropLayer,provinceLayer,densityLayer,protectedLayer,naturaLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,redLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,epmLayer,industryLayer,concessionLayer,concessionEstimateLayer,effisLayer,fireLayer,liveLayer]
     .forEach(layer=>layer?.changed?.());
   industrialAuxLayer?.changed?.();
 }
@@ -5287,6 +5289,10 @@ const redLayer=new VectorLayer({
       innerWidth:selected?2.7:1.7,selected,halo:'rgba(255,255,255,.96)',haloWidth:4.2
     });
   }
+});
+const protectedLayer=new VectorLayer({
+  source:protectedSource,zIndex:2.7,visible:layerVisibility.protected,
+  style:f=>new Style({fill:new Fill({color:f.get('selected')?'rgba(126,34,206,.25)':'rgba(126,34,206,.10)'}),stroke:new Stroke({color:satelliteMode()?'#d8b4fe':'#7e22ce',width:polygonOutlineWidth(f.get('selected')?2.5:1.3,f.get('selected'))})})
 });
 const naturaLayer=new VectorLayer({
   source:naturaSource,zIndex:2.5,visible:layerVisibility.natura,
@@ -5693,7 +5699,7 @@ map=new MapOL({
   target:mapTarget,
   view,
   interactions:mapInteractions,
-  layers:[regionalBaseLayer,satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,naturaLayer,redLayer,epmLayer,kkkrLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,regionalReferenceLayer,regionalMajorLabelLayer,provinceLayer]
+  layers:[regionalBaseLayer,satelliteLayer,provinceBackdropLayer,placeLabelsLayer,densityLayer,protectedLayer,naturaLayer,redLayer,epmLayer,kkkrLayer,projectLayer,solarLayer,windLayer,foreignLayer,foreignOsmLayer,industryLayer,concessionEstimateLayer,concessionLayer,effisLayer,fireLayer,naturaRenewablesOverlapLayer,naturaIndustryOverlapLayer,regionalReferenceLayer,regionalMajorLabelLayer,provinceLayer]
 });
 window.__BGWF_MAP_CONSTRUCTED__=true;
 
@@ -6039,7 +6045,7 @@ function liveFireLabel(d){const when=d.observedAt?formatDateTime.format(d.observ
 
 function showMapTooltip(pixel,text){if(!tooltip)return;tooltip.hidden=true;tooltip.textContent=text;tooltip.hidden=false;const wrap=root.querySelector('.bgwf-map-wrap');const rect=wrap.getBoundingClientRect();tooltip.style.left=`${Math.min(rect.width-tooltip.offsetWidth-6,Math.max(6,pixel[0]+12))}px`;tooltip.style.top=`${Math.min(rect.height-tooltip.offsetHeight-6,Math.max(6,pixel[1]-tooltip.offsetHeight-8))}px`;}
 function hideMapTooltip(){if(tooltip)tooltip.hidden=true;}
-function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='renewable-cache')return (d.project.geometryQuality==='cadastral-parcels'?`${d.project.name} · ${d.project.mw} MW по OSM · ${d.project.geometryRefs.length} официални кадастрални имота (АГКК); не е контур на панелите`:`${d.project.name} · ${d.project.mw} MW · ${d.project.statusLabel}`)+(renewableFreshnessNote(d.project)?' · '+renewableFreshnessNote(d.project):'');if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='osm-hull'?'обвивка по реални OSM турбини':d.areaBasis==='osm'?(d.osmScope==='partial'?'OSM частичен контур':'реален OSM контур'):d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='kkkr'){const d=f.get('data')||{},a=Number(d.attributes?.areavalue);return `КККР · ПИ ${d.parcelRef||f.get('parcelRef')}${Number.isFinite(a)?` · ${a.toLocaleString('bg-BG',{maximumFractionDigits:1})} m²`:''} · АГКК/INSPIRE`;}if(kind==='epm'){const kv=epmVoltageKv(f);return `ЕПМ · ${kv||'—'} kV${f.get('name')?` · ${f.get('name')}`:''} · ориентировъчно трасе; свободният капацитет се потвърждава от ЕСО`;}if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
+function featureLabel(f){const kind=f.get('kind');const d=f.get('data');if(kind==='renewable-cache')return (d.project.geometryQuality==='cadastral-parcels'?`${d.project.name} · ${d.project.mw} MW по OSM · ${d.project.geometryRefs.length} официални кадастрални имота (АГКК); не е контур на панелите`:`${d.project.name} · ${d.project.mw} MW · ${d.project.statusLabel}`)+(renewableFreshnessNote(d.project)?' · '+renewableFreshnessNote(d.project):'');if(kind==='fire')return labelFire(d);if(kind==='project')return projectLabel(d);if(kind==='solar')return solarLabel(d);if(kind==='wind')return windPlantLabel(d);if(kind==='foreign')return `${d.name} · ${d.country} · ${d.technology==='solar'?'соларен':'вятърен'} · ${Number(d.mw).toLocaleString('bg-BG')} MW · ${d.statusLabel} · ${Number(d.areaHa).toLocaleString('bg-BG',{maximumFractionDigits:0})} ha ${d.areaBasis==='osm-hull'?'обвивка по реални OSM турбини':d.areaBasis==='osm'?(d.osmScope==='partial'?'OSM частичен контур':'реален OSM контур'):d.areaBasis==='published'?'публикувана':'ориентировъчна'} площ`;if(kind==='kkkr'){const d=f.get('data')||{},a=Number(d.attributes?.areavalue);return `КККР · ПИ ${d.parcelRef||f.get('parcelRef')}${Number.isFinite(a)?` · ${a.toLocaleString('bg-BG',{maximumFractionDigits:1})} m²`:''} · АГКК/INSPIRE`;}if(kind==='epm'){const kv=epmVoltageKv(f);return `ЕПМ · ${kv||'—'} kV${f.get('name')?` · ${f.get('name')}`:''} · ориентировъчно трасе; свободният капацитет се потвърждава от ЕСО`;}if(kind==='red')return `RED III / REPowerEU · ${f.get('name')||'приоритетна зона'} · март 2026`;if(kind==='protected')return `Защитена територия · ${f.get('NameBg')} · ${f.get('categoryLabel')}`;if(kind==='natura')return `Натура 2000 · ${f.get('SiteNameBG')||'защитена зона'} · ${f.get('SiteCode')||'без код'} · ${f.get('naturaClass')==='spa'?'зона за птици (SPA)':'зона за местообитания'}`;if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap')return `${kind==='natura-renewables-overlap'?'Натура ∩ ВЕИ':'Натура ∩ ТЕЦ/мини'} · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)}`;if(kind==='concession-estimate'){return concessionEstimateLabel(f);}
 if(kind==='industry-aux'){return industryAuxLabel(f);}
 if(kind==='industry'){
   const meta=industrialConcessionMeta[d.id];
@@ -6053,7 +6059,7 @@ if(kind==='industry'){
   const geometryText=f.getGeometry()?.getType()==='Point'?'само местоположение':`разработена/индустриална площ ${formatAreaDka(f.get('areaDka'))}`;
   return `${industrialTypeLabel(d.type)} · ${d.name} · ${geometryText}${d.area?` · ${d.area}`:''}${official} · ${d.fuel}`;
 }if(kind==='concession')return `${f.get('sourceId')==='OFFICIAL-MAP-GEOREFERENCED'?'Концесионна граница · геореферирана по официална карта':'Официална концесионна граница'} · ${f.get('concessionId')||'—'} · ${f.get('name')||'Концесия'} · ${formatAreaDka(f.get('areaDka'))}`;if(kind==='live')return liveFireLabel(d);if(kind==='effis')return 'EFFIS/Copernicus реален опожарен периметър';return '';}
-const HIT_ORDER={'renewable-cache':80,'natura-renewables-overlap':110,'natura-industry-overlap':110,live:100,fire:90,effis:80,concession:70,foreign:68,industry:65,wind:60,solar:55,kkkr:52,project:50,epm:45,red:40,natura:35,province:1};
+const HIT_ORDER={'renewable-cache':80,'natura-renewables-overlap':110,'natura-industry-overlap':110,live:100,fire:90,effis:80,concession:70,foreign:68,industry:65,wind:60,solar:55,kkkr:52,project:50,epm:45,red:40,protected:36,natura:35,province:1};
 function topFeatureAtPixel(pixel){const found=[];map.forEachFeatureAtPixel(pixel,(f,l)=>{if(f&&l!==densityLayer)found.push(f);},{hitTolerance:5});found.sort((a,b)=>(HIT_ORDER[b.get('kind')]||0)-(HIT_ORDER[a.get('kind')]||0));return found[0]||null;}
 let notesController=null;
 let bgwfHoverFrame=0,bgwfHoverLastAt=0;
@@ -6091,6 +6097,11 @@ map.on('singleclick',async e=>{if(notesController?.handleClick(e)){hideMapToolti
   else if(kind==='kkkr'){const d=f.get('data')||{},a=Number(d.attributes?.areavalue),q=d.geometryQuality;detail.innerHTML=`<strong>КККР · ПИ ${d.parcelRef||f.get('parcelRef')}</strong>${Number.isFinite(a)?` · ${a.toLocaleString('bg-BG',{maximumFractionDigits:1})} m²`:''} · АГКК/INSPIRE · ${q==='exact'?'точна геометрия':q==='simplified'?'опростена официална геометрия':'официална площова геометрия'}.`;}
   else if(kind==='epm'){const kv=epmVoltageKv(f),osmId=f.get('osm_id');detail.innerHTML=`<strong>ЕПМ · ${kv||'—'} kV</strong>${f.get('name')?` · ${f.get('name')}`:''}${f.get('operator')?` · оператор ${f.get('operator')}`:''}${f.get('circuits')?` · ${f.get('circuits')} вериги`:''} · индикативно трасе по OpenStreetMap. <strong>Линията не доказва свободен присъединителен капацитет за ФЕЦ над 10 MWp.</strong> Необходими са проучване на конкретната подстанция и становище на ЕСО${osmId?` · ${safeLink(`https://www.openstreetmap.org/way/${osmId}`,'OSM ↗')}`:''}.`;}
   else if(kind==='red'){detail.textContent='RED III / REPowerEU · приоритетна зона · геометрия по официалната картографска визуализация към проекта на Плана от март 2026. Приоритетна зона не означава одобрен проект или засегнат имот.';}
+  else if(kind==='protected'){
+    const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const area=Number(f.get('DocumentArea'));
+    detail.innerHTML=`<strong>${escape(f.get('NameBg'))}</strong> · ${escape(f.get('categoryLabel'))}${Number.isFinite(area)?` · ${area.toLocaleString('bg-BG',{maximumFractionDigits:2})} ha`:''} · ${safeLink(f.get('registerUrl'),f.get('registerExact')?'Регистър на ИАОС ↗':'Търсене в регистъра на ИАОС ↗')} · ${safeLink('https://natura2000.egov.bg/','Източник: МОСВ ↗')}`;
+  }
   else if(kind==='natura'){const area=Number(f.get('SiteArea'));detail.innerHTML=`<strong>${f.get('SiteNameBG')||'Защитена зона'}</strong> · ${f.get('SiteCode')||'—'} · ${f.get('naturaClass')==='spa'?'защитена зона за птици (SPA)':'защитена зона за местообитания (pSCI/SCI/SAC)'}${Number.isFinite(area)?` · ${area.toLocaleString('bg-BG',{maximumFractionDigits:1})} ha`:''} · ${safeLink('https://natura2000.egov.bg/','официален източник МОСВ ↗')}`;}
   else if(kind==='natura-renewables-overlap'||kind==='natura-industry-overlap'){const zones=f.get('zoneLabels')||[];detail.innerHTML=`<strong>${kind==='natura-renewables-overlap'?'Пресичане Натура 2000 ∩ ВЕИ':'Пресичане Натура 2000 ∩ ТЕЦ/мини'}</strong> · ${f.get('assetName')} · ${formatOverlapArea(Number(f.get('areaSqKm'))||0)} · зони: ${zones.join(', ')}. <strong>Не е автоматично доказателство за нарушение:</strong> провери решението за преценка/оценка за съвместимост по чл. 31 ЗБР и приложимата ОВОС/ЕО на РИОСВ или МОСВ.`;}
   else if(kind==='industry'){const meta=industrialConcessionMeta[d.id];const geometryText=f.getGeometry()?.getType()==='Point'?'само надеждно местоположение; без заявен контур':`разработена площ ${formatAreaDka(f.get('areaDka'))}`;detail.innerHTML=`<strong>${d.name}</strong> · ${d.fuel} · ${geometryText}${d.area?` · ${d.area}`:''}${d.info?` · ${d.info}`:''}${Number.isFinite(meta?.officialAreaDka)?` · официална концесионна площ ${formatAreaDka(meta.officialAreaDka)}`:''} · ${safeLink(d.source,'източник ↗')}${meta?.nkrUrl?` · ${safeLink(meta.nkrUrl,`НКР ${meta.concessionId} ↗`)}`:''}`;}
@@ -6156,6 +6167,27 @@ function setYearFilter(year){
 // ---------- RED III ----------
 function loadRedZones(){redSource.clear();if(!priorityZonesGeoJSON?.features)return;const fs=readFeatures(priorityZonesGeoJSON);fs.forEach(f=>{f.set('kind','red');f.set('name',f.get('name')||'приоритетни зони');});redSource.addFeatures(fs);debugState.layerCounts.red=fs.length;}
 loadRedZones();
+
+// Protected territories: local MOEW snapshot, independently selectable from Natura 2000.
+let protectedLoadState='idle',protectedLoadPromise=null;
+async function ensureProtectedAreas(){
+  if(protectedLoadState==='ready')return protectedSource.getFeatures();
+  if(protectedLoadPromise)return protectedLoadPromise;
+  protectedLoadState='loading';setLayerLoadState('protected','loading','Зареждане на защитените територии…');updateLayerStatus();
+  protectedLoadPromise=(async()=>{
+    try{
+      const response=await fetch('./data/protected-areas-bg-v1.geojson',{cache:'no-cache'});
+      if(!response.ok)throw new Error(`HTTP ${response.status}`);
+      const data=await response.json();
+      if(data.type!=='FeatureCollection'||!data.features?.length||data.features.length!==data.metadata?.featureCount)throw new Error('Непълен слой');
+      const features=readFeatures(data);features.forEach(f=>f.set('kind','protected'));
+      protectedSource.clear();protectedSource.addFeatures(features);
+      protectedLoadState='ready';setLayerLoadState('protected','ready');debugState.layerCounts.protected=features.length;
+      return features;
+    }catch(e){protectedLoadState='error';setLayerLoadState('protected','error','Защитените територии не могат да се заредят');dbgWarn('protected-areas-load',{error:e.message});throw e;}
+    finally{protectedLoadPromise=null;updateLayerStatus();}
+  })();return protectedLoadPromise;
+}
 
 // ---------- Natura 2000 (official MOEW polygons; lazy local snapshot) ----------
 const NATURA_2000_INDEX_URL='./data/natura-2000-bg-v1.json';
@@ -7348,6 +7380,7 @@ function updateLayerStatus(){
   if(!DEBUG_ENABLED){
     const extras=[];
     if(layerVisibility.future)extras.push('RED III');
+    if(layerVisibility.protected)extras.push(`Защитени територии: ${protectedLoadState} / ${protectedSource.getFeatures().length}`);
     if(layerVisibility.natura)extras.push(naturaLoadState==='loading'?'Натура 2000 зареждане':naturaLoadState==='error'?'Натура 2000 грешка':`Натура 2000 ${naturaSource.getFeatures().length} полигона`);
     if(layerVisibility.industry){
       extras.push(`${industrialPolygonSites.length} ТЕЦ/мини · footprint ${formatAreaDka(totalIndustryFootprintDka())}`);if(concessionEstimateSource.getFeatures().length)extras.push(`${concessionEstimateSource.getFeatures().length} концесионни площи`);
@@ -7390,7 +7423,7 @@ function updateLayerStatus(){
   layerStatus.textContent=`OpenLayers · ${[scope,solarText,windText,projectText,...extras].filter(Boolean).join(' · ')}${cadastralLoadErrors?` · ${cadastralLoadErrors} ПИ без геометрия (${cadastralUnresolved.filter(x=>x.status==='not-found').length} липсват в INSPIRE / ${cadastralUnresolved.filter(x=>x.status==='error').length} API грешка)`:''}${(cadastralResolutionStats.simplified||cadastralResolutionStats.extent)?` · fallback: ${cadastralResolutionStats.simplified} опростени / ${cadastralResolutionStats.extent} extent`:''}`;
   updateDebugLayerCounts();
 }
-function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,foreign:foreignSource.getFeatures().length,foreignOsm:foreignOsmSource.getFeatures().length,red:redSource.getFeatures().length,natura:naturaSource.getFeatures().length,naturaRenewablesOverlap:naturaRenewablesOverlapSource.getFeatures().length,naturaIndustryOverlap:naturaIndustryOverlapSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
+function updateDebugLayerCounts(){debugState.layerCounts={...debugState.layerCounts,province:provinceSource.getFeatures().length,fires:fireSource.getFeatures().length,effis:effisSource.getFeatures().length,solar:solarSource.getFeatures().length,projects:projectSource.getFeatures().length,wind:windSource.getFeatures().length,foreign:foreignSource.getFeatures().length,foreignOsm:foreignOsmSource.getFeatures().length,red:redSource.getFeatures().length,protected:protectedSource.getFeatures().length,natura:naturaSource.getFeatures().length,naturaRenewablesOverlap:naturaRenewablesOverlapSource.getFeatures().length,naturaIndustryOverlap:naturaIndustryOverlapSource.getFeatures().length,industry:industryFootprintSource.getFeatures().length,concessions:concessionSource.getFeatures().length,concessionEstimates:concessionEstimateSource.getFeatures().length,live:liveSource.getFeatures().length};refreshDebugPanel();}
 function setControlHelp(el,text){
   if(!el||!text)return el;
   el.dataset.helpTooltip=text;
@@ -7529,12 +7562,13 @@ const configs=[
   ['projects','Проектни ВЕИ','#2563eb','Проектни ВЕИ — планирани или процедирани възобновяеми енергийни проекти по налични ПУП/ПИ и официални документи.'],
   ['future','RED III','#2f9e44','RED III — приоритетни зони по Директивата за възобновяема енергия. Приоритетна зона ≠ одобрен проект ≠ засегнат имот ≠ отчуждена земя.'],
   ['foreign','Foreign','#db2777','Foreign — установими действащи, в строеж и планирани соларни/вятърни ВЕИ с мощност ≥10 MW в съседните държави. Обектите над 50 MW са визуално подчертани; точен полигон не е задължителен.'],
+  ['protected','Защитени територии','#7e22ce','Паркове, резервати, защитени местности и природни забележителности. Данни: МОСВ; препратки към регистъра на ИАОС.'],
   ['natura','Натура 2000','#0f766e','Натура 2000 — официални защитени зони за птици и местообитания по данни на МОСВ.'],
   ['epm','HV','#e11d48','HV — High Voltage / високоволтова електропреносна мрежа. Показва индикативни OSM трасета 110/220/400 kV; свободният капацитет се потвърждава отделно.'],
   ['industry','ТЕЦ/мини','#4b5563',`ТЕЦ/мини — топлоелектрически централи, мини, кариери, хвостохранилища, разработени площи и налични концесионни граници. НСИ: нарушена територия ${NSI_DISTURBED_LAND_2025.dka.toLocaleString('bg-BG')} дка към ${NSI_DISTURBED_LAND_2025.asOf}.`]
 ];
 configs.forEach(([key,label,color,help])=>{
-  const parent=['foreign','natura','epm','industry'].includes(key)?layerRow2:layerRow1;
+  const parent=['foreign','natura','protected','epm','industry'].includes(key)?layerRow2:layerRow1;
   createButton(parent,{className:'bgwf-layer-toggle',text:label,layer:key,color,pressed:layerVisibility[key],help,onClick:async function(){
     layerVisibility[key]=!layerVisibility[key];this.setAttribute('aria-pressed',String(layerVisibility[key]));
     updateCompactFilterSummary();
@@ -7544,6 +7578,7 @@ configs.forEach(([key,label,color,help])=>{
     if(key==='future')redLayer.setVisible(layerVisibility.future);
     if(key==='epm'){epmLayer.setVisible(layerVisibility.epm);if(layerVisibility.epm&&(epmLoadState==='idle'||epmLoadState==='error'))await ensureEpmLines();}
     if(key==='foreign'){foreignLayer.setVisible(layerVisibility.foreign);foreignOsmLayer.setVisible(false);if(layerVisibility.foreign&&(foreignCacheLoadState==='idle'||foreignCacheLoadState==='error'))try{await ensureForeignRenewableCache();}catch{}}
+    if(key==='protected'){protectedLayer.setVisible(layerVisibility.protected);if(layerVisibility.protected)try{await ensureProtectedAreas();}catch{}}
     if(key==='natura'){naturaLayer.setVisible(layerVisibility.natura);if(layerVisibility.natura&&(naturaLoadState==='idle'||naturaLoadState==='error'))try{await ensureNatura2000();}catch{}}
     if(key==='industry'){
       industryLayer.setVisible(layerVisibility.industry);if(industrialAuxLayer)industrialAuxLayer.setVisible(layerVisibility.industry);
@@ -7607,6 +7642,7 @@ function featureSearchMeta(feature){
     const title=feature.get('name')||'Приоритетна зона';
     return {title,category:'RED III / REPowerEU',searchable:title,groupKey:`red|${title}`};
   }
+  if(kind==='protected'){const title=feature.get('NameBg')||'Защитена територия';return {title,category:feature.get('categoryLabel'),searchable:`${title} ${feature.get('categoryLabel')}`,groupKey:`protected|${feature.getId()}`};}
   if(kind==='natura'){
     const title=feature.get('SiteNameBG')||'Защитена зона';
     return {title,category:`Натура 2000 · ${feature.get('SiteCode')||''}`,searchable:`${title} ${feature.get('SiteCode')||''}`,groupKey:`natura|${feature.get('SiteCode')||title}`};
@@ -7618,7 +7654,7 @@ function featureSearchMeta(feature){
   return null;
 }
 function searchableFeatures(){
-  const sources=[placeLabelsSource,renewableCacheSource,solarSource,projectSource,windSource,foreignOsmSource,foreignSource,redSource,naturaSource,industryFootprintSource,concessionSource,concessionEstimateSource];
+  const sources=[placeLabelsSource,renewableCacheSource,solarSource,projectSource,windSource,foreignOsmSource,foreignSource,redSource,naturaSource,protectedSource,industryFootprintSource,concessionSource,concessionEstimateSource];
   if(industrialAuxSource)sources.push(industrialAuxSource);
   return [...sources.flatMap(source=>source.getFeatures()),...fireFeaturesById.values()];
 }
@@ -7658,7 +7694,7 @@ function renderSearchResults(){
 }
 function setSearchLayerVisible(kind){
   if(kind==='renewable-cache'){for(const k of ['solar','wind','project'])setSearchLayerVisible(k);renewableCacheLayer.changed();return;}
-  const config=kind==='solar'?['solar',solarLayer]:kind==='wind'?['wind',windLayer]:kind==='foreign'?['foreign',foreignLayer]:kind==='project'?['projects',projectLayer]:kind==='red'?['future',redLayer]:kind==='natura'?['natura',naturaLayer]:(kind==='industry'||kind==='industry-aux'||kind==='concession'||kind==='concession-estimate')?['industry',industryLayer]:null;
+  const config=kind==='solar'?['solar',solarLayer]:kind==='wind'?['wind',windLayer]:kind==='foreign'?['foreign',foreignLayer]:kind==='project'?['projects',projectLayer]:kind==='red'?['future',redLayer]:kind==='natura'?['natura',naturaLayer]:kind==='protected'?['protected',protectedLayer]:(kind==='industry'||kind==='industry-aux'||kind==='concession'||kind==='concession-estimate')?['industry',industryLayer]:null;
   if(!config)return;
   const [key,layer]=config;layerVisibility[key]=true;layer?.setVisible(true);
   root.querySelector(`.bgwf-layer-toggle[data-layer="${key}"]`)?.setAttribute('aria-pressed','true');
@@ -7967,6 +8003,7 @@ async function loadRenewableCache(){
 // Load status wiring: cached and online completion follow the same path.
 loadProjectParcels=trackMapLoader('cadastre',['solar','projects'],loadProjectParcels,()=>cadastralLoadErrors?'warning':'ready');
 loadRenewableCache=trackMapLoader('renewable-cache',['solar','wind','projects'],loadRenewableCache,()=>window.bgwfRenewableInventory&&renewableSourceHealth&&!window.bgwfRenewableFreshness.warnings(renewableSourceHealth).length?'ready':'warning');
+ensureProtectedAreas=trackMapLoader('protected',['protected'],ensureProtectedAreas,()=>protectedLoadState);
 ensureNatura2000=trackMapLoader('natura',['natura'],ensureNatura2000,()=>naturaLoadState);
 ensureEpmLines=trackMapLoader('epm',['epm'],ensureEpmLines,()=>epmLoadState);
 ensureForeignRenewableCache=trackMapLoader('foreign-cache',['foreign'],ensureForeignRenewableCache,()=>foreignCacheLoadState);
@@ -8013,6 +8050,7 @@ compactYearFilterButtons();
 void loadSourceHealth();
 updateFiresAndDensity();updateLayerStatus();updateFloatingUiPosition();void showGoatCounter();
 if(layerVisibility.industry)Promise.allSettled([ensureIndustrialPolygons(),ensureOfficialConcessionPolygons(),loadStaticIndustrialFootprints()]);
+if(layerVisibility.protected)void ensureProtectedAreas().catch(()=>{});
 if(layerVisibility.natura)void ensureNatura2000().catch(()=>{});
 void ensureForeignRenewableCache().catch(()=>{});
 if(layerVisibility.epm)void ensureEpmLines();
