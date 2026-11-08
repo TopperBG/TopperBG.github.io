@@ -1,6 +1,6 @@
 {
   "schema": "bgwf-gis-source-health-v1",
-  "checkedAt": "2026-11-01T11:20:33Z",
+  "checkedAt": "2026-11-08T11:20:49Z",
   "concessions": {
     "activeRegistrySource": "NKR",
     "cacheFeatureCount": 11,
@@ -16,7 +16,7 @@
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-11-01T11:20:07Z",
+        "checkedAt": "2026-11-08T11:20:19Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -24,18 +24,18 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-11-01T11:20:18Z",
+        "checkedAt": "2026-11-08T11:20:32Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
-        "digest": "41ba73918341684de1c1313153713a50afd0c87cc4016d449ac7f40c455c77ee",
+        "digest": "0daa52229cce656999a8702a8c1ae99faee10817ca44b7e100fc032bec25b39a",
         "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
         "id": "MGU-PERNIK-CONCESSIONS",
         "role": "geometry-cross-check",
         "ok": true,
-        "checkedAt": "2026-11-01T11:20:31Z",
+        "checkedAt": "2026-11-08T11:20:45Z",
         "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0",
         "records": 19,
         "digest": "1979d07629e47ad96b7f8308da75e9b78b39cf47bd579338fee14fc7f8fffd3f"
@@ -44,19 +44,19 @@
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-11-01T11:20:32Z",
+        "checkedAt": "2026-11-08T11:20:47Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
-        "bytes": 45982,
-        "digest": "90704f444e76ad467731e01207fd4d40100bd264fbbc2dc056700e4c3c611d09"
+        "bytes": 45997,
+        "digest": "89f3501afb303f05a3097afdf16be858a34975436e3e759f21c4c5f81f645f44"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-11-01T11:20:33Z",
+        "checkedAt": "2026-11-08T11:20:48Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-        "bytes": 51566,
-        "digest": "765e814b69f2f67676cd9efc7f3ad1bbd95eb9dcc3fb5de3f82f0e3b6770e4ac"
+        "bytes": 51581,
+        "digest": "6ef7323d1ac8059ce1a767c55fcac6b4d18cb93a895bf06190105567b50bfa94"
       }
     ]
   },

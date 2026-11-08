@@ -1,11 +1,11 @@
 {
   "schema": "bgwf-nkr-attachment-index-v1",
-  "generatedAt": "2026-11-01T11:20:05Z",
+  "generatedAt": "2026-11-08T11:20:17Z",
   "runtimeDependency": false,
   "knownLinkCount": 455,
-  "archivedOkCount": 363,
-  "downloadedThisRun": 16,
-  "downloadedBytesThisRun": 64956023,
+  "archivedOkCount": 383,
+  "downloadedThisRun": 20,
+  "downloadedBytesThisRun": 69737028,
   "errors": [],
   "files": {
     "7cff2f84-1391-4609-8f60-cc5309647fa9": {
@@ -10092,7 +10092,7 @@
       "priority": 4,
       "status": "skipped-too-large",
       "bytes": 19533443,
-      "checkedAt": "2026-11-01T11:19:19Z"
+      "checkedAt": "2026-11-08T11:19:31Z"
     },
     "93e39dc4-0dbc-4485-bf0f-e0b163a3eb35": {
       "fileId": "93e39dc4-0dbc-4485-bf0f-e0b163a3eb35",
@@ -16556,6 +16556,707 @@
       "textPath": "source-archive/concessions/nkr-attachments-text/f3d4e246d5afc837568e29c0e439c91a11159a1857c15fe42b43152a646668de.txt",
       "extractor": "pypdf",
       "textChars": 126,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "81aaf2e0-83aa-45f7-a343-904cf8142793": {
+      "fileId": "81aaf2e0-83aa-45f7-a343-904cf8142793",
+      "url": "https://nkr.government.bg/File/Download/81aaf2e0-83aa-45f7-a343-904cf8142793",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземни богатства – неметални полезни изкопаеми – индустриални минерали – клиноптилолитови зеолити, от находище „Хриси“, разположено в землището на село Мост, община Кърджали, област Кърджали",
+      "publishedAt": "30.03.2026 г.",
+      "partyGuids": [
+        "36237792-deef-4da5-82c3-9e2bb6d32276"
+      ],
+      "inventoryIds": [
+        "216-419"
+      ],
+      "concessionIds": [
+        "216-419"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:31Z",
+      "filename": "Dogovor HRISI.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2754589,
+      "sha256": "ff5513af3a69f6203a04700cb6d90f408d62a36524dbf7ffc3355913f5ffe535",
+      "archivePath": "source-archive/concessions/nkr-attachments/ff5513af3a69f6203a04700cb6d90f408d62a36524dbf7ffc3355913f5ffe535.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ff5513af3a69f6203a04700cb6d90f408d62a36524dbf7ffc3355913f5ffe535.txt",
+      "extractor": "pypdf",
+      "textChars": 117,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "89ef7e75-8bed-4a53-8f12-522b1b3ca295": {
+      "fileId": "89ef7e75-8bed-4a53-8f12-522b1b3ca295",
+      "url": "https://nkr.government.bg/File/Download/89ef7e75-8bed-4a53-8f12-522b1b3ca295",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от ЗПБ – неметални полезни изкопаеми – индустриални минерали – каолин-кварцова суровина, от находище „Голямата нива“, разположено в землищата на с. Изгрев, община Венец, с. Климент и с. Наум, община Каолиново, област Шумен",
+      "publishedAt": "23.04.2026 г.",
+      "partyGuids": [
+        "762a2a5d-6fb5-4d9a-92d8-2999a5f29f3a"
+      ],
+      "inventoryIds": [
+        "216-422"
+      ],
+      "concessionIds": [
+        "216-422"
+      ],
+      "priority": 3,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:33Z",
+      "filename": "DOGOVOR.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 4681083,
+      "sha256": "e6a21f6554898f1816fcf39930dc8ddae9c984ab2afd8409016a47d289927b9e",
+      "archivePath": "source-archive/concessions/nkr-attachments/e6a21f6554898f1816fcf39930dc8ddae9c984ab2afd8409016a47d289927b9e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e6a21f6554898f1816fcf39930dc8ddae9c984ab2afd8409016a47d289927b9e.txt",
+      "extractor": "pypdf",
+      "textChars": 195,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e1267506-a763-428f-b0fc-c2ce2a690afc": {
+      "fileId": "e1267506-a763-428f-b0fc-c2ce2a690afc",
+      "url": "https://nkr.government.bg/File/Download/e1267506-a763-428f-b0fc-c2ce2a690afc",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за подземни природни богатства - каолинова суровина и кварцови пясъци в каолиновата суровина чрез добив от находище \"Вятово\", - участъци - ІV, V и VІІ - Русенска област",
+      "publishedAt": "26.10.2021 г.",
+      "partyGuids": [
+        "679f5bf8-d825-4c83-9b16-3a639a1b39e5"
+      ],
+      "inventoryIds": [
+        "D-000084"
+      ],
+      "concessionIds": [
+        "D-000084"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:34Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%92%D1%8F%D1%82%D0%BE%D0%B2%D0%BE_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1717270,
+      "sha256": "6fc6084aed31291074a0aa1736f11df7e724a2160e5a26d25a9457816b2d31e3",
+      "archivePath": "source-archive/concessions/nkr-attachments/6fc6084aed31291074a0aa1736f11df7e724a2160e5a26d25a9457816b2d31e3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6fc6084aed31291074a0aa1736f11df7e724a2160e5a26d25a9457816b2d31e3.txt",
+      "extractor": "pypdf",
+      "textChars": 10047,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "4c804d1e-c9a3-4ca3-8997-f86e1fb6ad40": {
+      "fileId": "4c804d1e-c9a3-4ca3-8997-f86e1fb6ad40",
+      "url": "https://nkr.government.bg/File/Download/4c804d1e-c9a3-4ca3-8997-f86e1fb6ad40",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за подземни богатства - метални полезни изкопаеми - оловно-цинкови руди във връзка с техния добив от находище \"Петровица\", област Смолян",
+      "publishedAt": "26.10.2021 г.",
+      "partyGuids": [
+        "7b69804c-6c25-4a94-997d-cc1ea0d5a0a3"
+      ],
+      "inventoryIds": [
+        "D-000141"
+      ],
+      "concessionIds": [
+        "D-000141"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:35Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%86%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2754654,
+      "sha256": "449c15edb79018acd6664676301bd6ab6b8b2af1601e32a209892d734168a93c",
+      "archivePath": "source-archive/concessions/nkr-attachments/449c15edb79018acd6664676301bd6ab6b8b2af1601e32a209892d734168a93c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/449c15edb79018acd6664676301bd6ab6b8b2af1601e32a209892d734168a93c.txt",
+      "extractor": "pypdf",
+      "textChars": 3360,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "fe3248b3-240d-4bc2-9d88-9c3ebfcd4671": {
+      "fileId": "fe3248b3-240d-4bc2-9d88-9c3ebfcd4671",
+      "url": "https://nkr.government.bg/File/Download/fe3248b3-240d-4bc2-9d88-9c3ebfcd4671",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства - строителни материали - пясъци и чакъли, от находище \"Долно Черковище\", област Хасково",
+      "publishedAt": "27.10.2021 г.",
+      "partyGuids": [
+        "f40b95ce-f719-4b5f-9eac-664f016bf551"
+      ],
+      "inventoryIds": [
+        "D-000151"
+      ],
+      "concessionIds": [
+        "D-000151"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:37Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A7%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D0%B8%D1%89%D0%B5_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 3797196,
+      "sha256": "e0736eea84ddb775f4ee5ec7dc783a9791838e502200c1eb6a9e6d6a4ba1b30e",
+      "archivePath": "source-archive/concessions/nkr-attachments/e0736eea84ddb775f4ee5ec7dc783a9791838e502200c1eb6a9e6d6a4ba1b30e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e0736eea84ddb775f4ee5ec7dc783a9791838e502200c1eb6a9e6d6a4ba1b30e.txt",
+      "extractor": "pypdf",
+      "textChars": 13019,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "641e9253-380b-4e9d-a9ac-8b3e041796b5": {
+      "fileId": "641e9253-380b-4e9d-a9ac-8b3e041796b5",
+      "url": "https://nkr.government.bg/File/Download/641e9253-380b-4e9d-a9ac-8b3e041796b5",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства - строителни материали - латитоандезити, от находище \"Чуките\", област Хасково",
+      "publishedAt": "27.10.2021 г.",
+      "partyGuids": [
+        "3581d0d0-21e4-4eef-88e2-a6ed29adc956"
+      ],
+      "inventoryIds": [
+        "D-000152"
+      ],
+      "concessionIds": [
+        "D-000152"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:39Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A7%D1%83%D0%BA%D0%B8%D1%82%D0%B5_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 3898738,
+      "sha256": "07eaff5d34b5d5b2b5292b9d92fa0d8dc8556257779e3c264499d56008698dd7",
+      "archivePath": "source-archive/concessions/nkr-attachments/07eaff5d34b5d5b2b5292b9d92fa0d8dc8556257779e3c264499d56008698dd7.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/07eaff5d34b5d5b2b5292b9d92fa0d8dc8556257779e3c264499d56008698dd7.txt",
+      "extractor": "pypdf",
+      "textChars": 14318,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "2f4da905-22ab-4806-b1c7-69f71124af72": {
+      "fileId": "2f4da905-22ab-4806-b1c7-69f71124af72",
+      "url": "https://nkr.government.bg/File/Download/2f4da905-22ab-4806-b1c7-69f71124af72",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за подземни богатства - неметални полезни изкопаеми - индустриални минерали - огнеупорни глини, във връзка с техния добив от находище \"Чучура\", Плевенска област",
+      "publishedAt": "28.10.2021 г.",
+      "partyGuids": [
+        "6de743e1-5faa-4502-a14e-8360da9875d8"
+      ],
+      "inventoryIds": [
+        "D-000173"
+      ],
+      "concessionIds": [
+        "D-000173"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:40Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A7%D1%83%D1%87%D1%83%D1%80%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2534633,
+      "sha256": "a6742d2fadae0607ae8b19ba8bc184a5332f6fafd75c71ac3042f7a02175bde3",
+      "archivePath": "source-archive/concessions/nkr-attachments/a6742d2fadae0607ae8b19ba8bc184a5332f6fafd75c71ac3042f7a02175bde3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/a6742d2fadae0607ae8b19ba8bc184a5332f6fafd75c71ac3042f7a02175bde3.txt",
+      "extractor": "pypdf",
+      "textChars": 7879,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "76ece78b-4aa1-4a94-af1a-a1815421c7fe": {
+      "fileId": "76ece78b-4aa1-4a94-af1a-a1815421c7fe",
+      "url": "https://nkr.government.bg/File/Download/76ece78b-4aa1-4a94-af1a-a1815421c7fe",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2021 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "cb5a0a78-e337-4365-8095-e0cc01d76285"
+      ],
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:41Z",
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2021.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 74860,
+      "sha256": "97c5d8eff78dc3548a54cfd9a6261aecb51fa0d8856dd23571c87c02ba8294f6",
+      "archivePath": "source-archive/concessions/nkr-attachments/97c5d8eff78dc3548a54cfd9a6261aecb51fa0d8856dd23571c87c02ba8294f6.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/97c5d8eff78dc3548a54cfd9a6261aecb51fa0d8856dd23571c87c02ba8294f6.txt",
+      "extractor": "python-docx",
+      "textChars": 25778,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "815237e4-fa5c-4b93-8f31-8cdd06efe5c6": {
+      "fileId": "815237e4-fa5c-4b93-8f31-8cdd06efe5c6",
+      "url": "https://nkr.government.bg/File/Download/815237e4-fa5c-4b93-8f31-8cdd06efe5c6",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2020 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "cb5a0a78-e337-4365-8095-e0cc01d76285"
+      ],
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:43Z",
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2020.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 75347,
+      "sha256": "01697a7595a12bc01aa77141e2b13bb6ef993df42ee6cdee53a49e5c0d7816ec",
+      "archivePath": "source-archive/concessions/nkr-attachments/01697a7595a12bc01aa77141e2b13bb6ef993df42ee6cdee53a49e5c0d7816ec.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/01697a7595a12bc01aa77141e2b13bb6ef993df42ee6cdee53a49e5c0d7816ec.txt",
+      "extractor": "python-docx",
+      "textChars": 25778,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "bd7cab36-330c-408a-a228-75d94f085dea": {
+      "fileId": "bd7cab36-330c-408a-a228-75d94f085dea",
+      "url": "https://nkr.government.bg/File/Download/bd7cab36-330c-408a-a228-75d94f085dea",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2019 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "cb5a0a78-e337-4365-8095-e0cc01d76285"
+      ],
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:44Z",
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2019.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 74376,
+      "sha256": "314ce9177e58cab66b3bf66b930dd43a5f5490272b10aab038f696883b9771af",
+      "archivePath": "source-archive/concessions/nkr-attachments/314ce9177e58cab66b3bf66b930dd43a5f5490272b10aab038f696883b9771af.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/314ce9177e58cab66b3bf66b930dd43a5f5490272b10aab038f696883b9771af.txt",
+      "extractor": "python-docx",
+      "textChars": 25778,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c6978fb7-4a9f-4eaa-a725-2ef565c221c0": {
+      "fileId": "c6978fb7-4a9f-4eaa-a725-2ef565c221c0",
+      "url": "https://nkr.government.bg/File/Download/c6978fb7-4a9f-4eaa-a725-2ef565c221c0",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2018 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "cb5a0a78-e337-4365-8095-e0cc01d76285"
+      ],
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:45Z",
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2018.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 74339,
+      "sha256": "40075fff157d5e0820656a33a488bd5d70f2a4254f5917161d43d3020bd0769a",
+      "archivePath": "source-archive/concessions/nkr-attachments/40075fff157d5e0820656a33a488bd5d70f2a4254f5917161d43d3020bd0769a.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/40075fff157d5e0820656a33a488bd5d70f2a4254f5917161d43d3020bd0769a.txt",
+      "extractor": "python-docx",
+      "textChars": 25775,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "2fdf02d7-04a2-468d-8b83-d0ea699b8218": {
+      "fileId": "2fdf02d7-04a2-468d-8b83-d0ea699b8218",
+      "url": "https://nkr.government.bg/File/Download/2fdf02d7-04a2-468d-8b83-d0ea699b8218",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства - строителни материали - пясъци и чакъли, от находище \"Негован\", област София",
+      "publishedAt": "29.10.2021 г.",
+      "partyGuids": [
+        "91a68132-5474-469e-add0-beb68b74adb2"
+      ],
+      "inventoryIds": [
+        "D-000192"
+      ],
+      "concessionIds": [
+        "D-000192"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:46Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9D%D0%B5%D0%B3%D0%BE%D0%B2%D0%B0%D0%BD_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2671554,
+      "sha256": "46eda7da56b4046e91e98428f60d4cd6abfcf565c6508d253c1a28803f7d3c22",
+      "archivePath": "source-archive/concessions/nkr-attachments/46eda7da56b4046e91e98428f60d4cd6abfcf565c6508d253c1a28803f7d3c22.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/46eda7da56b4046e91e98428f60d4cd6abfcf565c6508d253c1a28803f7d3c22.txt",
+      "extractor": "pypdf",
+      "textChars": 15678,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e49b25ff-708e-4cf0-b213-278a7aa80c99": {
+      "fileId": "e49b25ff-708e-4cf0-b213-278a7aa80c99",
+      "url": "https://nkr.government.bg/File/Download/e49b25ff-708e-4cf0-b213-278a7aa80c99",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства - строителни материали - глинести мергели, от находище \"Черешата\", област Враца",
+      "publishedAt": "11.11.2021 г.",
+      "partyGuids": [
+        "53111b8d-fd13-4f4b-b8f9-d018d7f0f360"
+      ],
+      "inventoryIds": [
+        "D-000216"
+      ],
+      "concessionIds": [
+        "D-000216"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:48Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A7%D0%B5%D1%80%D0%B5%D1%88%D0%B0%D1%82%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2845482,
+      "sha256": "6d74d40f26f7fd006236a71ce1f556d50ce43d0c2c1ac453ab15916522904dff",
+      "archivePath": "source-archive/concessions/nkr-attachments/6d74d40f26f7fd006236a71ce1f556d50ce43d0c2c1ac453ab15916522904dff.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6d74d40f26f7fd006236a71ce1f556d50ce43d0c2c1ac453ab15916522904dff.txt",
+      "extractor": "pypdf",
+      "textChars": 13893,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "6ffeaba8-4ac2-494e-bf79-b46842d5c828": {
+      "fileId": "6ffeaba8-4ac2-494e-bf79-b46842d5c828",
+      "url": "https://nkr.government.bg/File/Download/6ffeaba8-4ac2-494e-bf79-b46842d5c828",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на неметални полезни изкопаеми - индустриални минерали - баритна суровина - подземни богатства по чл. 2, т. 2 от ЗПБ от находище \"Тевни дол\", разположено в землището на с. Лешко, община Благоевград, област Благоевград",
+      "publishedAt": "12.11.2021 г.",
+      "partyGuids": [
+        "aff7d873-3adc-4251-9fa7-7aa9044b0d55"
+      ],
+      "inventoryIds": [
+        "D-000247"
+      ],
+      "concessionIds": [
+        "D-000247"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:50Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A2%D0%B5%D0%B2%D0%BD%D0%B8%20%D0%B4%D0%BE%D0%BB_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2805710,
+      "sha256": "a6347bbaae7a581fa3d5acde64db4425b71d132014e306e3b2366d29201c13e7",
+      "archivePath": "source-archive/concessions/nkr-attachments/a6347bbaae7a581fa3d5acde64db4425b71d132014e306e3b2366d29201c13e7.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/a6347bbaae7a581fa3d5acde64db4425b71d132014e306e3b2366d29201c13e7.txt",
+      "extractor": "pypdf",
+      "textChars": 8695,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b0cd4451-8f31-49ad-b008-42dfe4b58243": {
+      "fileId": "b0cd4451-8f31-49ad-b008-42dfe4b58243",
+      "url": "https://nkr.government.bg/File/Download/b0cd4451-8f31-49ad-b008-42dfe4b58243",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за подземни природни богатства - мрамори чрез добив от находище \"Илинденци\" - участъци \"Мурата - Север\", \"Мурата - Изток\" и \"Мурата - Запад\", с. Илинденци, община Струмяни, Благоевградска област.",
+      "publishedAt": "17.11.2021 г.",
+      "partyGuids": [
+        "f9f5bcaa-e818-4d6e-9600-370b4de3418b"
+      ],
+      "inventoryIds": [
+        "D-000294"
+      ],
+      "concessionIds": [
+        "D-000294"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:51Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%98%D0%BB%D0%B8%D0%BD%D0%B4%D0%B5%D0%BD%D1%86%D0%B8_%D0%BC%D1%83%D1%80%D0%B0%D1%82%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2450791,
+      "sha256": "2e0856b7dc751dc65d0fd8bf90d9e4ae293ad6e95b9f0f6e2c6e73e73ccd21cc",
+      "archivePath": "source-archive/concessions/nkr-attachments/2e0856b7dc751dc65d0fd8bf90d9e4ae293ad6e95b9f0f6e2c6e73e73ccd21cc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2e0856b7dc751dc65d0fd8bf90d9e4ae293ad6e95b9f0f6e2c6e73e73ccd21cc.txt",
+      "extractor": "pypdf",
+      "textChars": 11550,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "333da5bd-01f9-4034-801a-5cd4a5be5da5": {
+      "fileId": "333da5bd-01f9-4034-801a-5cd4a5be5da5",
+      "url": "https://nkr.government.bg/File/Download/333da5bd-01f9-4034-801a-5cd4a5be5da5",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор за добив на суров нефт и природен газ от находище \"Долни Дъбник\".",
+      "publishedAt": "17.11.2021 г.",
+      "partyGuids": [
+        "b34d096b-2fa8-4a71-93d6-785897e36fe5"
+      ],
+      "inventoryIds": [
+        "D-000304"
+      ],
+      "concessionIds": [
+        "D-000304"
+      ],
+      "priority": 4,
+      "status": "skipped-too-large",
+      "bytes": 16847571,
+      "checkedAt": "2026-11-08T11:19:56Z"
+    },
+    "297efe28-dbae-4349-a6ef-22d6c7b74e86": {
+      "fileId": "297efe28-dbae-4349-a6ef-22d6c7b74e86",
+      "url": "https://nkr.government.bg/File/Download/297efe28-dbae-4349-a6ef-22d6c7b74e86",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор за добив на суров нефт и природен газ от находище \"Бутан-Юг\".",
+      "publishedAt": "18.11.2021 г.",
+      "partyGuids": [
+        "3858f2ed-cc58-4b55-800d-c40e84019089"
+      ],
+      "inventoryIds": [
+        "D-000305"
+      ],
+      "concessionIds": [
+        "D-000305"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:19:58Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%91%D1%83%D1%82%D0%B0%D0%BD_%D1%8E%D0%B3_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 5210526,
+      "sha256": "e39313131bcd0b060c6b5bb2919fe7a60e4643c20bd0241f282c462daa91b573",
+      "archivePath": "source-archive/concessions/nkr-attachments/e39313131bcd0b060c6b5bb2919fe7a60e4643c20bd0241f282c462daa91b573.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e39313131bcd0b060c6b5bb2919fe7a60e4643c20bd0241f282c462daa91b573.txt",
+      "extractor": "pypdf",
+      "textChars": 29939,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "29f95db2-3da2-4680-93c1-4e6e1637a644": {
+      "fileId": "29f95db2-3da2-4680-93c1-4e6e1637a644",
+      "url": "https://nkr.government.bg/File/Download/29f95db2-3da2-4680-93c1-4e6e1637a644",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор за добив на суров нефт и природен газ от находище \"Маринов геран\".",
+      "publishedAt": "18.11.2021 г.",
+      "partyGuids": [
+        "dd3b25d4-842b-4d2a-9410-2ef9ffd9d02a"
+      ],
+      "inventoryIds": [
+        "D-000307"
+      ],
+      "concessionIds": [
+        "D-000307"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:20:01Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9C%D0%B0%D1%80%D0%B8%D0%BD%D0%BE%D0%B2_%D0%B3%D0%B5%D1%80%D0%B0%D0%BD_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 5189211,
+      "sha256": "eabc1b97bb26a728ce298ddec84ad434c43f186c135cb4b7fb69b9087e3bec86",
+      "archivePath": "source-archive/concessions/nkr-attachments/eabc1b97bb26a728ce298ddec84ad434c43f186c135cb4b7fb69b9087e3bec86.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/eabc1b97bb26a728ce298ddec84ad434c43f186c135cb4b7fb69b9087e3bec86.txt",
+      "extractor": "pypdf",
+      "textChars": 29778,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d871eefa-805d-415f-bb89-884add346a38": {
+      "fileId": "d871eefa-805d-415f-bb89-884add346a38",
+      "url": "https://nkr.government.bg/File/Download/d871eefa-805d-415f-bb89-884add346a38",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор за добив на суров нефт от находище \"Долни Луковит-Запад\".",
+      "publishedAt": "22.11.2021 г.",
+      "partyGuids": [
+        "5b24cdc4-3c09-4f8f-93d4-f9f4336c655f"
+      ],
+      "inventoryIds": [
+        "D-000308"
+      ],
+      "concessionIds": [
+        "D-000308"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:20:07Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%94%D0%BE%D0%BB%D0%BD%D0%B8%D0%9B%D1%83%D0%BA%D0%BE%D0%B2%D0%B8%D1%82_%D0%B7%D0%B0%D0%BF%D0%B0%D0%B4_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 10582967,
+      "sha256": "7b5581d2553006da3f6d011b7c834546d0cffe6002ec707530c0a3087cfd234c",
+      "archivePath": "source-archive/concessions/nkr-attachments/7b5581d2553006da3f6d011b7c834546d0cffe6002ec707530c0a3087cfd234c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7b5581d2553006da3f6d011b7c834546d0cffe6002ec707530c0a3087cfd234c.txt",
+      "extractor": "pypdf",
+      "textChars": 29645,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "84bde3d8-9bc8-42d1-b312-a48fe798ca5a": {
+      "fileId": "84bde3d8-9bc8-42d1-b312-a48fe798ca5a",
+      "url": "https://nkr.government.bg/File/Download/84bde3d8-9bc8-42d1-b312-a48fe798ca5a",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор за добив на суров нефт и природен газ от находище \"Селановци\".",
+      "publishedAt": "23.11.2021 г.",
+      "partyGuids": [
+        "44a34b96-521c-4544-a223-c3f3cdcab493"
+      ],
+      "inventoryIds": [
+        "D-000309"
+      ],
+      "concessionIds": [
+        "D-000309"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:20:11Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A1%D0%B5%D0%BB%D0%B0%D0%BD%D0%BE%D0%B2%D1%86%D0%B8_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 6110871,
+      "sha256": "0b770d7025c0197422d71349a333340321a9ed7daeed82525b22684628fc3dcf",
+      "archivePath": "source-archive/concessions/nkr-attachments/0b770d7025c0197422d71349a333340321a9ed7daeed82525b22684628fc3dcf.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0b770d7025c0197422d71349a333340321a9ed7daeed82525b22684628fc3dcf.txt",
+      "extractor": "pypdf",
+      "textChars": 29761,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "0223f087-d7d8-4363-8dfa-71eb4881739d": {
+      "fileId": "0223f087-d7d8-4363-8dfa-71eb4881739d",
+      "url": "https://nkr.government.bg/File/Download/0223f087-d7d8-4363-8dfa-71eb4881739d",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор за добив на суров нефт от находище \"Горни дъбник\".",
+      "publishedAt": "24.11.2021 г.",
+      "partyGuids": [
+        "eb1f10a2-7732-40df-ad3d-2dc5db1d5d56"
+      ],
+      "inventoryIds": [
+        "D-000310"
+      ],
+      "concessionIds": [
+        "D-000310"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-08T11:20:16Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%93%D0%BE%D1%80%D0%BD%D0%B8%D0%94%D1%8A%D0%B1%D0%BD%D0%B8%D0%BA_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 9432831,
+      "sha256": "dc6fbf84336968bb1418d8bcacadc1ffd663186421f37748ad6007ce9bf4f35f",
+      "archivePath": "source-archive/concessions/nkr-attachments/dc6fbf84336968bb1418d8bcacadc1ffd663186421f37748ad6007ce9bf4f35f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/dc6fbf84336968bb1418d8bcacadc1ffd663186421f37748ad6007ce9bf4f35f.txt",
+      "extractor": "pypdf",
+      "textChars": 29386,
       "keywordHit": false,
       "coordinateParserVersion": 2,
       "coordinateRowCount": 0,

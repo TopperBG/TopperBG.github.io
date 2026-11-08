@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-coordinate-document-candidates-v1",
-  "generatedAt": "2026-11-01T11:20:05Z",
-  "candidateCount": 74,
+  "generatedAt": "2026-11-08T11:20:17Z",
+  "candidateCount": 78,
   "readyForCoordinateParserCount": 0,
   "rules": [
     "Attachment extraction alone never publishes geometry.",
@@ -5637,6 +5637,98 @@
       "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201-12-12-25.pdf",
       "extension": ".pdf",
       "textChars": 63154,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "76ece78b-4aa1-4a94-af1a-a1815421c7fe",
+      "sha256": "97c5d8eff78dc3548a54cfd9a6261aecb51fa0d8856dd23571c87c02ba8294f6",
+      "archivePath": "source-archive/concessions/nkr-attachments/97c5d8eff78dc3548a54cfd9a6261aecb51fa0d8856dd23571c87c02ba8294f6.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/97c5d8eff78dc3548a54cfd9a6261aecb51fa0d8856dd23571c87c02ba8294f6.txt",
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2021.docx",
+      "extension": ".docx",
+      "textChars": 25778,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "815237e4-fa5c-4b93-8f31-8cdd06efe5c6",
+      "sha256": "01697a7595a12bc01aa77141e2b13bb6ef993df42ee6cdee53a49e5c0d7816ec",
+      "archivePath": "source-archive/concessions/nkr-attachments/01697a7595a12bc01aa77141e2b13bb6ef993df42ee6cdee53a49e5c0d7816ec.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/01697a7595a12bc01aa77141e2b13bb6ef993df42ee6cdee53a49e5c0d7816ec.txt",
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2020.docx",
+      "extension": ".docx",
+      "textChars": 25778,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "bd7cab36-330c-408a-a228-75d94f085dea",
+      "sha256": "314ce9177e58cab66b3bf66b930dd43a5f5490272b10aab038f696883b9771af",
+      "archivePath": "source-archive/concessions/nkr-attachments/314ce9177e58cab66b3bf66b930dd43a5f5490272b10aab038f696883b9771af.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/314ce9177e58cab66b3bf66b930dd43a5f5490272b10aab038f696883b9771af.txt",
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2019.docx",
+      "extension": ".docx",
+      "textChars": 25778,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "c6978fb7-4a9f-4eaa-a725-2ef565c221c0",
+      "sha256": "40075fff157d5e0820656a33a488bd5d70f2a4254f5917161d43d3020bd0769a",
+      "archivePath": "source-archive/concessions/nkr-attachments/40075fff157d5e0820656a33a488bd5d70f2a4254f5917161d43d3020bd0769a.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/40075fff157d5e0820656a33a488bd5d70f2a4254f5917161d43d3020bd0769a.txt",
+      "inventoryIds": [
+        "D-000175"
+      ],
+      "concessionIds": [
+        "D-000175"
+      ],
+      "filename": "%D0%A1%D0%BB%D0%B0%D0%B2%D1%8F%D0%BD%D0%BE%D0%B2%D0%BE_2018.docx",
+      "extension": ".docx",
+      "textChars": 25775,
       "keywordHit": true,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},

@@ -15,7 +15,7 @@
       ],
       "latestSha256": "6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b",
       "latestBytes": 243200,
-      "lastCheckedAt": "2026-11-01T11:16:53Z"
+      "lastCheckedAt": "2026-11-08T11:16:57Z"
     },
     "ME-CONCESSIONS-PAGE": {
       "id": "ME-CONCESSIONS-PAGE",
@@ -117,11 +117,17 @@
           "bytes": 45982,
           "firstSeenAt": "2026-11-01T11:16:55Z",
           "path": "snapshots/me-concessions-page/a372c5062791b5912e793d9e62599b3e491269d9a6c96ac9bec805a4c1fdfd39.html"
+        },
+        {
+          "sha256": "288fff66f98bc45e7ea38a3ca347dfc5e57267bad41d20671c448077d62ae453",
+          "bytes": 45997,
+          "firstSeenAt": "2026-11-08T11:16:59Z",
+          "path": "snapshots/me-concessions-page/288fff66f98bc45e7ea38a3ca347dfc5e57267bad41d20671c448077d62ae453.html"
         }
       ],
-      "latestSha256": "a372c5062791b5912e793d9e62599b3e491269d9a6c96ac9bec805a4c1fdfd39",
-      "latestBytes": 45982,
-      "lastCheckedAt": "2026-11-01T11:16:55Z"
+      "latestSha256": "288fff66f98bc45e7ea38a3ca347dfc5e57267bad41d20671c448077d62ae453",
+      "latestBytes": 45997,
+      "lastCheckedAt": "2026-11-08T11:16:59Z"
     },
     "ME-ABANDONED-MINING-WASTE": {
       "id": "ME-ABANDONED-MINING-WASTE",
@@ -223,11 +229,17 @@
           "bytes": 51566,
           "firstSeenAt": "2026-11-01T11:16:56Z",
           "path": "snapshots/me-abandoned-mining-waste/739a9d55e6fb82826725529b99204ae4135f87e8f750f1579dcd3a87ba82cfe3.html"
+        },
+        {
+          "sha256": "ad0cfda1938038d5204a9b7b68b3440357f2fbbe8490d89761e1466ef7903b17",
+          "bytes": 51581,
+          "firstSeenAt": "2026-11-08T11:17:00Z",
+          "path": "snapshots/me-abandoned-mining-waste/ad0cfda1938038d5204a9b7b68b3440357f2fbbe8490d89761e1466ef7903b17.html"
         }
       ],
-      "latestSha256": "739a9d55e6fb82826725529b99204ae4135f87e8f750f1579dcd3a87ba82cfe3",
-      "latestBytes": 51566,
-      "lastCheckedAt": "2026-11-01T11:16:56Z"
+      "latestSha256": "ad0cfda1938038d5204a9b7b68b3440357f2fbbe8490d89761e1466ef7903b17",
+      "latestBytes": 51581,
+      "lastCheckedAt": "2026-11-08T11:17:00Z"
     },
     "ME-ABANDONED-MINING-WASTE-XLS": {
       "id": "ME-ABANDONED-MINING-WASTE-XLS",
@@ -243,8 +255,8 @@
       ],
       "latestSha256": "15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7",
       "latestBytes": 126464,
-      "lastCheckedAt": "2026-11-01T11:16:57Z"
+      "lastCheckedAt": "2026-11-08T11:17:01Z"
     }
   },
-  "generatedAt": "2026-11-01T11:16:57Z"
+  "generatedAt": "2026-11-08T11:17:01Z"
 }
