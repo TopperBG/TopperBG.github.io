@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-foreign-renewables-cache-v1",
-  "generatedAt": "2026-11-02T11:59:02Z",
+  "generatedAt": "2026-11-09T12:17:59Z",
   "scope": {
     "countries": [
       "RO",
@@ -42,14 +42,6 @@
         "curated": 6,
         "published": 34
       },
-      "RO": {
-        "country": "Румъния",
-        "ok": true,
-        "source": "geofabrik",
-        "discovered": 882,
-        "curated": 6,
-        "published": 143
-      },
       "GR": {
         "country": "Гърция",
         "ok": true,
@@ -57,6 +49,14 @@
         "discovered": 350,
         "curated": 5,
         "published": 65
+      },
+      "RO": {
+        "country": "Румъния",
+        "ok": true,
+        "source": "geofabrik",
+        "discovered": 882,
+        "curated": 6,
+        "published": 143
       },
       "TR": {
         "country": "Турция",
