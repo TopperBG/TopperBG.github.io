@@ -97,11 +97,6 @@
       "reason": "capacity_not_published_or_not_above_1_MW"
     },
     {
-      "id": "RES-008",
-      "name": "ФЕЦ „Борнарево / Прибой“",
-      "reason": "capacity_not_published_or_not_above_1_MW"
-    },
-    {
       "id": "RES-009",
       "name": "ФЕЦ „Костинброд Солар“ — Богьовци",
       "reason": "capacity_not_published_or_not_above_1_MW"
@@ -175,8 +170,8 @@
   "counts": {
     "operating": 543,
     "construction": 8,
-    "planned": 31
+    "planned": 32
   },
   "withoutGeometry": 425,
-  "reconciledAt": "2026-11-08T10:31:05.455481+00:00"
+  "reconciledAt": "2026-11-09T09:22:16.368636+00:00"
 }

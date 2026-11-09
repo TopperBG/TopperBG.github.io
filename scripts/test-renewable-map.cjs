@@ -16,8 +16,17 @@ async function main(){
   assert(!c.meetsRenewableMapThreshold({mw:9.99}));assert(c.meetsRenewableMapThreshold({mw:10}));assert(!c.meetsRenewableMapThreshold(c.operatingSolarProjects.find(p=>p.id==='SOL-2012-MARINO-POLE-ALFA')));
   for(const id of ['SOL-2011-KAOLINOVO-KA620','SOL-2012-KAOLINOVO-KA9905','SOL-KAOLINOVO-80-171'])assert(c.meetsRenewableMapThreshold({id,mw:4.5}),id+' is a scoped map exception');
   assert(!c.meetsRenewableMapThreshold({id:'unrelated-small-solar',mw:4.5}));
+  const priboy=c.cadastralProjects.find(p=>p.id==='RES-008');
+  assert.equal(priboy.mw,100);assert(c.meetsRenewableMapThreshold(priboy),'Priboy project passes the map cutoff');
+  const parcelCache=JSON.parse(fs.readFileSync(path.join(root,'map/data/agkk-built-vei-cache.json')));
+  const priboyRows=priboy.parcels.map(parcelRef=>({layerType:'projects',project:priboy,parcelRef,feature:parcelCache.features[parcelRef].feature}));
+  assert.equal(priboyRows.length,11);
   Object.assign(c,{debugState:{layerCounts:{}},veiDbgStage(){},updateLayerStatus(){},Feature:ol.Feature,Point:ol.geom.Point,CircleGeom:ol.geom.Circle,fromLonLat:ol.proj.fromLonLat});
   vm.runInContext(html.slice(html.indexOf('function renderParcelRows(loaded){'),html.indexOf('async function fetchRowsInBatches')),c);
+  c.renderParcelRows(priboyRows);
+  const renderedPriboy=c.projectSource.getFeatures().filter(f=>f.get('data').project.id==='RES-008');
+  assert.equal(renderedPriboy.length,11,'All official Priboy/Bornarevo parcels render as project polygons');
+  assert(renderedPriboy.every(f=>f.getGeometry().getType()==='Polygon'));
   c.renderParcelRows([9.99,10].map(mw=>({layerType:'solar',project:{id:'threshold-'+mw,mw},feature:pointGeometry(mw)})));
   function pointGeometry(mw){return {type:'Feature',properties:{},geometry:{type:'Point',coordinates:[24,mw===10?42:43]}};}
   for(const f of [...c.solarSource.getFeatures(),...c.projectSource.getFeatures()])assert(c.meetsRenewableMapThreshold(f.get('data').project));

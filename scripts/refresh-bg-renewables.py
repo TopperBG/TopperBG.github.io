@@ -61,6 +61,11 @@ def embedded():
    p=dict(row,technology=row.get('technology') or tech or ('wind' if re.search('вят|ВяЕЦ|ВяЕИ|wind',row['name'],re.I) else 'solar'),status=row.get('status',status),mw=mw,countryCode='BG',geometryQuality=quality,sourceMode='curated',capacityBasis='AC' if 'mwAc' in row else 'DC' if 'mwpDc' in row else 'unspecified')
    if geom and row['id'] in footprints:
     footprint=footprints[row['id']];p['geometrySource']=footprint.get('source',source);p['geometryRef']=footprint.get('parcelRef')
+   if row['id']=='RES-008':
+    parcel_cache=json.loads((ROOT/'map/data/agkk-built-vei-cache.json').read_text())['features']
+    parcels=[parcel_cache[ref]['feature'] for ref in row['parcels']]
+    geom={'type':'MultiPolygon','coordinates':[f['geometry']['coordinates'] for f in parcels]}
+    p.update(geometryQuality='cadastral-parcels',geometrySourceMode='agkk',geometryRefs=row['parcels'],geometrySource='https://inspire.cadastre.bg/arcgis/rest/services/Cadastral_Parcel/MapServer/0',geometryEvidence=row['capacitySource'],geometryNote='Граници на имоти по ПУП; проект, не изградена централа.')
    p['sourceStatus']=p['status'];p['status']='planned' if p['status']=='approved' else p['status']
    p.pop('geometry',None);result.append(feature(p,geom))
  return result,skipped
