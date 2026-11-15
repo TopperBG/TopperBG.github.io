@@ -385,7 +385,7 @@
   ],
   "concessions": {
     "schema": "bgwf-industry-concessions-cache-v1",
-    "generatedAt": "2026-11-01T11:20:05Z",
+    "generatedAt": "2026-11-15T12:02:00Z",
     "featureCount": 11,
     "features": [
       {
@@ -2993,7 +2993,7 @@
         "queueSource": "national-inventory",
         "sourceRowNo": "350",
         "inventoryStatus": "active",
-        "concessionaire": "\"Витал Транс\" ООД, гр. Първомай",
+        "concessionaire": "\"Витал Транс\" ООД, с. Дълбок извор",
         "resource": "Строителни материали",
         "municipality": "Първомай",
         "province": "Пловдив",
@@ -3021,7 +3021,7 @@
         "queueSource": "national-inventory",
         "sourceRowNo": "284",
         "inventoryStatus": "active",
-        "concessionaire": "\"Витал Транс\" ООД, гр. Първомай",
+        "concessionaire": "\"Витал Транс\" ООД, с. Дълбок извор",
         "resource": "Строителни материали",
         "municipality": "Първомай",
         "province": "Пловдив",
@@ -4151,7 +4151,7 @@
         "queueSource": "national-inventory",
         "sourceRowNo": "380",
         "inventoryStatus": "active",
-        "concessionaire": "\"Гранд Енерджи\" ЕООД, гр. София",
+        "concessionaire": "\"Коул Енерджи\" ЕООД, гр. София",
         "resource": "Твърди горива",
         "municipality": "Бобов дол, Радомир, Дупница",
         "province": "Кюстендил, Перник",
@@ -13251,7 +13251,7 @@
         "queueSource": "national-inventory",
         "sourceRowNo": "258",
         "inventoryStatus": "active",
-        "concessionaire": "\"Витал транс\" ООД, гр. Първомай",
+        "concessionaire": "\"Витал транс\" ООД, с. Дълбок извор",
         "resource": "Строителни материали",
         "municipality": "Първомай",
         "province": "Пловдив",
@@ -16845,13 +16845,13 @@
       "lastKnownGood": true,
       "activeRegistrySource": "NKR"
     },
-    "sourceHealthCheckedAt": "2026-11-08T11:20:49Z",
+    "sourceHealthCheckedAt": "2026-11-15T12:04:50Z",
     "sourceHealth": [
       {
         "id": "DATA-EGOV-BG",
         "role": "primary",
         "ok": false,
-        "checkedAt": "2026-11-08T11:20:19Z",
+        "checkedAt": "2026-11-15T12:02:02Z",
         "url": "https://data.egov.bg/api",
         "error": "https://data.egov.bg/api/listDatasets: HTTP Error 403: Forbidden"
       },
@@ -16859,39 +16859,38 @@
         "id": "NKR",
         "role": "secondary",
         "ok": true,
-        "checkedAt": "2026-11-08T11:20:32Z",
+        "checkedAt": "2026-11-15T12:02:13Z",
         "url": "https://nkr.government.bg/Concessions",
         "mode": "html-registry-fallback",
         "bytes": 19734,
-        "digest": "0daa52229cce656999a8702a8c1ae99faee10817ca44b7e100fc032bec25b39a",
+        "digest": "65a8da80a9d76e94f8a5f86509a92752b9b7b1ace195737d633051bcd959af9d",
         "exportError": "https://nkr.government.bg/Concessions/Export?file=csv: HTTP Error 500: Internal Server Error"
       },
       {
         "id": "MGU-PERNIK-CONCESSIONS",
         "role": "geometry-cross-check",
-        "ok": true,
-        "checkedAt": "2026-11-08T11:20:45Z",
+        "ok": false,
+        "checkedAt": "2026-11-15T12:02:24Z",
         "url": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0",
-        "records": 19,
-        "digest": "1979d07629e47ad96b7f8308da75e9b78b39cf47bd579338fee14fc7f8fffd3f"
+        "error": "https://maps.mgu.bg/arcgis/rest/services/Hosted/Concessions_Pernik/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=false&f=json: <urlopen error timed out>"
       },
       {
         "id": "ME-CONCESSIONS",
         "role": "tertiary",
         "ok": true,
-        "checkedAt": "2026-11-08T11:20:47Z",
+        "checkedAt": "2026-11-15T12:04:48Z",
         "url": "https://www.me.government.bg/bg/themes/koncesii-za-dobiv-735-1613.html",
-        "bytes": 45997,
-        "digest": "89f3501afb303f05a3097afdf16be858a34975436e3e759f21c4c5f81f645f44"
+        "bytes": 45793,
+        "digest": "6119e12336c9310afcc8670600462a4a30631a2f33376475c49ed2fc1fcac1d6"
       },
       {
         "id": "ME-ABANDONED-MINING-WASTE",
         "role": "historical-disturbed",
         "ok": true,
-        "checkedAt": "2026-11-08T11:20:48Z",
+        "checkedAt": "2026-11-15T12:04:49Z",
         "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-        "bytes": 51581,
-        "digest": "6ef7323d1ac8059ce1a767c55fcac6b4d18cb93a895bf06190105567b50bfa94"
+        "bytes": 51377,
+        "digest": "a68e20e17132f03a1abb03282961f788ad65a79bedfb2ae69d60567fd57e0262"
       }
     ],
     "coverage": {
@@ -16920,14 +16919,14 @@
       "id": "ME-ABANDONED-MINING-WASTE",
       "role": "historical-disturbed",
       "ok": true,
-      "checkedAt": "2026-11-08T11:20:48Z",
+      "checkedAt": "2026-11-15T12:04:49Z",
       "url": "https://www.me.government.bg/bg/themes/spisak-na-zakritite-vklyuchitelno-i-na-izostavenite-saorajeniya-za-minni-otpadaci-2158-1615.html",
-      "bytes": 51581,
-      "digest": "6ef7323d1ac8059ce1a767c55fcac6b4d18cb93a895bf06190105567b50bfa94"
+      "bytes": 51377,
+      "digest": "a68e20e17132f03a1abb03282961f788ad65a79bedfb2ae69d60567fd57e0262"
     },
     "geometryRule": "prefer cadastral/official polygon; otherwise keep verified physical footprint clearly labeled as footprint, never as legal concession boundary"
   },
   "lastUpdatedSections": {
-    "concessionsBaseline": "2026-11-01T11:20:05Z"
+    "concessionsBaseline": "2026-11-15T12:02:00Z"
   }
 }

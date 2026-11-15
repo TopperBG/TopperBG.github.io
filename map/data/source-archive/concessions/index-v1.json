@@ -11,11 +11,17 @@
           "bytes": 243200,
           "firstSeenAt": "2026-10-05T06:31:50Z",
           "path": "snapshots/me-concessions-xls/6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b.xls"
+        },
+        {
+          "sha256": "698c07419198ca49824d7bc78c3addceb391c677d79cd0e8aefcc60282d6933f",
+          "bytes": 243200,
+          "firstSeenAt": "2026-11-15T11:58:05Z",
+          "path": "snapshots/me-concessions-xls/698c07419198ca49824d7bc78c3addceb391c677d79cd0e8aefcc60282d6933f.xls"
         }
       ],
-      "latestSha256": "6870a158e6339b8f3c79fb2feba32cba328fb64784f33092d3c125499791393b",
+      "latestSha256": "698c07419198ca49824d7bc78c3addceb391c677d79cd0e8aefcc60282d6933f",
       "latestBytes": 243200,
-      "lastCheckedAt": "2026-11-08T11:16:57Z"
+      "lastCheckedAt": "2026-11-15T11:58:05Z"
     },
     "ME-CONCESSIONS-PAGE": {
       "id": "ME-CONCESSIONS-PAGE",
@@ -123,11 +129,17 @@
           "bytes": 45997,
           "firstSeenAt": "2026-11-08T11:16:59Z",
           "path": "snapshots/me-concessions-page/288fff66f98bc45e7ea38a3ca347dfc5e57267bad41d20671c448077d62ae453.html"
+        },
+        {
+          "sha256": "4fbbabf4d62cf2a1c79b8e0ee1b75db6a2950586b1691c6c2eeeccf776968faa",
+          "bytes": 45793,
+          "firstSeenAt": "2026-11-15T11:58:06Z",
+          "path": "snapshots/me-concessions-page/4fbbabf4d62cf2a1c79b8e0ee1b75db6a2950586b1691c6c2eeeccf776968faa.html"
         }
       ],
-      "latestSha256": "288fff66f98bc45e7ea38a3ca347dfc5e57267bad41d20671c448077d62ae453",
-      "latestBytes": 45997,
-      "lastCheckedAt": "2026-11-08T11:16:59Z"
+      "latestSha256": "4fbbabf4d62cf2a1c79b8e0ee1b75db6a2950586b1691c6c2eeeccf776968faa",
+      "latestBytes": 45793,
+      "lastCheckedAt": "2026-11-15T11:58:06Z"
     },
     "ME-ABANDONED-MINING-WASTE": {
       "id": "ME-ABANDONED-MINING-WASTE",
@@ -235,11 +247,17 @@
           "bytes": 51581,
           "firstSeenAt": "2026-11-08T11:17:00Z",
           "path": "snapshots/me-abandoned-mining-waste/ad0cfda1938038d5204a9b7b68b3440357f2fbbe8490d89761e1466ef7903b17.html"
+        },
+        {
+          "sha256": "60910fb89b2441fdcad7b0652878684c4a47006ed209fb9171e5f56cb4e4430a",
+          "bytes": 51377,
+          "firstSeenAt": "2026-11-15T11:58:07Z",
+          "path": "snapshots/me-abandoned-mining-waste/60910fb89b2441fdcad7b0652878684c4a47006ed209fb9171e5f56cb4e4430a.html"
         }
       ],
-      "latestSha256": "ad0cfda1938038d5204a9b7b68b3440357f2fbbe8490d89761e1466ef7903b17",
-      "latestBytes": 51581,
-      "lastCheckedAt": "2026-11-08T11:17:00Z"
+      "latestSha256": "60910fb89b2441fdcad7b0652878684c4a47006ed209fb9171e5f56cb4e4430a",
+      "latestBytes": 51377,
+      "lastCheckedAt": "2026-11-15T11:58:07Z"
     },
     "ME-ABANDONED-MINING-WASTE-XLS": {
       "id": "ME-ABANDONED-MINING-WASTE-XLS",
@@ -255,8 +273,8 @@
       ],
       "latestSha256": "15594736e28641152b24295411c31ef77cb83569bc9b420cdc5eb8eadc8a13a7",
       "latestBytes": 126464,
-      "lastCheckedAt": "2026-11-08T11:17:01Z"
+      "lastCheckedAt": "2026-11-15T11:58:08Z"
     }
   },
-  "generatedAt": "2026-11-08T11:17:01Z"
+  "generatedAt": "2026-11-15T11:58:08Z"
 }
