@@ -4,9 +4,17 @@ const payload=JSON.parse(fs.readFileSync(path.join(root,'map/data/bg-renewables-
 const visible=payload.features.filter(f=>(f.properties.inventoryReviewStatus!=='pending-location'||f.geometry)&&(!f.properties.componentOf||!payload.features.some(p=>p.id===f.properties.componentOf)));
 class Element{constructor(){this.children=[];this.value='';this.textContent='';this.events={};}append(...xs){this.children.push(...xs);}appendChild(x){this.children.push(x);return x;}replaceChildren(...xs){this.children=xs;}addEventListener(type,fn){this.events[type]=fn;}}
 const elements=Object.fromEntries(['q','min-mw','max-mw','range-error','status','tech','count','rows','source-freshness','pending-review','pending-review-count','pending-review-rows'].map(id=>[id,new Element()]));
-const c={document:{getElementById:id=>elements[id],createElement:()=>new Element()},fetch:async url=>({ok:true,json:async()=>url.includes('health')?JSON.parse(fs.readFileSync(path.join(root,'map/data/bg-renewables-health-v1.json'))):payload}),console};c.window=c;vm.createContext(c);vm.runInContext(fs.readFileSync(path.join(root,'map/assets/renewable-freshness.js'),'utf8'),c);vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],c);
+const health=JSON.parse(fs.readFileSync(path.join(root,'map/data/bg-renewables-health-v1.json')));
+for(const [mode,source] of Object.entries(health.sources))if(mode.startsWith('veiregistar:'))Object.assign(source,{status:'stale',retained:1});
+Object.assign(health.sources.osm,{status:'ok',records:70});
+const c={document:{getElementById:id=>elements[id],createElement:()=>new Element()},fetch:async url=>({ok:true,json:async()=>url.includes('health')?health:payload}),console};c.window=c;vm.createContext(c);vm.runInContext(fs.readFileSync(path.join(root,'map/assets/renewable-freshness.js'),'utf8'),c);vm.runInContext(html.match(/<script>([\s\S]*?)<\/script>/)[1],c);
 async function run(){
  await new Promise(r=>setTimeout(r,0));assert.equal(elements['pending-review-rows'].children.length,3);assert.equal(elements.rows.children.length,visible.length);
+ const freshness=elements['source-freshness'].textContent;
+ assert.match(freshness,/VEIRegistar · ФЕЦ/);
+ assert.match(freshness,/VEIRegistar · Малки ВЕЦ/);
+ assert.match(freshness,/OSM: опреснен; 70 записа/);
+ assert(elements['pending-review-rows'].children.every(row=>row.children.some(item=>typeof item==='string'&&item.includes('запазени данни'))));
  function check(min,tech='',status='',query='',max=''){
   elements['min-mw'].value=min;elements['max-mw'].value=max;elements.tech.value=tech;elements.status.value=status;elements.q.value=query;elements['min-mw'].events.input();
   const expected=visible.filter(f=>f.properties.mw>=Math.max(0,Number(min)||0)&&f.properties.mw<=(max===''?Infinity:Math.max(0,Number(max)))&&(!tech||f.properties.technology===tech)&&(!status||f.properties.status===status)&&JSON.stringify(f.properties).toLowerCase().includes(query.toLowerCase()));
@@ -26,6 +34,8 @@ async function run(){
  assert.equal(elements.rows.children[0].children[2].children[0].children[0].textContent,'Различни мощности по източниците');
  assert.deepEqual(new Set(batak.properties.capacityObservations.map(o=>o.mw)),new Set([46,46.8]));
  check('','','','','50');check('10','','','','100');check('1.5','solar','','','10.5');
+ check('','','operating','Батак');
+ assert.match(elements.rows.children[0].children[3].textContent,/по кеш/);
  const exact=check('375','pumped_hydro','','Белмекен','375');assert.equal(exact.length,1);
  check('100','','','','10');assert.equal(elements.rows.children.length,0);assert.equal(elements['range-error'].hidden,false);
  check('');assert.equal(elements['range-error'].hidden,true);assert.equal(elements.rows.children.length,visible.length);
