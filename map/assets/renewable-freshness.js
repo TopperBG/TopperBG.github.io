@@ -1,7 +1,31 @@
 /* Shared source freshness presentation for the map and the inventory. */
 (function(global){
   'use strict';
-  const name=mode=>mode==='osm'?'OSM':mode.startsWith('veiregistar:')?'VEIRegistar':mode;
+  const categories={
+    'photovoltaic-power-plants-with-power-over-1-mw':'ФЕЦ',
+    'wind-power-plants-with-power-over-1-mw':'ВяЕЦ',
+    'hydropower-plants-with-power-over-1-mw':'ВЕЦ',
+    'micro-hydropower-plants-with-power-over-1-mw':'Малки ВЕЦ',
+    'pumped-accumulating-hydropower-plants-with-power-over-1-mw':'ПАВЕЦ',
+    'biomass-power-plants-with-power-over-4-mw':'Биомаса',
+    'renewable-gas-power-plants-sources-with-power-over-1-mw':'Газ от ВЕИ'
+  };
+  const name=mode=>{
+    if(mode==='osm')return 'OSM';
+    if(!mode.startsWith('veiregistar:'))return mode;
+    const category=mode.slice('veiregistar:'.length);
+    return 'VEIRegistar · '+(categories[category]||category);
+  };
+  function summary(health){
+    const messages=warnings(health);
+    if(!messages.length)return '';
+    const osm=health?.sources.osm;
+    return [...messages,...(osm?.status==='ok'?[`OSM: опреснен; ${osm.records} записа. Последно успешно извличане: ${date(osm.lastSuccessAt)}.`]:[])].join(' ');
+  }
+  function retainedField(p,key,health){
+    const mode=p[key]||p.sourceMode;
+    return (health?.sources?.[mode]?.status??p.sourceFreshness?.[mode]?.status)==='stale';
+  }
   const date=value=>value&&!Number.isNaN(Date.parse(value))?new Date(value).toLocaleString('bg-BG',{timeZone:'Europe/Sofia'}):'неизвестна';
   function validate(health){
     if(!health||!health.sources||typeof health.sources!=='object'||Array.isArray(health.sources)||!health.sources.osm)throw Error('Invalid renewable source health');
@@ -39,5 +63,5 @@
       return validate(await response.json());
     }catch(_error){return null;}
   }
-  global.bgwfRenewableFreshness={validate,warnings,recordNote,load};
+  global.bgwfRenewableFreshness={validate,warnings,summary,retainedField,recordNote,load};
 })(typeof window==='undefined'?globalThis:window);

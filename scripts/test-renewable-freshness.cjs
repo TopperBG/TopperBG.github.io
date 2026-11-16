@@ -45,6 +45,22 @@ async function run(){
   assert(warnings.every(w=>!w.transient),'Freshness warnings must survive transient notice expiry');
  }
  c.layerVisibility.solar=false;c.renewableSourceHealth=stale;assert.equal(c.layerSourceWarnings().length,0);
+ // A failed MGU check must be surfaced even when the primary source is healthy.
+ const sources=[{id:'DATA-EGOV-BG',ok:true},{id:'MGU-PERNIK-CONCESSIONS',ok:false,error:'timed out'}];
+ const gis={concessions:{sources}};
+ Object.assign(c,{sourceHealth:gis,officialConcessionCacheMeta:{mguPernik:{featureCount:19,generatedAt:'2026-11-08T11:17:03Z'}},officialConcessionLoadState:'ready',industrialPolygonLoadState:'ready',concessionSource:{getFeatures:()=>Array.from({length:31},(_,i)=>({get:()=>i===30?'OFFICIAL-MAP-GEOREFERENCED':'REPOSITORY-BASELINE'}))}});
+ c.layerVisibility.industry=true;
+ vm.runInContext(html.slice(html.indexOf('function mguSourceWarning(){'),html.indexOf('function layerSourceWarnings(){')),c);
+ assert.match(c.layerSourceWarnings()[0].text,/МГУ.*19 граници.*8\.11\.2026/);
+ Object.assign(c,{fireYearsHidden:()=>true,renewableSourceHealth:stale});
+ c.layerVisibility.solar=true;
+ vm.runInContext(html.slice(html.indexOf('function activeLayerIndicators(){'),html.indexOf('function updateCompactFilterSummary(){')),c);
+ assert(c.activeLayerIndicators().some(item=>item.key==='renewable-source-status'));
+ assert(c.activeLayerIndicators().some(item=>item.key==='mgu-source-status'));
+ c.layerVisibility.solar=false;
+ assert.equal(c.concessionGeometrySummary(),'30 официални граници + 1 геореферирана схема');
+ sources.find(s=>s.id==='MGU-PERNIK-CONCESSIONS').ok=true;
+ assert.equal(c.layerSourceWarnings().length,0);
  const retained=await listCase(stale);assert.equal(retained['source-freshness'].hidden,false);assert.match(retained['source-freshness'].textContent,/70 записа/);
  assert(retained.rows.children[0].children.at(-1).children.some(x=>typeof x==='string'&&x.includes('OSM (местоположение)')));
  const missing=await listCase(null,true);assert.equal(missing['source-freshness'].hidden,false);assert.match(missing['source-freshness'].textContent,/не може да се провери/);
