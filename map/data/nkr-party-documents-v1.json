@@ -1,12 +1,12 @@
 {
   "schema": "bgwf-nkr-party-documents-v1",
-  "generatedAt": "2026-11-15T12:00:35Z",
+  "generatedAt": "2026-11-22T12:37:27Z",
   "mode": "refresh-oldest",
   "runtimeDependency": false,
   "pendingWithNkrParty": 506,
   "partyCount": 515,
   "archivedOkCount": 515,
-  "totalFileLinks": 455,
+  "totalFileLinks": 456,
   "coordinateCandidateLinkCount": 0,
   "batchSelected": 40,
   "errors": [],
@@ -24773,7 +24773,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:30:03Z",
+      "checkedAt": "2026-11-22T12:37:29Z",
       "sha256": "f3fa4eeabdd94aef56ed6320e4d406422d66b0b88eb9cb5e495e4ef7b2606f31",
       "bytes": 9298,
       "archivePath": "source-archive/concessions/nkr-parties/0448dd9d-35b4-4074-8ccd-6d2a95b1c114/partida.html",
@@ -24781,6 +24781,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "0448dd9d-35b4-4074-8ccd-6d2a95b1c114",
         "concessionId": "D-000372",
@@ -24801,8 +24802,7 @@
           "D-000372"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "0a3264d9-8750-49bd-aea5-d3f2b9788569": {
       "guid": "0a3264d9-8750-49bd-aea5-d3f2b9788569",
@@ -24816,7 +24816,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:30:04Z",
+      "checkedAt": "2026-11-22T12:37:30Z",
       "sha256": "d31b0a9e239bd353ee93a08d077712a918adfcfddad12242fbc83e66cd7f00c8",
       "bytes": 9342,
       "archivePath": "source-archive/concessions/nkr-parties/0a3264d9-8750-49bd-aea5-d3f2b9788569/partida.html",
@@ -24824,6 +24824,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "0a3264d9-8750-49bd-aea5-d3f2b9788569",
         "concessionId": "D-000418",
@@ -24844,8 +24845,7 @@
           "D-000418"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "ac1dd0f7-2343-49eb-b48d-5413071c30dc": {
       "guid": "ac1dd0f7-2343-49eb-b48d-5413071c30dc",
@@ -24859,7 +24859,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:30:05Z",
+      "checkedAt": "2026-11-22T12:37:32Z",
       "sha256": "9481dfe8c5968cf5a3f9f718133e703bdabe0921bec80278da2f4b83c790e9ca",
       "bytes": 9275,
       "archivePath": "source-archive/concessions/nkr-parties/ac1dd0f7-2343-49eb-b48d-5413071c30dc/partida.html",
@@ -24867,6 +24867,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "ac1dd0f7-2343-49eb-b48d-5413071c30dc",
         "concessionId": "D-000450",
@@ -24887,8 +24888,7 @@
           "D-000450"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "aff7d873-3adc-4251-9fa7-7aa9044b0d55": {
       "guid": "aff7d873-3adc-4251-9fa7-7aa9044b0d55",
@@ -24902,7 +24902,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:30:06Z",
+      "checkedAt": "2026-11-22T12:37:33Z",
       "sha256": "f49b8725c71bf13a8ffce7d6000089b1e3b33f82e88803c5d734ca62327755b3",
       "bytes": 15814,
       "archivePath": "source-archive/concessions/nkr-parties/aff7d873-3adc-4251-9fa7-7aa9044b0d55/partida.html",
@@ -24950,6 +24950,7 @@
           "publishedAt": "12.11.2021 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "aff7d873-3adc-4251-9fa7-7aa9044b0d55",
         "concessionId": "D-000247",
@@ -24970,8 +24971,7 @@
           "D-000247"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "11bdfe20-c4f3-4d1a-af6d-90dd1e2975cf": {
       "guid": "11bdfe20-c4f3-4d1a-af6d-90dd1e2975cf",
@@ -24985,7 +24985,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:30:08Z",
+      "checkedAt": "2026-11-22T12:37:34Z",
       "sha256": "95c8a4d98ef1c0f0222d8542a2ce9b6b7cbbf60af16a954ac010f5b782637934",
       "bytes": 9285,
       "archivePath": "source-archive/concessions/nkr-parties/11bdfe20-c4f3-4d1a-af6d-90dd1e2975cf/partida.html",
@@ -24993,6 +24993,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "11bdfe20-c4f3-4d1a-af6d-90dd1e2975cf",
         "concessionId": "D-000479",
@@ -25013,8 +25014,7 @@
           "D-000479"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "f3bb6f3d-eef7-4315-bc6d-29841fafaeec": {
       "guid": "f3bb6f3d-eef7-4315-bc6d-29841fafaeec",
@@ -25028,7 +25028,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T07:30:09Z",
+      "checkedAt": "2026-11-22T12:37:35Z",
       "sha256": "1ab5c6196e5f120296490f9fddb77147ac351f29d2b1fef74b6381c5e80fee30",
       "bytes": 9365,
       "archivePath": "source-archive/concessions/nkr-parties/f3bb6f3d-eef7-4315-bc6d-29841fafaeec/partida.html",
@@ -25036,6 +25036,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "f3bb6f3d-eef7-4315-bc6d-29841fafaeec",
         "concessionId": "O-000795",
@@ -25056,8 +25057,7 @@
           "O-000795"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "d1c8a1ef-4973-40c3-b821-d35c7bc70f48": {
       "guid": "d1c8a1ef-4973-40c3-b821-d35c7bc70f48",
@@ -25071,7 +25071,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:20:54Z",
+      "checkedAt": "2026-11-22T12:37:36Z",
       "sha256": "dc9f12eababe06fbe44500e76203a020f8bf16259468484e8ede97973a3ed17b",
       "bytes": 19766,
       "archivePath": "source-archive/concessions/nkr-parties/d1c8a1ef-4973-40c3-b821-d35c7bc70f48/partida.html",
@@ -25141,6 +25141,7 @@
           "publishedAt": "21.10.2021 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "d1c8a1ef-4973-40c3-b821-d35c7bc70f48",
         "concessionId": "D-000149",
@@ -25161,8 +25162,7 @@
           "D-000149"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "ae2d55c5-306e-4f59-890e-9a08c3c0df5b": {
       "guid": "ae2d55c5-306e-4f59-890e-9a08c3c0df5b",
@@ -25176,7 +25176,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:20:55Z",
+      "checkedAt": "2026-11-22T12:37:37Z",
       "sha256": "9bd5aa38b7f92a559ab55a3ab238eaac92e9de79313cfc5f53ee9a535c31e010",
       "bytes": 9276,
       "archivePath": "source-archive/concessions/nkr-parties/ae2d55c5-306e-4f59-890e-9a08c3c0df5b/partida.html",
@@ -25184,6 +25184,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "ae2d55c5-306e-4f59-890e-9a08c3c0df5b",
         "concessionId": "D-000797",
@@ -25204,8 +25205,7 @@
           "D-000797"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "7e75b249-db2e-4e6c-8215-d82daf747387": {
       "guid": "7e75b249-db2e-4e6c-8215-d82daf747387",
@@ -25219,7 +25219,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:20:57Z",
+      "checkedAt": "2026-11-22T12:37:39Z",
       "sha256": "c0af576a3e17e4186190f4d838e0675c17c785046660575b3a82539d70e0e077",
       "bytes": 9293,
       "archivePath": "source-archive/concessions/nkr-parties/7e75b249-db2e-4e6c-8215-d82daf747387/partida.html",
@@ -25227,6 +25227,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "7e75b249-db2e-4e6c-8215-d82daf747387",
         "concessionId": "D-000657",
@@ -25247,8 +25248,7 @@
           "D-000657"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "95c393e0-c07e-4ed6-a469-f441833396d2": {
       "guid": "95c393e0-c07e-4ed6-a469-f441833396d2",
@@ -25262,7 +25262,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:20:58Z",
+      "checkedAt": "2026-11-22T12:37:40Z",
       "sha256": "896367587f08c7567c813a3769f8ec8dcb1d75dd711d429413b58c3f9a9fed78",
       "bytes": 9289,
       "archivePath": "source-archive/concessions/nkr-parties/95c393e0-c07e-4ed6-a469-f441833396d2/partida.html",
@@ -25270,6 +25270,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "95c393e0-c07e-4ed6-a469-f441833396d2",
         "concessionId": "D-000623",
@@ -25290,8 +25291,7 @@
           "D-000623"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "a768a9d6-fa6a-4d57-9be5-17d3f8c73015": {
       "guid": "a768a9d6-fa6a-4d57-9be5-17d3f8c73015",
@@ -25305,7 +25305,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:20:59Z",
+      "checkedAt": "2026-11-22T12:37:41Z",
       "sha256": "e0ebc379539791acb06666442979aa711ac27e45f660ba5a3e50ffbc6e91d4ad",
       "bytes": 17352,
       "archivePath": "source-archive/concessions/nkr-parties/a768a9d6-fa6a-4d57-9be5-17d3f8c73015/partida.html",
@@ -25367,6 +25367,7 @@
           "publishedAt": "23.10.2025 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "a768a9d6-fa6a-4d57-9be5-17d3f8c73015",
         "concessionId": "D-000269",
@@ -25387,8 +25388,7 @@
           "D-000269"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "f359ceb0-fe99-482b-953c-19400d50fc9c": {
       "guid": "f359ceb0-fe99-482b-953c-19400d50fc9c",
@@ -25402,7 +25402,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:00Z",
+      "checkedAt": "2026-11-22T12:37:42Z",
       "sha256": "1aa0aff9127d43f1c1c82e1a8d9fed9b3250ef7dab40e1536c481aeab19db5f0",
       "bytes": 12562,
       "archivePath": "source-archive/concessions/nkr-parties/f359ceb0-fe99-482b-953c-19400d50fc9c/partida.html",
@@ -25434,6 +25434,7 @@
           "publishedAt": "25.11.2024 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "f359ceb0-fe99-482b-953c-19400d50fc9c",
         "concessionId": "D-000461",
@@ -25454,8 +25455,7 @@
           "D-000461"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "544b1521-9eab-46e2-8c9d-980c587f35d0": {
       "guid": "544b1521-9eab-46e2-8c9d-980c587f35d0",
@@ -25469,7 +25469,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:02Z",
+      "checkedAt": "2026-11-22T12:37:43Z",
       "sha256": "6413b11fe393982b04671757de28b026ba1a01809b6a03f14e81389da5f0ed83",
       "bytes": 14837,
       "archivePath": "source-archive/concessions/nkr-parties/544b1521-9eab-46e2-8c9d-980c587f35d0/partida.html",
@@ -25509,6 +25509,7 @@
           "publishedAt": "03.07.2023 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "544b1521-9eab-46e2-8c9d-980c587f35d0",
         "concessionId": "D-000390",
@@ -25529,8 +25530,7 @@
           "D-000390"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed": {
       "guid": "fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed",
@@ -25544,7 +25544,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:03Z",
+      "checkedAt": "2026-11-22T12:37:45Z",
       "sha256": "46bede72dccad2ab22722866ab92b3c678cca4ae07c139af50c8ca135e4965ee",
       "bytes": 9273,
       "archivePath": "source-archive/concessions/nkr-parties/fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed/partida.html",
@@ -25552,6 +25552,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "fba08bf6-d0d2-4f0b-94cc-aa1e128a5bed",
         "concessionId": "D-000833",
@@ -25572,8 +25573,7 @@
           "D-000833"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "ccb51e4d-0324-480a-a0cb-62a01cf13ece": {
       "guid": "ccb51e4d-0324-480a-a0cb-62a01cf13ece",
@@ -25587,7 +25587,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:04Z",
+      "checkedAt": "2026-11-22T12:37:46Z",
       "sha256": "53c3eb31478dc526edc2bc46173775eb57b72bc4cc20db5a32409d3dd5501f75",
       "bytes": 9275,
       "archivePath": "source-archive/concessions/nkr-parties/ccb51e4d-0324-480a-a0cb-62a01cf13ece/partida.html",
@@ -25595,6 +25595,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "ccb51e4d-0324-480a-a0cb-62a01cf13ece",
         "concessionId": "D-000234",
@@ -25615,8 +25616,7 @@
           "D-000234"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "5cc9d9fa-58d3-4ead-a929-893af8695ec4": {
       "guid": "5cc9d9fa-58d3-4ead-a929-893af8695ec4",
@@ -25630,7 +25630,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:05Z",
+      "checkedAt": "2026-11-22T12:37:47Z",
       "sha256": "02470b949c9e0ec4ae3d8ddcb8790850879d8fcded94e019bee4f76a35de7049",
       "bytes": 9287,
       "archivePath": "source-archive/concessions/nkr-parties/5cc9d9fa-58d3-4ead-a929-893af8695ec4/partida.html",
@@ -25638,6 +25638,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "5cc9d9fa-58d3-4ead-a929-893af8695ec4",
         "concessionId": "D-000597",
@@ -25658,8 +25659,7 @@
           "D-000597"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "9c381021-ab50-445c-8126-79e95ce4e017": {
       "guid": "9c381021-ab50-445c-8126-79e95ce4e017",
@@ -25673,7 +25673,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:06Z",
+      "checkedAt": "2026-11-22T12:37:48Z",
       "sha256": "72508407c8298acb12e029ea7f782f12ae52c439533655a180e7869edcf1c069",
       "bytes": 9287,
       "archivePath": "source-archive/concessions/nkr-parties/9c381021-ab50-445c-8126-79e95ce4e017/partida.html",
@@ -25681,6 +25681,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "9c381021-ab50-445c-8126-79e95ce4e017",
         "concessionId": "D-000524",
@@ -25701,8 +25702,7 @@
           "D-000524"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "9cd49036-2ab9-4c9f-b4d6-5192d3d864bc": {
       "guid": "9cd49036-2ab9-4c9f-b4d6-5192d3d864bc",
@@ -25716,7 +25716,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:08Z",
+      "checkedAt": "2026-11-22T12:37:49Z",
       "sha256": "a593273890c4a5f6c450d5b37d3cad959df15ab9f40c4df67200ccd8d7e98a60",
       "bytes": 9287,
       "archivePath": "source-archive/concessions/nkr-parties/9cd49036-2ab9-4c9f-b4d6-5192d3d864bc/partida.html",
@@ -25724,6 +25724,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "9cd49036-2ab9-4c9f-b4d6-5192d3d864bc",
         "concessionId": "D-000525",
@@ -25744,8 +25745,7 @@
           "D-000525"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "929e41f9-1ed0-4f3e-81a4-de146f65ced9": {
       "guid": "929e41f9-1ed0-4f3e-81a4-de146f65ced9",
@@ -25759,7 +25759,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:09Z",
+      "checkedAt": "2026-11-22T12:37:51Z",
       "sha256": "e40d6324725eef48582c793312be7ff0eedd7da7333590768e4f10ee7833a62a",
       "bytes": 14433,
       "archivePath": "source-archive/concessions/nkr-parties/929e41f9-1ed0-4f3e-81a4-de146f65ced9/partida.html",
@@ -25792,6 +25792,7 @@
           "publishedAt": "21.10.2021 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "929e41f9-1ed0-4f3e-81a4-de146f65ced9",
         "concessionId": "216-132",
@@ -25812,8 +25813,7 @@
           "216-132"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "c9cdd652-76b4-48c2-9e78-015af091aa15": {
       "guid": "c9cdd652-76b4-48c2-9e78-015af091aa15",
@@ -25827,7 +25827,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:10Z",
+      "checkedAt": "2026-11-22T12:37:52Z",
       "sha256": "8dc3f27e7825893a4edb14db60016a590561905c49f499d884dc3f5330ddba63",
       "bytes": 17653,
       "archivePath": "source-archive/concessions/nkr-parties/c9cdd652-76b4-48c2-9e78-015af091aa15/partida.html",
@@ -25889,6 +25889,7 @@
           "publishedAt": "29.12.2025 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "c9cdd652-76b4-48c2-9e78-015af091aa15",
         "concessionId": "D-000649",
@@ -25909,8 +25910,7 @@
           "D-000649"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "4b2c0d37-7f76-49e9-878a-3733ee8d23f8": {
       "guid": "4b2c0d37-7f76-49e9-878a-3733ee8d23f8",
@@ -25924,7 +25924,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:11Z",
+      "checkedAt": "2026-11-22T12:37:53Z",
       "sha256": "5a80250f91f0c869c50976c946475aac4595e099051e2e581c03d7a89f02e707",
       "bytes": 9261,
       "archivePath": "source-archive/concessions/nkr-parties/4b2c0d37-7f76-49e9-878a-3733ee8d23f8/partida.html",
@@ -25932,6 +25932,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "4b2c0d37-7f76-49e9-878a-3733ee8d23f8",
         "concessionId": "D-000615",
@@ -25952,8 +25953,7 @@
           "D-000615"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "b5707771-c755-4607-b74d-d3d9df9cf8b5": {
       "guid": "b5707771-c755-4607-b74d-d3d9df9cf8b5",
@@ -25967,7 +25967,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:12Z",
+      "checkedAt": "2026-11-22T12:37:54Z",
       "sha256": "b607cc299f45d3a8058a42a6f7e22272210c0093450bfcc02775a398960e6383",
       "bytes": 9322,
       "archivePath": "source-archive/concessions/nkr-parties/b5707771-c755-4607-b74d-d3d9df9cf8b5/partida.html",
@@ -25975,6 +25975,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "b5707771-c755-4607-b74d-d3d9df9cf8b5",
         "concessionId": "D-000215",
@@ -25995,8 +25996,7 @@
           "D-000215"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "8494303b-bd5b-44b5-a477-c62265246cac": {
       "guid": "8494303b-bd5b-44b5-a477-c62265246cac",
@@ -26010,7 +26010,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:14Z",
+      "checkedAt": "2026-11-22T12:37:55Z",
       "sha256": "7f813137ebdd6837ecea327a91a992dd6313dfed2a380434466e0da4591c835b",
       "bytes": 9302,
       "archivePath": "source-archive/concessions/nkr-parties/8494303b-bd5b-44b5-a477-c62265246cac/partida.html",
@@ -26018,6 +26018,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "8494303b-bd5b-44b5-a477-c62265246cac",
         "concessionId": "D-000345",
@@ -26038,8 +26039,7 @@
           "D-000345"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "15e3fb65-009e-4607-b26f-ffcf4f895939": {
       "guid": "15e3fb65-009e-4607-b26f-ffcf4f895939",
@@ -26053,7 +26053,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:15Z",
+      "checkedAt": "2026-11-22T12:37:57Z",
       "sha256": "d64f6ff98ae2d3d104cc1cc50a255cb434ddb017bb0c02d4993c3af0a771730e",
       "bytes": 17459,
       "archivePath": "source-archive/concessions/nkr-parties/15e3fb65-009e-4607-b26f-ffcf4f895939/partida.html",
@@ -26115,6 +26115,7 @@
           "publishedAt": "28.01.2026 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "15e3fb65-009e-4607-b26f-ffcf4f895939",
         "concessionId": "D-000163",
@@ -26135,8 +26136,7 @@
           "D-000163"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "a8385e76-7680-4d0e-9fcd-1a193496c9c4": {
       "guid": "a8385e76-7680-4d0e-9fcd-1a193496c9c4",
@@ -26218,14 +26218,39 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:17Z",
-      "sha256": "d992e0f9e7cd003b4f9fa276376806840fc70a3ee9138b52696d0dca48abb678",
-      "bytes": 9267,
+      "checkedAt": "2026-11-22T12:37:58Z",
+      "sha256": "6fa64d9835d43d32b9b37ee2ba977138e2aef2a8f3e90b522683e9ff0f32fe3d",
+      "bytes": 13226,
       "archivePath": "source-archive/concessions/nkr-parties/93a66322-f5d4-4707-b9a9-654f59144f44/partida.html",
-      "fileLinkCount": 0,
-      "previewLinkCount": 0,
-      "fileLinks": [],
-      "previewLinks": [],
+      "fileLinkCount": 1,
+      "previewLinkCount": 2,
+      "fileLinks": [
+        {
+          "href": "/File/Download/e83eda2c-3579-4e6f-87f9-aa51d86a4923",
+          "url": "https://nkr.government.bg/File/Download/e83eda2c-3579-4e6f-87f9-aa51d86a4923",
+          "title": "Свали",
+          "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+          "description": "Допълнително споразумение № 1 от 16 октомври 2026 г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Хитрино-4“, разположено в землището на с. Сливак, община Хитрино, област Шумен, сключен на 21 април 2020 г. между Министерския съвет на Република България, представляван от министъра на енергетиката и „Автомагистрали-Черно море“ АД, гр. Шумен",
+          "publishedAt": "16.10.2026 г."
+        }
+      ],
+      "previewLinks": [
+        {
+          "href": "/Preview/AssignedConcession/7be54621-e7f7-487f-99f9-aeb28e13332b",
+          "url": "https://nkr.government.bg/Preview/AssignedConcession/7be54621-e7f7-487f-99f9-aeb28e13332b",
+          "title": "Отвори актуална информация за концесията",
+          "documentType": "Формуляр за изменение на вписани данни",
+          "publishedAt": "16.10.2026 г."
+        },
+        {
+          "href": "/Preview/AssignedConcessionCorrection/7be54621-e7f7-487f-99f9-aeb28e13332b",
+          "url": "https://nkr.government.bg/Preview/AssignedConcessionCorrection/7be54621-e7f7-487f-99f9-aeb28e13332b",
+          "title": "Отвори Формуляр за изменение на вписани данни",
+          "documentType": "Формуляр за изменение на вписани данни",
+          "publishedAt": "16.10.2026 г."
+        }
+      ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "93a66322-f5d4-4707-b9a9-654f59144f44",
         "concessionId": "D-000826",
@@ -26246,8 +26271,7 @@
           "D-000826"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "36237792-deef-4da5-82c3-9e2bb6d32276": {
       "guid": "36237792-deef-4da5-82c3-9e2bb6d32276",
@@ -26261,7 +26285,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:19Z",
+      "checkedAt": "2026-11-22T12:37:59Z",
       "sha256": "7a4f70b5258bf18e491187ae5ab38cc72c521d17d3b1194e9915adf016edbec7",
       "bytes": 14205,
       "archivePath": "source-archive/concessions/nkr-parties/36237792-deef-4da5-82c3-9e2bb6d32276/partida.html",
@@ -26294,6 +26318,7 @@
           "publishedAt": "30.03.2026 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "36237792-deef-4da5-82c3-9e2bb6d32276",
         "concessionId": "216-419",
@@ -26314,8 +26339,7 @@
           "216-419"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "a00c0745-221d-4799-865a-204c65941250": {
       "guid": "a00c0745-221d-4799-865a-204c65941250",
@@ -26329,7 +26353,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:20Z",
+      "checkedAt": "2026-11-22T12:38:00Z",
       "sha256": "9d642a516b3f58e6d425e7c514dc3b9e907999aa10629fe3dbd3f4b9114fb54f",
       "bytes": 9366,
       "archivePath": "source-archive/concessions/nkr-parties/a00c0745-221d-4799-865a-204c65941250/partida.html",
@@ -26337,6 +26361,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "a00c0745-221d-4799-865a-204c65941250",
         "concessionId": "D-000573",
@@ -26357,8 +26382,7 @@
           "D-000573"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "25758e4f-abd5-4f0e-a62d-c51b268eeaea": {
       "guid": "25758e4f-abd5-4f0e-a62d-c51b268eeaea",
@@ -26440,7 +26464,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:22Z",
+      "checkedAt": "2026-11-22T12:38:01Z",
       "sha256": "3d03472c126992d8adf42f088c03f28b375537ac73a99f1b95e94df1aa491582",
       "bytes": 18850,
       "archivePath": "source-archive/concessions/nkr-parties/decff2a4-42dc-4377-8be1-2249764f96bc/partida.html",
@@ -26512,6 +26536,7 @@
           "publishedAt": "21.10.2021 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "decff2a4-42dc-4377-8be1-2249764f96bc",
         "concessionId": "D-000036",
@@ -26532,8 +26557,7 @@
           "D-000036"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "4bb29997-ec53-4b6a-9044-6845d881524b": {
       "guid": "4bb29997-ec53-4b6a-9044-6845d881524b",
@@ -26547,7 +26571,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:23Z",
+      "checkedAt": "2026-11-22T12:38:03Z",
       "sha256": "50d451ac23699ed9a7ad0541742d8d4c4601d904116238def9a22fe9424cbc47",
       "bytes": 14328,
       "archivePath": "source-archive/concessions/nkr-parties/4bb29997-ec53-4b6a-9044-6845d881524b/partida.html",
@@ -26580,6 +26604,7 @@
           "publishedAt": "19.07.2023 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "4bb29997-ec53-4b6a-9044-6845d881524b",
         "concessionId": "216-258",
@@ -26600,8 +26625,7 @@
           "216-258"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "590e004b-7225-4e69-80f9-6c28dfd9c2ae": {
       "guid": "590e004b-7225-4e69-80f9-6c28dfd9c2ae",
@@ -26615,7 +26639,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:25Z",
+      "checkedAt": "2026-11-22T12:38:04Z",
       "sha256": "951676f4dcf8755e8c9214f9bd1d65c74a919c76bf736ff478ae6cc2f00b8be4",
       "bytes": 9282,
       "archivePath": "source-archive/concessions/nkr-parties/590e004b-7225-4e69-80f9-6c28dfd9c2ae/partida.html",
@@ -26623,6 +26647,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "590e004b-7225-4e69-80f9-6c28dfd9c2ae",
         "concessionId": "D-000396",
@@ -26643,8 +26668,7 @@
           "D-000396"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "ae27ad1c-4a80-473d-87a6-ee2070ecad68": {
       "guid": "ae27ad1c-4a80-473d-87a6-ee2070ecad68",
@@ -26658,7 +26682,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:26Z",
+      "checkedAt": "2026-11-22T12:38:05Z",
       "sha256": "6cecbd121c256e1dd60dd85d344a69f27df0a0daffb24ec9d039ef500452992b",
       "bytes": 9309,
       "archivePath": "source-archive/concessions/nkr-parties/ae27ad1c-4a80-473d-87a6-ee2070ecad68/partida.html",
@@ -26666,6 +26690,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "ae27ad1c-4a80-473d-87a6-ee2070ecad68",
         "concessionId": "D-000530",
@@ -26686,8 +26711,7 @@
           "D-000530"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "d9aed436-7dbd-4486-bba9-45b07eef2739": {
       "guid": "d9aed436-7dbd-4486-bba9-45b07eef2739",
@@ -26701,7 +26725,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:27Z",
+      "checkedAt": "2026-11-22T12:38:06Z",
       "sha256": "9537e0e691902210fb1cb37a7fe6a2878f3e764dab83f93766e33652f5f4b989",
       "bytes": 9277,
       "archivePath": "source-archive/concessions/nkr-parties/d9aed436-7dbd-4486-bba9-45b07eef2739/partida.html",
@@ -26709,6 +26733,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "d9aed436-7dbd-4486-bba9-45b07eef2739",
         "concessionId": "D-000470",
@@ -26729,8 +26754,7 @@
           "D-000470"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "2ff8dcb3-7c3c-4790-83df-9af9232639c4": {
       "guid": "2ff8dcb3-7c3c-4790-83df-9af9232639c4",
@@ -26744,7 +26768,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:28Z",
+      "checkedAt": "2026-11-22T12:38:08Z",
       "sha256": "978b7f45d4d41678d1e565a434317e1dd45288c0bac0d3734ebcd0f76d48f589",
       "bytes": 9307,
       "archivePath": "source-archive/concessions/nkr-parties/2ff8dcb3-7c3c-4790-83df-9af9232639c4/partida.html",
@@ -26752,6 +26776,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "2ff8dcb3-7c3c-4790-83df-9af9232639c4",
         "concessionId": "D-000738",
@@ -26772,8 +26797,7 @@
           "D-000738"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "b9cb48b2-e8fb-4fa6-841d-df83e7b51741": {
       "guid": "b9cb48b2-e8fb-4fa6-841d-df83e7b51741",
@@ -26787,7 +26811,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:29Z",
+      "checkedAt": "2026-11-22T12:38:09Z",
       "sha256": "4af169bfd34fa174480be3f6387b4022c236fb501aa00dfa886a1fc2677b975c",
       "bytes": 9328,
       "archivePath": "source-archive/concessions/nkr-parties/b9cb48b2-e8fb-4fa6-841d-df83e7b51741/partida.html",
@@ -26795,6 +26819,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "b9cb48b2-e8fb-4fa6-841d-df83e7b51741",
         "concessionId": "D-000674",
@@ -26815,8 +26840,7 @@
           "D-000674"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "4ffcbd35-40a6-4dfb-be09-db5702edba35": {
       "guid": "4ffcbd35-40a6-4dfb-be09-db5702edba35",
@@ -26830,7 +26854,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:31Z",
+      "checkedAt": "2026-11-22T12:38:10Z",
       "sha256": "92991d85677f16c3a1a4a83f7cda96e5bd1d20fc23ee44a5a4626d44e8213d5e",
       "bytes": 9285,
       "archivePath": "source-archive/concessions/nkr-parties/4ffcbd35-40a6-4dfb-be09-db5702edba35/partida.html",
@@ -26838,6 +26862,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "4ffcbd35-40a6-4dfb-be09-db5702edba35",
         "concessionId": "D-000619",
@@ -26858,8 +26883,7 @@
           "D-000619"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "90716d7d-a0b3-4647-8860-745964b933be": {
       "guid": "90716d7d-a0b3-4647-8860-745964b933be",
@@ -26871,9 +26895,9 @@
       "names": [
         "Чала"
       ],
-      "priority": 4,
+      "priority": 2,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:32Z",
+      "checkedAt": "2026-11-22T12:38:11Z",
       "sha256": "410ee817285d701ccccd5c98274410b76eb01b16fce46c38aa64fd3c30503941",
       "bytes": 19184,
       "archivePath": "source-archive/concessions/nkr-parties/90716d7d-a0b3-4647-8860-745964b933be/partida.html",
@@ -26951,6 +26975,7 @@
           "publishedAt": "21.10.2021 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "90716d7d-a0b3-4647-8860-745964b933be",
         "concessionId": "D-000075",
@@ -26971,8 +26996,7 @@
           "D-000075"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "af89a3a3-1aeb-44f8-abbd-b3b75349ff07": {
       "guid": "af89a3a3-1aeb-44f8-abbd-b3b75349ff07",
@@ -26986,7 +27010,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:33Z",
+      "checkedAt": "2026-11-22T12:38:12Z",
       "sha256": "5d5a1cafbe9bdce3332b5db625cb4199476d7c2a079157bc961a0b34a5ce95e0",
       "bytes": 9286,
       "archivePath": "source-archive/concessions/nkr-parties/af89a3a3-1aeb-44f8-abbd-b3b75349ff07/partida.html",
@@ -26994,6 +27018,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "af89a3a3-1aeb-44f8-abbd-b3b75349ff07",
         "concessionId": "D-000191",
@@ -27014,8 +27039,7 @@
           "D-000191"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "53111b8d-fd13-4f4b-b8f9-d018d7f0f360": {
       "guid": "53111b8d-fd13-4f4b-b8f9-d018d7f0f360",
@@ -27029,7 +27053,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:34Z",
+      "checkedAt": "2026-11-22T12:38:14Z",
       "sha256": "d151a07076d5bf5dc39de8d0f6efcd611a0ba743572e131099cec69151d7f194",
       "bytes": 13901,
       "archivePath": "source-archive/concessions/nkr-parties/53111b8d-fd13-4f4b-b8f9-d018d7f0f360/partida.html",
@@ -27069,6 +27093,7 @@
           "publishedAt": "11.11.2021 г."
         }
       ],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "53111b8d-fd13-4f4b-b8f9-d018d7f0f360",
         "concessionId": "D-000216",
@@ -27089,8 +27114,7 @@
           "D-000216"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "883bec07-d590-4e4d-8841-c298a7779b7a": {
       "guid": "883bec07-d590-4e4d-8841-c298a7779b7a",
@@ -27104,7 +27128,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:36Z",
+      "checkedAt": "2026-11-22T12:38:15Z",
       "sha256": "69a9ed44c5de11a6ec38de59b3c5f8d9f3352dd1b54de0ccfdf6d92d260024b7",
       "bytes": 9293,
       "archivePath": "source-archive/concessions/nkr-parties/883bec07-d590-4e4d-8841-c298a7779b7a/partida.html",
@@ -27112,6 +27136,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "883bec07-d590-4e4d-8841-c298a7779b7a",
         "concessionId": "D-000272",
@@ -27132,8 +27157,7 @@
           "D-000272"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "cf5b8e57-4f2a-4423-87af-5712b8400689": {
       "guid": "cf5b8e57-4f2a-4423-87af-5712b8400689",
@@ -27147,7 +27171,7 @@
       ],
       "priority": 4,
       "status": "ok",
-      "checkedAt": "2026-10-05T08:21:37Z",
+      "checkedAt": "2026-11-22T12:38:16Z",
       "sha256": "2dff8fb17c5d095dc9d5d1088d154d6329c130dbb40c36549c4c3371516c5bac",
       "bytes": 9269,
       "archivePath": "source-archive/concessions/nkr-parties/cf5b8e57-4f2a-4423-87af-5712b8400689/partida.html",
@@ -27155,6 +27179,7 @@
       "previewLinkCount": 0,
       "fileLinks": [],
       "previewLinks": [],
+      "linkParserVersion": 2,
       "indexRecord": {
         "guid": "cf5b8e57-4f2a-4423-87af-5712b8400689",
         "concessionId": "D-000432",
@@ -27175,8 +27200,7 @@
           "D-000432"
         ],
         "inventoryMatchCount": 1
-      },
-      "linkParserVersion": 2
+      }
     },
     "28b5f5f1-ac7d-4ae9-a876-d70968506756": {
       "guid": "28b5f5f1-ac7d-4ae9-a876-d70968506756",

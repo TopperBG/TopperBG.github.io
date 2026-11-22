@@ -1,7 +1,7 @@
 {
   "schema": "bgwf-coordinate-document-candidates-v1",
-  "generatedAt": "2026-11-15T12:02:00Z",
-  "candidateCount": 78,
+  "generatedAt": "2026-11-22T12:39:37Z",
+  "candidateCount": 92,
   "readyForCoordinateParserCount": 0,
   "rules": [
     "Attachment extraction alone never publishes geometry.",
@@ -5516,6 +5516,29 @@
       "sample": []
     },
     {
+      "fileId": "3bbf8e59-28c2-4647-93e1-58300748512f",
+      "sha256": "0d747e6a9fc0bf652bb66956eccf5b4370786ca0f55fad503c354dda17d4dd57",
+      "archivePath": "source-archive/concessions/nkr-attachments/0d747e6a9fc0bf652bb66956eccf5b4370786ca0f55fad503c354dda17d4dd57.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0d747e6a9fc0bf652bb66956eccf5b4370786ca0f55fad503c354dda17d4dd57.txt",
+      "inventoryIds": [
+        "216-309"
+      ],
+      "concessionIds": [
+        "216-309"
+      ],
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BA%D1%8A%D0%BC%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0.pdf",
+      "extension": ".pdf",
+      "textChars": 29874,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
       "fileId": "51cbb0b1-8075-46c1-be53-ff932eda78b5",
       "sha256": "42e8d2e0f08a347837a1606ba7d4a037149b14f33db9324aaff73175637d36ac",
       "archivePath": "source-archive/concessions/nkr-attachments/42e8d2e0f08a347837a1606ba7d4a037149b14f33db9324aaff73175637d36ac.pdf",
@@ -5798,6 +5821,305 @@
       "filename": "RMS_83_2026.pdf",
       "extension": ".pdf",
       "textChars": 6394,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "344a121b-3d27-4849-8459-1e8ac604d405",
+      "sha256": "7ee3466121eb72d9a8d4b8eb8367b5b4e30941fcdd8f23a4119c0599b2173a1c",
+      "archivePath": "source-archive/concessions/nkr-attachments/7ee3466121eb72d9a8d4b8eb8367b5b4e30941fcdd8f23a4119c0599b2173a1c.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7ee3466121eb72d9a8d4b8eb8367b5b4e30941fcdd8f23a4119c0599b2173a1c.txt",
+      "inventoryIds": [
+        "D-000489"
+      ],
+      "concessionIds": [
+        "D-000489"
+      ],
+      "filename": "Reshenie_Lisovo_08RH367.doc",
+      "extension": ".doc",
+      "textChars": 15697,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "3bbbeeda-ecab-44c8-9c3b-99c5fc7618f7",
+      "sha256": "6dc55852ee957566ef474a9cd5f562f87797a2486683df7889464a7a1cb51b43",
+      "archivePath": "source-archive/concessions/nkr-attachments/6dc55852ee957566ef474a9cd5f562f87797a2486683df7889464a7a1cb51b43.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6dc55852ee957566ef474a9cd5f562f87797a2486683df7889464a7a1cb51b43.txt",
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2019.docx",
+      "extension": ".docx",
+      "textChars": 27979,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "8b67d5fe-4879-46c6-a0f5-570504b431dd",
+      "sha256": "78c4ab567d32c3d0a23ec00d5dbeb6759c8e2bee539f6c20aac001c4c1c613ba",
+      "archivePath": "source-archive/concessions/nkr-attachments/78c4ab567d32c3d0a23ec00d5dbeb6759c8e2bee539f6c20aac001c4c1c613ba.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/78c4ab567d32c3d0a23ec00d5dbeb6759c8e2bee539f6c20aac001c4c1c613ba.txt",
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2021.docx",
+      "extension": ".docx",
+      "textChars": 27562,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "90057334-0131-47d3-9c83-c3e41d79f900",
+      "sha256": "8d806830062dba2dee268338c067ae34ae9a57bf709bbb03fe55424a9ff6e89b",
+      "archivePath": "source-archive/concessions/nkr-attachments/8d806830062dba2dee268338c067ae34ae9a57bf709bbb03fe55424a9ff6e89b.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/8d806830062dba2dee268338c067ae34ae9a57bf709bbb03fe55424a9ff6e89b.txt",
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2020.docx",
+      "extension": ".docx",
+      "textChars": 27562,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "adb50b0d-03d8-478f-9370-257da488afa8",
+      "sha256": "7835adb793694dc833d4773e93ecd5b08099189cd8046c7eef10f2ce6559eaeb",
+      "archivePath": "source-archive/concessions/nkr-attachments/7835adb793694dc833d4773e93ecd5b08099189cd8046c7eef10f2ce6559eaeb.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7835adb793694dc833d4773e93ecd5b08099189cd8046c7eef10f2ce6559eaeb.txt",
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2018.docx",
+      "extension": ".docx",
+      "textChars": 27538,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "15361179-ea45-4fed-a354-2ef0d804a379",
+      "sha256": "89a1dc298654311244fa44f4598246392a3e5902e551e9c442bfa15414ba7597",
+      "archivePath": "source-archive/concessions/nkr-attachments/89a1dc298654311244fa44f4598246392a3e5902e551e9c442bfa15414ba7597.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/89a1dc298654311244fa44f4598246392a3e5902e551e9c442bfa15414ba7597.txt",
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2019.docx",
+      "extension": ".docx",
+      "textChars": 27903,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "56ef917b-f567-4da3-9714-ea708cf08d7c",
+      "sha256": "0d6d986a5cd7a1dc9633576def17ad7ad2915b6616c170d4a908ea3ecfd274e1",
+      "archivePath": "source-archive/concessions/nkr-attachments/0d6d986a5cd7a1dc9633576def17ad7ad2915b6616c170d4a908ea3ecfd274e1.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0d6d986a5cd7a1dc9633576def17ad7ad2915b6616c170d4a908ea3ecfd274e1.txt",
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2020.docx",
+      "extension": ".docx",
+      "textChars": 27905,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "a8975fa1-27b9-4783-b0fb-139bae5a679e",
+      "sha256": "37bd77cd34989664ec38e32aee5ebe730ca471b3395ffeaea33caa09243dd199",
+      "archivePath": "source-archive/concessions/nkr-attachments/37bd77cd34989664ec38e32aee5ebe730ca471b3395ffeaea33caa09243dd199.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/37bd77cd34989664ec38e32aee5ebe730ca471b3395ffeaea33caa09243dd199.txt",
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2018.doc%D1%85.docx",
+      "extension": ".docx",
+      "textChars": 27865,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "c66b69ae-94bf-46d4-b6ca-6539b8bcee01",
+      "sha256": "3b625e062ab5ad6d327980e2072a3e26d47414d924e29c211ea99875ea713296",
+      "archivePath": "source-archive/concessions/nkr-attachments/3b625e062ab5ad6d327980e2072a3e26d47414d924e29c211ea99875ea713296.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3b625e062ab5ad6d327980e2072a3e26d47414d924e29c211ea99875ea713296.txt",
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2021.docx",
+      "extension": ".docx",
+      "textChars": 27960,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "3e81dee6-b8b6-4475-b8b4-84455fe618a0",
+      "sha256": "255288011bbc33df0e272b0df538528e7cc18f70e97562a086d713654398fe55",
+      "archivePath": "source-archive/concessions/nkr-attachments/255288011bbc33df0e272b0df538528e7cc18f70e97562a086d713654398fe55.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/255288011bbc33df0e272b0df538528e7cc18f70e97562a086d713654398fe55.txt",
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2021.docx",
+      "extension": ".docx",
+      "textChars": 30376,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "83a69d4d-ea44-4b78-97b7-cccdaf64d45d",
+      "sha256": "f31814674c8b33941494755333b688b9ddc9780057a9dedb1034687294878d5c",
+      "archivePath": "source-archive/concessions/nkr-attachments/f31814674c8b33941494755333b688b9ddc9780057a9dedb1034687294878d5c.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f31814674c8b33941494755333b688b9ddc9780057a9dedb1034687294878d5c.txt",
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2019.docx",
+      "extension": ".docx",
+      "textChars": 30359,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "b751e26d-904c-492c-b6d9-05a1bef4bef8",
+      "sha256": "97e7a26744e4455fc18df749446c3a3457d691679d6c59f65bffebf3f22a635d",
+      "archivePath": "source-archive/concessions/nkr-attachments/97e7a26744e4455fc18df749446c3a3457d691679d6c59f65bffebf3f22a635d.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/97e7a26744e4455fc18df749446c3a3457d691679d6c59f65bffebf3f22a635d.txt",
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2018.docx",
+      "extension": ".docx",
+      "textChars": 30326,
+      "keywordHit": true,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "dominantCrsClass": null,
+      "expected": null,
+      "exactExpectedPointCount": false,
+      "qaStatus": "candidate-review",
+      "sample": []
+    },
+    {
+      "fileId": "d1caee7d-9c84-4467-a6af-6527189ff0f6",
+      "sha256": "640bb122371ecc63e9d8eb03958d7c0a1512640d4ce6516f8ee0454ae8dcd961",
+      "archivePath": "source-archive/concessions/nkr-attachments/640bb122371ecc63e9d8eb03958d7c0a1512640d4ce6516f8ee0454ae8dcd961.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/640bb122371ecc63e9d8eb03958d7c0a1512640d4ce6516f8ee0454ae8dcd961.txt",
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2020.docx",
+      "extension": ".docx",
+      "textChars": 30372,
       "keywordHit": true,
       "coordinateRowCount": 0,
       "coordinateClassCounts": {},

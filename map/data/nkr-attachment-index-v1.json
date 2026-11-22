@@ -1,11 +1,11 @@
 {
   "schema": "bgwf-nkr-attachment-index-v1",
-  "generatedAt": "2026-11-15T12:02:00Z",
+  "generatedAt": "2026-11-22T12:39:37Z",
   "runtimeDependency": false,
-  "knownLinkCount": 455,
-  "archivedOkCount": 393,
-  "downloadedThisRun": 10,
-  "downloadedBytesThisRun": 63509961,
+  "knownLinkCount": 456,
+  "archivedOkCount": 453,
+  "downloadedThisRun": 60,
+  "downloadedBytesThisRun": 59126248,
   "errors": [],
   "files": {
     "7cff2f84-1391-4609-8f60-cc5309647fa9": {
@@ -10092,7 +10092,7 @@
       "priority": 4,
       "status": "skipped-too-large",
       "bytes": 19533443,
-      "checkedAt": "2026-11-15T12:01:28Z"
+      "checkedAt": "2026-11-22T12:38:20Z"
     },
     "93e39dc4-0dbc-4485-bf0f-e0b163a3eb35": {
       "fileId": "93e39dc4-0dbc-4485-bf0f-e0b163a3eb35",
@@ -17091,7 +17091,7 @@
       "priority": 4,
       "status": "skipped-too-large",
       "bytes": 16847571,
-      "checkedAt": "2026-11-15T12:01:31Z"
+      "checkedAt": "2026-11-22T12:38:22Z"
     },
     "297efe28-dbae-4349-a6ef-22d6c7b74e86": {
       "fileId": "297efe28-dbae-4349-a6ef-22d6c7b74e86",
@@ -17597,6 +17597,2073 @@
       "textPath": "source-archive/concessions/nkr-attachments-text/f676cf0bf888dc6a0dab37af2c2127d5aec94d337345ba5cbb60eb23f68ff388.txt",
       "extractor": "pypdf",
       "textChars": 11874,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "e83eda2c-3579-4e6f-87f9-aa51d86a4923": {
+      "fileId": "e83eda2c-3579-4e6f-87f9-aa51d86a4923",
+      "url": "https://nkr.government.bg/File/Download/e83eda2c-3579-4e6f-87f9-aa51d86a4923",
+      "title": "Свали",
+      "documentType": "Електронен образ на допълнително споразумение към концесионния договор",
+      "description": "Допълнително споразумение № 1 от 16 октомври 2026 г. към Договора за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства – строителни материали – варовици, от находище „Хитрино-4“, разположено в землището на с. Сливак, община Хитрино, област Шумен, сключен на 21 април 2020 г. между Министерския съвет на Република България, представляван от министъра на енергетиката и „Автомагистрали-Черно море“ АД, гр. Шумен",
+      "publishedAt": "16.10.2026 г.",
+      "partyGuids": [
+        "93a66322-f5d4-4707-b9a9-654f59144f44"
+      ],
+      "inventoryIds": [
+        "D-000826"
+      ],
+      "concessionIds": [
+        "D-000826"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:20Z",
+      "filename": "%D0%94%D0%BE%D0%BF.%20%D1%81%D0%BF%D0%BE%D1%80%D0%B0%D0%B7%D1%83%D0%BC%D0%B5%D0%BD%D0%B8%D0%B5%201%20%D0%A5%D0%B8%D1%82%D1%80%D0%B8%D0%BD%D0%BE-4.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 382365,
+      "sha256": "ec16c144dac6510a788d46761ced0bb65b7b10ac1889384a4566534ca104fdca",
+      "archivePath": "source-archive/concessions/nkr-attachments/ec16c144dac6510a788d46761ced0bb65b7b10ac1889384a4566534ca104fdca.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ec16c144dac6510a788d46761ced0bb65b7b10ac1889384a4566534ca104fdca.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "7f628599-c5a3-46fc-8134-e03f159a230f": {
+      "fileId": "7f628599-c5a3-46fc-8134-e03f159a230f",
+      "url": "https://nkr.government.bg/File/Download/7f628599-c5a3-46fc-8134-e03f159a230f",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на неметални полезни изкопаеми - индустриални минерали - кварцови пясъци за филтрационни цели - подземни богатства по чл. 2, т. 2 от ЗПБ от находище \"Побит камък\", село Нови хан, община Елин Пелин, Софийска област.",
+      "publishedAt": "23.03.2022 г.",
+      "partyGuids": [
+        "589933ac-c51d-4bca-85e8-85b51895af8c"
+      ],
+      "inventoryIds": [
+        "D-000415"
+      ],
+      "concessionIds": [
+        "D-000415"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:23Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9F%D0%BE%D0%B1%D0%B8%D1%82%D0%9A%D0%B0%D0%BC%D1%8A%D0%BA_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1697057,
+      "sha256": "9ccadbbff4f2ebcb0411f2d8000cd55b24dcd1989cf0e794e2fb68190dc0cca8",
+      "archivePath": "source-archive/concessions/nkr-attachments/9ccadbbff4f2ebcb0411f2d8000cd55b24dcd1989cf0e794e2fb68190dc0cca8.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9ccadbbff4f2ebcb0411f2d8000cd55b24dcd1989cf0e794e2fb68190dc0cca8.txt",
+      "extractor": "pypdf",
+      "textChars": 7763,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a61e46be-0cf8-4120-9586-9d48a8059d2d": {
+      "fileId": "a61e46be-0cf8-4120-9586-9d48a8059d2d",
+      "url": "https://nkr.government.bg/File/Download/a61e46be-0cf8-4120-9586-9d48a8059d2d",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на неметални полезни изкопаеми - индустриални минерали - доломити - подземни богатства по чл. 2, ал. 2 от ЗПБ от находище \"Малък Гайтановец\", община Белово, област Пазарджик.",
+      "publishedAt": "24.03.2022 г.",
+      "partyGuids": [
+        "6c97175c-b299-46ec-b896-4d7be00ed8b2"
+      ],
+      "inventoryIds": [
+        "D-000416"
+      ],
+      "concessionIds": [
+        "D-000416"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:24Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9C%D0%B0%D0%BB%D1%8A%D0%BA%D0%93%D0%B0%D0%B9%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B5%D1%86_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1576170,
+      "sha256": "10e00a312c3d3fa5689c7a39687b8d7bb9a70eab10c1b0109110cb02a2e064c7",
+      "archivePath": "source-archive/concessions/nkr-attachments/10e00a312c3d3fa5689c7a39687b8d7bb9a70eab10c1b0109110cb02a2e064c7.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/10e00a312c3d3fa5689c7a39687b8d7bb9a70eab10c1b0109110cb02a2e064c7.txt",
+      "extractor": "pypdf",
+      "textChars": 9594,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "83ee4ee0-52b8-4223-8a11-e2c9b5d54fe9": {
+      "fileId": "83ee4ee0-52b8-4223-8a11-e2c9b5d54fe9",
+      "url": "https://nkr.government.bg/File/Download/83ee4ee0-52b8-4223-8a11-e2c9b5d54fe9",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства - строителни материали - базалти, от находище \"Баалък тепе\", община Казанлък, област Стара Загора.",
+      "publishedAt": "25.03.2022 г.",
+      "partyGuids": [
+        "326bfb8f-9860-4970-b569-0f8560b705bd"
+      ],
+      "inventoryIds": [
+        "D-000467"
+      ],
+      "concessionIds": [
+        "D-000467"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:26Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%91%D0%B0%D0%B0%D0%BB%D1%8A%D0%BA%D0%A2%D0%B5%D0%BF%D0%B5_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2737142,
+      "sha256": "8e2b8d78f5010325fc812dc09d7b27bf91b854febf9a7a149653d77cb11dc508",
+      "archivePath": "source-archive/concessions/nkr-attachments/8e2b8d78f5010325fc812dc09d7b27bf91b854febf9a7a149653d77cb11dc508.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/8e2b8d78f5010325fc812dc09d7b27bf91b854febf9a7a149653d77cb11dc508.txt",
+      "extractor": "pypdf",
+      "textChars": 23315,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "cdd47df9-b918-4abd-bda7-e735d1ba9ded": {
+      "fileId": "cdd47df9-b918-4abd-bda7-e735d1ba9ded",
+      "url": "https://nkr.government.bg/File/Download/cdd47df9-b918-4abd-bda7-e735d1ba9ded",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 3 от Закона за подземните богатства - природен газ - от находище \"Калиакра\", находящо се в континенталния шелф и изключителната икономическа зона на Република България в Черно море.",
+      "publishedAt": "31.03.2022 г.",
+      "partyGuids": [
+        "e666058b-7e50-4ca7-abe9-b17da12ac73c"
+      ],
+      "inventoryIds": [
+        "D-000544"
+      ],
+      "concessionIds": [
+        "D-000544"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:28Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9A%D0%90%D0%9B%D0%98%D0%90%D0%9A%D0%A0%D0%90_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 5666844,
+      "sha256": "c1e309f5271103b48960d650074e2e512d4f099e9501bf74bffabed3517fa66e",
+      "archivePath": "source-archive/concessions/nkr-attachments/c1e309f5271103b48960d650074e2e512d4f099e9501bf74bffabed3517fa66e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c1e309f5271103b48960d650074e2e512d4f099e9501bf74bffabed3517fa66e.txt",
+      "extractor": "pypdf",
+      "textChars": 17991,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "1e654791-22b9-427c-85fd-ab1b2db55441": {
+      "fileId": "1e654791-22b9-427c-85fd-ab1b2db55441",
+      "url": "https://nkr.government.bg/File/Download/1e654791-22b9-427c-85fd-ab1b2db55441",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на неметални полезни изкопаеми - индустриални минерали - фелдшпат - кварцови пясъци от находище \"Арчар\", разположено в замлището на с. Градище, община Шумен, област Шумен.",
+      "publishedAt": "31.03.2022 г.",
+      "partyGuids": [
+        "b81f970b-d18d-4371-981e-0cf233815e4c"
+      ],
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:31Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%90%D1%80%D1%87%D0%B0%D1%80_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 13362758,
+      "sha256": "45622e2b2743886bf927f04afa0ab2d824ffd45506cb39b06219e2b43771a01f",
+      "archivePath": "source-archive/concessions/nkr-attachments/45622e2b2743886bf927f04afa0ab2d824ffd45506cb39b06219e2b43771a01f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/45622e2b2743886bf927f04afa0ab2d824ffd45506cb39b06219e2b43771a01f.txt",
+      "extractor": "pypdf",
+      "textChars": 12234,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3bbbeeda-ecab-44c8-9c3b-99c5fc7618f7": {
+      "fileId": "3bbbeeda-ecab-44c8-9c3b-99c5fc7618f7",
+      "url": "https://nkr.government.bg/File/Download/3bbbeeda-ecab-44c8-9c3b-99c5fc7618f7",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2019 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "b81f970b-d18d-4371-981e-0cf233815e4c"
+      ],
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:32Z",
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2019.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 77875,
+      "sha256": "6dc55852ee957566ef474a9cd5f562f87797a2486683df7889464a7a1cb51b43",
+      "archivePath": "source-archive/concessions/nkr-attachments/6dc55852ee957566ef474a9cd5f562f87797a2486683df7889464a7a1cb51b43.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6dc55852ee957566ef474a9cd5f562f87797a2486683df7889464a7a1cb51b43.txt",
+      "extractor": "python-docx",
+      "textChars": 27979,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "8b67d5fe-4879-46c6-a0f5-570504b431dd": {
+      "fileId": "8b67d5fe-4879-46c6-a0f5-570504b431dd",
+      "url": "https://nkr.government.bg/File/Download/8b67d5fe-4879-46c6-a0f5-570504b431dd",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2021 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "b81f970b-d18d-4371-981e-0cf233815e4c"
+      ],
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:33Z",
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2021.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 76139,
+      "sha256": "78c4ab567d32c3d0a23ec00d5dbeb6759c8e2bee539f6c20aac001c4c1c613ba",
+      "archivePath": "source-archive/concessions/nkr-attachments/78c4ab567d32c3d0a23ec00d5dbeb6759c8e2bee539f6c20aac001c4c1c613ba.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/78c4ab567d32c3d0a23ec00d5dbeb6759c8e2bee539f6c20aac001c4c1c613ba.txt",
+      "extractor": "python-docx",
+      "textChars": 27562,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "90057334-0131-47d3-9c83-c3e41d79f900": {
+      "fileId": "90057334-0131-47d3-9c83-c3e41d79f900",
+      "url": "https://nkr.government.bg/File/Download/90057334-0131-47d3-9c83-c3e41d79f900",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2020 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "b81f970b-d18d-4371-981e-0cf233815e4c"
+      ],
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:34Z",
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2020.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 77112,
+      "sha256": "8d806830062dba2dee268338c067ae34ae9a57bf709bbb03fe55424a9ff6e89b",
+      "archivePath": "source-archive/concessions/nkr-attachments/8d806830062dba2dee268338c067ae34ae9a57bf709bbb03fe55424a9ff6e89b.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/8d806830062dba2dee268338c067ae34ae9a57bf709bbb03fe55424a9ff6e89b.txt",
+      "extractor": "python-docx",
+      "textChars": 27562,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "adb50b0d-03d8-478f-9370-257da488afa8": {
+      "fileId": "adb50b0d-03d8-478f-9370-257da488afa8",
+      "url": "https://nkr.government.bg/File/Download/adb50b0d-03d8-478f-9370-257da488afa8",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2018 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "b81f970b-d18d-4371-981e-0cf233815e4c"
+      ],
+      "inventoryIds": [
+        "D-000576"
+      ],
+      "concessionIds": [
+        "D-000576"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:35Z",
+      "filename": "%D0%90%D1%80%D1%87%D0%B0%D1%80_2018.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 77012,
+      "sha256": "7835adb793694dc833d4773e93ecd5b08099189cd8046c7eef10f2ce6559eaeb",
+      "archivePath": "source-archive/concessions/nkr-attachments/7835adb793694dc833d4773e93ecd5b08099189cd8046c7eef10f2ce6559eaeb.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7835adb793694dc833d4773e93ecd5b08099189cd8046c7eef10f2ce6559eaeb.txt",
+      "extractor": "python-docx",
+      "textChars": 27538,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a270e80b-b5ae-42d9-a18f-c4e264063e14": {
+      "fileId": "a270e80b-b5ae-42d9-a18f-c4e264063e14",
+      "url": "https://nkr.government.bg/File/Download/a270e80b-b5ae-42d9-a18f-c4e264063e14",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства - скално-облицовъчни материали - варовици, от находище \"Кремона\" - участък \"Кален\" и участък \"Кален - изток\", разположено в землището на с. Кален, община Мездра, област Враца.",
+      "publishedAt": "11.04.2022 г.",
+      "partyGuids": [
+        "49a0c40a-755b-4fa7-aaa0-661fe74c57eb"
+      ],
+      "inventoryIds": [
+        "D-000577"
+      ],
+      "concessionIds": [
+        "D-000577"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:38Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9A%D0%A0%D0%95%D0%9C%D0%9E%D0%9D%D0%90_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 3163005,
+      "sha256": "1e7139e6d3b2d243c4c6b07d99fd8d7f06ea2c1d44fd545ea0e0669a0a27aa21",
+      "archivePath": "source-archive/concessions/nkr-attachments/1e7139e6d3b2d243c4c6b07d99fd8d7f06ea2c1d44fd545ea0e0669a0a27aa21.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/1e7139e6d3b2d243c4c6b07d99fd8d7f06ea2c1d44fd545ea0e0669a0a27aa21.txt",
+      "extractor": "pypdf",
+      "textChars": 25753,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "15361179-ea45-4fed-a354-2ef0d804a379": {
+      "fileId": "15361179-ea45-4fed-a354-2ef0d804a379",
+      "url": "https://nkr.government.bg/File/Download/15361179-ea45-4fed-a354-2ef0d804a379",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2019 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "e2623de2-aa00-4414-a042-2eff1ceb528a"
+      ],
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:39Z",
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2019.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 76728,
+      "sha256": "89a1dc298654311244fa44f4598246392a3e5902e551e9c442bfa15414ba7597",
+      "archivePath": "source-archive/concessions/nkr-attachments/89a1dc298654311244fa44f4598246392a3e5902e551e9c442bfa15414ba7597.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/89a1dc298654311244fa44f4598246392a3e5902e551e9c442bfa15414ba7597.txt",
+      "extractor": "python-docx",
+      "textChars": 27903,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "56ef917b-f567-4da3-9714-ea708cf08d7c": {
+      "fileId": "56ef917b-f567-4da3-9714-ea708cf08d7c",
+      "url": "https://nkr.government.bg/File/Download/56ef917b-f567-4da3-9714-ea708cf08d7c",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2020 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "e2623de2-aa00-4414-a042-2eff1ceb528a"
+      ],
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:40Z",
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2020.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 76689,
+      "sha256": "0d6d986a5cd7a1dc9633576def17ad7ad2915b6616c170d4a908ea3ecfd274e1",
+      "archivePath": "source-archive/concessions/nkr-attachments/0d6d986a5cd7a1dc9633576def17ad7ad2915b6616c170d4a908ea3ecfd274e1.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0d6d986a5cd7a1dc9633576def17ad7ad2915b6616c170d4a908ea3ecfd274e1.txt",
+      "extractor": "python-docx",
+      "textChars": 27905,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "a8975fa1-27b9-4783-b0fb-139bae5a679e": {
+      "fileId": "a8975fa1-27b9-4783-b0fb-139bae5a679e",
+      "url": "https://nkr.government.bg/File/Download/a8975fa1-27b9-4783-b0fb-139bae5a679e",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2018 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "e2623de2-aa00-4414-a042-2eff1ceb528a"
+      ],
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:41Z",
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2018.doc%D1%85.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 76111,
+      "sha256": "37bd77cd34989664ec38e32aee5ebe730ca471b3395ffeaea33caa09243dd199",
+      "archivePath": "source-archive/concessions/nkr-attachments/37bd77cd34989664ec38e32aee5ebe730ca471b3395ffeaea33caa09243dd199.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/37bd77cd34989664ec38e32aee5ebe730ca471b3395ffeaea33caa09243dd199.txt",
+      "extractor": "python-docx",
+      "textChars": 27865,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c66b69ae-94bf-46d4-b6ca-6539b8bcee01": {
+      "fileId": "c66b69ae-94bf-46d4-b6ca-6539b8bcee01",
+      "url": "https://nkr.government.bg/File/Download/c66b69ae-94bf-46d4-b6ca-6539b8bcee01",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2021 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "e2623de2-aa00-4414-a042-2eff1ceb528a"
+      ],
+      "inventoryIds": [
+        "D-000583"
+      ],
+      "concessionIds": [
+        "D-000583"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:42Z",
+      "filename": "%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%89%D0%B0_2021.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 76688,
+      "sha256": "3b625e062ab5ad6d327980e2072a3e26d47414d924e29c211ea99875ea713296",
+      "archivePath": "source-archive/concessions/nkr-attachments/3b625e062ab5ad6d327980e2072a3e26d47414d924e29c211ea99875ea713296.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3b625e062ab5ad6d327980e2072a3e26d47414d924e29c211ea99875ea713296.txt",
+      "extractor": "python-docx",
+      "textChars": 27960,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3e81dee6-b8b6-4475-b8b4-84455fe618a0": {
+      "fileId": "3e81dee6-b8b6-4475-b8b4-84455fe618a0",
+      "url": "https://nkr.government.bg/File/Download/3e81dee6-b8b6-4475-b8b4-84455fe618a0",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2021 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "1c8ec6d4-2c04-4d73-92e6-d9ac1876e80a"
+      ],
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:43Z",
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2021.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 79901,
+      "sha256": "255288011bbc33df0e272b0df538528e7cc18f70e97562a086d713654398fe55",
+      "archivePath": "source-archive/concessions/nkr-attachments/255288011bbc33df0e272b0df538528e7cc18f70e97562a086d713654398fe55.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/255288011bbc33df0e272b0df538528e7cc18f70e97562a086d713654398fe55.txt",
+      "extractor": "python-docx",
+      "textChars": 30376,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "83a69d4d-ea44-4b78-97b7-cccdaf64d45d": {
+      "fileId": "83a69d4d-ea44-4b78-97b7-cccdaf64d45d",
+      "url": "https://nkr.government.bg/File/Download/83a69d4d-ea44-4b78-97b7-cccdaf64d45d",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2019 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "1c8ec6d4-2c04-4d73-92e6-d9ac1876e80a"
+      ],
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:44Z",
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2019.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 79969,
+      "sha256": "f31814674c8b33941494755333b688b9ddc9780057a9dedb1034687294878d5c",
+      "archivePath": "source-archive/concessions/nkr-attachments/f31814674c8b33941494755333b688b9ddc9780057a9dedb1034687294878d5c.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f31814674c8b33941494755333b688b9ddc9780057a9dedb1034687294878d5c.txt",
+      "extractor": "python-docx",
+      "textChars": 30359,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b751e26d-904c-492c-b6d9-05a1bef4bef8": {
+      "fileId": "b751e26d-904c-492c-b6d9-05a1bef4bef8",
+      "url": "https://nkr.government.bg/File/Download/b751e26d-904c-492c-b6d9-05a1bef4bef8",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2018 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "1c8ec6d4-2c04-4d73-92e6-d9ac1876e80a"
+      ],
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:45Z",
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2018.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 79940,
+      "sha256": "97e7a26744e4455fc18df749446c3a3457d691679d6c59f65bffebf3f22a635d",
+      "archivePath": "source-archive/concessions/nkr-attachments/97e7a26744e4455fc18df749446c3a3457d691679d6c59f65bffebf3f22a635d.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/97e7a26744e4455fc18df749446c3a3457d691679d6c59f65bffebf3f22a635d.txt",
+      "extractor": "python-docx",
+      "textChars": 30326,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d1caee7d-9c84-4467-a6af-6527189ff0f6": {
+      "fileId": "d1caee7d-9c84-4467-a6af-6527189ff0f6",
+      "url": "https://nkr.government.bg/File/Download/d1caee7d-9c84-4467-a6af-6527189ff0f6",
+      "title": "Свали",
+      "documentType": "Информация за изпълнение на концесионния договор",
+      "description": "За 2020 г.",
+      "publishedAt": "18.04.2023 г.",
+      "partyGuids": [
+        "1c8ec6d4-2c04-4d73-92e6-d9ac1876e80a"
+      ],
+      "inventoryIds": [
+        "D-000584"
+      ],
+      "concessionIds": [
+        "D-000584"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:46Z",
+      "filename": "%D0%94%D0%B2%D0%B5_%D0%9C%D0%BE%D0%B3%D0%B8%D0%BB%D0%B8_2020.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 79874,
+      "sha256": "640bb122371ecc63e9d8eb03958d7c0a1512640d4ce6516f8ee0454ae8dcd961",
+      "archivePath": "source-archive/concessions/nkr-attachments/640bb122371ecc63e9d8eb03958d7c0a1512640d4ce6516f8ee0454ae8dcd961.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/640bb122371ecc63e9d8eb03958d7c0a1512640d4ce6516f8ee0454ae8dcd961.txt",
+      "extractor": "python-docx",
+      "textChars": 30372,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "84fcf5cd-72e2-416a-876f-e67319b944ec": {
+      "fileId": "84fcf5cd-72e2-416a-876f-e67319b944ec",
+      "url": "https://nkr.government.bg/File/Download/84fcf5cd-72e2-416a-876f-e67319b944ec",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - варовици от находище \"Памуклука\", разположено в землището на с. Сулица, община Стара Загора, област Стара Загора.",
+      "publishedAt": "14.04.2022 г.",
+      "partyGuids": [
+        "b92ac3ca-b271-485c-bb7e-0b11182448d1"
+      ],
+      "inventoryIds": [
+        "D-000590"
+      ],
+      "concessionIds": [
+        "D-000590"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:47Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9F%D0%B0%D0%BC%D1%83%D0%BA%D0%BB%D1%83%D0%BA%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1861036,
+      "sha256": "158eff9ab24ddc665f8eda7a27948685748b11d4d3e18596fb37217a34611d11",
+      "archivePath": "source-archive/concessions/nkr-attachments/158eff9ab24ddc665f8eda7a27948685748b11d4d3e18596fb37217a34611d11.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/158eff9ab24ddc665f8eda7a27948685748b11d4d3e18596fb37217a34611d11.txt",
+      "extractor": "pypdf",
+      "textChars": 14301,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "bd31f226-696c-433a-bafa-a6ba68e419b0": {
+      "fileId": "bd31f226-696c-433a-bafa-a6ba68e419b0",
+      "url": "https://nkr.government.bg/File/Download/bd31f226-696c-433a-bafa-a6ba68e419b0",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл.2, ал. 1, т. 5 от Закона за подземните богаства - строителни материали - пясък и чакъл от находище \"Изток\", разположено в землището на с. Мирянци, община Пазарджик, област Пазарджик.",
+      "publishedAt": "02.03.2022 г.",
+      "partyGuids": [
+        "01aa7d25-b289-462b-90b4-0b9f2013a668"
+      ],
+      "inventoryIds": [
+        "D-000599"
+      ],
+      "concessionIds": [
+        "D-000599"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:49Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%98%D0%B7%D1%82%D0%BE%D0%BA_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2229797,
+      "sha256": "f5b5ee94275d462e13a6ba6dde44034071ed43c695f490f48862e0f1522365aa",
+      "archivePath": "source-archive/concessions/nkr-attachments/f5b5ee94275d462e13a6ba6dde44034071ed43c695f490f48862e0f1522365aa.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f5b5ee94275d462e13a6ba6dde44034071ed43c695f490f48862e0f1522365aa.txt",
+      "extractor": "pypdf",
+      "textChars": 14565,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c0a289f2-b124-4da0-8238-7781af1bce7b": {
+      "fileId": "c0a289f2-b124-4da0-8238-7781af1bce7b",
+      "url": "https://nkr.government.bg/File/Download/c0a289f2-b124-4da0-8238-7781af1bce7b",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 6 от Закона за подземните богатства - скалнооблицовъчни материали - гнайсошисти от находище \"Кантона\", разположено в землището на с. Черни рид, община Ивайловград, област Хасково.",
+      "publishedAt": "14.04.2022 г.",
+      "partyGuids": [
+        "78d680f2-8022-49fb-9ba6-556268713462"
+      ],
+      "inventoryIds": [
+        "D-000670"
+      ],
+      "concessionIds": [
+        "D-000670"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:51Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9A%D0%B0%D0%BD%D1%82%D0%BE%D0%BD%D0%B0_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2488463,
+      "sha256": "3ce38fed2136caf24a17e69b88fedbb0c9ae783828bed1b9f59774fe8b2a7466",
+      "archivePath": "source-archive/concessions/nkr-attachments/3ce38fed2136caf24a17e69b88fedbb0c9ae783828bed1b9f59774fe8b2a7466.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3ce38fed2136caf24a17e69b88fedbb0c9ae783828bed1b9f59774fe8b2a7466.txt",
+      "extractor": "pypdf",
+      "textChars": 17005,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b5693802-5e6a-438d-b9e4-6bd1ed4fdc58": {
+      "fileId": "b5693802-5e6a-438d-b9e4-6bd1ed4fdc58",
+      "url": "https://nkr.government.bg/File/Download/b5693802-5e6a-438d-b9e4-6bd1ed4fdc58",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 5 от Закона за подземните богатства - строителни материали - пясък и чакъл от находище \"Рибарниците\", участъци \"Участък-1\" и \"Участък-2\", гр. Пазарджик, община Пазарджик, област Пазарджик.",
+      "publishedAt": "14.04.2022 г.",
+      "partyGuids": [
+        "ba5255e4-ae8c-45cd-add4-fa9181d21a05"
+      ],
+      "inventoryIds": [
+        "D-000693"
+      ],
+      "concessionIds": [
+        "D-000693"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:53Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%A0%D0%B8%D0%B1%D0%B0%D1%80%D0%BD%D0%B8%D1%86%D0%B8%D1%82%D0%B51%2C2_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2652922,
+      "sha256": "ebe26644f893f602cc96a36c3f594231bdc29f6a3cd16d8e6f1f73adbdfa434f",
+      "archivePath": "source-archive/concessions/nkr-attachments/ebe26644f893f602cc96a36c3f594231bdc29f6a3cd16d8e6f1f73adbdfa434f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ebe26644f893f602cc96a36c3f594231bdc29f6a3cd16d8e6f1f73adbdfa434f.txt",
+      "extractor": "pypdf",
+      "textChars": 18510,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "2eb87b61-18ea-4514-ba25-0e6de4d2cfb5": {
+      "fileId": "2eb87b61-18ea-4514-ba25-0e6de4d2cfb5",
+      "url": "https://nkr.government.bg/File/Download/2eb87b61-18ea-4514-ba25-0e6de4d2cfb5",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 1 от Закона за подземните богатства - метални полезни изкопаеми - златно-сребърни руди, от находище \"Милин камък\", разположено в землището на гр. Брезник, община Брезник, област Перник.",
+      "publishedAt": "14.04.2022 г.",
+      "partyGuids": [
+        "b8b4bff4-ad72-4f75-b0ac-3a4bf486aa8a"
+      ],
+      "inventoryIds": [
+        "D-000700"
+      ],
+      "concessionIds": [
+        "D-000700"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:55Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9C%D0%B8%D0%BB%D0%B8%D0%BD%D0%9A%D0%B0%D0%BC%D1%8A%D0%BA_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2554988,
+      "sha256": "8e9b6d18dea45b38e9e456af33e8545587ef80b9b8d2a20a94ce8ab26d8b1f75",
+      "archivePath": "source-archive/concessions/nkr-attachments/8e9b6d18dea45b38e9e456af33e8545587ef80b9b8d2a20a94ce8ab26d8b1f75.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/8e9b6d18dea45b38e9e456af33e8545587ef80b9b8d2a20a94ce8ab26d8b1f75.txt",
+      "extractor": "pypdf",
+      "textChars": 18857,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "66c45386-a356-46fe-bb6a-f0ca72b24f42": {
+      "fileId": "66c45386-a356-46fe-bb6a-f0ca72b24f42",
+      "url": "https://nkr.government.bg/File/Download/66c45386-a356-46fe-bb6a-f0ca72b24f42",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за предоставяне на концесия с предмет особено право на ползване върху подземни богатства чрез добив на пясък от обект \"Кариера за добев на пясък в местността \"Лозята\", разположена в землището на с. Калиманци, община Суворово, област Варна.",
+      "publishedAt": "15.04.2022 г.",
+      "partyGuids": [
+        "059d323e-e68e-4c68-a4dc-4ad2d3f6ddb5"
+      ],
+      "inventoryIds": [
+        "O-000466"
+      ],
+      "concessionIds": [
+        "O-000466"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:56Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9A%D0%90%D0%9B%D0%98%D0%9C%D0%90%D0%9D%D0%A6%D0%98_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 901696,
+      "sha256": "cd7d82097de92ee9d23f9ea9d0807d4f3ced54affead0b9ab60b77053144d913",
+      "archivePath": "source-archive/concessions/nkr-attachments/cd7d82097de92ee9d23f9ea9d0807d4f3ced54affead0b9ab60b77053144d913.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/cd7d82097de92ee9d23f9ea9d0807d4f3ced54affead0b9ab60b77053144d913.txt",
+      "extractor": "pypdf",
+      "textChars": 1195,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b42f4cba-0825-4e4d-b77f-827b8e7a77c7": {
+      "fileId": "b42f4cba-0825-4e4d-b77f-827b8e7a77c7",
+      "url": "https://nkr.government.bg/File/Download/b42f4cba-0825-4e4d-b77f-827b8e7a77c7",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Договор за отдаване на концесия за обект \"Каменна кариера\"/Концесия за добив на подземни богатства - строителни материали - андезитови туфи, от находище \"Грудово\", разположено в землището на гр. Средец, община Средец, област Бургас/.",
+      "publishedAt": "19.04.2022 г.",
+      "partyGuids": [
+        "59ffd060-1a45-4973-8946-1a52c5647d57"
+      ],
+      "inventoryIds": [
+        "O-000715"
+      ],
+      "concessionIds": [
+        "O-000715"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:57Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%93%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%BE_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1596791,
+      "sha256": "7f5103da71c3dd0e641c236b7d3d20bfa0300dedbab42d506ad4c537bf8f2ec3",
+      "archivePath": "source-archive/concessions/nkr-attachments/7f5103da71c3dd0e641c236b7d3d20bfa0300dedbab42d506ad4c537bf8f2ec3.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7f5103da71c3dd0e641c236b7d3d20bfa0300dedbab42d506ad4c537bf8f2ec3.txt",
+      "extractor": "pypdf",
+      "textChars": 7279,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "0462eb28-53e2-4f4a-95ee-a2d0df02f0a6": {
+      "fileId": "0462eb28-53e2-4f4a-95ee-a2d0df02f0a6",
+      "url": "https://nkr.government.bg/File/Download/0462eb28-53e2-4f4a-95ee-a2d0df02f0a6",
+      "title": "Свали",
+      "documentType": "Електронен образ на оригинала на концесионния договор",
+      "description": "Концесионен договор № 003/09.01.2006 г.",
+      "publishedAt": "20.04.2022 г.",
+      "partyGuids": [
+        "7ba38774-24fa-4f84-8a46-76b8a3603b93"
+      ],
+      "inventoryIds": [
+        "O-000794"
+      ],
+      "concessionIds": [
+        "O-000794"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:38:59Z",
+      "filename": "%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%95%D0%A6_Redacted.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 1465350,
+      "sha256": "9d59716ded6662bc0757ac01f77f66fc11b535f81764cf9b5804d26a4fc31d88",
+      "archivePath": "source-archive/concessions/nkr-attachments/9d59716ded6662bc0757ac01f77f66fc11b535f81764cf9b5804d26a4fc31d88.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9d59716ded6662bc0757ac01f77f66fc11b535f81764cf9b5804d26a4fc31d88.txt",
+      "extractor": "pypdf",
+      "textChars": 5392,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3bbf8e59-28c2-4647-93e1-58300748512f": {
+      "fileId": "3bbf8e59-28c2-4647-93e1-58300748512f",
+      "url": "https://nkr.government.bg/File/Download/3bbf8e59-28c2-4647-93e1-58300748512f",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Приложения към Договор от 2 април 2024г. за предоставяне на концесия за добив на подземни богатства по чл. 2, ал. 1, т. 2 от Закона за подземните богатства – неметални полезни изкопаеми – индустриални минерали – каолинова суровина, от находище „Саръгьол“, участък „Саръгьол, гнезда 15 и 16“, разположено в землището на с. Дойранци, община Каолиново, област Шумен",
+      "publishedAt": "03.04.2024 г.",
+      "partyGuids": [
+        "cc05ca2c-c86b-45c2-b104-2c62b7652f94"
+      ],
+      "inventoryIds": [
+        "216-309"
+      ],
+      "concessionIds": [
+        "216-309"
+      ],
+      "priority": 3,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:01Z",
+      "filename": "%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BA%D1%8A%D0%BC%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 2878303,
+      "sha256": "0d747e6a9fc0bf652bb66956eccf5b4370786ca0f55fad503c354dda17d4dd57",
+      "archivePath": "source-archive/concessions/nkr-attachments/0d747e6a9fc0bf652bb66956eccf5b4370786ca0f55fad503c354dda17d4dd57.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0d747e6a9fc0bf652bb66956eccf5b4370786ca0f55fad503c354dda17d4dd57.txt",
+      "extractor": "pypdf",
+      "textChars": 29874,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "75548c9a-c559-4df4-b397-35336ca1e4f0": {
+      "fileId": "75548c9a-c559-4df4-b397-35336ca1e4f0",
+      "url": "https://nkr.government.bg/File/Download/75548c9a-c559-4df4-b397-35336ca1e4f0",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-З-19/13.02.2026г. на министъра на енергетиката (получено от концесионера на 23.02.2026г.)",
+      "publishedAt": "25.02.2026 г.",
+      "partyGuids": [
+        "2558e03c-efcb-4b2a-89fe-818e81938d46"
+      ],
+      "inventoryIds": [
+        "216-392"
+      ],
+      "concessionIds": [
+        "216-392"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:02Z",
+      "filename": "Pismo Petrov dol Naredba KP(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 355069,
+      "sha256": "65c8b805916afad01949add08be47c135d9b734acbbf5b9af30cc30585db3356",
+      "archivePath": "source-archive/concessions/nkr-attachments/65c8b805916afad01949add08be47c135d9b734acbbf5b9af30cc30585db3356.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/65c8b805916afad01949add08be47c135d9b734acbbf5b9af30cc30585db3356.txt",
+      "extractor": "pypdf",
+      "textChars": 7794,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "68493e30-8a7f-44b6-93f7-70ef7d6e4f8c": {
+      "fileId": "68493e30-8a7f-44b6-93f7-70ef7d6e4f8c",
+      "url": "https://nkr.government.bg/File/Download/68493e30-8a7f-44b6-93f7-70ef7d6e4f8c",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Л-33/17.02.2026г. на министъра на енергетиката до концесионера.",
+      "publishedAt": "02.04.2026 г.",
+      "partyGuids": [
+        "55ba1880-a059-450d-b0d4-2ef08b0fafde"
+      ],
+      "inventoryIds": [
+        "216-404"
+      ],
+      "concessionIds": [
+        "216-404"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:03Z",
+      "filename": "Pismo_Naredba KP_Parapanski-clean(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 373877,
+      "sha256": "9348bc4fdb9f5dbe88695585a3f3089d03b0ba5dffcccd65d858a7d673c766cb",
+      "archivePath": "source-archive/concessions/nkr-attachments/9348bc4fdb9f5dbe88695585a3f3089d03b0ba5dffcccd65d858a7d673c766cb.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9348bc4fdb9f5dbe88695585a3f3089d03b0ba5dffcccd65d858a7d673c766cb.txt",
+      "extractor": "pypdf",
+      "textChars": 9567,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "14001a7c-262d-409f-8024-fe8125baa8ae": {
+      "fileId": "14001a7c-262d-409f-8024-fe8125baa8ae",
+      "url": "https://nkr.government.bg/File/Download/14001a7c-262d-409f-8024-fe8125baa8ae",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Б-205/13.02.2026г. на министъра на енергетиката",
+      "publishedAt": "20.02.2026 г.",
+      "partyGuids": [
+        "8ac8e8a5-1bc9-4d30-a801-1128be7df26b"
+      ],
+      "inventoryIds": [
+        "D-000112"
+      ],
+      "concessionIds": [
+        "D-000112"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:04Z",
+      "filename": "Pismo Varbeshnitsa_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 372541,
+      "sha256": "453a4b63f3087fd31cb353baf3193ee3389353c188a3bc86d77d66e1649d328b",
+      "archivePath": "source-archive/concessions/nkr-attachments/453a4b63f3087fd31cb353baf3193ee3389353c188a3bc86d77d66e1649d328b.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/453a4b63f3087fd31cb353baf3193ee3389353c188a3bc86d77d66e1649d328b.txt",
+      "extractor": "pypdf",
+      "textChars": 9897,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "852efd52-50d8-4c36-9600-62d7897a1c9a": {
+      "fileId": "852efd52-50d8-4c36-9600-62d7897a1c9a",
+      "url": "https://nkr.government.bg/File/Download/852efd52-50d8-4c36-9600-62d7897a1c9a",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-А-139/13.02.2026г. на министъра на енергетиката (получено от концесионера на 19.02.2026г.)",
+      "publishedAt": "24.02.2026 г.",
+      "partyGuids": [
+        "15e3fb65-009e-4607-b26f-ffcf4f895939"
+      ],
+      "inventoryIds": [
+        "D-000163"
+      ],
+      "concessionIds": [
+        "D-000163"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:06Z",
+      "filename": "Pismo Hitrino_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 357527,
+      "sha256": "20c57d7ad5045a375f3099f5ec18db18b1a1631e4747e7f65837a9495958ec07",
+      "archivePath": "source-archive/concessions/nkr-attachments/20c57d7ad5045a375f3099f5ec18db18b1a1631e4747e7f65837a9495958ec07.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/20c57d7ad5045a375f3099f5ec18db18b1a1631e4747e7f65837a9495958ec07.txt",
+      "extractor": "pypdf",
+      "textChars": 8657,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "57deb4b3-995f-4f39-ab5f-7573789a45e6": {
+      "fileId": "57deb4b3-995f-4f39-ab5f-7573789a45e6",
+      "url": "https://nkr.government.bg/File/Download/57deb4b3-995f-4f39-ab5f-7573789a45e6",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-П-256/13.02.2026г. на министъра на енергетиката (получено от концесионера на 18.02.2026г.)",
+      "publishedAt": "25.02.2026 г.",
+      "partyGuids": [
+        "69dc25e4-0390-47e6-9bd2-009b59673f6f"
+      ],
+      "inventoryIds": [
+        "D-000264"
+      ],
+      "concessionIds": [
+        "D-000264"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:07Z",
+      "filename": "Pismo_Naredba KP_Chiren-clean(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 403456,
+      "sha256": "a479fd08b43dad0836b0e71ed31b20af9f75712603ed6022e7394b42591d9cd7",
+      "archivePath": "source-archive/concessions/nkr-attachments/a479fd08b43dad0836b0e71ed31b20af9f75712603ed6022e7394b42591d9cd7.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/a479fd08b43dad0836b0e71ed31b20af9f75712603ed6022e7394b42591d9cd7.txt",
+      "extractor": "pypdf",
+      "textChars": 8929,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "dfdf0ebc-b16c-4d0b-be2a-ba0bab0b2f3c": {
+      "fileId": "dfdf0ebc-b16c-4d0b-be2a-ba0bab0b2f3c",
+      "url": "https://nkr.government.bg/File/Download/dfdf0ebc-b16c-4d0b-be2a-ba0bab0b2f3c",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-С-121/17.02.2026г. на министъра на енергетиката до концесионера, получено на 24 февруари 2026г., според върната обратна разписка.",
+      "publishedAt": "27.02.2026 г.",
+      "partyGuids": [
+        "a768a9d6-fa6a-4d57-9be5-17d3f8c73015"
+      ],
+      "inventoryIds": [
+        "D-000269"
+      ],
+      "concessionIds": [
+        "D-000269"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:08Z",
+      "filename": "Pismo_Naredba KP_Troitsa-clean(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 355443,
+      "sha256": "75ad88e7542f34e433de9fe06ba1cf48d9da74170a770b93eb5de85820b38d77",
+      "archivePath": "source-archive/concessions/nkr-attachments/75ad88e7542f34e433de9fe06ba1cf48d9da74170a770b93eb5de85820b38d77.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/75ad88e7542f34e433de9fe06ba1cf48d9da74170a770b93eb5de85820b38d77.txt",
+      "extractor": "pypdf",
+      "textChars": 8612,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "8d7eb34d-dfde-4959-9879-5ccfefc98a9e": {
+      "fileId": "8d7eb34d-dfde-4959-9879-5ccfefc98a9e",
+      "url": "https://nkr.government.bg/File/Download/8d7eb34d-dfde-4959-9879-5ccfefc98a9e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-П-255/13.02.2026г. на министъра на енергетиката (получено от концесионера на 24.02.2026г.)",
+      "publishedAt": "26.02.2026 г.",
+      "partyGuids": [
+        "1fa14aa9-437a-4cc2-93b6-41b9adf82039"
+      ],
+      "inventoryIds": [
+        "D-000270"
+      ],
+      "concessionIds": [
+        "D-000270"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:09Z",
+      "filename": "Pismo Granitovo Naredba KP(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 357007,
+      "sha256": "c767ea190ff2a06a0c8bab2a47f8c4900ab55d68ccf7e00c778acd0e6434760e",
+      "archivePath": "source-archive/concessions/nkr-attachments/c767ea190ff2a06a0c8bab2a47f8c4900ab55d68ccf7e00c778acd0e6434760e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c767ea190ff2a06a0c8bab2a47f8c4900ab55d68ccf7e00c778acd0e6434760e.txt",
+      "extractor": "pypdf",
+      "textChars": 8625,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "3bca5e9d-523a-4ac5-b0b8-eaa417c541cd": {
+      "fileId": "3bca5e9d-523a-4ac5-b0b8-eaa417c541cd",
+      "url": "https://nkr.government.bg/File/Download/3bca5e9d-523a-4ac5-b0b8-eaa417c541cd",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-П-259/17.02.2026г. на министъра на енергетиката до концесионера, получено на 23 февруари 2026г., според върната обратна разписка.",
+      "publishedAt": "27.02.2026 г.",
+      "partyGuids": [
+        "cc483669-248e-4b52-9603-c12f7d6646c7"
+      ],
+      "inventoryIds": [
+        "D-000379"
+      ],
+      "concessionIds": [
+        "D-000379"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:10Z",
+      "filename": "Pismo_Naredba KP_Vladimirovo-clean(4).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 361092,
+      "sha256": "01c886bb169e99c37c1588ababbbd6830bedb42898857db8031b0499e50784a1",
+      "archivePath": "source-archive/concessions/nkr-attachments/01c886bb169e99c37c1588ababbbd6830bedb42898857db8031b0499e50784a1.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/01c886bb169e99c37c1588ababbbd6830bedb42898857db8031b0499e50784a1.txt",
+      "extractor": "pypdf",
+      "textChars": 8749,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "275c160e-15ca-4b11-aa34-25b545f85ea0": {
+      "fileId": "275c160e-15ca-4b11-aa34-25b545f85ea0",
+      "url": "https://nkr.government.bg/File/Download/275c160e-15ca-4b11-aa34-25b545f85ea0",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Х-93/13.02.2026 г. на министъра на енергетиката",
+      "publishedAt": "04.03.2026 г.",
+      "partyGuids": [
+        "c64872c8-1e1d-40da-b6b1-25244d21f45b"
+      ],
+      "inventoryIds": [
+        "D-000391"
+      ],
+      "concessionIds": [
+        "D-000391"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:11Z",
+      "filename": "Klokotnica.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 460087,
+      "sha256": "2d66422cb7cf4c04ae1998d98e9680c5761d51b8a7434ee4c52a135e9d3e67ea",
+      "archivePath": "source-archive/concessions/nkr-attachments/2d66422cb7cf4c04ae1998d98e9680c5761d51b8a7434ee4c52a135e9d3e67ea.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/2d66422cb7cf4c04ae1998d98e9680c5761d51b8a7434ee4c52a135e9d3e67ea.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "430acb82-8d8c-4c66-9e88-79264506ff3e": {
+      "fileId": "430acb82-8d8c-4c66-9e88-79264506ff3e",
+      "url": "https://nkr.government.bg/File/Download/430acb82-8d8c-4c66-9e88-79264506ff3e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-У-27/13.02.2026г. на министъра на енергетиката до концесионера.",
+      "publishedAt": "14.04.2026 г.",
+      "partyGuids": [
+        "3a387e58-b9d7-4e72-8971-0c502e4bbcfb"
+      ],
+      "inventoryIds": [
+        "D-000402"
+      ],
+      "concessionIds": [
+        "D-000402"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:12Z",
+      "filename": "Pismo_Naredba KP_Sushevo-clean(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 357723,
+      "sha256": "bfd0802b18ae1624ed9e48dfeb8f92243d0632c0afe3d82d51c76ae360afd30a",
+      "archivePath": "source-archive/concessions/nkr-attachments/bfd0802b18ae1624ed9e48dfeb8f92243d0632c0afe3d82d51c76ae360afd30a.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/bfd0802b18ae1624ed9e48dfeb8f92243d0632c0afe3d82d51c76ae360afd30a.txt",
+      "extractor": "pypdf",
+      "textChars": 8691,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "770affe3-db79-4a27-86e0-19d5e6c662f2": {
+      "fileId": "770affe3-db79-4a27-86e0-19d5e6c662f2",
+      "url": "https://nkr.government.bg/File/Download/770affe3-db79-4a27-86e0-19d5e6c662f2",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Б-210/17.02.2026г. на министъра на енергетиката, получено от концесионера на 24.02.2026г.",
+      "publishedAt": "04.03.2026 г.",
+      "partyGuids": [
+        "793c49a7-09f7-4953-8da2-0a7b60e81345"
+      ],
+      "inventoryIds": [
+        "D-000421"
+      ],
+      "concessionIds": [
+        "D-000421"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:14Z",
+      "filename": "Pismo Iablanitsa_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 368584,
+      "sha256": "9add84ead4626298b72f7d59939b64af7f012ef3d0d6df3652e17a69f215b05d",
+      "archivePath": "source-archive/concessions/nkr-attachments/9add84ead4626298b72f7d59939b64af7f012ef3d0d6df3652e17a69f215b05d.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/9add84ead4626298b72f7d59939b64af7f012ef3d0d6df3652e17a69f215b05d.txt",
+      "extractor": "pypdf",
+      "textChars": 10360,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "1d672138-2e5d-42a5-845e-b4ea02071368": {
+      "fileId": "1d672138-2e5d-42a5-845e-b4ea02071368",
+      "url": "https://nkr.government.bg/File/Download/1d672138-2e5d-42a5-845e-b4ea02071368",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Б-203/13.02.2026г. на министъра на енергетиката (получено от концесионера на 23.02.2026г.)",
+      "publishedAt": "26.02.2026 г.",
+      "partyGuids": [
+        "9bd04989-2546-49dd-92b4-6e7a87fa8ad2"
+      ],
+      "inventoryIds": [
+        "D-000424"
+      ],
+      "concessionIds": [
+        "D-000424"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:15Z",
+      "filename": "Pismo Galata_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 373297,
+      "sha256": "7be65afd1d3c57d1aa51f406eb638a045add3a22a0c436c2c367417783d1946a",
+      "archivePath": "source-archive/concessions/nkr-attachments/7be65afd1d3c57d1aa51f406eb638a045add3a22a0c436c2c367417783d1946a.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7be65afd1d3c57d1aa51f406eb638a045add3a22a0c436c2c367417783d1946a.txt",
+      "extractor": "pypdf",
+      "textChars": 10351,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "8195b32b-1bc7-41d1-9471-08e13c38f00c": {
+      "fileId": "8195b32b-1bc7-41d1-9471-08e13c38f00c",
+      "url": "https://nkr.government.bg/File/Download/8195b32b-1bc7-41d1-9471-08e13c38f00c",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "",
+      "publishedAt": "05.12.2024 г.",
+      "partyGuids": [
+        "628aa6c9-b1a5-4449-82e5-9e40f784f0ee"
+      ],
+      "inventoryIds": [
+        "D-000428"
+      ],
+      "concessionIds": [
+        "D-000428"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:16Z",
+      "filename": "24RH630.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 484870,
+      "sha256": "a01458167c2de78e9b45eddc333a743877c3ff89e4eeed3dd53aca4df043ae43",
+      "archivePath": "source-archive/concessions/nkr-attachments/a01458167c2de78e9b45eddc333a743877c3ff89e4eeed3dd53aca4df043ae43.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/a01458167c2de78e9b45eddc333a743877c3ff89e4eeed3dd53aca4df043ae43.txt",
+      "extractor": "pypdf",
+      "textChars": 4610,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "af8650cf-1081-4661-a6cc-15726336665b": {
+      "fileId": "af8650cf-1081-4661-a6cc-15726336665b",
+      "url": "https://nkr.government.bg/File/Download/af8650cf-1081-4661-a6cc-15726336665b",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Б-204/13.02.2026 г. на министъра на енергетиката (получено от концесионера на 23.02.2026г.)",
+      "publishedAt": "26.02.2026 г.",
+      "partyGuids": [
+        "628aa6c9-b1a5-4449-82e5-9e40f784f0ee"
+      ],
+      "inventoryIds": [
+        "D-000428"
+      ],
+      "concessionIds": [
+        "D-000428"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:17Z",
+      "filename": "11. Pismo Nanovica-Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 453395,
+      "sha256": "50dbd8776b54f2889f95924e12175698a562e903c4de8146ee89e3ab9848dac5",
+      "archivePath": "source-archive/concessions/nkr-attachments/50dbd8776b54f2889f95924e12175698a562e903c4de8146ee89e3ab9848dac5.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/50dbd8776b54f2889f95924e12175698a562e903c4de8146ee89e3ab9848dac5.txt",
+      "extractor": "pypdf",
+      "textChars": 10684,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "fc8c536e-7b21-4517-8d31-3ef4c0b180d1": {
+      "fileId": "fc8c536e-7b21-4517-8d31-3ef4c0b180d1",
+      "url": "https://nkr.government.bg/File/Download/fc8c536e-7b21-4517-8d31-3ef4c0b180d1",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-М-151/13.02.2026г. на министъра на енергетиката (получено от концесионера на 19 февруари 2026г.)",
+      "publishedAt": "24.02.2026 г.",
+      "partyGuids": [
+        "b805185e-9229-46f6-99ce-1b57b78bc3d6"
+      ],
+      "inventoryIds": [
+        "D-000477"
+      ],
+      "concessionIds": [
+        "D-000477"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:18Z",
+      "filename": "Pismo Lilqcite_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 349254,
+      "sha256": "e984d546976930ad347969d8bb2609d2f40a932b6dfd6ec9bc58cfaca226b4e0",
+      "archivePath": "source-archive/concessions/nkr-attachments/e984d546976930ad347969d8bb2609d2f40a932b6dfd6ec9bc58cfaca226b4e0.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e984d546976930ad347969d8bb2609d2f40a932b6dfd6ec9bc58cfaca226b4e0.txt",
+      "extractor": "pypdf",
+      "textChars": 8642,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "ce2ef3ea-31c9-4768-8d06-47e5f652519c": {
+      "fileId": "ce2ef3ea-31c9-4768-8d06-47e5f652519c",
+      "url": "https://nkr.government.bg/File/Download/ce2ef3ea-31c9-4768-8d06-47e5f652519c",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-И-144/13.02.2026 г. на министъра на енергетиката",
+      "publishedAt": "16.06.2026 г.",
+      "partyGuids": [
+        "53017447-9606-4822-bd1a-822bcbd465b1"
+      ],
+      "inventoryIds": [
+        "D-000482"
+      ],
+      "concessionIds": [
+        "D-000482"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:19Z",
+      "filename": "Studena X1.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 354659,
+      "sha256": "01224f6297bb7f03cac6f7346e259c030dca8c7ae709cf23c42deee06147321e",
+      "archivePath": "source-archive/concessions/nkr-attachments/01224f6297bb7f03cac6f7346e259c030dca8c7ae709cf23c42deee06147321e.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/01224f6297bb7f03cac6f7346e259c030dca8c7ae709cf23c42deee06147321e.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "344a121b-3d27-4849-8459-1e8ac604d405": {
+      "fileId": "344a121b-3d27-4849-8459-1e8ac604d405",
+      "url": "https://nkr.government.bg/File/Download/344a121b-3d27-4849-8459-1e8ac604d405",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "",
+      "publishedAt": "08.01.2025 г.",
+      "partyGuids": [
+        "6dc2e6df-4d28-4f43-a976-75061152517e"
+      ],
+      "inventoryIds": [
+        "D-000489"
+      ],
+      "concessionIds": [
+        "D-000489"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:20Z",
+      "filename": "Reshenie_Lisovo_08RH367.doc",
+      "extension": ".doc",
+      "contentType": "application/octet-stream",
+      "bytes": 90112,
+      "sha256": "7ee3466121eb72d9a8d4b8eb8367b5b4e30941fcdd8f23a4119c0599b2173a1c",
+      "archivePath": "source-archive/concessions/nkr-attachments/7ee3466121eb72d9a8d4b8eb8367b5b4e30941fcdd8f23a4119c0599b2173a1c.doc",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7ee3466121eb72d9a8d4b8eb8367b5b4e30941fcdd8f23a4119c0599b2173a1c.txt",
+      "extractor": "antiword",
+      "textChars": 15697,
+      "keywordHit": true,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b660f0a4-ab4f-494c-943c-4c65005dd660": {
+      "fileId": "b660f0a4-ab4f-494c-943c-4c65005dd660",
+      "url": "https://nkr.government.bg/File/Download/b660f0a4-ab4f-494c-943c-4c65005dd660",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-И-148/17.02.2026 г. на министъра на енергетиката",
+      "publishedAt": "04.03.2026 г.",
+      "partyGuids": [
+        "6dc2e6df-4d28-4f43-a976-75061152517e"
+      ],
+      "inventoryIds": [
+        "D-000489"
+      ],
+      "concessionIds": [
+        "D-000489"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:21Z",
+      "filename": "Lisovo.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 385724,
+      "sha256": "a0109c605946f7b4f2bf9219417b1654becb2806c1b1d247d892f4d6ac0a79a5",
+      "archivePath": "source-archive/concessions/nkr-attachments/a0109c605946f7b4f2bf9219417b1654becb2806c1b1d247d892f4d6ac0a79a5.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/a0109c605946f7b4f2bf9219417b1654becb2806c1b1d247d892f4d6ac0a79a5.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "66b4881e-f809-4534-a1a8-c13a3f91ebd5": {
+      "fileId": "66b4881e-f809-4534-a1a8-c13a3f91ebd5",
+      "url": "https://nkr.government.bg/File/Download/66b4881e-f809-4534-a1a8-c13a3f91ebd5",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-И-145/13.02.2026 г. на министъра на енергетиката",
+      "publishedAt": "23.02.2026 г.",
+      "partyGuids": [
+        "3f387a0a-235d-4a7c-b3f9-f89538beecec"
+      ],
+      "inventoryIds": [
+        "D-000507"
+      ],
+      "concessionIds": [
+        "D-000507"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:22Z",
+      "filename": "Zmiarnika.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 321535,
+      "sha256": "eb2ad47f8816d30f2798f7a1149ea11d4d6e60a737479337e9bf3f13610338bc",
+      "archivePath": "source-archive/concessions/nkr-attachments/eb2ad47f8816d30f2798f7a1149ea11d4d6e60a737479337e9bf3f13610338bc.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/eb2ad47f8816d30f2798f7a1149ea11d4d6e60a737479337e9bf3f13610338bc.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b8ec6c3b-c1e7-4cac-b8c8-300e61314e2e": {
+      "fileId": "b8ec6c3b-c1e7-4cac-b8c8-300e61314e2e",
+      "url": "https://nkr.government.bg/File/Download/b8ec6c3b-c1e7-4cac-b8c8-300e61314e2e",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Б-206/13.02.2026г. на министъра на енергетиката (получено от концесионера на 8 май 2026г. чрез електронна поща)",
+      "publishedAt": "20.05.2026 г.",
+      "partyGuids": [
+        "1911f74d-cea0-4894-9aa6-be2f5a5910ee"
+      ],
+      "inventoryIds": [
+        "D-000514"
+      ],
+      "concessionIds": [
+        "D-000514"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:23Z",
+      "filename": "Pismo Studena_Blagoustroistveni stroeji_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 315235,
+      "sha256": "089b1ddb94b1cb4511872c36c9335b54ac00e6434d1e337eec8ef42252f68066",
+      "archivePath": "source-archive/concessions/nkr-attachments/089b1ddb94b1cb4511872c36c9335b54ac00e6434d1e337eec8ef42252f68066.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/089b1ddb94b1cb4511872c36c9335b54ac00e6434d1e337eec8ef42252f68066.txt",
+      "extractor": "pypdf",
+      "textChars": 7887,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "6bab03b6-3bd1-4f33-b81a-8555fc010baf": {
+      "fileId": "6bab03b6-3bd1-4f33-b81a-8555fc010baf",
+      "url": "https://nkr.government.bg/File/Download/6bab03b6-3bd1-4f33-b81a-8555fc010baf",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-И-143/13.02.2026г. на министъра на енергетиката (получено от концесионера на 19.02.2026г.)",
+      "publishedAt": "24.02.2026 г.",
+      "partyGuids": [
+        "e35ba6eb-01e5-44a2-aa28-fc0ec758e9c3"
+      ],
+      "inventoryIds": [
+        "D-000520"
+      ],
+      "concessionIds": [
+        "D-000520"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:24Z",
+      "filename": "Pismo Kaments_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 356133,
+      "sha256": "0e992e5a52de3b5264912b912362b1c22a5cd10e9101b8aae6ef72e4a4670e17",
+      "archivePath": "source-archive/concessions/nkr-attachments/0e992e5a52de3b5264912b912362b1c22a5cd10e9101b8aae6ef72e4a4670e17.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/0e992e5a52de3b5264912b912362b1c22a5cd10e9101b8aae6ef72e4a4670e17.txt",
+      "extractor": "pypdf",
+      "textChars": 8953,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 2,
+      "coordinateClassCounts": {
+        "WGS84": 2
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 5,
+          "line": 11,
+          "a": 44.0,
+          "b": 23.0,
+          "crsClass": "WGS84"
+        },
+        {
+          "pointNo": 2,
+          "line": 24,
+          "a": 44.0,
+          "b": 23.0,
+          "crsClass": "WGS84"
+        }
+      ]
+    },
+    "d4320f8a-cf76-48b6-924b-7e50e2f8c45b": {
+      "fileId": "d4320f8a-cf76-48b6-924b-7e50e2f8c45b",
+      "url": "https://nkr.government.bg/File/Download/d4320f8a-cf76-48b6-924b-7e50e2f8c45b",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-П-258/13.02.2026г. на министъра на енергетиката (получено от концесионера на 19.02.2026г.)",
+      "publishedAt": "24.02.2026 г.",
+      "partyGuids": [
+        "81f23153-a92e-4435-89b6-d741d65869a7"
+      ],
+      "inventoryIds": [
+        "D-000561"
+      ],
+      "concessionIds": [
+        "D-000561"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:26Z",
+      "filename": "Pismo Kozirog_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 354428,
+      "sha256": "a97caad1d6b8cada04f08543bc3e4bafc3c40000ea0d31b90765ab24e1cc315f",
+      "archivePath": "source-archive/concessions/nkr-attachments/a97caad1d6b8cada04f08543bc3e4bafc3c40000ea0d31b90765ab24e1cc315f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/a97caad1d6b8cada04f08543bc3e4bafc3c40000ea0d31b90765ab24e1cc315f.txt",
+      "extractor": "pypdf",
+      "textChars": 8838,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "412822bb-f865-4b64-943b-43b12d28eff3": {
+      "fileId": "412822bb-f865-4b64-943b-43b12d28eff3",
+      "url": "https://nkr.government.bg/File/Download/412822bb-f865-4b64-943b-43b12d28eff3",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-С-118/13.02.2026 г. на министъра на енергетиката",
+      "publishedAt": "23.02.2026 г.",
+      "partyGuids": [
+        "32e9a51f-c396-4d28-934e-d6efb4315816"
+      ],
+      "inventoryIds": [
+        "D-000564"
+      ],
+      "concessionIds": [
+        "D-000564"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:27Z",
+      "filename": "Samovodene.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 392224,
+      "sha256": "3ff2dfd70d66cc21f29475508245bdc548f4616e1d9aad0ee26935c31e8ee495",
+      "archivePath": "source-archive/concessions/nkr-attachments/3ff2dfd70d66cc21f29475508245bdc548f4616e1d9aad0ee26935c31e8ee495.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/3ff2dfd70d66cc21f29475508245bdc548f4616e1d9aad0ee26935c31e8ee495.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "c86e757e-6281-4104-a35e-b6eeb7b103fc": {
+      "fileId": "c86e757e-6281-4104-a35e-b6eeb7b103fc",
+      "url": "https://nkr.government.bg/File/Download/c86e757e-6281-4104-a35e-b6eeb7b103fc",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Р Е Ш Е Н И Е № 944 от 30 декември 2025 година ЗА ДАВАНЕ НА СЪГЛАСИЕ ЗА ИЗМЕНЕНИЕ НА ДОГОВОРА ЗА ПРЕДОСТАВЯНЕ НА КОНЦЕСИЯ ЗА ДОБИВ НА ПОДЗЕМНИ БОГАТСТВА ПО ЧЛ. 2, АЛ. 1, Т. 5 ОТ ЗАКОНА ЗА ПОДЗЕМНИТЕ БОГАТСТВА – СТРОИТЕЛНИ МАТЕРИАЛИ – ВАРОВИЦИ, ОТ НАХОДИЩЕ „САМОВОДЕНЕ“, УЧАСТЪК „ЗАПАД“, РАЗПОЛОЖЕНО В ЗЕМЛИЩЕТО НА С. САМОВОДЕНЕ, ОБЩИНА ВЕЛИКО ТЪРНОВО, ОБЛАСТ ВЕЛИКО ТЪРНОВО, СКЛЮЧЕН НА 16 НОЕМВРИ 2011 Г. МЕЖДУ МИНИСТЕРСКИЯ СЪВЕТ НА РЕПУБЛИКА БЪЛГАРИЯ, ПРЕДСТАВЛЯВАН ОТ МИНИСТЪРА НА ИКОНОМИКАТА, ЕНЕРГЕТИКАТА И ТУРИЗМА, И „СТРЕЛА - 92“ ООД - ГР. ВЕЛИКО ТЪРНОВО, И ЗА ОТПРАВЯНЕ НА ПРЕДЛОЖЕНИЕ ДО КОНЦЕСИОНЕРА ЗА",
+      "publishedAt": "27.01.2026 г.",
+      "partyGuids": [
+        "32e9a51f-c396-4d28-934e-d6efb4315816"
+      ],
+      "inventoryIds": [
+        "D-000564"
+      ],
+      "concessionIds": [
+        "D-000564"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:27Z",
+      "filename": "25RH944.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 31307,
+      "sha256": "7f06d1295ce09c2dea5de4845121997f41d311599d13123f2ad56508f6e757dc",
+      "archivePath": "source-archive/concessions/nkr-attachments/7f06d1295ce09c2dea5de4845121997f41d311599d13123f2ad56508f6e757dc.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/7f06d1295ce09c2dea5de4845121997f41d311599d13123f2ad56508f6e757dc.txt",
+      "extractor": "python-docx",
+      "textChars": 5086,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "8741d044-3b0b-48e2-9e98-1a7c436cb228": {
+      "fileId": "8741d044-3b0b-48e2-9e98-1a7c436cb228",
+      "url": "https://nkr.government.bg/File/Download/8741d044-3b0b-48e2-9e98-1a7c436cb228",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-С-118/13.02.2026 г. на министъра на енергетиката",
+      "publishedAt": "23.02.2026 г.",
+      "partyGuids": [
+        "619091c6-4481-47a1-ae44-1c905bb09258"
+      ],
+      "inventoryIds": [
+        "D-000613"
+      ],
+      "concessionIds": [
+        "D-000613"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:28Z",
+      "filename": "Sheremetia.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 328770,
+      "sha256": "e490bbf1657d153b71a8aac7569dd71c759eb7e3b5c365e2cc48ed6997974f4c",
+      "archivePath": "source-archive/concessions/nkr-attachments/e490bbf1657d153b71a8aac7569dd71c759eb7e3b5c365e2cc48ed6997974f4c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/e490bbf1657d153b71a8aac7569dd71c759eb7e3b5c365e2cc48ed6997974f4c.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "50ea6eb5-9b92-40d8-a284-814b174c4bd0": {
+      "fileId": "50ea6eb5-9b92-40d8-a284-814b174c4bd0",
+      "url": "https://nkr.government.bg/File/Download/50ea6eb5-9b92-40d8-a284-814b174c4bd0",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-М-153/17.02.2026г. на министъра на енергетиката (получено от концесионера на 24 февруари 2026г.)",
+      "publishedAt": "26.02.2026 г.",
+      "partyGuids": [
+        "21624293-638b-4ec4-8b2f-659cfa35b50f"
+      ],
+      "inventoryIds": [
+        "D-000642"
+      ],
+      "concessionIds": [
+        "D-000642"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:30Z",
+      "filename": "Pismo Erkoviste_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 373938,
+      "sha256": "f47fd2164f455d2b5dca0946dbc6ef441506b42ef374386f1cde5faba8a90102",
+      "archivePath": "source-archive/concessions/nkr-attachments/f47fd2164f455d2b5dca0946dbc6ef441506b42ef374386f1cde5faba8a90102.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/f47fd2164f455d2b5dca0946dbc6ef441506b42ef374386f1cde5faba8a90102.txt",
+      "extractor": "pypdf",
+      "textChars": 11419,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 1,
+      "coordinateClassCounts": {
+        "WGS84": 1
+      },
+      "coordinateSample": [
+        {
+          "pointNo": 43,
+          "line": 250,
+          "a": 42.0,
+          "b": 27.0,
+          "crsClass": "WGS84"
+        }
+      ]
+    },
+    "7ea6f363-c4b4-472f-aafd-6f720213839a": {
+      "fileId": "7ea6f363-c4b4-472f-aafd-6f720213839a",
+      "url": "https://nkr.government.bg/File/Download/7ea6f363-c4b4-472f-aafd-6f720213839a",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-У-26/13.02.2026г. на министъра на енергетиката",
+      "publishedAt": "20.02.2026 г.",
+      "partyGuids": [
+        "c9cdd652-76b4-48c2-9e78-015af091aa15"
+      ],
+      "inventoryIds": [
+        "D-000649"
+      ],
+      "concessionIds": [
+        "D-000649"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:31Z",
+      "filename": "Pismo Futula_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 369564,
+      "sha256": "6480d907c98ec0c39074560eb9f4c2ac66273be654bf890859c7551a470caa7c",
+      "archivePath": "source-archive/concessions/nkr-attachments/6480d907c98ec0c39074560eb9f4c2ac66273be654bf890859c7551a470caa7c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/6480d907c98ec0c39074560eb9f4c2ac66273be654bf890859c7551a470caa7c.txt",
+      "extractor": "pypdf",
+      "textChars": 8810,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d02064cf-5333-40ee-a24c-16ca124d0903": {
+      "fileId": "d02064cf-5333-40ee-a24c-16ca124d0903",
+      "url": "https://nkr.government.bg/File/Download/d02064cf-5333-40ee-a24c-16ca124d0903",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Д-92/17.02.2026г. на министъра на енергетиката (получено от концесионера на 23.02.2026г.)",
+      "publishedAt": "16.03.2026 г.",
+      "partyGuids": [
+        "81f5a376-596e-4425-ad32-3a25454a42af"
+      ],
+      "inventoryIds": [
+        "D-000667"
+      ],
+      "concessionIds": [
+        "D-000667"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:32Z",
+      "filename": "Pismo Vishovgrad_Naredba KP.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 354138,
+      "sha256": "4bfdfc13862d7016dbd5f225b9d166a91a934d69b68aaac3413b7f887924ccd8",
+      "archivePath": "source-archive/concessions/nkr-attachments/4bfdfc13862d7016dbd5f225b9d166a91a934d69b68aaac3413b7f887924ccd8.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/4bfdfc13862d7016dbd5f225b9d166a91a934d69b68aaac3413b7f887924ccd8.txt",
+      "extractor": "pypdf",
+      "textChars": 8305,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "9a9c8c42-7b61-4422-97b5-87ac020a8532": {
+      "fileId": "9a9c8c42-7b61-4422-97b5-87ac020a8532",
+      "url": "https://nkr.government.bg/File/Download/9a9c8c42-7b61-4422-97b5-87ac020a8532",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Х-91/13.02.2026 г.",
+      "publishedAt": "04.03.2026 г.",
+      "partyGuids": [
+        "1e6eb031-b2e4-4669-b496-e9020211ede3"
+      ],
+      "inventoryIds": [
+        "D-000767"
+      ],
+      "concessionIds": [
+        "D-000767"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:33Z",
+      "filename": "Belite kamani.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 343142,
+      "sha256": "14cc53c3ffc65f78c38d6acf8279dd8e47151b5961d7c64f898bf4c8b41a123f",
+      "archivePath": "source-archive/concessions/nkr-attachments/14cc53c3ffc65f78c38d6acf8279dd8e47151b5961d7c64f898bf4c8b41a123f.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/14cc53c3ffc65f78c38d6acf8279dd8e47151b5961d7c64f898bf4c8b41a123f.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "d75362a1-1fa9-457c-bd51-85a470315cc8": {
+      "fileId": "d75362a1-1fa9-457c-bd51-85a470315cc8",
+      "url": "https://nkr.government.bg/File/Download/d75362a1-1fa9-457c-bd51-85a470315cc8",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Т-200/13.02.2026г. на министъра на енергетиката, получено от концесионера на 28 май 2026г. (видно от върната обратна разписка);",
+      "publishedAt": "05.06.2026 г.",
+      "partyGuids": [
+        "1d01992f-d2fc-4247-9006-55c98a37f7d5"
+      ],
+      "inventoryIds": [
+        "D-000791"
+      ],
+      "concessionIds": [
+        "D-000791"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:34Z",
+      "filename": "Pismo Loma-1_Naredba KP(1).pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 349513,
+      "sha256": "ff8faf6ec761997e5f89242f0361101888e3931681d05d36b39fa450229b1eae",
+      "archivePath": "source-archive/concessions/nkr-attachments/ff8faf6ec761997e5f89242f0361101888e3931681d05d36b39fa450229b1eae.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ff8faf6ec761997e5f89242f0361101888e3931681d05d36b39fa450229b1eae.txt",
+      "extractor": "pypdf",
+      "textChars": 8436,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "1a686d1a-15ba-4914-b237-a12129824e3c": {
+      "fileId": "1a686d1a-15ba-4914-b237-a12129824e3c",
+      "url": "https://nkr.government.bg/File/Download/1a686d1a-15ba-4914-b237-a12129824e3c",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "",
+      "publishedAt": "29.12.2025 г.",
+      "partyGuids": [
+        "19637cc8-5529-41f0-ad3e-0ce92d3e6813"
+      ],
+      "inventoryIds": [
+        "D-000858"
+      ],
+      "concessionIds": [
+        "D-000858"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:35Z",
+      "filename": "%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5%20%E2%84%96%20878%20%D0%BE%D1%82%2012.12.2025.docx",
+      "extension": ".docx",
+      "contentType": "application/octet-stream",
+      "bytes": 27346,
+      "sha256": "ed9a364526beb8d35843fc2110da6a79331cf20441dd83a9890c6f3ab2aadefc",
+      "archivePath": "source-archive/concessions/nkr-attachments/ed9a364526beb8d35843fc2110da6a79331cf20441dd83a9890c6f3ab2aadefc.docx",
+      "textPath": "source-archive/concessions/nkr-attachments-text/ed9a364526beb8d35843fc2110da6a79331cf20441dd83a9890c6f3ab2aadefc.txt",
+      "extractor": "python-docx",
+      "textChars": 3621,
+      "keywordHit": false,
+      "coordinateParserVersion": 2,
+      "coordinateRowCount": 0,
+      "coordinateClassCounts": {},
+      "coordinateSample": []
+    },
+    "b79cfc1f-59a2-41dc-a2ea-4e5c51ae7289": {
+      "fileId": "b79cfc1f-59a2-41dc-a2ea-4e5c51ae7289",
+      "url": "https://nkr.government.bg/File/Download/b79cfc1f-59a2-41dc-a2ea-4e5c51ae7289",
+      "title": "Свали",
+      "documentType": "Друг документ",
+      "description": "Писмо с изх. № Е-26-Г-139/13.02.2026 г.",
+      "publishedAt": "23.02.2026 г.",
+      "partyGuids": [
+        "e83bb27f-4a5d-4ecc-8fe9-2373ad9653b0"
+      ],
+      "inventoryIds": [
+        "O-000040"
+      ],
+      "concessionIds": [
+        "O-000040"
+      ],
+      "priority": 4,
+      "status": "ok",
+      "checkedAt": "2026-11-22T12:39:36Z",
+      "filename": "Bov.pdf",
+      "extension": ".pdf",
+      "contentType": "application/octet-stream",
+      "bytes": 446533,
+      "sha256": "c7e51b5233f4066e2275562c510833bd989ce874ef61c348faa0a56aa312c82c",
+      "archivePath": "source-archive/concessions/nkr-attachments/c7e51b5233f4066e2275562c510833bd989ce874ef61c348faa0a56aa312c82c.pdf",
+      "textPath": "source-archive/concessions/nkr-attachments-text/c7e51b5233f4066e2275562c510833bd989ce874ef61c348faa0a56aa312c82c.txt",
+      "extractor": "pypdf",
+      "textChars": 15,
       "keywordHit": false,
       "coordinateParserVersion": 2,
       "coordinateRowCount": 0,

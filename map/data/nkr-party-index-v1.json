@@ -1,14 +1,14 @@
 {
   "schema": "bgwf-nkr-party-index-v1",
-  "generatedAt": "2026-11-15T12:00:33Z",
+  "generatedAt": "2026-11-22T12:37:25Z",
   "mode": "refreshed",
   "runtimeDependency": false,
   "source": {
     "url": "https://nkr.government.bg/Concessions",
-    "reportedTotal": 1445,
+    "reportedTotal": 1446,
     "error": null
   },
-  "recordCount": 1445,
+  "recordCount": 1446,
   "inventoryRecordCount": 530,
   "stats": {
     "singleInventoryMatch": 514,
@@ -18,440 +18,440 @@
   "pageSnapshots": [
     {
       "page": 1,
-      "sha256": "25f3ede0197f68b4f1a1a1a92ba9421a8e5142d15ded5b57b2df3e73af6be6f0",
-      "bytes": 42158,
+      "sha256": "11336200565f21bdd550b6442600393af6760d4b9d46d219ced060ed8a475877",
+      "bytes": 41107,
       "path": "source-archive/concessions/nkr-index/page-001.html"
     },
     {
       "page": 2,
-      "sha256": "c5944989482187c6836be6420a7b224424fdc702a0d2fdea5856de9d7d2ba612",
-      "bytes": 41091,
+      "sha256": "174d15129786a4aef9e323ae9edc1b252177ad9c6a9f55d9348cb1050783c9e3",
+      "bytes": 42282,
       "path": "source-archive/concessions/nkr-index/page-002.html"
     },
     {
       "page": 3,
-      "sha256": "414e7b50a3de9157f4384f6450a6181a46bc999ff68623d9be151ef91d626425",
-      "bytes": 37322,
+      "sha256": "48693ddbdf9f822ecb530305db8dfc03bb95e3039704a22a48dbf80251a625bd",
+      "bytes": 37535,
       "path": "source-archive/concessions/nkr-index/page-003.html"
     },
     {
       "page": 4,
-      "sha256": "6acf49e0ed0665d239e805076cf4417b5a676ced8cb83a67e2a86a3abfbf0b18",
-      "bytes": 41631,
+      "sha256": "faf66a1571b63c853532e156609dcc957314b06ab24b42d7c658bf908d62ad3c",
+      "bytes": 41395,
       "path": "source-archive/concessions/nkr-index/page-004.html"
     },
     {
       "page": 5,
-      "sha256": "5dc2243cc55da3a6a4c1483e8b3bb8e7f2fe1e46305f874bf9fafd9430540234",
-      "bytes": 39405,
+      "sha256": "7a0ac49f15003b19821540b9e1fbc7f01955cfaf97d226edb2439f9c697acff1",
+      "bytes": 39620,
       "path": "source-archive/concessions/nkr-index/page-005.html"
     },
     {
       "page": 6,
-      "sha256": "5da8d7a30b3d3d6a15b95cd277d0eaa9c430dd923c4ae6d38b51c6f30e1b0a2a",
-      "bytes": 39609,
+      "sha256": "8b0035069dd1a57c50471d820f46414e0686d658869fd6c6e67511727b7815bc",
+      "bytes": 39598,
       "path": "source-archive/concessions/nkr-index/page-006.html"
     },
     {
       "page": 7,
-      "sha256": "b86d1589704070985d6d86f50146f10fc01243393a48a28579b033e57f65a6dc",
-      "bytes": 41951,
+      "sha256": "de5de8084fc60fed2e30fdc1d4a6bcc2565e6be4cdf29919775c7ccb6e83b3f7",
+      "bytes": 42194,
       "path": "source-archive/concessions/nkr-index/page-007.html"
     },
     {
       "page": 8,
-      "sha256": "24daa9754bf7adcb044617dd0ff03d2c27d75e6ac84631555f5421812c974cb4",
-      "bytes": 41345,
+      "sha256": "e591f131881541131481094b22736951e502769537175c35824d42cd75cf2e0d",
+      "bytes": 41207,
       "path": "source-archive/concessions/nkr-index/page-008.html"
     },
     {
       "page": 9,
-      "sha256": "a79c8ac46d9138fe0880d26d5f4c77057753c96b85341363b2bd63403dbf637f",
-      "bytes": 37827,
+      "sha256": "f1b33dc56f7d58b18950239cb233950b462af1a37f3b33476fe76f57128b2626",
+      "bytes": 37125,
       "path": "source-archive/concessions/nkr-index/page-009.html"
     },
     {
       "page": 10,
-      "sha256": "062ed1d750e2f2c65d1f844474c4253bc4da5d05e981760493aeb9b0b3b23602",
-      "bytes": 41748,
+      "sha256": "3a0bf3be3567d5d318485127564d13535c039c4827bf364c84b9bc197d583f99",
+      "bytes": 42578,
       "path": "source-archive/concessions/nkr-index/page-010.html"
     },
     {
       "page": 11,
-      "sha256": "e9252a4598f9cfbf0d37a890735ee047b4bdf4d46e4cea38c81ed67ec6fa4dc8",
-      "bytes": 34790,
+      "sha256": "e0ae0a27dcff313ea6493e29785441ab547c421a03e3184520f7ae1c683c253d",
+      "bytes": 34695,
       "path": "source-archive/concessions/nkr-index/page-011.html"
     },
     {
       "page": 12,
-      "sha256": "2e1184e09bb6d09add32cb28344eac94555cf72d716a4d491b18dd4cbe6dfd86",
-      "bytes": 35386,
+      "sha256": "7d07fd7800bf45e5413e689abc04823aa0c3aa09cd5ad06b733f2e71c00a5162",
+      "bytes": 35428,
       "path": "source-archive/concessions/nkr-index/page-012.html"
     },
     {
       "page": 13,
-      "sha256": "f7e37e8a4ffd3868914affd176a1579f4420404863cfa8b4063e2f0956ce1acc",
-      "bytes": 35226,
+      "sha256": "2872e144a699bf5fa62eb627eb3582bacc97a12a43bbe4ab91c5ce0e7212e61b",
+      "bytes": 35260,
       "path": "source-archive/concessions/nkr-index/page-013.html"
     },
     {
       "page": 14,
-      "sha256": "7ae92f73b6d9256b7cb809f4d593a71ae54201d177928eb12c24db6cdcfefbb5",
-      "bytes": 34986,
+      "sha256": "81536b7b6195a274583884819e9850e5ed5ce174c676a87398ea58f563df6b1d",
+      "bytes": 34994,
       "path": "source-archive/concessions/nkr-index/page-014.html"
     },
     {
       "page": 15,
-      "sha256": "d7116c6cadcd48f8d35fdac71023af6116098e9a42881788380a1fbb625ec4e2",
-      "bytes": 35024,
+      "sha256": "c2f4b7c31c80e2e1709a4ffc9b2557009c5aa44d6624e1625b4e384c1f3a8bd8",
+      "bytes": 35026,
       "path": "source-archive/concessions/nkr-index/page-015.html"
     },
     {
       "page": 16,
-      "sha256": "66e381b3c52443a4eb46700fc9b265ed7627de4c3cb8daca85274571b8e25698",
-      "bytes": 35244,
+      "sha256": "04c32d2fb7b6469d0e5aeb970ff112670ca83a96f15a7a22bc51cf16f83b61c6",
+      "bytes": 35220,
       "path": "source-archive/concessions/nkr-index/page-016.html"
     },
     {
       "page": 17,
-      "sha256": "c006d82ab00edc3f516026f274772ab08b258ab364f3f3d5a3284b4b302734ca",
-      "bytes": 36147,
+      "sha256": "00ea7de33e94c09b70ea3c6610a2ba762543d182be9e1976aa514fbff6ce70c7",
+      "bytes": 36059,
       "path": "source-archive/concessions/nkr-index/page-017.html"
     },
     {
       "page": 18,
-      "sha256": "9fe61493a4b2200ee753e6bd9d38d358db45f209d2b74d82b7b4ad8583decf47",
-      "bytes": 34712,
+      "sha256": "bb6c1453d371dc21385ea85ac318e394e6404c338b2957e6358aa65f245f0422",
+      "bytes": 34846,
       "path": "source-archive/concessions/nkr-index/page-018.html"
     },
     {
       "page": 19,
-      "sha256": "90feda49e4c64cfd693b14edef5989c5fa71af53a0c28bcc27a4f8e609c85165",
-      "bytes": 34675,
+      "sha256": "e94ddc58d34bf2fbff5ad822325a0e640e055387d1d9587d5557cbe55df78191",
+      "bytes": 34625,
       "path": "source-archive/concessions/nkr-index/page-019.html"
     },
     {
       "page": 20,
-      "sha256": "f5366a3a5d016365f39a3171878eab70bb49dd4091635ad61ec6eb1182b5a481",
-      "bytes": 34957,
+      "sha256": "7189de93aed442ee705741d96f02b80fb2e4fa084a525ca0a3cee5db09b601aa",
+      "bytes": 34833,
       "path": "source-archive/concessions/nkr-index/page-020.html"
     },
     {
       "page": 21,
-      "sha256": "b9354cc35164907a254018be04e7435dc90c96cc065a9d2308d3cb747a972aab",
-      "bytes": 34611,
+      "sha256": "5584afcf864bef624e4325f18b6a9e3e3fc8c802b060694a342ffc7914faf01a",
+      "bytes": 34710,
       "path": "source-archive/concessions/nkr-index/page-021.html"
     },
     {
       "page": 22,
-      "sha256": "892f51c445b1b9f126a29d23f2f216c2e6f5dd358950f6c897503152289d9f03",
-      "bytes": 35660,
+      "sha256": "574364a6631e1b1c0f89cb1cf25ed4e830f57f421fee3ab92c5f2d55de951f13",
+      "bytes": 35658,
       "path": "source-archive/concessions/nkr-index/page-022.html"
     },
     {
       "page": 23,
-      "sha256": "3aa6d63ea1cca396e37c65dd38e3323ec6063c542151cc570de7fcd6eb7b4419",
-      "bytes": 34848,
+      "sha256": "c1d1b18b00b18515f2a01981b53448b7076bee5354c4c8f11007672c0a87838f",
+      "bytes": 34947,
       "path": "source-archive/concessions/nkr-index/page-023.html"
     },
     {
       "page": 24,
-      "sha256": "f8805373da0b1b9c1b6e6ab34976467e5f16a2763ef8a4085c466eaf8ba253d5",
-      "bytes": 35032,
+      "sha256": "5185c077229b1d188dbf9f099dcb7ef3ceb543b6654c880f781b04071e56d949",
+      "bytes": 34966,
       "path": "source-archive/concessions/nkr-index/page-024.html"
     },
     {
       "page": 25,
-      "sha256": "c92580e2436da9e2eb553ce5f4df32160779c334b3bcc0e823b989fbc48dbaae",
-      "bytes": 35247,
+      "sha256": "f1315974260100efa81c21c1b58b5dca27861666faed6ed8a69a38601b7b923b",
+      "bytes": 35291,
       "path": "source-archive/concessions/nkr-index/page-025.html"
     },
     {
       "page": 26,
-      "sha256": "9a35f5d9570050aaa18704be55e1c073a37fc7673579f0c4c667c3ed7f7735e7",
-      "bytes": 34997,
+      "sha256": "88ec6afc39f6a84cf0f67f295606aa32e8c5b2d512f086bbd07fbbc91f263731",
+      "bytes": 34960,
       "path": "source-archive/concessions/nkr-index/page-026.html"
     },
     {
       "page": 27,
-      "sha256": "db3c53f183178542fd29a82c192b53d9b36d15064ffb115ba2e367586a23b59a",
-      "bytes": 35265,
+      "sha256": "a742877ead7d99c1be52a8e04c6fd7666908a762633b9e44c4bcfb4534306094",
+      "bytes": 35255,
       "path": "source-archive/concessions/nkr-index/page-027.html"
     },
     {
       "page": 28,
-      "sha256": "e435b490c21daf53d3d891badb589c7db481d799df6ff0cfeb5b942e450a529a",
-      "bytes": 34457,
+      "sha256": "b1d78f45846b024edaaf1bbe91fc5d58cd1cb96b6fca5f2d2825c8272fffcc92",
+      "bytes": 34492,
       "path": "source-archive/concessions/nkr-index/page-028.html"
     },
     {
       "page": 29,
-      "sha256": "dac3bed970a0ae8c35bf3ae9927f4a8d1b75cbf01784e3511edb3dd41d141e0e",
-      "bytes": 35161,
+      "sha256": "c6a089921737850d02d38d95ba4f868648ab30602516ebc1fb9089903d3d9b9e",
+      "bytes": 34911,
       "path": "source-archive/concessions/nkr-index/page-029.html"
     },
     {
       "page": 30,
-      "sha256": "aba1d6b842d70010d75c5ac9f9f67d87a4026defadfe50e9420ac3f814849682",
-      "bytes": 35321,
+      "sha256": "14c19783b49b3ed811d53844bcd9529ae8c61bfcfc04a1c6e0a91a6512c3bd4e",
+      "bytes": 35426,
       "path": "source-archive/concessions/nkr-index/page-030.html"
     },
     {
       "page": 31,
-      "sha256": "4fd75d1c23d3247adeb15270933dcd37c4fc6cdd8df9dac334508510a9d1ae54",
-      "bytes": 34798,
+      "sha256": "5128005c33e09f29a8da53f6713280628afbf9b7eb63bda126b05c5fd1ff2ac1",
+      "bytes": 34881,
       "path": "source-archive/concessions/nkr-index/page-031.html"
     },
     {
       "page": 32,
-      "sha256": "e1f78c90d1ef3a6e90b37b0c8cf97dd64af7ec8a88d0681aad0ee6135e55edfb",
-      "bytes": 35240,
+      "sha256": "b51c900a62decebb07e20f0a132d8838d464494f8e05c0f0efa7170d6792b2e9",
+      "bytes": 35181,
       "path": "source-archive/concessions/nkr-index/page-032.html"
     },
     {
       "page": 33,
-      "sha256": "14632f001e2fe786a99e7fdac78bcdac482576ab81ef237b09bcbbadbf852981",
-      "bytes": 34916,
+      "sha256": "16b703427c2e98a302bd0dc6ee3e9beb31ed07fc870e91a356c2423b9825217d",
+      "bytes": 35001,
       "path": "source-archive/concessions/nkr-index/page-033.html"
     },
     {
       "page": 34,
-      "sha256": "ee925fa065ed3284287a187e2aab4b25687f91e6666f3543d38493c4ea233dcf",
-      "bytes": 35233,
+      "sha256": "e45ff733410692a5441cfb3341cc42879e0e5aeab49ae90fc5cc82ead44fcf9b",
+      "bytes": 35252,
       "path": "source-archive/concessions/nkr-index/page-034.html"
     },
     {
       "page": 35,
-      "sha256": "1c05cfc6438b158061cac69b30d337a4ddf4e085416bbf35b646e51cf268bd7c",
-      "bytes": 34950,
+      "sha256": "2011dcd6e3724399ca9a71ef4bcb3fd54223d255c1518eae3b3d6d5c93c54142",
+      "bytes": 34927,
       "path": "source-archive/concessions/nkr-index/page-035.html"
     },
     {
       "page": 36,
-      "sha256": "4d7252167376abea341b69058374a1d76c7af098b6f7fd283c6cc2a8c10ffa91",
-      "bytes": 35194,
+      "sha256": "bf77d6023a5503e0ab4a5b5bca13e5113b244fcede5d88a1d0de6c17184a3361",
+      "bytes": 35164,
       "path": "source-archive/concessions/nkr-index/page-036.html"
     },
     {
       "page": 37,
-      "sha256": "7e992f0aec8fb597e46719b28deb71c5e1b3ac075bca9092826a5dfcc0eb8820",
-      "bytes": 35220,
+      "sha256": "9d510e1169a67bd9a41445a771cb72e42f47a2c2dec1009df0ed0e325105dd00",
+      "bytes": 35266,
       "path": "source-archive/concessions/nkr-index/page-037.html"
     },
     {
       "page": 38,
-      "sha256": "22bf624f3f7ca43a1b23a8fee834ee75b79163e69adcb5724c39aa6de0839e90",
-      "bytes": 35404,
+      "sha256": "3012bcedeac084c2cf74f283f6f26f1cbdc2fed2f06d41db0687137495cbcd9d",
+      "bytes": 35394,
       "path": "source-archive/concessions/nkr-index/page-038.html"
     },
     {
       "page": 39,
-      "sha256": "c8a9753c2836943472a26d8c06c814cff23c125d8816a06d08f1d42e3f1f2e28",
-      "bytes": 34992,
+      "sha256": "2abe82e9fdb86de48719aadef90dc752f14230c57c664b30ef07660bbfd394ef",
+      "bytes": 35030,
       "path": "source-archive/concessions/nkr-index/page-039.html"
     },
     {
       "page": 40,
-      "sha256": "d8e595839d59c1bbda5b119df180296929ba5389fd0957b974c7f93a2c340ca9",
-      "bytes": 35047,
+      "sha256": "9c8c44f9e830c646e17e5ec0786a3bfaf5f05bc772f22bd1a5232c9eab0dd522",
+      "bytes": 34966,
       "path": "source-archive/concessions/nkr-index/page-040.html"
     },
     {
       "page": 41,
-      "sha256": "2b908d320e45841a5f96bbed59ece54ee614f1464c7cfbceee711eb4d6619469",
-      "bytes": 35131,
+      "sha256": "d76c918db2984ab6c3760f16c655450e6c8585754a993efad0999ba666aba453",
+      "bytes": 35182,
       "path": "source-archive/concessions/nkr-index/page-041.html"
     },
     {
       "page": 42,
-      "sha256": "c9d1a21a0ffc6e0ac8d4b590597badfe210ebc190e917f5886733e183f1328ff",
-      "bytes": 35521,
+      "sha256": "21e0588acc8090314afcc9751875ef7b64776acc73113b2554ac8b6235569575",
+      "bytes": 35493,
       "path": "source-archive/concessions/nkr-index/page-042.html"
     },
     {
       "page": 43,
-      "sha256": "9541c0994968ff4960895013dcdc7566d421cd5d04740af14f6b2408f759d5fe",
-      "bytes": 34843,
+      "sha256": "c4c2982578339a666c9c725a1a132d33bb89c21c6e3816fa9b52e5d77b31c0fe",
+      "bytes": 34911,
       "path": "source-archive/concessions/nkr-index/page-043.html"
     },
     {
       "page": 44,
-      "sha256": "98f36cc98d50c31151abc7f02e7e795e248ed7aa7ee5b6cfab061fe969dc881e",
-      "bytes": 35340,
+      "sha256": "7bbc21b46ee769e47f53042312c7cac60319fb624261a190c0b271567a191e5b",
+      "bytes": 35269,
       "path": "source-archive/concessions/nkr-index/page-044.html"
     },
     {
       "page": 45,
-      "sha256": "b67696b19411d6d46732d5f2ba90330906944894b5645933cb2a3f7485a604ab",
-      "bytes": 35208,
+      "sha256": "c25203fdec6007cf4462b16ff1cadf8500d8c6476bb19f44976bb6a06abfd9a9",
+      "bytes": 35245,
       "path": "source-archive/concessions/nkr-index/page-045.html"
     },
     {
       "page": 46,
-      "sha256": "940f6652f7ee154aa629ba260017a60365077090744fab2a71b6c9607225956c",
-      "bytes": 35523,
+      "sha256": "78a5c2be97f5660400cd1d41274582c2bfe63ef4dc0379b48b42a33cf4000197",
+      "bytes": 35431,
       "path": "source-archive/concessions/nkr-index/page-046.html"
     },
     {
       "page": 47,
-      "sha256": "1dca7ce98bc8b501766acca480dbf232fb54292415248ae6374d7c01e1ec8a6e",
-      "bytes": 35106,
+      "sha256": "1acbc24910548c7d4b12285ed16b2014e9373251f054fbda4068e649baa6583b",
+      "bytes": 35216,
       "path": "source-archive/concessions/nkr-index/page-047.html"
     },
     {
       "page": 48,
-      "sha256": "6aa7b068f04f85112180abf7f9962dbfa47760fc0166232a4f4ee501414e5d05",
-      "bytes": 35025,
+      "sha256": "581f9944074dcc937bab90475e43e1389fdb15d0b566e6685b2151e72229f5b4",
+      "bytes": 34861,
       "path": "source-archive/concessions/nkr-index/page-048.html"
     },
     {
       "page": 49,
-      "sha256": "f139894ab058ba43cf8e40332bf90ca3e2e7302ff7946ead845a6584bbc67a82",
-      "bytes": 34878,
+      "sha256": "d4cbaf76b27d271e6316c32f60801ba6bf57443246ad400062ceeb4aa5ff51d2",
+      "bytes": 34977,
       "path": "source-archive/concessions/nkr-index/page-049.html"
     },
     {
       "page": 50,
-      "sha256": "c6747c5767e264ace6291c81079c8cad1cc8dd240e4fb0be4581a9bf859d48ae",
-      "bytes": 35146,
+      "sha256": "749fe7cb4b7bf5f63e315c4b5d658d4aa2c51549bea32898e96112b8d6b9c5da",
+      "bytes": 35090,
       "path": "source-archive/concessions/nkr-index/page-050.html"
     },
     {
       "page": 51,
-      "sha256": "f9e00dbafd91c00a66c64dec63a620b365ce4f815471fc4ba25e2968db047279",
-      "bytes": 35181,
+      "sha256": "263e00bfed992719d872b8c4e5f2d642e140473e3113877e6778cd6b32605e91",
+      "bytes": 35276,
       "path": "source-archive/concessions/nkr-index/page-051.html"
     },
     {
       "page": 52,
-      "sha256": "0d01245f23edfc56959e94ea9dd0a40ce834579968e4c88ca48c63a52d749382",
-      "bytes": 35351,
+      "sha256": "7212f1b9316031119328d69d4fa3530c8d2370ef2b2ef80162ca2dd884c4a168",
+      "bytes": 35396,
       "path": "source-archive/concessions/nkr-index/page-052.html"
     },
     {
       "page": 53,
-      "sha256": "2e663ad917c47bad38993bed6ef58436f4121b921a52a1cdf96972c9ae89feb9",
-      "bytes": 34900,
+      "sha256": "a87c3291d10740165307696042e448d16ef10cc71516a4131c47467722238d43",
+      "bytes": 34890,
       "path": "source-archive/concessions/nkr-index/page-053.html"
     },
     {
       "page": 54,
-      "sha256": "af26b5176adb6144ba555e796c0d3a8ee5eaf3937f703b67c2b281c72e5a11ab",
-      "bytes": 35177,
+      "sha256": "284b55051ca0ba6f003468a995d0b2916e4047b7e29e6ede76193596f8fe700d",
+      "bytes": 35142,
       "path": "source-archive/concessions/nkr-index/page-054.html"
     },
     {
       "page": 55,
-      "sha256": "164bed68ecb6f29b8d81f01906d3785e441a1a5cb2a51c5215b648788b22126e",
-      "bytes": 35302,
+      "sha256": "e3c2ba4d6aff4237e7fdf4773e70dea793a02292952da0cf57fe9001c8e93a8e",
+      "bytes": 35211,
       "path": "source-archive/concessions/nkr-index/page-055.html"
     },
     {
       "page": 56,
-      "sha256": "1dbf4feacfb9dd164f46db296227ab582b185d240365e3b3cf43ca860d7f23a0",
-      "bytes": 35591,
+      "sha256": "8a48dc002c2368892d42a1aac7d50d1f8a22a9dcb730d519f2c411e9c6123692",
+      "bytes": 35727,
       "path": "source-archive/concessions/nkr-index/page-056.html"
     },
     {
       "page": 57,
-      "sha256": "d80d1facba88aef1f2ad196222dca03c20073af612855ab2cbb8ae87e7d0b867",
-      "bytes": 34939,
+      "sha256": "2dfc96f7595d375679ebc55c4c001cf3e880b89304eb685afd011f95a0c43408",
+      "bytes": 34911,
       "path": "source-archive/concessions/nkr-index/page-057.html"
     },
     {
       "page": 58,
-      "sha256": "248c160e4220a991780f540f7cb1e7680c372e315078e37145b562a23d7974d7",
-      "bytes": 35075,
+      "sha256": "b67f114328dfbf40f848554244698d271ecde5d47402531066a99b060ada0c50",
+      "bytes": 35076,
       "path": "source-archive/concessions/nkr-index/page-058.html"
     },
     {
       "page": 59,
-      "sha256": "592e0534a4b2d8761e0379f458369e4cc41afd4ad4917335cf47fdecdb527cad",
-      "bytes": 35423,
+      "sha256": "a9da750e5903fd8adb7133af54266d27e62b3f48bf3f9c57e68a13bef9edaf1e",
+      "bytes": 35438,
       "path": "source-archive/concessions/nkr-index/page-059.html"
     },
     {
       "page": 60,
-      "sha256": "d352492154fbde738d13e80bebe08df65ce7345d0423810f640501b50796d7d5",
-      "bytes": 35112,
+      "sha256": "7639ef18bdf06bcfb4654a5309c221f9bab2876e95e286fa81b9e8affcd683dc",
+      "bytes": 35032,
       "path": "source-archive/concessions/nkr-index/page-060.html"
     },
     {
       "page": 61,
-      "sha256": "7641f78da328be628e3ae153562fe7cf61f8532251df1f4231d629b1f6cd109f",
-      "bytes": 35443,
+      "sha256": "aa99aa788c7c542c66e2bfbb3559cfff2e21064ace75a6b54058459ed8cf94cc",
+      "bytes": 35534,
       "path": "source-archive/concessions/nkr-index/page-061.html"
     },
     {
       "page": 62,
-      "sha256": "a50a519b6f3ff763f0c04f5d8c92dd84a7af44a29676f370eff070c4794ef62a",
-      "bytes": 35771,
+      "sha256": "8f3fca2387f970a5c355c1b7c0d51ffdf624c1484f87c04bec316e2114186de1",
+      "bytes": 35619,
       "path": "source-archive/concessions/nkr-index/page-062.html"
     },
     {
       "page": 63,
-      "sha256": "94b8dbc3eff05eaef111835b947d6f9958f770b37f60428a3b9ab23010a86f7b",
-      "bytes": 34862,
+      "sha256": "a7b2a438611a8e2b20ae243c64de874d00acb30d2bafcae0014e121ff49fdd2c",
+      "bytes": 34905,
       "path": "source-archive/concessions/nkr-index/page-063.html"
     },
     {
       "page": 64,
-      "sha256": "3c9ced6f2e0dd984748aaea62c2ba357e6cf109d4e4b762b376bb2210461b769",
-      "bytes": 35022,
+      "sha256": "b4e1531225fd6f7236caa94c1343144e4949d77255840f82ee7b910644310543",
+      "bytes": 35093,
       "path": "source-archive/concessions/nkr-index/page-064.html"
     },
     {
       "page": 65,
-      "sha256": "f5da245951963357afde95f82f92f6bd3367a76293658fcca5821d4c4005c862",
-      "bytes": 34935,
+      "sha256": "e9c6f17b03ee2f88a30bf3b0bfd4e87514467fa2b6f46d7faff14dd3210939b6",
+      "bytes": 34946,
       "path": "source-archive/concessions/nkr-index/page-065.html"
     },
     {
       "page": 66,
-      "sha256": "1d79f8ed534ebf93be0a6b29e71d8ddb64fdd274ad608d092c6b019ad33fb276",
-      "bytes": 34687,
+      "sha256": "9820d3c0b5a79f2428066720f9b4a0034cf401af5fb94cbe92cb50fef403fe80",
+      "bytes": 34705,
       "path": "source-archive/concessions/nkr-index/page-066.html"
     },
     {
       "page": 67,
-      "sha256": "f2c08d69c6c89cfcc6f6f99a4e5aeb8e48fc1717a6092ffaf69a84e748b81051",
-      "bytes": 35062,
+      "sha256": "895c286289bd8335f8a67aabafdfa992da4fa996a3ffec757b83317aa6948579",
+      "bytes": 35057,
       "path": "source-archive/concessions/nkr-index/page-067.html"
     },
     {
       "page": 68,
-      "sha256": "4d12db784788d7f894e2d644cb55a537271acd46d45e8627602153f73f9e5929",
+      "sha256": "84b70d4a6c99ca7f70c2ed4da9f6ec0261b08f636a1a4aa3f6906516867c500a",
       "bytes": 34958,
       "path": "source-archive/concessions/nkr-index/page-068.html"
     },
     {
       "page": 69,
-      "sha256": "749a182018a9a98a42abffe7db6445508d796046fa341c34ef491430f3f2f28f",
-      "bytes": 35070,
+      "sha256": "e1f6cd00ef29fa141f260e2a474161b4cfd573185ed1267c2d97adaa9786694e",
+      "bytes": 34994,
       "path": "source-archive/concessions/nkr-index/page-069.html"
     },
     {
       "page": 70,
-      "sha256": "617c6e8ea5610d09b90ce6d56724d9948693784db3348015f37f90491d4816d5",
-      "bytes": 35774,
+      "sha256": "a177e7fffb5496c402b5319bb0f6271e853956d398c0f8993d52e0fb4576a920",
+      "bytes": 35698,
       "path": "source-archive/concessions/nkr-index/page-070.html"
     },
     {
       "page": 71,
-      "sha256": "0f71b89cfde94eca2914183583f34c88cb2e1400fa833c73fabf4088f79ecbbf",
-      "bytes": 35237,
+      "sha256": "a3dc58dfd4af4ed4301ed63588bbf0bf6d80828ddbac769098d8faa3c00a264e",
+      "bytes": 35325,
       "path": "source-archive/concessions/nkr-index/page-071.html"
     },
     {
       "page": 72,
-      "sha256": "5a3ce80550d63d750788518741d99b961cc3854797b76e8013bb81864e0b802e",
-      "bytes": 42395,
+      "sha256": "4b3be88fbb7ac368f58c5a115c11bffa83be4e03697100284abf5c6aa6322122",
+      "bytes": 42386,
       "path": "source-archive/concessions/nkr-index/page-072.html"
     },
     {
       "page": 73,
-      "sha256": "f551c0d1bbcf8ba75f30a2991e899917113ac29036afd37e75c6b4e74f057cc7",
-      "bytes": 18558,
+      "sha256": "bffac564656acc6a61d8845e0528043fae40affc947aa5ef5b6ec2a047904e61",
+      "bytes": 19823,
       "path": "source-archive/concessions/nkr-index/page-073.html"
     }
   ],
@@ -4618,6 +4618,25 @@
     ]
   },
   "records": [
+    {
+      "guid": "e1090010-b6e6-40b7-b21e-3a633d5f1271",
+      "concessionId": "221-471",
+      "columns": {
+        "Номер": "221-471/18.11.2026",
+        "Статус на партида": "Открита",
+        "Статус на процедура": "Отворена",
+        "Име на концесия": "Концесия за строителство на обект „Надземен паркинг” с площ от 678 кв.м, находящ се в поземлен имот с идентификатор 16359.514.277 по КККР на гр. Горна Оряховица, с площ на имота от 850 кв.м., трайно предназначение на територията: урбанизирана, начин на трайно ползване: за паркинг /УПИ II - за подземен паркинг и техническа инфраструктура, кв. 796 по ПУП на гр. Горна Оряховица./",
+        "Вид на концесия": "Общинска",
+        "Предмет на концесия": "Концесия за строителство",
+        "С/без трансграничен интерес": "Под европейския праг",
+        "Концедент": "Кмет на община Горна Оряховица",
+        "№ на свързана процедура/концесия": "121-79/14.12.2020"
+      },
+      "searchText": "221-471/18.11.2026 | Открита | Отворена | Концесия за строителство на обект „Надземен паркинг” с площ от 678 кв.м, находящ се в поземлен имот с идентификатор 16359.514.277 по КККР на гр. Горна Оряховица, с площ на имота от 850 кв.м., трайно предназначение на територията: урбанизирана, начин на трайно ползване: за паркинг /УПИ II - за подземен паркинг и техническа инфраструктура, кв. 796 по ПУП на гр. Горна Оряховица./ | Общинска | Концесия за строителство | Под европейския праг | Кмет на община Горна Оряховица | 121-79/14.12.2020",
+      "partyUrl": "https://nkr.government.bg/ConcessionaireProcedures/ConcessionaireProcedureInfo/e1090010-b6e6-40b7-b21e-3a633d5f1271",
+      "inventoryMatches": [],
+      "inventoryMatchCount": 0
+    },
     {
       "guid": "5ca526ab-e46e-4d8c-95de-f3ac1f2499a6",
       "concessionId": "222-467",
