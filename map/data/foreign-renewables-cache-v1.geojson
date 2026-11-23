@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "schema": "bgwf-foreign-renewables-cache-v1",
-  "generatedAt": "2026-11-16T13:26:02Z",
+  "generatedAt": "2026-11-23T13:43:47Z",
   "scope": {
     "countries": [
       "RO",
@@ -24,47 +24,48 @@
     "source": "OpenStreetMap / Overpass plus curated seed",
     "lastKnownGoodPreservedOnFailure": true,
     "perCountryLastKnownGood": true,
-    "countryErrors": {},
+    "countryErrors": {
+      "RS": "All Overpass endpoints failed: The read operation timed out",
+      "TR": "All Overpass endpoints failed: The read operation timed out",
+      "MK": "All Overpass endpoints failed: The read operation timed out",
+      "RO": "All Overpass endpoints failed: The read operation timed out",
+      "GR": "All Overpass endpoints failed: The read operation timed out"
+    },
     "sourceHealth": {
-      "MK": {
-        "country": "Северна Македония",
-        "ok": true,
-        "source": "geofabrik",
-        "discovered": 2,
-        "curated": 3,
-        "published": 4
-      },
       "RS": {
         "country": "Сърбия",
-        "ok": true,
-        "source": "geofabrik",
-        "discovered": 184,
-        "curated": 6,
-        "published": 34
-      },
-      "GR": {
-        "country": "Гърция",
-        "ok": true,
-        "source": "geofabrik",
-        "discovered": 350,
-        "curated": 5,
-        "published": 65
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 34,
+        "curated": 6
       },
       "TR": {
         "country": "Турция",
-        "ok": true,
-        "source": "geofabrik",
-        "discovered": 1477,
-        "curated": 6,
-        "published": 353
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 353,
+        "curated": 6
+      },
+      "MK": {
+        "country": "Северна Македония",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 4,
+        "curated": 3
       },
       "RO": {
         "country": "Румъния",
-        "ok": true,
-        "source": "geofabrik",
-        "discovered": 882,
-        "curated": 6,
-        "published": 143
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 143,
+        "curated": 6
+      },
+      "GR": {
+        "country": "Гърция",
+        "ok": false,
+        "error": "All Overpass endpoints failed: The read operation timed out",
+        "preserved": 65,
+        "curated": 5
       }
     }
   },
